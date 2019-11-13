@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: RCR_Essay.aux
+The style file: vancouver.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: bibtex.bib
+You've used 3 entries,
+            3170 wiz_defined-function locations,
+            666 strings with 5288 characters,
+and the built_in function-call counts, 4938 in all, are:
+= -- 603
+> -- 46
+< -- 1
++ -- 36
+- -- 11
+* -- 399
+:= -- 559
+add.period$ -- 14
+call.type$ -- 3
+change.case$ -- 2
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 380
+empty$ -- 477
+format.name$ -- 13
+if$ -- 1159
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 32
+newline$ -- 20
+num.names$ -- 4
+pop$ -- 60
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 59
+stack$ -- 0
+substring$ -- 909
+swap$ -- 70
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 28
+width$ -- 4
+write$ -- 39
