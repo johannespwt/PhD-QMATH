@@ -21,6 +21,14 @@ Jensen K, Whiteley L, Sand{\o}e P, editors.
 \newblock RCR - A Danish textbook for courses in Responsible Conduct of
   Research.
 \newblock 3rd ed. Department of Food and Resource Economics, University of
-  Copenhagen; 2017.
+  Copenhagen; 2018.
+\newblock Available from: \url{https://ifro.ku.dk/rcr.pdf/}.
+
+\bibitem{Moser_2017}
+Moser T, Seiringer R.
+\newblock Stability of a Fermionic N + 1 Particle System with Point
+  Interactions.
+\newblock Communications in Mathematical Physics. 2017 Aug;356(1):329–355.
+\newblock Available from: \url{http://dx.doi.org/10.1007/s00220-017-2980-0}.
 
 \end{thebibliography}
