@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: notes_on_stability_fermi_gas_point_int.aux
+The style file: amsplain.bst
+Database file #1: bibliography.bib
+You've used 2 entries,
+            2213 wiz_defined-function locations,
+            513 strings with 4343 characters,
+and the built_in function-call counts, 683 in all, are:
+= -- 54
+> -- 36
+< -- 0
++ -- 14
+- -- 12
+* -- 59
+:= -- 117
+add.period$ -- 2
+call.type$ -- 2
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 23
+empty$ -- 55
+format.name$ -- 12
+if$ -- 135
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 5
+newline$ -- 17
+num.names$ -- 4
+pop$ -- 16
+preamble$ -- 2
+purify$ -- 10
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 37
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 6
+warning$ -- 0
+while$ -- 5
+width$ -- 3
+write$ -- 28

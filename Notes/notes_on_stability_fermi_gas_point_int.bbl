@@ -1,0 +1,21 @@
+ \newcommand{\noop}[1]{}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{albeverio2012solvable}
+S.~Albeverio, F.~Gesztesy, R.~Hoegh-Krohn, and H.~Holden, \emph{Solvable models
+  in quantum mechanics}, Theoretical and Mathematical Physics, Springer Berlin
+  Heidelberg, 2012.
+
+\bibitem{FINCO2012131}
+Domenico Finco and Alessandro Teta, \emph{Quadratic forms for the fermionic
+  unitary gas model}, Reports on Mathematical Physics \textbf{69} (2012),
+  no.~2, 131 -- 159.
+
+\end{thebibliography}

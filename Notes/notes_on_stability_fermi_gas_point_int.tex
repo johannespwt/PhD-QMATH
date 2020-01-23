@@ -1,0 +1,277 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+
+\newtheorem{theorem}{Theorem}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Notes on stability of the Fermi gas with point interactions}
+\lhead{Johannes Agerskov}
+\rfoot{Page \thepage \ of \pageref{LastPage}}
+\lfoot{Dated: \today}
+\author{Johannes Agerskov}
+\date{Dated: \today}
+\title{Notes on stability of the Fermi gas with point interactions}
+\begin{document}
+
+	\maketitle
+We study in these notes the Fermi gas, \ie a many-body system of spin-$ \frac{1}{2} $ fermions or more generally just two species of fermions. The specific gas we study is interacting \emph{via.} point interactions \emph{or} zero-range interactions. We will restrict to the case where the two species can have different mass, but all fermions in one species have equal mass. The relevant quantity in this case is the relative mass of the two. Thus by setting the mass of one species to 1 and the mass of the other to $ m $ we have en mass-ratio of $ m $. Formally the system we are studying can thus be described by the Hamiltonian \begin{equation}\label{Formal Hamiltonian}
+H=-\frac{1}{2m}\sum_{j=1}^{M}\Delta_{y_j}-\frac{1}{2}\sum_{i=1}^{N}\Delta_{x_i}+\gamma\sum_{i=1}^{N}\sum_{j=1}^{M}\delta(x_i-y_j),
+\end{equation}
+where $ x_i\in\mathbb{R}^3 $ for all $ i\in\{1,...,N\} $ and $ y_j\in\mathbb{R}^3 $ for all $ j\in\{1,...,M\} $. Notice that we also restrict to the case of equal coupling between all particles. These formally defined Hamiltonians are clearly ill-defined as the $ \delta $-function is a  temperate distribution and thus is only defined on the Schwartz functions. However, restricting the domain to the Schwartz functions will not make the Laplacians self-adjoint, furthermore the codomain of $ \delta $ is not in $ L_2(\mathbb{R}^3) $. Thus no self-adjoint operator of this form exists.
+As a quadratic form $ \braket{\psi|H\psi} $ might make sense. Since the $ \delta $-function only makes sense, at least on continuous functions, there exist no sensible domain of this quadratic form such that it is closed. If such a domain existed both the Laplacian would be closed on it, however, this is only true for $ H_1(\mathbb{R}^3) $ which contains non-continuous functions (defined a.e.)
+
+One way of rigorously studying such formal Hamiltonians is to consider self-adjoint extensions of more well defined Hamiltonians. While this approach is very successful in the $ N=M=1 $ case, it becomes increasingly difficult as the number of self-adjoint extension become infinite already at the $ N=2 $ and $ M=1 $ case.  
+In \cite{FINCO2012131} quadratic forms where developed in order to describe systems of the form \eqref{Formal Hamiltonian}. These quadratic forms are generally more well defined, however their origin and connection the the formal Hamiltonian might be obscured as they need regularization and renormalization procedures to make sense of the point interactions. We will in these notes aim to construct the quadratic form corresponding to the formal expression in \eqref{Formal Hamiltonian}, and show that they can be reaches by considering a sequence of rank one perturbations. We aim at showing that operators corresponding to these rank one perturbations actually converge to the operator of the quadratic form given by \cite{FINCO2012131}. Furthermore, it is our hope that this will shed light on the stability of these systems which has only been shown the cases of  $ (N,M)=(N,1) $ and $ (N,M)=(2,2) $.
+We start out by considering the simpler case which is $ (N,M)=(N,1) $ also denoted the $ N+1 $ case.
+\section{Formal Hamiltonian for the $ N+1 $ case}
+The formal Hamiltonian of \eqref{Formal Hamiltonian} can be rewritten in the $ N+1 $ case by separating the centre of mass. Notice that this indeed already restricts the set of possible self-adjoint Hamiltonians mimicking \eqref{Formal Hamiltonian} as this asserts the translational invariance of the Hamiltonian. Thus this separation of the centre of mass restricts to couplings that are independent of the centre of mass coordinate. Defining the centre of mass and the relative coordinates by\begin{equation}
+X=\frac{my+\sum_{i=1}^{N}x_i}{m+N}, \quad \tilde{x}_i=x_i-y,
+\end{equation}
+we obtain that \begin{equation}\begin{aligned}
+\Delta_{x_i}=\sum_{j=1}^{3}\dd_{x^j_i}\dd_{x^j_i}=\sum_{j=1}^{3}\left(\frac{\dd X^j}{\dd x^j_{i}}\dd_{X^j}+\frac{\dd \tilde{x_i}^j}{\dd x_i^j}\dd_{\tilde{x}_i^j}\right)\left(\frac{\dd X^j}{\dd x^j_{i}}\dd_{X^j}+\frac{\dd \tilde{x_i}^j}{\dd x_i^j}\dd_{\tilde{x}_i^j}\right)\\
+=\frac{1}{(m+N)^2}\Delta_{X}+\Delta_{\tilde{x}_i}+\frac{2}{m+N}\nabla_X\cdot\nabla_{\tilde{x}_i},
+\end{aligned}
+\end{equation}
+\begin{equation}\begin{aligned}
+\Delta_{y}=\sum_{j=1}^{3}\dd_{y^j}\dd_{y^j}=\sum_{j=1}^{3}\left(\frac{\dd X^j}{\dd y^j}\dd_{X^j}+\sum_{i=1}^{N}\frac{\dd \tilde{x_i}^j}{\dd y^j}\dd_{\tilde{x}_i^j}\right)\left(\frac{\dd X^j}{\dd y^j}\dd_{X^j}+\sum_{i=1}^{N}\frac{\dd \tilde{x_i}^j}{\dd y^j}\dd_{\tilde{x}_i^j}\right)\\
+=\frac{m^2}{(m+N)^2}\Delta_{X}+\sum_{i=1}^{N}\Delta_{\tilde{x}_i}+2\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}\nabla_{\tilde{x}_i}\cdot\nabla_{\tilde{x}_j}-\frac{2m}{m+N}\sum_{i=1}^{N}\nabla_X\cdot\nabla_{\tilde{x}_i}.
+\end{aligned}
+\end{equation}
+Thus we get the Hamiltonian \begin{equation}
+H=-\frac{1}{2(m+N)}\Delta_X-\frac{m+1}{2m}\sum_{i=1}^{N}\Delta_{\tilde{x}_i}+\frac{2}{2m}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}\nabla_{\tilde{x}_i}\cdot\nabla_{\tilde{x}_j}+\gamma\sum_{i=1}^{N}\delta(\tilde{x}_i),
+\end{equation}
+which can be recast as \begin{equation}
+H=H_{\text{CM}}+\frac{m+1}{2m}H_{\text{rel}},
+\end{equation}
+with $ H_{\text{CM}}=-\frac{1}{2(m+N)}\Delta_X $ the free centre of mass and the relative Hamiltonian given by \begin{equation}\label{Relative Hamiltonian}
+H_{\text{rel}}=\sum_{i=1}^{N}\Delta_{\tilde{x}_i}+\frac{2}{m+1}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}\nabla_{\tilde{x}_i}\cdot\nabla_{\tilde{x}_j}+\tilde{\gamma}\sum_{i=1}^{N}\delta(\tilde{x}_i),
+\end{equation}
+where $ \tilde{\gamma}=\frac{2m}{m+1}\gamma $. Notice that the problem has now been split in two independent parts and thus we recognize the centre of mass part as the free particle which is solved by the Laplacian being essentially self adjoint on $ C^\infty_c(\mathbb{R}^3) $ functions with self-adjoint extension $ \Delta $ on $ H_2(\mathbb{R}^3) $ where $ \Delta $ acts in the distributional sense. The relative Hamiltonian on the other hand will be the main focus in the first part of these notes.
+\section{The $ 1+1 $ case}
+We are now going to study different ways of rigorously defining the relative Hamiltonian \eqref{Relative Hamiltonian} in the case of $ N=1 $. The first method is easily implemented for $ N=1 $ but is hard to generalize.
+\subsection{Self-adjoint extension}
+The first method we are going to study is that of self-adjoint extension. We thus restrict the formal Hamiltonian to a domain in which it is well defined. This could for example be $ C_c^\infty(\mathbb{R}^3\setminus\{0\}) $. Notice since we have removed $ \{0\} $ the $ \delta $-function has no support on this space and thus vanish. Therefore, we have the relative Hamiltonian \begin{equation}
+H_{\text{rel}}=-\Delta\rvert_{C_c^\infty(\mathbb{R}^3\setminus\{0\})}.
+\end{equation}
+We now seek to extend this operator to a self-adjoint operator on a larger domain. This is possible since $ H_{\text{rel}} $ is symmetric and its closure, denoted $ \dot{H}_{\text{rel}} $ have deficiency indices $ K_+=K_-=1 $, with $ K_\pm=\text{Ran}(H_{\text{rel}}\pm iI)^\perp=\ker(H_{\text{rel}}^*\mp iI) $ where $ H_{\text{rel}}^* $ denotes the adjoint of $ H_{\text{rel}} $. \\
+By definition on the adjoint we have that $ \dom{H_{\text{rel}}^*}=\{f\in L_2(\R^3)\rvert \braket{f|H_{\text{rel}}\cdot} \text{ is bounded on }\dom{H_{\text{rel}}}\} $, where the adjoint of the Laplacian acts as the Laplacian in the distributional sense. We determine first the closure of $ H_{\text{rel}} $. This can be done by taking the adjoint twice. Notice that the domain of the adjoint is $ \dom{H_{\text{rel}}^*}=\{f\in L_2(\R^3)\rvert \braket{f|\Delta\cdot} \text{ is bounded on }C_c^\infty(\R^3\setminus\{0\})\} $. This can be directly calculated to be \begin{equation}
+\dom{H_{\text{rel}}^*}=\{f\in H_{2,\text{loc}}(\R^3\setminus\{0\})\cap L_2(\R^3)\rvert \Delta f \in L_2(\R^3)\}
+\end{equation}
+We emphasise that all elements in $ \dom{H_{\text{rel}}^*} $ should be viewed as distributions in $ H_{2,\text{loc}}(\R^3\setminus\{0\}) $. Therefore the requirement $ \Delta f\in L_2(\R^3) $ does not simply restrict the domain to be $ H_2(\R^3) $ as elements or their derivative (up to second order) can have singular behaviour at $ 0 $, e.g. $ \delta $-functions.
+ Notice that $ C_c^\infty(\mathbb{R}^3\setminus\{0\}) $ is dense in $ L_2(\mathbb{R}^3\setminus\{0\})=L_2(\R^3) $ (only defined a.e).  The domain of the double adjoint is then given by \begin{equation}\begin{aligned}
+\dom{H_{\text{rel}}^{**}}&=\{f\in L_2(\R^3)\rvert \braket{H_{\text{rel}}^*\cdot|f} \text{ is bounded on }\dom{H_{\text{rel}}^*}\}=H^0_2(\R^3\setminus\{0\}),
+\end{aligned}
+\end{equation} 
+where $ \Delta $ acts in the distributional sense and we have defined\begin{equation}
+H_2^0(\R^3\setminus\{0\})=\left\{u\in L_2(\R^3)\ \big\rvert\ \Delta u\in L_2(\R^3)\text{ and } u(x)\to0\wedge\nabla u(x)\to0 \text{ for } |x|\to0\vee |x|\to\infty\right\}.
+\end{equation} Thus we have \begin{equation}
+\dot{H}_{\text{rel}}=-\Delta,\qquad \dom{\dot{H}_{\text{rel}}}=H^0_2(\R^3\setminus\{0\}).
+\end{equation}
+The adjoint of $ \dot{H}_{\text{rel}} $ is simply given by $ \dot{H}_{\text{rel}}^*=H_{\text{rel}}^* $, as the adjoint is already closed. Thus we are ready to find all self-adjoint extensions of $ H_{\text{rel}} $. By the Krein theorem there exist self-adjoint extension if and only if $ \dim\left(\Ran{H_{\text{rel}}-iI}^\perp\right)=\dim\left(\Ran{H_{\text{rel}}+iI}^\perp\right) $ or equivalently $ \dim\left(\ker{\left(H^*_{\text{rel}}+iI\right)}\right)=\dim\left(\ker{\left(H^*_{\text{rel}}-iI\right)}\right) $ thus we seek solutions of the equation \begin{equation}
+H_{\text{rel}}^*\psi_\pm=\pm i \psi_\pm,\quad \psi_\pm\in\dom{H_{\text{rel}}^*}.
+\end{equation}
+The equation $ -\Delta \psi_\pm=\pm i \psi_\pm $ has the unique solution \begin{equation}
+\psi(x)_\pm=\frac{\euler{ i\sqrt{\pm i}|x-y|}}{|x-y|},\qquad x\in\R^3\setminus\{y\}.
+\end{equation}
+In order for this function to be in the domain of $ H_{\text{rel}}^*$ we need to choose $ y=0 $.
+Thus we see that $ \dim\left(\ker{\left(H^*_{\text{rel}}+iI\right)}\right)=\dim\left(\ker{\left(H^*_{\text{rel}}-iI\right)}\right)=1 $. By Krein's extension theorem for symmetric operators we have that there exist a one-parameter family of self-adjoint extensions of $ H_{\text{rel}} $. Parametrizing the family by a complex phase we have the extensions \begin{equation}
+\dom{H_{\text{rel},\theta}}=\left\{ h+c(\xi_++\euler{i\theta}\xi_-)\Big\rvert h\in\dom{\dot{H}_{\text{rel}}},\ c\in\C \right\},
+\end{equation}
+where $ \theta\in[0,2\pi) $, $ \xi_+\in \ker\left(H_{\text{rel}}^*+iI\right),\xi_-\in \ker\left(H_{\text{rel}}^*-iI\right) $ are fixed with $ ||\xi_+||=||\xi_-|| $, and where \begin{equation}
+H_{\text{rel},\theta}(h+\xi_++\euler{i\theta}\xi_-)=H_{\text{rel}}^*(h+\xi_++\euler{i\theta}\xi_-)=h+i(\euler{i\theta}\xi_--\xi_+)
+\end{equation}
+Following the methods of \cite{albeverio2012solvable}, we however now that there is another characterization of these extensions. By decomposing the Hilbert space into spherical coordinates we obtain the decomposition \begin{equation}
+L_2(\R^3,d^3x)=L_2((0,\infty),r^2dr)\otimes L_2(S^2,d\Omega)
+\end{equation}
+Furthermore by decomposing into spherical harmonics we have \begin{equation}
+L_2(\R^3,d^3x)=\bigoplus_{l=0}^{\infty}L_2((0,\infty),r^2dr)\otimes \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l}
+\end{equation}
+Now using the unitary transformation $ U:L_2((0,\infty),r^2dr)\to L_2((0,\infty),dr) $, defined by\\ $ Uf(r)=rf(r) $
+\begin{equation}
+L_2(\R^3,d^3x)=\bigoplus_{l=1}^{\infty}U^{-1}L_2((0,\infty),r^2dr)\otimes \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l}
+\end{equation}
+where $ \braket{...} $ denotes the span. Using the Laplacian in spherical coordinates \begin{equation}
+\Delta\phi=\frac{1}{\sqrt{g}}\partial_i(\sqrt{g}g^{ij}\partial_j(\phi))=\frac{1}{r}\frac{\partial^2}{\partial r^2}(r\phi)+\frac{1}{r^2\sin\varphi}\frac{\partial}{\partial\varphi}(\sin\varphi\frac{\partial\phi}{\partial\varphi})+\frac{1}{r^2\sin^2\varphi}\frac{\partial^2\phi}{\partial^2\theta},
+\end{equation} with the usual notation $ g_{ij} $ the metric, $ g^{ij} $ the inverse metric, $ g=\det(g_{ij}) $ and where $ \theta $ denotes the azimuthal angle and $ \varphi $ the zenith angle, it is straightforward to show that\begin{equation}
+\dot{H}_{\text{rel}}=\bigoplus_{l=0}^{\infty}U^{-1}h_lU\otimes\text{Id}_{\ell}
+\end{equation}
+with $ \text{Id}_\ell $ being the identity on $ \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l} $. Here we have defined \begin{equation}
+h_l=-\frac{d^2}{dr^2}+\frac{l(l+1)}{r^2}
+\end{equation}
+with the domains\begin{equation}
+\begin{aligned}\dom{h_0}=\left\{u\in L_2((0,\infty),dr)|u,u'\in\text{AC}_{\text{loc}}(0,\infty),u''\in L_2((0,\infty),dr), u(0_+)=0, u'(0_+)=0\right\}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+\dom{h_l}=\left\{u\in L_2((0,\infty),dr)|u,u'\in\text{AC}_{\text{loc}}(0,\infty),-u''+l(l+1)r^{-2}u\in L_2((0,\infty),dr)\right\},\quad l\geq 1
+\end{aligned}
+\end{equation}
+Here $ \text{AC}(0,\infty) $ denotes the absolutely continuous functions on $ (0,\infty) $, and $ \text{AC}_{\text{loc}}(0,\infty) $ denotes the locally absolutely continuous functions, \ie AC on all compact intervals. Notice that for $ l\geq1 $ the boundary conditions $ u(0_+)=0, u'(0_+)=0 $ are automatically satisfied by the requirement $ -u''+l(l+1)r^{-2}u\in L_2((0,\infty),dr) $ and continuity of $ u $.
+According to \cite{albeverio2012solvable}, it is a standard result that $ h_l $ is self-adjoint for $ l\geq1 $ However, it is not hard to see that $ h_0 $ has deficiency indices (1,1) and thus admits a one-parameter family of self-adjoint extensions. These extensions can all be characterized in terms of their self-adjoint boundary condition and are given by \begin{equation}
+h_{0,\alpha}=-\frac{d^2}{dr^2},
+\end{equation}
+with domain \begin{equation}
+\begin{aligned}
+\dom{h_0}=\left\{u\in L_2((0,\infty),dr)|u,u'\in\text{AC}_{\text{loc}}(0,\infty),u''\in L_2((0,\infty),dr), -4\pi \alpha u(0_+)+u'(0_+)=0\right\},
+\end{aligned}
+\end{equation}
+with $ \alpha\in (-\infty,\infty]$. The case $ \alpha=\infty $ simply corresponds to the boundary condition $ u(0+)=0 $, which simply implies $\lim\limits_{|x|\to 0}|x|\psi(x)=0$ for all $ \psi\in\dom{H_{\text{rel}}^\infty} $. This is the usual Friedrich extension i.e. $ H_{\text{rel}}^\infty=-\Delta $ with $ \dom{H_{\text{rel}}^\infty}=H_2(\R^3) $, \ie the free particle. 
+$ \alpha $ can be related to $ \theta $ from before by a simple computation:
+Let $ f=h+c(\xi_++\euler{i\theta}\xi_-)\in \dom{H_{\text{rel},\theta}} $ with $ \xi_\pm=\frac{\euler{i\sqrt{\pm i}|x|}}{4\pi |x|}= $ then
+ \begin{equation}
+ \lim\limits_{|x|\to0}|x|f(x)=\frac{c}{4\pi}(1+\euler{i\theta}),\qquad \lim\limits_{|x|\to0}\frac{d}{d|x|}(|x|f(x))=\frac{ic}{4\pi}(\sqrt{i}+\euler{i\theta}\sqrt{-i})
+\end{equation}
+Thus we have \begin{equation}
+4\pi\alpha(1+\euler{i\theta})=i(\sqrt{i}+\euler{i\theta}\sqrt{-i})=\sqrt{i}(i-\euler{i\theta})=(\euler{i\frac{3}{4}}-\euler{i(\theta+\frac{1}{4})})
+\end{equation}
+from which it follows that \begin{equation}
+\begin{aligned}
+\alpha=\frac{(\euler{i\frac{3}{4}}-\euler{i(\theta+\frac{1}{4})})}{4\pi(1+\euler{i\theta})}=\frac{1}{4\pi}\frac{\euler{i(\theta+1)/2}(\euler{-i(\theta-\frac{1}{2})/2}-\euler{i(\theta-\frac{1}{2})/2})}{\euler{i\theta/2}(\euler{-i\theta/2}+\euler{i\theta/2})}=\frac{1}{4\pi}\frac{i(\euler{-i(\theta-\frac{1}{2})/2}-\euler{i(\theta-\frac{1}{2})/2})}{(\euler{-i\theta/2}+\euler{i\theta/2})}\\=\frac{1}{4\pi}\frac{\sin((\theta-\frac{1}{2})/2)}{\cos(\theta/2)}=\frac{1}{4\pi}\frac{-\cos(\theta/2)\sin(\frac{1}{4})+\sin(\theta/2)\cos(\frac{1}{4})}{\cos(\theta/2)}=\frac{1}{4\sqrt{2}\pi}\left(\tan(\theta/2)-1\right)\\
+\end{aligned}
+\end{equation}
+Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and that $ \alpha\to\infty $ when $ \theta\uparrow\pi $. Now we study the the resolvent of these extensions i.e. $ H_{\text{rel}}^{\alpha}=U^{-1}h_{0,\alpha}U\otimes\text{Id}_{0}\oplus\left(\bigoplus_{l=1}^{\infty}U^{-1}h_lU\otimes\text{Id}_{\ell} \right) $. To do this let us briefly summarize Krein's formula. In the following $ \rho(O) $ denotes the resolvent set of the operator $ O $.
+\begin{theorem}[Krein's formula, A.2 in \cite{albeverio2012solvable}]
+	\label{Krein's formula}
+	Let $ B $ and $ C $ be self-adjoint extensions of the densely defined, closed, and symmetric operator $ A $ on the Hilbert space $ H $ with deficiency indices $ (1,1) $. Then their resolvant are related by:\begin{equation}
+	(B-z)^{-1}-(C-z)^{-1}=\lambda(z)\braket{\phi(\bar{z}),\cdot}\phi(z),\qquad z\in\C\setminus\R,
+	\end{equation}
+	where $ \lambda(z)\neq0 $ for $ z\in\rho(B)\cap\rho(C) $ and $\lambda, \phi $ may be  chosen to be analytic functions in $ z\in\rho(B)\cap\rho(C) $. In fact, $ \phi $ may be taken as \begin{equation}
+	\label{phi relation}
+	\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0),\quad z\in \rho(C)
+	\end{equation}
+	with $ \phi(z_0) $, $ z_0\in \C\setminus\R $ being a solution of \begin{equation}
+	A^*\phi(z)=z\phi(z),
+	\end{equation}
+	for $ z=z_0 $. Choosing this $ \phi $, we furthermore have $ \lambda $ satisfying the equation\begin{equation}
+	\lambda(z)^{-1}=\lambda(z')^{-1}-(z-z')\braket{\phi(\bar{z}),\phi(z')},\qquad z,z'\in\rho(B)\cap\rho(C).
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	In order to prove this we remember the Krein extension theorem for densely defined, closed, symmetric operators. We have that the $ B $ and $ C $ are both of the form\begin{equation}\begin{aligned}
+	\dom{B}=\{h+c(\xi_z+\euler{i\theta}\xi_{\bar{z}})\ |\ h\in\dom{A},c\in\C\},\qquad\qquad\qquad\qquad\\
+	B(h+\xi_z+\euler{i\theta}\xi_{\bar{z}})=Ah+\bar{z}\xi_z+\euler{i\theta}z\xi_{\bar{z}},\qquad\qquad\qquad\Imag(z)\neq0,\quad
+	\end{aligned}
+	\end{equation}
+	and 
+	\begin{equation}\begin{aligned}
+	\dom{C}=\{h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}})\ |\ h\in\dom{A},\ c\in\C\},\qquad\qquad\qquad\qquad\\
+	C(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=Ah+\bar{z}\xi_z+\euler{i\theta}z\xi_{\bar{z}}.\qquad\qquad\qquad\Imag(z)\neq0\quad
+	\end{aligned}
+	\end{equation}
+	where $  \xi_z\in\ker(A^*-\bar{z}), \xi_{\bar{z}}\in\ker(A^*-z), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ ||\xi_z||=||\xi_{\bar{z}}|| $,
+	Now for $ z\in\rho(C) $, we know that $ (C-z) $ has full range and thus for $ x\in H $ we write $ x=(C-z)y $. Assuming that $ \Imag(z)\neq0 $ we can write $ y=h+\xi_z+\euler{i\omega}\xi_{\bar{z}}\in\dom{C} $ where we have absorbed the $ c\in\C $ into the $ \xi_z $ and $ \xi_{\bar{z}} $. Consider now \begin{equation}
+	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})-(h+\xi_z+\euler{i\omega}\xi_{\bar{z}}).
+	\end{equation}
+	Clearly $ (B-z)^{-1}(C-z)h=h $ since $ h\in\dom{A} $, and $ C $ and $ B $ are both extension of $ A $. Thus we obtain\begin{equation}
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}((\bar{z}-z)\xi_z)-(\xi_z+\euler{i\omega}\xi_{\bar{z}}).
+	\end{equation}
+	Since we have that $ (B-z)(\xi_z+\euler{i\theta}\xi_{\bar{z}})=(\bar{z}-z)\xi_z $, with $ \xi_z+\euler{i\theta}\xi_{\bar{z}}\in\dom{B} $, we find that \begin{equation}
+	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(\euler{i\theta}-\euler{i\omega})\xi_{\bar{z}},\qquad x=(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=(C-z)h+(\bar{z}-z)\xi_z,
+	\end{equation}
+	and we conclude \begin{equation}
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=\frac{(\euler{i\theta}-\euler{i\omega})}{\bar{z}-z}\braket{\xi_z,x}\xi_{\bar{z}}
+	\end{equation}
+	where we have used that $ (C-z)h=(A-z)h\in\Ran{A-z}\subset\ker(A^*-\bar{z})^\perp $.
+	Parametrizing $ \xi_z $ by $ \xi_{\bar{z}}=\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0) $, with $ \phi(z_0) $ being a solution of $ A^*\phi(z_0)=z_0\phi(z_0) $, we clearly have $ \xi_{\bar{z}}\in\ker(A^*-z) $.\\
+	If $ \Imag(z)=0 $ (\ie $ z=r $ for some $ r\in\R $) then we can write $ x=(C-r)y $ with $ y=h+\xi_{\w}+\euler{i\omega}\xi_{\bar{\w}} $ with $ \w=r+\euler{i(\theta-\omega)/2} $ then we obtain
+	\begin{equation}
+	\begin{aligned}
+	\left((B-r)^{-1}-(C-r)^{-1}\right)x=(B-r)^{-1}((\bar{\w}-r)\xi_{\w}+\euler{i\omega}(\w-r)\xi_{\bar{\w}})-(\xi_\w+\euler{i\omega}\xi_{\bar{\w}})\\
+	=(B-r)^{-1}\euler{i(\omega-\theta)/2}(\xi_{\w}+\euler{i\theta}\xi_{\bar{\w}})-(\xi_\w+\euler{i\omega}\xi_{\bar{\w}})=
+	\end{aligned}
+	\end{equation}
+\end{proof}
+Now we have two self-adjoint extension of $ \dot{H}_{\text{rel}} $, namely $ H_{\text{rel}}^\infty $ and $ H_{\text{rel}}^{\alpha} $. It is easily verified that by imposing $ \alpha=\infty $  We have already found the solution of $ H_{\text{rel}}^*\phi(z)=z\phi(z) $ (although we only found it for $ z=\pm i $) namely\begin{equation}
+\phi(z)(x)=\frac{\euler{i\sqrt{z}|x|}}{4\pi|x|},\qquad \Imag(\sqrt{z})>0,
+\end{equation}
+Furthermore it is a straightforward generalization of this result that the Green function of $ (H_{\text{rel}}^\infty-z) $, \ie the integral kernel of the resolvent $ (H_{\text{rel}}^\infty-z)^{-1} $, is then \begin{equation}
+G_z(x,x')=\frac{\euler{i\sqrt{z}|x-x'|}}{4\pi|x-x'|}.
+\end{equation}
+We immediately see that then\begin{equation}
+\braket{\phi(\bar{z}),\phi(z')}=\frac{1}{4\pi}\int_{(0,\infty)}dr\euler{i(\sqrt{z'}-\overline{\sqrt{\bar{z}}})r}=\frac{1}{4\pi}\frac{-i}{\sqrt{z}-\sqrt{z'}},\qquad \Imag(\sqrt{z'}),\Imag(\sqrt{\bar{z}})>0
+\end{equation}
+Remember that $ \overline{\sqrt{\bar{z}}}\rvert_{\Imag(\sqrt{\bar{z}})>0}=\sqrt{z}|_{\Imag(\sqrt{z})<0}=-\sqrt{z}|_{\Imag(\sqrt{z})>0} $
+so we have \begin{equation}
+\lambda(z)^{-1}-\lambda(z')^{-1}=\frac{i}{4\pi}\frac{z'-z}{\sqrt{z}+\sqrt{z'}}=\frac{i}{4\pi}(\sqrt{z'}-\sqrt{z}),\qquad \Imag(z),\Imag(z')>0
+\end{equation}
+From which it follows that $ \lambda(z)=(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1} $ Furthermore we have from Krein's formula (Theorem \ref{Krein's formula}) that \begin{equation}
+(H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}\braket{\phi(\bar{z}),\cdot}\phi(z),
+\end{equation}
+where we notice that by \eqref{phi relation} we have\begin{equation}
+\begin{aligned}
+(\dot{H}_{\text{rel}}^*-z)\phi(z)=(\dot{H}_{\text{rel}}^*-z)\phi(z_0)+(z-z_0)(\dot{H}_{\text{rel}}^*-z)(H_{\text{rel}}^\infty-z)^{-1}\phi(z_0)&\\
+=(z_0-z)\phi(z_0)+(z-z_0)\phi(z_0)=0&\qquad z\in\rho(H_{\text{rel}}^\infty)
+\end{aligned}
+\end{equation}
+where we used that $ H_{\text{rel}}^\infty $ is a restriction of $ \dot{H}_{\text{rel}}^* $ such that $ (\dot{H}_{\text{rel}}^*-z)(H_{\text{rel}}^\infty-z)^{-1}=\text{Id} $. However from this we conclude that $ \phi(z)=G_{z}(x,0)=\frac{\euler{i\sqrt{z}|x|}}{|x|}, $ $ \Imag(\sqrt{z})>0 $. Thereby we have \begin{equation}
+(H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\kappa+i\sqrt{z})^{-1}\braket{G_{\bar{z}}(\ast,0),\cdot(\ast)}G_z(\cdot,0),\qquad z\in\rho(H_{\text{rel}}^\alpha)\cap\rho(H_{\text{rel}}^\infty),
+\end{equation}
+where the $ \ast $ refers to the integrated variable in the inner product.\\
+In order to determine $ \kappa $, we perform a simple calculation. Let $ u\in\dom{h^\alpha_0} $ Then $ \frac{1}{r}uY_0^0\in\dom{H_\text{rel}^\alpha} $ and we have \begin{equation}
+(H_\text{rel}^\alpha-z)\frac{1}{r}uY_0^0=\left(-\frac{1}{r}\frac{d^2u(r)}{dr^2}-z\frac{1}{r}u(r)\right)Y^0_0
+\end{equation}
+Thus we have \begin{equation}
+\begin{aligned}
+&u(0)=\lim\limits_{r\to0}r\left((H_\text{rel}^\alpha-z)^{-1}(H_\text{rel}^\alpha-z)\frac{1}{r}u\right)(r)\\&=\lim\limits_{r\to0}r4\pi\left(\int_{(0,\infty)}drr \left(-\frac{d^2u}{dr^2}-zu\right)G_z(r,0)+(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}G_z(r,0)\int dr r\overline{G_{\bar{z}}(r,0)}\left(-\frac{d^2u}{dr^2}-zu\right)\right)
+\end{aligned}
+\end{equation}
+Notice that $ \overline{G_{\bar{z}}(r,0)}=G_z(r,0) $ and that $ r4\pi G_z(r,0)=\euler{i\sqrt{z}r} $. By partial integration twice we have
+\begin{equation}
+\int_{(0,\infty)}dr \left(-\euler{i\sqrt{z}r}\frac{d^2}{dr^2}u+u\frac{d^2}{dr^2}\euler{i\sqrt{z}r}\right)=\frac{du}{dr}(0+)-i\sqrt{z}u(0+),
+\end{equation}
+from which we get
+\begin{equation}
+u(0)=(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}\frac{1}{4\pi}\left(\frac{du}{dr}(0+)-i\sqrt{z}u(0+)\right).
+\end{equation}
+By imposing the boundary condition on $ u $ at $ 0 $ we obtain the equation for $ \kappa $\begin{equation}
+1=(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}\frac{1}{4\pi}\left(4\pi\alpha-i\sqrt{z}\right),
+\end{equation}
+Thus that $ \kappa=\alpha $ and we have the resolvent \begin{equation}
+(H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\alpha-\frac{i}{4\pi}\sqrt{z})^{-1}\braket{G_{\bar{z}}(\ast,0),\cdot(\ast)}G_z(\cdot,0),
+\end{equation}
+\bibliographystyle{amsplain}
+\bibliography{bibliography}
+\end{document}
