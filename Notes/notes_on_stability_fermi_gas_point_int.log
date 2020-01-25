@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  23 JAN 2020 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  25 JAN 2020 12:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1123,10 +1123,22 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+(./notes_on_stability_fermi_gas_point_int.toc)
+\tf@toc=\write4
+\openout4 = `notes_on_stability_fermi_gas_point_int.toc'.
+
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (20.57922pt too wide) in paragraph at lines 97--99
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+Overfull \hbox (20.57922pt too wide) in paragraph at lines 99--101
 \OT1/cmr/m/n/10.95 By def-i-ni-tion on the ad-joint we have that $\U/rsfs/m/n/1
 0.95 D [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 f \OMS/
 cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[
@@ -1135,13 +1147,7 @@ cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[2]
-Overfull \hbox (4.31078pt too wide) detected at line 109
+Overfull \hbox (4.31078pt too wide) detected at line 111
 \OML/cmm/m/it/10.95 H[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[] \OMS/cmsy/m/n/1
 0.95 n f\OT1/cmr/m/n/10.95 0\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ) = [] \OML
 /cmm/m/it/10.95 :
@@ -1154,12 +1160,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (1.17459pt too wide) detected at line 151
+Overfull \hbox (1.17459pt too wide) detected at line 153
 [] []
  []
 
 
-Overfull \hbox (10.89026pt too wide) detected at line 160
+Overfull \hbox (10.89026pt too wide) detected at line 162
 [] []
  []
 
@@ -1177,6 +1183,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
+Overfull \hbox (10.59654pt too wide) detected at line 216
+[] \OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = ([][] \OMS/cmsy/m/n/10.95 ^^@ \OT
+1/cmr/m/n/10.95 1)\OML/cmm/m/it/10.95 ^^X[];  x \OT1/cmr/m/n/10.95 = (\OML/cmm/
+m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )(
+\OML/cmm/m/it/10.95 h \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^X[] \OT1/cmr/m
+/n/10.95 + [][]\OML/cmm/m/it/10.95 ^^X[]\OT1/cmr/m/n/10.95 ) = (\OML/cmm/m/it/1
+0.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )\OML/cm
+m/m/it/10.95 h \OT1/cmr/m/n/10.95 + ([] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/1
+0.95 z\OT1/cmr/m/n/10.95 )[][]\OML/cmm/m/it/10.95 ^^X[];
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1184,11 +1201,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Overfull \hbox (32.01248pt too wide) detected at line 260
+Overfull \hbox (32.01248pt too wide) detected at line 294
 [] []
  []
 
-(./notes_on_stability_fermi_gas_point_int.bbl)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7] (./notes_on_stability_fermi_gas_point_int.bbl)
 
 AED: lastpage setting LastPage
 
@@ -1197,13 +1220,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] (./notes_on_stability_fermi_gas_point_int.aux) ) 
+[8] (./notes_on_stability_fermi_gas_point_int.aux) ) 
 Here is how much of TeX's memory you used:
- 25562 strings out of 493029
- 614934 string characters out of 6136233
- 798974 words of memory out of 5000000
- 28608 multiletter control sequences out of 15000+600000
- 16059 words of font info for 64 fonts, out of 8000000 for 9000
+ 25567 strings out of 493029
+ 615042 string characters out of 6136233
+ 797974 words of memory out of 5000000
+ 28610 multiletter control sequences out of 15000+600000
+ 15963 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,77p,971b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-d
@@ -1218,18 +1241,17 @@ mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on notes_on_stability_fermi_gas_point_int.pdf (7 pages, 239438 b
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/r
+sfs10.pfb>
+Output written on notes_on_stability_fermi_gas_point_int.pdf (8 pages, 238575 b
 ytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

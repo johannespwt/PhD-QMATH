@@ -56,6 +56,8 @@
 \begin{document}
 
 	\maketitle
+	\tableofcontents
+\vspace{1cm}
 We study in these notes the Fermi gas, \ie a many-body system of spin-$ \frac{1}{2} $ fermions or more generally just two species of fermions. The specific gas we study is interacting \emph{via.} point interactions \emph{or} zero-range interactions. We will restrict to the case where the two species can have different mass, but all fermions in one species have equal mass. The relevant quantity in this case is the relative mass of the two. Thus by setting the mass of one species to 1 and the mass of the other to $ m $ we have en mass-ratio of $ m $. Formally the system we are studying can thus be described by the Hamiltonian \begin{equation}\label{Formal Hamiltonian}
 H=-\frac{1}{2m}\sum_{j=1}^{M}\Delta_{y_j}-\frac{1}{2}\sum_{i=1}^{N}\Delta_{x_i}+\gamma\sum_{i=1}^{N}\sum_{j=1}^{M}\delta(x_i-y_j),
 \end{equation}
@@ -183,48 +185,80 @@ Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and 
 	\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0),\quad z\in \rho(C)
 	\end{equation}
 	with $ \phi(z_0) $, $ z_0\in \C\setminus\R $ being a solution of \begin{equation}
-	A^*\phi(z)=z\phi(z),
+	A^*\phi(z_0)=z_0\phi(z_0),
 	\end{equation}
-	for $ z=z_0 $. Choosing this $ \phi $, we furthermore have $ \lambda $ satisfying the equation\begin{equation}
+	Choosing this $ \phi $, we furthermore have $ \lambda $ satisfying the equation\begin{equation}
+	\label{lambda relation}
 	\lambda(z)^{-1}=\lambda(z')^{-1}-(z-z')\braket{\phi(\bar{z}),\phi(z')},\qquad z,z'\in\rho(B)\cap\rho(C).
 	\end{equation}
 \end{theorem}
 \begin{proof}
 	In order to prove this we remember the Krein extension theorem for densely defined, closed, symmetric operators. We have that the $ B $ and $ C $ are both of the form\begin{equation}\begin{aligned}
 	\dom{B}=\{h+c(\xi_z+\euler{i\theta}\xi_{\bar{z}})\ |\ h\in\dom{A},c\in\C\},\qquad\qquad\qquad\qquad\\
-	B(h+\xi_z+\euler{i\theta}\xi_{\bar{z}})=Ah+\bar{z}\xi_z+\euler{i\theta}z\xi_{\bar{z}},\qquad\qquad\qquad\Imag(z)\neq0,\quad
+	B(h+\xi_z+\euler{i\theta}\xi_{\bar{z}})=Ah+z\xi_z+\euler{i\theta}\bar{z}\xi_{\bar{z}},\qquad\qquad\qquad\Imag(z)\neq0,\quad
 	\end{aligned}
 	\end{equation}
 	and 
 	\begin{equation}\begin{aligned}
 	\dom{C}=\{h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}})\ |\ h\in\dom{A},\ c\in\C\},\qquad\qquad\qquad\qquad\\
-	C(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=Ah+\bar{z}\xi_z+\euler{i\theta}z\xi_{\bar{z}}.\qquad\qquad\qquad\Imag(z)\neq0\quad
+	C(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=Ah+z\xi_z+\euler{i\omega}\bar{z}\xi_{\bar{z}}.\qquad\qquad\qquad\Imag(z)\neq0\quad
 	\end{aligned}
 	\end{equation}
-	where $  \xi_z\in\ker(A^*-\bar{z}), \xi_{\bar{z}}\in\ker(A^*-z), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ ||\xi_z||=||\xi_{\bar{z}}|| $,
+	where $  \xi_z\in\ker(A^*-z), \xi_{\bar{z}}\in\ker(A^*-\bar{z}), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ ||\xi_z||=||\xi_{\bar{z}}|| $,
 	Now for $ z\in\rho(C) $, we know that $ (C-z) $ has full range and thus for $ x\in H $ we write $ x=(C-z)y $. Assuming that $ \Imag(z)\neq0 $ we can write $ y=h+\xi_z+\euler{i\omega}\xi_{\bar{z}}\in\dom{C} $ where we have absorbed the $ c\in\C $ into the $ \xi_z $ and $ \xi_{\bar{z}} $. Consider now \begin{equation}
 	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})-(h+\xi_z+\euler{i\omega}\xi_{\bar{z}}).
 	\end{equation}
 	Clearly $ (B-z)^{-1}(C-z)h=h $ since $ h\in\dom{A} $, and $ C $ and $ B $ are both extension of $ A $. Thus we obtain\begin{equation}
-		\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}((\bar{z}-z)\xi_z)-(\xi_z+\euler{i\omega}\xi_{\bar{z}}).
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}((\bar{z}-z)\euler{i\omega}\xi_{\bar{z}})-(\xi_z+\euler{i\omega}\xi_{\bar{z}}).
 	\end{equation}
-	Since we have that $ (B-z)(\xi_z+\euler{i\theta}\xi_{\bar{z}})=(\bar{z}-z)\xi_z $, with $ \xi_z+\euler{i\theta}\xi_{\bar{z}}\in\dom{B} $, we find that \begin{equation}
-	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(\euler{i\theta}-\euler{i\omega})\xi_{\bar{z}},\qquad x=(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=(C-z)h+(\bar{z}-z)\xi_z,
+	Since we have that $ (B-z)(\xi_z+\euler{i\theta}\xi_{\bar{z}})=\euler{i\theta}(\bar{z}-z)\xi_{\bar{z}} $, with $ \xi_z+\euler{i\theta}\xi_{\bar{z}}\in\dom{B} $, we find that \begin{equation}
+	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(\euler{i(\omega-\theta)}-1)\xi_{z},\qquad x=(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=(C-z)h+(\bar{z}-z)\euler{i\omega}\xi_{\bar{z}},
 	\end{equation}
 	and we conclude \begin{equation}
-		\left((B-z)^{-1}-(C-z)^{-1}\right)x=\frac{(\euler{i\theta}-\euler{i\omega})}{\bar{z}-z}\braket{\xi_z,x}\xi_{\bar{z}}
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\xi_{\bar{z}},x}}{||\xi_{\bar{z}}||^2}\xi_{z}=\lambda(z,\bar{z})\braket{\phi(\bar{z}),x}\phi(z)
 	\end{equation}
-	where we have used that $ (C-z)h=(A-z)h\in\Ran{A-z}\subset\ker(A^*-\bar{z})^\perp $.
-	Parametrizing $ \xi_z $ by $ \xi_{\bar{z}}=\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0) $, with $ \phi(z_0) $ being a solution of $ A^*\phi(z_0)=z_0\phi(z_0) $, we clearly have $ \xi_{\bar{z}}\in\ker(A^*-z) $.\\
-	If $ \Imag(z)=0 $ (\ie $ z=r $ for some $ r\in\R $) then we can write $ x=(C-r)y $ with $ y=h+\xi_{\w}+\euler{i\omega}\xi_{\bar{\w}} $ with $ \w=r+\euler{i(\theta-\omega)/2} $ then we obtain
-	\begin{equation}
-	\begin{aligned}
-	\left((B-r)^{-1}-(C-r)^{-1}\right)x=(B-r)^{-1}((\bar{\w}-r)\xi_{\w}+\euler{i\omega}(\w-r)\xi_{\bar{\w}})-(\xi_\w+\euler{i\omega}\xi_{\bar{\w}})\\
-	=(B-r)^{-1}\euler{i(\omega-\theta)/2}(\xi_{\w}+\euler{i\theta}\xi_{\bar{\w}})-(\xi_\w+\euler{i\omega}\xi_{\bar{\w}})=
-	\end{aligned}
+	where we have used that $ (C-z)h=(A-z)h\in\Ran{A-z}\subset\ker(A^*-\bar{z})^\perp $, and the fact that by defining $\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0) $, with $ \phi(z_0) $ being a solution of $ A^*\phi(z_0)=z_0\phi(z_0) $, we clearly have $ \phi(z)\in\ker(A^*-z) $ such that $ \phi(z)\parallel\xi_z $.\\
+%	In order to calculate $ \lambda(z,\bar{z}) $ notice that \begin{equation}
+%	\xi_z=\frac{\braket{\phi(z),\xi_z}}{||\phi(z)||^2}\phi(z)
+%	\end{equation}
+%	and that \begin{equation}
+%	\begin{aligned}
+%	\braket{\phi(z),\xi_z}&=\braket{\phi(z_0),\xi_z}+(\bar{z}-\bar{z}_0)\braket{\phi(z_0),(C-\bar{z})^{-1}\xi_z}\\
+%	&=\braket{\phi(z_0),\xi_z}+\frac{\bar{z}-\bar{z}_0}{z-\bar{z}}\braket{\phi(z_0),\xi_z+\euler{i\omega}\xi_{\bar{z}}}
+%	\end{aligned}
+%	\end{equation}
+%	Thus we have \begin{equation}
+%	\begin{aligned}
+%	\braket{\phi(z_0),\phi(z)}=\braket{\phi(z_0),\phi(z_0)}+(z-z_0)\braket{\phi(z_0),(C-z)^{-1}\phi(z_0)}
+%	\end{aligned}
+%	\end{equation}
+%	such that \begin{equation}
+%	\begin{aligned}
+%	\braket{\phi(z),\phi(z)}=\braket{\phi(z_0),\phi(z)}+(\bar{z}-\bar{z}_0)\braket{(C-z)^{-1}\phi(z_0),\phi(z)}\\
+%	=\braket{\phi(z_0),\phi(z)}+(\bar{z}-\bar{z}_0)\braket{\phi(z_0),(C-\bar{z})^{-1}\phi(z)}\\
+%	=\braket{\phi(z_0),\phi(z)}+\frac{(\bar{z}-\bar{z}_0)}{z-\bar{z}}\braket{\phi(z_0),\phi(z)+\euler{i\omega}\phi(\bar{z})}
+%		\end{aligned}
+%	\end{equation}
+%	So\begin{equation}
+%	\begin{aligned}
+%	(\bar{z}-z)\braket{\phi(z),\phi(z)}=(\bar{z}-z)\braket{\phi(z_0),\phi(z)}-(\bar{z}-\bar{z}_0)\left(\braket{\phi(z_0),\phi(z)}+\euler{i\omega}\braket{\phi(z_0),\phi(\bar{z})}\right)\\
+%	=(\bar{z}_0-z)\braket{\phi(z_0),\phi(z)}+(\bar{z}_0-\bar{z})\braket{\phi(z_0),\phi(\bar{z})}
+%	\end{aligned}
+%	\end{equation}
+%	\\
+	We have that $ \lambda $ is given by the formula \begin{equation}
+	\lambda(z,\bar{z})=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\phi(z)\xi_{z}}}{\braket{\phi(\bar{z}),\xi_{\bar{z}}}||\phi(z)||^2}
 	\end{equation}
+	Although it is not clear from this point, that $ \lambda $ can be chosen analytic such that it satisfies \eqref{lambda relation}, we will stop here and leave this part for later. Notice that the above calculation is for fixed $ z $. Thus if we want to vary $ z $, we get that $ \theta $ and $ \omega $ might depend on $ z $ as we may choose $ \xi_z $ and $ \xi_{\bar{z}} $ differently at each $ z $ making a fixed $ \theta $ or $ \omega $ correspond to different extensions for  each $ z $.
+%	Thus \begin{equation}\begin{aligned}
+%	\lambda(z,\bar{z})^{-1}-\lambda(z',\bar{z}')^{-1}=\frac{1}{(\euler{-i\theta}-\euler{-i\omega})}\left((\bar{z}-z)\braket{\phi(z),\phi(z)}-(\bar{z'}-z')\braket{\phi(z'),\phi(z')}\right)\\
+%	=\frac{1}{(\euler{-i\theta}-\euler{-i\omega})}\left((\bar{z}-z)[\braket{\phi(z),\phi(z)}-\braket{\phi(\bar{z}),\phi(z')}+\braket{\phi(\bar{z}),\phi(z')}]-(\bar{z'}-z')\braket{\phi(z'),\phi(z')}\right)
+%	\end{aligned}
+%	\end{equation}
 \end{proof}
-Now we have two self-adjoint extension of $ \dot{H}_{\text{rel}} $, namely $ H_{\text{rel}}^\infty $ and $ H_{\text{rel}}^{\alpha} $. It is easily verified that by imposing $ \alpha=\infty $  We have already found the solution of $ H_{\text{rel}}^*\phi(z)=z\phi(z) $ (although we only found it for $ z=\pm i $) namely\begin{equation}
+Now we have two self-adjoint extension of $ \dot{H}_{\text{rel}} $, namely $ H_{\text{rel}}^\infty $ and $ H_{\text{rel}}^{\alpha} $. It is easily verified that by imposing $ \alpha=\infty $ we obtain the Friedrich extension, given by (see above)\begin{equation}
+\dom{H_{\text{rel}}^\infty}=H_2(\R^3),\qquad H_{\text{rel}}^\infty=-\Delta.
+\end{equation}  We have already found the solution of $ H_{\text{rel}}^*\phi(z)=z\phi(z) $ (although we only found it for $ z=\pm i $) namely\begin{equation}
 \phi(z)(x)=\frac{\euler{i\sqrt{z}|x|}}{4\pi|x|},\qquad \Imag(\sqrt{z})>0,
 \end{equation}
 Furthermore it is a straightforward generalization of this result that the Green function of $ (H_{\text{rel}}^\infty-z) $, \ie the integral kernel of the resolvent $ (H_{\text{rel}}^\infty-z)^{-1} $, is then \begin{equation}
@@ -272,6 +306,33 @@ By imposing the boundary condition on $ u $ at $ 0 $ we obtain the equation for 
 Thus that $ \kappa=\alpha $ and we have the resolvent \begin{equation}
 (H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\alpha-\frac{i}{4\pi}\sqrt{z})^{-1}\braket{G_{\bar{z}}(\ast,0),\cdot(\ast)}G_z(\cdot,0),
 \end{equation}
+We are now ready to study the spectrum of the the operators $ (H_{\text{rel}}^\alpha)_{\{\alpha\in(-\infty,\infty]\}} $. Clearly $ z\in\sigma(H_{\text{rel}}^\alpha) $ if $ z\in\sigma(-\Delta|_{C_c^\infty(\R^3)})=[0,\infty) $. On the other hand we see that if $ \alpha<0 $ then $ z=-(4\pi\alpha)^2\in\sigma(H_{\text{rel}}^\alpha) $. Therefore the spectrum can be characterized as\begin{equation}
+\sigma(H_{\text{rel}}^\alpha)=\begin{cases}
+[0,\infty)&\text{if }\alpha\geq0,\\
+\{-(4\pi\alpha)^2\}\cup[0,\infty)&\text{if }\alpha<0.
+\end{cases}
+\end{equation}
+It is of course an exercise to show that no other points are in the spectrum. We refer to \cite{albeverio2012solvable} for a short proof. 
+Furthermore, we can actually, in the $ \alpha<0 $ case, determine the eigenfunction corresponding to the eigenvalue $ -(4\pi\alpha^2) $. To do this, notice that the domain of $ H_{\text{rel}}^\alpha $ can be written as $ \dom{H_{\text{rel}}^\alpha}=\{w(x)+(\alpha-\frac{i}{4\pi}k)^{-1}w(0)G_{k^2}(x,0)\ |\ w\in H_2(\R^3),\ k^2\in\rho(H_{\text{rel}}^\alpha)\} $ by the fact that \begin{equation}
+\dom{H_{\text{rel}}^\alpha}=(H_{\text{rel}}^\alpha-k^2)^{-1}(H_{\text{rel}}^\infty-k^2)\dom{H_{\text{rel}}^\infty},
+\end{equation}
+where we have used that $ \braket{G_{\bar{z}}(x,0),(H_{\text{rel}}^\infty-z)w}=\braket{(H_{\text{rel}}^\infty-\bar{z})G_{\bar{z}}(x,0),w}=\braket{\delta_0,w}=w(0) $. Notice that $ w\in H_2(\R^3) $ is continuous, so $ w(0) $ makes sense. We thus have the action of $ H_{\text{rel}}^\alpha $\begin{equation}
+(H_{\text{rel}}^\alpha-k^2)(w(x)+(\alpha-\frac{i}{4\pi}k)^{-1}w(0)G_{k^2}(x,0))=(H_{\text{rel}}^\infty-k^2)w(x)=(-\Delta-k^2)w(x).
+\end{equation}
+Now notice that if we fix $ w\in H_2(\R^3) $ such that $ w(0)=1 $ and we define $ (x_n)_{(n\geq1)} $ such that $ x_n\to0 $ as $ n\to\infty $, then $ x_nw\to0 $ in $ L_2(\R^3) $. Furthermore let $ k_n^2\to-(4\pi\alpha)^2 $ such that $ \left(\alpha-ik_n/(4\pi)\right)\frac{1}{x_n}=1 $ for all $ n\geq1 $, then we have \begin{equation}
+(H_{\text{rel}}^\alpha-k_n^2)(x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2})=x_n(-\Delta-k^2)w\to 0\qquad \text{as $ n\to\infty $},
+\end{equation}
+with the notation $ G_{k^2} $ for $ G_{k^2}(x,0) $. Thus we have that \begin{equation}
+\begin{aligned}
+\lim_{n\to\infty}\left(H_{\text{rel}}^\alpha(x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2})\right)=\lim\limits_{n\to\infty}\left(k_n^2(x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2})\right)\\= -(4\pi\alpha)^2G_{-(4\pi\alpha)^2}.
+\end{aligned}
+\end{equation}
+Where we have used that $ k_n^2I\to-(4\pi\alpha)^2I $ in operator norm as $ n\to \infty $ and that $ (k_n^2I)_{(n\geq1)} $ is uniformly bounded. Furthermore, we used that $ G_{k_n^2}\to G_{-(4\pi\alpha)^2} $ in $ L_2(\R^3) $ for $ \alpha<0 $. Thus we conclude that defining $ \chi_n=x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2} $ we have that $ \left(\chi_n\right)_{(n\geq1)}\subset\dom{H_{\text{rel}}^\alpha} $ converges in $ L_2(\R^3) $ to $ G_{-(4\pi\alpha)^2} $ and that $ \left(H_{\text{rel}}^\alpha\chi_n\right)_{(n\geq1)} $ converges in $ L_2(\R^3) $ to $ -(4\pi\alpha)^2G_{-(4\pi\alpha)^2} $. By closedness of the self-adjoint operator $ H_{\text{rel}}^\alpha $ we conclude that $ G_{-(4\pi\alpha)^2}\in\dom{H_{\text{rel}}^\alpha} $ and that\begin{equation}
+H_{\text{rel}}^\alpha G_{-(4\pi\alpha)^2}=-(4\pi\alpha)^2G_{-(4\pi\alpha)^2}.
+\end{equation}
+Thus $ G_{-(4\pi\alpha)^2} $ is the eigenfunction corresponding to the bound state with energy $ -(4\pi\alpha)^2 $.
+\subsection{Quadratic form}
+\section{$ \Gamma $-convergence}
 \bibliographystyle{amsplain}
 \bibliography{bibliography}
 \end{document}
