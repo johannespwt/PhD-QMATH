@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bbm}
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{centernot}
@@ -195,16 +196,16 @@ Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and 
 \begin{proof}
 	In order to prove this we remember the Krein extension theorem for densely defined, closed, symmetric operators. We have that the $ B $ and $ C $ are both of the form\begin{equation}\begin{aligned}
 	\dom{B}=\{h+c(\xi_z+\euler{i\theta}\xi_{\bar{z}})\ |\ h\in\dom{A},c\in\C\},\qquad\qquad\qquad\qquad\\
-	B(h+\xi_z+\euler{i\theta}\xi_{\bar{z}})=Ah+z\xi_z+\euler{i\theta}\bar{z}\xi_{\bar{z}},\qquad\qquad\qquad\Imag(z)\neq0,\quad
+	B(h+c(\xi_z+\euler{i\theta}\xi_{\bar{z}}))=Ah+c(z\xi_z+\euler{i\theta}\bar{z}\xi_{\bar{z}}),\qquad\qquad\qquad\Imag(z)\neq0,\quad
 	\end{aligned}
 	\end{equation}
 	and 
 	\begin{equation}\begin{aligned}
 	\dom{C}=\{h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}})\ |\ h\in\dom{A},\ c\in\C\},\qquad\qquad\qquad\qquad\\
-	C(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=Ah+z\xi_z+\euler{i\omega}\bar{z}\xi_{\bar{z}}.\qquad\qquad\qquad\Imag(z)\neq0\quad
+	C(h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}}))=Ah+c(z\xi_z+\euler{i\omega}\bar{z}\xi_{\bar{z}}).\qquad\qquad\qquad\Imag(z)\neq0\quad
 	\end{aligned}
 	\end{equation}
-	where $  \xi_z\in\ker(A^*-z), \xi_{\bar{z}}\in\ker(A^*-\bar{z}), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ ||\xi_z||=||\xi_{\bar{z}}|| $,
+	where $  \xi_z\in\ker(A^*-z), \xi_{\bar{z}}\in\ker(A^*-\bar{z}), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ ||\xi_z||=||\xi_{\bar{z}}||=1 $,
 	Now for $ z\in\rho(C) $, we know that $ (C-z) $ has full range and thus for $ x\in H $ we write $ x=(C-z)y $. Assuming that $ \Imag(z)\neq0 $ we can write $ y=h+\xi_z+\euler{i\omega}\xi_{\bar{z}}\in\dom{C} $ where we have absorbed the $ c\in\C $ into the $ \xi_z $ and $ \xi_{\bar{z}} $. Consider now \begin{equation}
 	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})-(h+\xi_z+\euler{i\omega}\xi_{\bar{z}}).
 	\end{equation}
@@ -249,7 +250,8 @@ Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and 
 	We have that $ \lambda $ is given by the formula \begin{equation}
 	\lambda(z,\bar{z})=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\phi(z)\xi_{z}}}{\braket{\phi(\bar{z}),\xi_{\bar{z}}}||\phi(z)||^2}
 	\end{equation}
-	Although it is not clear from this point, that $ \lambda $ can be chosen analytic such that it satisfies \eqref{lambda relation}, we will stop here and leave this part for later. Notice that the above calculation is for fixed $ z $. Thus if we want to vary $ z $, we get that $ \theta $ and $ \omega $ might depend on $ z $ as we may choose $ \xi_z $ and $ \xi_{\bar{z}} $ differently at each $ z $ making a fixed $ \theta $ or $ \omega $ correspond to different extensions for  each $ z $.
+Notice that the above calculation is for fixed $ z $. Thus if we want to vary $ z $, we get that $ \theta $ and $ \omega $ might depend on $ z $ as we may choose $ \xi_z $ and $ \xi_{\bar{z}} $ differently at each $ z $ making a fixed $ \theta $ or $ \omega $ correspond to different extensions for  each $ z $.
+ The fact that $ \lambda $ is analytic stems from the fact that all matrix elements of the resolvents are analytic in their resolvent sets and that we have chosen $ \phi(z) $ such that $ \braket{\phi(\bar{z}),x} $ is analytic for all $ x\in H $. To show that $ \lambda $ satisfies \eqref{lambda relation} is simply a long computation and we refer to appendix \ref{Lambda calculation} for the computation. 
 %	Thus \begin{equation}\begin{aligned}
 %	\lambda(z,\bar{z})^{-1}-\lambda(z',\bar{z}')^{-1}=\frac{1}{(\euler{-i\theta}-\euler{-i\omega})}\left((\bar{z}-z)\braket{\phi(z),\phi(z)}-(\bar{z'}-z')\braket{\phi(z'),\phi(z')}\right)\\
 %	=\frac{1}{(\euler{-i\theta}-\euler{-i\omega})}\left((\bar{z}-z)[\braket{\phi(z),\phi(z)}-\braket{\phi(\bar{z}),\phi(z')}+\braket{\phi(\bar{z}),\phi(z')}]-(\bar{z'}-z')\braket{\phi(z'),\phi(z')}\right)
@@ -313,7 +315,7 @@ We are now ready to study the spectrum of the the operators $ (H_{\text{rel}}^\a
 \end{cases}
 \end{equation}
 It is of course an exercise to show that no other points are in the spectrum. We refer to \cite{albeverio2012solvable} for a short proof, and further classification of different parts of the spectrum, \ie point-, singular continuous-, and absolute continuous spectrum. 
-We note that for $ \alpha<0 $ the point in the spectrum $ \{-(4\pi\alpha)^2\} $ is actually an eigenvalue (a part of the point spectrum). Furthermore, we can actually, in the $ \alpha<0 $ case, determine the eigenfunction corresponding to the eigenvalue $ -(4\pi\alpha^2) $. To do this, notice that the domain of $ H_{\text{rel}}^\alpha $ can be written as $ \dom{H_{\text{rel}}^\alpha}=\{w(x)+(\alpha-\frac{i}{4\pi}k)^{-1}w(0)G_{k^2}(x,0)\ |\ w\in H_2(\R^3),\ k^2\in\rho(H_{\text{rel}}^\alpha)\} $ by the fact that \begin{equation}
+We note that for $ \alpha<0 $ the point in the spectrum $ \{-(4\pi\alpha)^2\} $ is actually an eigenvalue (a part of the point spectrum). Furthermore, we can actually, in the $ \alpha<0 $ case, determine the eigenfunction corresponding to the eigenvalue $ -(4\pi\alpha^2) $. To do this, notice that the domain of $ H_{\text{rel}}^\alpha $ can be written as $ \dom{H_{\text{rel}}^\alpha}=\{w(x)+(\alpha-\frac{i}{4\pi}k)^{-1}w(0)G_{k^2}(x,0)\ |\ w\in H_2(\R^3),\ k^2\in\rho(H_{\text{rel}}^\alpha)\} $ for $ k\in\rho(H_{\text{rel}}^\alpha)\cap(H_{\text{rel}}^\alpha) $ by the fact that \begin{equation}
 \dom{H_{\text{rel}}^\alpha}=(H_{\text{rel}}^\alpha-k^2)^{-1}(H_{\text{rel}}^\infty-k^2)\dom{H_{\text{rel}}^\infty},
 \end{equation}
 where we have used that $ \braket{G_{\bar{z}}(x,0),(H_{\text{rel}}^\infty-z)w}=\braket{(H_{\text{rel}}^\infty-\bar{z})G_{\bar{z}}(x,0),w}=\braket{\delta_0,w}=w(0) $. Notice that $ w\in H_2(\R^3) $ is continuous, so $ w(0) $ makes sense. We thus have the action of $ H_{\text{rel}}^\alpha $\begin{equation}
@@ -330,9 +332,132 @@ with the notation $ G_{k^2} $ for $ G_{k^2}(x,0) $. Thus we have that \begin{equ
 Where we have used that $ k_n^2I\to-(4\pi\alpha)^2I $ in operator norm as $ n\to \infty $ and that $ (k_n^2I)_{(n\geq1)} $ is uniformly bounded. Furthermore, we used that $ G_{k_n^2}\to G_{-(4\pi\alpha)^2} $ in $ L_2(\R^3) $ for $ \alpha<0 $. Thus we conclude that defining $ \chi_n=x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2} $ we have that $ \left(\chi_n\right)_{(n\geq1)}\subset\dom{H_{\text{rel}}^\alpha} $ converges in $ L_2(\R^3) $ to $ G_{-(4\pi\alpha)^2} $ and that $ \left(H_{\text{rel}}^\alpha\chi_n\right)_{(n\geq1)} $ converges in $ L_2(\R^3) $ to $ -(4\pi\alpha)^2G_{-(4\pi\alpha)^2} $. By closedness of the self-adjoint operator $ H_{\text{rel}}^\alpha $ we conclude that $ G_{-(4\pi\alpha)^2}\in\dom{H_{\text{rel}}^\alpha} $ and that\begin{equation}
 H_{\text{rel}}^\alpha G_{-(4\pi\alpha)^2}=-(4\pi\alpha)^2G_{-(4\pi\alpha)^2}.
 \end{equation}
-Thus $ G_{-(4\pi\alpha)^2} $ is the eigenfunction corresponding to the bound state with energy $ -(4\pi\alpha)^2 $.
+Thus $ G_{-(4\pi\alpha)^2} $ is the eigenfunction corresponding to the bound state with energy $ -(4\pi\alpha)^2 $. We have thus constructed the Hamiltonian of the point-interaction in $ 3d $. We have seen that the parameter $ \alpha $, in some sense, controls the strength of the interaction, \ie $ \alpha=\infty $ is the free particle, and $ \alpha<0 $ is the attractive point-interaction, since it has a bound state. By doing a analysis of the scattering theory of $ H_{\text{rel}}^\alpha $ one finds that $ -4\pi\alpha=\frac{1}{a} $, where $ a $ denotes the scattering length of the interaction. 
 \subsection{Quadratic form}
+An alternative way of studying the point interaction is by the means of quadratic forms. In \cite{FINCO2012131}, the quadratic form, $ F_\alpha $ describing a gas of point interacting fermions was obtained. It is a well-known result that if such a quadratic form is closed and bounded from below, then the corresponding operator is a bounded from below, self-adjoint operator. On the other hand it was proven in \cite{FINCO2012131} that if the quadratic form $ F_\alpha $ is not bounded from below, then the corresponding operator is not bounded from below and self-adjoint. The quadratic form was initially introduced by means of renormalization. On the other hand it is more clearly introduced as a rank-one perturbation of the free quadratic form. We write the rank-one perturbation as $ \gamma\braket{\phi,\cdot}\phi $. Thus we imagine perturbing the Hamiltonian as $ H=H_0-\gamma\braket{\phi,\cdot}\phi $. For the point interaction we do this by simply projecting onto a ball $ B_R(0) $, \ie the ball of radius $ R $ centred at $ 0 $, in momentum space \ie\begin{equation}
+\widehat{Hu}=\widehat{H_0u}-\mathbbm{1}_{B_R(0)}\frac{\gamma}{(2\pi)^3}\int_{B_R(0)}\!\!\!\!\!\!\!\!d^3p\ \hat{u}(p)=H_0u-\mathbbm{1}_{B_R(0)}\frac{\gamma}{(2\pi)^3}\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!\!\!\! d^3p\ \hat{u}(k+p).
+\end{equation}
+Thus we obtain the quadratic form\begin{equation}
+F^R_\gamma(\hat{u})=\int_{\R^3} d^3k\ \left(\bar{\hat{u}}(k)(k^2)\hat{u}(k)-\frac{\gamma}{(2\pi)^3}\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!\!\!\! d^3p\ \bar{\hat{u}}(k) \hat{u}(k+p)\right).
+\end{equation}
+This can be rewritten in the following form\begin{equation}
+	\begin{aligned}
+	F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
+	+2\Real \int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)-\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k),
+	\end{aligned}
+\end{equation}
+where $ \mu>0 $ and we have defined
+\begin{equation}
+\begin{aligned}
+\hat{G}(k)=\frac{1}{k^2+\mu},\qquad \hat{\rho}^R(k)=\gamma_R\mathbbm{1}_{B_R(0)}(k)\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!d^3p\ \hat{u}(k+p) =\mathbbm{1}_{B_R(0)}(k)\xi_R,\\
+\xi_R=\gamma_R\int_{B_R(0)} d^3p\ \hat{u}(p),\qquad\qquad\qquad\qquad\qquad\qquad
+\end{aligned}
+\end{equation}
+furthermore, $ \widehat{G\rho^R}(k)=\hat{G}(k)\hat{\rho^R}(k) $ and $ \gamma_R=\frac{\gamma}{(2\pi)^3} $, which we have allowed to depend on $ R $, since it will need to be renormalized eventually. Now straightforward calculation shows that \begin{equation}
+\begin{aligned}
+\overline{\int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)}=\int_{\R^3} d^3k\ \overline{ \bar{\hat{u}}(k)\hat{\rho}^R(k)}=\gamma_R\int_{B_R(0)} d^3k\ \hat{u}(k) \int_{B_R(0)} d^3p\ \bar{\hat{u(p)}} \\
+=\gamma_R\int_{B_R(0)} d^3k\ \bar{\hat{u}}(k) \int_{B_R(0)} d^3p\ \hat{u(p)}=\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k)=\int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k),
+\end{aligned}
+\end{equation}
+such that $ 2\Real \int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)=2\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k) $. Thereby we find the quadratic form\begin{equation}
+\begin{aligned}
+F_\gamma^R(u)&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
+&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ \int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k)\\
+&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}-|\xi_R|^2\int_{B_R(0)} d^3k \hat{G}(k)
++ \gamma_R^{-1}|\xi_R|^2.
+\end{aligned}
+\end{equation}
+Now by computing the \begin{equation}
+\begin{aligned}
+\int_{B_R(0)}\hat{G}=4\pi\int_{0}^{R}dr\ \frac{r^2}{r^2+\mu}=4\pi\sqrt{\mu}\int_{0}^{R/\sqrt{\mu}}dq\ \frac{q^2}{q^2+1}=4\pi\sqrt{\mu}\left(\frac{R}{\sqrt{\mu}}-\int_{0}^{R/\sqrt{\mu}}dq\ \frac{1}{q^2+1}\right)\\=4\pi\left(R-\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right).
+\end{aligned}
+\end{equation}
+Thereby we have the quadratic form\begin{equation}
+\begin{aligned}
+F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}\\-|\xi_R|^2\left(4\pi R-4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)-\gamma_R^{-1}\right).
+\end{aligned}
+\end{equation}
+Since we are interested in the limit $ R\to\infty $ (corresponding to localizing the interaction to a point) we choose $ \gamma_R $ such that the divergence in $ R $ disappears. Choosing the coupling $ \gamma_R^{-1}=4\pi R+\alpha $ we obtain the final quadratic form\begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
+\end{aligned}
+\end{equation}
+with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $. Notice, that the domain of this quadratic form is \begin{equation}
+\dom{F_\alpha^R}=\left\{u\in L_2(\R^3)\ |\ w\in H_1(\R^3) \right\}
+\end{equation} Heuristically, we can take the limit $ R\to\infty $. This is done by noticing that for $ w\in H_1(\R^3) $ we have that $ \hat{w}(k)=\frac{\hat{f}(k)}{(|k|^2+1)^{\frac{1}{2}}} $ for some $ f\in L_2(\R^3) $. By H\"older's inequality $ (2,2) $ we thus see \begin{equation}
+\int_{B_R(0)} \hat{w}\leq\left(\int_{B_R(0)}\left\lvert\frac{1}{|k|^2+1}\right\rvert^2 \right)^{\frac{1}{2}}||f||_2\lesssim\sqrt{R}
+\end{equation}
+where by $ f(x)\lesssim g(x)$ we mean that there exist some constant $ C\in\R $ such that $ f(x)\leq Cg(x) $. Thus we see that the equation for $ \xi_R $ \begin{equation}
+\xi_R=\frac{1}{(4\pi R+\alpha)}\int_{B_R(0)}\left(\hat{w}+\widehat{G\rho^R}\right)=\frac{1}{(4\pi R+\alpha)}\int_{B_R(0)}\left(\hat{w}+\xi_R\hat{G}\right),
+\end{equation} becomes in the limit $ R\to\infty $ the equation $ \xi_R=\xi_R $. Thus any choice of $ \xi_R $ is consistent and simply let it be a free parameter $ \xi_R=\xi\in\C $. We also see that in the limit $ R\to\infty $ we have that $ \arctan\left(R/\sqrt{\mu}\right)\to\frac{\pi}{2} $. Thus we get the quadratic form\begin{equation}
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)
+\end{equation}
+with domain\begin{equation}
+\dom{F_\alpha(u)}=\left\{u\in L_2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H_1(\R^3),\ \xi\in\C \right\}
+\end{equation}
+which matches the expression of \cite{Moser_2017} in the $ N=M=1 $ case.
+\subsection{Hamiltonian from quadratic form}
+We are in this subsection going to construct the Hamiltonian for the point interactions from the quadratic form. This will serve both as an example of how obtain the Hamiltonian given its quadratic form, but also as a motivation that the quadratic form given in the previous section is indeed equivalent to the the self-adjoint extension $ H_{\text{rel}}^\alpha $.
 \section{$ \Gamma $-convergence}
+\appendix
+\section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
+\label{Lambda calculation}
+To show the relation of $ \lambda(z,\bar{z}) $ we use the following properties established in the proof in the main text. We have that \begin{equation}\label{Krein relation 1}
+(B-z)^{-1}-(C-z)^{-1}=\lambda(z)\braket{\phi(\bar{z}),\cdot}\phi(z),
+\end{equation}
+where we have already used that $ \lambda(z,\bar{z})=\lambda(z) $, and where we have defined \begin{equation}\label{Krein relation 2}
+\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0),
+\end{equation}
+for some $ \phi(z_0) $ satisfying $ A^*\phi(z_0)=z_0\phi(z_0) $. \\
+In the following we will switch to bra-ket notation to simplify the calculations and ease the notation. Now let us consider the relation \begin{equation}
+(B-z)^{-1}=(C-z)^{-1}+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}.
+\end{equation}
+By multiplying this relation with itself, but with $ z' $ instead of $ z $ we get\begin{equation}
+\begin{aligned}
+(B-z)^{-1}(B-z')^{-1}=(C-z)^{-1}(C-z')^{-1}+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}(C-z')^{-1}\\+\lambda(z')(C-z)^{-1}\ket{\phi(z')}\bra{\phi(\bar{z}')}+\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z')}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Now using that $ (B-z)^{-1}-(B-z')^{-1}=(z-z')(B-z)^{-1}(B-z')^{-1} $ and the same relation for $ C $ we get, by multiplying through with $ (z-z') $ that \begin{equation}
+\begin{aligned}
+(B-z)^{-1}-(B-z')^{-1}-(C-z)^{-1}+(C-z')^{-1}=\qquad\qquad\qquad\qquad\qquad\qquad\\(z-z')\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}(C-z')^{-1}+(z-z')\lambda(z')(C-z)^{-1}\ket{\phi(z')}\bra{\phi(\bar{z}')}\\+(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Using again the relation \eqref{Krein relation 1} we obtain\begin{equation}
+\begin{aligned}
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}-\lambda(z')\ket{\phi(z')}\bra{\phi(\bar{z}')}=\qquad\qquad\qquad\qquad\qquad\quad\qquad\qquad\qquad\\(z-z')\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}(C-z')^{-1}+(z-z')\lambda(z')(C-z)^{-1}\ket{\phi(z')}\bra{\phi(\bar{z}')}\\+(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}
+\end{aligned}
+\end{equation}
+from which we obtain by simple rearrangement \begin{equation}
+\begin{aligned}
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}\left(I-(z-z')(C-z')^{-1}\right)-\lambda(z')\left(I-(z'-z)(C-z)^{-1}\right)\ket{\phi(z')}\bra{\phi(\bar{z}')}=\\(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}
+\end{aligned}
+\end{equation}
+Notice now that \begin{equation}
+\left(I-(z-z')(C-z')^{-1}\right)=(C-z')^{-1}(C-z),\quad\text{and}\quad \left(I-(z'-z)(C-z)^{-1}\right)=(C-z')(C-z)^{-1}.
+\end{equation}
+Now clearly by \eqref{Krein relation 2} we have \begin{equation}
+(C-z')(C-z)^{-1}\phi(z')=(C-z')(C-z)^{-1}\phi(z_0)+(z'-z_0)(C-z)^{-1}\phi(z_0)
+\end{equation}
+where we have used that $ (C-z')(C-z)^{-1}h=(C-z)^{-1}(C-z')h $ whenever $ h\in\dom{(C-z')} $. By using that  $ (C-z')(C-z)^{-1}=I+(z-z')(C-z)^{-1} $ we obtain\begin{equation}
+(C-z')(C-z)^{-1}\phi(z')=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0)=\phi(z).
+\end{equation}
+By a similar computation we have \begin{equation}
+(C-z)(C-z')^{-1}\phi(z)=\phi(z_0)+(z'-z_0)(C-z')^{-1}\phi(z_0)=\phi(z'),
+\end{equation}
+and thus we obtain\begin{equation}
+\begin{aligned}
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}\left(I-(z-z')(C-z')^{-1}\right)-\lambda(z')\left(I-(z'-z)(C-z)^{-1}\right)\ket{\phi(z')}\bra{\phi(\bar{z}')}=\\
+\lambda(z)\ket{\phi(z)}\bra{\left(I-(\bar{z}-\bar{z}')(C-\bar{z}')^{-1}\right)\phi(\bar{z})}-\lambda(z')\ket{\left(I-(z'-z)(C-z)^{-1}\right)\phi(z')}\bra{\phi(\bar{z}')}=\\
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z}')}-\lambda(z')\ket{\phi(z)}\bra{\phi(\bar{z}')}=(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Observing the last line in the above calculation we observe that we have the relation\begin{equation}
+\lambda(z)-\lambda(z')=\lambda(z)\lambda(z')(z-z')\braket{\phi(\bar{z}),\phi(z')},
+\end{equation}
+which is equivalent to the relation\begin{equation}
+\lambda(z)^{-1}-\lambda(z')^{-1}=-(z-z')\braket{\phi(\bar{z}),\phi(z')}.
+\end{equation}
+This proves equation \eqref{lambda relation}
 \bibliographystyle{amsplain}
 \bibliography{bibliography}
 \end{document}
