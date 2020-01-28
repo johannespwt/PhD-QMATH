@@ -4,5 +4,5 @@
 \contentsline {subsection}{\numberline {2.1}Self-adjoint extension}{3}
 \contentsline {subsection}{\numberline {2.2}Quadratic form}{9}
 \contentsline {subsection}{\numberline {2.3}Hamiltonian from quadratic form}{11}
-\contentsline {section}{\numberline {3}$ \Gamma $-convergence}{13}
-\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{13}
+\contentsline {section}{\numberline {3}$ \Gamma $-convergence}{14}
+\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{14}

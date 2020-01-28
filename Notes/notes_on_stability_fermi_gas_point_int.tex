@@ -442,31 +442,31 @@ For $ u,v \in\dom{H_\alpha} $. Notice that \begin{equation}
 \dom{H_\alpha^*}&=\{v\in \dom{F_\alpha}\ |\ \braket{H_\alpha \cdot, v}\text{ is bounded on } \dom{H_\alpha} \}\\&=\{v\in L_2(\R^3)\ |\ F_\alpha(\cdot,v) \text{ is bounded on } \dom{H_\alpha} \}.
 \end{aligned}
 \end{equation}
-Assuming that $ \dom{H_\alpha} $ is dense in $ \dom{F_\alpha} $ we then have $ \dom{H_\alpha^*}=\dom{H_\alpha} $ and the operator, $ H_\alpha $, is self-adjoint. It is a general fact that $ \dom{H_\alpha} $ is dense whenever $ F_\alpha $ is closed. Thus we are now ready to calculate the Hamiltonian of the quadratic form $ F_\alpha $. Notice that by the definition of $ \dom{H_\alpha} $ we must have that for $ v\in\dom{H_\alpha} $ and $  (u_n)_{n\geq1}\subset\dom{F_\alpha} $  such that $ u_n\to0 $ in $ L_2(\R^3) $ it holds that  $ F_\alpha(v,u_n)\to 0 $. Thus by writing $ v=h+\chi G $ with $ h\in H_1(\R^3) $ and $ \chi\in\C $ and $ u_n=w_n+\xi G\in\dom{F_\alpha} $, with $ w_n\in H_1(\R^3) $ such that $ w_n\to-\xi G $ in $ L_2(\R^3) $ we have \begin{equation}
-F(v,u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{h}(k)}\hat{w}_n(k)-\mu\braket{v,u_n}_{L_2(\R^3)}+\bar{\chi}\xi\left(\alpha+2\pi^2\sqrt{\mu}\right).
+Assuming that $ \dom{H_\alpha} $ is dense in $ \dom{F_\alpha} $ we then have $ \dom{H_\alpha^*}=\dom{H_\alpha} $ and the operator, $ H_\alpha $, is self-adjoint. It is a general fact that $ \dom{H_\alpha} $ is dense whenever $ F_\alpha $ is closed. Thus we are now ready to calculate the Hamiltonian of the quadratic form $ F_\alpha $. Notice that by the definition of $ \dom{H_\alpha} $ we must have that for $ u\in\dom{H_\alpha} $ and $  (v_n)_{n\geq1}\subset\dom{F_\alpha} $  such that $ v_n\to0 $ in $ L_2(\R^3) $ it holds that  $ F_\alpha(v,u_n)\to 0 $. Thus by writing $ u=w+\xi G $ with $ w\in H_1(\R^3) $ and $ \xi\in\C $ and $ v_n=h_n+\chi G\in\dom{F_\alpha} $, with $ h_n\in H_1(\R^3) $ such that $ h_n\to-\chi G $ in $ L_2(\R^3) $ we have \begin{equation}
+F(u,v_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}_n(k)-\mu\braket{u,v_n}_{L_2(\R^3)}+\bar{\xi}\chi\left(\alpha+2\pi^2\sqrt{\mu}\right).
 \end{equation}
-We immediately see that for the first term to be $ L_2(\R^3) $ bounded in $ w $ we must have that $ h\in H_2(\R^3) $. Secondly since the first term is $ L_2(\R^3) $ bounded we must have \begin{equation}
-\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{h}(k)}\hat{w}_n(k)\to-\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{h}(k)}\xi \hat{G}(k)=-\xi\int_{\R^3} d^3k\ \overline{\hat{h}(k)}\quad \text{as }n\to\infty.
+We immediately see that for the first term to be $ L_2(\R^3) $ bounded in $ h_n $ we must have that $ w\in H_2(\R^3) $. Secondly since the first term is $ L_2(\R^3) $ bounded we must have \begin{equation}
+\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}_n(k)\to-\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\chi \hat{G}(k)=-\chi\int_{\R^3} d^3k\ \overline{\hat{w}(k)}\quad \text{as }n\to\infty.
 \end{equation} 
 The second term obviously goes to zero by continuity of the inner product. Thus we need to estimate $ \int_{\R^3}\hat{h} $. This is done in the following lemma.
 \begin{lemma}
-	Let $ h\in H_2(\R^3) $ then $ h $ is continuous and $ \frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{h}(k)e^{ik\cdot x}=h(x) $.
+	Let $ w\in H_2(\R^3) $, then $ w $ is continuous and $ \frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{w}(k)e^{ik\cdot x}=w(x) $.
 \end{lemma}
 \begin{proof}
-	First that $ h $ is continuous follows from Sobolev's embedding theorem. Next notice that since $ h\in H_2(\R^3) $ we must have that \begin{equation}
-	\hat{h}(k)=\frac{\hat{f}(k)}{|k|^2+1},
+	First that $ w $ is continuous follows from Sobolev's embedding theorem. Next notice that since $ w\in H_2(\R^3) $ we must have that \begin{equation}
+	\hat{w}(k)=\frac{\hat{f}(k)}{|k|^2+1},
 	\end{equation}
-	for some $ \hat{f}\in L_2(\R^3) $. Thus we also see that $ \hat{h} $ is clearly in $ L_1(\R^3) $ by H\"older's inequality and the fact that $ \frac{1}{|k|^2+1}\in L_2(\R^3) $ and therefore $ \check{\hat{h}} $ is bounded and continuous. By Fourier's inversion theorem we have that $ \check{\hat{h}}=h $ a.e, and by continuity of $ h $, we conclude that $ \check{\hat{h}}=h $. Since $ \hat{h}\in L_1(\R^3) $ this amounts to \begin{equation}
-	\frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{h}(k)e^{ik\cdot x}=h(x) 
+	for some $ \hat{f}\in L_2(\R^3) $. Thus we also see that $ \hat{w} $ is clearly in $ L_1(\R^3) $ by H\"older's inequality and the fact that $ \frac{1}{|k|^2+1}\in L_2(\R^3) $ and therefore $ \check{\hat{w}} $ is bounded and continuous. By Fourier's inversion theorem we have that $ \check{\hat{w}}=w $ a.e, and by continuity of $ w $, we conclude that $ \check{\hat{w}}=w $. Since $ \hat{w}\in L_1(\R^3) $ this amounts to \begin{equation}
+	\frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{w}(k)e^{ik\cdot x}=w(x) 
 	\end{equation}
 \end{proof}
 Now given the above lemma we clearly see that \begin{equation}
-\xi\int_{\R^3} d^3k\ \overline{\hat{h}(k)}=(2\pi)^{3/2}\xi\overline{h(0)}.
+\chi\int_{\R^3} d^3k\ \overline{\hat{w}(k)}=(2\pi)^{3/2}\chi\overline{w(0)}.
 \end{equation}
 Thereby we find the condition on the domain\begin{equation}
--(2\pi)^{3/2}\xi\overline{h(0)}+\bar{\chi}\xi(\alpha+2\pi^2\sqrt{\mu})=0
+-(2\pi)^{3/2}\chi\overline{w(0)}+\bar{\xi}\chi(\alpha+2\pi^2\sqrt{\mu})=0
 \end{equation}
-correpsponding to the boundary condition $ h(0)=(2\pi)^{-3/2}\xi(\alpha+2\pi^2\sqrt{\mu}) $. Now turning to the action of the operator $ H_\alpha $ it is easier to consider $ H_\alpha+\mu $ since we then have \begin{equation}
+correpsponding to the boundary condition $ w(0)=(2\pi)^{-3/2}\xi(\alpha+2\pi^2\sqrt{\mu}) $. Now turning to the action of the operator $ H_\alpha $ it is easier to consider $ H_\alpha+\mu $ since we then have \begin{equation}
 \begin{aligned}
 \braket{(H_\alpha+\mu)u,v}=F_\alpha(u,v)+\mu\braket{u,v}&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}(k)+\bar{\xi}\chi\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
 &=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}(k)+\chi\int_{\R^3}d^3k \overline{\hat{w}(k)}\\
@@ -481,7 +481,26 @@ with $ u=w+\xi G $ and $ v=h+\chi G $ and where we used the boundary condition w
 (H_\alpha+\mu)u=(-\Delta+\mu)w\qquad\qquad\qquad\qquad\qquad\qquad\qquad
 \end{aligned}
 \end{equation}
-notice that $ u $ and $ v $ switched roles at some point, which does not change anything.
+This concludes how to obtain the Hamiltonian given the quadratic form. Notice that this expression also matches the one we found by self-adjoint extension. To see this, we have to notice that there is a bit a mismatch between the normalizations of the Green functions used in the two methods. We see this by computing \begin{equation}
+\begin{aligned}
+\hat{G}_{-\mu}(k)=\frac{1}{(2\pi)^{3/2}}\int_{\R^3} d^3x G_{-\mu}(x,0)\euler{-ik\cdot x}=\frac{2\pi}{4\pi(2\pi)^{3/2}}\int_{-1}^{1} d[\cos(\varphi)]\int_{0}^{\infty}dr r \euler{-\sqrt{\mu}r}\euler{-i|k|r\cos(\varphi)}\\
+=\frac{1}{(2\pi)^{3/2}}\int_{0}^{\infty}dr r=\frac{1}{(2\pi)^{3/2}} \frac{\euler{-\sqrt{\mu}r}\sin(|k|r)}{|k|r}
+=\frac{1}{(2\pi)^{3/2}}\frac{1}{2i|k|}\left[\frac{1}{i(i\sqrt{\mu}-|k|)}-\frac{1}{i(i\sqrt{\mu}+|k|)}\right]\\
+=\frac{1}{(2\pi)^{3/2}}\frac{1}{2|k|}\left[\frac{i\sqrt{\mu}-|k|-i\sqrt{\mu}-|k|}{-\mu-|p^2|}\right]=\frac{1}{(2\pi)^{3/2}}\frac{1}{\mu+|k|^2}=\frac{1}{(2\pi)^{3/2}}\frac{1}{\mu+|k|^2}
+\end{aligned}
+\end{equation}
+Thus we see that $ G_{-\mu}=\frac{1}{(2\pi)^{3/2}}G $, and we get
+\begin{equation}
+\begin{aligned}
+\dom{H_\alpha}=\left\{ u\in L_2(\R^3)\ |\ u=w+\xi G,\ w\in H_2(\R^3),\ w(0)=(2\pi)^{-3/2}\xi(\alpha+2\pi^2\sqrt{\mu}),\ \xi\in\C \right\}\\
+=\left\{ u\in L_2(\R^3)\ |\ u=w+(2\pi)^{3/2}(\alpha+2\pi^2\sqrt{\mu})^{-1}(2\pi)^{3/2}w(0) G_{-\mu},\ w\in H_2(\R^3)\right\}\\
+=\left\{ u\in L_2(\R^3)\ |\ u=w+\left(\frac{\alpha}{(2\pi)^3}+\frac{\sqrt{\mu}}{4\pi}\right)^{-1}w(0) G_{-\mu},\ w\in H_2(\R^3)\right\}
+\end{aligned}
+\end{equation}
+We see that this exactly equal to the domain found in the previous section except for the fact that $ \alpha $ has been replaced by $ \alpha/(2\pi)^{3} $\begin{equation}
+\dom{H_{\text{rel}}^\alpha}=\left\{ u\in L_2(\R^3)\ |\ u=w+\left(\alpha-i\frac{i\sqrt{\mu}}{4\pi}\right)^{-1}w(0) G_{-\mu},\ w\in H_2(\R^3)\right\}.
+\end{equation}
+Therefore we conclude that $ H_\alpha=H_{\text{rel}}^{\frac{\alpha}{(2\pi)^3}} $.
 \section{$ \Gamma $-convergence}
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
