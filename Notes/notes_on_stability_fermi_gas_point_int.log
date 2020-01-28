@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  27 JAN 2020 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  28 JAN 2020 16:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -987,22 +987,25 @@ LaTeX Info: Redefining \cite on input line 694.
 \f@ncyO@orf=\skip63
 )
 \c@theorem=\count140
+\c@definition=\count141
+\c@proposition=\count142
+\c@lemma=\count143
 
 (./notes_on_stability_fermi_gas_point_int.aux)
 \openout1 = `notes_on_stability_fermi_gas_point_int.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1041,16 +1044,16 @@ LaTeX Font Info:    ... okay on input line 57.
 \AtBeginShipoutBox=\box43
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count141
+\scratchcounter=\count144
 \scratchdimen=\dimen195
 \scratchbox=\box44
-\nofMPsegments=\count142
-\nofMParguments=\count143
+\nofMPsegments=\count145
+\nofMParguments=\count146
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count144
+\MPscratchCnt=\count147
 \MPscratchDim=\dimen196
-\MPnumerator=\count145
-\makeMPintoPDFobject=\count146
+\MPnumerator=\count148
+\makeMPintoPDFobject=\count149
 \everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -1112,21 +1115,21 @@ ABD: EveryShipout initializing macros
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.13} into 
 your preamble.
- on input line 57.
+ on input line 60.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 57.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 59.
+(lastpage)             ! on input line 60.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 62.
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1145,7 +1148,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2]
-Overfull \hbox (20.57922pt too wide) in paragraph at lines 100--102
+Overfull \hbox (20.57922pt too wide) in paragraph at lines 103--105
 \OT1/cmr/m/n/10.95 By def-i-ni-tion on the ad-joint we have that $\U/rsfs/m/n/1
 0.95 D [] \OT1/cmr/m/n/10.95 = \OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 f \OMS/
 cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[
@@ -1154,7 +1157,7 @@ cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[
  []
 
 
-Overfull \hbox (4.31078pt too wide) detected at line 112
+Overfull \hbox (4.31078pt too wide) detected at line 115
 \OML/cmm/m/it/10.95 H[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.95 R[] \OMS/cmsy/m/n/1
 0.95 n f\OT1/cmr/m/n/10.95 0\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ) = [] \OML
 /cmm/m/it/10.95 :
@@ -1167,12 +1170,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-Overfull \hbox (1.17459pt too wide) detected at line 154
+Overfull \hbox (1.17459pt too wide) detected at line 157
 [] []
  []
 
 
-Overfull \hbox (10.89026pt too wide) detected at line 163
+Overfull \hbox (10.89026pt too wide) detected at line 166
 [] []
  []
 
@@ -1190,7 +1193,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [5]
-Overfull \hbox (10.59654pt too wide) detected at line 217
+Overfull \hbox (10.59654pt too wide) detected at line 220
 [] \OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = ([][] \OMS/cmsy/m/n/10.95 ^^@ \OT
 1/cmr/m/n/10.95 1)\OML/cmm/m/it/10.95 ^^X[];  x \OT1/cmr/m/n/10.95 = (\OML/cmm/
 m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )(
@@ -1208,7 +1211,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Overfull \hbox (32.01248pt too wide) detected at line 296
+Overfull \hbox (32.01248pt too wide) detected at line 299
 [] []
  []
 
@@ -1226,7 +1229,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 338.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 341.
  (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
@@ -1244,13 +1247,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [10]
-Overfull \hbox (6.29533pt too wide) detected at line 437
-[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm
-/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95
- ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  []  [] \OT
-1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/
-10.95 z[]\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OM
-L/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 :
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11]
+Overfull \hbox (1.07617pt too wide) detected at line 476
+[] []
  []
 
 
@@ -1259,7 +1264,24 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11] (./notes_on_stability_fermi_gas_point_int.bbl)
+[12]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+Overfull \hbox (6.29533pt too wide) detected at line 521
+[] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm
+/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95
+ ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  []  [] \OT
+1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/
+10.95 z[]\OT1/cmr/m/n/10.95 )(\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OM
+L/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 :
+ []
+
+(./notes_on_stability_fermi_gas_point_int.bbl)
 
 AED: lastpage setting LastPage
 
@@ -1268,13 +1290,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] (./notes_on_stability_fermi_gas_point_int.aux) ) 
+[14] (./notes_on_stability_fermi_gas_point_int.aux) ) 
 Here is how much of TeX's memory you used:
- 25615 strings out of 493029
- 616098 string characters out of 6136233
+ 25635 strings out of 493029
+ 616308 string characters out of 6136233
  798145 words of memory out of 5000000
- 28646 multiletter control sequences out of 15000+600000
- 16754 words of font info for 71 fonts, out of 8000000 for 9000
+ 28665 multiletter control sequences out of 15000+600000
+ 16885 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,77p,1142b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/johannes/.texmf-va
@@ -1296,11 +1318,11 @@ fonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on notes_on_stability_fermi_gas_point_int.pdf (12 pages, 268175 
+Output written on notes_on_stability_fermi_gas_point_int.pdf (14 pages, 281612 
 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 134 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
