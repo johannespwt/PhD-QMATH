@@ -6,5 +6,5 @@
 \contentsline {subsection}{\numberline {2.3}Hamiltonian from quadratic form}{11}
 \contentsline {section}{\numberline {3}$ \Gamma $-convergence}{13}
 \contentsline {subsection}{\numberline {3.1}Introducing $ \Gamma $-convergence}{14}
-\contentsline {subsection}{\numberline {3.2}$ \Gamma $-convergence of $ F_\alpha ^R $}{15}
-\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{15}
+\contentsline {subsection}{\numberline {3.2}$ \Gamma $-convergence of $ F_\alpha ^R $}{16}
+\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{19}

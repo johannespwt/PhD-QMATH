@@ -551,12 +551,13 @@ One immediate result of having $ \Gamma $-convergence is lower semicontinuity of
 		Now taking supremum on both sides gives us\begin{equation}
 		\sup_{U\in\mathcal{N}_x}\inf_{z\in U}\Gliminf_{n\to\infty}F_n(z)\geq\sup_{U\in\mathcal{N}_x}\liminf_{n\to\infty}\inf_{y\in U}F_n(y)=\Gliminf_{n\to\infty}F_n(x).
 		\end{equation}
-		By using Proposition \ref{Lower semicont prop} and the fact that the above inequality was for all $ x\in X $ we conclude that $ \Gliminf_{n\to\infty}F_n(x) $ is lower semicontinuous
+		By using Proposition \ref{Lower semicont prop} and the fact that the above inequality was for all $ x\in X $ we conclude that $ \Gliminf_{n\to\infty}F_n(x) $ is lower semicontinuous.
 \end{proof} 
+As an obvious consequence of the above proposition we get the following corollary.
 \begin{corollary}\label{Gamma-limit lower semicontinuity col}
 	Let $ F_n $ be a sequence of functionals on a topological space $ X $, such that $ F_n $ $ \Gamma $-converge to $ F $. Then $ F $ is lower semicontinuous in the topology of $ X $.
 \end{corollary} 
-Now we state an interesting result relating lower semicontinuity of quadratic form to them being bounded from below. A tool that will be of great importance when applying tools of $ \Gamma $-convergence to prove stability of quantum mechanical systems. The following proposition if from lecture notes by Jan Philip Solovej.
+Now we state an interesting result relating lower semicontinuity of quadratic form to them being bounded from below. A tool that will be of great importance when applying tools of $ \Gamma $-convergence to prove stability of quantum mechanical systems. The following proposition is from lecture notes by Jan Philip Solovej.
 \begin{proposition}(Prop. 7.5 in \cite{JPS_lecturenotes}) 
 	Let $ F_D\to \R\cup\{\infty\} $ be a norm lower semicontinuous functional on a subspace $ D $ of a Hilbert space, $ H $. If $ F $ satisfies $ F(\alpha\phi)=|\alpha|^2F(\phi) $ for all $ \alpha\in\R $ and all $ \phi\in D $, \ie $ F $ is homogenous of degree $ 2 $, then $ F $ is bounded from below in the sence that there exist $ M<\infty $ such that $ F(\phi)\geq-M||\phi||^2 $ for all $ \phi\in D $.
 \end{proposition}
@@ -568,16 +569,131 @@ Now we state an interesting result relating lower semicontinuity of quadratic fo
 \end{proof}
 See also \cite{JPS_lecturenotes}, Thm 7.6 for a possibly even stronger result.\\
 Finally in this subsection we state some important result from the book by Gianni Dal Maso \cite{maso1993introduction}.
-\begin{theorem}[Thm. 13.6(a), in \cite{maso1993introduction}]
+\begin{theorem}[Thm. 13.6(a), in \cite{maso1993introduction}]\label{Gamma conv. and strong res. conv. Thm}
 	Let $ F_n $ be a sequence of lower semicontinuous positive semi-definite quadratic forms on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous positive semi-definite quadratic form also on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
 	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
 	\end{equation}
 	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
 \end{theorem}
-The following theorems Prop 13.11 and Thm 13.12.....
+Notice that we can construct a positive semi-definite quadratic form from any bounded from below quadratic form, $ q(v)\geq-m||v||^2 $ by $ Q=q+M||\cdot||^2 $ where $ M\geq m $. Thereby the result in Theorem \ref{Gamma conv. and strong res. conv. Thm} extends to bounded from below operators: Consider a bounded from below operator $ F_n(v)\geq-m||v||^2 $, and construct the positive semi-definite quadratic forms $ \tilde{F}_n=F_n+m||\cdot||^2 $ and $ \tilde{F}=F+m||\cdot||^2 $. If $ F_n $ and $ F $ satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}, then $ \tilde{F_n} $ and $ \tilde{F} $ also satisfies them. To see this, notice that $ m||\cdot||^2 $ is a constant sequence and thus it is pointwise (continuously) convergent therefore by Prop. 6.20 in \cite{maso1993introduction} we know that\begin{equation}
+\Glim_{n\to\infty}\tilde{F_n}=\Glim_{n\to\infty} F_n+m||\cdot||
+\end{equation} 
+Furthmore, if $ x_n\to x $ weakly, it also holds that \begin{equation}
+\liminf_{n\to\infty}\tilde{F}_n(x_n)\geq\liminf_{n\to\infty}F_n(x_n)+m\liminf_{n\to\infty}||x_n||^2\geq\liminf_{n\to\infty}F_n(x_n)+m||x||^2\geq\tilde{F}(x),
+\end{equation}
+where we have used the basic property of $ \liminf $ that $ \liminf_n(a_n+b_n)\geq\liminf_na_n+\liminf_n b_n $, and that $ \liminf_{n\to\infty}||x_n||\geq||x|| $ for $ x_n\to x $ weakly. The last property follows from the  Cauchy-Schwartz inequality: If $ x_n \rightharpoonup x$ (converges weakly), then $ |\braket{x_n,x}|\to||x^2|| $, however $ |\braket{x_n,x}|\leq||x_n||||x|| $, so ultimately we have for all $ \epsilon>0 $ there exist $ k\geq1 $ such that $ ||x_n||\geq||x||-\epsilon $, but then $ \liminf_{n\to\infty}||x_n||\geq||x|| $. Therefore we use Theorem \ref{Gamma conv. and strong res. conv. Thm} on $ \tilde{F} $ and conclude that its corresponding operators $ \tilde{A}_n $ converges to $ \tilde{A} $ in the norm resolvent sense. Now using that $ \tilde{A_n}=A_n+mI $ and $ \tilde{A}=A+mI $, where $ A $ and $ A_n $ denotes the operators corresponding to $ F $ and $ F_n $ respectively, and the fact that if $ R_z(A_n+mI)x\to R_z(A+mI)x $ in norm as $ n\to\infty $, then $ R_z(A_n)x=R_{z+m}(A_n+Im)x\to R_{z+m}(A+Im)x=R_z(A) $ in norm as $ n\to\infty $, we get the following corollary
+\begin{corollary}
+	Let $ F_n $ be a sequence of lower semicontinuous bounded from below quadratic forms with a common lower bound, $ F_n(v)\geq-m||v||^2 $ on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous bounded from below quadratic form with the same lower bound $ F(v)\geq-m||v||^2 $, on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
+	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
+	\end{equation}
+	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
+\end{corollary}
+Another important result concerning $ \Gamma $-convergence, it the classification of $ \Gamma $-convergence in first countable spaces, such as for example normed spaces. The result can be characterized by the following proposition
+\begin{proposition}[Prop. 8.1 (e) and (f), in \cite{maso1993introduction}]\label{Gamma conv. first countable. prop}
+	Let $ X $ be a first countable space and $ F_n $ be a sequence of functions on $ X $. Then $ F_n $ $ \Gamma $-converges to the function $ F $ if and only the two following requirements are satisfied:\\
+	(i) For all $ x\in X $ and for every sequence $ x_n $ converging to $ x $ in $ X $ we have \begin{equation}
+	F(x)\leq\liminf_{n\to\infty}F_n(x_n);
+	\end{equation}
+	(ii) For all $ x\in X $ there exist a sequence $ (x_n)_(n\geq1)\subset X $ such that \begin{equation}
+	F(x)=\lim\limits_{n\to\infty}F_n(x_n).
+	\end{equation}
+\end{proposition}
+Other important result concerning $ \Gamma $-convergence are preservation of minimizers under $ \Gamma $-convergence. These can be found in chapter $ 7 $ of \cite{maso1993introduction}.
 \subsection{$ \Gamma $-convergence of $ F_\alpha^R $}
-
-
+We are in this subsection going to show that the quadratic forms, $ F_\alpha^R $ that we discussed earlier, have some $ \Gamma $-convergence properties, that will allow us to conclude on the convergence properties of their corresponding operators.\\
+In the following we will apply the lemma:\begin{lemma}\label{H1 int}
+	Let $ w\in H_1(\R^3) $, then \begin{equation}
+	 \frac{1}{\sqrt{n}}\int_{B_n(0)}\hat{w}\to0,\quad \text{as }n\to\infty,
+	\end{equation}
+	where $ \hat{w} $ denotes the Fourier transform of $ w $. In other notation \begin{equation}
+	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\sqrt{n},
+	\end{equation}
+	for some $ \epsilon $-function, $ \epsilon(n)\to0 $ as $ n\to\infty $.
+\end{lemma}
+\begin{proof}
+	Notice that we have already seen that for $ w\in H_1(\R^3) $ we have \begin{equation}
+	\int_{B_n(0)}\hat{w}\lesssim\sqrt{n},
+	\end{equation}
+	which follows from Cauchy-Schwartz inequality. To improve the bound, we split the integral. Clearly $ \hat{w}(k)=\frac{f(k)}{(k^2+1)^{1/2}} $ for some $ f\in L_2(\R^3) $. Let $ \epsilon_n=(\ln(n))^2/n^{3/2} $ and define the sets $ B_n^>=B_n(0)\cap\{|f|>\epsilon_n\} $ and $ B_n^\leq=B_n(0)\cap\{|f|\leq\epsilon_n\}  $. Notice that $ \epsilon_n\to0 $ as $ n\to\infty $. By the usual triangle inequality we have \begin{equation}
+	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert\leq\left\lvert\int_{B_n^>}\hat{w}\right\rvert+\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert.
+	\end{equation}
+	We see that \begin{equation}
+	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert\leq||\mathbbm{1}_{|f|\leq\epsilon_n}f||_2\sqrt{n}
+	\end{equation}
+	By dominated convergence theorem we now that $ ||\mathbbm{1}_{|f|\leq\epsilon_n}f||_2\to 0 $, since $ |\mathbbm{1}_{|f|\leq\epsilon_n}f|^2\to0 $ pointwise ($\epsilon_n\to0$), and is dominated by integrable function $ |f|^2 $. Thereby we have \begin{equation}
+	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert=\epsilon_1(n)\sqrt{n}
+	\end{equation}
+	for $ \epsilon_1(n)\to0 $ as $ n\to\infty $. On the other hand we use H\"older's inequality $ (3/2,3) $ on the other integral and obtain\begin{equation}
+	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\leq\int_{B_n^>}\left\lvert\hat{w}\right\rvert\leq||\mathbbm{1}_{|f|>\epsilon_n}f||_{3/2}||\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}||_3.
+	\end{equation}
+	Now $ ||\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}||_3\sim(\ln(n))^{1/3} $. Furthermore, we have \begin{equation}
+	||\mathbbm{1}_{|f|>\epsilon_n}f||_{3/2}||=\left(\int_{f>\epsilon_n}|f|^{3/2}\right)^{2/3}<\left(\frac{1}{\sqrt{\epsilon_n}}\int_{f>\epsilon_n}|f|^{2}\right)^{2/3}=\frac{1}{\epsilon^{1/3}}||f||_2^{4/3}.
+	\end{equation}
+	Thus we have \begin{equation}
+	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\lesssim\frac{1}{(\ln(n))^{1/3}}||f||_2^{4/3}\sqrt{n}=\epsilon_2(n)\sqrt{n}
+	\end{equation}
+	for some $ \epsilon_2(n)\to0 $ as $ n\to\infty $. Combining our two estimates gives us \begin{equation}
+	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert\lesssim(\epsilon_1(n)+\epsilon_2(n))\sqrt{n}\implies \left\lvert\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\sqrt{n},
+	\end{equation}
+	for some $ \epsilon(n)\to0 $ as $ n\to\infty $. This concludes the proof.
+	\end{proof}
+We show that $ F_\alpha^n $ where $ n\in\mathbb{N} $ satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}. By Proposition \ref{Gamma conv. first countable. prop} we see that it suffices to show that:\\
+\begin{enumerate}
+	\item For all $ u\in \dom{F_\alpha} $ there exist a sequence $ (u_n)_{n\geq1}$, such that $u_n\in \dom{F^n_\alpha} $, $ u_n $ converges in $ L_2(\R^3) $ to $ u $ and \begin{equation}
+	F_\alpha(u)=\lim\limits_{n\to\infty}F^n_\alpha(u_n).
+	\end{equation}
+	\item For all $ u\in\dom{F_\alpha} $ and all $ (u_n)_{n\geq1} $, with $ u_n\in\dom{F_\alpha^n} $, converging weakly to $ u $, we have\begin{equation}
+	F_\alpha(u)\leq\liminf_{n\to\infty}F_\alpha^n(u_n).
+	\end{equation} 
+\end{enumerate}
+Notice then that (2.) include both the weak lower bound on $ F_\alpha $ as required by Theorem \ref{Gamma conv. and strong res. conv. Thm} but also the strong lower bound on $ F_\alpha $ as required by Proposition \ref{Gamma conv. first countable. prop}, since all strongly converging sequences also are weakly convergent.
+Let us briefly remind ourselves that 
+\begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
+\end{aligned}
+\end{equation}
+with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $, $ \hat{\rho}^R=\xi_R\mathbbm{1}_{B_R(0)}  $, $ \xi_R=(4\pi R+\alpha)^{-1}\int_{B_R(0)}\hat{u} $, and domain \begin{equation}
+\dom{F_\alpha^R}=\left\{u\in L_2(\R^3)\ |\ w_R\in H_1(\R^3) \right\}=H_1(\R^3).
+\end{equation}
+And 
+\begin{equation}
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+\end{equation}
+with domain\begin{equation}
+\dom{F_\alpha(u)}=\left\{u\in L_2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H_1(\R^3),\ \xi\in\C \right\},
+\end{equation}
+\begin{proposition}
+	Let $ F_\alpha^n $ and $ F_\alpha $ be defined as earlier. Then for all $ u\in\dom{F_\alpha} $ there exist $ (u_n)_{(n\geq1)} $ with $ u_n\in\dom{F_n} $ such that \begin{equation}
+		F_\alpha(u)=\lim\limits_{n\to\infty}F^n_\alpha(u_n).
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	We prove this result by simply constructing the correct sequence $ u_n $. For $ u=w+\xi G $, with $ w\in H_1(\R^3) $, let $ u_n=w+\xi G_n $, where $ \widehat{G_n}=\mathbbm{1}_{B_n(0)}\hat{G} $. Then we clearly have \begin{equation}
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu||u_n||^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
+	\end{equation}
+	with $ \hat{w}_n=\hat{w}-(\xi_n-\xi)\mathbbm{1}_{B_n(0)}\hat{G} $. Now it is obvious that $ u_n\in H_1(\R^3) $ for all $ n $ and that $ u_n\to u $ in $ L_2(\R^3) $ as $ n\to\infty $. Furthermore, we see that \begin{equation}
+	\xi_n=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\hat{w}+\xi\hat{G},
+	\end{equation}
+	and since $ \int_{B_n(0)}\hat{w}\lesssim\sqrt{n} $, and $\int_{B_n(0)}\hat{G}\sim4\pi n $ we see that $ \xi_n\to \xi $ as $ n\to\infty $. We can even say that $ (\xi-\xi_n)\sim \frac{1}{4\pi n}\int_{B_n(0)}\hat{w} $. By lemma \ref{H1 int}, we know that $ \left\lvert\frac{1}{4\pi n}\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\frac{1}{\sqrt{n}} $ for some $ \epsilon $-function $ \epsilon(n)\to0 $ as $ n\to\infty $. Now expanding the expression for $ F_\alpha^n(u_n) $ above we have \begin{equation}
+	\begin{aligned}
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2&+|\xi_n-\xi|^2\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)|\hat{G}(k)|^2\\&-2\Real(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\\&-\mu||u_n||^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right)
+	\end{aligned}
+	\end{equation} 
+	Using that $ \hat{G}(k)=\frac{1}{k^2+\mu} $ we have\begin{equation}
+	|\xi_n-\xi|^2\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)|\hat{G}(k)|^2\sim\frac{\epsilon(n)^2}{n}\int_{B_n(0)} d^3k\ \hat{G}(k)\sim\epsilon(n)^2\to 0\quad\text{as }n\to\infty.
+	\end{equation}
+	Furthermore we know that \begin{equation}
+	\left\lvert(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\right\rvert=\left\lvert(\xi_n-\xi)\int_{B_n(0)} d^3k\ \overline{\hat{w}(k)}\right\rvert\sim\epsilon(n)^2\to0\quad\text{as }n\to\infty.
+	\end{equation}
+	Finally we have that $  ||u_n||\to||u||$ as $ n\to\infty $ since $ u_n\to u $ in $ L_2(\R^3) $ and that \begin{equation}
+	|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right)\to|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),\quad \text{as }n\to\infty,
+	\end{equation}
+	where we have used that the limit of a product is the product of the limits whenever both limits exist. Thus we have in total\begin{equation}
+	F_\alpha^n(u_n)\to\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
+	\end{equation}
+	as we wanted.
+\end{proof}
 
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
