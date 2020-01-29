@@ -42,11 +42,15 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\w}{\mathsf{w}}
 
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -442,7 +446,7 @@ For $ u,v \in\dom{H_\alpha} $. Notice that \begin{equation}
 \dom{H_\alpha^*}&=\{v\in \dom{F_\alpha}\ |\ \braket{H_\alpha \cdot, v}\text{ is bounded on } \dom{H_\alpha} \}\\&=\{v\in L_2(\R^3)\ |\ F_\alpha(\cdot,v) \text{ is bounded on } \dom{H_\alpha} \}.
 \end{aligned}
 \end{equation}
-Assuming that $ \dom{H_\alpha} $ is dense in $ \dom{F_\alpha} $ we then have $ \dom{H_\alpha^*}=\dom{H_\alpha} $ and the operator, $ H_\alpha $, is self-adjoint. It is a general fact that $ \dom{H_\alpha} $ is dense whenever $ F_\alpha $ is closed. Thus we are now ready to calculate the Hamiltonian of the quadratic form $ F_\alpha $. Notice that by the definition of $ \dom{H_\alpha} $ we must have that for $ u\in\dom{H_\alpha} $ and $  (v_n)_{n\geq1}\subset\dom{F_\alpha} $  such that $ v_n\to0 $ in $ L_2(\R^3) $ it holds that  $ F_\alpha(v,u_n)\to 0 $. Thus by writing $ u=w+\xi G $ with $ w\in H_1(\R^3) $ and $ \xi\in\C $ and $ v_n=h_n+\chi G\in\dom{F_\alpha} $, with $ h_n\in H_1(\R^3) $ such that $ h_n\to-\chi G $ in $ L_2(\R^3) $ we have \begin{equation}
+Assuming that $ \dom{H_\alpha} $ is dense in $ \dom{F_\alpha} $ we then have $ \dom{H_\alpha^*}=\dom{H_\alpha} $ and the operator, $ H_\alpha $, is self-adjoint. It is a general fact that $ \dom{H_\alpha} $ is dense whenever $ F_\alpha $ is closed (\cite{grubb2008distributions}, Thm 12.18). Thus we are now ready to calculate the Hamiltonian of the quadratic form $ F_\alpha $. Notice that by the definition of $ \dom{H_\alpha} $ we must have that for $ u\in\dom{H_\alpha} $ and $  (v_n)_{n\geq1}\subset\dom{F_\alpha} $  such that $ v_n\to0 $ in $ L_2(\R^3) $ it holds that  $ F_\alpha(v,u_n)\to 0 $. Thus by writing $ u=w+\xi G $ with $ w\in H_1(\R^3) $ and $ \xi\in\C $ and $ v_n=h_n+\chi G\in\dom{F_\alpha} $, with $ h_n\in H_1(\R^3) $ such that $ h_n\to-\chi G $ in $ L_2(\R^3) $ we have \begin{equation}
 F(u,v_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}_n(k)-\mu\braket{u,v_n}_{L_2(\R^3)}+\bar{\xi}\chi\left(\alpha+2\pi^2\sqrt{\mu}\right).
 \end{equation}
 We immediately see that for the first term to be $ L_2(\R^3) $ bounded in $ h_n $ we must have that $ w\in H_2(\R^3) $. Secondly since the first term is $ L_2(\R^3) $ bounded we must have \begin{equation}
@@ -502,6 +506,79 @@ We see that this exactly equal to the domain found in the previous section excep
 \end{equation}
 Therefore we conclude that $ H_\alpha=H_{\text{rel}}^{\frac{\alpha}{(2\pi)^3}} $.
 \section{$ \Gamma $-convergence}
+In this section we are going to study the notion of $ \Gamma $-convergence and apply it to the convergence problem of the quadratic form constructed in the previous section. 
+\subsection{Introducing $ \Gamma $-convergence}
+Let us first introduce a few definitions in order to study the $ \Gamma $-convergence properties of $ F_\alpha^R $.
+\begin{definition}[Lower semicontinuity]
+	Let $ F:X\to\R $ be a functional on some topological space $ X $. We say that $ F $ is lower semicontinuous at $ x\in X $ if for every $ t<F(x) $ there exist a neighbourhood $ N_{x,t} $ such that $ F(y)>t $ for all $ y\in N_{x,t} $. We furthermore say that $ F $ is lower semicontinuous if it is lower semicontinuous at every point $ x\in X $.  In particular, if $ X $ is a normed space, we say that $ F:X\to\R $ is norm lower semicontinuous if it is lower semicontinuous with respect to the norm topology. 
+\end{definition}
+An equivalent formulation of lower semicontinuity is given by the following proposition
+\begin{proposition}\label{Lower semicont prop}
+	Let $ F $ be a functional on a topological vector space $ X $. Then $ F $ is lower semicontinuous at $ x\in X $ if and only if \begin{equation}
+	\liminf_{z\to x}F(z):=\sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq F(x),
+	\end{equation}
+	where $ \mathcal{N}_x $ denotes the set of all neighbourhoods of $ x $.
+\end{proposition}
+\begin{proof}
+	"$ \implies $": Choose any $ t<F(x) $, then by lower semicontinuity of $ F $ there exist a neighbourhood $ U' $ of $ x $ such that $ F(y)>t $ for all $ y\in U' $ but then $ \inf_{y\in U'}F(y)>t $. Thus the existence of such a $ U' $ implies that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq t $. Since this was true for any $ t<F(x) $ we conclude that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq F(x) $\\
+	"$ \impliedby $": Assume that there exists a $ t<F(x) $ such that for all $ U\in\mathcal{N}_x $ there exist a $ y\in U $ with $ F(y)\leq t $. Then $ \inf_{z\in U} F(z)\leq t $ for all $ U\in\mathcal{N}_x $ which implies that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\leq t<F(x) $. Thus we have proven the contrapositive.
+\end{proof}
+\begin{definition}[$ \Gamma $-upper/-lower limit]
+	Given a topological space $ X $, and some sequence of functional $ F_n $ on $ X $, we define the $ \Gamma $-upper and $ \Gamma $-lower limits by \begin{equation}
+	\begin{aligned}
+	\Glimsup_{n\to\infty}F_n(x)&=\sup_{N_x\in\mathcal{N}_x}\limsup_{n\to\infty}\inf_{y\in N_x}F_n(y),\\
+	\Gliminf_{n\to\infty}F_n(x)&=\sup_{N_x\in\mathcal{N}_x}\liminf_{n\to\infty}\inf_{y\in N_x}F_n(y),
+	\end{aligned}
+	\end{equation}
+	where $ \mathcal{N}_x $ denotes the collection of neighbourhoods of $ x $.
+\end{definition}
+\begin{definition}($ \Gamma $-limit)
+		Given a topological space $ X $, and some sequence of functional $ F_n $ on $ X $, we say that $ F_n $ $ \Gamma $-converges to the $ \Gamma $-limit $ F $ if \begin{equation}
+		\Gliminf_{n\to\infty}F_n(x)=\Glimsup_{n\to\infty}F_n(x)=F(x),\quad\text{for all }x\in X.
+		\end{equation}
+\end{definition}
+One immediate result of having $ \Gamma $-convergence is lower semicontinuity of the limit, which is the following proposition
+\begin{proposition}\label{Gamma lower semicontinuity prop}
+	Let $ F_n $ be a sequence of functionals on a topological space $ X $. Then the $ \Gamma $-lower and $ \Gamma $-upper limits are both lower semicontinuous in the topology of $ X $.
+\end{proposition}
+\begin{proof}
+	We proof this for the $ \Gamma $-lower limit, but the proof is equally valid for the upper limit by exchanging all $ \liminf $ by $ \limsup $.
+		For the lower-limit this follows immediately by observing that For any $ z\in X $ and $ U\in \mathcal{N}_z $ we have that 
+		$$ \Gliminf_{n\to\infty}F_n(z)\geq\liminf_{n\to\infty}\inf_{y\in U}F_n(y).  $$
+		It follows by the fact that $ U $ is a neighbourhood of all its points that we then have \begin{equation}
+		\inf_{z\in U}\Gliminf_{n\to\infty}F_n(z)\geq\liminf_{n\to\infty}\inf_{y\in U}F_n(y).
+		\end{equation}
+		Now taking supremum on both sides gives us\begin{equation}
+		\sup_{U\in\mathcal{N}_x}\inf_{z\in U}\Gliminf_{n\to\infty}F_n(z)\geq\sup_{U\in\mathcal{N}_x}\liminf_{n\to\infty}\inf_{y\in U}F_n(y)=\Gliminf_{n\to\infty}F_n(x).
+		\end{equation}
+		By using Proposition \ref{Lower semicont prop} and the fact that the above inequality was for all $ x\in X $ we conclude that $ \Gliminf_{n\to\infty}F_n(x) $ is lower semicontinuous
+\end{proof} 
+\begin{corollary}\label{Gamma-limit lower semicontinuity col}
+	Let $ F_n $ be a sequence of functionals on a topological space $ X $, such that $ F_n $ $ \Gamma $-converge to $ F $. Then $ F $ is lower semicontinuous in the topology of $ X $.
+\end{corollary} 
+Now we state an interesting result relating lower semicontinuity of quadratic form to them being bounded from below. A tool that will be of great importance when applying tools of $ \Gamma $-convergence to prove stability of quantum mechanical systems. The following proposition if from lecture notes by Jan Philip Solovej.
+\begin{proposition}(Prop. 7.5 in \cite{JPS_lecturenotes}) 
+	Let $ F_D\to \R\cup\{\infty\} $ be a norm lower semicontinuous functional on a subspace $ D $ of a Hilbert space, $ H $. If $ F $ satisfies $ F(\alpha\phi)=|\alpha|^2F(\phi) $ for all $ \alpha\in\R $ and all $ \phi\in D $, \ie $ F $ is homogenous of degree $ 2 $, then $ F $ is bounded from below in the sence that there exist $ M<\infty $ such that $ F(\phi)\geq-M||\phi||^2 $ for all $ \phi\in D $.
+\end{proposition}
+\begin{proof}
+	We consider the the set $ S=\{h\in D\ |\ F(\phi)>-1 \} $. By lower semi continuity of $ F $ we have that for every $ h\in S $ there exist a neighbourhood $ N_h\in\mathcal{N}_h $ such that $ F(h')>-1 $ for all $ h'\in N_h $, \ie all points of $ S $ are interior points. Thus $ S $ is open. By observing that $ 0\in S $ we conclude that there exist some $ \epsilon>0 $ such that the ball in $ D $, $ B_\epsilon(0)\subset D $ is contained in $ S $. Thereby we know that for all $ x\in D $ with $ ||x||<\epsilon $, we have $ F(x)>-1 $. For all $ h\in D $ we therefore have 
+	$ F(\epsilon h/2||h||)>-1 $ which is equivalent to \begin{equation}
+	F(h)>-\frac{4}{\epsilon^2}||h||^2
+	\end{equation}
+\end{proof}
+See also \cite{JPS_lecturenotes}, Thm 7.6 for a possibly even stronger result.\\
+Finally in this subsection we state some important result from the book by Gianni Dal Maso \cite{maso1993introduction}.
+\begin{theorem}[Thm. 13.6(a), in \cite{maso1993introduction}]
+	Let $ F_n $ be a sequence of lower semicontinuous positive semi-definite quadratic forms on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous positive semi-definite quadratic form also on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
+	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
+	\end{equation}
+	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
+\end{theorem}
+The following theorems Prop 13.11 and Thm 13.12.....
+\subsection{$ \Gamma $-convergence of $ F_\alpha^R $}
+
+
+
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}

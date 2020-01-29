@@ -18,9 +18,21 @@ Domenico Finco and Alessandro Teta, \emph{Quadratic forms for the fermionic
   unitary gas model}, Reports on Mathematical Physics \textbf{69} (2012),
   no.~2, 131 -- 159.
 
+\bibitem{grubb2008distributions}
+G.~Grubb, \emph{Distributions and operators}, Graduate Texts in Mathematics,
+  Springer New York, 2008.
+
+\bibitem{maso1993introduction}
+G.D. Maso, \emph{An introduction to [gamma]-convergence}, Progress in nonlinear
+  differential equations and their applications, Birkh{\"a}user, 1993.
+
 \bibitem{Moser_2017}
 Thomas Moser and Robert Seiringer, \emph{Stability of a fermionic n + 1
   particle system with point interactions}, Communications in Mathematical
   Physics \textbf{356} (2017), no.~1, 329–355.
+
+\bibitem{JPS_lecturenotes}
+J.~P. Solovej, \emph{Rigorous stability theory of quantum mechanics},
+  unpublished, 1997.
 
 \end{thebibliography}
