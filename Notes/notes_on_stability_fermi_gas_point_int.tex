@@ -464,7 +464,7 @@ The second term obviously goes to zero by continuity of the inner product. Thus 
 	\frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{w}(k)e^{ik\cdot x}=w(x) 
 	\end{equation}
 \end{proof}
-Now given the above lemma we clearly see that \begin{equation}
+Given the above lemma we clearly see that \begin{equation}
 \chi\int_{\R^3} d^3k\ \overline{\hat{w}(k)}=(2\pi)^{3/2}\chi\overline{w(0)}.
 \end{equation}
 Thereby we find the condition on the domain\begin{equation}
@@ -517,7 +517,7 @@ An equivalent formulation of lower semicontinuity is given by the following prop
 	Let $ F $ be a functional on a topological vector space $ X $. Then $ F $ is lower semicontinuous at $ x\in X $ if and only if \begin{equation}
 	\liminf_{z\to x}F(z):=\sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq F(x),
 	\end{equation}
-	where $ \mathcal{N}_x $ denotes the set of all neighbourhoods of $ x $.
+	where $ \mathcal{N}_x $ denotes the set of all open neighbourhoods of $ x $.
 \end{proposition}
 \begin{proof}
 	"$ \implies $": Choose any $ t<F(x) $, then by lower semicontinuity of $ F $ there exist a neighbourhood $ U' $ of $ x $ such that $ F(y)>t $ for all $ y\in U' $ but then $ \inf_{y\in U'}F(y)>t $. Thus the existence of such a $ U' $ implies that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq t $. Since this was true for any $ t<F(x) $ we conclude that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq F(x) $\\
@@ -530,7 +530,7 @@ An equivalent formulation of lower semicontinuity is given by the following prop
 	\Gliminf_{n\to\infty}F_n(x)&=\sup_{N_x\in\mathcal{N}_x}\liminf_{n\to\infty}\inf_{y\in N_x}F_n(y),
 	\end{aligned}
 	\end{equation}
-	where $ \mathcal{N}_x $ denotes the collection of neighbourhoods of $ x $.
+	where $ \mathcal{N}_x $ denotes the collection of open neighbourhoods of $ x $.
 \end{definition}
 \begin{definition}($ \Gamma $-limit)
 		Given a topological space $ X $, and some sequence of functional $ F_n $ on $ X $, we say that $ F_n $ $ \Gamma $-converges to the $ \Gamma $-limit $ F $ if \begin{equation}
@@ -545,7 +545,7 @@ One immediate result of having $ \Gamma $-convergence is lower semicontinuity of
 	We proof this for the $ \Gamma $-lower limit, but the proof is equally valid for the upper limit by exchanging all $ \liminf $ by $ \limsup $.
 		For the lower-limit this follows immediately by observing that For any $ z\in X $ and $ U\in \mathcal{N}_z $ we have that 
 		$$ \Gliminf_{n\to\infty}F_n(z)\geq\liminf_{n\to\infty}\inf_{y\in U}F_n(y).  $$
-		It follows by the fact that $ U $ is a neighbourhood of all its points that we then have \begin{equation}
+		It follows by the fact that $ U $ is an open neighbourhood of all its points that we then have \begin{equation}
 		\inf_{z\in U}\Gliminf_{n\to\infty}F_n(z)\geq\liminf_{n\to\infty}\inf_{y\in U}F_n(y).
 		\end{equation}
 		Now taking supremum on both sides gives us\begin{equation}
@@ -663,7 +663,7 @@ F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2
 with domain\begin{equation}
 \dom{F_\alpha(u)}=\left\{u\in L_2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H_1(\R^3),\ \xi\in\C \right\},
 \end{equation}
-\begin{proposition}
+\begin{proposition}\label{F Gamma upper bound}
 	Let $ F_\alpha^n $ and $ F_\alpha $ be defined as earlier. Then for all $ u\in\dom{F_\alpha} $ there exist $ (u_n)_{(n\geq1)} $ with $ u_n\in\dom{F_n} $ such that \begin{equation}
 		F_\alpha(u)=\lim\limits_{n\to\infty}F^n_\alpha(u_n).
 	\end{equation}
@@ -694,7 +694,45 @@ with domain\begin{equation}
 	\end{equation}
 	as we wanted.
 \end{proof}
-
+\begin{proposition}\label{F Gamma lower bound}
+	Let $ (u_n)_{(n\geq1)} $ be any sequence such that $ u_n\in\dom{F_\alpha^n}=H_1(\R^3) $ for all $ n\geq1 $ and such that $ u_n $ converges weakly to $ u $ ($ u_n\rightharpoonup u $) in $ L_2(\R^3) $ as $ n\to\infty $. Then we have the following inequality\begin{equation}
+	F_\alpha(u)\leq\liminf_{n\to\infty}F_\alpha^n(u_n).
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Let $ u_n $ be as in the proposition above. Since the weak limit, $ u $, is in $ \dom{F_\alpha} $ it is of the form $ u=w+\xi G $ with $ w\in H_1(\R^3) $ and $ \xi\in\C $. On the other hand we then may without loss of generality take $ u_n $ to be of the form $ u_n=w+\xi g_n $, with $ g_n\in H_1(\R^3) $ such that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ as $ n\to\infty $. We then have \begin{equation}
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu||u_n||^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
+	\end{equation}
+	where we have defined $ \hat{w}_n(k)=\hat{w}(k)+\xi\hat{g}_n-\xi_n\hat{G}_n $, with $ \hat{G}_n=\mathbbm{1}_{B_n(0)}\hat{G} $, and \\$ \xi_n=(4\pi n+\alpha)^{-1}\int_{B_n(0)} \hat{w}+\xi \hat{g}_n $. Now there exist a subsequence $ F_\alpha^{n_j}(u_{n_j}) $ that converges to $ \liminf_{n\to\infty}F_\alpha^n(u_n) $. Expanding $ F_\alpha^{n_j}(u_{n_j}) $ we have \begin{equation}
+	\begin{aligned}
+	F_\alpha^{n_j}(u_{n_j})=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2+2\Real\left[(\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k))\overline{\hat{w}(k)}\right]\right\}\\-\mu||u_{n_j}||^2_{L_2(\R^3)}+|\xi_{n_j}|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right)
+	\end{aligned}
+	\end{equation}
+Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong ||f||_{H_1(\R^3)}^2 $ we see that either $ \liminf F_\alpha^{n}(u_n)=\infty $ or \\$ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H_1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H_1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H_1(\R^3) $ is a Hilbert space we then known that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H_1(\R^3) $ to some $ h\in H_1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H_1(\R^3) $ it also converges weakly in $ L_2(\R^3) $ to the same limit, since the dual space of $ H_1(\R^3) \subset L_2(\R^3) $ is $ H_{-1}(\R^3) \supset L_2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L_2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ and $ G_n\xrightarrow{||\cdot||_2} G $ so $ G_n\rightharpoonup G $ in $ L_2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L_2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H_1(\R^3) $. So $ h\in H_1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
+\begin{equation}
+\begin{aligned}
+\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})&=\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2\right\}-\mu||u_{n_j}||^2_{L_2(\R^3)}\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
+&\geq\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2+\mu(||\xi g_{n_j}-\xi_{n_j}G_{n_j}||^2_{L_2(\R^3)}-||u_{n_j}||^2_{L_2(\R^3)})\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)
+\end{aligned}
+\end{equation}
+where we in the second line threw away the positive term $ \int_{\R^3} d^3k\ k^2|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2 $. Now we see that \begin{equation}
+\begin{aligned}
+||\xi g_{n_j}-\xi_{n_j}G_{n_j}||^2-||u_{n_j}||^2=||\xi g_{n_j}||^2+||\xi_{n_j}G_{n_j}||^2-2\xi_{n_j}\bar{\xi}\Real\braket{g_{n_j},G_{n_j}}\\-||w||^2-||\xi g_{n_j}||^2-2\xi\Real\braket{w,g_{n_j}},
+\end{aligned}
+\end{equation}
+from which it follows that\begin{equation}
+\begin{aligned}
+\lim\limits_{j\to\infty}\left(||\xi g_{n_j}-\xi_{n_j}G_{n_j}||^2-||u_{n_j}||^2\right)&=||\xi G||^2-||w||^2-2|\xi|^2\braket{G,G}-2\xi\Real\braket{w,G}\\&=-||w||^2-||\xi G||^2-2\xi\Real\braket{w,G}=-||w+\xi G||^2\\&=-||u||^2
+\end{aligned}
+\end{equation}
+where $ ||\cdot||=||\cdot||_{L_2(\R^3)} $, $ \braket{\cdot,\cdot}=\braket{\cdot,\cdot}_{L_2(\R^3)} $ and we have used that for $ f_n\xrightarrow{||\cdot||}f $ and $ g_n\rightharpoonup g $ as $ n\to\infty $ we have $ \braket{g_n,f_n}\to\braket{g,f} $, which follows directly from norm boundedness of weakly convergent sequences. Collecting all the above we have \begin{equation}
+\begin{aligned}
+\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})\geq \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
+\end{aligned}
+\end{equation}
+which was the desired result.
+\end{proof}
+Now collecting the above results in Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} we find that $ F_\alpha^n $ and $ F_\alpha $ indeed satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}, and thus we may conclude that the corresponding operator $ H_\alpha^n $ and $ H_\alpha $ fulfil that $ H_\alpha^n\to H_\alpha $ in the strong resolvent sense. This tells us points in the spectrum cannot suddenly disappear under the convergence as the following proposition will show.
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
