@@ -20,6 +20,7 @@
 \usepackage[english]{babel} 
 
 \usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
 
 \usepackage{fancyhdr}
 \newcommand{\euler}[1]{\text{e}^{#1}}
@@ -53,12 +54,13 @@
 \newtheorem{corollary}{Corollary}
 
 \numberwithin{equation}{section}
+\linespread{1.3}
 
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Notes on stability of the Fermi gas with point interactions}
 \lhead{Johannes Agerskov}
-\rfoot{Page \thepage \ of \pageref{LastPage}}
+\rfoot{\thepage}
 \lfoot{Dated: \today}
 \author{Johannes Agerskov}
 \date{Dated: \today}
@@ -415,7 +417,7 @@ First we need to define a few properties of quadratic forms.\begin{definition}
 \end{definition}
 Notice that given a quadratic form $ q:\dom{q}\to\R $ we can always construct a symmetric sesquilinear from by \begin{equation}
 \begin{aligned}
-\Real (q(u,v))=\frac{1}{2}(q(u-v)-q(u)-q(v)),\\ \Imag(q(u,v))=\frac{1}{2i}(q(u+iv)-q(u)-q(v)).
+\Real (q(u,v))=\frac{1}{2}(q(u+v)-q(u)-q(v)),\\ \Imag(q(u,v))=\frac{1}{2i}(q(u+iv)-q(u)-q(v)).
 \end{aligned}
 \end{equation}
 where we abuse notation and use the symbol $ q $ for both the quadratic form and the sesquilinear form.
@@ -599,7 +601,7 @@ Furthmore, if $ x_n\to x $ weakly, it also holds that \begin{equation}
 \liminf_{n\to\infty}\tilde{F}_n(x_n)\geq\liminf_{n\to\infty}F_n(x_n)+m\liminf_{n\to\infty}\|x_n\|^2\geq\liminf_{n\to\infty}F_n(x_n)+m\|x\|^2\geq\tilde{F}(x),
 \end{equation}
 where we have used the basic property of $ \liminf $ that $ \liminf_n(a_n+b_n)\geq\liminf_na_n+\liminf_n b_n $, and that $ \liminf_{n\to\infty}\|x_n\|\geq\|x\| $ for $ x_n\to x $ weakly. The last property follows from the  Cauchy-Schwartz inequality: If $ x_n \rightharpoonup x$ (converges weakly), then $ |\braket{x_n,x}|\to\|x^2\| $, however $ |\braket{x_n,x}|\leq\|x_n\|\|x\| $, so ultimately we have for all $ \epsilon>0 $ there exist $ k\geq1 $ such that $ \|x_n\|\geq\|x\|-\epsilon $, but then $ \liminf_{n\to\infty}\|x_n\|\geq\|x\| $. Therefore we use Theorem \ref{Gamma conv. and strong res. conv. Thm} on $ \tilde{F} $ and conclude that its corresponding operators $ \tilde{A}_n $ converges to $ \tilde{A} $ in the norm resolvent sense. Now using that $ \tilde{A_n}=A_n+mI $ and $ \tilde{A}=A+mI $, where $ A $ and $ A_n $ denotes the operators corresponding to $ F $ and $ F_n $ respectively, and the fact that if $ R_z(A_n+mI)x\to R_z(A+mI)x $ in norm as $ n\to\infty $, then $ R_z(A_n)x=R_{z+m}(A_n+Im)x\to R_{z+m}(A+Im)x=R_z(A) $ in norm as $ n\to\infty $, we get the following corollary
-\begin{corollary}
+\begin{corollary}\label{Gamma conv. and strong res. conv. Col}
 	Let $ F_n $ be a sequence of lower semicontinuous bounded from below quadratic forms with a common lower bound, $ F_n(v)\geq-m\|v\|^2 $ on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous bounded from below quadratic form with the same lower bound $ F(v)\geq-m\|v\|^2 $, on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
 	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
 	\end{equation}
@@ -725,7 +727,7 @@ with domain\begin{equation}
 	F_\alpha^{n_j}(u_{n_j})=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2+2\Real\left[(\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k))\overline{\hat{w}(k)}\right]\right\}\\-\mu\|u_{n_j}\|^2_{L_2(\R^3)}+|\xi_{n_j}|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right)
 	\end{aligned}
 	\end{equation}
-Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong \|f\|_{H_1(\R^3)}^2 $ we see that either $ \liminf F_\alpha^{n}(u_n)=\infty $ or \\$ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H_1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H_1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H_1(\R^3) $ is a Hilbert space we then known that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H_1(\R^3) $ to some $ h\in H_1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H_1(\R^3) $ it also converges weakly in $ L_2(\R^3) $ to the same limit, since the dual space of $ H_1(\R^3) \subset L_2(\R^3) $ is $ H_{-1}(\R^3) \supset L_2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L_2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ and $ G_n\xrightarrow{\|\cdot\|_2} G $ so $ G_n\rightharpoonup G $ in $ L_2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L_2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H_1(\R^3) $. So $ h\in H_1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
+Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong \|f\|_{H_1(\R^3)}^2 $ we see that either $ \liminf F_\alpha^{n}(u_n)=\infty $ or \\$ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H_1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H_1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H_1(\R^3) $ is a Hilbert space we then know that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H_1(\R^3) $ to some $ h\in H_1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H_1(\R^3) $ it also converges weakly in $ L_2(\R^3) $ to the same limit, since the dual space of $ H_1(\R^3) \subset L_2(\R^3) $ is $ H_{-1}(\R^3) \supset L_2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L_2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ and $ G_n\xrightarrow{\|\cdot\|_2} G $ so $ G_n\rightharpoonup G $ in $ L_2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L_2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H_1(\R^3) $. So $ h\in H_1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
 \begin{equation}
 \begin{aligned}
 \lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})&=\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2\right\}-\mu\|u_{n_j}\|^2_{L_2(\R^3)}\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
@@ -749,7 +751,7 @@ where $ \|\cdot\|=\|\cdot\|_{L_2(\R^3)} $, $ \braket{\cdot,\cdot}=\braket{\cdot,
 \end{equation}
 which was the desired result.
 \end{proof}
-Now collecting the above results in Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} we find that $ F_\alpha^n $ and $ F_\alpha $ indeed satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}, and thus we may conclude that the corresponding operator $ H_\alpha^n $ and $ H_\alpha $ fulfil that $ H_\alpha^n\to H_\alpha $ in the strong resolvent sense. This tells us that points in the spectrum cannot suddenly emerge under the convergence as the following proposition will show.
+Now collecting the above results in Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} we find that $ F_\alpha^n $ and $ F_\alpha $ indeed satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm} (Corollary \ref{Gamma conv. and strong res. conv. Col}) assuming that $ F_\alpha^n $ admits a common lower bound (using that $ F_\alpha^n $ is independent of $ \mu $, this is actually easy to see), and thus we may conclude that the corresponding operator $ H_\alpha^n $ and $ H_\alpha $ fulfil that $ H_\alpha^n\to H_\alpha $ in the strong resolvent sense. This tells us that points in the spectrum cannot suddenly emerge under the convergence as the following proposition will show.
 \begin{proposition}
 	Let $ (A_n)_{n\geq1} $ be a sequence of operators in a Hilbert space $ H $ and let $ A $ be an operator on $ H $. Assume that $ A_n\to A $ in the strong resolvent sense. If $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ for some $ M_\lambda>0$, then $ \lambda\notin\sigma(A) $, where $ \sigma(\cdot) $ denotes the spectrum.
 \end{proposition}
