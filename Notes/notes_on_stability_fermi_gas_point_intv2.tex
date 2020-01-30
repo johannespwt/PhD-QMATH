@@ -131,7 +131,7 @@ In order for this function to be in the domain of $ H_{\text{rel}}^*$ we need to
 Thus we see that $ \dim\left(\ker{\left(H^*_{\text{rel}}+iI\right)}\right)=\dim\left(\ker{\left(H^*_{\text{rel}}-iI\right)}\right)=1 $. By Krein's extension theorem for symmetric operators we have that there exist a one-parameter family of self-adjoint extensions of $ H_{\text{rel}} $. Parametrizing the family by a complex phase we have the extensions \begin{equation}
 \dom{H_{\text{rel},\theta}}=\left\{ h+c(\xi_++\euler{i\theta}\xi_-)\Big\rvert h\in\dom{\dot{H}_{\text{rel}}},\ c\in\C \right\},
 \end{equation}
-where $ \theta\in[0,2\pi) $, $ \xi_+\in \ker\left(H_{\text{rel}}^*+iI\right),\xi_-\in \ker\left(H_{\text{rel}}^*-iI\right) $ are fixed with $ ||\xi_+||=||\xi_-|| $, and where \begin{equation}
+where $ \theta\in[0,2\pi) $, $ \xi_+\in \ker\left(H_{\text{rel}}^*+iI\right),\xi_-\in \ker\left(H_{\text{rel}}^*-iI\right) $ are fixed with $ \|\xi_+\|=\|\xi_-\| $, and where \begin{equation}
 H_{\text{rel},\theta}(h+\xi_++\euler{i\theta}\xi_-)=H_{\text{rel}}^*(h+\xi_++\euler{i\theta}\xi_-)=h+i(\euler{i\theta}\xi_--\xi_+)
 \end{equation}
 Following the methods of \cite{albeverio2012solvable}, we however now that there is another characterization of these extensions. By decomposing the Hilbert space into spherical coordinates we obtain the decomposition \begin{equation}
@@ -214,7 +214,7 @@ Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and 
 	C(h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}}))=Ah+c(z\xi_z+\euler{i\omega}\bar{z}\xi_{\bar{z}}).\qquad\qquad\qquad\Imag(z)\neq0\quad
 	\end{aligned}
 	\end{equation}
-	where $  \xi_z\in\ker(A^*-z), \xi_{\bar{z}}\in\ker(A^*-\bar{z}), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ ||\xi_z||=||\xi_{\bar{z}}||=1 $,
+	where $  \xi_z\in\ker(A^*-z), \xi_{\bar{z}}\in\ker(A^*-\bar{z}), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ \|\xi_z\|=\|\xi_{\bar{z}}\|=1 $,
 	Now for $ z\in\rho(C) $, we know that $ (C-z) $ has full range and thus for $ x\in H $ we write $ x=(C-z)y $. Assuming that $ \Imag(z)\neq0 $ we can write $ y=h+\xi_z+\euler{i\omega}\xi_{\bar{z}}\in\dom{C} $ where we have absorbed the $ c\in\C $ into the $ \xi_z $ and $ \xi_{\bar{z}} $. Consider now \begin{equation}
 	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})-(h+\xi_z+\euler{i\omega}\xi_{\bar{z}}).
 	\end{equation}
@@ -225,11 +225,11 @@ Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and 
 	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(\euler{i(\omega-\theta)}-1)\xi_{z},\qquad x=(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=(C-z)h+(\bar{z}-z)\euler{i\omega}\xi_{\bar{z}},
 	\end{equation}
 	and we conclude \begin{equation}
-		\left((B-z)^{-1}-(C-z)^{-1}\right)x=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\xi_{\bar{z}},x}}{||\xi_{\bar{z}}||^2}\xi_{z}=\lambda(z,\bar{z})\braket{\phi(\bar{z}),x}\phi(z)
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\xi_{\bar{z}},x}}{\|\xi_{\bar{z}}\|^2}\xi_{z}=\lambda(z,\bar{z})\braket{\phi(\bar{z}),x}\phi(z)
 	\end{equation}
 	where we have used that $ (C-z)h=(A-z)h\in\Ran{A-z}\subset\ker(A^*-\bar{z})^\perp $, and the fact that by defining $\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0) $, with $ \phi(z_0) $ being a solution of $ A^*\phi(z_0)=z_0\phi(z_0) $, we clearly have $ \phi(z)\in\ker(A^*-z) $ such that $ \phi(z)\parallel\xi_z $.\\
 %	In order to calculate $ \lambda(z,\bar{z}) $ notice that \begin{equation}
-%	\xi_z=\frac{\braket{\phi(z),\xi_z}}{||\phi(z)||^2}\phi(z)
+%	\xi_z=\frac{\braket{\phi(z),\xi_z}}{\|\phi(z)\|^2}\phi(z)
 %	\end{equation}
 %	and that \begin{equation}
 %	\begin{aligned}
@@ -257,7 +257,7 @@ Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and 
 %	\end{equation}
 %	\\
 	We have that $ \lambda $ is given by the formula \begin{equation}
-	\lambda(z,\bar{z})=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\phi(z)\xi_{z}}}{\braket{\phi(\bar{z}),\xi_{\bar{z}}}||\phi(z)||^2}
+	\lambda(z,\bar{z})=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\phi(z)\xi_{z}}}{\braket{\phi(\bar{z}),\xi_{\bar{z}}}\|\phi(z)\|^2}
 	\end{equation}
 Notice that the above calculation is for fixed $ z $. Thus if we want to vary $ z $, we get that $ \theta $ and $ \omega $ might depend on $ z $ as we may choose $ \xi_z $ and $ \xi_{\bar{z}} $ differently at each $ z $ making a fixed $ \theta $ or $ \omega $ correspond to different extensions for  each $ z $.
  The fact that $ \lambda $ is analytic stems from the fact that all matrix elements of the resolvents are analytic in their resolvent sets and that we have chosen $ \phi(z) $ such that $ \braket{\phi(\bar{z}),x} $ is analytic for all $ x\in H $. To show that $ \lambda $ satisfies \eqref{lambda relation} is simply a long computation and we refer to appendix \ref{Lambda calculation} for the computation. 
@@ -351,7 +351,7 @@ F^R_\gamma(\hat{u})=\int_{\R^3} d^3k\ \left(\bar{\hat{u}}(k)(k^2)\hat{u}(k)-\fra
 \end{equation}
 This can be rewritten in the following form\begin{equation}
 	\begin{aligned}
-	F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
+	F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
 	+2\Real \int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)-\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k),
 	\end{aligned}
 \end{equation}
@@ -370,9 +370,9 @@ furthermore, $ \widehat{G\rho^R}(k)=\hat{G}(k)\hat{\rho^R}(k) $ and $ \gamma_R=\
 \end{equation}
 such that $ 2\Real \int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)=2\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k) $. Thereby we find the quadratic form\begin{equation}
 \begin{aligned}
-F_\gamma^R(u)&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
+F_\gamma^R(u)&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
 &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ \int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k)\\
-&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}-|\xi_R|^2\int_{B_R(0)} d^3k \hat{G}(k)
+&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}-|\xi_R|^2\int_{B_R(0)} d^3k \hat{G}(k)
 + \gamma_R^{-1}|\xi_R|^2.
 \end{aligned}
 \end{equation}
@@ -383,23 +383,23 @@ Now by computing the \begin{equation}
 \end{equation}
 Thereby we have the quadratic form\begin{equation}
 \begin{aligned}
-F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu||u||^2_{L_2(\R^3)}\\-|\xi_R|^2\left(4\pi R-4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)-\gamma_R^{-1}\right).
+F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}\\-|\xi_R|^2\left(4\pi R-4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)-\gamma_R^{-1}\right).
 \end{aligned}
 \end{equation}
 Since we are interested in the limit $ R\to\infty $ (corresponding to localizing the interaction to a point) we choose $ \gamma_R $ such that the divergence in $ R $ disappears. Choosing the coupling $ \gamma_R^{-1}=4\pi R+\alpha $ we obtain the final quadratic form\begin{equation}
 \begin{aligned}
-F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
+F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
 \end{aligned}
 \end{equation}
 with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $. Notice, that the domain of this quadratic form is \begin{equation}
 \dom{F_\alpha^R}=\left\{u\in L_2(\R^3)\ |\ w_R\in H_1(\R^3) \right\}
 \end{equation} Heuristically, we can take the limit $ R\to\infty $. This is done by noticing that for $ w\in H_1(\R^3) $ we have that $ \hat{w}(k)=\frac{\hat{f}(k)}{(|k|^2+1)^{\frac{1}{2}}} $ for some $ f\in L_2(\R^3) $. By H\"older's inequality $ (2,2) $ we thus see \begin{equation}
-\int_{B_R(0)} \hat{w}\leq\left(\int_{B_R(0)}\left\lvert\frac{1}{|k|^2+1}\right\rvert^2 \right)^{\frac{1}{2}}||f||_2\lesssim\sqrt{R}
+\int_{B_R(0)} \hat{w}\leq\left(\int_{B_R(0)}\left\lvert\frac{1}{|k|^2+1}\right\rvert^2 \right)^{\frac{1}{2}}\|f\|_2\lesssim\sqrt{R}
 \end{equation}
 where by $ f(x)\lesssim g(x)$ we mean that there exist some constant $ C\in\R $ such that $ f(x)\leq Cg(x) $. Thus we see that the equation for $ \xi_R $ \begin{equation}
 \xi_R=\frac{1}{(4\pi R+\alpha)}\int_{B_R(0)}\left(\hat{w}+\widehat{G\rho^R}\right)=\frac{1}{(4\pi R+\alpha)}\int_{B_R(0)}\left(\hat{w}+\xi_R\hat{G}\right),
 \end{equation} becomes in the limit $ R\to\infty $ the equation $ \xi_R=\xi_R $. Thus any choice of $ \xi_R $ is consistent and simply let it be a free parameter $ \xi_R=\xi\in\C $. We also see that in the limit $ R\to\infty $ we have that $ \arctan\left(R/\sqrt{\mu}\right)\to\frac{\pi}{2} $. Thus we get the quadratic form\begin{equation}
-F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
 \end{equation}
 with domain\begin{equation}
 \dom{F_\alpha(u)}=\left\{u\in L_2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H_1(\R^3),\ \xi\in\C \right\},
@@ -408,10 +408,10 @@ which matches the expression of \cite{Moser_2017} in the $ N=M=1 $ case.
 \subsection{Hamiltonian from quadratic form}
 We are in this subsection going to construct the Hamiltonian for the point interactions from the quadratic form. This will serve both as an example of how obtain the Hamiltonian given its quadratic form, but also as a motivation that the quadratic form given in the previous section is indeed equivalent to the the self-adjoint extension $ H_{\text{rel}}^\alpha $.\\
 First we need to define a few properties of quadratic forms.\begin{definition}
-	We say a quadratic form on some Banach space $ q: \dom{q}\to\R $ is bounded from below if $ q(v)\geq-c||v||^2 $ for some $ c>0 $. 
+	We say a quadratic form on some Banach space $ q: \dom{q}\to\R $ is bounded from below if $ q(v)\geq-c\|v\|^2 $ for some $ c>0 $. 
 \end{definition}
 \begin{definition}
-	We say that a quadratic form, $ q:\dom{q}\to\R $, which is bounded from below, $ q(v,v)\geq-c||v||^2 $, is closed if its domain, $ \dom{q} $, is a Banach space when equipped with the norm $ ||v||^2_q=q(v,v)+C||v||^2 $, where $ C>c $.
+	We say that a quadratic form, $ q:\dom{q}\to\R $, which is bounded from below, $ q(v,v)\geq-c\|v\|^2 $, is closed if its domain, $ \dom{q} $, is a Banach space when equipped with the norm $ \|v\|^2_q=q(v,v)+C\|v\|^2 $, where $ C>c $.
 \end{definition}
 Notice that given a quadratic form $ q:\dom{q}\to\R $ we can always construct a symmetric sesquilinear from by \begin{equation}
 \begin{aligned}
@@ -420,15 +420,15 @@ Notice that given a quadratic form $ q:\dom{q}\to\R $ we can always construct a 
 \end{equation}
 where we abuse notation and use the symbol $ q $ for both the quadratic form and the sesquilinear form.
 This motivates the following proposition \begin{proposition}
-	A quadratic form on some Hilbert space $ H $, $ q:\dom{q}\to\R $, which is bounded from below, $ q(v)\geq-c||v||^2 $, is closed if and only if its domain, $ \dom{q} $, is a Hilbert space when equipped with the inner product $ \braket{u,v}_q=q(u,v)+C\braket{u,v} $, where $ C>c $.
+	A quadratic form on some Hilbert space $ H $, $ q:\dom{q}\to\R $, which is bounded from below, $ q(v)\geq-c\|v\|^2 $, is closed if and only if its domain, $ \dom{q} $, is a Hilbert space when equipped with the inner product $ \braket{u,v}_q=q(u,v)+C\braket{u,v} $, where $ C>c $.
 \end{proposition}
 \begin{proof}
-	Since the norm $ ||\cdot||_q$ is generated by $ \braket{\cdot,\cdot}_q $ it is clear that this follows if we can show that $ \braket{u,v}_q $ is in fact an inner product. Sesquilinearity is obvious by construction. Furthermore $ \braket{v,v}_q=||v||_q^2\geq0 $ since $ q $ is bounded from below, $ q(v)\geq-c||v||^2 $, and $ \braket{v,v}_q=0 $ if and only if $ v=0 $ follows from the fact that $ \braket{v,v}_q\geq(C-c)||v||^2 $.
+	Since the norm $ \|\cdot\|_q$ is generated by $ \braket{\cdot,\cdot}_q $ it is clear that this follows if we can show that $ \braket{u,v}_q $ is in fact an inner product. Sesquilinearity is obvious by construction. Furthermore $ \braket{v,v}_q=\|v\|_q^2\geq0 $ since $ q $ is bounded from below, $ q(v)\geq-c\|v\|^2 $, and $ \braket{v,v}_q=0 $ if and only if $ v=0 $ follows from the fact that $ \braket{v,v}_q\geq(C-c)\|v\|^2 $.
 \end{proof}
-Notice that it follows from the fact that $ \braket{\cdot,\cdot}_q $ is an inner product that $ ||\cdot||_q $ is in fact a norm.
+Notice that it follows from the fact that $ \braket{\cdot,\cdot}_q $ is an inner product that $ \|\cdot\|_q $ is in fact a norm.
 We start out by the quadratic form from then previous section
 \begin{equation}
-F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
 \end{equation}
 with domain\begin{equation}
 \dom{F_\alpha(u)}=\left\{u\in L_2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H_1(\R^3),\ \xi\in\C \right\}.
@@ -561,12 +561,12 @@ As an obvious consequence of the above proposition we get the following corollar
 \end{corollary} 
 Now we state an interesting result relating lower semicontinuity of quadratic form to them being bounded from below. A tool that will be of great importance when applying tools of $ \Gamma $-convergence to prove stability of quantum mechanical systems. The following proposition and theorem is from lecture notes by Jan Philip Solovej.
 \begin{proposition}[Prop. 7.5 in \cite{JPS_lecturenotes}] \label{Norm low.sem.cont bounded from below prop.}
-	Let $ F_D\to \R\cup\{\infty\} $ be a norm lower semicontinuous functional on a subspace $ D $ of a Hilbert space, $ H $. If $ F $ satisfies $ F(\alpha\phi)=|\alpha|^2F(\phi) $ for all $ \alpha\in\R $ and all $ \phi\in D $, \ie $ F $ is homogenous of degree $ 2 $, then $ F $ is bounded from below in the sence that there exist $ M<\infty $ such that $ F(\phi)\geq-M||\phi||^2 $ for all $ \phi\in D $.
+	Let $ F_D\to \R\cup\{\infty\} $ be a norm lower semicontinuous functional on a subspace $ D $ of a Hilbert space, $ H $. If $ F $ satisfies $ F(\alpha\phi)=|\alpha|^2F(\phi) $ for all $ \alpha\in\R $ and all $ \phi\in D $, \ie $ F $ is homogenous of degree $ 2 $, then $ F $ is bounded from below in the sence that there exist $ M<\infty $ such that $ F(\phi)\geq-M\|\phi\|^2 $ for all $ \phi\in D $.
 \end{proposition}
 \begin{proof}
-	We consider the the set $ S=\{h\in D\ |\ F(\phi)>-1 \} $. By lower semi continuity of $ F $ we have that for every $ h\in S $ there exist a neighbourhood $ N_h\in\mathcal{N}_h $ such that $ F(h')>-1 $ for all $ h'\in N_h $, \ie all points of $ S $ are interior points. Thus $ S $ is open. By observing that $ 0\in S $ we conclude that there exist some $ \epsilon>0 $ such that the ball in $ D $, $ B_\epsilon(0)\subset D $ is contained in $ S $. Thereby we know that for all $ x\in D $ with $ ||x||<\epsilon $, we have $ F(x)>-1 $. For all $ h\in D $ we therefore have 
-	$ F(\epsilon h/2||h||)>-1 $ which is equivalent to \begin{equation}
-	F(h)>-\frac{4}{\epsilon^2}||h||^2
+	We consider the the set $ S=\{h\in D\ |\ F(\phi)>-1 \} $. By lower semi continuity of $ F $ we have that for every $ h\in S $ there exist a neighbourhood $ N_h\in\mathcal{N}_h $ such that $ F(h')>-1 $ for all $ h'\in N_h $, \ie all points of $ S $ are interior points. Thus $ S $ is open. By observing that $ 0\in S $ we conclude that there exist some $ \epsilon>0 $ such that the ball in $ D $, $ B_\epsilon(0)\subset D $ is contained in $ S $. Thereby we know that for all $ x\in D $ with $ \|x\|<\epsilon $, we have $ F(x)>-1 $. For all $ h\in D $ we therefore have 
+	$ F(\epsilon h/2\|h\|)>-1 $ which is equivalent to \begin{equation}
+	F(h)>-\frac{4}{\epsilon^2}\|h\|^2
 	\end{equation}
 \end{proof}
 \begin{theorem}[Thm. 7.6 in \cite{JPS_lecturenotes}]\label{Quadratic form closable and bounded below iff low.semicont. Thm.}
@@ -575,10 +575,10 @@ Now we state an interesting result relating lower semicontinuity of quadratic fo
 \begin{proof}
 	Assume first that $ Q $ is bounded from below and closable. Then we can extend $ Q $ to a closed quadratic form on the set (Def. 7.4 in \cite{JPS_lecturenotes})
 	$$ \bar{\mathscr{D}}(Q)=\{\phi\in H\ |\ \text{there exist a Cauchy sequence in }\dom{Q}\text{ converging to }\phi \}. $$
-	Thus we may take $ Q $ to be closed. In that case we know that $ \dom{Q} $ is a Hilbert space with inner product $ \braket{\cdot,\cdot}_Q=Q(\cdot,\cdot)+M\braket{\cdot,\cdot} $, for some $ M>0 $ such that $ Q(v)>-M||v|| $ for all $ v\in H $, and where $ Q(\cdot,\cdot) $ denotes the symmetric sesquilinear form associated to $ Q $. Thus the norm on the $ \dom{Q} $ is $||\cdot||_Q= Q(\cdot)+M||\cdot||^2 $. Assume now that we have some sequence $ (x_n)_{(n\geq1)}\subset\dom{Q} $ converging to $ x\in\dom{Q} $. Let $ x_{n_j} $ denotes a subsequence such that $$ \liminf_{n\to\infty}Q(x_n)=\lim\limits_{j\to\infty}Q(x_{n_j}). $$
-	Now if $ \liminf_{n\to\infty} Q(x_n)=\infty $ we trivially have $ \liminf_{n\to\infty} Q(x_n)\geq Q(x) $. On the other hand, by assuming $ \liminf_{n\to\infty} Q(x_n)<\infty $ we may conclude that $ Q(x_{n_j}) $ is bounded. Thus $ (x_{n_j})_{j\geq1} $ is bounded in $ ||\cdot||_Q $ norm. By Alaoglu's theorem and the fact that $ \dom{Q} $ is a Hilbert space, we may conclude that there any further subsequence $ x_{n_{j_k}} $ contain a subsequence $ x_{n_{j_{k_l}}} $ converging weakly in $ \dom{Q} $. However the limit is then bound to be $ x $ by the fact that the weak limit in $ \dom{Q} $ is also the weak limit in $ H $ and the weak limit in $ H $ is necessarily equal to the norm limit whenever it exists. Thus all subsequences, $ x_{n_{j_k}} $, of $ x_{n_j} $, contain a further subsequence $ x_{n_{j_{k_l}}} $ converging to weakly to $ x $ in $ \dom{Q} $. Therefore we may conclude that $x_{n_j}$ converge weakly to $ x $. However, it is a known fact that $ \liminf_{j\to\infty}||v_j||\geq||v|| $ for any $ v_j\rightharpoonup v $, as it follows directly from Cauchy Schwartz. Using this we obtain \begin{equation}
+	Thus we may take $ Q $ to be closed. In that case we know that $ \dom{Q} $ is a Hilbert space with inner product $ \braket{\cdot,\cdot}_Q=Q(\cdot,\cdot)+M\braket{\cdot,\cdot} $, for some $ M>0 $ such that $ Q(v)>-M\|v\| $ for all $ v\in H $, and where $ Q(\cdot,\cdot) $ denotes the symmetric sesquilinear form associated to $ Q $. Thus the norm on the $ \dom{Q} $ is $\|\cdot\|_Q= Q(\cdot)+M\|\cdot\|^2 $. Assume now that we have some sequence $ (x_n)_{(n\geq1)}\subset\dom{Q} $ converging to $ x\in\dom{Q} $. Let $ x_{n_j} $ denotes a subsequence such that $$ \liminf_{n\to\infty}Q(x_n)=\lim\limits_{j\to\infty}Q(x_{n_j}). $$
+	Now if $ \liminf_{n\to\infty} Q(x_n)=\infty $ we trivially have $ \liminf_{n\to\infty} Q(x_n)\geq Q(x) $. On the other hand, by assuming $ \liminf_{n\to\infty} Q(x_n)<\infty $ we may conclude that $ Q(x_{n_j}) $ is bounded. Thus $ (x_{n_j})_{j\geq1} $ is bounded in $ \|\cdot\|_Q $ norm. By Alaoglu's theorem and the fact that $ \dom{Q} $ is a Hilbert space, we may conclude that there any further subsequence $ x_{n_{j_k}} $ contain a subsequence $ x_{n_{j_{k_l}}} $ converging weakly in $ \dom{Q} $. However the limit is then bound to be $ x $ by the fact that the weak limit in $ \dom{Q} $ is also the weak limit in $ H $ and the weak limit in $ H $ is necessarily equal to the norm limit whenever it exists. Thus all subsequences, $ x_{n_{j_k}} $, of $ x_{n_j} $, contain a further subsequence $ x_{n_{j_{k_l}}} $ converging to weakly to $ x $ in $ \dom{Q} $. Therefore we may conclude that $x_{n_j}$ converge weakly to $ x $. However, it is a known fact that $ \liminf_{j\to\infty}\|v_j\|\geq\|v\| $ for any $ v_j\rightharpoonup v $, as it follows directly from Cauchy Schwartz. Using this we obtain \begin{equation}
 	\begin{aligned}
-	\liminf_{n\to\infty}Q(x_n)=\lim\limits_{j\to\infty}Q(x_{n_j})=\lim_{j\to\infty}\left(||x_{n_j}||_Q^2-M||x_{n_j}||\right)\geq\liminf_{j\to\infty}||x_{n_j}||_Q^2-M||x||^2\\\geq|||x||_Q^2-M||x||^2=Q(x)
+	\liminf_{n\to\infty}Q(x_n)=\lim\limits_{j\to\infty}Q(x_{n_j})=\lim_{j\to\infty}\left(\|x_{n_j}\|_Q^2-M\|x_{n_j}\|\right)\geq\liminf_{j\to\infty}\|x_{n_j}\|_Q^2-M\|x\|^2\\\geq\||x\|_Q^2-M\|x\|^2=Q(x)
 	\end{aligned}
 	\end{equation}
 	Showing that $ Q $ is indeed norm lower semicontinuous (Proposition \ref{Lower semicont prop}).\\
@@ -592,15 +592,15 @@ Finally in this subsection we state some important result from the book by Giann
 	\end{equation}
 	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
 \end{theorem}
-Notice that we can construct a positive semi-definite quadratic form from any bounded from below quadratic form, $ q(v)\geq-m||v||^2 $ by $ Q=q+M||\cdot||^2 $ where $ M\geq m $. Thereby the result in Theorem \ref{Gamma conv. and strong res. conv. Thm} extends to bounded from below operators: Consider a bounded from below operator $ F_n(v)\geq-m||v||^2 $, and construct the positive semi-definite quadratic forms $ \tilde{F}_n=F_n+m||\cdot||^2 $ and $ \tilde{F}=F+m||\cdot||^2 $. If $ F_n $ and $ F $ satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}, then $ \tilde{F_n} $ and $ \tilde{F} $ also satisfies them. To see this, notice that $ m||\cdot||^2 $ is a constant sequence and thus it is pointwise (continuously) convergent therefore by Prop. 6.20 in \cite{maso1993introduction} we know that\begin{equation}
-\Glim_{n\to\infty}\tilde{F_n}=\Glim_{n\to\infty} F_n+m||\cdot||
+Notice that we can construct a positive semi-definite quadratic form from any bounded from below quadratic form, $ q(v)\geq-m\|v\|^2 $ by $ Q=q+M\|\cdot\|^2 $ where $ M\geq m $. Thereby the result in Theorem \ref{Gamma conv. and strong res. conv. Thm} extends to bounded from below operators: Consider a bounded from below operator $ F_n(v)\geq-m\|v\|^2 $, and construct the positive semi-definite quadratic forms $ \tilde{F}_n=F_n+m\|\cdot\|^2 $ and $ \tilde{F}=F+m\|\cdot\|^2 $. If $ F_n $ and $ F $ satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}, then $ \tilde{F_n} $ and $ \tilde{F} $ also satisfies them. To see this, notice that $ m\|\cdot\|^2 $ is a constant sequence and thus it is pointwise (continuously) convergent therefore by Prop. 6.20 in \cite{maso1993introduction} we know that\begin{equation}
+\Glim_{n\to\infty}\tilde{F_n}=\Glim_{n\to\infty} F_n+m\|\cdot\|
 \end{equation} 
 Furthmore, if $ x_n\to x $ weakly, it also holds that \begin{equation}
-\liminf_{n\to\infty}\tilde{F}_n(x_n)\geq\liminf_{n\to\infty}F_n(x_n)+m\liminf_{n\to\infty}||x_n||^2\geq\liminf_{n\to\infty}F_n(x_n)+m||x||^2\geq\tilde{F}(x),
+\liminf_{n\to\infty}\tilde{F}_n(x_n)\geq\liminf_{n\to\infty}F_n(x_n)+m\liminf_{n\to\infty}\|x_n\|^2\geq\liminf_{n\to\infty}F_n(x_n)+m\|x\|^2\geq\tilde{F}(x),
 \end{equation}
-where we have used the basic property of $ \liminf $ that $ \liminf_n(a_n+b_n)\geq\liminf_na_n+\liminf_n b_n $, and that $ \liminf_{n\to\infty}||x_n||\geq||x|| $ for $ x_n\to x $ weakly. The last property follows from the  Cauchy-Schwartz inequality: If $ x_n \rightharpoonup x$ (converges weakly), then $ |\braket{x_n,x}|\to||x^2|| $, however $ |\braket{x_n,x}|\leq||x_n||||x|| $, so ultimately we have for all $ \epsilon>0 $ there exist $ k\geq1 $ such that $ ||x_n||\geq||x||-\epsilon $, but then $ \liminf_{n\to\infty}||x_n||\geq||x|| $. Therefore we use Theorem \ref{Gamma conv. and strong res. conv. Thm} on $ \tilde{F} $ and conclude that its corresponding operators $ \tilde{A}_n $ converges to $ \tilde{A} $ in the norm resolvent sense. Now using that $ \tilde{A_n}=A_n+mI $ and $ \tilde{A}=A+mI $, where $ A $ and $ A_n $ denotes the operators corresponding to $ F $ and $ F_n $ respectively, and the fact that if $ R_z(A_n+mI)x\to R_z(A+mI)x $ in norm as $ n\to\infty $, then $ R_z(A_n)x=R_{z+m}(A_n+Im)x\to R_{z+m}(A+Im)x=R_z(A) $ in norm as $ n\to\infty $, we get the following corollary
+where we have used the basic property of $ \liminf $ that $ \liminf_n(a_n+b_n)\geq\liminf_na_n+\liminf_n b_n $, and that $ \liminf_{n\to\infty}\|x_n\|\geq\|x\| $ for $ x_n\to x $ weakly. The last property follows from the  Cauchy-Schwartz inequality: If $ x_n \rightharpoonup x$ (converges weakly), then $ |\braket{x_n,x}|\to\|x^2\| $, however $ |\braket{x_n,x}|\leq\|x_n\|\|x\| $, so ultimately we have for all $ \epsilon>0 $ there exist $ k\geq1 $ such that $ \|x_n\|\geq\|x\|-\epsilon $, but then $ \liminf_{n\to\infty}\|x_n\|\geq\|x\| $. Therefore we use Theorem \ref{Gamma conv. and strong res. conv. Thm} on $ \tilde{F} $ and conclude that its corresponding operators $ \tilde{A}_n $ converges to $ \tilde{A} $ in the norm resolvent sense. Now using that $ \tilde{A_n}=A_n+mI $ and $ \tilde{A}=A+mI $, where $ A $ and $ A_n $ denotes the operators corresponding to $ F $ and $ F_n $ respectively, and the fact that if $ R_z(A_n+mI)x\to R_z(A+mI)x $ in norm as $ n\to\infty $, then $ R_z(A_n)x=R_{z+m}(A_n+Im)x\to R_{z+m}(A+Im)x=R_z(A) $ in norm as $ n\to\infty $, we get the following corollary
 \begin{corollary}
-	Let $ F_n $ be a sequence of lower semicontinuous bounded from below quadratic forms with a common lower bound, $ F_n(v)\geq-m||v||^2 $ on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous bounded from below quadratic form with the same lower bound $ F(v)\geq-m||v||^2 $, on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
+	Let $ F_n $ be a sequence of lower semicontinuous bounded from below quadratic forms with a common lower bound, $ F_n(v)\geq-m\|v\|^2 $ on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous bounded from below quadratic form with the same lower bound $ F(v)\geq-m\|v\|^2 $, on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
 	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
 	\end{equation}
 	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
@@ -635,19 +635,19 @@ In the following we will apply the lemma:\begin{lemma}\label{H1 int}
 	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert\leq\left\lvert\int_{B_n^>}\hat{w}\right\rvert+\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert.
 	\end{equation}
 	We see that \begin{equation}
-	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert\leq||\mathbbm{1}_{|f|\leq\epsilon_n}f||_2\sqrt{n}
+	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert\leq\|\mathbbm{1}_{|f|\leq\epsilon_n}f\|_2\sqrt{n}
 	\end{equation}
-	By dominated convergence theorem we now that $ ||\mathbbm{1}_{|f|\leq\epsilon_n}f||_2\to 0 $, since $ |\mathbbm{1}_{|f|\leq\epsilon_n}f|^2\to0 $ pointwise ($\epsilon_n\to0$), and is dominated by integrable function $ |f|^2 $. Thereby we have \begin{equation}
+	By dominated convergence theorem we now that $ \|\mathbbm{1}_{|f|\leq\epsilon_n}f\|_2\to 0 $, since $ |\mathbbm{1}_{|f|\leq\epsilon_n}f|^2\to0 $ pointwise ($\epsilon_n\to0$), and is dominated by integrable function $ |f|^2 $. Thereby we have \begin{equation}
 	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert=\epsilon_1(n)\sqrt{n}
 	\end{equation}
 	for $ \epsilon_1(n)\to0 $ as $ n\to\infty $. On the other hand we use H\"older's inequality $ (3/2,3) $ on the other integral and obtain\begin{equation}
-	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\leq\int_{B_n^>}\left\lvert\hat{w}\right\rvert\leq||\mathbbm{1}_{|f|>\epsilon_n}f||_{3/2}||\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}||_3.
+	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\leq\int_{B_n^>}\left\lvert\hat{w}\right\rvert\leq\|\mathbbm{1}_{|f|>\epsilon_n}f\|_{3/2}\|\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}\|_3.
 	\end{equation}
-	Now $ ||\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}||_3\sim(\ln(n))^{1/3} $. Furthermore, we have \begin{equation}
-	||\mathbbm{1}_{|f|>\epsilon_n}f||_{3/2}||=\left(\int_{f>\epsilon_n}|f|^{3/2}\right)^{2/3}<\left(\frac{1}{\sqrt{\epsilon_n}}\int_{f>\epsilon_n}|f|^{2}\right)^{2/3}=\frac{1}{\epsilon^{1/3}}||f||_2^{4/3}.
+	Now $ \|\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}\|_3\sim(\ln(n))^{1/3} $. Furthermore, we have \begin{equation}
+	\|\mathbbm{1}_{|f|>\epsilon_n}f\|_{3/2}\|=\left(\int_{f>\epsilon_n}|f|^{3/2}\right)^{2/3}<\left(\frac{1}{\sqrt{\epsilon_n}}\int_{f>\epsilon_n}|f|^{2}\right)^{2/3}=\frac{1}{\epsilon^{1/3}}\|f\|_2^{4/3}.
 	\end{equation}
 	Thus we have \begin{equation}
-	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\lesssim\frac{1}{(\ln(n))^{1/3}}||f||_2^{4/3}\sqrt{n}=\epsilon_2(n)\sqrt{n}
+	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\lesssim\frac{1}{(\ln(n))^{1/3}}\|f\|_2^{4/3}\sqrt{n}=\epsilon_2(n)\sqrt{n}
 	\end{equation}
 	for some $ \epsilon_2(n)\to0 $ as $ n\to\infty $. Combining our two estimates gives us \begin{equation}
 	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert\lesssim(\epsilon_1(n)+\epsilon_2(n))\sqrt{n}\implies \left\lvert\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\sqrt{n},
@@ -667,7 +667,7 @@ Notice then that (2.) include both the weak lower bound on $ F_\alpha $ as requi
 Let us briefly remind ourselves that 
 \begin{equation}
 \begin{aligned}
-F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
+F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
 \end{aligned}
 \end{equation}
 with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $, $ \hat{\rho}^R=\xi_R\mathbbm{1}_{B_R(0)}  $, $ \xi_R=(4\pi R+\alpha)^{-1}\int_{B_R(0)}\hat{u} $, and domain \begin{equation}
@@ -675,7 +675,7 @@ with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $, $ \hat{\rho}^R=\xi_R\mathbbm{1}_{B
 \end{equation}
 And 
 \begin{equation}
-F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
 \end{equation}
 with domain\begin{equation}
 \dom{F_\alpha(u)}=\left\{u\in L_2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H_1(\R^3),\ \xi\in\C \right\},
@@ -687,14 +687,14 @@ with domain\begin{equation}
 \end{proposition}
 \begin{proof}
 	We prove this result by simply constructing the correct sequence $ u_n $. For $ u=w+\xi G $, with $ w\in H_1(\R^3) $, let $ u_n=w+\xi G_n $, where $ \widehat{G_n}=\mathbbm{1}_{B_n(0)}\hat{G} $. Then we clearly have \begin{equation}
-	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu||u_n||^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu\|u_n\|^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
 	\end{equation}
 	with $ \hat{w}_n=\hat{w}-(\xi_n-\xi)\mathbbm{1}_{B_n(0)}\hat{G} $. Now it is obvious that $ u_n\in H_1(\R^3) $ for all $ n $ and that $ u_n\to u $ in $ L_2(\R^3) $ as $ n\to\infty $. Furthermore, we see that \begin{equation}
 	\xi_n=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\hat{w}+\xi\hat{G},
 	\end{equation}
 	and since $ \int_{B_n(0)}\hat{w}\lesssim\sqrt{n} $, and $\int_{B_n(0)}\hat{G}\sim4\pi n $ we see that $ \xi_n\to \xi $ as $ n\to\infty $. We can even say that $ (\xi-\xi_n)\sim \frac{1}{4\pi n}\int_{B_n(0)}\hat{w} $. By lemma \ref{H1 int}, we know that $ \left\lvert\frac{1}{4\pi n}\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\frac{1}{\sqrt{n}} $ for some $ \epsilon $-function $ \epsilon(n)\to0 $ as $ n\to\infty $. Now expanding the expression for $ F_\alpha^n(u_n) $ above we have \begin{equation}
 	\begin{aligned}
-	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2&+|\xi_n-\xi|^2\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)|\hat{G}(k)|^2\\&-2\Real(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\\&-\mu||u_n||^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right)
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2&+|\xi_n-\xi|^2\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)|\hat{G}(k)|^2\\&-2\Real(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\\&-\mu\|u_n\|^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right)
 	\end{aligned}
 	\end{equation} 
 	Using that $ \hat{G}(k)=\frac{1}{k^2+\mu} $ we have\begin{equation}
@@ -703,11 +703,11 @@ with domain\begin{equation}
 	Furthermore we know that \begin{equation}
 	\left\lvert(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\right\rvert=\left\lvert(\xi_n-\xi)\int_{B_n(0)} d^3k\ \overline{\hat{w}(k)}\right\rvert\sim\epsilon(n)^2\to0\quad\text{as }n\to\infty.
 	\end{equation}
-	Finally we have that $  ||u_n||\to||u||$ as $ n\to\infty $ since $ u_n\to u $ in $ L_2(\R^3) $ and that \begin{equation}
+	Finally we have that $  \|u_n\|\to\|u\|$ as $ n\to\infty $ since $ u_n\to u $ in $ L_2(\R^3) $ and that \begin{equation}
 	|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right)\to|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),\quad \text{as }n\to\infty,
 	\end{equation}
 	where we have used that the limit of a product is the product of the limits whenever both limits exist. Thus we have in total\begin{equation}
-	F_\alpha^n(u_n)\to\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
+	F_\alpha^n(u_n)\to\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
 	\end{equation}
 	as we wanted.
 \end{proof}
@@ -718,33 +718,33 @@ with domain\begin{equation}
 \end{proposition}
 \begin{proof}
 	Let $ u_n $ be as in the proposition above. Since the weak limit, $ u $, is in $ \dom{F_\alpha} $ it is of the form $ u=w+\xi G $ with $ w\in H_1(\R^3) $ and $ \xi\in\C $. On the other hand we then may without loss of generality take $ u_n $ to be of the form $ u_n=w+\xi g_n $, with $ g_n\in H_1(\R^3) $ such that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ as $ n\to\infty $. We then have \begin{equation}
-	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu||u_n||^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu\|u_n\|^2_{L_2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
 	\end{equation}
 	where we have defined $ \hat{w}_n(k)=\hat{w}(k)+\xi\hat{g}_n-\xi_n\hat{G}_n $, with $ \hat{G}_n=\mathbbm{1}_{B_n(0)}\hat{G} $, and \\$ \xi_n=(4\pi n+\alpha)^{-1}\int_{B_n(0)} \hat{w}+\xi \hat{g}_n $. Now there exist a subsequence $ F_\alpha^{n_j}(u_{n_j}) $ that converges to $ \liminf_{n\to\infty}F_\alpha^n(u_n) $. Expanding $ F_\alpha^{n_j}(u_{n_j}) $ we have \begin{equation}
 	\begin{aligned}
-	F_\alpha^{n_j}(u_{n_j})=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2+2\Real\left[(\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k))\overline{\hat{w}(k)}\right]\right\}\\-\mu||u_{n_j}||^2_{L_2(\R^3)}+|\xi_{n_j}|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right)
+	F_\alpha^{n_j}(u_{n_j})=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2+2\Real\left[(\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k))\overline{\hat{w}(k)}\right]\right\}\\-\mu\|u_{n_j}\|^2_{L_2(\R^3)}+|\xi_{n_j}|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right)
 	\end{aligned}
 	\end{equation}
-Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong ||f||_{H_1(\R^3)}^2 $ we see that either $ \liminf F_\alpha^{n}(u_n)=\infty $ or \\$ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H_1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H_1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H_1(\R^3) $ is a Hilbert space we then known that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H_1(\R^3) $ to some $ h\in H_1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H_1(\R^3) $ it also converges weakly in $ L_2(\R^3) $ to the same limit, since the dual space of $ H_1(\R^3) \subset L_2(\R^3) $ is $ H_{-1}(\R^3) \supset L_2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L_2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ and $ G_n\xrightarrow{||\cdot||_2} G $ so $ G_n\rightharpoonup G $ in $ L_2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L_2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H_1(\R^3) $. So $ h\in H_1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
+Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong \|f\|_{H_1(\R^3)}^2 $ we see that either $ \liminf F_\alpha^{n}(u_n)=\infty $ or \\$ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H_1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H_1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H_1(\R^3) $ is a Hilbert space we then known that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H_1(\R^3) $ to some $ h\in H_1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H_1(\R^3) $ it also converges weakly in $ L_2(\R^3) $ to the same limit, since the dual space of $ H_1(\R^3) \subset L_2(\R^3) $ is $ H_{-1}(\R^3) \supset L_2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L_2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L_2(\R^3) $ and $ G_n\xrightarrow{\|\cdot\|_2} G $ so $ G_n\rightharpoonup G $ in $ L_2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L_2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H_1(\R^3) $. So $ h\in H_1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H_1(\R^3) $ and $ L_2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
 \begin{equation}
 \begin{aligned}
-\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})&=\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2\right\}-\mu||u_{n_j}||^2_{L_2(\R^3)}\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
-&\geq\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2+\mu(||\xi g_{n_j}-\xi_{n_j}G_{n_j}||^2_{L_2(\R^3)}-||u_{n_j}||^2_{L_2(\R^3)})\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)
+\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})&=\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2\right\}-\mu\|u_{n_j}\|^2_{L_2(\R^3)}\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
+&\geq\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2+\mu(\|\xi g_{n_j}-\xi_{n_j}G_{n_j}\|^2_{L_2(\R^3)}-\|u_{n_j}\|^2_{L_2(\R^3)})\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)
 \end{aligned}
 \end{equation}
 where we in the second line threw away the positive term $ \int_{\R^3} d^3k\ k^2|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2 $. Now we see that \begin{equation}
 \begin{aligned}
-||\xi g_{n_j}-\xi_{n_j}G_{n_j}||^2-||u_{n_j}||^2=||\xi g_{n_j}||^2+||\xi_{n_j}G_{n_j}||^2-2\xi_{n_j}\bar{\xi}\Real\braket{g_{n_j},G_{n_j}}\\-||w||^2-||\xi g_{n_j}||^2-2\xi\Real\braket{w,g_{n_j}},
+\|\xi g_{n_j}-\xi_{n_j}G_{n_j}\|^2-\|u_{n_j}\|^2=\|\xi g_{n_j}\|^2+\|\xi_{n_j}G_{n_j}\|^2-2\xi_{n_j}\bar{\xi}\Real\braket{g_{n_j},G_{n_j}}\\-\|w\|^2-\|\xi g_{n_j}\|^2-2\xi\Real\braket{w,g_{n_j}},
 \end{aligned}
 \end{equation}
 from which it follows that\begin{equation}
 \begin{aligned}
-\lim\limits_{j\to\infty}\left(||\xi g_{n_j}-\xi_{n_j}G_{n_j}||^2-||u_{n_j}||^2\right)&=||\xi G||^2-||w||^2-2|\xi|^2\braket{G,G}-2\xi\Real\braket{w,G}\\&=-||w||^2-||\xi G||^2-2\xi\Real\braket{w,G}=-||w+\xi G||^2\\&=-||u||^2
+\lim\limits_{j\to\infty}\left(\|\xi g_{n_j}-\xi_{n_j}G_{n_j}\|^2-\|u_{n_j}\|^2\right)&=\|\xi G\|^2-\|w\|^2-2|\xi|^2\braket{G,G}-2\xi\Real\braket{w,G}\\&=-\|w\|^2-\|\xi G\|^2-2\xi\Real\braket{w,G}=-\|w+\xi G\|^2\\&=-\|u\|^2
 \end{aligned}
 \end{equation}
-where $ ||\cdot||=||\cdot||_{L_2(\R^3)} $, $ \braket{\cdot,\cdot}=\braket{\cdot,\cdot}_{L_2(\R^3)} $ and we have used that for $ f_n\xrightarrow{||\cdot||}f $ and $ g_n\rightharpoonup g $ as $ n\to\infty $ we have $ \braket{g_n,f_n}\to\braket{g,f} $, which follows directly from norm boundedness of weakly convergent sequences. Collecting all the above we have \begin{equation}
+where $ \|\cdot\|=\|\cdot\|_{L_2(\R^3)} $, $ \braket{\cdot,\cdot}=\braket{\cdot,\cdot}_{L_2(\R^3)} $ and we have used that for $ f_n\xrightarrow{\|\cdot\|}f $ and $ g_n\rightharpoonup g $ as $ n\to\infty $ we have $ \braket{g_n,f_n}\to\braket{g,f} $, which follows directly from norm boundedness of weakly convergent sequences. Collecting all the above we have \begin{equation}
 \begin{aligned}
-\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})\geq \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu||u||^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
+\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})\geq \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L_2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
 \end{aligned}
 \end{equation}
 which was the desired result.
@@ -757,6 +757,18 @@ Now collecting the above results in Propositions \ref{F Gamma upper bound} and \
 	Let $ R_\lambda(A_n)=(A_n-\lambda I)^{-1} $ denote the resolvents of $ A_n $ at $ \lambda $. If there exist $ M_\lambda $ such that $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ we know that $ R_\lambda(A_n)\in\mathcal{B}(H) $ (bounded operators on $ H $) for all $ n\geq M_\lambda $. By the strong resolvent convergence we know that $ R_\lambda(A_n)f $ converge to $ R_\lambda(A)f $ as $ n\to\infty $ for all $ f\in H $. Thus we conclude that \begin{equation}
 	\sup_{n\geq1}\left(\|R_\lambda(A_n)f\|\right)<\infty,\quad \text{ for all }f\in H.
 	\end{equation}
+	By the uniform boundedness principle (\cite{Folland}, 5.13) we conclude that \begin{equation}
+	\sup_{n\geq1}\left(||R_\lambda(A_n)||\right)<\infty.
+	\end{equation}
+	Now estimating the operator norm of $ R_\lambda(A) $ we find \begin{equation}
+	\|R_\lambda(A)f \|<\|R_{\lambda}(A_{n_\epsilon(f)})f \|+\epsilon
+	\end{equation}
+	for some $ n_\epsilon(f)\geq1 $ depending on $ \epsilon $ and $ f $. Thus taking supremum on both sides over all $ f\in H $ with $ \|f\|\leq1 $ we find\begin{equation}
+	\begin{aligned}
+	\|R_\lambda(A)\|=\sup\left(\|R_\lambda(A)f \|\ |\ f\in H,\ \|f\|\leq1\right)&\leq\sup\left(\|R_\lambda(A_{n_\epsilon(f)})f \|\ |\ f\in H,\ \|f\|\leq1\right)+\epsilon\\& \leq\sup_{n\geq1}\left(||R_\lambda(A_n)||\right)+\epsilon<\infty.
+	\end{aligned}
+	\end{equation}
+	Thereby $ R_\lambda(A)\in\mathcal{B}(H) $ and $ \lambda\notin\sigma(A) $.
 \end{proof}
 Another immediate consequence of Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} is that $ F_\alpha^n $ $ \Gamma $-converge to $ F_\alpha $ in the norm topology. Thus we may conclude that $ F_\alpha $ is a norm lower semicontinuous quadratic form, an by Theorem \ref{Quadratic form closable and bounded below iff low.semicont. Thm.} we may conclude that $ F_\alpha $ is closable and bounded from below.
 \appendix
