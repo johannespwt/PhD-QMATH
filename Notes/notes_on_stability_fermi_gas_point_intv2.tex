@@ -492,7 +492,7 @@ with $ u=w+\xi G $ and $ v=h+\chi G $ and where we used the boundary condition w
 This concludes how to obtain the Hamiltonian given the quadratic form. Notice that this expression also matches the one we found by self-adjoint extension. To see this, we have to notice that there is a bit a mismatch between the normalizations of the Green functions used in the two methods. We see this by computing \begin{equation}
 \begin{aligned}
 \hat{G}_{-\mu}(k)=\frac{1}{(2\pi)^{3/2}}\int_{\R^3} d^3x G_{-\mu}(x,0)\euler{-ik\cdot x}=\frac{2\pi}{4\pi(2\pi)^{3/2}}\int_{-1}^{1} d[\cos(\varphi)]\int_{0}^{\infty}dr r \euler{-\sqrt{\mu}r}\euler{-i|k|r\cos(\varphi)}\\
-=\frac{1}{(2\pi)^{3/2}}\int_{0}^{\infty}dr r=\frac{1}{(2\pi)^{3/2}} \frac{\euler{-\sqrt{\mu}r}\sin(|k|r)}{|k|r}
+=\frac{1}{(2\pi)^{3/2}}\int_{0}^{\infty}dr r\frac{1}{(2\pi)^{3/2}} \frac{\euler{-\sqrt{\mu}r}\sin(|k|r)}{|k|r}
 =\frac{1}{(2\pi)^{3/2}}\frac{1}{2i|k|}\left[\frac{1}{i(i\sqrt{\mu}-|k|)}-\frac{1}{i(i\sqrt{\mu}+|k|)}\right]\\
 =\frac{1}{(2\pi)^{3/2}}\frac{1}{2|k|}\left[\frac{i\sqrt{\mu}-|k|-i\sqrt{\mu}-|k|}{-\mu-|p^2|}\right]=\frac{1}{(2\pi)^{3/2}}\frac{1}{\mu+|k|^2}=\frac{1}{(2\pi)^{3/2}}\frac{1}{\mu+|k|^2}
 \end{aligned}
@@ -753,7 +753,7 @@ which was the desired result.
 \end{proof}
 Now collecting the above results in Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} we find that $ F_\alpha^n $ and $ F_\alpha $ indeed satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm} (Corollary \ref{Gamma conv. and strong res. conv. Col}) assuming that $ F_\alpha^n $ admits a common lower bound (using that $ F_\alpha^n $ is independent of $ \mu $, this is actually easy to see), and thus we may conclude that the corresponding operator $ H_\alpha^n $ and $ H_\alpha $ fulfil that $ H_\alpha^n\to H_\alpha $ in the strong resolvent sense. This tells us that points in the spectrum cannot suddenly emerge under the convergence as the following proposition will show.
 \begin{proposition}
-	Let $ (A_n)_{n\geq1} $ be a sequence of operators in a Hilbert space $ H $ and let $ A $ be an operator on $ H $. Assume that $ A_n\to A $ in the strong resolvent sense. If $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ for some $ M_\lambda>0$, then $ \lambda\notin\sigma(A) $, where $ \sigma(\cdot) $ denotes the spectrum.
+	Let $ (A_n)_{n\geq1} $ be a sequence of operators on a Hilbert space $ H $ and let $ A $ be an operator on $ H $. Assume that $ A_n\to A $ in the strong resolvent sense. If $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ for some $ M_\lambda>0$, then $ \lambda\notin\sigma(A) $, where $ \sigma(\cdot) $ denotes the spectrum.
 \end{proposition}
 \begin{proof}
 	Let $ R_\lambda(A_n)=(A_n-\lambda I)^{-1} $ denote the resolvents of $ A_n $ at $ \lambda $. If there exist $ M_\lambda $ such that $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ we know that $ R_\lambda(A_n)\in\mathcal{B}(H) $ (bounded operators on $ H $) for all $ n\geq M_\lambda $. By the strong resolvent convergence we know that $ R_\lambda(A_n)f $ converge to $ R_\lambda(A)f $ as $ n\to\infty $ for all $ f\in H $. Thus we conclude that \begin{equation}
