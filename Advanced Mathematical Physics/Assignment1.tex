@@ -1,0 +1,155 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\numberwithin{equation}{section}
+\linespread{1.3}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Advanced Mathematical Physics, Assignment 1}
+\lhead{Johannes Agerskov}
+\rfoot{\thepage}
+\lfoot{Dated: \today}
+\author{Johannes Agerskov}
+\date{Dated: \today}
+\title{Advanced Mathematical Physics, Assignment 1}
+\begin{document}
+
+	\maketitle
+
+\section{Stability in two dimensions}
+We define the energy functional for a particle in $ \R^2 $ as $ \mathcal{E}(\psi)=T_\psi+V_\psi $, with \begin{equation}
+T_\psi=\int_{\R^2}\lvert\nabla\psi(x)\rvert^2 \diff x,\quad\text{and}\quad V_\psi=\int V(x)\lvert\psi(x)\rvert^2 \diff x.
+\end{equation}
+The ground state energy is defined by\begin{equation}
+E_0=\inf\{\mathcal{E}(\psi),\ \psi\in H^1(\R^2),\ \lVert\psi\rVert_2=1,\ V_\psi \text{ well defined.}\}.
+\end{equation} 
+Now assuming that $ V\in L^{1+\epsilon}(\R^2)+L^\infty(\R^2) $ we prove that $ E_0>-\infty $.
+\begin{proof}
+	Let $ V=v+w $ with $ v\in L^{1+\epsilon}(\R^2)  $ and $ w\in L^\infty(\R^2) $. Notice first, that by Sobolev's inequality we have \begin{equation}
+	\lVert\nabla\psi\rVert_2^2\geq S_{2,p}\lVert\psi\rVert_2^{\frac{-4}{p-2}}\lVert\psi\rVert_p^{\frac{2p}{p-2}},\qquad 2<p<\infty.
+	\end{equation}
+	It follows that $ \psi\in L^p(\R^2) $ for $ 2<p<\infty $, whenever $ \psi\in H^1(\R^2) $.
+	Assuming that $ V_\psi $ is well defined we know from Hölder's inequality that\begin{equation}
+	\begin{aligned}
+	V_\psi=\int V(x)\lvert\psi(x)\rvert^2 \diff x&\geq\int v(x)\lvert\psi(x)\rvert^2 \diff x-\lVert w\rVert_\infty \lVert \psi\rVert_2^2\\&\geq-\lVert v\rVert_q\lVert|\psi|^2\rVert_{\frac{q}{q-1}}-\lVert w\rVert_\infty \lVert \psi\rVert_2^2\\&=-\lVert v\rVert_q\lVert\psi\rVert_{\frac{2q}{q-1}}^{2}-\lVert w\rVert_\infty \lVert \psi\rVert_2^2.
+	\end{aligned}
+	\end{equation} Thus setting $ p=\frac{2q}{q-1}=2+\frac{2}{\epsilon} $,
+	 with $ \epsilon>0 $, we find that \begin{equation}
+	V_\psi\geq-\lVert v\rVert_{1+\epsilon}\lVert \psi\rVert_p^2-\lVert w\rVert_\infty \lVert \psi\rVert_2^2.
+	\end{equation}
+	Now using Sobolev's inequality we find that\begin{equation}
+	T_\psi\geq S_{2,p}\lVert \psi\rVert_2^{\frac{-4}{p-2}}\lVert \psi \rVert_p^{\frac{2p}{p-2}}=S_{2,p}\lVert \psi\rVert_2^{\frac{-4}{p-2}}\lVert \psi \rVert_p^{2(1+\epsilon)}.
+	\end{equation}
+	Thus we conclude that $ \mathcal{E}(\psi)\geq S_{2,p}\lVert \psi\rVert_2^{\frac{-4}{p-2}}\lVert \psi \rVert_p^{2(1+\epsilon)}-\lVert v\rVert_{1+\epsilon}\lVert \psi\rVert_p^2-\lVert w\rVert_\infty \lVert \psi\rVert_2^2 $.
+	Consider now the case in which $ \psi\in H^1(\R^2) $, $ \lVert \psi \rVert_2=1 $ and $ V_\psi $ is well defined. It then follows that \begin{equation}
+	\mathcal{E}(\psi)\geq S_{2,p}\lVert \psi \rVert_p^{2(1+\epsilon)}-\lVert v\rVert_{1+\epsilon}\lVert \psi\rVert_p^2-\lVert w\rVert_\infty.
+	\end{equation}
+	Therefore, we may conclude that \begin{equation}
+	\begin{aligned}
+	E_0&=\inf\{\mathcal{E}(\psi):\psi\in H^1(\R^2),\ \lVert\psi \rVert_2=1,\ V_\psi\text{ well defined} \}\\&\geq \inf\{S_{2,p}\lVert \psi \rVert_p^{2(1+\epsilon)}-\lVert v\rVert_{1+\epsilon}\lVert \psi\rVert_p^2-\lVert w\rVert_\infty:\psi\in H^1(\R^2),\ \lVert\psi \rVert_2=1,\ V_\psi\text{ well defined} \}\\
+	&\geq\inf\{S_{2,p} x^{(1+\epsilon)}-\lVert v\rVert_{1+\epsilon}x-\lVert w\rVert_\infty : x\in\R,\  x\geq0\}>-\infty,
+	\end{aligned}
+	\end{equation}
+	where we have used that fact that\\ $ \{\lVert \psi \rVert_p^2 : \psi\in H^1(\R^2),\ \lVert\psi \rVert_2=1,\ V_\psi\text{ well defined}\}\subseteq \{x\in\R :  x\geq0\} $
+\end{proof}
+\section{Stability of hydrogen through ground state positivity}
+\subsection*{(a)}
+Let $ \Omega\in\R^3 $ be an open set and $ V\in\mathcal{C}(\Omega) $. Assume that $ \psi\in \mathcal{C}^2(\Omega) $ satisfies $ (-\Delta+V)\psi=E\psi $ for some $ E\in\R $ and furthermore $ \psi>0 $. Then it holds that \begin{equation}
+\int_{\Omega}\lvert(\nabla\varphi)(x) \rvert^2\diff x+\int_{\Omega}V(x)\lvert\varphi(x)\rvert^2 \diff x\geq E\int_{\Omega}\lvert\varphi(x)\rvert^2 \diff x,
+\end{equation}
+for all $ \varphi\in\mathcal{C}_0^1(\Omega) $.
+\begin{proof}
+	Let $ \varphi\in\mathcal{C}_0^1(\Omega) $, and write $ \varphi=g\psi $. Since $ \psi>0 $ we clearly have $ g=\varphi/\psi\in\mathcal{C}_0^1(\Omega) $. Notice that $ \nabla\varphi=(\nabla g)\psi+g(\nabla\psi) $ and therefore \begin{equation}
+	\lvert\nabla\varphi\rvert^2=\lvert\psi\rvert^2\lvert\nabla g\rvert^2+\lvert g\rvert^2\lvert\nabla\psi\rvert^2+(\nabla g)(\nabla \psi)\bar{g}\psi+(\nabla \psi)(\nabla \bar{g})\psi g
+	\end{equation}
+	Using that $ (\nabla g)(\nabla \psi)\bar{g}\psi=\nabla\cdot(g(\nabla\psi)\bar{g}\psi)-\lvert g \rvert^2(\Delta\psi)\psi-g(\nabla\psi)(\nabla\bar{g})\psi-\lvert g \rvert^2\lvert\nabla\psi\rvert^2 $, we find\begin{equation}
+		\lvert\nabla\varphi\rvert^2=\lvert\psi\rvert^2\lvert\nabla g\rvert^2+\nabla\cdot(g(\nabla\psi)\bar{g}\psi)-\lvert g\rvert^2(\Delta\psi)\psi.
+	\end{equation}
+	Applying Stokes' (or Gauss') theorem, as well as using the fact that $ g $ has compact support\footnote{Notice that since $ g $ is continuous, the support of $ g $, $ \text{supp}(g)=\{x\in \R^3 : f(x)\neq0\} $, is necessarily open. However, $ S=\overline{\text{supp}(g)} $ is compact by assumption. Furthermore, by continuity of $ g $, we must have $ g\rvert_{\dd S}=0 $. Thus we may split the integral $$ \int_{\Omega}\nabla\cdot(g(\nabla\psi)\bar{g}\psi) \diff x=\int_{S}\nabla\cdot(g(\nabla\psi)\bar{g}\psi) \diff x+\int_{\Omega\setminus S}\nabla\cdot(g(\nabla\psi)\bar{g}\psi) \diff x=\int_{\dd S}(g(\nabla\psi)\bar{g}\psi)\cdot \hat{n} \diff a=0. $$ } we conclude\begin{equation}
+	\int_{\Omega}\lvert(\nabla\varphi)(x) \rvert^2\diff x=\int_{\Omega}\lvert\psi(x)\rvert^2\lvert\nabla g(x)\rvert^2-\lvert g(x)\rvert^2(\Delta\psi(x))\psi(x) \diff x\geq\int_{\Omega}\lvert g(x) \rvert^2\psi(x)(-\Delta\psi(x)).
+	\end{equation} 
+	Therefore we conclude\begin{equation}
+	\begin{aligned}
+	\int_{\Omega}\lvert(\nabla\varphi)(x) \rvert^2\diff x+\int_{\Omega}V(x)\lvert\varphi(x)\rvert^2 \diff x&\geq\int_{\Omega}\lvert g(x) \rvert^2\psi(x)(-\Delta\psi(x))+\lvert g(x) \rvert^2\psi(x)(V(x)\psi(x))\diff x\\
+	&=\int_{\Omega}\lvert g(x) \rvert^2\psi(x)\left[(-\Delta+V(x))\psi(x)\right]\diff x\\
+	&=E\int_{\Omega}\lvert g(x) \rvert^2\lvert\psi(x)\rvert^2\diff x\\
+	&=E\int_{\Omega}\lvert \varphi(x)\rvert^2 \diff x
+	\end{aligned}
+	\end{equation}
+	this concludes the proof.
+\end{proof}
+\subsection*{(b)} Consider now the function $ \psi(x)=\exp(-\alpha\abs{x}) $. We show that this function indeed satisfies $ \psi\in \mathcal{C}^2(\R^3\setminus\{0\}) $ and that there exist an $ \alpha $ such that $ (-\Delta-Z/\abs{x})\psi=E_0\psi $ for some $ E_0 $. First we notice that $ \psi $ is a composition of $ \mathcal{C}^\infty(\R^3\setminus\{0\}) $, thus $ \psi\in\mathcal{C}^2(\R^3\setminus\{0\})\subset\mathcal{C}^\infty(\R^3\setminus\{0\}) $. Furthermore, by going to spherical coordinates $ (r,\theta,\varphi) $, with $ \theta $ the azimuthal angle and $ \varphi $ the polar angle, we can express $ \tilde{\psi}(r,\theta,\phi):=\psi(x(r,\theta,\varphi))=\exp(-\alpha r) $. It is well known that the Laplacian on $ \mathcal{C}^2(\R\setminus\{0\}) $, $ \Delta $, can be exressed in polar coordinates as \begin{equation}
+\Delta\phi=\frac{1}{r}\frac{\partial^2}{\partial r^2}(r\phi)+\frac{1}{r^2\sin\varphi}\frac{\partial}{\partial\varphi}(\sin\varphi\frac{\partial\phi}{\partial\varphi})+\frac{1}{r^2\sin^2\varphi}\frac{\partial^2\phi}{\partial^2\theta}, \quad r>0,\ 0\leq\theta<2\pi,\ 0\leq\varphi\leq\pi.
+\end{equation}
+Thereby we see that \begin{equation*}
+\begin{aligned}
+(-\Delta-Z/\abs{x})\psi(x)\rvert_{x=x(r,\theta,\varphi)}=(-\Delta-Z/r)\tilde{\psi}(r,\theta,\varphi)&=-\frac{1}{r}\frac{\partial^2}{\partial r^2}(r \exp(-\alpha r))-Z/r\exp(-\alpha r)\\
+&=(-\alpha^2+2\alpha/r-Z/r)\exp(\alpha r).
+\end{aligned}
+\end{equation*} 
+Thus choosing $ \alpha=Z/2 $ we find that $ (-\Delta-Z/r)\psi=E_0\psi $, with  $ E_0=-Z^2/4 $. From problem 2.(a) with $ \Omega=\R^3\setminus\{0\} $, which is clearly open, we then conclude that for all $ \varphi\in\mathcal{C}_0^1(\R^3\setminus\{0\}) $ we have 
+\begin{equation}
+\int_{\R^3\setminus\{0\}}\lvert(\nabla\varphi)(x) \rvert^2\diff x-\int_{\R^3\setminus\{0\}}\frac{Z}{\abs{x}}\lvert\varphi(x)\rvert^2 \diff x\geq E\int_{\R^3\setminus\{0\}}\lvert\varphi(x)\rvert^2 \diff x.
+\end{equation}
+\section{Lieb-Thirring inequalities in one dimension}
+We show that in one dimension a Lieb-Thirring inequality of the form \begin{equation}
+\sum_{j\geq0}\abs{E_j}^\gamma\leq L_\gamma\int_{\R}V_{-}(x)^{\gamma+1/2}\diff x,
+\end{equation}
+cannot hold for $ 0\leq\gamma < 1/2 $. We show this by contradiction.
+\end{document}
