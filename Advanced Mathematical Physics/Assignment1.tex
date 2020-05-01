@@ -85,7 +85,7 @@ Now assuming that $ V\in L^{1+\epsilon}(\R^2)+L^\infty(\R^2) $ we prove that $ E
 	\lVert\nabla\psi\rVert_2^2\geq S_{2,p}\lVert\psi\rVert_2^{\frac{-4}{p-2}}\lVert\psi\rVert_p^{\frac{2p}{p-2}},\qquad 2<p<\infty.
 	\end{equation}
 	It follows that $ \psi\in L^p(\R^2) $ for $ 2<p<\infty $, whenever $ \psi\in H^1(\R^2) $.
-	Assuming that $ V_\psi $ is well defined we know from Hölder's inequality that\begin{equation}
+	Assuming that $ V_\psi $ is well defined we know from H\"older's inequality that\begin{equation}
 	\begin{aligned}
 	V_\psi=\int V(x)\lvert\psi(x)\rvert^2 \diff x&\geq\int v(x)\lvert\psi(x)\rvert^2 \diff x-\lVert w\rVert_\infty \lVert \psi\rVert_2^2\\&\geq-\lVert v\rVert_q\lVert|\psi|^2\rVert_{\frac{q}{q-1}}-\lVert w\rVert_\infty \lVert \psi\rVert_2^2\\&=-\lVert v\rVert_q\lVert\psi\rVert_{\frac{2q}{q-1}}^{2}-\lVert w\rVert_\infty \lVert \psi\rVert_2^2.
 	\end{aligned}
@@ -116,7 +116,7 @@ Let $ \Omega\in\R^3 $ be an open set and $ V\in\mathcal{C}(\Omega) $. Assume tha
 for all $ \varphi\in\mathcal{C}_0^1(\Omega) $.
 \begin{proof}
 	Let $ \varphi\in\mathcal{C}_0^1(\Omega) $, and write $ \varphi=g\psi $. Since $ \psi>0 $ we clearly have $ g=\varphi/\psi\in\mathcal{C}_0^1(\Omega) $. Notice that $ \nabla\varphi=(\nabla g)\psi+g(\nabla\psi) $ and therefore \begin{equation}
-	\lvert\nabla\varphi\rvert^2=\lvert\psi\rvert^2\lvert\nabla g\rvert^2+\lvert g\rvert^2\lvert\nabla\psi\rvert^2+(\nabla g)(\nabla \psi)\bar{g}\psi+(\nabla \psi)(\nabla \bar{g})\psi g
+	\lvert\nabla\varphi\rvert^2=\lvert\psi\rvert^2\lvert\nabla g\rvert^2+\lvert g\rvert^2\lvert\nabla\psi\rvert^2+(\nabla g)(\nabla \psi)\bar{g}\psi+(\nabla \psi)(\nabla \bar{g})\psi g.
 	\end{equation}
 	Using that $ (\nabla g)(\nabla \psi)\bar{g}\psi=\nabla\cdot(g(\nabla\psi)\bar{g}\psi)-\lvert g \rvert^2(\Delta\psi)\psi-g(\nabla\psi)(\nabla\bar{g})\psi-\lvert g \rvert^2\lvert\nabla\psi\rvert^2 $, we find\begin{equation}
 		\lvert\nabla\varphi\rvert^2=\lvert\psi\rvert^2\lvert\nabla g\rvert^2+\nabla\cdot(g(\nabla\psi)\bar{g}\psi)-\lvert g\rvert^2(\Delta\psi)\psi.
@@ -134,7 +134,7 @@ for all $ \varphi\in\mathcal{C}_0^1(\Omega) $.
 	\end{equation}
 	this concludes the proof.
 \end{proof}
-\subsection*{(b)} Consider now the function $ \psi(x)=\exp(-\alpha\abs{x}) $. We show that this function indeed satisfies $ \psi\in \mathcal{C}^2(\R^3\setminus\{0\}) $ and that there exist an $ \alpha $ such that $ (-\Delta-Z/\abs{x})\psi=E_0\psi $ for some $ E_0 $. First we notice that $ \psi $ is a composition of $ \mathcal{C}^\infty(\R^3\setminus\{0\}) $, thus $ \psi\in\mathcal{C}^2(\R^3\setminus\{0\})\subset\mathcal{C}^\infty(\R^3\setminus\{0\}) $. Furthermore, by going to spherical coordinates $ (r,\theta,\varphi) $, with $ \theta $ the azimuthal angle and $ \varphi $ the polar angle, we can express $ \tilde{\psi}(r,\theta,\phi):=\psi(x(r,\theta,\varphi))=\exp(-\alpha r) $. It is well known that the Laplacian on $ \mathcal{C}^2(\R\setminus\{0\}) $, $ \Delta $, can be exressed in polar coordinates as \begin{equation}
+\subsection*{(b)} Consider now the function $ \psi(x)=\exp(-\alpha\abs{x}) $. We show that this function indeed satisfies $ \psi\in \mathcal{C}^2(\R^3\setminus\{0\}) $ and that there exist an $ \alpha $ such that $ (-\Delta-Z/\abs{x})\psi=E_0\psi $ for some $ E_0 $. First we notice that $ \psi $ is a composition of $ \mathcal{C}^\infty(\R^3\setminus\{0\}) $, thus $ \psi\in\mathcal{C}^2(\R^3\setminus\{0\})\subset\mathcal{C}^\infty(\R^3\setminus\{0\}) $. Furthermore, by going to spherical coordinates $ (r,\theta,\varphi) $, with $ \theta $ the azimuthal angle and $ \varphi $ the polar angle, we can express $ \tilde{\psi}(r,\theta,\phi):=\psi(x(r,\theta,\varphi))=\exp(-\alpha r) $. It is well known that the Laplacian on $ \mathcal{C}^2(\R\setminus\{0\}) $, $ \Delta $, can be exressed in polar coordinates as\footnote{Notice that we use $ \Delta $ to denote the Laplacian in both spherical and Cartesian coordinates.} \begin{equation}
 \Delta\phi=\frac{1}{r}\frac{\partial^2}{\partial r^2}(r\phi)+\frac{1}{r^2\sin\varphi}\frac{\partial}{\partial\varphi}(\sin\varphi\frac{\partial\phi}{\partial\varphi})+\frac{1}{r^2\sin^2\varphi}\frac{\partial^2\phi}{\partial^2\theta}, \quad r>0,\ 0\leq\theta<2\pi,\ 0\leq\varphi\leq\pi.
 \end{equation}
 Thereby we see that \begin{equation*}
@@ -149,7 +149,104 @@ Thus choosing $ \alpha=Z/2 $ we find that $ (-\Delta-Z/r)\psi=E_0\psi $, with  $
 \end{equation}
 \section{Lieb-Thirring inequalities in one dimension}
 We show that in one dimension a Lieb-Thirring inequality of the form \begin{equation}
-\sum_{j\geq0}\abs{E_j}^\gamma\leq L_\gamma\int_{\R}V_{-}(x)^{\gamma+1/2}\diff x,
+\sum_{j\geq0}\abs{E_j}^\gamma\leq L_\gamma\int_{\R}V_{-}(x)^{\gamma+1/2}\diff x, \label{LTineq1}
 \end{equation}
-cannot hold for $ 0\leq\gamma < 1/2 $. We show this by contradiction.
+cannot hold for $ 0\leq\gamma < 1/2 $. We show this by contradiction. Consider the Hamiltonian $ H=-\frac{\diff^2}{\diff x^2}+\alpha(\alpha+1)(\tanh(x)^2-1) $ with eigenfunction $ \psi(x)=\frac{1}{\cosh(x)^\alpha}$, $ \alpha>0 $
+\begin{equation}
+-\frac{\diff^2}{\diff x^2}\psi(x)+\alpha(\alpha+1)(\tanh(x)^2-1)\psi(x)=-\alpha^2\psi(x).
+\end{equation}
+This can be seen by the following calculations:
+\begin{equation}
+\frac{\diff}{\diff x}\left(\frac{1}{\cosh(x)^\alpha}\right)=-\alpha\frac{\sinh(x)}{\cosh(x)^{\alpha+1}},
+\end{equation}
+\begin{equation}
+\frac{\diff^2}{\diff x^2}\left(\frac{1}{\cosh(x)^\alpha}\right)=-\alpha\frac{1}{\cosh(x)^\alpha}+\alpha(\alpha+1)\frac{1}{\cosh(x)^\alpha}\tanh(x)^2.
+\end{equation}
+From which it clearly follows that\begin{equation}
+-\frac{\diff^2}{\diff x^2}\psi(x)+\alpha(\alpha+1)(\tanh(x)^2-1)\psi(x)=-\alpha^2\psi(x).
+\end{equation}
+The potential of $ H $, is clearly given by $ V(x)=\alpha(\alpha+1)(\tanh(x)^2-1) $. Since $ \tanh(x)<1 $ for $ x\in\R $. we have that $ V_-(x)=\alpha(\alpha+1)(1-\tanh(x)^2) $. Assume now that a Lieb-Thirring inequality of the form \eqref{LTineq1} with $ 0\leq\gamma<1/2 $ holds. Let us then compute the right-hand side of the inequality with the potential $ V_-(x)=\alpha(\alpha+1)(1-\tanh(x)^2) $\begin{equation}
+\begin{aligned}
+L_\gamma\alpha(\alpha+1)\int_{\R}(1-\tanh(x)^2)^{\gamma+1/2} \diff x&=L_\gamma\alpha(\alpha+1)\int_{(-1,1)}(1-u^2)^{\gamma-1/2} \diff u\\
+&=2L_\gamma\alpha(\alpha+1)\int_{(0,1)}(1+u)^{\gamma-1/2}(1-u)^{\gamma-1/2} \diff u,\label{int1}
+\end{aligned}
+\end{equation}
+where we have made the change of variables $ u=\tanh(x) $ in the first line, Notice that then $ \frac{\diff u}{\diff x}=1-\tanh(x)^2 $. In the second line we simply exploited the fact that the integrand is even in $ u $ and factorized the integrand. Since the integrand is positive we can by monotone convergence theorem express it as a limit of integrals over the intervals $ (1/n,1) $ with $ n\to \infty $. Then we can rewrite all these integrals to Riemann integrals. By a simple comparison to integrals of the type $ \int_{0}^{1}\frac{1}{x^p}dx $, it is clear that the integral of \eqref{int1} is convergent if and only if $ \gamma<1/2 $. In this case we simply define $ C_\gamma=2L_\gamma\int_{(-1,1)}(1-u^2)^{\gamma-1/2} du $, and we see that the Lieb-Thirring inequality is of the form\begin{equation}
+\sum_j\abs{E_j}^\gamma\leq\alpha(\alpha+1)C_\gamma.
+\end{equation}
+On the other hand we know that $ \alpha^{2\gamma}\leq\sum_j\abs{E_j}^\gamma $, since we have shown $ -\alpha^2 $ to be one of the energies. Thus we conclude that \begin{equation}
+\alpha^{2\gamma}\leq\alpha(\alpha+1)C_\gamma,\quad 0\leq \gamma<1/2
+\end{equation}
+However, this is clear a contradiction since $ \alpha>0 $ was chosen arbitrarily. To see this, simply choose $ 0<\alpha<1 $ such that  $ \alpha^{2\gamma-1}> 2C_\gamma $. This conlcudes that in one dimension, there can be no Lieb-Thirring inequality of the form \eqref{LTineq1} with $ 0\leq\gamma<1/2 $.
+\section{Thomas-Fermi theory}
+Let $ \rho\in L^1(\R^3)\cap L^{5/3}(\R^3) $, $ \rho>0 $. The direct Couloumb energy is defined as \begin{equation}
+D(\rho)=\int_{\R^3}\int_{\R^3}\frac{\rho(x)\rho(y)}{\abs{x-y}}\diff x\diff y. 
+\end{equation}
+Consider then the \emph{Thomas-Fermi} energy function \begin{equation}
+\mathcal{E}^{TF}(\rho)=\int_{\R^3}\rho(x)^{5/3} \diff x -\int_{\R^3}\frac{\rho(x)}{\abs{x}}+D(\rho),
+\end{equation} 
+and for a fixed $ N>0 $ the minimization problem \begin{equation}
+\begin{aligned},
+E_0&:=\inf\left\{\mathcal{E}^{TF}(\rho) : \rho\in\mathcal{D}_N \right\}\\
+\mathcal{D}_N&:=\left\{\rho\in L^1(\R^3)\cap L^{5/3}(\R^3) : \rho\geq0,\ \norm{\rho}_1\leq N \right\}.
+\end{aligned}
+\end{equation}
+\subsection*{(a)}
+We prove that for $ \rho\in \mathcal{D}_N $, we have\begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x\leq cN+d\norm{\rho}_{5/3},
+\end{equation}
+with some constants $ c,d>0 $ independent of $ \rho $. To see this, we split the integral\begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x=\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}\rho(x)\diff x+\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho(x)\diff x\leq\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}\rho(x)\diff x+\norm{\rho}_1.
+\end{equation}
+For the remaining integrals we use H\"older's inequality with $ q=5/2 $  and $ p=5/3 $. Then we get \begin{equation}
+\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}\rho(x)\diff x\leq\abs{\int_{\abs{x}\leq 1}\frac{1}{\abs{x}^{5/2}}\diff x}^{\frac{2}{5}}\norm{\rho}_{5/3}=\abs{4\pi \int_{(0,1)}\frac{1}{r^{1/2}}\diff r}^{\frac{2}{5}}\norm{\rho}_{5/3}=(8\pi)^{2/5}\norm{\rho}_{5/3}
+\end{equation}
+where we in the second equality changed to polar coordinates with Jacobian $ r^2\sin(\varphi) $ and computed the angular integrals directly. Thus we have for $ \rho\in \mathcal{D}_N $ \begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x\leq N+(8\pi)^{2/5}\norm{\rho}_{5/3},
+\end{equation}
+where we used that $ \norm{\rho}_1\leq N $.
+Knowing that $ 0\leq D(\rho)<\infty $ we may conclude that \begin{equation}
+E_0\geq(1-(8\pi)^{2/5})\norm{\rho}_{5/3}-N+D(\rho)>-\infty.
+\end{equation}
+\subsection*{(b)}
+Let $ (\rho^j)_{j\geq1}\subset \mathcal{D}_N $ be a sequence such that $ \mathcal{E}^{TF}(\rho^j)\to E_0 $. Then $ \norm{\rho^j}_{5/3} $ is bounded and from Banach-Alaoglu's theorem after restricting to a subsequence we have $ \rho^j\rightharpoonup\rho_0 $ for some $ \rho_0\in L^{5/3}(\R^3) $. We prove now that \begin{equation}
+\norm{\rho_0}_{5/3}\leq\liminf_{j\geq1}\norm{\rho^j}_{5/3}.
+\end{equation}
+We prove actually the more general statement: Let $ X $ be a Banach space and $ (x^j)_{j\geq1}\subset X $ a sequence converging weakly to $ x\in X $, then $ \norm{x}\leq\liminf_{j\geq1}\norm{x^j} $.
+\begin{proof}
+	By the Hahn-Banach theorem, there exist a linear functional $ f:X\to \C $ such that $ f(x)=\norm{x} $ and such that $ \norm{f}=1 $. By weak convergence of $ x^j $ we then have \begin{equation}
+	\norm{x}=f(x)=\liminf_{j\geq 1}f(x^j)\leq\liminf_{j\geq1}\norm{x^j},
+	\end{equation}
+	which proves the claim.
+\end{proof}
+Now since $ L^{5/3}(\R^3) $ is a Banach space by the Riez-Fischer theorem, we have desired result.
+\subsection*{(c)}
+We prove now that $ \rho_0>0 $ almost everywhere. First we notice that $ \rho_0 $ is measurable. Consider therefore the set $ M_R=\{x\in\R^3 : \rho_0(x)<0\}\cap B_R(0) $, where $ B_R(0) $ denotes the ball of radius $ R $ centred at $ 0 $. Assume for contradiction that this set has measure greater than zero, $ \lambda(M_R)>0 $ for some $ R>0 $. Then $ \int_{M_R}\rho_0(x) \diff x <0$. However, this is a contradiction, since $ \int_{M_R}\rho^j(x) \diff x\geq0 $ and $ \int_{M_R} \diff x $ is a bounded linear functional on $ L^{5/3}(\R^3) $. As we have already established weak convergence of $ \rho^j $ in $ L^{5/3}(\R^3) $, we may conclude that $ \int_{M_R}\rho_0(x) \diff x=\lim\limits_{j\to\infty}\int_{M_R}\rho^j(x) \diff x\geq0 $. Thus we have established that $ \rho_0\geq0 $ on $ B_R(0) $ a.e. for all $ R>0 $, from which it follows that $ \rho_0\geq0 $ a.e.\\
+\\
+Now that we have established that $ \rho_0>0 $ a.e., we show that $ \int_{\R^3}\rho_0 \diff x \leq N $. To see this consider the sequence $( \chi_{B_n(0)}\rho_0)_{n\geq1} $. By the monotone convergence theorem we know that \begin{equation}
+\int_{\R^3}\rho_0(x) \diff x=\lim\limits_{n\to\infty}\int_{\R^3}\chi_{B_n(0)}(x)\rho_0(x) \diff x=\lim\limits_{n\to\infty}\int_{B_n(0)}\rho_0(x)\diff x
+\end{equation}
+Now since $ \int_{B_n(0)}\diff x $ is a bounded linear functional on $ L^{5/3}(\R^3) $ we may conclude from weak convergence of $ \rho^j $ that \begin{equation}
+\int_{B_n(0)}\rho_0(x)\diff x=\lim\limits_{j\to\infty}\int_{B_n(0)}\rho^j(x)\diff x.
+\end{equation}
+From the fact that $ \int_{B_n(0)}\rho^j\diff x\leq\int_{\R^3}\rho^j(x)\diff x\leq N $ we may conclude that \begin{equation}
+\int_{B_n(0)}\rho_0(x)\diff x\leq N,\quad \text{for all }n\geq1.
+\end{equation}
+Thus it follows from the MCT that $ \int_{\R^3}\rho_0(x)\diff x\leq N $, so $ \rho_0\in\mathcal{D}_N $.
+\subsection*{(d)}
+It can be shown that $ \rho^j\rightharpoonup\rho_0 $ in $ L^q(\R^3) $ for some $ 1<q<3/2 $. Using this we can show that \begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho^j(x)\diff x\to\int_{\R^3}\frac{1}{\abs{x}}\rho_0(x)\diff x.
+\end{equation}
+To see this, we split the integral in two\begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho^j(x)\diff x=\int_{\abs{x}\leq1}\frac{1}{\abs{x}}\rho^j(x)\diff x+\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho^j(x)\diff x.
+\end{equation}
+We then notice that the integral $ \int_{\abs{x}\leq1}\frac{1}{\abs{x}}dx $ acts as a bounded linear function on $ L^{5/3}(\R^3) $. This can be seen by the fact that $ \chi_{\abs{x}\leq1}\frac{1}{\abs{x}}\in L^{5/2}(\R^3) $. Thus by H\"older's inequality we have for $ f\in L^{5/3}(\R^3) $ that\begin{equation}
+\abs{\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}f(x)\diff x}\leq\norm{\chi_{\abs{x}\leq1}\frac{1}{\abs{x}}}_{5/2}\norm{f}_{5/3}.
+\end{equation}
+Therefore, we may conclude the convergence of the first integral by weak convergence of $ \rho^j $ in $ L^{5/3}(\R^3) $. For the second integral, we instead use that $ \chi_{\abs{x}>1}\frac{1}{\abs{x}}\in L_p(\R^3) $ for all $ p>3 $. Again by H\"older's inequality $ \int_{\abs{x}>1}\frac{1}{\abs{x}}\diff x $ acts as a bounded linear functional for all $ 1<q<3/2 $. Thus, by the fact that $ \rho^j $ converges weakly in $ L_q(\R^3) $ for some $ 1<q<3/2 $ we may conclude the convergence of the second integral. Thereby we have \begin{equation}
+\underbrace{\int_{\abs{x}\leq1}\frac{1}{\abs{x}}\rho^j(x)\to\int_{\abs{x}\leq1}\frac{1}{\abs{x}}\rho_0(x)}_{\text{weak convergence in }L^{5/3}(\R^3)},\qquad \underbrace{\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho^j(x)\to\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho_0(x)}_{\text{weak convergence in }L^{q}(\R^3)\text{ for some }1<q<3/2}.
+\end{equation}
+From which we obtain the desired result \begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho^j(x)\to\int_{\R^3}\frac{1}{\abs{x}}\rho_0(x).
+\end{equation}
 \end{document}
