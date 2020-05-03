@@ -179,6 +179,7 @@ On the other hand we know that $ \alpha^{2\gamma}\leq\sum_j\abs{E_j}^\gamma $, s
 \end{equation}
 However, this is clear a contradiction since $ \alpha>0 $ was chosen arbitrarily. To see this, simply choose $ 0<\alpha<1 $ such that  $ \alpha^{2\gamma-1}> 2C_\gamma $. This conlcudes that in one dimension, there can be no Lieb-Thirring inequality of the form \eqref{LTineq1} with $ 0\leq\gamma<1/2 $.
 \section{Thomas-Fermi theory}
+\textbf{Notation:} We say in the following that an integral $ \int f(x)\diff x $ act as a bounded linear functional on some $ L^p $-space if the linear functional $ F:L^p\ni g\mapsto\int f(x)g(x) \diff x\in\C$ is bounded on $ L^p $\vspace{0.5cm}\\
 Let $ \rho\in L^1(\R^3)\cap L^{5/3}(\R^3) $, $ \rho>0 $. The direct Couloumb energy is defined as \begin{equation}
 D(\rho)=\int_{\R^3}\int_{\R^3}\frac{\rho(x)\rho(y)}{\abs{x-y}}\diff x\diff y. 
 \end{equation}
@@ -195,38 +196,38 @@ E_0&:=\inf\left\{\mathcal{E}^{TF}(\rho) : \rho\in\mathcal{D}_N \right\}\\
 We prove that for $ \rho\in \mathcal{D}_N $, we have\begin{equation}
 \int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x\leq cN+d\norm{\rho}_{5/3},
 \end{equation}
-with some constants $ c,d>0 $ independent of $ \rho $. To see this, we split the integral\begin{equation}
-\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x=\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}\rho(x)\diff x+\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho(x)\diff x\leq\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}\rho(x)\diff x+\norm{\rho}_1.
+with some constants $ c,d>0 $ independent of $ \rho $. To see this, let $a>0$, we then split the integral \begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x=\int_{\abs{x}\leq a}\frac{1}{\abs{x}}\rho(x)\diff x+\int_{\abs{x}>a}\frac{1}{\abs{x}}\rho(x)\diff x\leq\int_{\abs{x}\leq a}\frac{1}{\abs{x}}\rho(x)\diff x+a^{-1}\norm{\rho}_1.
 \end{equation}
-For the remaining integrals we use H\"older's inequality with $ q=5/2 $  and $ p=5/3 $. Then we get \begin{equation}
-\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}\rho(x)\diff x\leq\abs{\int_{\abs{x}\leq 1}\frac{1}{\abs{x}^{5/2}}\diff x}^{\frac{2}{5}}\norm{\rho}_{5/3}=\abs{4\pi \int_{(0,1)}\frac{1}{r^{1/2}}\diff r}^{\frac{2}{5}}\norm{\rho}_{5/3}=(8\pi)^{2/5}\norm{\rho}_{5/3}
+For the remaining integral we use H\"older's inequality with $ q=5/2 $  and $ p=5/3 $. Then we get \begin{equation}
+\int_{\abs{x}\leq a}\frac{1}{\abs{x}}\rho(x)\diff x\leq\abs{\int_{\abs{x}\leq a}\frac{1}{\abs{x}^{5/2}}\diff x}^{\frac{2}{5}}\norm{\rho}_{5/3}=\abs{4\pi \int_{(0,a)}\frac{1}{r^{1/2}}\diff r}^{\frac{2}{5}}\norm{\rho}_{5/3}=(8\pi\sqrt{a})^{2/5}\norm{\rho}_{5/3}
 \end{equation}
-where we in the second equality changed to polar coordinates with Jacobian $ r^2\sin(\varphi) $ and computed the angular integrals directly. Thus we have for $ \rho\in \mathcal{D}_N $ \begin{equation}
-\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x\leq N+(8\pi)^{2/5}\norm{\rho}_{5/3},
+where we in the second equality changed to spherical coordinates with Jacobian $ r^2\sin(\varphi) $ and computed the angular integrals directly. Thus we have for $ \rho\in \mathcal{D}_N $ \begin{equation}
+\int_{\R^3}\frac{1}{\abs{x}}\rho(x)\diff x\leq a^{-1}N+(8\pi\sqrt{a})^{2/5}\norm{\rho}_{5/3},
 \end{equation}
 where we used that $ \norm{\rho}_1\leq N $.
-Knowing that $ 0\leq D(\rho)<\infty $ we may conclude that \begin{equation}
-E_0\geq(1-(8\pi)^{2/5})\norm{\rho}_{5/3}-N+D(\rho)>-\infty.
+Knowing that $ 0\leq D(\rho)<\infty $ and choosing $ 0<a\leq 1/(8\pi)^2 $ we may conclude that \begin{equation}
+E_0\geq\inf\left\{(1-(8\pi\sqrt{a})^{2/5})\norm{\rho}_{5/3}-a^{-1}N+D(\rho) : \rho\in\mathcal{D}_N\right\}\geq-a^{-1}N>-\infty.
 \end{equation}
 \subsection*{(b)}
-Let $ (\rho^j)_{j\geq1}\subset \mathcal{D}_N $ be a sequence such that $ \mathcal{E}^{TF}(\rho^j)\to E_0 $. Then $ \norm{\rho^j}_{5/3} $ is bounded and from Banach-Alaoglu's theorem after restricting to a subsequence we have $ \rho^j\rightharpoonup\rho_0 $ for some $ \rho_0\in L^{5/3}(\R^3) $. We prove now that \begin{equation}
+Let $ (\rho^j)_{j\geq1}\subset \mathcal{D}_N $ be a sequence such that $ \mathcal{E}^{TF}(\rho^j)\to E_0 $. Then $ \norm{\rho^j}_{5/3} $ is bounded. From Banach-Alaoglu's theorem as well as the fact that the predual of $ L^{5/3}(\R^3) $, namely $ L^{5/2}(\R^3) $, is reflexive\footnote{Clearly $ L^p(\R^3) $ is reflexive for all $ 1<p<\infty $ as $ (L^p(\R^3))^\ast=L^q(\R^3) $, with $ 1/p+1/q=1 $.}, we may conclude after restricting to a subsequence that we have $ \rho^j\rightharpoonup\rho_0 $ for some $ \rho_0\in L^{5/3}(\R^3) $. We prove now that \begin{equation}
 \norm{\rho_0}_{5/3}\leq\liminf_{j\geq1}\norm{\rho^j}_{5/3}.
 \end{equation}
-We prove actually the more general statement: Let $ X $ be a Banach space and $ (x^j)_{j\geq1}\subset X $ a sequence converging weakly to $ x\in X $, then $ \norm{x}\leq\liminf_{j\geq1}\norm{x^j} $.
+In fact we can prove the more general statement: Let $ X $ be a Banach space and $ (x^j)_{j\geq1}\subset X $ a sequence converging weakly to $ x\in X $, then $ \norm{x}\leq\liminf_{j\geq1}\norm{x^j} $.
 \begin{proof}
 	By the Hahn-Banach theorem, there exist a linear functional $ f:X\to \C $ such that $ f(x)=\norm{x} $ and such that $ \norm{f}=1 $. By weak convergence of $ x^j $ we then have \begin{equation}
-	\norm{x}=f(x)=\liminf_{j\geq 1}f(x^j)\leq\liminf_{j\geq1}\norm{x^j},
+	\norm{x}=\abs{f(x)}=\liminf_{j\geq 1}\abs{f(x^j)}\leq\liminf_{j\geq1}\norm{x^j},
 	\end{equation}
 	which proves the claim.
 \end{proof}
 Now since $ L^{5/3}(\R^3) $ is a Banach space by the Riez-Fischer theorem, we have desired result.
 \subsection*{(c)}
-We prove now that $ \rho_0>0 $ almost everywhere. First we notice that $ \rho_0 $ is measurable. Consider therefore the set $ M_R=\{x\in\R^3 : \rho_0(x)<0\}\cap B_R(0) $, where $ B_R(0) $ denotes the ball of radius $ R $ centred at $ 0 $. Assume for contradiction that this set has measure greater than zero, $ \lambda(M_R)>0 $ for some $ R>0 $. Then $ \int_{M_R}\rho_0(x) \diff x <0$. However, this is a contradiction, since $ \int_{M_R}\rho^j(x) \diff x\geq0 $ and $ \int_{M_R} \diff x $ is a bounded linear functional on $ L^{5/3}(\R^3) $. As we have already established weak convergence of $ \rho^j $ in $ L^{5/3}(\R^3) $, we may conclude that $ \int_{M_R}\rho_0(x) \diff x=\lim\limits_{j\to\infty}\int_{M_R}\rho^j(x) \diff x\geq0 $. Thus we have established that $ \rho_0\geq0 $ on $ B_R(0) $ a.e. for all $ R>0 $, from which it follows that $ \rho_0\geq0 $ a.e.\\
+We prove now that $ \rho_0>0 $ almost everywhere. First we notice that $ \rho_0 $ is measurable. Consider therefore the set $ M_R=\{x\in\R^3 : \rho_0(x)<0\}\cap B_R(0) $, where $ B_R(0) $ denotes the ball of radius $ R $ centred at $ 0 $. Assume for contradiction that this set has measure greater than zero, $ \lambda(M_R)>0 $ for some $ R>0 $. Then $ \int_{M_R}\rho_0(x) \diff x <0$. However, this is a contradiction, since $ \int_{M_R}\rho^j(x) \diff x\geq0 $ and $ \int_{M_R} \diff x $ acts as a bounded linear functional on $ L^{5/3}(\R^3) $. As we have already established weak convergence of $ \rho^j $ in $ L^{5/3}(\R^3) $, we may conclude that $ \int_{M_R}\rho_0(x) \diff x=\lim\limits_{j\to\infty}\int_{M_R}\rho^j(x) \diff x\geq0 $. Thus we have established that $ \rho_0\geq0 $ on $ B_R(0) $ a.e. for all $ R>0 $, from which it follows that $ \rho_0\geq0 $ a.e.\\
 \\
 Now that we have established that $ \rho_0>0 $ a.e., we show that $ \int_{\R^3}\rho_0 \diff x \leq N $. To see this consider the sequence $( \chi_{B_n(0)}\rho_0)_{n\geq1} $. By the monotone convergence theorem we know that \begin{equation}
 \int_{\R^3}\rho_0(x) \diff x=\lim\limits_{n\to\infty}\int_{\R^3}\chi_{B_n(0)}(x)\rho_0(x) \diff x=\lim\limits_{n\to\infty}\int_{B_n(0)}\rho_0(x)\diff x
 \end{equation}
-Now since $ \int_{B_n(0)}\diff x $ is a bounded linear functional on $ L^{5/3}(\R^3) $ we may conclude from weak convergence of $ \rho^j $ that \begin{equation}
+Now since $ \int_{B_n(0)}\diff x $ acts as a bounded linear functional on $ L^{5/3}(\R^3) $ we may conclude from weak convergence of $ \rho^j $ that \begin{equation}
 \int_{B_n(0)}\rho_0(x)\diff x=\lim\limits_{j\to\infty}\int_{B_n(0)}\rho^j(x)\diff x.
 \end{equation}
 From the fact that $ \int_{B_n(0)}\rho^j\diff x\leq\int_{\R^3}\rho^j(x)\diff x\leq N $ we may conclude that \begin{equation}
@@ -243,10 +244,15 @@ To see this, we split the integral in two\begin{equation}
 We then notice that the integral $ \int_{\abs{x}\leq1}\frac{1}{\abs{x}}dx $ acts as a bounded linear function on $ L^{5/3}(\R^3) $. This can be seen by the fact that $ \chi_{\abs{x}\leq1}\frac{1}{\abs{x}}\in L^{5/2}(\R^3) $. Thus by H\"older's inequality we have for $ f\in L^{5/3}(\R^3) $ that\begin{equation}
 \abs{\int_{\abs{x}\leq 1}\frac{1}{\abs{x}}f(x)\diff x}\leq\norm{\chi_{\abs{x}\leq1}\frac{1}{\abs{x}}}_{5/2}\norm{f}_{5/3}.
 \end{equation}
-Therefore, we may conclude the convergence of the first integral by weak convergence of $ \rho^j $ in $ L^{5/3}(\R^3) $. For the second integral, we instead use that $ \chi_{\abs{x}>1}\frac{1}{\abs{x}}\in L_p(\R^3) $ for all $ p>3 $. Again by H\"older's inequality $ \int_{\abs{x}>1}\frac{1}{\abs{x}}\diff x $ acts as a bounded linear functional for all $ 1<q<3/2 $. Thus, by the fact that $ \rho^j $ converges weakly in $ L_q(\R^3) $ for some $ 1<q<3/2 $ we may conclude the convergence of the second integral. Thereby we have \begin{equation}
+Therefore, we may conclude the convergence of the first integral by weak convergence of $ \rho^j $ in $ L^{5/3}(\R^3) $. For the second integral, we instead use that $ \chi_{\abs{x}>1}\frac{1}{\abs{x}}\in L_p(\R^3) $ for all $ p>3 $. Again by H\"older's inequality $ \int_{\abs{x}>1}\frac{1}{\abs{x}}\diff x $ acts as a bounded linear functional on $ L^q(\R^3) $ for all $ 1<q<3/2 $. Thus, by the fact that $ \rho^j $ converges weakly in $ L_q(\R^3) $ for some $ 1<q<3/2 $ we may conclude the convergence of the second integral. Thereby we have \begin{equation}
 \underbrace{\int_{\abs{x}\leq1}\frac{1}{\abs{x}}\rho^j(x)\to\int_{\abs{x}\leq1}\frac{1}{\abs{x}}\rho_0(x)}_{\text{weak convergence in }L^{5/3}(\R^3)},\qquad \underbrace{\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho^j(x)\to\int_{\abs{x}>1}\frac{1}{\abs{x}}\rho_0(x)}_{\text{weak convergence in }L^{q}(\R^3)\text{ for some }1<q<3/2}.
 \end{equation}
 From which we obtain the desired result \begin{equation}
 \int_{\R^3}\frac{1}{\abs{x}}\rho^j(x)\to\int_{\R^3}\frac{1}{\abs{x}}\rho_0(x).
 \end{equation}
+\subsection*{(e)}
+Collecting all the result from problem $ 4.(a) $ to $ 4.(b) $ and assuming that $ D(\rho_0)\leq\liminf_{j\to\infty}D(\rho^j) $, we can now show that \begin{equation}
+\mathcal{E}^{TF}(\rho_0)=E_0,
+\end{equation}
+i.e. $ \rho_0 $ is a minimizer of $ \mathcal{E}^{TF} $.
 \end{document}
