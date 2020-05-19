@@ -155,15 +155,53 @@ with some constants $ C_1,C_2>0 $ independent of $ \psi $ and $ N $.
  From calculus of variations it can be shown that the functional obtained in (c) is minimized by some $ \rho_\psi $ of the form \begin{equation}
  \rho_{\psi}(x)=d\left(\frac{1}{\mathfrak{D}(x)}-b\right)^{3/2}\chi_{\{\frac{1}{\mathfrak{D}(x)}-b\geq c\}}(x)
  \end{equation}
- for some $ d,c>0 $ independent of $ \psi $ and $ N $. Thereby, we may conclude that $ \mathcal{E}(\psi)\geq C(Z)(N+M) $. To see this notice that by inserting the minimizer on the left-hand side of \eqref{EnergyEst1} we obtain \begin{equation}\begin{aligned}
+ for some $ d>0$ and $c\geq0 $ independent of $ \psi $ and $ N $. Thereby, we may conclude that $ \mathcal{E}(\psi)\geq C(Z)(N+M) $. To see this notice that by inserting the minimizer on the left-hand side of \eqref{EnergyEst1} we obtain \begin{equation}\begin{aligned}
  \mathcal{E}(\psi)&\geq (C_1d^{5/3}-Zd)\int_{\{\frac{1}{\mathfrak{D}(x)}-b\geq c\}}\left(\frac{1}{\mathfrak{D}(x)}-b\right)^{5/2}\diff x-ZbN-C_2N\\&\geq\text{min}\left\{0,(C_1d^{5/3}-Zd)\right\}\int_{\{\frac{1}{\mathfrak{D}(x)}\geq c+b\}}\left(\frac{1}{\mathfrak{D}(x)}\right)^{5/2}\diff x-(Zb+C_2)N
  \end{aligned}
  \end{equation}
- Now choose $ b>\frac{2}{d} $ where $ d=\min\left\{\abs{R_i-R_j}:1\leq i<j\leq M\right\} $, then \begin{equation}
- \int_{\{\frac{1}{\mathfrak{D}(x)}\geq c+b\}}\left(\frac{1}{\mathfrak{D}(x)}\right)^{5/2}\diff x\leq\sum_{j=1}^{M}\int_{\{\abs{x_i}< \frac{d}{2}\}}\left(\frac{1}{\abs{x_i}}\right)^{5/2}\diff x=8\pi\sqrt{d/2} M.
+ Now defining $ \alpha:=(c+b)^{-1} $ we have \begin{equation}
+ \int_{\{\frac{1}{\mathfrak{D}(x)}\geq c+b\}}\left(\frac{1}{\mathfrak{D}(x)}\right)^{5/2}\diff x\leq\sum_{j=1}^{M}\int_{\{\abs{x-R_j}\leq \alpha\}}\left(\frac{1}{\abs{x-R_j}}\right)^{5/2}\diff x=8\pi\sqrt{\alpha} M,
  \end{equation}
+ where we used that $\left(\frac{1}{\mathfrak{D}(x)}\right)^{5/2} \chi_{\{\frac{1}{\mathfrak{D}(x)}\geq \frac{1}{\alpha}\}}\leq\sum_{j=1}^{M}\left(\frac{1}{\abs{x-R_j}}\right)^{5/2}\chi_{\{\abs{x-R_j}\leq \alpha\}} $, which is obvious from the fact that, for any $ x\in \R^3 $ the left-hand side will equal at least one of the terms on the right-hand side, and since all on the terms on the right-hand side are non-negative the inequality follows.
  From this it follows that \begin{equation}
  \mathcal{E}(\psi)\geq -K_1(Z)M-K_2(Z)N\geq-C(Z)(N+M)
  \end{equation}
- with $ K_1(Z)=\text{min}\left\{0,(C_1d^{5/3}-Zd)\right\}8\pi\sqrt{d/2} $, $ K_2(Z)=(Zb+C_2) $, and\\ $C(Z)=\max\{K_1(Z),K_2(Z)\}.  $
+ with $ K_1(Z)=\text{max}\left\{0,-(C_1d^{5/3}-Zd)\right\}8\pi\sqrt{\alpha} $, $ K_2(Z)=(Zb+C_2) $, and\\ $C(Z)=\max\{K_1(Z),K_2(Z)\}$. Many of these estimates were quite rough and can be optimized. For example one can optimize w.r.t $ b $. Notice to find the exact $ d $ and $ c $ we would have to minimize w.r.t to $ d $ and $ c $. Thus we find $ d=\left(\frac{3Z}{5C_1}\right)^{3/2} $ and $ c=0 $.
+ 
+ \section{The volume occupied by matter}
+ Let $ \psi\in L^2(\R^{3N}) $ ($ \psi\in H^1(\R^{3N}) $) be a fermionic wave function  with $ \norm{\psi}_2=1 $.
+ \subsection*{(a)}
+ It holds that $ \mathcal{E}(\psi)=T_\psi+(V_\text{C})_\psi\geq-CN $ where $ C>0 $ depends on $ Z $ and the ratio $ M/N $. This is a direct consequence of the result from problem 1. Since we have $ \mathcal{E}(\psi)\geq -C(Z)(M+N)=-C(Z)(M/N+1)N=-CN $ where $ C=C(Z)(M/N+1) $.
+ \subsection*{(b)}
+ Using a scaling argument, it is possible to conclude from (a) that \begin{equation}
+ (1-\lambda)T_\psi+(V_\text{C})_\psi\geq-\frac{CN}{1-\lambda},\label{scaling1}
+ \end{equation}
+ for any $ 0<\lambda<1 $. From this it follows that \begin{equation}
+ T_\psi\leq\frac{\mathcal{E}(\psi)+CN}{\lambda}+\frac{CN}{1-\lambda} \label{ineq1}
+ \end{equation}
+ \begin{proof}
+ 	To see this, notice that from \eqref{scaling1} we have \begin{equation}
+ 	-\lambda T_\psi\geq-\frac{CN}{1-\lambda}-\mathcal{E}(\psi),
+ 	\end{equation}
+ 	from which it follows that\begin{equation}
+ 	T_\psi\leq \frac{CN}{\lambda(1-\lambda)}+\frac{\mathcal{E}(\psi)}{\lambda}=\frac{\mathcal{E}(\psi)+CN}{\lambda}+\frac{CN}{1-\lambda},
+ 	\end{equation}
+ 	where we in the last equality used the partial fraction decomposition $ \frac{CN}{\lambda(1-\lambda)}=\frac{CN}{\lambda}+\frac{CN}{1-\lambda} $.
+ \end{proof}
+ 	From this we may conclude that \begin{equation}
+ 	T_\psi\leq(\sqrt{\mathcal{E}(\psi)+CN}+\sqrt{CN})^2.
+ 	\end{equation}
+ 	\begin{proof}
+ 		For $ \mathcal{E}(\psi)=0 $ it follows by choosing $ \lambda=1/2 $ in \eqref{ineq1}. Now assume $ \mathcal{E}(\psi)\neq0 $,
+ 		we then optimize \eqref{ineq1} w.r.t $ \lambda $:\begin{equation}
+ 		\frac{\diff}{\diff\lambda}\left(\frac{\mathcal{E}(\psi)+CN}{\lambda}+\frac{CN}{1-\lambda}\right)=-\frac{\mathcal{E}(\psi)+CN}{\lambda^2}+\frac{CN}{(1-\lambda)^2}=0
+ 		\end{equation}
+ 		using that $ 0<\lambda<1 $, this is equivalent\begin{equation}
+ 		-(1-\lambda)^2(\mathcal{E}(\psi)+CN)-\lambda^2CN=0,
+ 		\end{equation}
+ 		which has the solutions $ \lambda_\pm=\frac{\mathcal{E}(\psi)+CN\pm\sqrt{\mathcal{E}(\psi)CN+C^2N^2}}{\mathcal{E}(\psi)} $, where we see that only the $ \lambda_- $ solution is consistent with $ 0<\lambda<1 $ (it is consistent since $ \mathcal{E}(\psi)\geq-CN $). Inserting this $ \lambda_- $ back into \eqref{ineq1} we find that \begin{equation}
+ 		T_\psi\leq(\sqrt{\mathcal{E}(\psi)+CN}+\sqrt{CN})^2,
+ 		\end{equation}
+ 		as desired.
+ 	\end{proof}
 \end{document}
