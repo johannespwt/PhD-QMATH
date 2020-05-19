@@ -1,0 +1,169 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\numberwithin{equation}{section}
+\linespread{1.3}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Advanced Mathematical Physics, Assignment 1}
+\lhead{Johannes Agerskov}
+\rfoot{\thepage}
+\lfoot{Dated: \today}
+\author{Johannes Agerskov}
+\date{Dated: \today}
+\title{Advanced Mathematical Physics, Assignment 1}
+\begin{document}
+
+	\maketitle
+
+\section{Stability through Lieb-Oxford inequality}
+We are given the Lieb-Oxford inequality: For any bosonic or fermionic wave function $ \psi\in L^2(\R^{3N}) $ with $ \norm{\psi}_2=1 $ we have \begin{equation}
+\sum_{1\leq i< j\leq N}\int_{\R^{3N}}\frac{\abs{\psi(x_1,...,x_N)}^2}{\abs{x_i-x_j}}\diff x_1...\diff x_N-D(\rho_\psi,\rho_\psi)\geq-C_{LO}\int_{\R^3}\rho_\psi(x)^{4/3}\diff x,
+\end{equation}  
+with constant $ 0\leq C_{LO}\leq1.636 $ independent of $ \psi $ and $ N $. We now proceed to prove stability of the second kind through this inequality.
+\subsection*{(a)}
+Let $ \delta>0 $ then \begin{equation}
+\int_{\R^3}\rho_\psi(x)^{4/3}\diff x\leq\frac{\delta}{2}\int_{\R^3}\rho_{\psi}(x)^{5/3}\diff x+\frac{N}{2\delta}.
+\end{equation}
+\begin{proof}
+	Notice first first that $ \rho_{\psi}(x)^{4/3}=\rho_{\psi}(x)^{5/6}\rho_{\psi}(x)^{1/2} $. Thus by Cauchy-Schwartz inequality, we have \begin{equation}
+	\int_{\R^3}\rho_\psi(x)^{4/3}\diff x\leq\left(\int_{\R^3}\rho_\psi(x)^{5/3}\diff x\right)^{\frac{1}{2}}\left(\int_{\R^3}\rho_\psi(x)\diff x\right)^{\frac{1}{2}}=\left(\int_{\R^3}\rho_\psi(x)^{5/3}\diff x\right)^{\frac{1}{2}}\sqrt{N},
+	\end{equation}
+	where we used that $ \int_{\R^3}\rho_\psi(x)\diff x=N $. Now using that for $ \delta>0 $ and $ a,b\in \R $ is holds that $ \frac{\delta}{2}a^2+\frac{1}{2\delta}b^2\geq ab $ (this is simply $ (\sqrt{\delta} a-\frac{1}{\sqrt{\delta}}b)^2\geq0 $) we find that \begin{equation}
+	\int_{\R^3}\rho_\psi(x)^{4/3}\diff x\leq\frac{\delta}{2}\int_{\R^3}\rho_\psi(x)^{5/3}\diff x+\frac{N}{2\delta}
+	\end{equation}
+\end{proof}
+
+\subsection*{(b)}
+Let $ V_\text{C} $ be defined as in the lecture notes with fixed $ R_1,...,R_M\in\R^3 $ and $ Z_1=....=Z_N=Z $. We prove that if $ \psi\in H^1(\R^{3N}) $ is fermionic, then\begin{equation*}
+\begin{aligned}
+\mathcal{E}(\psi)&=T_{\psi}+(V_\text{C})_{\psi}\\
+&\geq C_1\int_{\R^3}\rho_\psi(x)^{5/3}\diff x +D(\rho_\psi,\rho_\psi)-\sum_{j=1}^{M}\int_{\R^3}\frac{Z\rho_{\psi}}{\abs{x-R_j}}\diff x+\sum_{1\leq j< k\leq M}\frac{Z^2}{\abs{R_j-R_k}}-C_2N,
+\end{aligned}
+\end{equation*} 
+with some constants $ C_1,C_2>0 $ independent of $ \psi $ and $ N $.
+\begin{proof}
+	By definition we have \begin{equation}
+	(V_\text{C})_{\psi}=\int_{\R^{3N}}\sum_{1\leq i<j\leq N}\frac{\abs{\psi(x_1,...,x_N)}^2}{\abs{x_i-x_j}}-\sum_{i=1}^{N}\sum_{j=1}^{M}\frac{Z\abs{\psi(x_1,...,x_N)}^2}{\abs{x_i-R_j}}\diff x_1 ...\diff x_N+\sum_{1\leq j< k\leq M}\frac{Z^2}{\abs{R_j-R_k}}.
+	\end{equation}
+	Using that $ \psi $ is fermionic we find that \begin{equation}
+	\int_{\R^{3N}}\sum_{i=1}^{N}\sum_{j=1}^{M}\frac{Z\abs{\psi(x_1,...,x_N)}^2}{\abs{x_i-R_j}}\diff x_1 ...\diff x_N=\sum_{j=1}^{M}\frac{1}{N}\sum_{i=1}^{N}\int_{\R^3}\frac{Z\rho_\psi(x_i)}{\abs{x_i-R_j}}\diff x_i=\sum_{j=1}^{M}\int_{\R^3}\frac{Z\rho_\psi(x)}{\abs{x-R_j}}\diff x.
+	\end{equation}
+	Furthermore, using the Lieb-Oxford inequality we find that \begin{equation}
+	(V_{\text{C}})_{\psi}\geq -C_{LO}\int_{\R^3}\rho_{\psi}(x)^{4/3} \diff x+D(\rho_\psi,\rho_\psi)-\sum_{j=1}^{M}\int_{\R^3}\frac{Z\rho_\psi(x)}{\abs{x-R_j}}\diff x+\sum_{1\leq j< k\leq M}\frac{Z^2}{\abs{R_j-R_k}}.
+	\end{equation}
+	Therefore, by (a) we have \begin{equation}\label{CoulombEst1}
+	(V_{\text{C}})_{\psi}\geq -C_{LO}\left(\frac{\delta}{2}\int_{\R^3}\rho_{\psi}(x)^{5/3}\diff x+\frac{N}{2\delta}\right) \diff x+D(\rho_\psi,\rho_\psi)-\sum_{j=1}^{M}\int_{\R^3}\frac{Z\rho_\psi(x)}{\abs{x-R_j}}\diff x+\sum_{1\leq j< k\leq M}\frac{Z^2}{\abs{R_j-R_k}}
+	\end{equation}
+	Now we use the fact that there exist a constant $ C>0 $ such that $ T_\psi\geq C\int_{\R^3}\rho_\psi(x)^{5/3}\diff x $. This can be seen by considering the Lieb-Thirring inequality with potential $ V=-\alpha\rho_\psi^{2/3} $ with some $ \alpha>0 $. Notice that then $ V\in L^{5/2}(\R^3) $ by Sobolev's inequality and the fact that $ \rho_\psi\in L^{3/2}(\R^3) $. Thus we may apply the Lieb-Thirring inequality \begin{equation}
+	\sum_{i}\abs{E_i}\leq L_{1,3}\int_{\R^3}V_{-}(x)^{5/2}\diff x=\alpha^{5/2}L_{1,3}\int_{\R^3} \rho_\psi(x)^{5/3}\diff x.
+	\end{equation}
+	Notice however, that from the very definition of the eigenvalues we have $ T_\psi\geq -V_\psi+E_0 $. Thus we may conclude that \begin{equation}
+	T_\psi\geq\alpha\int_{\R^3}\rho_\psi(x)^{5/3}\diff x-\alpha^{5/2}L_{1,3}\int_{\R^3}\rho_\psi(x)^{5/3}\diff x.
+	\end{equation}
+	Thereby we see that if we choose $ \alpha<1 $ and $ \alpha^{3/2}<L_{1,3}^{-1} $ we see that there exist some constant $C=\alpha(1-\alpha^{3/2}L_{1,3})>0  $ such that \begin{equation}
+	T_\psi\geq C\int_{\R^3}\rho_\psi(x)^{5/3}\diff x.
+	\end{equation}
+	Combining this with \eqref{CoulombEst1} we find that \begin{equation}
+	\begin{aligned}
+	\mathcal{E}(\psi)\geq \left(C-C_{LO}\frac{\delta}{2}\right)\int_{\R^3}\rho_\psi(x)^{5/3}\diff x+D(\rho_\psi,\rho_\psi)-\sum_{j=1}^{M}\int_{\R^3}\frac{Z\rho_\psi(x)}{\abs{x-R_j}}\diff x\\+\sum_{1\leq j< k\leq M}\frac{Z^2}{\abs{R_j-R_k}}-C_{LO}\frac{N}{2\delta}
+	\end{aligned}.
+	\end{equation}
+	Now choosing $ 0<\delta<\frac{2C}{C_{LO}} $, we find that $ C_1=\left(C-C_{LO}\frac{\delta}{2}\right)>0 $ and $ C_2=\frac{C_{LO}}{2\delta}>0 $ and 
+	\begin{equation}
+	\begin{aligned}
+	\mathcal{E}(\psi)\geq C_1\int_{\R^3}\rho_\psi(x)^{5/3}\diff x+D(\rho_\psi,\rho_\psi)-\sum_{j=1}^{M}\int_{\R^3}\frac{Z\rho_\psi(x)}{\abs{x-R_j}}\diff x+\sum_{1\leq j< k\leq M}\frac{Z^2}{\abs{R_j-R_k}}-C_2N
+	\end{aligned}.
+	\end{equation}
+	as desired.
+\end{proof}
+ \subsection*{(c)}
+ We now prove that for any $ \psi\in H_1(\R^{3N}) $ that is fermionic it hold for any $ b>0$ that \begin{equation}
+ \mathcal{E}(\psi)\geq C_1\int_{\R^3}\rho_\psi(x)^{5/3}\diff x-Z\int_{\R^3}\rho_\psi(x)\left(\frac{1}{\mathfrak{D}(x)}-b\right)\diff x-ZbN-C_2N.
+ \end{equation} 
+ with some constants $ C_1,C_2>0 $ independent of $ \psi $ and $ N $.
+ \begin{proof}
+ 	First notice that by the basic electrostatic inequality with measure $ \mu(\diff x)=\rho_\psi(x)\diff x $ (which indeed defines a measure since $\rho_\psi\in L^1(\R^3)$ and $ \rho_\psi\geq0 $) and the result of (b) it follows that\begin{equation}
+ 	\begin{aligned}
+ 	\mathcal{E}(\psi)\geq C_1\int_{\R^3}\rho_\psi(x)^{5/3}\diff x-Z\int_{\R^3}\rho_\psi(x)\frac{1}{\mathfrak{D}(x)}\diff x-C_2N
+ 	\end{aligned}.
+ 	\end{equation}
+ 	Now using that $ \int_{\R^3}\rho_\psi(x) \diff x=N $ we see that \begin{equation}
+ 	-Z\int_{\R^3}\rho_\psi(x)\frac{1}{\mathfrak{D}(x)}\diff x=-Z\int_{\R^3}\rho_\psi(x)\left(\frac{1}{\mathfrak{D}(x)}-b\right)\diff x-ZbN,
+ 	\end{equation}
+ 	from which the claim follows:\begin{equation}
+ 	\mathcal{E}(\psi)\geq C_1\int_{\R^3}\rho_\psi(x)^{5/3}\diff x-Z\int_{\R^3}\rho_\psi(x)\left(\frac{1}{\mathfrak{D}(x)}-b\right)\diff x-ZbN-C_2N.\label{EnergyEst1}
+ 	\end{equation}
+ \end{proof}
+ \subsection*{(d)}
+ From calculus of variations it can be shown that the functional obtained in (c) is minimized by some $ \rho_\psi $ of the form \begin{equation}
+ \rho_{\psi}(x)=d\left(\frac{1}{\mathfrak{D}(x)}-b\right)^{3/2}\chi_{\{\frac{1}{\mathfrak{D}(x)}-b\geq c\}}(x)
+ \end{equation}
+ for some $ d,c>0 $ independent of $ \psi $ and $ N $. Thereby, we may conclude that $ \mathcal{E}(\psi)\geq C(Z)(N+M) $. To see this notice that by inserting the minimizer on the left-hand side of \eqref{EnergyEst1} we obtain \begin{equation}\begin{aligned}
+ \mathcal{E}(\psi)&\geq (C_1d^{5/3}-Zd)\int_{\{\frac{1}{\mathfrak{D}(x)}-b\geq c\}}\left(\frac{1}{\mathfrak{D}(x)}-b\right)^{5/2}\diff x-ZbN-C_2N\\&\geq\text{min}\left\{0,(C_1d^{5/3}-Zd)\right\}\int_{\{\frac{1}{\mathfrak{D}(x)}\geq c+b\}}\left(\frac{1}{\mathfrak{D}(x)}\right)^{5/2}\diff x-(Zb+C_2)N
+ \end{aligned}
+ \end{equation}
+ Now choose $ b>\frac{2}{d} $ where $ d=\min\left\{\abs{R_i-R_j}:1\leq i<j\leq M\right\} $, then \begin{equation}
+ \int_{\{\frac{1}{\mathfrak{D}(x)}\geq c+b\}}\left(\frac{1}{\mathfrak{D}(x)}\right)^{5/2}\diff x\leq\sum_{j=1}^{M}\int_{\{\abs{x_i}< \frac{d}{2}\}}\left(\frac{1}{\abs{x_i}}\right)^{5/2}\diff x=8\pi\sqrt{d/2} M.
+ \end{equation}
+ From this it follows that \begin{equation}
+ \mathcal{E}(\psi)\geq -K_1(Z)M-K_2(Z)N\geq-C(Z)(N+M)
+ \end{equation}
+ with $ K_1(Z)=\text{min}\left\{0,(C_1d^{5/3}-Zd)\right\}8\pi\sqrt{d/2} $, $ K_2(Z)=(Zb+C_2) $, and\\ $C(Z)=\max\{K_1(Z),K_2(Z)\}.  $
+\end{document}

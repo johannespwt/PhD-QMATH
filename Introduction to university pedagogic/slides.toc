@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {danish}
+\beamer@sectionintoc {1}{ILOs}{3}{0}{1}
+\beamer@sectionintoc {2}{Naturals and integers}{4}{0}{2}
+\beamer@sectionintoc {3}{Square-roots and rational numbers}{9}{0}{3}
+\beamer@sectionintoc {4}{Proof by contradiction}{10}{0}{4}

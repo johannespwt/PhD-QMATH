@@ -1,0 +1,246 @@
+\documentclass{beamer}[10]
+\usepackage{pgf}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{srcltx}
+
+\usepackage{pdfpages}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{bbm}
+
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+
+\usepackage{mathrsfs}
+
+\usepackage{amsfonts}
+
+\usepackage{bbm}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{blkarray}
+
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+
+\usepackage{centernot}
+
+\usepackage{caption}
+
+\usepackage{braket}
+
+\usepackage{slashed}
+
+\usepackage{pgfplots}
+
+\usepackage{feynmp-auto}
+
+\usepackage{lastpage}
+
+\usepackage{fancyhdr}
+\usepackage[square,sort,comma,numbers]{natbib}
+
+% TikZ til at lave figurer - for de avancerede
+\usepackage{tikz}
+% Div. pakker (muligt at ikke alle er i brug)
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing,decorations.markings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{calc}
+\usetikzlibrary{tikzmark,fit,shapes.geometric}
+
+\definecolor{kugreen}{RGB}{50,93,61}
+\definecolor{kugreenlys}{RGB}{132,158,139}
+\definecolor{kugreenlyslys}{RGB}{173,190,177}
+\definecolor{kugreenlyslyslys}{RGB}{214,223,216}
+\setbeamercovered{transparent}
+\mode<presentation>
+%\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
+\setbeamertemplate{footline}[frame number]
+\usecolortheme[named=kugreen]{structure}
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{block title}{bg=kugreen!50,fg=black}
+\setbeamercolor{block body}{bg=kugreen!10,fg=black}
+\logo{\includegraphics[width=0.8cm]{kuscience-logo}}
+%\useoutertheme{infolines} 
+
+\title{From integers to real numbers}
+\subtitle{eIUP lecture}
+\author{Johannes Agerskov\\
+	\small{PhD student}}
+\institute{Institute for Mathematical Sciences \\ University of Copenhagen}
+\date{May 15, 2020.}
+
+\setbeamercovered{invisible}
+
+\begin{document}
+\frame{\titlepage \vspace{-0.5cm}
+}
+
+\frame
+{
+\frametitle{Overview}
+\linespread{1.5}
+\tableofcontents%[pausesection]
+}
+\section{ILOs}
+\begin{frame}
+	\frametitle{ILOs}
+	After this lecture the student will be able to
+	\begin{itemize}
+		\item Define and construct the natural numbers, the integers and the rational numbers.
+		\item Understand the concept of a \emph{proof by contradiction}.
+		\item Show that $ \sqrt{2} $ is not a rational number.
+		\item If time permits; be familiar with the construction of real numbers as the completion of the rational numbers.
+	\end{itemize}
+\end{frame}
+
+\section{Naturals and integers}
+\begin{frame}
+	\frametitle{Naturals and integers}
+	\begin{block}{Natural numbers}
+		The \emph{natural numbers} are defined as the infinite \emph{totally ordered set} \begin{equation}
+		\mathbb{N}=\{0,1,2,3,...\}.
+		\end{equation}
+		These come defined with two compatible binary operations: addition and multiplication denoted by $ +:\mathbb{N}\times\mathbb{N}\to\mathbb{N} $ and $ \cdot:\mathbb{N}\times\mathbb{N}\to\mathbb{N} $ respectively.
+		\pause\\
+		We also define the set \begin{equation}
+		\mathbb{N}_\times=\mathbb{N}\setminus\{0\}=\{1,2,3,...\}.
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Naturals and integers}
+	\begin{block}{Integers}
+		Requiring all naturals to have additive inverses we obtain integers\begin{equation}
+		\mathbb{Z}=\{...,-2,-1,0,1,2,...\}.
+		\end{equation}
+		With addition and (extended to the negatives) multiplication.\\
+		\pause
+	We define the even and odd integers by \begin{equation}
+	\mathbb{Z}^{\text{even}}=\{...,-4,-2,0,2,4,...\},\quad\mathbb{Z}^{\text{odd}}=\{...,-3,-1,1,3,...\},
+				\end{equation}
+				such that $ \mathbb{Z}=\mathbb{Z}^{\text{even}}\cup \mathbb{Z}^{\text{odd}} $.
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{The rational numbers}
+	\begin{block}{Construction of rational numbers}
+		By requiring all integers to have multiplicative inverses and extending addition to these inverses we obtain the rational numbers \begin{equation}
+		\mathbb{Q}=\left\{\frac{n}{m}\ \big\vert\ n\in\mathbb{Z},\ m\in\mathbb{N}_{\times}\right\}.
+		\end{equation}
+	\end{block}
+	\begin{block}{Reduced fractions}
+		We notice that all rational numbers can be written in a reduced form $ \frac{n}{m} $ where $ n\in\mathbb{Z} $ and $ m\in\mathbb{N}_{\times} $ have no common divisors. 
+	\end{block}
+\end{frame}
+\section{Square-roots and rational numbers}
+\begin{frame}
+	\frametitle{Square-roots and rational numbers}
+	\begin{block}{The square-root}
+		We say that $ a=\sqrt{b} $ if and only if $ a>0 $ and $ a^2=b $, \emph{i.e.} \begin{equation}
+		 \sqrt{b}^2=\sqrt{b}\cdot\sqrt{b}=b.
+		\end{equation}
+	\end{block}
+	\begin{block}{Square-roots and rational numbers}
+		\textbf{Question} (we will answer shortly together): \emph{If $ a $ is a rational number, is $ \sqrt{a} $ then also always a rational numbers?}\\
+		\emph{e.g.} $ \sqrt{\frac{9}{16}}=\frac{3}{4},\ \sqrt{\frac{1}{144}}=\frac{1}{12} $, \emph{etc.} What about $ \sqrt{2}? $
+	\end{block}
+\end{frame}
+\section{Proof by contradiction}
+\begin{frame}
+	\frametitle{Proof by contradiction}
+	\begin{block}{Reductio ad absurdum}
+		A proof by contradiction is a mathematical proof technique, that takes the following form: Let A be a logic statement,\begin{itemize}
+			\item Assume A is true.\\
+			\item Prove that A implies B.\\
+			\item Prove that A implies -B (not B \emph{or} opposite of B).\\
+			\item Conclude that A is false (\emph{i.e.} -A is true).
+		\end{itemize}
+		\emph{e.g.} We want to show that there is no highest natural number:
+		Thus A="There is a largest natural number (say $ N $)". B="All natural numbers are smaller than $ N $". However, if $ N $ is a natural number then $ N+1 $ is a natural number and $ N+1>N $ which proves -B . Thus we may conclude that -A is true.
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Is $ \sqrt{2} $ a rational number?}
+	\begin{theorem}
+		$ \sqrt{2} $ is not a rational number.
+	\end{theorem}
+	\begin{block}{Proof}
+		\begin{itemize}
+			\item Assume that (A) $ \sqrt{2} $ is a rational number.\\
+			\item Then (B) $ \sqrt{2}=\frac{a}{b} $ with $ a\in\mathbb{Z} $ and $ b\in\mathbb{N}_{\times} $ (can assume reduced).\\
+			\item Notice that then $ \frac{a^2}{b^2}=\left(\frac{a}{b}\right)^2=2 $.\\
+			 \item Continued on next slide...
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Is $ \sqrt{2} $ a rational number?}
+	\begin{block}{Proof continued}
+		\begin{itemize}
+			\item Knowing that $ \frac{a^2}{b^2}=2 $, is $ a^2 $ and even or odd number?\pause\pause \\(\textbf{Even} since $ a^2=2b^2 $.)\pause\\
+			\item Knowing that $ a^2 $ is even, is $ a $ even or odd?\pause\pause \\
+			(\textbf{Even} since $ a^2 $ is odd if $ a $ is odd.)\pause
+			\item Knowing that $ a $ is even, is $ \frac{a^2}{2} $ even or odd?\pause\pause \\
+			(\textbf{Even} since $ \frac{a^2}{2}=a\cdot\frac{a}{2} $ is even if $ a $ is even.)\pause
+			\item Knowing that $ \frac{a^2}{2} $ is even, is $ b^2 $ even or odd?\pause\pause \\
+			(\textbf{Even} since $ b^2=\frac{a^2}{2} $. Notice then $ b $ is also \textbf{Even}.)\pause\\
+			\item We go to breakout rooms and finish the proof!
+		\end{itemize}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Is $ \sqrt{2} $ a rational number?}
+	Go to Padlet \url{https://padlet.com/johannesas/wrgamlv82s844qfs}
+	\begin{block}{Proof continued}
+		Questions for Padlet:
+		\begin{enumerate}
+		\item Knowing that $ a $ and $ b $ are even, is $\frac{a}{b}$ a reduced fraction?
+		\item What may we then conclude about our initial assumption that $ \sqrt{2} $ is a rational numbers?
+	\end{enumerate}\pause\pause\pause
+	My answers:
+	\begin{enumerate}
+		\item No, $ \frac{a}{b} $ is not reduced since $ 2 $ is a common divisor of $ a $ and $ b $.
+		\item By reductio ad absurdum, we may conclude that $ \sqrt{2} $ is \textbf{not} a rational number.
+	\end{enumerate}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{The real numbers}
+	\begin{block}{What number is $ \sqrt{2} $?}
+		\begin{itemize}
+			\item Representing $ \sqrt{2} $ by decimal number $ \sqrt{2}=1.414... $ we find that $ \sqrt{2} $ can always be approximated by a rational number by simply cutting off the decimals at some point, \emph{e.g.} $ 1.41=\frac{141}{100} $ and $ \sqrt{2}-1.41<0.01 $.
+			\item We call all numbers that can be approximated by rational numbers in such a way for real numbers, and we say that they are obtained by completing the rational numbers.
+		\end{itemize}	
+	\end{block}
+	\begin{block}{Fun fact!}
+		There are equally many natural numbers, integers, and rational numbers but the real numbers form a substantially larger set. If you were to say how big a percentage of the real numbers the rational numbers make up, it is $ 0\% $
+	\end{block}
+\end{frame}
+\begin{frame}
+	\centering
+	\Large Thank you for your attention.\\
+\end{frame}		
+\end{document}
