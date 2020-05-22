@@ -264,13 +264,13 @@ with some constants $ C_1,C_2>0 $ independent of $ \psi $ and $ N $.
  	 \norm{H\left(\sum_{l=1}^{K}c_l\ket{l}\right)}_2^2=\sum_{l=1}^{K}\sum_{l'=1}^{K}\sum_{y\in Z^d}\sum_{y'\in Z^d}\bra{l'}\overline{c_{l'}}H_{y'x_{l'}}^*H_{yx_l}c_l\ket{l}.
  	 \end{equation}
  	 Since we require the Hamiltonian to be self-adjoint we have $ H_{yx}^*=(P_yHP_x)^*=(P_xHP_y)=H_{xy} $. Hence, we find \begin{equation}
- 	  \norm{H\left(\sum_{l=1}^{K}c_l\ket{l}\right)}_2^2=\sum_{l=1}^{K}\sum_{l'=1}^{K}\sum_{y\in Z^d}\bra{l'}\overline{c_{l'}}H_{x_{l'}y}H_{yx_l}c_l\ket{l}
+ 	  \norm{H\left(\sum_{l=1}^{K}c_l\ket{l}\right)}_2^2=\sum_{l=1}^{K}\sum_{l'=1}^{K}\sum_{y\in Z^d}\bra{l'}\overline{c_{l'}}H_{x_{l'}y}H_{yx_l}c_l\ket{l}.
  	 \end{equation}
  	 Notice that $ H_{x_{l'}y}H_{yx_l} $ is only non-zero if $ \norm{x_l-x_{l'}}_1\leq\norm{x_l-y}_1+\norm{y-x_{l'}}_1\leq2(R-1) $. Thereby we have
  	 \begin{equation}
  	 \begin{aligned}
- 	 \norm{H\left(\sum_{l=1}^{K}c_l\ket{l}\right)}_2^2&=\sum_{l=1}^{K}\sum_{l'=1}^{K}\sum_{y\in Z^d}\bra{l'}\overline{c_{l'}}H_{x_{l'}y}H_{yx_l}c_l\ket{l}\\&\leq\sum_{l=1}^{K}\sum_{\substack{l'=1\\\norm{x_l-x_{l'}}_1\leq2(R-1)}}^{K}\sum_{y\in Z^d}\chi_{\{\norm{y-x_l}_1<R\}}\chi_{\{\norm{y-x_{l'}}_1<R\}}\abs{c_l}\abs{c_{l'}}c^2\\&\leq \text{Num}(R)(2\text{Num}(2R-1)-1)\sum_{l=1}^{K} |c_l|^2c^2
- 	 \end{aligned}
+ 	 \norm{H\left(\sum_{l=1}^{K}c_l\ket{l}\right)}_2^2&=\sum_{l=1}^{K}\sum_{l'=1}^{K}\sum_{y\in Z^d}\bra{l'}\overline{c_{l'}}H_{x_{l'}y}H_{yx_l}c_l\ket{l}\\&\leq\sum_{l=1}^{K}\sum_{\substack{l'=1\\\norm{x_l-x_{l'}}_1\leq2(R-1)}}^{K}\sum_{y\in Z^d}\chi_{\{\norm{y-x_l}_1<R\}}\chi_{\{\norm{y-x_{l'}}_1<R\}}\abs{c_l}\abs{c_{l'}}c^2\\&\leq \text{Num}(R)(2\text{Num}(2R-1)-1)\sum_{l=1}^{K} |c_l|^2c^2,
+ 	 \end{aligned}\label{bound1}
  	 \end{equation}
  	 where $ \text{Num}(R) $ is number of points in $ B_{\Z^d}(0,R)^{\norm{\cdot}_1}=\{x\in\Z^d : \norm{x}_1<R \} $ (the ball of radius $ R $ in the Manhattan metric). The first inequality is simply triangle inequality of the sums followed by Cauchy-Schwartz and use of bound $ \norm{H_{yx}}<c $. To understand the second inequality notice that $ \sum_{y\in\Z^d}\chi_{\{\norm{y-x_l}_1<R\}}\chi_{\{\norm{y-x_{l'}}_1<R\}}\leq\sum_{y\in\Z^d}\chi_{\{\norm{y-x_l}_1<R\}}=\text{Num}(R) $. Furthermore, we used the following bound of the finite sum \begin{equation}
  	 \sum_{l=1}^{K}\sum_{\substack{l'=1\\\norm{x_l-x_{l'}}_1\leq2(R-1)}}^{K}\abs{c_l}\abs{c_l'}\leq (2\text{Num}(2R-1)-1)\sum_{l=1}^{K}\abs{c_l}^2. \label{inductionineq}
@@ -279,10 +279,10 @@ with some constants $ C_1,C_2>0 $ independent of $ \psi $ and $ N $.
  	  \sum_{l=1}^{K}\sum_{\substack{l'=1\\\norm{x_l-x_{l'}}_1\leq2(R-1)}}^{K}\abs{c_l}\abs{c_l'}\leq (2\text{Num}(2R-1)-1)\abs{c_\beta}^2+ \sum_{\substack{l=1\\ l\neq\beta}}^{K}\sum_{\substack{l'=1\\l'\neq\beta\\\norm{x_l-x_{l'}}_1\leq2(R-1)}}^{K}\abs{c_l}\abs{c_l'},\label{induction1}
  	 \end{equation}
  	 where we have simply taken all terms in the sum of the form $ |c_\beta||c_l| $ and replaced with the larger term $ |c_\beta|^2 $, and used that there is a maximal of $ (2\text{Num}(2R-1)-1) $ such terms. Here $2\text{Num}(2R-1)-1$ comes from the bound on the distance between $ x_l $ and $ x_{l'} $. By induction of \eqref{induction1} we find \eqref{inductionineq}.\\
- 	 Notice now that $ \sum_{l=1}^{K}\abs{c_l}^2=\norm{\sum_{l=1}^{K}c_l\ket{l}}_2^2 $. Thus, we have shown that \begin{equation}
+ 	 Notice now that $ \sum_{l=1}^{K}\abs{c_l}^2=\norm{\sum_{l=1}^{K}c_l\ket{l}}_2^2 $. Thus, we have shown in \eqref{bound1} that \begin{equation}
  	 \norm{H\left(\sum_{l=1}^{K}c_l\ket{l}\right)}_2^2\leq \text{Num}(R)(2\text{Num}(2R-1)-1)c^2\norm{\sum_{l=1}^{K}c_l\ket{l}}_2^2,
  	 \end{equation} 
- 	 which implies $ \norm{H}\leq c\sqrt{\text{Num}(R)(2\text{Num}(2R-1)-1)} $. We only need to bound $ \text{Num}(R) $. This can be done most easily by noticing that the ball $ B_{\Z^d}(0,R)^{\norm{\cdot}_1} $ can be embedded in $ \R^d $. Now imagine forming unit cubes symmetrically around each lattice point in $ B_{\Z^d}(0,R)^{\norm{\cdot}_1} $. Then non of the cubes overlap and this collection of cubes is contained in a $ d $-dimensional cube, $ \mathcal{K} $, with diagonal $ D=2R $. Since $ D $ can be related to the side lengths, $ a $, by $ D=\sqrt{d}a $, we have $ \text{Vol}(\mathcal{K})=(2R)^d d^{-d/2} $. Thus, as each lattice point corresponds to a cube of volume exactly $ 1 $, the number of of lattice point in $ B_{\Z^d}(0,R)^{\norm{\cdot}_1} $ can be bounded by\begin{equation}
+ 	 which implies $ \norm{H}\leq c\sqrt{\text{Num}(R)(2\text{Num}(2R-1)-1)} $. Therefore, we only need to bound $ \text{Num}(R) $. This can be done most easily by noticing that the ball $ B_{\Z^d}(0,R)^{\norm{\cdot}_1} $ can be embedded in $ \R^d $. Now imagine forming unit cubes symmetrically around each lattice point in $ B_{\Z^d}(0,R)^{\norm{\cdot}_1} $. Then non of the cubes overlap and this collection of cubes is contained in a $ d $-dimensional cube, $ \mathcal{K} $, with diagonal $ D=2R $. Since $ D $ can be related to the side lengths, $ a $, by $ D=\sqrt{d}a $, we have $ \text{Vol}(\mathcal{K})=(2R)^d d^{-d/2} $. Thus, as each lattice point corresponds to a cube of volume exactly $ 1 $, the number of of lattice point in $ B_{\Z^d}(0,R)^{\norm{\cdot}_1} $ can be bounded by\begin{equation}
  	 \text{Num}(R)\leq(2R)^dd^{-d/2}.
  	 \end{equation}
  	 Thereby, we arrive at the bound\begin{equation}
@@ -291,6 +291,68 @@ with some constants $ C_1,C_2>0 $ independent of $ \psi $ and $ N $.
  	 where the second inequality presents a less tight bound, but more simple, expression.
  	 Now that it is known that $ H $ is bounded (and thus continuous) on the dense subspace\\ $ \braket{\ket{x,\sigma_i}}_{(x,i)\in\Z^d\times\{1,...,N\}} $, it is clear that it extends to a bounded operator on all of $ l^2(\Z^d;\C^N) $. We simply extend $ H $ to all limit-points of $ \braket{\ket{x,\sigma_i}}_{(x,i)\in\Z^d\times\{1,...,N\}} $ by continuity.
  	 
- 	 \section{Wannier states}
- 	 
+	\section{Wannier states}
+	Cosider the Fermi projector of a one-dimensional transnationally invariant insulator with one occupied band. It is described by an analytic projection valued map $ \mathbb{T}\to \text{Proj}_1(\C^N): k\mapsto \tilde{P}(k) $, where $ \mathbb{T} $ is the one dimensional Brillouin zone (the circle).
+	Suppose we have an analytic unit section $ k\mapsto v(k)\in \C^N $ with $ \norm{v(k)}=1 $ and $ \tilde{P}(k)=\ket{v(k)}\bra{v(k)} $. We then define the Wannier states $ w_x\in l^2(\Z;\C^N) $ by\begin{equation}
+	w_x(y)=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\ \euler{-ik(x-y)}v(k),\quad\text{for any }x\in\Z.
+	\end{equation}
+ 	 \subsection*{(a)} We show first that the Wannier states $ \{w_x : x\in\Z \}$ for an orthonormal basis of $ \Ran{P} $ where $ (P_{yx})_{j,i}=\bra{y,\sigma_j}P\ket{x,\sigma_i}=\int_\mathbb{T} \diff k \euler{ik(y-x)}\bra{\sigma_j}\tilde{P}(k)\ket{\sigma_i}$. Let $ \ket{v}\in\Ran{P} $ i.e. $ \ket{v}=P\ket{u} $ for some $ \ket{u}\in l^2(\Z;\C^N) $. As in problem 3 we may calculate this by expanding\begin{equation}
+ 	 \ket{u}=\sum_{x\in\Z}\sum_{i=1}^{N}c_{x,i}\ket{x,\sigma_i},
+ 	 \end{equation} 
+ 	 and using\begin{equation}
+ 	 \begin{aligned}
+ 	 \bra{y,\sigma_j'}P\ket{u}&=\bra{y,\sigma_j'}\sum_{x\in\Z}\sum_{i=1}^{N}c_{x,i}P\ket{x,\sigma_i}\\&=\sum_{x\in\Z}\sum_{i=1}^{N}c_{x,i}\int_\mathbb{T}\diff k \euler{ik(y-x)}\braket{\sigma_j'|v(k)}\braket{v(k)|\sigma_i}\label{Pu}
+ 	 \end{aligned}
+ 	 \end{equation}
+ 	 Now notice that (Fourier inversion theorem) \begin{equation}
+ 	 v(k)=\sum_{x'\in\Z}w_{x'}(y')\euler{ik(x'-y')}. \label{vk}
+ 	 \end{equation}
+ 	 where $ y' $ is arbitrary.
+ 	 Combining \eqref{Pu} and \eqref{vk} we obtain\begin{equation}
+ 	 \begin{aligned}
+ 	 \bra{y,\sigma_j'}P\ket{u}=\sum_{x\in\Z}\sum_{x'\in\Z}\sum_{i=1}^{N}c_{x,i}\int_\mathbb{T}\diff k \euler{ik(y-x)}\euler{ik(x'-y)}\braket{\sigma_j|w_{x'}(y)}\braket{v(k)|\sigma_i}\\
+ 	 =\sum_{x\in\Z}\sum_{x'\in\Z}\sum_{i=1}^{N}c_{x,i}\int_\mathbb{T}\diff k \euler{ik(x'-x)}\braket{\sigma_j|w_{x'}(y)}\braket{v(k)|\sigma_i}\\
+ 	 =\bra{y,\sigma_j'}\sum_{x'\in\Z} \tilde{c}_{x'}w_{x'}.
+ 	 \end{aligned}
+ 	 \end{equation}
+ 	 where $ \tilde{c}_{x'}=\sum_{x\in\Z}\sum_{i=1}^{N}c_{x,i}\int_{\mathbb{T}}\diff k \euler{ik(x-x')}\braket{v(k)|\sigma_i}$. Since $ \ket{y,\sigma_j'} $ was arbitrary we conclude that $ P\ket{u}=\sum_{x'\in\Z} \tilde{c}_{x'}w_{x'} $. We note that the $ x' $ sum in the above calculation is absolutely convergent as a consequence of Parseval's identity with the fact that $ v(k) $ is analytic. This shows that the Wannier states span $ l^2(\Z,\C^N) $. It Remains to show that they are orthonormal and thus form an orthonormal basis.\\
+ 	 To see this consider the inner product \begin{equation}
+ 	 \braket{w_x',w_x}=\sum_{y\in \Z}\braket{w_{x'}(y)|w_x(y)}.
+ 	 \end{equation}
+ 	 To calculate this we notice that $ w_x(y) $ are the Fourier coefficients of $ \euler{-ikx}v(k) $, and $ w_x'(y) $ are similarly the Fourier coefficients of $ \euler{-ikx'}v(k) $. Thus by analyticity of $ v(k) $ and Parselval's identity we immediately conclude \begin{equation}
+ 	 \braket{w_x',w_x}=\sum_{y\in \Z}\braket{w_{x'}(y)|w_x(y)}=\frac{1}{2\pi}\int_{\mathbb{T}} \diff k \euler{ik(x'-x)}\braket{v(k)|v(k)}=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\euler{ik(x'-x)}=\delta_{x,x'}.
+ 	 \end{equation} 
+ 	 This concludes that the Wannier states are orthonormal.
+ 	 \subsection*{(b)}
+ 	 Now as we have already seen the Wannier states are the Fourier coefficients of $ v(k) $ as seen in \eqref{vk}. Thus, by analyticity of $ k\mapsto v(k) $ it is a well-known fact that the Fourier coefficients and thus $ w_x(y) $ must have exponential decay, \emph{i.e.} there exist $ C>0 $ and $ \mu>0 $ such that\begin{equation}
+ 	 \abs{w_x(y)}\leq C\euler{-\mu|x-y|}
+ 	 \end{equation} 
+ 	 \subsection*{(c)}
+ 	 We now show that the Wannier functions translates to each other \emph{i.e.} \begin{equation}
+ 	 w_{x}(y)=w_{x+r}(y+r),\qquad \text{for all }x,y,z\in\Z.
+ 	 \end{equation}
+ 	 This may be seen directly from the definition \begin{equation}
+ 	 w_{x}(y)=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\ \euler{-ik(x-y)}v(k)=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\ \euler{-ik((x+r)-(y+r))}v(k)=w_{x+r}(y+r)
+ 	 \end{equation}
+ 	 \subsection*{(d)}
+ 	 We now show the converse, namely that if $ \Ran{P} $ is spanned by an orthonormal family of Wannier states, $ w_x $ that are exponentially localized and are translated to each other, then $ P $ admits an analytic unit section.
+ 	 To do this notice that $ \sum_{x\in\Z} w_x(y)\euler{ik(x-y)} $ is a finite sum due to the exponential localization. Furthermore, it is independent of $ y $ since \begin{equation}
+ 	 \sum_{x\in\Z} w_x(y)\euler{ik(x-y)}=\sum_{x\in\Z} w_{x-y}(0)\euler{ik(x-y)}=\sum_{z\in\Z} w_z(0)\euler{ikz}.
+ 	 \end{equation}
+ 	 Thus we define $ v(k):=\sum_{x\in\Z} w_x(y)\euler{ik(x-y)} $, then clearly $ w_x(y)=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\euler{-ik(x-y)}v(k) $. Furthermore, $ v(k) $ defines a section of $ \tilde{P}(k) $ since $ w_x$ spans $\Ran{P} $ Notice namely that\begin{equation}
+ 	 (P_{yx})_{j,i}=\braket{y,\sigma_j|P|x,\sigma_i}=\braket{y,\sigma_j|P^2|x,\sigma_i}.
+ 	 \end{equation} Since projections are self adjoint, we have \begin{equation}
+ 	 \begin{aligned}
+ 	 (P_{yx})_{j,i}=(\bra{y,\sigma_j}P)(P\ket{x,\sigma_i})=\sum_{x'\in\Z}\sum_{x\in\Z}\overline{\alpha_{x'}}\beta_{x}\braket{w_{x'}|w_x}=\sum_{x\in\Z}\overline{\alpha_{x}}\beta_{x}\braket{w_{x}|w_x}\\=\frac{1}{2\pi}\sum_{x'\in\Z}\sum_{x\in\Z}\overline{\alpha_{x}}\beta_{x}\int_{\mathbb{T}}\diff k \euler{ik(x'-x)}\braket{v(k)|v(k)}.
+ 	 \end{aligned}
+ 	 \end{equation}
+ 	 \begin{equation}
+ 	 \begin{aligned}
+ 	 (P_{yx})_{j,i}=\sum_{x'\in\Z}\braket{\sigma_j|w_{x'}(y)}\braket{w_{x'}(x)|\sigma_i}=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\euler{ik(y-x)}\braket{\sigma_j|v(k)}\braket{v(k)|\sigma_i}
+ 	 \end{aligned}
+ 	 \end{equation}
+ 	 where we used Parseval's identity in the second equality with the facts that $ (\braket{\sigma_j|w_{x'}(y)})_{x'\in\Z} $ are the Fourier coefficients of $ \euler{iky}\braket{\sigma_j|v(k)} $ and that $ (\braket{w_{x'}(x)|\sigma_i})_{x'\in\Z} $ are the Fourier coefficients of $ \euler{-ikx}\braket{v(k),\sigma_i} $. However, knowing that \begin{equation}
+ 	 (P_{yx})_{j,i}=\frac{1}{2\pi}\int_{\mathbb{T}}\diff k\euler{ik(y-x)}\braket{\sigma_j|\tilde{P}(k)|\sigma_i},
+ 	 \end{equation}
+ 	 we conclude that $ \tilde{P}(k)=\ket{v(k)}\braket{v(k)} $. Therefore, $ \tilde{P}(k)v(k)=v(k) $ and $ k\mapsto v(k) $ forms a section of $ k\mapsto\tilde{P}(k) $. That $ \braket{v(k),v(k)}=1 $ follows from Parseval's identity again. Finally we notice that $ k\mapsto v(k) $ is analytic as its Fourier coefficients are exponentially localized (thus the Cauchy-Riemann conditions can be verified in a neighbourhood of the real line by allowing $ k $ to take values in $ \C $ and differentiating under the sum). This proves that $ k\mapsto \tilde{P}(k) $ admits an analytic unit section.
 \end{document}
