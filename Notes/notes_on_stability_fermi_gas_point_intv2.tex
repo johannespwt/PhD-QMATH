@@ -36,6 +36,7 @@
 \newcommand{\interior}[1]{%
 	{\kern0pt#1}^{\mathrm{o}}%
 }
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand{\ie}{\emph{i.e.} }
 \newcommand{\eg}{\emph{e.g.} }
 \newcommand{\dd}{\partial }
@@ -345,6 +346,7 @@ H_{\text{rel}}^\alpha G_{-(4\pi\alpha)^2}=-(4\pi\alpha)^2G_{-(4\pi\alpha)^2}.
 \end{equation}
 Thus $ G_{-(4\pi\alpha)^2} $ is the eigenfunction corresponding to the bound state with energy $ -(4\pi\alpha)^2 $. We have thus constructed the Hamiltonian of the point-interaction in $ 3d $. We have seen that the parameter $ \alpha $, in some sense, controls the strength of the interaction, \ie $ \alpha=\infty $ is the free particle, and $ \alpha<0 $ is the attractive point-interaction, since it has a bound state. By doing a analysis of the scattering theory of $ H_{\text{rel}}^\alpha $ one finds that $ -4\pi\alpha=\frac{1}{a} $, where $ a $ denotes the scattering length of the interaction \cite{albeverio2012solvable}. 
 \subsection{Quadratic form}
+\label{Subsection Quadratic form}
 An alternative way of studying the point interaction is by the means of quadratic forms. In \cite{FINCO2012131}, the quadratic form, $ F_\alpha $ describing a gas of point interacting fermions was obtained. It is a well-known result that if such a quadratic form is closed and bounded from below, then the corresponding operator is a bounded from below, self-adjoint operator. On the other hand it was proven in \cite{FINCO2012131} that if the quadratic form $ F_\alpha $ is not bounded from below, then the corresponding operator is not bounded from below and self-adjoint. The quadratic form was initially introduced by means of renormalization. On the other hand it is more clearly introduced as a rank-one perturbation of the free quadratic form. We write the rank-one perturbation as $ \gamma\braket{\phi,\cdot}\phi $. Thus we imagine perturbing the Hamiltonian as $ H=H_0-\gamma\braket{\phi,\cdot}\phi $. For the point interaction we do this by simply projecting onto a ball $ B_R(0) $, \ie the ball of radius $ R $ centred at $ 0 $, in momentum space \ie\begin{equation}
 \widehat{Hu}=\widehat{H_0u}-\mathbbm{1}_{B_R(0)}\frac{\gamma}{(2\pi)^3}\int_{B_R(0)}\!\!\!\!\!\!\!\!d^3p\ \hat{u}(p)=H_0u-\mathbbm{1}_{B_R(0)}\frac{\gamma}{(2\pi)^3}\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!\!\!\! d^3p\ \hat{u}(k+p).
 \end{equation}
@@ -773,6 +775,34 @@ Now collecting the above results in Propositions \ref{F Gamma upper bound} and \
 	Thereby $ R_\lambda(A)\in\mathcal{B}(H) $ and $ \lambda\notin\sigma(A) $.
 \end{proof}
 Another immediate consequence of Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} is that $ F_\alpha^n $ $ \Gamma $-converge to $ F_\alpha $ in the norm topology. Thus we may conclude that $ F_\alpha $ is a norm lower semicontinuous quadratic form, an by Theorem \ref{Quadratic form closable and bounded below iff low.semicont. Thm.} we may conclude that $ F_\alpha $ is closable and bounded from below.
+
+\section{The $ N+1 $ case}
+We are in this section going to study the more general case of $ N $ fermions of one species and $ 1 $ of the other. We start by remembering that in this case we can split the formal Hamiltonian in two pieces; one regarding the centre of mass, and one regarding the $ N $ relative coordinates of the two species. This will not be possible in the $ N+M $ case, as there are too many relative coordinates. Now one might seek to analyse this problem by constructing self-adjoint extensions of the Laplacian on some restricted domain, as we did in the $ 1+1 $ case. However, this becomes tremendously more complicated. This can be realized by the fact that for each interaction, the coupling can end up depending on all other coordinates. Similar to the requirement of translational invariance in the $ 1+1 $ case, which eliminated the possibility of the coupling depending on the centre of mass position, we thus need to impose certain symmetries on the system to end up with a Hamiltonian of the desired form. A sufficient requirement would probably be the that of locality and permutation invariance, such that all couplings are equal and must be independent all coordinates. However one way to avoid these complications, as we saw in section \ref{Subsection Quadratic form}, is to consider a quadratic form instead. By this approach we can construct the quadratic form directly with the desired properties. Showing closability and boundedness from below of such a quadratic form, then allows us to conclude the existence of a self-adjoint and bounded from below Hamiltonian of such a system.
+\subsection{Quadratic form}
+Inspired by the approach in the $ 1+1 $ case, we define the quadratic form in the $ N+1 $ case, also by considering a limiting case of rank-one perturbations of the free Hamiltonian. Again we imagine the following family of Hamiltonians\begin{equation}
+H_\gamma^R=H_0-\gamma_R\sum_{i=1}^{N}\phi^i_R\braket{\phi^i_R,\cdot}.
+\end{equation}
+We choose the $ \phi^i_R $ such that its Fourier transform is a ball of radius $ R $ in the $ i^{\text{th}} $ coordinate, $ \hat{\phi}^i_R(k)=\mathbbm{1}_{B_R(0)}(k_i) $. The corresponding quadratic forms thus become\begin{equation}
+\begin{aligned}
+F_\gamma^R(u)=\int_{\R^{3N}}\diff k \left[\overline{\hat{u}}(k)\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}k_i\cdot k_j\right)\hat{u}(k)\qquad\qquad\right.\\\left.-\gamma_R\sum_{i=1}^{N}\mathbbm{1}_{B_R(0)}(k_i)\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i)\right],
+\end{aligned}
+\end{equation}
+where $ p^i=(0,0,...,\underbrace{p}_{i^\text{th}},0,0,...) $. Introducing the following notation\begin{equation}
+\begin{aligned}
+\hat{G}(k)=\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu\right)^{-1},\quad \mu>0
+\end{aligned}
+\end{equation}
+where we note that $ \sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu>0 $ since if $ \sum_{1\leq i<j\leq N}k_i\cdot k_j $ is negative then $ \sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu>(\sum_{i=1}^{N}k_i)^2+\mu>0 $ for $ m>0 $, and if $ \sum_{1\leq i<j\leq N}k_i\cdot k_j $ is non-negative, then it is obvious. Thus $ \hat{G} $ is well-defined. We also introduce \begin{equation}
+\hat{\rho}^R(k)=\gamma_R\sum_{i=1}^{N}\mathbbm{1}_{B_R(0)}(k_i)\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i):=\sum_{i=1}^{N}\mathbbm{1}_{B_R(0)}(k_i)\xi_i^R(\bar{k}^i)
+\end{equation}
+where $ \bar{k}^i=\{k_1,...,k_{i-1},k_{i+1},...,k_N\}\in\R^{3(N-1)} $. Here we defined \begin{equation}
+\xi^R_i(\bar{k}^i)=\gamma_R\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i).
+\end{equation}
+We observe that if $ u $ is fermionic we have $ \xi_i^R(\bar{k}^i)=(-1)^{i-1}\xi_1^R(\bar{k}^i):=(-1)^{i-1}\xi^R(\bar{k}^i) $. Thus we may write \begin{equation}
+\hat{\rho}^R(k)=\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_R(0)}(k)\xi^R(\bar{k}^i).
+\end{equation} 
+We notice also that $ \xi:\R^{3(N-1)}\to\C $ is itself fermionic if $ u $ is.
+
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
