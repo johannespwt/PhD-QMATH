@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {danish}
+\beamer@sectionintoc {1}{Motivation}{3}{0}{1}
+\beamer@sectionintoc {2}{Moser and Seiringer: Stability of $ N+1 $ system}{5}{0}{2}
+\beamer@sectionintoc {3}{Model}{6}{0}{3}

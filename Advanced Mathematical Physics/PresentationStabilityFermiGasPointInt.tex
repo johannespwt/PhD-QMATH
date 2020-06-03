@@ -1,0 +1,214 @@
+\documentclass{beamer}[10]
+\usepackage{pgf}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{srcltx}
+
+\usepackage{pdfpages}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{bbm}
+
+\usepackage{amsthm}
+
+\usepackage{hyperref}
+
+\usepackage{mathrsfs}
+
+\usepackage{amsfonts}
+
+\usepackage{bbm}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{amsthm}
+
+\usepackage{blkarray}
+
+\usepackage{enumerate}
+
+\usepackage{graphicx}
+
+\usepackage{centernot}
+
+\usepackage{caption}
+
+\usepackage{braket}
+
+\usepackage{slashed}
+
+\usepackage{pgfplots}
+
+\usepackage{feynmp-auto}
+
+\usepackage{lastpage}
+
+\usepackage{fancyhdr}
+\usepackage[square,sort,comma,numbers]{natbib}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+% TikZ til at lave figurer - for de avancerede
+\usepackage{tikz}
+% Div. pakker (muligt at ikke alle er i brug)
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.pathreplacing,decorations.markings}
+\usetikzlibrary{patterns}
+\usetikzlibrary{fadings}
+\usetikzlibrary{calc}
+\usetikzlibrary{tikzmark,fit,shapes.geometric}
+
+\definecolor{kugreen}{RGB}{50,93,61}
+\definecolor{kugreenlys}{RGB}{132,158,139}
+\definecolor{kugreenlyslys}{RGB}{173,190,177}
+\definecolor{kugreenlyslyslys}{RGB}{214,223,216}
+\setbeamercovered{transparent}
+\mode<presentation>
+%\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
+\setbeamertemplate{footline}[frame number]
+\usecolortheme[named=kugreen]{structure}
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercolor{block title}{bg=kugreen!50,fg=black}
+\setbeamercolor{block body}{bg=kugreen!10,fg=black}
+\logo{\includegraphics[width=0.8cm]{kuscience-logo}}
+%\useoutertheme{infolines} 
+
+\title{Stability of the $ N+1 $ Fermi gas with point interactions}
+\subtitle{Advanced Mathematical Physics}
+\author{Johannes Agerskov}
+\institute{Institute for Mathematical Sciences \\ University of Copenhagen}
+\date{May 15, 2020.}
+
+\setbeamercovered{invisible}
+
+\begin{document}
+\frame{\titlepage \vspace{-0.5cm}
+}
+
+\frame
+{
+\frametitle{Overview}
+\linespread{1.5}
+\tableofcontents%[pausesection]
+}
+\section{Motivation}
+\begin{frame}
+	\frametitle{Motivation}
+	Model of fermions interacting via point interactions are of great interest as the appear as
+	\begin{itemize}
+		\item Models of cold atomic gases.\\
+		\item Models of nuclear interaction.\\
+		\item Approximations of models with short-range interactions.
+	\end{itemize}
+	However, they are mathematically not very well understood.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Thomas collapse}
+	\textbf{Thomas collaps:}
+	It it known that a bosonic system of three or more bosons with zero-range interactions is unstable (of the first kind) i.e. there is no ground state energy. This can be seen from the variational principle.\\\vspace*{0.5cm}
+	\textbf{No Thomas collapse for (spin-1/2) fermions:} The Thomas collapse is a collective phenomenon where three (or more) bosons interacts in a single point. This can never happen for spin-1/2 fermions, due to the Pauli principle.\\\vspace*{0.5cm}
+	\textbf{Stability of the first kind:} Is still an unsolved problem for general $ N+M $ systems ($ N $ spin up and $ M $ spin down).
+\end{frame}
+\section{Moser and Seiringer: Stability of $ N+1 $ system}
+\begin{frame}
+	\frametitle{Results of Moser and Seiringer}
+	\begin{block}{Results}
+		\begin{itemize}
+			\item Prove stability of the $ N+1 $ system, within a certain mass ratio interval.
+			\item Prove existence of self-adjoint bounded from below Hamiltonian.
+			\item Prove Tan relations.
+		\end{itemize}
+	\end{block}
+	We focus on the first two.
+\end{frame}
+\section{Model}
+\begin{frame}
+	\frametitle{Formal Hamiltonian}
+	\begin{block}{Formal Hamiltonian}
+	The Hamiltonian of a system of $ N $ fermions of one species of mass $ 1 $ interacting via	$ 1 $ fermion of another species of mass $ m $ can be described by the formal Hamiltonian\begin{equation}
+	H=-\frac{1}{2m}\Delta_{x_0}-\frac{1}{2}\sum_{i=1}^{N}\Delta_{x_i}+\gamma\sum_{i=1}^{N}\delta(x_i-x_0)
+	\end{equation}
+	\end{block}
+\end{frame}
+\begin{frame} 
+	\frametitle{Formal Hamiltonian}
+	\begin{block}{Centre of mass separation}
+		We can split the Hamiltonian in two \begin{equation}
+		H=H_{\text{CM}}+\frac{m+1}{2m}H_{\text{rel}},
+		\end{equation}
+		with $ x_{\text{cm}}=(mx_0+\sum_{i=1}^{N}x_i)/(m+N) $, $ y_i=x_i-x_0 $, and \begin{equation}\begin{aligned}
+		H_\text{CM}&=\frac{1}{2(N+m)}\Delta_{x_{\text{cm}}},\\ H_{\text{rel}}&=-\sum_{i=1}^{N}\Delta_{y_i}-\frac{2}{m+1}\sum_{1\leq i<j\leq N}\nabla_{y_i}\cdot\nabla_{y_j}+\tilde{\gamma}\sum_{i=1}^{N}\delta(y_i)
+		\end{aligned}
+		\end{equation}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Quadratic form}
+	The formal Hamiltonian can be given precise meaning through a quadratic form, which can be obtained by considering more regularized models such as rank-one perturbations of a free Hamiltonian. One obtains\begin{equation}
+	\begin{aligned}
+	F_\alpha(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&+N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right)
+	\end{aligned}
+	\end{equation} 
+	with $ \hat{u}(k)=\hat{w}(k)+\sum_{i=1}^{N}(-1)^{i-1}\hat{G}(k)\xi(\bar{k}^i) $, $ \mu>0 $, $ \hat{G}(k)=\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu\right)^{-1} $,
+\end{frame}
+\begin{frame}
+	\begin{equation}
+	\begin{aligned}
+	T_{\text{diag}}(\xi)&=\int_{\R^{3(N-1)}}\diff \bar{k}^N L(\bar{k}^N) \abs{\xi(\bar{k}^N)}^2,\\
+	T_{\text{off}}(\xi)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t \overline{\xi(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi(t,\bar{q}).
+	\end{aligned}
+	\end{equation} 
+	with \small\begin{equation}
+	L(\bar{k}^N)=2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2}.
+	\end{equation}
+	The domain is \begin{equation}
+	\begin{aligned}
+	\mathscr{D}(F_\alpha)&=\left\{u\in L_{\text{as}}^2(\R^{3N})\ \Big\vert\ \right.\\ &\qquad \left.\hat{u}=\hat{w}+\widehat{\rho G},\ w\in H_{\text{as}}^1(\R^{3N}),\ \xi\in H_{\text{as}}^{1/2}(\R^{3(N-1)}) \right\}.
+	\end{aligned}
+	\end{equation}
+\end{frame}
+\begin{frame}
+	\centering
+	\Large Thank you for your attention.\\
+\end{frame}		
+\end{document}

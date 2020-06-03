@@ -114,9 +114,9 @@ H_{\text{rel}}=-\Delta\rvert_{C_c^\infty(\mathbb{R}^3\setminus\{0\})}.
 \end{equation}
 We now seek to extend this operator to a self-adjoint operator on a larger domain. This is possible since $ H_{\text{rel}} $ is symmetric and its closure, denoted $ \dot{H}_{\text{rel}} $ have deficiency indices $ K_+=K_-=1 $, with $ K_\pm=\dim\text{Ran}(H_{\text{rel}}\pm iI)^\perp=\dim\ker(H_{\text{rel}}^*\mp iI) $ where $ H_{\text{rel}}^* $ denotes the adjoint of $ H_{\text{rel}} $. \\
 By definition on the adjoint we have that $ \dom{H_{\text{rel}}^*}=\{f\in L^2(\R^3)\rvert \braket{f|H_{\text{rel}}\cdot} \text{ is bounded on }\dom{H_{\text{rel}}}\} $, where the adjoint of the Laplacian acts as the Laplacian in the distributional sense. We determine first the closure of $ H_{\text{rel}} $. This can be done by taking the adjoint twice. Notice that the domain of the adjoint is $ \dom{H_{\text{rel}}^*}=\{f\in L^2(\R^3)\rvert \braket{f|\Delta\cdot} \text{ is bounded on }C_c^\infty(\R^3\setminus\{0\})\} $. This can be directly calculated to be \begin{equation}
-\dom{H_{\text{rel}}^*}=\{f\in H_{2,\text{loc}}(\R^3\setminus\{0\})\cap L^2(\R^3)\rvert \Delta f \in L^2(\R^3)\}
+\dom{H_{\text{rel}}^*}=\{f\in H^{2,\text{loc}}(\R^3\setminus\{0\})\cap L^2(\R^3)\rvert \Delta f \in L^2(\R^3)\}
 \end{equation}
-We emphasise that all elements in $ \dom{H_{\text{rel}}^*} $ should be viewed as distributions in $ H_{2,\text{loc}}(\R^3\setminus\{0\}) $. Therefore the requirement $ \Delta f\in L^2(\R^3) $ does not simply restrict the domain to be $ H_2(\R^3) $ as elements or their derivative (up to second order) can have singular behaviour at $ 0 $, e.g. $ \delta $-functions.
+We emphasise that all elements in $ \dom{H_{\text{rel}}^*} $ should be viewed as distributions in $ H^{2,\text{loc}}(\R^3\setminus\{0\}) $. Therefore the requirement $ \Delta f\in L^2(\R^3) $ does not simply restrict the domain to be $ H_2(\R^3) $ as elements or their derivative (up to second order) can have singular behaviour at $ 0 $, e.g. $ \delta $-functions.
  Notice that $ C_c^\infty(\mathbb{R}^3\setminus\{0\}) $ is dense in $ L^2(\mathbb{R}^3\setminus\{0\})=L^2(\R^3) $ (only defined a.e).  The domain of the double adjoint is then given by \begin{equation}\begin{aligned}
 \dom{H_{\text{rel}}^{**}}&=\{f\in L^2(\R^3)\rvert \braket{H_{\text{rel}}^*\cdot|f} \text{ is bounded on }\dom{H_{\text{rel}}^*}\}=H^0_2(\R^3\setminus\{0\}),
 \end{aligned}
@@ -801,7 +801,7 @@ where $ \bar{k}^i=\{k_1,...,k_{i-1},k_{i+1},...,k_N\}\in\R^{3(N-1)} $. Here we d
 \xi^R_i(\bar{k}^i)=\gamma_R\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i).
 \end{equation}
 We observe that if $ u $ is fermionic we have $ \xi_i^R(\bar{k}^i)=(-1)^{i-1}\xi_1^R(\bar{k}^i):=(-1)^{i-1}\xi^R(\bar{k}^i) $. Thus we may write \begin{equation}
-\hat{\rho}^R(k)=\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_R(0)}(k)\xi^R(\bar{k}^i).
+\hat{\rho}^R(k)=\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_R(0)}(k_i)\xi^R(\bar{k}^i).
 \end{equation} 
 We notice also that $ \xi^R:\R^{3(N-1)}\to\C $ is itself fermionic if $ u $ is.\\
 The quadratic form $ F_\gamma^R(u) $ can now be rewritten as \begin{equation}
@@ -825,7 +825,7 @@ F_\gamma^R(u)=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G
 Furthermore, we can rewrite the term\begin{equation}\label{QuadraticFormTerm3}
 \begin{aligned}
 \int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2&=\int_{\R^{3N}}\diff k\hat{G}(k)\left\lvert\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_R(0)}(k_i)\xi^R(\bar{k}^i)\right\rvert^2\\
-	&=\sum_{i=1}^{N}\int_{\R^{3(N-1)}}\diff \bar{k}^i\left(\int_{B_R(0)}\diff k_i \hat{G}(k)\right)\abs{\xi^R(\bar{k}^i)}^2\\&\qquad-2\sum_{1\leq i<j\leq N}\int_{\R^{3(N-2)}}\diff \bar{k}^{ij}\int_{B_R(0)}\diff k_i\int_{B_R(0)}\diff k_j\overline{\xi^R(k_i,\bar{k}^{ij})}G(k)\xi^R(k_j,\bar{k}^{ij})\\&=N\int_{\R^{3(N-1)}}\diff \bar{k}^N\left(\int_{B_R(0)}\diff k_N \hat{G}(k)\right)\abs{\xi^R(\bar{k}^N)}^2\\&\qquad-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q}).
+	&=\sum_{i=1}^{N}\int_{\R^{3(N-1)}}\diff \bar{k}^i\left(\int_{B_R(0)}\diff k_i \hat{G}(k)\right)\abs{\xi^R(\bar{k}^i)}^2\\&\qquad-2\sum_{1\leq i<j\leq N}\int_{\R^{3(N-2)}}\diff \bar{k}^{ij}\int_{B_R(0)}\diff k_i\int_{B_R(0)}\diff k_j\overline{\xi^R(k_i,\bar{k}^{ij})}G(k)\xi^R(k_j,\bar{k}^{ij})\\&=N\int_{\R^{3(N-1)}}\diff \bar{k}^N\left(\int_{B_R(0)}\diff k_N \hat{G}(k)\right)\abs{\xi^R(\bar{k}^N)}^2\\&\qquad-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q}).
 \end{aligned}
 \end{equation}
 where $ \bar{k}^{ij} $ is $ k $ with $ k_i $ and $ k_j $ removed, and we introduced $ \bar{q}=\bar{k}^{N-1,N} $ in the last step. Furthermore, we used the symmetry of $ \hat{G} $, and from the anti-symmetry of $ \xi^R $ that $ \overline{\xi^R(\bar{k}^j)}\xi^R(\bar{k}^i)=(-1)^{i-1+j-2}\overline{\xi^R(k_i,\bar{k}^{ij})}\xi^R(k_j,\bar{k}^{ij}) $ for $ i<j $. Thus we need to calculate the integral \begin{equation}
@@ -838,8 +838,8 @@ Notice that this is of the form \begin{equation}
 \end{equation}
 with $ q=k_N $, $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \alpha=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $.\\ Now the remaining integral can be estimated by the following way lemma.
 \begin{lemma}\label{IntegralApproximationLemma}
-	Let $ y\in\R^3 $ and $ \alpha\in\R $ and assume furthermore that $ 4\alpha>y^2 $. Then we have \begin{equation}
-	\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}=\pi^2\sqrt{4\alpha-y^2}+\mathcal{O}\left(\frac{\abs{y}}{R}\right)
+	Let $ y\in\R^3 $, $ \alpha\in\R $, and $ R>0 $. Assume furthermore that $ 4\alpha>y^2 $. Then we have \begin{equation}
+	\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}=\pi^2\sqrt{4\alpha-y^2}+\mathcal{O}\left(\frac{\abs{y}}{R}\right).
 	\end{equation}
 \end{lemma}
 \begin{proof}
@@ -886,22 +886,39 @@ L^R(\bar{k}^N)&=4\pi R-\int_{B_R(0)} \diff k_N \hat{G}(k)\\
 \end{equation}
 and hence from \eqref{QuadraticFormTerm3} we conclude that \begin{equation}
 \begin{aligned}
-\int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2=&N4\pi R \norm{\xi}_{L^2(\R{3(N-1)})}-N\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2\\&-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q})\\
+\int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2=&N4\pi R \norm{\xi}_{L^2(\R{3(N-1)})}-N\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2\\&-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q})\\
 &= -N\left(T_{\text{diag}}^R(\xi^R)+T_{\text{off}}(\xi^R)-4\pi R\norm{\xi}_{L^2(\R{3(N-1)})}\right),
 \end{aligned}
 \end{equation}
 where we in the last line defined\begin{equation}
 \begin{aligned}
 T^R_{\text{diag}}(\xi^R)&=\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2,\\
-T^R_{\text{off}}(\xi^R)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q}).
+T^R_{\text{off}}(\xi^R)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q}).
 \end{aligned}
 \end{equation}
 Thereby, using \eqref{QuadraticForm2}, we can write down the quadratic form\begin{equation}
 \begin{aligned}
-F_\gamma^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\gamma_R^{-1}-4\pi R\right)\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2.
+F_\gamma^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+(\gamma_R^{-1}-4\pi R)\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
 \end{aligned}
 \end{equation}
-The domain of the quadratic form can also be determined, by requiring all terms to be well-defined.
+Similarly to the $ 1+1 $ case we see a singular behaviour for $ R\to\infty $ unless we choose $ \gamma_R $ exactly to cancel the divergence. Thus we choose $ \gamma_R=(4\pi R -\alpha)^{-1} $ and we end up with the quadratic form (slightly abusing notation by denoting the renormalized quadratic form by the same name as the non-renormalized one) \begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
+\end{aligned}
+\end{equation}
+
+The domain of the quadratic form can also be determined, by requiring all terms to be well-defined. We see from the first term that we clearly need $ u\in H_1(\R^{3N}) $, however, from $ T_{\text{diag}} $ we see that we furthermore need $ \xi_R=\gamma_R\int_{B_R(0)} \diff k_N \hat{u}(k)\in H^{1/2}\left(\R^{3(N-1)}\right) $. Hence we have the domain\begin{equation}
+\mathscr{D}(F_\alpha^R)=\left\{u\in H_1(\R^{3N})\ \Big\vert\ \int_{B_R(0)}\diff k_N \hat{u}(k)\in H^{1/2}\left(\R^{3(N-1)}\right)\right\}.
+\end{equation}
+We can also take the na\"ive $ R\to\infty $ limit to obtain a candidate for an possible $ \Gamma $-limit. We find the quadratic form\begin{equation}
+\begin{aligned}
+F_\alpha(u)&=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\ &\qquad \qquad+N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right)\\
+&=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}|^2-\mu\norm{u}_{L^2(\R^{3N})}+N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right)
+\end{aligned}
+\end{equation}
+with domain \begin{equation}
+\mathscr{D}(F_\alpha)=\left\{u\in L^2(\R^{3N})\ \Big\vert\ \hat{u}=\hat{w}+\widehat{\rho G},\ w\in H_1(\R^{3N}),\ \widehat{\rho G}=\sum_{n=1}^{N}(-1)^{i-1}\hat{G}(k)\xi(\bar{k}^i),\ \xi\in H^{1/2}(\R^{3(N-1)}) \right\}
+\end{equation}
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
