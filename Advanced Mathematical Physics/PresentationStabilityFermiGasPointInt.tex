@@ -7,6 +7,8 @@
 \usepackage{url}
 \usepackage{srcltx}
 
+\usepackage{cancel}
+
 \usepackage{pdfpages}
 
 \usepackage{amsmath}
@@ -133,7 +135,7 @@
 \section{Motivation}
 \begin{frame}
 	\frametitle{Motivation}
-	Model of fermions interacting via point interactions are of great interest as the appear as
+	Model of fermions interacting via point interactions are of great interest as they appear as
 	\begin{itemize}
 		\item Models of cold atomic gases.\\
 		\item Models of nuclear interaction.\\
@@ -153,6 +155,7 @@
 \begin{frame}
 	\frametitle{Results of Moser and Seiringer}
 	\begin{block}{Results}
+		\small Moser, T., Seiringer, R. Stability of a Fermionic N + 1 Particle System with Point Interactions. Commun. Math. Phys. 356, 329–355 (2017).\normalsize
 		\begin{itemize}
 			\item Prove stability of the $ N+1 $ system, within a certain mass ratio interval.
 			\item Prove existence of self-adjoint bounded from below Hamiltonian.
@@ -208,7 +211,92 @@
 	\end{equation}
 \end{frame}
 \begin{frame}
+	\frametitle{Theorem 1}
+	Introduce the function for $ m>0 $ \tiny\begin{equation}
+	\begin{aligned}
+	\Lambda(m)=&\sup_{\substack{s,K\in\R^3,\\Q\geq0}}\frac{s^2+Q^2}{\pi^2(1+m)}\ell_m(s,K,Q)^{-1/2}\int_{\R^3}\diff t \frac{1}{t^2}\ell_m(t,K,Q)^{-1/2}\\
+	&\times\frac{\abs{(s+AK)\cdot(t+AK)}}{\left[(s+AK)^2+(t+AK)^2+\frac{m}{1+m}(Q^2+AK^2)\right]^2-\left[\frac{2}{(1+m)}(s+AK)\cdot(t+AK)\right]^2}
+	\end{aligned}
+	\end{equation}
+	\normalsize
+	where $ A=(2+m)^{-1} $ and \begin{equation}
+	\ell_m(s,K,Q)=\left(\frac{m}{(1+m)^2}(s+K)^2+\frac{m}{1+m}(s^2+Q^2)\right).
+	\end{equation}
+	It is then showed that \begin{equation}
+	\Lambda(m)\leq\frac{4(1+m)^2(2+4m+m^2)^{3/2}}{\sqrt{2}\pi\left[m(m+2)\right]^3}.
+	\end{equation}
+\end{frame}
+\begin{frame}
+	\frametitle{Theorem 1}
+	\begin{block}{Theorem 1, Moser, T., Seiringer, R., 2017.}
+		\emph{For any $ \xi\in H^{1/2}_{\textnormal{as}}(\R^{3(N-1)}) $, $ \mu>0 $ and $ N\geq2 $,\begin{equation}
+			T_{\textnormal{off}}(\xi)\geq-\Lambda(m)T_{\textnormal{diag}}(\xi).
+			\end{equation}
+		In particular, if $ \Lambda(m)<1 $, then $ F_\alpha $ is closed and bounded from below by\begin{equation}
+		F_\alpha(u)\geq\begin{cases}
+		0&\text{for }\alpha\geq0,\\
+		-\left(\frac{\alpha}{2\pi^2(1-\Lambda(m))}\right)^2\norm{u}^2_{L^2( \R^{3N})}& \text{for }\alpha<0.
+		\end{cases}
+		\end{equation}}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Physical consequences}
+	$ \Lambda(m)<1 $ for $ m\geq0.36 $ so the critical mass ratio is less that $ 0.36 $
+	\begin{itemize}
+		\item Stability of first and second kind.
+		\item Existence of self-adjoint bounded from below Hamiltonian.
+		\end{itemize}
+		
+		 For $ m\to\infty $ we have $ \Lambda(m)\to 0 $. Thus, the system with $ \alpha<0 $ has energy bounded from below by $ -\left(\alpha/(2\pi^2)\right)^2 $.
+		 \begin{itemize} 
+		\item For $ m\to\infty $ the heavy fermion can bind at most one light fermion. This is the Pauli principle.
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Theorem 2}
+	Since $ T_{\textnormal{diag}}+T_{\textnormal{off}} $ is symmetric, closed, and bounded from below, we may define the unique self-adjoint operator $ \Gamma $ by\begin{equation}
+	T_{\textnormal{diag}}(\xi)+T_{\textnormal{off}}(\xi)=\braket{\xi|\Gamma\xi}.
+	\end{equation}
+	It can be shown that $ H^1_{\text{as}}(\R^{3(N-1)})\subset\dom{\Gamma} $
+\end{frame}
+\begin{frame}
+	\frametitle{Theorem 2}
+	\begin{block}{Theorem 2, Moser, T., Seiringer, R., 2017}
+	\emph{For any $ \xi\in H^1_{\textnormal{as}}(\R^{3(N-1)}),\mu>0$, and $ N\geq2 $\begin{equation}
+		\norm{\Gamma \xi}^2_{L^2(\R^{3(N-1)})}\geq(1-\Lambda_1(m))\norm{L \xi}^2_{L^2(\R^{3(N-1)})}.
+		\end{equation}
+		\xcancel{In particular}, if $ \Lambda_1(m)<1 $, Then $ \dom{\Gamma}=\dom{L}=H^1_{\textnormal{as}}(\R^{3(N-1)}) $. More generally for $ 0\leq\beta\leq2 $,\small{\begin{equation}
+		\norm{L^{(\beta-1)/2}\Gamma \xi}^2_{L^2(\R^{3(N-1)})}\geq(1-\Lambda_1(m))\norm{L^{(\beta+1)/2} \xi}^2_{L^2(\R^{3(N-1)})},
+		\end{equation}}
+		\normalsize for all $ \xi\in H^{(\beta+1)/2}_{\textnormal{as}}(\R^{3(N-1)}) $.
+		}
+	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Consequences}
+	Knowing that the quadratic form $ F_\alpha $ is symmetric, closed, and bounded from below, it is straightforward to obtain the Hamiltonian: 
+	\begin{equation}
+	\mathscr{D}(H_\alpha)=\left\{u\in\mathscr{D}(F_\alpha)\ \vert\ F_\alpha(\cdot,u)\text{ is $ L^2 $ bounded on }\mathscr{D}(F_\alpha)\right\}.
+	\end{equation}
+	Notice that for $ u\in\dom{H_\alpha} $, we have $ F_\alpha(\cdot,u)=\braket{\cdot,x} $ and we set $ H_\alpha u=x $. Moser and Seiringer obtains\begin{equation}
+	\begin{aligned}
+	\dom{H_\alpha}=\left\{u\in L^2_{\textnormal{as}}(\R^{3N})\ \vert\ u=w+G\xi,w\in H^2_{\textnormal{as}}(\R^{3(N-1)}),\right.\\
+	\left.\xi\in\dom{\Gamma}, w\vert_{y_N=0}=(2\pi)^{-3/2}(-1)^{N+1}(\alpha+\Gamma)\xi  \right\},
+	\end{aligned}
+	\end{equation}
+	$ (H_\alpha+\mu)(w+G\xi)=(H_{\textnormal{free}}+\mu)w $, with $ (G\xi)(x):=\left(\sum_{i=1}^{N}(-1)^{i-1}\hat{G}(k)\xi(\bar{k}^i)\right)^\vee(x) $
+\end{frame}
+\begin{frame}
 	\centering
 	\Large Thank you for your attention.\\
-\end{frame}		
+\end{frame}	
+\begin{frame}
+	\tiny\begin{equation}
+	\begin{aligned}
+	\hspace{-0.3cm}\Lambda_\beta(m)=&\sup_{\substack{s,K\in\R^3,\\Q\geq0}}\frac{s^2+Q^2}{\pi^2(1+m)}\ell_m(s,K,Q)^{-1/2}\int_{\R^3}\diff t \frac{1}{t^2}\left(\frac{\ell_m(s,K,Q)^{(\beta-1)/2}}{\ell_m(t,K,Q)^{(\beta+1)/2}}+\frac{\ell_m(t,K,Q)^{(\beta-1)/2}}{\ell_m(s,K,Q)^{(\beta+1)/2}}\right)\\
+	&\times\frac{\abs{(s+AK)\cdot(t+AK)}}{\left[(s+AK)^2+(t+AK)^2+\frac{m}{1+m}(Q^2+AK^2)\right]^2-\left[\frac{2}{(1+m)}(s+AK)\cdot(t+AK)\right]^2}
+	\end{aligned}
+	\end{equation}
+\end{frame}	
 \end{document}
