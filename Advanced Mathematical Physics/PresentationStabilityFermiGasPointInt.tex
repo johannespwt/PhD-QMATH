@@ -241,6 +241,17 @@
 	\end{block}
 \end{frame}
 \begin{frame}
+	\frametitle{Proof idea}
+	\begin{itemize}
+		\item Define $ \phi=L^{1/2}\xi $ such that $ T_{\text{diag}}=\norm{\phi}^2_{L^2(\R^{3(N-1)})} $.
+		\item Notice that \small$ T_{\text{off}}(\xi)=\int_{\R^{3(N-2)}}\diff q\int_{\R^3} \diff s\int_{\R^3}\diff t\overline{\phi(s,q)}\phi(t,q)L(s,q)^{-1/2}L(t,q)^{-1/2}\hat{G}(s,t,q) $.
+		\item Throw away positive part.
+		\item Use Schur test $ \norm{\sigma}\leq\sup_{t}\left(h(t)\int \diff s \sigma(s,t)\frac{1}{h(s)}\right) $ on $ (L^{-1/2}GL^{-1/2})_- $.
+		\item Choose $ h $ carefully and use (anti-)symmetry of $ \phi $ to arrive at $ \norm{(L^{-1/2}GL^{-1/2})_-}\leq\Lambda(m) $.\\
+		\item Closedness is now standard argument since all terms are indvidually bounded from below.
+	\end{itemize}
+\end{frame}
+\begin{frame}
 	\frametitle{Physical consequences}
 	$ \Lambda(m)<1 $ for $ m\geq0.36 $ so the critical mass ratio is less that $ 0.36 $
 	\begin{itemize}
@@ -267,11 +278,21 @@
 		\norm{\Gamma \xi}^2_{L^2(\R^{3(N-1)})}\geq(1-\Lambda_1(m))\norm{L \xi}^2_{L^2(\R^{3(N-1)})}.
 		\end{equation}
 		\xcancel{In particular}, if $ \Lambda_1(m)<1 $, Then $ \dom{\Gamma}=\dom{L}=H^1_{\textnormal{as}}(\R^{3(N-1)}) $. More generally for $ 0\leq\beta\leq2 $,\small{\begin{equation}
-		\norm{L^{(\beta-1)/2}\Gamma \xi}^2_{L^2(\R^{3(N-1)})}\geq(1-\Lambda_1(m))\norm{L^{(\beta+1)/2} \xi}^2_{L^2(\R^{3(N-1)})},
+		\norm{L^{(\beta-1)/2}\Gamma \xi}^2_{L^2(\R^{3(N-1)})}\geq(1-\Lambda_\beta(m))\norm{L^{(\beta+1)/2} \xi}^2_{L^2(\R^{3(N-1)})},
 		\end{equation}}
 		\normalsize for all $ \xi\in H^{(\beta+1)/2}_{\textnormal{as}}(\R^{3(N-1)}) $.
 		}
 	\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{Proof idea}
+	\begin{itemize}
+		\item Write $ \Gamma=L+J $, i.e. $ \braket{\xi|J\xi}=T_{\text{off}}(\xi) $.\\
+		\item Notice that define  $ \phi=L^{(\beta+1)/2}\xi$ and notice that \small$ \norm{L^{(\beta-1)/2}\Gamma\xi}^2=\braket{\phi|L^{-(\beta+1)/2} (L+J)L^{\beta-1}(L+J)L^{-(\beta+1)/2}|\phi}$\\
+		\item Throw away positive term $ \braket{\phi|L^{-(\beta+1)/2} JL^{\beta-1}JL^{-(\beta+1)/2}|\phi} $.
+		\item Claim is now equivalent to $ \braket{\phi|L^{(\beta-1)/2}JL^{-(\beta+1)/2}+L^{-(\beta+1)/2}JL^{(\beta-1)/2}|\phi}\geq-\Lambda_\beta(m)\norm{\phi}^2_2 $.
+		\item Use Cauchy-Schwartz, and similar proof to that of theorem 1 to obtain the desired result.
+	\end{itemize}
 \end{frame}
 \begin{frame}
 	\frametitle{Consequences}
@@ -288,13 +309,16 @@
 	$ (H_\alpha+\mu)(w+G\xi)=(H_{\textnormal{free}}+\mu)w $, with $ (G\xi)(x):=\left(\sum_{i=1}^{N}(-1)^{i-1}\hat{G}(k)\xi(\bar{k}^i)\right)^\vee(x) $
 \end{frame}
 \begin{frame}
+	Thus stability of the fermionic $ N+1 $ system is established for $ m\geq0.36 $, and a rigorous version of the formal Hamiltonian is found.
+\end{frame}
+\begin{frame}
 	\centering
 	\Large Thank you for your attention.\\
 \end{frame}	
 \begin{frame}
 	\tiny\begin{equation}
 	\begin{aligned}
-	\hspace{-0.3cm}\Lambda_\beta(m)=&\sup_{\substack{s,K\in\R^3,\\Q\geq0}}\frac{s^2+Q^2}{\pi^2(1+m)}\ell_m(s,K,Q)^{-1/2}\int_{\R^3}\diff t \frac{1}{t^2}\left(\frac{\ell_m(s,K,Q)^{(\beta-1)/2}}{\ell_m(t,K,Q)^{(\beta+1)/2}}+\frac{\ell_m(t,K,Q)^{(\beta-1)/2}}{\ell_m(s,K,Q)^{(\beta+1)/2}}\right)\\
+	\hspace{-0.3cm}\Lambda_\beta(m)=&\sup_{\substack{s,K\in\R^3,\\Q\geq0}}\frac{s^2+Q^2}{\pi^2(1+m)}\int_{\R^3}\diff t \frac{1}{t^2}\left(\frac{\ell_m(s,K,Q)^{(\beta-1)/2}}{\ell_m(t,K,Q)^{(\beta+1)/2}}+\frac{\ell_m(t,K,Q)^{(\beta-1)/2}}{\ell_m(s,K,Q)^{(\beta+1)/2}}\right)\\
 	&\times\frac{\abs{(s+AK)\cdot(t+AK)}}{\left[(s+AK)^2+(t+AK)^2+\frac{m}{1+m}(Q^2+AK^2)\right]^2-\left[\frac{2}{(1+m)}(s+AK)\cdot(t+AK)\right]^2}
 	\end{aligned}
 	\end{equation}

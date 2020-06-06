@@ -987,7 +987,34 @@ Observing the last line in the above calculation we observe that we have the rel
 which is equivalent to the relation\begin{equation}
 \lambda(z)^{-1}-\lambda(z')^{-1}=-(z-z')\braket{\phi(\bar{z}),\phi(z')}.
 \end{equation}
-This proves equation \eqref{lambda relation}
+This proves equation \eqref{lambda relation}.
+\section{Schur test}
+We prove that given an operator with symmetric integral kernel $ \sigma(s,t) $ we have\begin{equation}
+\norm{\sigma}\leq\sup_{t}\left(h(t)\int\diff s \frac{\sigma(s,t)}{h(s)}\right).
+\end{equation}
+for any positive function $ h $.
+\begin{proof}
+	First notice that that by the regular Cauchy-Schwartz we have \begin{equation}
+	\begin{aligned}
+	\abs{\int\diff t\sigma(s,t)f(t)}^2&=\abs{\int\diff t\left(\frac{h(s)}{h(t)}\right)^{1/2}\sigma(t,s)^{1/2}\left(\frac{h(t)}{h(s)}\right)^{1/2}\sigma(s,t)^{1/2}f(t)}^2\\
+	&\leq \left(\int\diff t \abs{\sigma(t,s)}\frac{h(s)}{h(t)}\right)\left(\int\diff t \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\abs{f(t)}^2\right)
+	\end{aligned}
+	\end{equation}
+	where we used symmetry of $ \sigma $ in the first line, Cauchy-Schwartz in the second line Now integrating w.r.t $ s $ we find\begin{equation}
+	\begin{aligned}
+	\norm{\sigma}^2\norm{f}_2^2&\leq\int\diff s	\abs{\int\diff t\sigma(s,t)f(t)}^2\\&
+	\leq\int\diff s\left[\left(\int\diff t \abs{\sigma(t,s)}\frac{h(s)}{h(t)}\right)\left(\int\diff t \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\abs{f(t)}^2\right)\right]\\&
+	\leq\sup_{s}\left\{h(s)\left(\int\diff t \abs{\sigma(t,s)}\frac{1}{h(t)}\right)\right\}\left(\int\diff s\int\diff t \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\abs{f(t)}^2\right)
+	\\&
+	=\sup_{s}\left\{h(s)\left(\int\diff t \abs{\sigma(t,s)}\frac{1}{h(t)}\right)\right\}\left(\int\diff t\int\diff s\left[ \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\right]\abs{f(t)}^2\right)
+	\\&
+	\leq\sup_{s}\left\{h(s)\left(\int\diff t \abs{\sigma(t,s)}\frac{1}{h(t)}\right)\right\}\sup_{t}\left\{h(t)\left(\int\diff s \abs{\sigma(s,t)}\frac{1}{h(s)}\right)\right\}\norm{f}^2_2
+	\\&=\left[\sup_{t}\left\{h(t)\left(\int\diff s \abs{\sigma(s,t)}\frac{1}{h(s)}\right)\right\}\right]^2\norm{f}^2_2,
+	\end{aligned}
+	\end{equation}
+	where we used Fubini's theorem in the fourth line and H\"older's inequality $ (1,\infty) $ in the firth line.
+	Thus the claim follows.
+\end{proof}
 \bibliographystyle{amsplain}
 \bibliography{bibliography}
 \end{document}

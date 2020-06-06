@@ -10,3 +10,4 @@
 \contentsline {section}{\numberline {4}The $ N+1 $ case}{27}{section.4}
 \contentsline {subsection}{\numberline {4.1}Quadratic form}{27}{subsection.4.1}
 \contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{33}{appendix.A}
+\contentsline {section}{\numberline {B}Schur test}{34}{appendix.B}
