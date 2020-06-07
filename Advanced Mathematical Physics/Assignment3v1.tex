@@ -38,6 +38,7 @@
 \newcommand{\interior}[1]{%
 	{\kern0pt#1}^{\mathrm{o}}%
 }
+\newcommand{\trace}[1]{\text{Tr}\left(#1\right)}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand{\ie}{\emph{i.e.} }
 \newcommand{\eg}{\emph{e.g.} }
@@ -86,10 +87,10 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	Now notice that then it also hold for any right triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $,  with the legs parallel to the two axes of $ \Z^2 $. To see this we construct from any right triangle with legs parallel to the two axes, a rectangle with sides parallel to the two axes. This is done by rotating the triangle by $ \pi $ and gluing (by translation) the hypotenuses together. We then notice that the area of the resulting rectangle is exactly twice the area of the right triangle. Thus the area of the right triangle is equal to half the number of dual lattice points in the rectangle. Since the two triangle have an equal number of dual lattice points, and the they share the dual lattice points on their boundary (hypotenuses), we conclude that the area is the number of dual lattice points inside the triangle plus half the number of dual lattice points on the boundary.\\
 	We finally notice that the desired result now follows from observing that any triangle in the lattice can be made into a rectangle with sides parallel to the axes, by adding right triangles with legs parallel to the axes. Simply add right triangles with hypotenuses given by the sides of the original triangle (such that they are disjoint from the original triangle). Thus the area of the original triangle is the area of the resulting rectangle minus the area of the right triangles we added. However, then each dual lattice point inside the original triangle contributes one to the area. Each dual lattice point on the boundary of the triangle is added once by the rectangle, and half is then subtracted by the right triangles, thus they contribute one half each. Finally all dual lattice point outside the triangle is added once by the rectangle, and substracted once by the right triangle and thus contribute nothing to the area. In total we have that the area is the number of dual lattice point inside the triangle plus one half times the number of dual lattice points on the boundary. 
 \end{proof}
-\begin{proof}
-	Let $ y_1,y_2\in \Z^2 $, we then notice that line $ y_1y_2 $ (line going from $ y_1 $ to $ y_2 $) might cut through some cells (unit squares of the lattice). Say we are interested in computing the area of cells the line go trough, then we simply sum up the number of dual lattice point that are a distance of less than $ 1 $ (in the Manhattan metric) from the line. Now say that we instead are interested in the area of these cells but restricted to one side of line. In this case, we notice that $ \Z^2 $ is symmetric under $ \pi $-rotations. Thus we see that whatever set of "cut" cells that are on one side of the line, it can be rotated (up to a lattice translation) into the set of "cut" cells on the other side. And the combination of these two disjoint sets from the set of all cells the line go through. By rotation and translation invariance of the area, we conclude that the area of the cut cells on either side is exactly half the number of dual lattice points that are a distance of less than $ 1 $ to the line. Now we notice that all dual lattice point in the set $ \{x^*\in(\Z^2)^*\ \vert\ \text{dist}(x^*,y_1y_2)<1\} $ are either on one side of line, on the other side of the line, or directly on the line. Again by invariance under a $ \pi $-rotation (and translation) we conclude that the number of dual lattice points on one side equals the number of dual lattice points on the other side. And thus we may conclude that the area of the cut cell on one side of the line is equal to the number of dual lattice point on that side with distance less than $ 1 $ to the line, plus half the number of dual lattice point on the line. From this result it clearly follows that we can compute the area between a line and say the first axis by adding the number of dual lattice points between the line and first axis, and half the number of dual lattice points on the line.\\
-	We are now ready to compute the area of a triangle with the above knowledge. Given a triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $ we compute the area by first translating the triangle such that it lies in the upper half-plane.  Now the area of the triangle can be computed by drawing vertical lines from each vertex to the first axis and computing the area of the resulting trapezoids. The area of the triangle is then the area under the the top line(s) of the triangle minus the area under the bottom line(s) of the triangle. By this construction we see from the above result that we get that each dual lattice point in the triangle contributes exactly one to the area, each dual lattice point below the triangle (between the triangle and the first axis) is added and subtracted once, each dual lattice point on the top boundary of the triangle contributes exactly one half, and each dual lattice point on the bottom boundary of the triangle is added and half of it is subtracted. In total we have that the area is the sum of dual lattice point in the triangle plus one half times the dual lattice points on the boundary, and the desires result follows.
-\end{proof}
+%\begin{proof}
+%	Let $ y_1,y_2\in \Z^2 $, we then notice that line $ y_1y_2 $ (line going from $ y_1 $ to $ y_2 $) might cut through some cells (unit squares of the lattice). Say we are interested in computing the area of cells the line go trough, then we simply sum up the number of dual lattice point that are a distance of less than $ 1 $ (in the Manhattan metric) from the line. Now say that we instead are interested in the area of these cells but restricted to one side of line. In this case, we notice that $ \Z^2 $ is symmetric under $ \pi $-rotations. Thus we see that whatever set of "cut" cells that are on one side of the line, it can be rotated (up to a lattice translation) into the set of "cut" cells on the other side. And the combination of these two disjoint sets from the set of all cells the line go through. By rotation and translation invariance of the area, we conclude that the area of the cut cells on either side is exactly half the number of dual lattice points that are a distance of less than $ 1 $ to the line. Now we notice that all dual lattice point in the set $ \{x^*\in(\Z^2)^*\ \vert\ \text{dist}(x^*,y_1y_2)<1\} $ are either on one side of line, on the other side of the line, or directly on the line. Again by invariance under a $ \pi $-rotation (and translation) we conclude that the number of dual lattice points on one side equals the number of dual lattice points on the other side. And thus we may conclude that the area of the cut cell on one side of the line is equal to the number of dual lattice point on that side with distance less than $ 1 $ to the line, plus half the number of dual lattice point on the line. From this result it clearly follows that we can compute the area between a line and say the first axis by adding the number of dual lattice points between the line and first axis, and half the number of dual lattice points on the line.\\
+%	We are now ready to compute the area of a triangle with the above knowledge. Given a triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $ we compute the area by first translating the triangle such that it lies in the upper half-plane.  Now the area of the triangle can be computed by drawing vertical lines from each vertex to the first axis and computing the area of the resulting trapezoids. The area of the triangle is then the area under the the top line(s) of the triangle minus the area under the bottom line(s) of the triangle. By this construction we see from the above result that we get that each dual lattice point in the triangle contributes exactly one to the area, each dual lattice point below the triangle (between the triangle and the first axis) is added and subtracted once, each dual lattice point on the top boundary of the triangle contributes exactly one half, and each dual lattice point on the bottom boundary of the triangle is added and half of it is subtracted. In total we have that the area is the sum of dual lattice point in the triangle plus one half times the dual lattice points on the boundary, and the desires result follows.
+%\end{proof}
 	\subsection*{(b)}
 	For any dual lattice point $ a\in(\Z^2)^* $, let $ \theta_i(a)\in(-\pi,\pi) $ be the angle at $ a $ in the triangle $ x_iax_{i+1} $ where $ x_4\equiv x_1 $, unless $ a $ lies on the line between $ x_i $ and $ x_{i+1} $, in which case $ \theta_i(a)=0 $.\\
 	We then prove that $ \sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)=2\pi\Area(x_1,x_2,x_3) $. \begin{proof}
@@ -100,18 +101,87 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	\end{proof} 
 	\subsection*{(c)}
 	Let $ f:(-\pi,\pi)\to\R $ be antisymmetric and bounded such that $ f(\theta)=\mathcal{O}(\abs{\theta}^3) $. We then prove that \begin{equation}
-	\sum_{a\in(\Z^2)^*}f(\theta_i(a)),
+	\sum_{a\in(\Z^2)^*}f(\theta_i(a)),\label{sumf}
 	\end{equation}
 	is absolutely summable for $ i=1,2,3 $. \begin{proof}
 		Notice that for any triangle $ bac $ with $ b,a,c\in\R^2 $ we have the cosine relation\begin{equation}
 		\abs{bc}^2=\abs{ab}^2+\abs{ac}^2-2\cos(\theta)\abs{ab}\abs{ac}
 		\end{equation}
-	\end{proof}
 	where $ \theta $ is the angle at $ a $ in the triangle $ bac $. \\
-	Consider now $ \theta_i(a) $. We know by the cosine relation above that $ \cos(\theta_i(a))=\frac{\abs{ax_i}^2+\abs{ax_{i+1}}^2-\abs{x_ix_{i+1}}^2}{2\abs{ax_i}\abs{ax_{i+1}}} $. Since $ \arccos(1-\abs{x})=\mathcal{O}(\sqrt{\abs{x}}) $, we conclude that $ (f\circ\arccos)(1-x)=\mathcal{O}(\abs{x}^{3/2}) $. By the triangle inequality we know that $ \abs{\abs{ax_i}-\abs{x_ix_{i+1}}}\leq\abs{ax_{i+1}}\leq\abs{ax_i}+\abs{x_ix_{i+1}} $. Thus we may conclude that \begin{equation}
-	1\geq\cos(\theta_i(a))\geq\frac{\abs{ax_i}}{2\abs{ax_i}+\abs{x_ix_{i+1}}}+\frac{\abs{ax_i}-\abs{x_ix_{i+1}}}{2\abs{ax_i}}-\frac{\abs{x_ix_{i+1}}^2}{2\abs{ax_i}(\abs{ax_i}-\abs{x_ix_{i+1}})}.
+	Consider now $ \theta_i(a) $. We know by the cosine relation above that $ \cos(\theta_i(a))=\frac{\abs{ax_i}^2+\abs{ax_{i+1}}^2-\abs{x_ix_{i+1}}^2}{2\abs{ax_i}\abs{ax_{i+1}}} $. Since $ \arccos(1-\abs{x})=\mathcal{O}(\sqrt{\abs{x}}) $, we conclude that $ (f\circ\arccos)(1-x)=\mathcal{O}(\abs{x}^{3/2}) $. By the triangle inequality we know that $ \abs{\abs{ax_i}-\abs{x_ix_{i+1}}}\leq\abs{ax_{i+1}}\leq\abs{ax_i}+\abs{x_ix_{i+1}} $. Let $ M $ denote the set \begin{equation}
+	M=\{a\in\Z^2\ \vert\ \abs{ax_i}>\abs{x_ix_{i+1}}\},
+	\end{equation} then the sum in \eqref{sumf} can be split in a sum over $ M $ and a sum over $ M^\complement $. Clearly the sum over $ M^\complement $ is finite, and we need not worry about that. Let $ a\in M $, then we may conclude that \begin{equation}
+	1\geq\cos(\theta_i(a))\geq\frac{\abs{ax_i}}{2\abs{ax_{i+1}}}+\frac{\abs{ax_{i+1}}}{2\abs{ax_i}}-\frac{\abs{x_ix_{i+1}}^2}{2\abs{ax_i}(\abs{ax_i}-\abs{x_ix_{i+1}})}.
 	\end{equation}
-	Let $ a $ be such that $ \abs{ax_i}\geq2\abs{x_ix_{i+1}} $ then\begin{equation}
-	\cos(\theta_i(a))\leq\mathcal{O}\left(\left(1-\frac{\abs{x_ix_{i+1}}}{\abs{ax_i}}\right)\right).
+	Using that $ 1\leq\frac{1}{2}\left(k+k^{-1}\right) $, for any $k>0$,
+	 we find \begin{equation}
+	1\geq\cos(\theta_i(a))\geq1-C\frac{1}{\abs{ax_i}^2},
 	\end{equation}
+	for some $ C>0 $. Therefore we may conclude\begin{equation}
+	f(\theta_i(a))=(f\circ\arccos)(\cos(\theta_i(a)))=\mathcal{O}\left(\left(\frac{\abs{x_ix_{i+1}}}{\abs{ax_i}}\right)^3\right)
+	\end{equation}
+	therefore we also have \begin{equation}
+	\abs{f(\theta_i(a))}=\mathcal{O}\left(\frac{1}{\abs{ax_i}^3}\right).
+	\end{equation}
+	It this then a well known fact that $ \sum_{a\in\Z^2\setminus\{0\}}\frac{1}{\abs{a}^3}<\infty $, which, by translation of the summand, proves the claim.
+\end{proof}
+\subsection*{(d)}
+Let $ \tau_i $ be the reflection of $ (\Z^2)^* $ in the midpoint $ (x_i+x_{i+1})/2 $, \ie it takes the point $ a\in(\Z^2)^* $ and maps to the point $ a+2((x_i+x_{i+1})/2-a)=x_i+x_{i+1}-a $. Clearly since $ x_i\in \Z^2 $ and $ x_{i+1}\in\Z^2 $ we have $ x_i+x_{i+1}\in\Z^2 $, and since $ a\in\Z^2+(1/2,1/2) $ we have $ x_i+x_{i+1}-a \in\Z^2+(1/2,1/2)=(\Z^2)^* $ Thus we conclude that $ \tau_i:(\Z^2)^*\to(\Z^2)^* $. Now the triangle $ x_iax_{i+1} $ is related to $ x_i\tau_i(a)x_{i+1} $ by a $ \pi $ rotation and the interchange $ x_i\leftrightarrow x_{i+1} $. This can be seen by the fact that under a $ \pi $ rotation around the point $ (x_i+x_{i+1})/2 $, the point $ a $ maps exactly to $ \tau_i(a) $. On the other hand $ x_i $ maps to $ x_{i+1} $ and vice versa, thus the $ \pi $ rotation around the midpoint, maps $ x_iax_{i+1} $ to $ x_{i+1}\tau_i(a)x_i=\tau_i(x_i)\tau_i(a)\tau_i(x_{i+1}) $. Now interchanging $ x_i $ and $ x_{i+1} $ we exactly see that we get $ x_i\tau_i(a)x_{i+1} $. Thus we conclude that $ \theta_i(\tau_i(a))=-\theta_i(a) $, since the magnitude of the angle is preserved but the counter clockwise order of the vertices have changed. Furthermore, we then conclude that \begin{equation}
+f(\theta_i(\tau_i(a)))=-f(\theta_i(a)),
+\end{equation}
+by antisymmetry of $ f $.\\
+Notice that $ (\Z^2)^*$ can be split in two. Through the point $ (x_i+x_{i+1})/2 $ we draw a vertical line, all dual lattice points to left of that line \emph{or} on the line above the point $ (x_i+x_{i+1})/2 $, we denote by $ \Z^2_L $ and all points to the right of that line \emph{or} on the line below the point $ (x_i+x_{i+1})/2 $ we denote by $ \Z^2_R $. Notice that $ \tau_i(\Z^2_L)=\Z^2_R $, \ie the image of $ \tau_i $ on $ \Z^2_L $ is equal to $ \Z^2_R $, and $ (\Z^2)^*=\Z^2_L\cup\Z^2_R\cup Z $, where \begin{equation}
+Z=\begin{cases}
+\{ (x_i+x_{i+1})/2 \}&\text{if } (x_i+x_{i+1})/2\in(\Z^2)^*\\
+\emptyset&\text{if }  (x_i+x_{i+1})/2\notin(\Z^2)^*
+\end{cases}
+\end{equation}
+Thus we may split the sum\begin{equation}
+\sum_{a\in(\Z^2)^*}f(\theta_i(a))=\sum_{a\in\Z^2_L}\left[f(\theta_i(a))+f(\theta_i(\tau_i(a)))\right]+\sum_{a\in Z}f(\theta_i(a)),
+\end{equation}
+where we used the fact that $ \sum_{a\in(\Z^2)^*}f(\theta_i(a)) $ is absolutely summable, to switch around the order of the terms.
+Clearly, the last term is zero if $ Z=\emptyset $, on the other hand if $ Z=\{(x_i+x_{i+1})/2\} $, the last term is also zero, since $ \theta_i((x_i+x_{i+1})/2)=0 $ so $ f(\theta_i((x_i+x_{i+1})/2))=0 $ by antisymmetry. The first term is also zero by the fact that $ f(\theta_i(\tau_i(a)))=-f(\theta_i(a)) $, so all terms in the series vanish. Thus we conclude that $ \sum_{a\in(\Z^2)^*}f(\theta_i(a))=0 $.
+\subsection*{(e)}
+Now let $ g:(-\pi,\pi)\to\R $ be bounded and antisymmetric such that\begin{equation}
+g(\theta)=\theta+\mathcal{O}(\abs{\theta}^3),
+\end{equation}
+We then prove the Connes area formula\begin{equation}
+\sum_{a\in(\Z^2)^*}\left(g(\theta_1(a))+g(\theta_2(a))+g(\theta_3(a))\right)=2\pi\Area(x_1,x_2,x_3).
+\end{equation}
+
+\begin{proof}
+The Connes area formula follows from the calculation \begin{equation}
+\begin{aligned}
+\sum_{a\in(\Z^2)^*}\left(g(\theta_1(a))+g(\theta_2(a))+g(\theta_3(a))\right)=&\sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)\\&+\sum_{a\in(\Z^2)^*}\left(h(\theta_1(a))+h(\theta_2(a))+h(\theta_3(a))\right),
+\end{aligned}
+\end{equation}
+where $ h(\theta)=g(\theta)-\theta=\mathcal{O}(\abs{\theta}^3) $. Here we used the fact that the two series on the right hand side are both convergent. The last sum satisfies the assumptions on $ f $ in problem 1.(d) so we may conclude that $ \sum_{a\in(\Z^2)^*}\left(h(\theta_1(a))+h(\theta_2(a))+h(\theta_3(a))\right)=0 $. By problem 1.(b) we thus have \begin{equation}
+\begin{aligned}
+\sum_{a\in(\Z^2)^*}\left(g(\theta_1(a))+g(\theta_2(a))+g(\theta_3(a))\right)=&\sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)=2\pi\Area(x_1,x_2,x_3),
+\end{aligned}
+\end{equation}
+as desired.
+\end{proof}
+\section{Flux piercing index generalizes Chern number}
+Let $ a\in\R^2\setminus\Z^2 $. We define the unitary multiplication operator\begin{equation}
+U_a\ket{x,\sigma}=\euler{i\theta_a(x)}\ket{x,\sigma},
+\end{equation}
+where $ \theta_a(x):\R^2\to[0,2\pi) $, is the angle the vector $ x-a $ makes with the first axis. The flux piercing index is defined by the index of a pair of projections in the following way\begin{equation}
+\text{Ch}_{II}(P)=\text{index}(U_a^\dagger PU_a,P)\in\Z.
+\end{equation}
+It was shown in the lecture notes that $ (U_a^\dagger PU_a-P)^3 $ is trace class and that we then have \begin{equation}
+\text{Ch}_{II}(P)=\trace{(U_a^\dagger PU_a-P)^3}.
+\end{equation}
+\subsection*{(a)}
+We show that \begin{equation}
+\text{Ch}_{II}(P)=\sum_{x,y,z\in\Z^2}\trace{P_{xy}P_{yz}P_{xz}}\left(\sin\angle(y,a,x)+\sin\angle(z,a,y)+\sin\angle(x,a,z)\right)
+\end{equation}
+\begin{proof}
+	Notice that \begin{equation}
+	\begin{aligned}
+	\trace{(U_a^\dagger PU_a-P)^3}&=\sum_{x,y,z}\left(\braket{x|(U_a^\dagger PU_a-P)|y}\braket{y|(U_a^\dagger PU_a-P)|z}\braket{z|(U_a^\dagger PU_a-P)|x}\right)\\
+	&=\sum_{x,y,z}\left(\trace{P_{xy}P_{yz}P_{zx}}(\euler{i(\theta_a(y)-\theta_a(x))}-1)(\euler{i(\theta_a(z)-\theta_a(y))}-1)(\euler{i(\theta_a(x)-\theta_a(z))}-1)\right)
+	\end{aligned}
+	\end{equation}
+\end{proof}
 \end{document}
