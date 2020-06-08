@@ -83,8 +83,8 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	We notice first that for any rectangle with sides parallel to the two axes of $ \Z^2 $ and vertices $ y_1,y_2,y_3,y_4\in \Z^2 $, it trivially holds that \begin{equation}
 	\Area(y_1,y_2,y_3,y_4)=\#(\text{dual lattice point in the rectangle }y_1y_2y_3y_4),
 	\end{equation}
-	since there are no dual lattice points on the boundary and we can cover the rectangle with disjoint (up to sets with measure zero) unit squares around each dual lattice point inside the rectangle.\\
-	Now notice that then it also hold for any right triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $,  with the legs parallel to the two axes of $ \Z^2 $. To see this we construct from any right triangle with legs parallel to the two axes, a rectangle with sides parallel to the two axes. This is done by rotating the triangle by $ \pi $ and gluing (by translation) the hypotenuses together. We then notice that the area of the resulting rectangle is exactly twice the area of the right triangle. Thus the area of the right triangle is equal to half the number of dual lattice points in the rectangle. Since the two triangle have an equal number of dual lattice points, and the they share the dual lattice points on their boundary (hypotenuses), we conclude that the area is the number of dual lattice points inside the triangle plus half the number of dual lattice points on the boundary.\\
+	since there are no dual lattice points on the boundary and we can cover the rectangle with disjoint (up to sets of measure zero) unit squares around each dual lattice point inside the rectangle.\\
+	Now notice that then it also hold for any right triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $,  with the legs parallel to the two axes of $ \Z^2 $. To see this we construct from any right triangle with legs parallel to the two axes, a rectangle with sides parallel to the two axes. This is done by rotating the triangle by $ \pi $ and gluing (by translation) the hypotenuses together. We then notice that the area of the resulting rectangle is exactly twice the area of the right triangle. Thus the area of the right triangle is equal to half the number of dual lattice points in the rectangle. Since the two triangle have an equal number of dual lattice points inside, and the they share the dual lattice points on their boundary (hypotenuses), we conclude that the area of a single triangle is the number of dual lattice points inside the triangle plus half the number of dual lattice points on the boundary.\\
 	We finally notice that the desired result now follows from observing that any triangle in the lattice can be made into a rectangle with sides parallel to the axes, by adding right triangles with legs parallel to the axes. Simply add right triangles with hypotenuses given by the sides of the original triangle (such that they are disjoint from the original triangle). Thus the area of the original triangle is the area of the resulting rectangle minus the area of the right triangles we added. However, then each dual lattice point inside the original triangle contributes one to the area. Each dual lattice point on the boundary of the triangle is added once by the rectangle, and half is then subtracted by the right triangles, thus they contribute one half each. Finally all dual lattice point outside the triangle is added once by the rectangle, and substracted once by the right triangle and thus contribute nothing to the area. In total we have that the area is the number of dual lattice point inside the triangle plus one half times the number of dual lattice points on the boundary. 
 \end{proof}
 %\begin{proof}
@@ -94,7 +94,7 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	\subsection*{(b)}
 	For any dual lattice point $ a\in(\Z^2)^* $, let $ \theta_i(a)\in(-\pi,\pi) $ be the angle at $ a $ in the triangle $ x_iax_{i+1} $ where $ x_4\equiv x_1 $, unless $ a $ lies on the line between $ x_i $ and $ x_{i+1} $, in which case $ \theta_i(a)=0 $.\\
 	We then prove that $ \sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)=2\pi\Area(x_1,x_2,x_3) $. \begin{proof}
-		This is actually quite obvious from the fact that by the definition of $ \theta_i $ we have $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=2\pi $ for $ a $ inside the triangle and $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=\pi $ for $ a $ in the boundary of the triangle. On the other hand $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=0 $ for $ a $ outside of the triangle. Thus \begin{equation}
+		This is actually quite obvious from the fact that by the definition of $ \theta_i $ we have $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=2\pi $ for $ a $ inside the triangle and $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=\pi $ for $ a $ on the boundary of the triangle. On the other hand $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=0 $ for $ a $ outside of the triangle. Thus \begin{equation}
 		\sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)=2\pi\left(\#(\text{dlp inside})+\frac{1}{2}\#(\text{dlp on boundary})\right)=2\pi\Area(x_1,x_2,x_3),
 		\end{equation}
 		where dlp stands for "dual lattice points".
@@ -110,7 +110,7 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	where $ \theta $ is the angle at $ a $ in the triangle $ bac $. \\
 	Consider now $ \theta_i(a) $. We know by the cosine relation above that $ \cos(\theta_i(a))=\frac{\abs{ax_i}^2+\abs{ax_{i+1}}^2-\abs{x_ix_{i+1}}^2}{2\abs{ax_i}\abs{ax_{i+1}}} $. Since $ \arccos(1-\abs{x})=\mathcal{O}(\sqrt{\abs{x}}) $, we conclude that $ (f\circ\arccos)(1-x)=\mathcal{O}(\abs{x}^{3/2}) $. By the triangle inequality we know that $ \abs{\abs{ax_i}-\abs{x_ix_{i+1}}}\leq\abs{ax_{i+1}}\leq\abs{ax_i}+\abs{x_ix_{i+1}} $. Let $ M $ denote the set \begin{equation}
 	M=\{a\in\Z^2\ \vert\ \abs{ax_i}>\abs{x_ix_{i+1}}\},
-	\end{equation} then the sum in \eqref{sumf} can be split in a sum over $ M $ and a sum over $ M^\complement $. Clearly the sum over $ M^\complement $ is finite, and we need not worry about that. Let $ a\in M $, then we may conclude that \begin{equation}
+	\end{equation} then the sum in \eqref{sumf} can be split in a sum over $ M $ and a sum over $ M^\complement $. Clearly the sum over $ M^\complement $ is finite by boundedness of $ f $, and we need not worry about any divergences from that contribution. Let $ a\in M $, then we may conclude that \begin{equation}
 	1\geq\cos(\theta_i(a))\geq\frac{\abs{ax_i}}{2\abs{ax_{i+1}}}+\frac{\abs{ax_{i+1}}}{2\abs{ax_i}}-\frac{\abs{x_ix_{i+1}}^2}{2\abs{ax_i}(\abs{ax_i}-\abs{x_ix_{i+1}})}.
 	\end{equation}
 	Using that $ 1\leq\frac{1}{2}\left(k+k^{-1}\right) $, for any $k>0$,
@@ -118,7 +118,7 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	1\geq\cos(\theta_i(a))\geq1-C\frac{1}{\abs{ax_i}^2},
 	\end{equation}
 	for some $ C>0 $. Therefore we may conclude\begin{equation}
-	f(\theta_i(a))=(f\circ\arccos)(\cos(\theta_i(a)))=\mathcal{O}\left(\left(\frac{\abs{x_ix_{i+1}}}{\abs{ax_i}}\right)^3\right)
+	f(\theta_i(a))=(f\circ\arccos)(\cos(\theta_i(a)))=\mathcal{O}\left(\left(\frac{1}{\abs{ax_i}}\right)^3\right)
 	\end{equation}
 	therefore we also have \begin{equation}
 	\abs{f(\theta_i(a))}=\mathcal{O}\left(\frac{1}{\abs{ax_i}^3}\right).
@@ -180,8 +180,68 @@ We show that \begin{equation}
 	Notice that \begin{equation}
 	\begin{aligned}
 	\trace{(U_a^\dagger PU_a-P)^3}&=\sum_{x,y,z}\left(\braket{x|(U_a^\dagger PU_a-P)|y}\braket{y|(U_a^\dagger PU_a-P)|z}\braket{z|(U_a^\dagger PU_a-P)|x}\right)\\
+	&=\sum_{x,y,z}\left(\trace{P_{xy}P_{yz}P_{zx}}(\euler{i(\theta_a(y)-\theta_a(x))}-1)(\euler{i(\theta_a(z)-\theta_a(y))}-1)(\euler{i(\theta_a(x)-\theta_a(z))}-1)\right)\\
 	&=\sum_{x,y,z}\left(\trace{P_{xy}P_{yz}P_{zx}}(\euler{i(\theta_a(y)-\theta_a(x))}-1)(\euler{i(\theta_a(z)-\theta_a(y))}-1)(\euler{i(\theta_a(x)-\theta_a(z))}-1)\right)
 	\end{aligned}
 	\end{equation}
+	Using that
+	\begin{equation}
+	\begin{aligned}
+	&(\euler{i(\theta_a(y)-\theta_a(x))}-1)(\euler{i(\theta_a(z)-\theta_a(y))}-1)(\euler{i(\theta_a(x)-\theta_a(z))}-1)\\&\quad=\euler{i(\theta_a(y)-\theta_a(x))}-\euler{-i(\theta_a(y)-\theta_a(x))}+\euler{i(\theta_a(z)-\theta_a(y))}-\euler{-i(\theta_a(z)-\theta_a(y))}+\euler{i(\theta_a(x)-\theta_a(z))}-\euler{-i(\theta_a(x)-\theta_a(z))}\\&\quad= 2i\left(\sin(\theta_a(y)-\theta_a(x))+\sin(\theta_a(z)-\theta_a(y))+\sin(\theta_a(x)-\theta_a(z))\right),
+	\end{aligned}
+	\end{equation}
+	and the fact that we define the angle $ \angle(b,a,c) $ to be positive of if $ b,a,c $ is in clockwise order in $ \Z^2 $ (see figure 1 in the assignment) such that \eg $ \theta_a(y)-\theta_a(x)=-\angle(y,a,x) $, we find \begin{equation}
+		\begin{aligned}
+		\trace{(U_a^\dagger PU_a-P)^3}&=-2i\sum_{x,y,z}\trace{P_{xy}P_{yz}P_{zx}}\left(\sin\angle(y,a,x)+\sin\angle(z,a,y)+\sin\angle(x,a,z)\right),
+		\end{aligned}
+	\end{equation}
+	which is the desired result.
 \end{proof}
+\subsection*{(b)}
+By translation invariance of $ P $ we may rewrite\begin{equation}
+\trace{P_{xy}P_{yz}P_{zx}}=\trace{P_{0(y-x)}P_{(y-x)(z-x)}P_{(z-x)0}}.
+\end{equation}
+Furthermore, since translations preserve angles we may also rewrite \begin{equation}
+\angle(y,a,x)=\angle(y-x,a-x,0),\ \angle(z,a,y)=\angle(z-x,a-x,y-x),\ \angle(x,a,z)=\angle(0,a-x,z-x).
+\end{equation}
+Thus we have by 2.(a) \begin{equation}
+\begin{aligned}
+\text{Ch}_{II}(P)=&-2i\sum_{x,y,z}\trace{P_{0(y-x)}P_{(y-x)(z-x)}P_{(z-x)0}}\\&\quad\times\left(\sin\angle(y-x,a-x,0)+\sin\angle(z-x,a-x,y-x)+\sin\angle(0,a-x,z-x)\right)\\
+=&-2i\sum_{\substack{y,z\in\Z^2\\ a\in(\Z^2)^*}}\trace{P_{0y}P_{yz}P_{z0}}\left(\sin\angle(y,a,0)+\sin\angle(z,a,y)+\sin\angle(0,a,z)\right),
+\end{aligned}
+\end{equation}
+where we in the last step simply renamed the dummy variables and used the fact that the domain of summation is translation invariant.
+\subsection*{(c)}
+We now apply the Connes area formula, which were proved in problem 1, to the result of 2.(b). We let $ g(\theta)=\sin(\theta) $. Notice that then $ g $ is antisymmetric since $ \sin(\theta) $ is odd. Furthermore, by Taylor's theorem we have \begin{equation}
+\sin(\theta)=\sin(0)+(\sin(\theta))'\rvert_{\theta=0}\theta+\frac{1}{2}(\sin(\theta))''\rvert_{\theta=0}\theta^2+\frac{1}{6}(\sin(\theta))'''\rvert_{\theta=0}\theta^3+o(\abs{\theta}^3)
+\end{equation} 
+by straightforward calculation we find\begin{equation}
+\sin(\theta)=\theta+\frac{1}{6}\theta^3+o(\abs{\theta}^3).
+\end{equation} 
+Since we clearly have $ \frac{1}{6}\theta^3+o(\abs{\theta}^3)=\mathcal{O}(\abs{\theta}^3) $ we conclude that $ g $ satisfies the hypotheses for Connes area formula to apply. Thus we have \begin{equation}
+\sum_{a\in(\Z^2)^*}\left(\sin\angle(y,a,0)+\sin\angle(z,a,y)+\sin\angle(0,a,z)\right)=2\pi \Area(y,0,z)=2\pi \frac{1}{2}y\wedge z
+\end{equation} 
+where the first step is Connes area formula, and the last step we introduced the oriented area of the parallelogram spanned by $ y $ and $ z $ ($ y\wedge z=y_2z_1-y_1z_2 $). Thus we find by 2.(b)\begin{equation}
+\text{Ch}_{II}(P)=-2\pi i\sum_{y,z\in\Z^2}\trace{P_{0y}P_{yz}P_{z0}}y\wedge z.
+\end{equation}
+\subsection*{(d)}
+Notice that by the result in 2.(c) we have \begin{equation}
+\begin{aligned}
+\text{Ch}_{II}(P)&=-2\pi i\sum_{y,z\in\Z^2}\trace{P_{0y}P_{yz}P_{z0}}y\wedge z\\&=-2\pi i\sum_{y,z\in\Z^2}\trace{P_{0y}P_{yz}P_{z0}}(y_2z_1-y_1z_2)\\
+&=-2\pi i\sum_{y,z\in\Z^2}\braket{0|P|y}\braket{y|P|z}\braket{z|P|0}(y_2z_1-y_1z_2)\\
+&=-2\pi i\sum_{y,z\in\Z^2}\braket{0|P|y}(\braket{y|X_2PX_1|z}-\braket{y|X_1PX_2|z})\braket{z|P|0}\\
+&=-2\pi i\trace{P_0P(X_2PX_1-X_1PX_2)P}\\
+&=-2\pi i\trace{P_0P(X_2PX_1P-X_1PX_2P)}\\
+&=-2\pi i\text{Tr}\left(P_0P(X_2PX_1P-X_1PX_2P+X_1PPX_2-PX_2X_1P-X_2PX_1\right.\\&\qquad\qquad\qquad+\left.PX_1X_2P-PX_1PX_2+PX_2PX_1)\right)
+\end{aligned}
+\end{equation}
+where we in the last equality used that $ \trace{P_0...X_i}=0 $, $ i=1,2 $ and we added and subtracted the term $ PX_1X_2P $. Collecting the terms we find that \begin{equation}
+\begin{aligned}
+\left(X_2PX_1P-X_1PX_2P+X_1PPX_2-PX_2X_1P-X_2PX_1+PX_1X_2P-PX_1PX_2+PX_2PX_1\right)\\=-\left[[P,X_1],[P,X_2]\right],
+\end{aligned}
+\end{equation}
+from which we conclude that \begin{equation}
+\text{Ch}_{II}(P)=2\pi i \trace{P_0P\left[[P,X_1],[P,X_2]\right]}.
+\end{equation}
+Comparing to  eq. (99) in the lecture notes we conclude that $ \text{Ch}_{II}(P)=\text{Ch}(P) $ whenever $ P $ is translational invariant, and $ \text{Ch}_{II} $ extends the Chern number.
 \end{document}
