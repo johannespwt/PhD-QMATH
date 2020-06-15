@@ -75,17 +75,17 @@
 
 	\maketitle
 
-\section{The Connes are formula}
-Let $ \text{Area}(x_1,x_2,x_3) $ denote the oriented area of the triangle with vertices $ x_1,x_2,x_3\in\Z^2 $ which it positive if $ x_1,\ x_2, $ and $ x_3 $ are in counter clockwise order. Let, furthermore, $ (\Z^2)^*=\Z^2+(1/2,1/2) $ denote the dual lattice points.
+\section{The Connes area formula}
+Let $ \text{Area}(x_1,x_2,x_3) $ denote the oriented area of the triangle with vertices $ x_1,x_2,x_3\in\Z^2 $ which is positive if $ x_1,\ x_2, $ and $ x_3 $ are in counter clockwise order. Let, furthermore, $ (\Z^2)^*=\Z^2+(1/2,1/2) $ denote the dual lattice points.
 \subsection*{(a)}
 We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual lattice points inside the triangle $ x_1x_2x_3 $ plus half the number of dual lattice points on the boundary.
 \begin{proof}
-	We notice first that for any rectangle with sides parallel to the two axes of $ \Z^2 $ and vertices $ y_1,y_2,y_3,y_4\in \Z^2 $, it trivially holds that \begin{equation}
+	To begin with, we notice that for any rectangle with sides parallel to the two axes of $ \Z^2 $ and vertices $ y_1,y_2,y_3,y_4\in \Z^2 $, it trivially holds that \begin{equation}
 	\Area(y_1,y_2,y_3,y_4)=\#(\text{dual lattice point in the rectangle }y_1y_2y_3y_4),
 	\end{equation}
 	since there are no dual lattice points on the boundary and we can cover the rectangle with disjoint (up to sets of measure zero) unit squares around each dual lattice point inside the rectangle.\\
-	Now notice that then it also hold for any right triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $,  with the legs parallel to the two axes of $ \Z^2 $. To see this we construct from any right triangle with legs parallel to the two axes, a rectangle with sides parallel to the two axes. This is done by rotating the triangle by $ \pi $ and gluing (by translation) the hypotenuses together. We then notice that the area of the resulting rectangle is exactly twice the area of the right triangle. Thus the area of the right triangle is equal to half the number of dual lattice points in the rectangle. Since the two triangle have an equal number of dual lattice points inside, and the they share the dual lattice points on their boundary (hypotenuses), we conclude that the area of a single triangle is the number of dual lattice points inside the triangle plus half the number of dual lattice points on the boundary.\\
-	We finally notice that the desired result now follows from observing that any triangle in the lattice can be made into a rectangle with sides parallel to the axes, by adding right triangles with legs parallel to the axes. Simply add right triangles with hypotenuses given by the sides of the original triangle (such that they are disjoint from the original triangle). Thus the area of the original triangle is the area of the resulting rectangle minus the area of the right triangles we added. However, then each dual lattice point inside the original triangle contributes one to the area. Each dual lattice point on the boundary of the triangle is added once by the rectangle, and half is then subtracted by the right triangles, thus they contribute one half each. Finally all dual lattice point outside the triangle is added once by the rectangle, and substracted once by the right triangle and thus contribute nothing to the area. In total we have that the area is the number of dual lattice point inside the triangle plus one half times the number of dual lattice points on the boundary. 
+	Now notice that then theorem we want to show holds for any right triangle $ x_1x_2x_3 $, $ x_1,x_2,x_3\in\Z^2 $,  with the legs parallel to the two axes of $ \Z^2 $. To see this we construct from any right triangle with legs parallel to the two axes, a rectangle with sides parallel to the two axes. This is done by rotating the triangle by $ \pi $ and gluing (by translation) the hypotenuses together. We then notice that the area of the resulting rectangle is exactly twice the area of the right triangle. Thus the area of the right triangle is equal to half the number of dual lattice points in the rectangle. Since the two triangle have an equal number of dual lattice points inside, and the they share the dual lattice points on their boundary (hypotenuses), we conclude that the area of a single triangle is the number of dual lattice points inside the triangle plus half the number of dual lattice points on the boundary.\\
+	We finally notice that the desired result now follows from observing that any triangle in the lattice can be made into a rectangle with sides parallel to the axes, by adding right triangles with legs parallel to the axes. Simply add right triangles with hypotenuses given by the sides of the original triangle (such that they are disjoint from the original triangle). Thus the area of the original triangle is the area of the resulting rectangle minus the area of the right triangles we added. However, then each dual lattice point inside the original triangle contributes one to the area. Each dual lattice point on the boundary of the triangle is added once by the rectangle, and half is then subtracted by the right triangles, thus they contribute one half each. Finally all dual lattice point outside the triangle but inside the rectangle is added once by the rectangle, and substracted once by the right triangle and thus contribute nothing to the area. In total we have that the area is the number of dual lattice point inside the triangle plus one half times the number of dual lattice points on the boundary. 
 \end{proof}
 %\begin{proof}
 %	Let $ y_1,y_2\in \Z^2 $, we then notice that line $ y_1y_2 $ (line going from $ y_1 $ to $ y_2 $) might cut through some cells (unit squares of the lattice). Say we are interested in computing the area of cells the line go trough, then we simply sum up the number of dual lattice point that are a distance of less than $ 1 $ (in the Manhattan metric) from the line. Now say that we instead are interested in the area of these cells but restricted to one side of line. In this case, we notice that $ \Z^2 $ is symmetric under $ \pi $-rotations. Thus we see that whatever set of "cut" cells that are on one side of the line, it can be rotated (up to a lattice translation) into the set of "cut" cells on the other side. And the combination of these two disjoint sets from the set of all cells the line go through. By rotation and translation invariance of the area, we conclude that the area of the cut cells on either side is exactly half the number of dual lattice points that are a distance of less than $ 1 $ to the line. Now we notice that all dual lattice point in the set $ \{x^*\in(\Z^2)^*\ \vert\ \text{dist}(x^*,y_1y_2)<1\} $ are either on one side of line, on the other side of the line, or directly on the line. Again by invariance under a $ \pi $-rotation (and translation) we conclude that the number of dual lattice points on one side equals the number of dual lattice points on the other side. And thus we may conclude that the area of the cut cell on one side of the line is equal to the number of dual lattice point on that side with distance less than $ 1 $ to the line, plus half the number of dual lattice point on the line. From this result it clearly follows that we can compute the area between a line and say the first axis by adding the number of dual lattice points between the line and first axis, and half the number of dual lattice points on the line.\\
@@ -94,10 +94,18 @@ We prove first that the $ \Area(x_1,x_2,x_3) $ is equal to the number of dual la
 	\subsection*{(b)}
 	For any dual lattice point $ a\in(\Z^2)^* $, let $ \theta_i(a)\in(-\pi,\pi) $ be the angle at $ a $ in the triangle $ x_iax_{i+1} $ where $ x_4\equiv x_1 $, unless $ a $ lies on the line between $ x_i $ and $ x_{i+1} $, in which case $ \theta_i(a)=0 $.\\
 	We then prove that $ \sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)=2\pi\Area(x_1,x_2,x_3) $. \begin{proof}
-		This is actually quite obvious from the fact that by the definition of $ \theta_i $ we have $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=2\pi $ for $ a $ inside the triangle and $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=\pi $ for $ a $ on the boundary of the triangle. On the other hand $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=0 $ for $ a $ outside of the triangle. Thus \begin{equation}
-		\sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)=2\pi\left(\#(\text{dlp inside})+\frac{1}{2}\#(\text{dlp on boundary})\right)=2\pi\Area(x_1,x_2,x_3),
+		Assume $ x_1x_2x_3 $ in counter clockwise order.
+		The the statement is actually quite obvious from the fact that by the definition of $ \theta_i $ we have $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=2\pi $ for $ a $ inside the triangle and  $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=\pi $ for $ a $ on the boundary of the triangle. On the other hand $ (\theta_1(a)+\theta_2(a)+\theta_3(a))=0 $ for $ a $ outside of the triangle. Reversing the order of $ x_1x_2x_3 $ gives us a minus by the definition of $ \theta_i(a) $. Thus \begin{equation}
+		\begin{aligned}
+		\sum_{a\in(\Z^2)^*}\left(\theta_1(a)+\theta_2(a)+\theta_3(a)\right)&=2\pi\text{sgn}(x_1,x_2,x_3)\left(\#(\text{dlp inside})+\frac{1}{2}\#(\text{dlp on boundary})\right)\\&=2\pi\Area(x_1,x_2,x_3),
+		\end{aligned}
 		\end{equation}
-		where dlp stands for "dual lattice points".
+		where \begin{equation}
+		\text{sgn}(a,b,c)=\begin{cases}
+		1& \text{ for }a,b,c\text{ in counter clockwise order,}\\
+		-1& \text{ for }a,b,c\text{ in clockwise order,}
+		\end{cases}
+		\end{equation} and dlp stands for "dual lattice points".
 	\end{proof} 
 	\subsection*{(c)}
 	Let $ f:(-\pi,\pi)\to\R $ be antisymmetric and bounded such that $ f(\theta)=\mathcal{O}(\abs{\theta}^3) $. We then prove that \begin{equation}
@@ -198,7 +206,7 @@ We show that \begin{equation}
 	which is the desired result.
 \end{proof}
 \subsection*{(b)}
-By translation invariance of $ P $ we may rewrite\begin{equation}
+Assume translation invariance of $ P $, then we may rewrite\begin{equation}
 \trace{P_{xy}P_{yz}P_{zx}}=\trace{P_{0(y-x)}P_{(y-x)(z-x)}P_{(z-x)0}}.
 \end{equation}
 Furthermore, since translations preserve angles we may also rewrite \begin{equation}

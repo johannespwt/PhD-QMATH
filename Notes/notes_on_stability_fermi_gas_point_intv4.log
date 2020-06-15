@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  5 JUN 2020 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  15 JUN 2020 15:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1582,7 +1582,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [29]
-Overfull \hbox (11.9506pt too wide) in paragraph at lines 857--858
+Overfull \hbox (11.9506pt too wide) in paragraph at lines 860--861
 \OT1/cmr/m/n/10.95 for some $\OML/cmm/m/it/10.95 C[] > \OT1/cmr/m/n/10.95 0$ in
 -de-pen-dent of $\OML/cmm/m/it/10.95 y$ \OT1/cmr/m/n/10.95 and $\OML/cmm/m/it/1
 0.95 $ \OT1/cmr/m/n/10.95 and for $\OML/cmm/m/it/10.95 R \OMS/cmsy/m/n/10.95 ^
@@ -1590,7 +1590,7 @@ Overfull \hbox (11.9506pt too wide) in paragraph at lines 857--858
  []
 
 
-Overfull \hbox (24.5819pt too wide) detected at line 880
+Overfull \hbox (41.20782pt too wide) detected at line 883
 [][] []
  []
 
@@ -1608,37 +1608,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [31]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unskip' on input line 933.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@italiccorr' on input line 933.
+Overfull \hbox (32.62369pt too wide) detected at line 928
+[][] []
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1647,7 +1619,93 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [32]
-Overfull \hbox (8.1203pt too wide) detected at line 967
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+Overfull \hbox (41.2048pt too wide) detected at line 1018
+[][] []
+ []
+
+
+Overfull \hbox (0.72758pt too wide) in paragraph at lines 1018--1020
+\OT1/cmr/m/n/10.95 Now we need to show that $[] [] []  d\OML/cmm/m/it/10.95 k[]
+\U/bbm/m/n/10.95 1[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 k[]\OT1/cmr/m/n/10.
+95 )[](\OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ^^X\OT1/cmr
+/m/n/10.95 ([])$ is $\OML/cmm/m/it/10.95 L[]\OT1/cmr/m/n/10.95 (\U/msb/m/n/10.9
+5 R[]\OT1/cmr/m/n/10.95 )$ bounded for $\OML/cmm/m/it/10.95 i \OT1/cmr/m/n/10.9
+5 = 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; :::; N$\OT
+1/cmr/m/n/10.95 .
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35]
+Overfull \hbox (39.91664pt too wide) detected at line 1047
+[][] []
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\lambda' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\hbox' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mathsurround' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\z@' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\unskip' on input line 1090.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\@@italiccorr' on input line 1090.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+Overfull \hbox (8.1203pt too wide) detected at line 1124
 [] [] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/
 cmm/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10
 .95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  []  [] 
@@ -1662,14 +1720,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33]
+[38]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[34] (./notes_on_stability_fermi_gas_point_intv4.bbl)
+[39] (./notes_on_stability_fermi_gas_point_intv4.bbl)
 
 AED: lastpage setting LastPage
 
@@ -1678,23 +1736,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1020.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1020.
+[40]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1177.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1177.
  (./notes_on_stability_fermi_gas_point_intv4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1020.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1020.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1177.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1177.
 
 Package rerunfilecheck Info: File `notes_on_stability_fermi_gas_point_intv4.out
 ' has not changed.
 (rerunfilecheck)             Checksum: E4DC4FC53F051E18EC3A64F075C87B80;787.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1020.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1177.
  ) 
 Here is how much of TeX's memory you used:
- 29276 strings out of 493029
- 671345 string characters out of 6136233
- 839979 words of memory out of 5000000
- 32012 multiletter control sequences out of 15000+600000
+ 29328 strings out of 493029
+ 672001 string characters out of 6136233
+ 841344 words of memory out of 5000000
+ 32021 multiletter control sequences out of 15000+600000
  17717 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,77p,1813b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1717,11 +1775,11 @@ onts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/rsfs/rsfs10.pfb>
-Output written on notes_on_stability_fermi_gas_point_intv4.pdf (35 pages, 38745
-3 bytes).
+Output written on notes_on_stability_fermi_gas_point_intv4.pdf (40 pages, 41070
+7 bytes).
 PDF statistics:
- 643 PDF objects out of 1000 (max. 8388607)
- 580 compressed objects within 6 object streams
- 269 named destinations out of 1000 (max. 500000)
+ 724 PDF objects out of 1000 (max. 8388607)
+ 655 compressed objects within 7 object streams
+ 312 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

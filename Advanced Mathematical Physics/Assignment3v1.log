@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  8 JUN 2020 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  12 JUN 2020 12:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1242,14 +1242,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (20.25958pt too wide) detected at line 99
-[] [] [] \OT1/cmr/m/n/10.95 = 2\OML/cmm/m/it/10.95 ^^Y [] \OT1/cmr/m/n/10.95 = 
-2\OML/cmm/m/it/10.95 ^^Y[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; x[]; x[]
-\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;
- []
-
-
-Overfull \hbox (7.85191pt too wide) in paragraph at lines 109--111
+Overfull \hbox (7.85191pt too wide) in paragraph at lines 117--119
 \OT1/cmr/m/n/10.95 Consider now $\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (\
 OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 )$. We know by the co-sine re-la-tion ab
 ove that $[](\OML/cmm/m/it/10.95 ^^R[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a
@@ -1277,12 +1270,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (29.65848pt too wide) detected at line 186
+Overfull \hbox (29.65848pt too wide) detected at line 194
 [][] []
  []
 
 
-Overfull \hbox (25.82495pt too wide) detected at line 192
+Overfull \hbox (25.82495pt too wide) detected at line 200
 [][] []
  []
 
@@ -1300,7 +1293,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Overfull \hbox (0.46939pt too wide) detected at line 242
+Overfull \hbox (0.46939pt too wide) detected at line 250
 [][] []
  []
 
@@ -1313,19 +1306,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 247.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 247.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 255.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 255.
  (./Assignment3v1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 247.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 247.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 255.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 255.
 Package rerunfilecheck Info: File `Assignment3v1.out' has not changed.
-(rerunfilecheck)             Checksum: 4C67DB157777DCA6A3D34D727BB98E41;136.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 247.
+(rerunfilecheck)             Checksum: C42BC9743F57B784538D6D73B8ACB19C;137.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
  ) 
 Here is how much of TeX's memory you used:
- 28933 strings out of 493029
- 665814 string characters out of 6136233
- 834632 words of memory out of 5000000
+ 28934 strings out of 493029
+ 665827 string characters out of 6136233
+ 833632 words of memory out of 5000000
  31907 multiletter control sequences out of 15000+600000
  12049 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1345,10 +1338,10 @@ cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Assignment3v1.pdf (7 pages, 181600 bytes).
+Output written on Assignment3v1.pdf (7 pages, 182593 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 52 named destinations out of 1000 (max. 500000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
  29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
