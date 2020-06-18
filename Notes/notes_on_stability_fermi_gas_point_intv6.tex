@@ -871,27 +871,27 @@ this actually converges as $ R\to\infty $ by the dominated convergence theorem. 
 Changing variable $ s=t\abs{y}/2-\alpha/\abs{y} $ we find $ \diff s=\frac{\abs{y}}{2} \diff t $ such that\begin{equation}
 \int_{0}^{1}\diff t\int_{\R^3} \diff \tilde{q}\frac{-ty^2/2+\alpha}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}=\pi^2\int_{-\alpha/\abs{y}}^{\abs{y}/2-\alpha/\abs{y}}\diff s \frac{2}{\abs{y}}\frac{-\abs{y}s}{\sqrt{\alpha^2/y^2-s^2}}=\pi^2\sqrt{4\alpha-y^2}.\label{Int2}
 \end{equation}
-The error obtained by this approximation is a again straightforward to bound by geometrical considerations. Covering $ B_R(ty/2) $ by the ball $ B_{R+t\abs{y}/2}(0)$ and integrating over this domain instead, we make at most an error $ \epsilon_1\leq C'\abs{y}(\abs{y}^2+\alpha)/R^2 $. Now changing the domain of integration further to $ \R^3 $ we make at most an error $ \epsilon_2\leq C''/R $. Thus we may conclude that we make a total error of $ \epsilon=\epsilon_1+\epsilon_2\leq C_2(\abs{y}^2+\alpha)/R $ for $ R\gg \abs{y} $ and some $ C_2 $ independent of $ y $ and $ \alpha $. Thus combining \eqref{IntBound1}, \eqref{Int2}, and the bounds above we have \begin{equation}
+The error obtained by this approximation is a again straightforward to bound by geometrical considerations. Covering $ B_R(ty/2) $ by the ball $ B_{R+t\abs{y}/2}(0)$ and integrating over this domain instead, we make at most an error $ \epsilon_1\leq C'\abs{y}(\abs{y}^2+\alpha)/R^2 $. Now changing the domain of integration further to $ \R^3 $ we make at most an error $ \epsilon_2\leq C''(\abs{y}^2+\alpha)/R $. Thus we may conclude that we make a total error of $ \epsilon=\epsilon_1+\epsilon_2\leq C_2(\abs{y}^2+\alpha)/R $ for $ R\gg \abs{y} $ and some $ C_2 $ independent of $ y $ and $ \alpha $. Thus combining \eqref{IntBound1}, \eqref{Int2}, and the bounds above we have \begin{equation}
 \abs{\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}-\pi^2\sqrt{4\alpha-y^2}}\leq C\left(\frac{\abs{y}^2+\alpha}{R}+\frac{\abs{y}(\abs{y}^2+\alpha)}{R^2}\right),
 \end{equation}
 for some $ C $ independent of $ y $ and $ \alpha $. This proves the claim.\end{proof}
-Using Lemma \ref{IntegralApproximationLemma} we obtain \begin{equation}
+Using Lemma \ref{IntegralApproximationLemma} we obtain and the fact that $ \alpha=\mathcal{O}\left(\abs{\bar{k}^N}^2+1\right) $ and $ \abs{y}=\mathcal{O}\left(\abs{\bar{k}^N}\right) $ \begin{equation}
 \begin{aligned}
-\int_{B_R(0)} \diff k_N \hat{G}(k)&=4\pi R-\pi^2\sqrt{\left(4-\frac{4}{(m+1)^2}\right)\sum_{i=1}^{N-1}k_i^2+\left(4-\frac{4}{m+1}\right)\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+4\mu}\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\mathcal{O}\left(\frac{\abs{\sum_{i=1}^{N-1}k_i}^2}{R}\right)+\mathcal{O}\left(\frac{\abs{\sum_{i=1}^{N-1}k_i}^3}{R^2}\right)\qquad\\
-&=4\pi R-2\pi^2\sqrt{\left(\frac{m(m+2)}{(m+1)^2}\right)\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu}\\&\qquad\qquad\qquad\qquad\qquad\qquad+\mathcal{O}\left(\frac{\abs{\sum_{i=1}^{N-1}k_i}^2}{R}\right)+\mathcal{O}\left(\frac{\abs{\sum_{i=1}^{N-1}k_i}^3}{R^2}\right),\qquad
+\int_{B_R(0)} \diff k_N \hat{G}(k)&=4\pi R-\pi^2\sqrt{\left(4-\frac{4}{(m+1)^2}\right)\sum_{i=1}^{N-1}k_i^2+\left(4-\frac{4}{m+1}\right)\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+4\mu}\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right)\qquad\\
+&=4\pi R-2\pi^2\sqrt{\left(\frac{m(m+2)}{(m+1)^2}\right)\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu}\\&\qquad\qquad\qquad\qquad\qquad\qquad+\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right),\qquad
 \end{aligned}
 \end{equation}
 Therefore we define \begin{equation}\label{defL}
 \begin{aligned}
 L^R(\bar{k}^N)&=4\pi R-\int_{B_R(0)} \diff k_N \hat{G}(k)\\
 &=2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2}\\&\qquad\qquad\qquad\qquad\qquad\qquad
-+\mathcal{O}\left(\frac{\abs{\sum_{i=1}^{N-1}k_i}^2}{R}\right)+\mathcal{O}\left(\frac{\abs{\sum_{i=1}^{N-1}k_i}^3}{R^2}\right)
++\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right)
 \end{aligned}
 \end{equation}
 and hence from \eqref{QuadraticFormTerm3} we conclude that \begin{equation}
 \begin{aligned}
 \int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2=&N4\pi R \norm{\xi}_{L^2(\R{3(N-1)})}-N\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2\\&-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q})\\
-&= -N\left(T_{\text{diag}}^R(\xi^R)+T_{\text{off}}(\xi^R)-4\pi R\norm{\xi}_{L^2(\R^{3(N-1)})}\right),
+&= -N\left(T_{\text{diag}}^R(\xi^R)+T_{\text{off}}(\xi^R)-4\pi R\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right),
 \end{aligned}
 \end{equation}
 where we in the last line defined\begin{equation}
@@ -955,13 +955,13 @@ The domain is \begin{equation}
 \mathscr{D}(F_\alpha)=\left\{u\in L_{\text{as}}^2(\R^{3N})\ \Big\vert\ \hat{u}=\hat{w}+\widehat{\rho G},\ w\in H_{\text{as}}^1(\R^{3N}),\ \xi\in H_{\text{as}}^{1/2}(\R^{3(N-1)}) \right\}.
 \end{equation}
 This exactly match the quadratic forms used in \cite{FINCO2012131,Moser_2017}. Notice that the quadratic forms obtained in the $ N+1 $ case are direct generalizations of the $ 1+1 $ case, \ie we obtain the $ 1+1 $ case by setting $ N=1 $ as we should. We note that $ (\widehat{\rho G})^\vee\notin H^1(\R^{3N}) $ (where $ f^\vee $ is inverse Fourier transform of $ f $) for $ \xi\neq0 $, so the decomposition $ \hat{u}=\hat{w}+\widehat{\rho G} $ is unique. Interestingly, we see as in the $ 1+1 $ case that the domain changes in the $ R\to\infty $ limit, even though it is the same for all finite $ R $.\\
-We now give some generalization of results fromt the $ 1+1 $ case.
+We now give some generalization of results from the $ 1+1 $ case.
 \begin{lemma}\label{lemmawH1}
 		Let $ w\in H^1(\R^{3N}) $, then \begin{equation}
 		\frac{1}{\sqrt{n}}\int_{B_n(0)}\diff k_N\hat{w}(k)\to0,\textnormal{ a.e.},\quad \textnormal{as }n\to\infty,
 		\end{equation}
 		where $ \hat{w} $ denotes the Fourier transform of $ w $. More precisely \begin{equation}
-		\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert=\epsilon(n)\sqrt{n}\left(g(\bar{k}^N)+g(\bar{k}^N)^{4/3}\right),
+		\frac{1}{\sqrt{n}}\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert=\epsilon(n)\sqrt{n}\left(g(\bar{k}^N)+g(\bar{k}^N)^{4/3}\right),
 		\end{equation}
 		for some $ \epsilon $-function, $ \epsilon(n)\to0 $ as $ n\to\infty $, and some $ g\in L^{2}(\R^{3(N-1)}) $. Furthermore, we have 
 		\begin{equation}
@@ -972,9 +972,9 @@ We now give some generalization of results fromt the $ 1+1 $ case.
 		\end{equation}
 \end{lemma}
 \begin{proof}
-	The proof of the first two statements is a straightforward generalization of the proof of lemma \ref{H1 int} noticing that $ g=\norm{f(\bar{k}^N,\cdot)}_{L_2(\R^3)}\in L^2(\R^{3(N-1)}) $, for $ f\in L^2(\R^{3N}) $, by Tornelli's theorem. The last two statements simply follow by Cauchy-Schwartz and DCT. 
+	The proof of the first two statements is a straightforward generalization of the proof of lemma \ref{H1 int} noticing that $ g(\bar{k}^N)=\norm{f(\bar{k}^N,\cdot)}_{L_2(\R^3)}\in L^2(\R^{3(N-1)}) $, for $ f\in L^2(\R^{3N}) $, by Tornelli's theorem. The last two statements simply follow by Cauchy-Schwartz and DCT. 
 \end{proof}
-A direct consequence is the following lemma \begin{lemma}\label{lemmawH1-2}
+We also have the following lemma \begin{lemma}\label{lemmawH1-2}
 	Let $ w\in H^1(\R^{3N}) $, then
 	\begin{equation}
 		\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\hat{w}(k)}_{H^{1/2}(\R^{3(N-1)})}\to0,\quad\text{for }n\to\infty.
@@ -983,12 +983,12 @@ A direct consequence is the following lemma \begin{lemma}\label{lemmawH1-2}
 \begin{proof}
 	Let $ \hat{w}(k)=f(k)/(\sqrt{\abs{k}^2+1}) $, and let $ g=\norm{f(\bar{k}^N,\cdot)}_{L_2(\R^3)}\in L^2(\R^{3(N-1)}) $. Then by Cauchy-Schwartz we have
 	\begin{equation}
-	\frac{1}{n}\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert\leq\frac{1}{\sqrt{n}} \sqrt{1-\frac{\sqrt{\abs{\bar{k}^N}^2+1}}{n}\arctan\left(\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\right)}g(\bar{k}^N).
+	\frac{1}{n}\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert\leq\frac{C}{\sqrt{n}} \sqrt{1-\frac{\sqrt{\abs{\bar{k}^N}^2+1}}{n}\arctan\left(\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\right)}g(\bar{k}^N).
 	\end{equation}
 	Thus we may compute \begin{equation}
 	\begin{aligned}
-	&\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\hat{w}(k)}_{H^{1/2}(\R^{3(N-1)})}^2\\&=\frac{1}{n}\int\diff \bar{k}^N\sqrt{\abs{\bar{k}^N}^2+1}\left(1-\frac{\sqrt{\abs{\bar{k}^N}^2+1}}{n}\arctan\left(\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\right)\right)\abs{g(\bar{k}^N)}^2\\&
-	\leq\frac{1}{n}\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N\sqrt{\abs{\bar{k}^N}^2+1}\abs{g(\bar{k}^N)}^2+\frac{1}{n}\int_{\abs{\bar{k}^N}\geq n}\diff \bar{k}^N \sqrt{\abs{\bar{k}^N}^2+1}\frac{n^2}{(\abs{\bar{k}^N}^2+1)}\abs{g(\bar{k}^N)}^2.
+	&\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\hat{w}(k)}_{H^{1/2}(\R^{3(N-1)})}^2\\&\leq\frac{C}{n}\int\diff \bar{k}^N\sqrt{\abs{\bar{k}^N}^2+1}\left(1-\frac{\sqrt{\abs{\bar{k}^N}^2+1}}{n}\arctan\left(\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\right)\right)\abs{g(\bar{k}^N)}^2\\&
+	\leq\frac{C}{n}\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N\sqrt{\abs{\bar{k}^N}^2+1}\abs{g(\bar{k}^N)}^2+\frac{C}{n}\int_{\abs{\bar{k}^N}\geq n}\diff \bar{k}^N \sqrt{\abs{\bar{k}^N}^2+1}\frac{n^2}{(\abs{\bar{k}^N}^2+1)}\abs{g(\bar{k}^N)}^2.
 	\end{aligned}
 	\end{equation}
 	Now notice that we have \begin{equation}
@@ -1018,7 +1018,7 @@ We also give the following lemmas, which will prove useful later
 	For $ i=N $ this follows from the estimate \begin{equation}
 	\hat{G}(k)\leq\frac{1}{\frac{m (m+N)}{(m+1) (m+N-1)}\abs{k_N}^2+\mu},
 	\end{equation}
-	which can be seen by a simply optimization. We maximize $ \hat{G}(k)^{-1} $ \begin{equation}\label{optimization1}
+	which can be seen by a simply optimization. We minimize $ \hat{G}(k)^{-1} $ \begin{equation}\label{optimization1}
 	\partial_{k_\alpha}\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j\right)=2k_\alpha+\frac{1}{m+1}\sum_{i\neq\alpha}k_i=0,\text{ for all }\alpha\neq N.
 	\end{equation}
 	Thus \begin{equation}\label{optimization2}
@@ -1037,7 +1037,7 @@ We also give the following lemmas, which will prove useful later
 	\norm{\frac{1}{n}\int_{B_n(0)} \diff k_N \hat{G}(k)\xi(\bar{k}^N)}_{\mathcal{H}}\lesssim\frac{1}{n}nC\norm{\xi}_{\mathcal{H}}=C\norm{\xi}_{\mathcal{H}},
 	\end{equation}
 	for some $ C>0 $, where $ \mathcal{H}=L^2(\R^{3(N-1)}) $ or $  \mathcal{H}=H^{1/2}(\R^{3(N-1)})  $.\\
-	Now the $ i\neq N $  we use the Cauchy-Schwartz inequality
+	Now for $ i\neq N $  we use the Cauchy-Schwartz inequality
 	\begin{equation}\label{GxiBound}
 	\begin{aligned}
 	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{\mathcal{H}}\leq\frac{1}{n^2}\int\diff \bar{k}^N\mathbbm{1}_{B_n(0)}(k_i)g^{-1}_\mathcal{H}(\bar{k}^N)\left(\int \diff k_N g_{\mathcal{H}}(\bar{k}^i)\abs{\hat{G}(k)}^{2}\right)\\\times\left(\int\diff k_N g^{-1}_{\mathcal{H}}(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\right),
@@ -1097,12 +1097,12 @@ We also give the following lemmas, which will prove useful later
 	This concludes the proof.
 \end{proof}
 In the case of $ \xi\in H^{1/2}(\R^{3(N-1)}) $ we can also show the result
-\begin{lemma}
+\begin{lemma}\label{lemmaxiCon}
 	 Let $ N\geq2 $ and $ \xi\in H^{1/2}(\R^{3(N-1)}) $, then we have the following limits\begin{equation}
-	 	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\to 0,\text{ for }i\neq N\text{ and }n\to\infty,
+	 	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}=\mathcal{O}\left(\frac{1}{n}\right)\to 0,\text{ for }i\neq N\text{ and }n\to\infty,
 	 \end{equation}
 	 and \begin{equation}
-		\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\to 0,\text{ for }i\neq N\text{ and }n\to\infty,
+		\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}=\mathcal{O}\left(\frac{1}{n}\right)\to 0,\text{ for }i= N\text{ and }n\to\infty,
 	 \end{equation}
 \end{lemma}
 \begin{proof}
@@ -1116,22 +1116,62 @@ In the case of $ \xi\in H^{1/2}(\R^{3(N-1)}) $ we can also show the result
 	&=\frac{1}{n}C\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\to 0,\text{ as }n\to\infty.
 	\end{aligned}
 	\end{equation}
-	where $ A=1-\frac{N-2}{(m+1)(m+N-2)} $ and $ B=\frac{1}{m+1}-\frac{N-2}{(m+1)(m+N-2)} $, so $ 0<B<A<1 $ as above.\\
+	where we used Cauchy-Schwartz in the second line, bounded $ \hat{G} $ in the third line and changed variables $ q=\tilde{q}r $ in the fifth line. Furthermore, $ A=1-\frac{N-2}{(m+1)(m+N-2)} $ and $ B=\frac{1}{m+1}-\frac{N-2}{(m+1)(m+N-2)} $, so $ 0<B<A<1 $ as above.\\
 	For $ i=N $, we proceed by
 	\begin{equation}
 	\begin{aligned}
-	\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\\
-	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}\left(4\pi n-\int_{B_n(0)}\diff k_N\hat{G}(k)\right)\xi(\bar{k}^N)}^2,\\
+	\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}&^2_{L^2(\R^{3(N-1)})}\\&
+	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}\left(4\pi n-\int_{B_n(0)}\diff k_N\hat{G}(k)\right)\xi(\bar{k}^N)}^2\\&
 	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2.
 	\end{aligned}
 	\end{equation}
-	Now remember that $ L^n(\bar{k}^N)<4\pi n $, but we also have from the definition of $ L $, \eqref{defL}, that \begin{equation}
+	Now remember that $ L^n(\bar{k}^N)<4\pi n $, but we also have from the definition of $ L^n $, \eqref{defL}, that \begin{equation}
 	L^n(\bar{k}^N)=2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2}\mathcal{O}(1)\leq CL(\bar{k}^N),
 	\end{equation} 
-	for $ \abs{\sum_{i=1}^{N-1}k_i}<R $. Thus we may estimate\begin{equation}
-	\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2\leq C\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2
+	for $ \abs{\bar{k}^N}<n $. Thus we may estimate\begin{equation}
+	\begin{aligned}
+	\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2&\leq \frac{C}{4\pi n}\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2+\int_{\abs{\bar{k}^N}>n}\abs{\xi(\bar{k}^N)}^2
+	\\&\leq\frac{C'}{4\pi n}\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}+\frac{1}{n}\int_{\abs{\bar{k}^N}>n}\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2\\&
+	\leq\frac{\tilde{C}}{n}\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\to0\text{ as }n\to\infty,
+	\end{aligned}
+	\end{equation}
+	where we used that $\left(\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2\right)^{1/2}\equiv\norm{\xi}_{H^{1/2}(\R^{3(N-1)})}  $. This concludes the proof.
+\end{proof}
+The following lemma from \cite{Moser_2017} will also prove useful below\begin{lemma}[Lemma 1 in \cite{Moser_2017}]\label{lemmaMoserSeiringer}
+	The operator $ \sigma $ on $ L^2(\R^3) $ with integral kernel\begin{equation}
+	\sigma(s,t)=(s^2+1)^{(\beta-1)/4}\frac{1}{s^2+t^2+\lambda s\cdot t+1}(t^2+1)^{-(\beta+1)/4},
+	\end{equation}
+	is bounded for all $ -2<\lambda<2 $, and $ -2<\beta<2 $.
+\end{lemma}
+This lemma generalizes to higher dimensions and we actually get the lemma\begin{lemma}\label{lemmaMoserSeiringerGen}
+	Let $ i,j\in\{1,...,N\} $ and $ i\neq j $. The operator $ \sigma^j_G:L^2(\R^{3(N-1)})\to L^2(\tilde{\R}^{3(N-1)}) $ given by \begin{equation}
+	\sigma^j_G: f(\bar{k}^i)\mapsto h(\bar{k}^j)= \int\diff k_j \frac{1}{(\abs{\bar{k}^j}^2+1)^{1/4}}\hat{G}(k)\frac{1}{(\abs{\bar{k}^i}^2+1)^{1/4}}f(\bar{k}^i),
+	\end{equation}
+	is bounded.
+\end{lemma}
+\begin{proof}
+	We simply make the following estimate\begin{equation}
+	\begin{aligned}
+	\norm{\sigma_G^jf}_2^2&=\norm{\int\diff k_j \frac{1}{(\abs{\bar{k}^j}^2+1)^{1/4}}\hat{G}(k)\frac{1}{(\abs{\bar{k}^i}^2+1)^{1/4}}f(\bar{k}^i)}_2^2\\
+	&=\int\diff\bar{k}^j\left\lvert\int\diff k_j \frac{1}{(\abs{\bar{k}^j}^2+1)^{1/4}}\hat{G}(k)\frac{1}{(\abs{\bar{k}^i}^2+1)^{1/4}}f(\bar{k}^i)\right\rvert^2\\
+	&\leq\int\diff k_i\int\diff\bar{k}^{i,j}\left\lvert\int\diff k_j \frac{1}{(\abs{k_i}^2+1)^{1/4}}\frac{1}{Ak_i^2+Ak_j^2+2Bk_i\cdot k_j+\mu}\frac{1}{(\abs{k_j}^2+1)^{1/4}}f(\bar{k}^i)\right\rvert^2,
+	\end{aligned}
+	\end{equation}
+	where we know from above that $ 0<B<A<1 $. By a simple application of Minkowski's integral inequality we have \begin{equation}
+	\begin{aligned}
+	&\norm{\sigma_G^jf}_2^2\\&\leq\int\diff k_i\left(\int\diff k_j \frac{1}{(\abs{k_i}^2+1)^{1/4}}\frac{1}{Ak_i^2+Ak_j^2+2Bk_i\cdot k_j+\mu}\frac{1}{(\abs{k_j}^2+1)^{1/4}}\left(\int\diff\bar{k}^{i,j}\abs{f(\bar{k}^i)}^2\right)^{1/2}\right)^2.
+	\end{aligned}
+	\end{equation}
+	By Tornelli's theorem $ g(k_j):=\left(\int\diff\bar{k}^{i,j}\abs{f(\bar{k}^i)}^2\right)^{1/2}\in L^2(\R^3) $ with $ \norm{g}_{L^2(\R^3)}=\norm{f}_{L^2(\R^{3(N-1)})} $. Thus we have, by lemma \ref{lemmaMoserSeiringer} with $ \beta=0 $ that \begin{equation}
+	\norm{\sigma_G^jf}_2^2\leq C\norm{\sigma}^2\norm{g}_{L^2(\R^3)}^2=C'\norm{f}^2_{L^2(\R^{3(N-1)})} 
 	\end{equation}
 \end{proof}
+\textbf{Remark}: It is worth pointing out, that this is what makes $ T_{\text{off}} $ well-defined. Indeed it implies if we have $ \chi,\xi\in H^{1/2}(\R^{3(N-1)}) $, that \begin{equation}
+\int\diff k\overline{\chi(\bar{k}^j)}\hat{G}(k)\xi(\bar{k}^i)\leq \sqrt{C'}\norm{\chi}_{H^{1/2}(\R^{3(N-1)})}\norm{\xi}_{H^{1/2}(\R^{3(N-1)})}.
+\end{equation}
+In particular \begin{equation}
+T_{\text{off}}(\xi)=(N-1)\int\diff k\overline{\xi(\bar{k}^2)}\hat{G}(k)\xi(\bar{k}^1)\leq\sqrt{C'}(N-1)\norm{\xi}_{H^{1/2}(\R^{3(N-1)})}^2
+\end{equation}
 We now present a result generalizing Proposition \ref{F Gamma upper bound}
 \begin{proposition}\label{F Gamma upper bound(N+1)}
 	Let $ F_\alpha^n $ and $ F_\alpha $ be defined as above. Then for all $ u\in\dom{F_\alpha} $ there exist $ (u_n)_{(n\geq1)} $ with $ u_n\in\dom{F_n} $ such that \begin{equation}
@@ -1156,17 +1196,33 @@ We now present a result generalizing Proposition \ref{F Gamma upper bound}
 	&\left.\qquad\qquad\qquad\qquad\qquad+\left(4\pi n-L^n(\bar{k}^N)\right)\xi(\bar{k}^N)\right.\Bigg)\to \xi(\bar{k}^N),\text{ a.e. as }n\to\infty.
 	\end{aligned}
 	\end{equation}
-	Actually this can be made more precise since we have by the triangle inequality \begin{equation}
+	We can actually furthermore show norm $ L^2 $-convergence of $ \xi^n $. By lemmas \ref{lemmawH1} and \ref{lemmaxiCon} we have \begin{equation}\label{xiConvergence}
 	\begin{aligned}
-	\norm{\xi^n(\bar{k}^N)}_{H^{1/2}(\R^{3(N-1)}) }\leq\frac{1}{4\pi n+\alpha}&\Bigg(\norm{\int_{B_n(0)}\diff k_N \hat{w}(k)}_{H^{1/2}(\R^{3(N-1)}) }\\&+\sum_{i=1}^{N}\norm{\int\diff k_N\left(\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)\right)}_{H^{1/2}(\R^{3(N-1)}) }\Bigg).
+	\hspace*{-0.3cm}\norm{\xi^n-\xi}_{L^{2}(\R^{3(N-1)}) }\leq\frac{1}{4\pi n+\alpha}&\Bigg(\norm{\int_{B_n(0)}\diff k_N \hat{w}(k)}_{L^{2}(\R^{3(N-1)}) }\\&+\sum_{i=1}^{N-1}\norm{\int\diff k_N\left(\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)\right)}_{L^{2}(\R^{3(N-1)}) }\\&+\norm{\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)-(4\pi n+\alpha)\xi(\bar{k}^i)}_{L^2(\R^{3(N-1)})}\Bigg)\\
+	=\mathcal{O}\left(\frac{1}{\sqrt{n}}\right)\to 0\text{ as }n\to\infty.
 	\end{aligned}
 	\end{equation}
-	By lemma \ref{lemmawH1-2} and \ref{lemmaGxi} we conclude that \begin{equation}
-	\norm{\xi^n(\bar{k}^N)}_{H^{1/2}(\R^{3(N-1)}) }\leq C\norm{\xi(\bar{k}^N)}_{H^{1/2}(\R^{3(N-1)}) }
-	\end{equation}
-	for some $ C\geq0 $ depending only on $ N $, $ m $, and $ \mu $. Let now $ \xi^{n_j} $ be any subsequence of $ \xi^n $. Then we may conclude from the Banach-Alaoglu theorem that there exist a further subsequence $ \xi^{n_{j_k}} $ such that $ \xi^{n_{j_k}}\rightharpoonup \chi $ as $ k\to\infty $, for some $ \chi\in H^{1/2}(\R^{3(N-1)})  $. However then we necessarily have $ \xi^{n_{j_k}}\to \chi $ pointwise a.e. as $ k\to\infty $, but we know that $ \xi^{n_{j_k}}\to \xi $ pointwise a.e. as $ k\to\infty $, so we conclude that $ \chi=\xi $. Thus we infer that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)})  $ norm as $ n\to\infty $.
+We are now ready to show the convergence of $ F_\alpha^n(u^n) $. We have \begin{equation}
+F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u^n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})}\right)
+\end{equation}
 	\end{proof}
-	MISTAKE IN LAST PART (pointwise convergence)
+The terms $ N\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})} $ and $ -\mu\norm{u^n}^2_2 $ converge as we want by the convergence of $ \xi^n $. Let us therefore write out\begin{equation}
+\begin{aligned}
+\hspace*{-0.8cm}\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2=\int\diff k \hat{G}(k)^{-1}\Bigg\{\abs{\hat{w}(k)}^2+2\Real\hat{w}(k)\left(\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\right)\\
++\sum_{i,j}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)^2\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^j)-\xi^n(\bar{k}^j)\right)\Bigg\}.
+\end{aligned}
+\end{equation}
+The first term we want to keep. The second term goes to zero, by \eqref{xiConvergence} and Lemma \ref{lemmawH1}. The third term on the other hand, cancels $ N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)\right) $ and replaces it by $ N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)\right) $, by the fact that \begin{equation}
+\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j).
+\end{equation}
+To see this, notice that by lemma \ref{lemmawH1-2} and \ref{lemmaGxi} we now that $ \xi^n $ is $ H^{1/2}(\R^{3(N-1)}) $ bounded. Thus for any subsequence, $ \xi^{n_j} $ there exist a further subsequence $ \xi^{n_{j_k}} $ such that $ \xi^{n_{j_k}} \rightharpoonup \chi  $ in $ H^{1/2}(\R^{3(N-1)}) $ for some $ \chi\in H^{1/2}(\R^{3(N-1)}) $. However, then $ \xi^{n_{j_k}} \rightharpoonup \chi $ in $ L^{2}(\R^{3(N-1)}) $, but since we know $ \xi^{n_{j_k}} \to \xi $ in $ L^{2}(\R^{3(N-1)}) $, we conclude that $ \chi=\xi $. Therefore, we infer that $ \xi^n\rightharpoonup\xi $ in $ H^{1/2}(\R^{3(N-1)}) $. By lemma \ref{lemmaMoserSeiringerGen} (the remark below) we know that for $ i\neq j $ $ \phi\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded linear functional on $ H^{1/2}(\R^{3(N-1)}) $ for $ \xi\in H^{1/2}(\R^{3(N-1)})  $. Hence we conclude that \begin{equation}
+\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j.
+\end{equation}
+Knowing this it is straightforward to show that \begin{equation}
+\int\diff k\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_i)\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j,
+\end{equation}
+since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT.\\
+For $i=N$ on the other hand
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
