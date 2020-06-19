@@ -1120,8 +1120,8 @@ In the case of $ \xi\in H^{1/2}(\R^{3(N-1)}) $ we can also show the result
 	For $ i=N $, we proceed by
 	\begin{equation}
 	\begin{aligned}
-	\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}&^2_{L^2(\R^{3(N-1)})}\\&
-	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}\left(4\pi n-\int_{B_n(0)}\diff k_N\hat{G}(k)\right)\xi(\bar{k}^N)}^2\\&
+	&\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\\&\qquad
+	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}\left(4\pi n-\int_{B_n(0)}\diff k_N\hat{G}(k)\right)\xi(\bar{k}^N)}^2\\&\qquad
 	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2.
 	\end{aligned}
 	\end{equation}
@@ -1130,7 +1130,7 @@ In the case of $ \xi\in H^{1/2}(\R^{3(N-1)}) $ we can also show the result
 	\end{equation} 
 	for $ \abs{\bar{k}^N}<n $. Thus we may estimate\begin{equation}
 	\begin{aligned}
-	\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2&\leq \frac{C}{4\pi n}\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2+\int_{\abs{\bar{k}^N}>n}\abs{\xi(\bar{k}^N)}^2
+	\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2&\leq \frac{C}{4\pi n}\int_{\abs{\bar{k}^N}\leq n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2+\int_{\abs{\bar{k}^N}>n}\abs{\xi(\bar{k}^N)}^2
 	\\&\leq\frac{C'}{4\pi n}\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}+\frac{1}{n}\int_{\abs{\bar{k}^N}>n}\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2\\&
 	\leq\frac{\tilde{C}}{n}\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\to0\text{ as }n\to\infty,
 	\end{aligned}
@@ -1195,7 +1195,22 @@ This result can actually be made even stronger which is captured in the followin
 	n\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^{2}(\R^{3(N-1)})}\to0\text{ as }n\to\infty,
 	\end{equation}
 	which is the desired result.\\
-	For $ i=N $,
+	For $ i=N $, consider\begin{equation}
+	\begin{aligned}
+	n\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})} =\int\diff \bar{k}^N\abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2.
+	\end{aligned}
+	\end{equation}
+	Furthermore, we have
+	\begin{equation}\label{EqLbound}
+	\begin{aligned}
+	\abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2&\leq C_1\mathbbm{1}_{\{\abs{\bar{k}^N}\leq n\}} L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2+C_2\mathbbm{1}_{\{\abs{\bar{k}^N}>n\}}\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2\\
+	&\leq C_3\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2
+	\end{aligned}
+	\end{equation}
+	where we in the first term used that $ L^n(\bar{k}^N)\sim L(\bar{k}^N)\sim \abs{\bar{k}^N} $ for $ \bar{k}^N\leq n $, and in the second term we used that $ L^n<4\pi n $ and that $ \sqrt{\abs{\bar{k}^N}^2+1}>n $ for $ \abs{k_N}>n $. In the second inequality we used that $ L(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $. Clearly the left hand side is an $ L^1(\R^{3(N-1)}) $ function, and thus we conclude that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ is dominated by an $ L^1(\R^{3(N-1)}) $ function. We also note that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ converges pointwise a.e. to zero. Hence, by DCT we then have \begin{equation}
+		n\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\to0\text{ as }n\to\infty.
+	\end{equation}
+	which is the desired result.
 \end{proof}
 The following lemma from \cite{Moser_2017} will also prove useful below\begin{lemma}[Lemma 1 in \cite{Moser_2017}]\label{lemmaMoserSeiringer}
 	The operator $ \sigma $ on $ L^2(\R^3) $ with integral kernel\begin{equation}
@@ -1265,7 +1280,6 @@ We now present a result generalizing Proposition \ref{F Gamma upper bound}
 We are now ready to show the convergence of $ F_\alpha^n(u^n) $. We have \begin{equation}
 F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u^n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})}\right)
 \end{equation}
-	\end{proof}
 The terms $ N\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})} $ and $ -\mu\norm{u^n}^2_2 $ converge as we want by the convergence of $ \xi^n $. Let us therefore write out\begin{equation}
 \begin{aligned}
 \hspace*{-0.8cm}\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2=\int\diff k \hat{G}(k)^{-1}\Bigg\{\abs{\hat{w}(k)}^2+2\Real\hat{w}(k)\left(\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\right)\\
@@ -1282,7 +1296,36 @@ Knowing this it is straightforward to show that \begin{equation}
 \int\diff k\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_i)\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j,
 \end{equation}
 since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT.\\
-For $i=N$ on the other hand
+For $i=N$ on the other hand we have \begin{equation}
+\begin{aligned}
+&\int\diff k \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\\&\qquad=\int\diff\bar{k}^i(4\pi n-L^n(\bar{k}^i))\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2.
+\end{aligned}
+\end{equation}
+By lemma \ref{lemmaxiCon2} the first term converges to zero. The second term on the other hand can be written as \begin{equation}
+\begin{aligned}
+-\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2=-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\\+2\Real\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i)
+\end{aligned}
+\end{equation}
+Similar to above in \eqref{EqLbound} we have\begin{equation}
+L^n(\bar{k}^N)\leq C_1 \mathbbm{1}_{B_n(0)}(\bar{k}^N)L(\bar{k}^N)+C_2\mathbbm{1}_{B_n(0)^\complement}(\bar{k}^N)\sqrt{\abs{\bar{k}^N}^2+1}\leq C\sqrt{\abs{\bar{k}^N}^2+1},
+\end{equation}
+and $ L^n\to L $ pointwise a.e. as $ n\to \infty $. By DCT we infer that \begin{equation}\label{EqLnCon}
+\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\to\int\diff \bar{k}^i L(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2.
+\end{equation} 
+Furthermore, we have \begin{equation}\label{EqLnCon2}
+\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i)=\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^i)+\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i)).
+\end{equation}
+Since $ \xi^n-\xi\rightharpoonup0 $ we know that $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $. Thus we know\begin{equation}
+\begin{aligned}
+\abs{\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i))}\leq\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}\\\leq C\int\diff \bar{k}^i\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}=\braket{\abs{\xi},\abs{\xi^n-\xi}}_{H^{1/2}(\R^{3(N-1)})}\to0.
+\end{aligned}
+\end{equation}
+Combining with \eqref{EqLnCon} and \eqref{EqLnCon2} we obtain \begin{equation}
+-\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2+\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2\to\int\diff \bar{k}^i L(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2
+\end{equation}
+Combining all the above, yields the desired result.
+	\end{proof}
+	
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
