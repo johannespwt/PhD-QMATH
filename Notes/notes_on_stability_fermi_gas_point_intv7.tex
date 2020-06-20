@@ -1159,20 +1159,20 @@ This result can actually be made even stronger which is captured in the followin
 	with $ M_n=\left\{\left(\abs{\bar{k}^i}^2+1\right)^{1/4}\abs{\xi(\bar{k}^i)}<\varepsilon_n\right\} $ for some sequence $ \varepsilon_n\to0 $ as $ n\to\infty $. We now use H\"older's inequality, $ (2,2) $ on the first term and $ (3,3/2) $ on the second term
 	\begin{equation}
 	\begin{aligned}
-	&\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\\&\leq\int_{B_n(0)}\diff k_i\frac{1}{n^2}\Bigg\lvert\left(\int_{M_n} \diff k_N\frac{1}{\sqrt{\abs{\bar{k}^i}+1}}\hat{G}(k)^2\right)^{1/2}\left(\int_{M_n}\diff k_N\sqrt{\abs{\bar{k}^i}+1}\abs{\xi(\bar{k}^i)}^2\right)^{1/2}\\&\qquad
+	&\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\\&\leq\int_{B_n(0)}\diff k_i\frac{1}{n^2}\Bigg\lvert\left(\int_{M_n} \diff k_N\frac{1}{\sqrt{\abs{\bar{k}^i}^2+1}}\hat{G}(k)^2\right)^{1/2}\left(\int_{M_n}\diff k_N\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}^2\right)^{1/2}\\&\qquad
 	+\left(\int_{M_n^\complement} \diff k_N\frac{1}{\left(\abs{\bar{k}^i}^2+1\right)^{3/4}}\hat{G}(k)^3\right)^{1/3}\left(\int_{M_n^\complement} \diff k_N\left(\left(\abs{\bar{k}^i}+1\right)^{1/4}\abs{\xi(\bar{k}^i)}\right)^{3/2}\right)^{2/3}\Bigg\rvert^2.
 		\end{aligned}
 	\end{equation}
 	Now notice that \begin{equation}
-	\left(\int_{M_n} \diff k_N\frac{1}{\sqrt{\abs{\bar{k}^i}+1}}\hat{G}(k)^2\right)^{1/2}\leq \frac{C_1}{\abs{k_i}},
+	\left(\int_{M_n} \diff k_N\frac{1}{\sqrt{\abs{\bar{k}^i}^2+1}}\hat{G}(k)^2\right)^{1/2}\leq \frac{C_1}{\abs{k_i}},
 	\end{equation}
-	and by DCT we have \begin{equation}
+	for some $ C_1>0 $, and by DCT we have \begin{equation}
 	\left(\int_{M_n}\diff k_N\sqrt{\abs{\bar{k}^i}+1}\abs{\xi(\bar{k}^i)}^2\right)^{1/2}=\epsilon_1(n)f(\bar{k}^{N,i})
 	\end{equation}
-	For some $ f\in L^2(\R^{3(N-2)}) $, and $ \epsilon(n)\to0\text{ as }n\to\infty $. Furthermore, we have \begin{equation}
+	For $ f(\bar{k}^{i,N})=\left(\int\diff k_N\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^{i,N},k_N)}^2\right)^{1/2}\in L^2(\R^{3(N-2)})$, and $ \epsilon(n)\to0\text{ as }n\to\infty $. Furthermore, we have \begin{equation}
 	\left(\int_{M_n^\complement} \diff k_N\frac{1}{\left(\abs{\bar{k}^i}^2+1\right)^{3/4}}\hat{G}(k)^3\right)^{1/3}\leq\frac{C_2}{\abs{k_i}^{3/2}},
 	\end{equation}
-	and \begin{equation}
+	for some $ C_2>0 $, and \begin{equation}
 	\left(\int_{M_n^\complement} \diff k_N\left(\left(\abs{\bar{k}^i}+1\right)^{1/4}\abs{\xi(\bar{k}^i)}\right)^{3/2}\right)^{2/3}\leq\frac{1}{\varepsilon_n^{1/3}}f(\bar{k}^{N,i})^{4/3}.
 	\end{equation}
 	Combining everything, we thus obtain\begin{equation}
@@ -1271,14 +1271,14 @@ We now present a result generalizing Proposition \ref{F Gamma upper bound}
 	&\left.\qquad\qquad\qquad\qquad\qquad+\left(4\pi n-L^n(\bar{k}^N)\right)\xi(\bar{k}^N)\right.\Bigg)\to \xi(\bar{k}^N),\text{ a.e. as }n\to\infty.
 	\end{aligned}
 	\end{equation}
-	We can actually furthermore show norm $ L^2 $-convergence of $ \xi^n $. By lemmas \ref{lemmawH1} and \ref{lemmaxiCon} we have \begin{equation}\label{xiConvergence}
+	We can actually furthermore show norm $ L^2 $-convergence of $ \xi^n $. By lemmas \ref{lemmawH1} and \ref{lemmaxiCon2} we have \begin{equation}\label{xiConvergence}
 	\begin{aligned}
 	\hspace*{-0.3cm}\norm{\xi^n-\xi}_{L^{2}(\R^{3(N-1)}) }\leq\frac{1}{4\pi n+\alpha}&\Bigg(\norm{\int_{B_n(0)}\diff k_N \hat{w}(k)}_{L^{2}(\R^{3(N-1)}) }\\&+\sum_{i=1}^{N-1}\norm{\int\diff k_N\left(\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)\right)}_{L^{2}(\R^{3(N-1)}) }\\&+\norm{\int \diff k_N \mathbbm{1}_{B_n(0)}(k_N)\hat{G}(k)\xi(\bar{k}^N)-(4\pi n+\alpha)\xi(\bar{k}^N)}_{L^2(\R^{3(N-1)})}\Bigg)\\
-	=\mathcal{O}\left(\frac{1}{\sqrt{n}}\right)\to 0\text{ as }n\to\infty.
+	=o\left(\frac{1}{\sqrt{n}}\right)\to 0\text{ as }n\to\infty.
 	\end{aligned}
 	\end{equation}
 We are now ready to show the convergence of $ F_\alpha^n(u^n) $. We have \begin{equation}
-F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u^n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})}\right)
+F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})}\right)
 \end{equation}
 The terms $ N\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})} $ and $ -\mu\norm{u^n}^2_2 $ converge as we want by the convergence of $ \xi^n $. Let us therefore write out\begin{equation}
 \begin{aligned}
@@ -1295,7 +1295,12 @@ To see this, notice that by lemma \ref{lemmawH1-2} and \ref{lemmaGxi} we now tha
 Knowing this it is straightforward to show that \begin{equation}
 \int\diff k\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_i)\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j,
 \end{equation}
-since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT.\\
+since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT. Thus we find by antisymmetry of $ \xi^n $ and $ \xi $\begin{equation}\label{EqConOff}
+\begin{aligned}
+\int\diff k\sum_{\substack{i,j\\i\neq j}}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)&\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^j)-\xi^n(\bar{k}^j)\right)+NT^n_{\text{off}}(\xi^n)\\
+&\to -\int\diff k\sum_{\substack{i,j\\i\neq j}}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^j)\\&=N(N-1)\int\diff k \overline{\xi(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi(t,\bar{q})=NT_{\text{off}}(\xi)
+\end{aligned}
+\end{equation}
 For $i=N$ on the other hand we have \begin{equation}
 \begin{aligned}
 &\int\diff k \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\\&\qquad=\int\diff\bar{k}^i(4\pi n-L^n(\bar{k}^i))\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2.
@@ -1303,7 +1308,7 @@ For $i=N$ on the other hand we have \begin{equation}
 \end{equation}
 By lemma \ref{lemmaxiCon2} the first term converges to zero. The second term on the other hand can be written as \begin{equation}
 \begin{aligned}
--\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2=-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\\+2\Real\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i)
+-\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2=\overbrace{-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2}^{-T_{\text{diag}}^n(\xi^n)}-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\\+2\Real\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i).
 \end{aligned}
 \end{equation}
 Similar to above in \eqref{EqLbound} we have\begin{equation}
@@ -1315,7 +1320,7 @@ and $ L^n\to L $ pointwise a.e. as $ n\to \infty $. By DCT we infer that \begin{
 Furthermore, we have \begin{equation}\label{EqLnCon2}
 \int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i)=\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^i)+\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i)).
 \end{equation}
-Since $ \xi^n-\xi\rightharpoonup0 $ we know that $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $. Thus we know\begin{equation}
+Since we know that $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ (Similar argument to the one above for $ \xi_n\rightharpoonup\xi $, just observe that $ \abs{\xi^n-\xi} $ $ H^{1/2}(\R^{3(N-1)}) $ bounded and converge to zero in $ L^{2}(\R^{3(N-1)}) $ is ). Thus we know\begin{equation}
 \begin{aligned}
 \abs{\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i))}\leq\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}\\\leq C\int\diff \bar{k}^i\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}=\braket{\abs{\xi},\abs{\xi^n-\xi}}_{H^{1/2}(\R^{3(N-1)})}\to0.
 \end{aligned}
@@ -1323,7 +1328,15 @@ Since $ \xi^n-\xi\rightharpoonup0 $ we know that $ \abs{\xi^n-\xi}\rightharpoonu
 Combining with \eqref{EqLnCon} and \eqref{EqLnCon2} we obtain \begin{equation}
 -\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2+\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2\to\int\diff \bar{k}^i L(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2
 \end{equation}
-Combining all the above, yields the desired result.
+Combining all the above, we find \begin{equation}\label{EqConDiag}
+\left(\int\diff k\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\right)+T_{\text{diag}}^n(\xi^n)\to T_{\text{diag}}(\xi)\quad\text{ as }n\to\infty.
+\end{equation}
+Combining \eqref{EqConOff} and \eqref{EqConDiag} we find \begin{equation}
+\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2+N(T_{\text{diag}}^n(\xi^n)+T_{\text{off}}^n(\xi^n))\to \int\diff k \hat{G}(k)^{-1}\abs{\hat{w}(k)}^2+N(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)),
+\end{equation}
+as $ n\to\infty $, from which it follows that \begin{equation}
+F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
+\end{equation}
 	\end{proof}
 	
 \appendix
