@@ -888,7 +888,10 @@ L^R(\bar{k}^N)&=4\pi R-\int_{B_R(0)} \diff k_N \hat{G}(k)\\
 +\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right)
 \end{aligned}
 \end{equation}
-and hence from \eqref{QuadraticFormTerm3} we conclude that \begin{equation}
+\textbf{Remark}: It follows from the definition of $ L^R $ that $ L^R(\bar{k}^N)<4\pi R $ for all $ R>0 $. Furthermore, it also follows that $ L^R(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $, which can be seen by the fact that $ L^R(\bar{k}^N)=\mathbbm{1}_{B_R(0)}(\bar{k}^N)L^R(\bar{k}^N)+\mathbbm{1}_{B_R(0)^\complement}(\bar{k}^N)L^R(\bar{k}^N) $. From \eqref{defL} we have $ \mathbbm{1}_{B_R(0)}(\bar{k}^N)L^R(\bar{k}^N)\leq C_1\mathbbm{1}_{B_R(0)}\sqrt{\abs{\bar{k}^N}^2+1} $, and since $ L^R(\bar{k}^N)<4\pi R $ we have $  \mathbbm{1}_{B_R(0)^\complement}(\bar{k}^N)L^R(\bar{k}^N)\leq4\pi R\mathbbm{1}_{B_R(0)^\complement}\leq C_2\mathbbm{1}_{B_R(0)^\complement}\sqrt{\abs{\bar{k}^N}^2+1} $.
+\vspace{0.5cm}
+\\
+From \eqref{QuadraticFormTerm3} we thus conclude that \begin{equation}
 \begin{aligned}
 \int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2=&N4\pi R \norm{\xi}_{L^2(\R{3(N-1)})}-N\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2\\&-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q})\\
 &= -N\left(T_{\text{diag}}^R(\xi^R)+T_{\text{off}}(\xi^R)-4\pi R\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right),
@@ -928,7 +931,7 @@ Now the following lemma will help us further simplifying this domain.\begin{lemm
 	\end{equation}
 	By Cauchy-Schwartz we then have \begin{equation}
 	\begin{aligned}
-	&\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert\int_{B_R(0)}\diff k_N \hat{w}(k)\right\rvert^2\\&\qquad\leq\norm{\mathbbm{1}_{B_r(0)}}_2^2\norm{\left[\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert \hat{w}(k)\right\rvert^2\right]^{1/2}}_2^2<\infty.
+	&\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert\int_{B_R(0)}\diff k_N \hat{w}(k)\right\rvert^2\\&\qquad\leq\norm{\mathbbm{1}_{B_R(0)}}_2^2\norm{\left[\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert \hat{w}(k)\right\rvert^2\right]^{1/2}}_2^2<\infty.
 	\end{aligned}
 	\end{equation}
 	\end{proof}
@@ -1207,7 +1210,7 @@ This result can actually be made even stronger which is captured in the followin
 	&\leq C_3\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2
 	\end{aligned}
 	\end{equation}
-	where we in the first term used that $ L^n(\bar{k}^N)\sim L(\bar{k}^N)\sim \abs{\bar{k}^N} $ for $ \bar{k}^N\leq n $, and in the second term we used that $ L^n<4\pi n $ and that $ \sqrt{\abs{\bar{k}^N}^2+1}>n $ for $ \abs{k_N}>n $. In the second inequality we used that $ L(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $. Clearly the left hand side is an $ L^1(\R^{3(N-1)}) $ function, and thus we conclude that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ is dominated by an $ L^1(\R^{3(N-1)}) $ function. We also note that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ converges pointwise a.e. to zero. Hence, by DCT we then have \begin{equation}
+	where we in the first term used that $ L^n(\bar{k}^N)\sim L(\bar{k}^N)\sim \abs{\bar{k}^N} $ for $ \bar{k}^N\leq n $, and in the second term we used that $ L^n<4\pi n $ and that $ \sqrt{\abs{\bar{k}^N}^2+1}>n $ for $ \abs{k_N}>n $. In the second inequality we used that $ L(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $. Clearly the right hand side is an $ L^1(\R^{3(N-1)}) $ function, and thus we conclude that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ is dominated by an $ L^1(\R^{3(N-1)}) $ function. We also note that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ converges pointwise a.e. to zero. Hence, by DCT we then have \begin{equation}
 		n\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\to0\text{ as }n\to\infty.
 	\end{equation}
 	which is the desired result.
@@ -1320,7 +1323,7 @@ and $ L^n\to L $ pointwise a.e. as $ n\to \infty $. By DCT we infer that \begin{
 Furthermore, we have \begin{equation}\label{EqLnCon2}
 \int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i)=\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^i)+\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i)).
 \end{equation}
-Since we know that $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ (Similar argument to the one above for $ \xi_n\rightharpoonup\xi $, just observe that $ \abs{\xi^n-\xi} $ $ H^{1/2}(\R^{3(N-1)}) $ bounded and converge to zero in $ L^{2}(\R^{3(N-1)}) $ is ). Thus we know\begin{equation}
+Since we know that $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ (Similar argument to the one above for $ \xi_n\rightharpoonup\xi $, just observe that $ \abs{\xi^n-\xi} $ is $ H^{1/2}(\R^{3(N-1)}) $ bounded and converge to zero in $ L^{2}(\R^{3(N-1)}) $ is ). Thus we know\begin{equation}
 \begin{aligned}
 \abs{\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i))}\leq\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}\\\leq C\int\diff \bar{k}^i\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}=\braket{\abs{\xi},\abs{\xi^n-\xi}}_{H^{1/2}(\R^{3(N-1)})}\to0.
 \end{aligned}
