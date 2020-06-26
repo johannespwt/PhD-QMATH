@@ -1341,7 +1341,9 @@ as $ n\to\infty $, from which it follows that \begin{equation}
 F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
 \end{equation}
 	\end{proof}
-	
+	\textbf{Remark:} It is worth pointing out that we actually circumvent showing that $ T^n_{\text{diag}/\text{off}}(\xi^n)\to T_{\text{diag}/\text{off}}(\xi) $. Although this might be true, showing it probably requires (it would at least be sufficient) that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)}) $, which we have not been able to show. However, $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ suffices in showing convergence of $ F_\alpha^n(u_n) $ as can be seen from the proof above.\\
+	\textbf{Next step:}
+Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
