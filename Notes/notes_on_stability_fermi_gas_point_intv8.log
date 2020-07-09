@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  9 JUL 2020 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.17)  9 JUL 2020 23:13
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**notes_on_stability_fermi_gas_point_intv7.tex
-(./notes_on_stability_fermi_gas_point_intv7.tex
+**notes_on_stability_fermi_gas_point_intv8.tex
+(./notes_on_stability_fermi_gas_point_intv8.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -1105,8 +1105,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \c@lemma=\count153
 \c@corollary=\count154
 
-(./notes_on_stability_fermi_gas_point_intv7.aux)
-\openout1 = `notes_on_stability_fermi_gas_point_intv7.aux'.
+(./notes_on_stability_fermi_gas_point_intv8.aux)
+\openout1 = `notes_on_stability_fermi_gas_point_intv8.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
 LaTeX Font Info:    ... okay on input line 71.
@@ -1221,10 +1221,10 @@ LaTeX Info: Redefining \ref on input line 71.
 LaTeX Info: Redefining \pageref on input line 71.
 LaTeX Info: Redefining \nameref on input line 71.
 
-(./notes_on_stability_fermi_gas_point_intv7.out)
-(./notes_on_stability_fermi_gas_point_intv7.out)
+(./notes_on_stability_fermi_gas_point_intv8.out)
+(./notes_on_stability_fermi_gas_point_intv8.out)
 \@outlinefile=\write4
-\openout4 = `notes_on_stability_fermi_gas_point_intv7.out'.
+\openout4 = `notes_on_stability_fermi_gas_point_intv8.out'.
 
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 74.
 
@@ -1241,9 +1241,9 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./notes_on_stability_fermi_gas_point_intv7.toc)
+(./notes_on_stability_fermi_gas_point_intv8.toc)
 \tf@toc=\write5
-\openout5 = `notes_on_stability_fermi_gas_point_intv7.toc'.
+\openout5 = `notes_on_stability_fermi_gas_point_intv8.toc'.
 
  [1
 
@@ -1622,25 +1622,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [33]
-Overfull \hbox (15.6142pt too wide) in paragraph at lines 971--972
-\OT1/cmr/m/n/10.95 where we again in-tro-duced the no-ta-tion $\OML/cmm/m/it/10
-.95 y \OT1/cmr/m/n/10.95 = [] [][] \OML/cmm/m/it/10.95 k[]$\OT1/cmr/m/n/10.95 ,
- and $\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 = [][] \OML/cmm/m/it/10.95 k[] \
-OT1/cmr/m/n/10.95 + [] [][] \OML/cmm/m/it/10.95 k[] \OMS/cmsy/m/n/10.95 ^^A
- []
-
-
-Overfull \hbox (50.11383pt too wide) in paragraph at lines 980--982
-\OT1/cmr/m/n/10.95 THIS CAN BE NEG-A-TIVE, NEED TO IN-CLUDE ARC-TAN TERMS Now n
-o-tice that $[] [] =
- []
-
-
-Overfull \hbox (5.32872pt too wide) detected at line 990
-[] [] [] \OT1/cmr/m/n/10.95 + [] [] \OMS/cmsy/m/n/10.95 ^^U [] [] \OT1/cmr/m/n/
-10.95 + [] []
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1648,6 +1629,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [34]
+Overfull \hbox (32.62369pt too wide) detected at line 1012
+[][] []
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1655,10 +1640,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [35]
-Overfull \hbox (32.62369pt too wide) detected at line 1032
-[][] []
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1694,7 +1675,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [40]
-Overfull \hbox (42.24869pt too wide) detected at line 1222
+Overfull \hbox (42.24869pt too wide) detected at line 1202
 [][] []
  []
 
@@ -1712,6 +1693,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [42]
+Overfull \hbox (7.19943pt too wide) detected at line 1271
+[][] []
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1719,10 +1704,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [43]
-Overfull \hbox (7.19943pt too wide) detected at line 1291
-[][] []
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1730,14 +1711,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [44]
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[45]
-Overfull \hbox (8.77696pt too wide) detected at line 1343
+Overfull \hbox (8.77696pt too wide) detected at line 1323
 [][] []
  []
 
@@ -1747,8 +1721,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+[45]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [46]
-Overfull \hbox (36.75667pt too wide) detected at line 1392
+Overfull \hbox (36.75667pt too wide) detected at line 1372
 [][] []
  []
 
@@ -1767,43 +1748,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [48]
 
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[49]
-
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1449.
+(hyperref)                removing `math shift' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 1449.
+(hyperref)                removing `\lambda' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1449.
+(hyperref)                removing `math shift' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 1449.
+(hyperref)                removing `\hbox' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 1449.
+(hyperref)                removing `\mathsurround' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 1449.
+(hyperref)                removing `\z@' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\unskip' on input line 1449.
+(hyperref)                removing `\unskip' on input line 1429.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@italiccorr' on input line 1449.
+(hyperref)                removing `\@@italiccorr' on input line 1429.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1811,8 +1785,8 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[50]
-Overfull \hbox (8.1203pt too wide) detected at line 1483
+[49]
+Overfull \hbox (8.1203pt too wide) detected at line 1463
 [] [] \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10.95 ^^@ \OML/
 cmm/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 C \OMS/cmsy/m/n/10
 .95 ^^@ \OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  []  [] 
@@ -1827,14 +1801,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[51] (./notes_on_stability_fermi_gas_point_intv7.bbl
+[50]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52]) 
+[51] (./notes_on_stability_fermi_gas_point_intv8.bbl)
+
 AED: lastpage setting LastPage
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1842,21 +1817,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1536.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1536.
- (./notes_on_stability_fermi_gas_point_intv7.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1536.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1536.
+[52]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1516.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1516.
+ (./notes_on_stability_fermi_gas_point_intv8.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1516.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1516.
 
-Package rerunfilecheck Info: File `notes_on_stability_fermi_gas_point_intv7.out
+Package rerunfilecheck Info: File `notes_on_stability_fermi_gas_point_intv8.out
 ' has not changed.
 (rerunfilecheck)             Checksum: E4DC4FC53F051E18EC3A64F075C87B80;787.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1536.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1516.
  ) 
 Here is how much of TeX's memory you used:
- 29441 strings out of 493029
- 673385 string characters out of 6136233
+ 29436 strings out of 493029
+ 673322 string characters out of 6136233
  845857 words of memory out of 5000000
  32035 multiletter control sequences out of 15000+600000
  17717 words of font info for 75 fonts, out of 8000000 for 9000
@@ -1882,11 +1857,11 @@ ype1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/rsfs/rsfs10.pfb>
-Output written on notes_on_stability_fermi_gas_point_intv7.pdf (53 pages, 47692
-2 bytes).
+Output written on notes_on_stability_fermi_gas_point_intv8.pdf (52 pages, 47525
+6 bytes).
 PDF statistics:
- 910 PDF objects out of 1000 (max. 8388607)
- 825 compressed objects within 9 object streams
- 411 named destinations out of 1000 (max. 500000)
+ 901 PDF objects out of 1000 (max. 8388607)
+ 817 compressed objects within 9 object streams
+ 406 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

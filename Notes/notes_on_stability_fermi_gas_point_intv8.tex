@@ -923,12 +923,7 @@ immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}
 	\begin{equation}
 	L^R(\bar{k}^N)\geq2\pi\left( R-\frac{(2R^2-\abs{y}^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\right):=f(R,y,\alpha).
 	\end{equation}
-	We now show that $ f\geq0 $ whenever $ 4\alpha\geq y $. To see this we notice that $ f(R,0,\alpha) $
-	
-	
-	
-	
-	To see this, we compute \begin{equation}
+	We now show that $ f\geq0 $ whenever $ 4\alpha\geq y $. We start by showing that $ f\geq0 $ for $ y^2<2\alpha $: To see this, we compute \begin{equation}
 	\partial_R f(R,y,\alpha)=\frac{4 R^4+R^2 \left(4 \alpha -3 \abs{y}^2\right)+\alpha  \abs{y}^2}{2 \left(\alpha +R^2-R \abs{y}\right) (\alpha +R (R+\abs{y}))}-\frac{R \ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)}{\abs{y}}
 	\end{equation}
 	Let $ R^* $ denote any extremum of $ f(R,y,\alpha) $, \ie $ \partial_R f(R^*,y,\alpha)=0 $, then we clearly have \begin{equation}
@@ -937,59 +932,44 @@ immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}
 	Thereby we find \begin{equation}
 	f(R^*,y,\alpha)=\frac{\left| y\right| ^2 \left((R^*)^2 \left(8 \alpha-3 \left| y\right| ^2\right)+\alpha \left(\left| y\right| ^2-2 \alpha\right)+2 (R^*)^4\right)}{8 R^* \left(-R^* \left| y\right| +(R^*)^2+\alpha\right) \left(R^* \left| y\right| +(R^*)^2+z\right)}.
 	\end{equation}
- However, $ \frac{\left| y\right| ^2}{8 R^* \left(-R^* \left| y\right| +(R^*)^2+\alpha\right) \left(R^* \left| y\right| +(R^*)^2+\alpha\right)}>0 $. So $ f(R^*,y,\alpha)<0 $ if and only if\\ $ h(R^*,y,\alpha):=\left((R^*)^2 \left(8 \alpha-3 \left| y\right| ^2\right)+\alpha \left(\left| y\right| ^2-2 \alpha\right)+2 (R^*)^4\right)<0 $. We show that $ f>0 $ for $ y^2>2\alpha $. Notice that \begin{equation}
-  h(R,y,\alpha)\geq0
- \end{equation}
- for $ 2\alpha\leq\abs{y}^2\leq8\alpha/3 $. Furthermore, $ h $ takes the minimal value at $ (R^*)^2=(8\alpha-3\abs{y}^2)/4 $ for $ y^2>8\alpha/3 $. Reinserting this into $ h $ we find \begin{equation}
- h\left(\sqrt{(8\alpha-3\abs{y}^2)/4},y,\alpha\right)=-10 \alpha ^2-\frac{9 y^4}{8}+7 \alpha  y^2
- \end{equation} 
- which is a concave downward parabola in $ y^2 $ with discriminant \begin{equation}
- d=(7\alpha)^2-4\cdot(9/8)\cdot 10\alpha^2=(2\alpha)^2
- \end{equation}
- thus we find the $ h\left(\sqrt{(8\alpha-3\abs{y}^2)/4},y,\alpha\right) $ is zero at \begin{equation}
- y^2=\frac{8(7\alpha\mp 2\alpha)}{18}=\begin{cases}
- 4\alpha\\
- 20/9
- \end{cases}
- \end{equation}
- thus in-between these two points, it must be positive, and since $ 8/3>20/9 $, we conclude that $ f(R^*,y,\alpha)>0 $.  
- Now for $ \abs{y}<2\alpha $ we instead find all minima of $ f $ w.r.t $ y $, therefore consider\begin{equation}
- \partial_yf(R,y,\alpha)=
- \end{equation}
- DELETE BELOW
- 
- However, notice that this is a concave upward quadratic function in $ (R^*)^2 $, so considering the discriminant \begin{equation}
- d_1(y,\alpha)=\left(8\alpha-3\abs{y}^2\right)^2-4\cdot 2\cdot \alpha\left(\abs{y}^2-2\alpha\right)=80 \alpha ^2+9 y^4-56 \alpha  y^2
- \end{equation}
-which is again a concave upward quadratic function in $ y^2 $, with discriminant\begin{equation}
-d_2(\alpha)=56^2\alpha^2-4\cdot 9\cdot80\alpha^2=(16\alpha)^2
-\end{equation}	
-Thus $ d_1(y^*,\alpha)=0 $ at $ (y^*)^2=\frac{56\alpha\pm16\alpha}{18} $ we see that this corresponds to $ (y^*_+)^2=4\alpha $ and $ (y^*_-)^2=\frac{20}{9}\alpha $. Thus $ d_1(y,\alpha) $ is non-negative only for $ y^2\geq4\alpha $ and $ y^2\leq20/9\alpha $. For $ y\leq20/9\alpha $ we have 
-	
-	\begin{equation}
-	\partial_R L^R(\bar{k}^N)=2\pi\left(-\frac{R}{\abs{y}}\log \left(\frac{R (R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)+2\right),
+	However, $ \frac{\left| y\right| ^2}{8 R^* \left(-R^* \left| y\right| +(R^*)^2+\alpha\right) \left(R^* \left| y\right| +(R^*)^2+\alpha\right)}>0 $. So $ f(R^*,y,\alpha)<0 $ if and only if\\ $ h(R^*,y,\alpha):=\left((R^*)^2 \left(8 \alpha-3 \left| y\right| ^2\right)+\alpha \left(\left| y\right| ^2-2 \alpha\right)+2 (R^*)^4\right)<0 $. We show that $ f>0 $ for $ y^2>2\alpha $. Notice that \begin{equation}
+	h(R,y,\alpha)\geq0
+	\end{equation}
+	for $ 2\alpha\leq\abs{y}^2\leq8\alpha/3 $. Furthermore, $ h $ takes the minimal value at $ (R^*)^2=(8\alpha-3\abs{y}^2)/4 $ for $ y^2>8\alpha/3 $. Reinserting this into $ h $ we find \begin{equation}
+	h\left(\sqrt{(8\alpha-3\abs{y}^2)/4},y,\alpha\right)=-10 \alpha ^2-\frac{9 y^4}{8}+7 \alpha  y^2
 	\end{equation} 
-	where we again introduced the notation $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \alpha=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $. Now let $ R^* $ denote any extremum of $ L^R $, \ie \begin{equation}
-	-\frac{R^*}{\abs{y}}\log \left(\frac{R^* (R^*+\abs{y})+\alpha}{R^*(R^*-\abs{y})+\alpha}\right)+2=0.
+	which is a concave downward parabola in $ y^2 $ with discriminant \begin{equation}
+	d=(7\alpha)^2-4\cdot(9/8)\cdot 10\alpha^2=(2\alpha)^2
 	\end{equation}
-	Since $ \sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\geq0 $ we have \begin{equation}
-	L^R(\bar{k}^N)\geq2\pi\left( R-\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\right).
+	thus we find the $ h\left(\sqrt{(8\alpha-3\abs{y}^2)/4},y,\alpha\right) $ is zero at \begin{equation}
+	y^2=\frac{8(7\alpha\mp 2\alpha)}{18}=\begin{cases}
+	4\alpha\\
+	20/9\alpha
+	\end{cases}
 	\end{equation}
-	At the extremum $ R^* $ we then have \begin{equation}
-	L^{R^*}(\bar{k}^N)\geq 2\pi\left(R^*-\frac{(2R^{*2}-y^2+2\alpha)}{2R^*}\right)=2\pi(y^2-2\alpha)/R^*
+	thus in-between these two points, it must be positive, and since $ 8/3>20/9 $, we conclude that $ f(R^*,y,\alpha)>0 $ for $ y^2>2\alpha $. \\ 
+	We know generalize this to $ y\leq4\alpha $:
+	 To see this we notice that $ f(R,0_+,\alpha)=0 $. On the other hand since $ y^2<4\alpha $ we also know that $ f(R,y,\alpha)>0 $ for $ \abs{y}\geq2\alpha $. Now assume that there exist some $ y>0 $ with $ y\leq4\alpha $ such that $ f(R,y,\alpha)<0 $, this would imply that $ f $ has a minimum for some $ 4\alpha\geq y^*>0 $. This $ y^* $ would satisfy\begin{equation}
+	\partial_yf(R,y,\alpha)\rvert_{y=y^*}=\frac{\left(2 \alpha +2 	R^2+(y^*)^2\right) \ln \ln\left(\frac{R(R+\abs{y^*})+\alpha}{R(R-\abs{y^*})+\alpha}\right)-\frac{2 R y^* \left(\alpha +R^2\right) \left(2 \alpha +2
+		R^2-(y^*)^2\right)}{\left(\alpha +R^2-R y^*\right) (\alpha +R (R+y^*))}}{4 (y^*)^2}=0,
 	\end{equation}
-	THIS CAN BE NEGATIVE, NEED TO INCLUDE ARCTAN TERMS
-	Now notice that $ \log\left(\frac{R (R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)=\log\left(1+\frac{2R\abs{y}}{R(R-\abs{y})+\alpha}\right)\leq\frac{2R\abs{y}}{R(R-\abs{y})+\alpha} $, thus\begin{equation}
-	\partial_R L^R(\bar{k}^N)\geq 4\pi\left(-\frac{R^2}{R^2-R\abs{y}+\alpha}+1\right).
+	from which we conclude that \begin{equation}
+	\ln\left(\frac{R(R+\abs{y^*})+\alpha}{R(R-\abs{y^*})+\alpha}\right)=\frac{2 R \abs{y^*} \left(\alpha +R^2\right) \left(2 \alpha +2
+		R^2-(y^*)^2\right)}{\left(2 \alpha +2 	R^2+(y^*)^2\right)\left(\alpha +R^2-R \abs{y^*}\right) (\alpha +R (R+\abs{y^*}))}.
 	\end{equation}
-	Since $ R^2-R\abs{y}+\alpha>0 $ for $ 4\alpha>\abs{y}^2 $ we find for the extremum that \begin{equation}
-	-R^*\abs{y}+\alpha\leq 0,
+	Inserting this back into $ f(R,y^*,\alpha) $ we find that \begin{equation}
+	f(R,y^*,\alpha)=R-\frac{R \left(\alpha +R^2\right) \left(-2 \alpha -2 R^2+(y^*)^2\right)^2}{4 \left(\alpha +R^2-R \abs{y^*}\right) (\alpha +R (R+\abs{y^*})) \left( \alpha + R^2+(y^*)^2/2\right)}.
 	\end{equation}
-	such that $ R^*\geq\alpha/\abs{y} $. Thereby we find\begin{equation}
-	 \arctan\left(\frac{2R^*-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R^*+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\geq\arctan\left(\frac{2\alpha-\abs{y}^2}{\abs{y}\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2\alpha+\abs{y}^2}{\abs{y}\sqrt{4\alpha-y^2}}\right)
+	It then follows from \begin{equation}
+	\frac{1}{4}\left(-2 \alpha -2 R^2+(y^*)^2\right)^2=(R^2+\alpha)^2+(y^*/2)^2-(R^2+\alpha)(y^*)^2\leq(R^2+\alpha)^2-R^2(y^*)^2,
 	\end{equation}
-	....
-	$ \abs{y}<2\sqrt{\alpha} $ so $ \alpha/\abs{y}\geq\frac{\sqrt{\alpha}}{2} $
+	where we used that $ (y^*)^2/4\leq\alpha $, and from \begin{equation}
+	\left(\alpha +R^2-R y^*\right) (\alpha +R (R+y^*))=(R+\alpha)^2-R^2(y^*)^2
+	\end{equation}
+	that \begin{equation}
+	f(R,y^*,\alpha)> 0
+	\end{equation}
+	which contradict the assumption that there exist some $ y $ for which $ f(R,y,\alpha)<0 $. Thus we conclude that $ f(R,y,\alpha)\geq0 $ for all $ y\in\R^{3(N-1)} $.
 \end{proof}
 \vspace{0.5cm}
 From \eqref{QuadraticFormTerm3} we thus conclude that \begin{equation}
