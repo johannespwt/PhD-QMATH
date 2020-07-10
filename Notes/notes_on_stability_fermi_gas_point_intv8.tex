@@ -784,7 +784,7 @@ We are in this section going to study the more general case of $ N $ fermions of
 Inspired by the approach in the $ 1+1 $ case, we define the quadratic form in the $ N+1 $ case, also by considering a limiting case of rank-one perturbations of the free Hamiltonian. Again we imagine the following family of Hamiltonians\begin{equation}
 H_\gamma^R=H_0-\gamma_R\sum_{i=1}^{N}\phi^i_R\braket{\phi^i_R,\cdot}.
 \end{equation}
-We choose the $ \phi^i_R $ such that its Fourier transform is a ball of radius $ R $ in the $ i^{\text{th}} $ coordinate, $ \hat{\phi}^i_R(k)=\mathbbm{1}_{B_R(0)}(k_i) $. The corresponding quadratic forms thus become\begin{equation}
+We choose the $ \phi^i_R $ such that its Fourier transform is a ball of radius $ R $ in the $ i^{\text{th}} $ coordinate, $ \hat{\phi}^i_R(k)=\mathbbm{1}_{B_R(0)}(k_i) $. The corresponding quadratic forms thus become\begin{equation}\label{F at Finite R}
 \begin{aligned}
 F_\gamma^R(u)=\int_{\R^{3N}}\diff k \left[\overline{\hat{u}}(k)\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}k_i\cdot k_j\right)\hat{u}(k)\qquad\qquad\right.\\\left.-\gamma_R\sum_{i=1}^{N}\overline{\hat{u}}(k)\mathbbm{1}_{B_R(0)}(k_i)\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i)\right],
 \end{aligned}
@@ -972,7 +972,7 @@ immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}
 	which contradict the assumption that there exist some $ y $ for which $ f(R,y,\alpha)<0 $. Thus we conclude that $ f(R,y,\alpha)\geq0 $ for all $ y\in\R^{3(N-1)} $.
 \end{proof}
 \vspace{0.5cm}
-From \eqref{QuadraticFormTerm3} we thus conclude that \begin{equation}
+From \eqref{QuadraticFormTerm3} we conclude that \begin{equation}
 \begin{aligned}
 \int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2=&N4\pi R \norm{\xi}_{L^2(\R{3(N-1)})}-N\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2\\&-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q})\\
 &= -N\left(T_{\text{diag}}^R(\xi^R)+T_{\text{off}}(\xi^R)-4\pi R\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right),
@@ -1424,7 +1424,21 @@ F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
 	\end{proof}
 	\textbf{Remark:} It is worth pointing out that we actually circumvent showing that $ T^n_{\text{diag}/\text{off}}(\xi^n)\to T_{\text{diag}/\text{off}}(\xi) $. Although this might be true, showing it probably requires (it would at least be sufficient) that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)}) $, which we have not been able to show. However, $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ suffices in showing convergence of $ F_\alpha^n(u_n) $ as can be seen from the proof above.\\
 	\textbf{Next step:}
-Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $
+Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $.\\
+Since we have reduced the problem to working with $ F^R_\alpha $ at finite $ R $. It is convenient to use the expression for $ F_\alpha^R $ given in \eqref{F at Finite R}
+\begin{equation}
+F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2.
+\end{equation}
+Defining $ \hat{\phi}(k)=\sqrt{\hat{G}(k)^{-1}}\hat{u}(k) $ this can be rewritten\begin{equation}
+F_\alpha^R(u)=\norm{\phi}_2^2-\mu\norm{u}_2^2-\frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2.
+\end{equation}
+Thus if we can show that $ \frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}^2 $ for all $ R>0 $, we find that $ F_\alpha^R(u)\geq-\mu\norm{u}_2^2 $ and $ F_\alpha^R $ is uniformly bounded from below. \\Notice that $ \frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}_2^2$ depends on the choice $ \mu $, thus we need only prove that there exist a finite $ \mu $ such that the bound holds. We now use the bound \begin{equation}
+\begin{aligned}
+\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2=\left\lvert\int_{B_R(0)}\diff k_ih(k)\left(\hat{G}(k)\right)^{1/4}h(k)^{-1}\left(\hat{G}(k)\right)^{1/4}\hat{\phi}(k)\right\rvert^2\\
+\leq
+\end{aligned}
+\end{equation}
+Problem with factor $ N $ from the sum.
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
