@@ -989,7 +989,7 @@ Thereby, using \eqref{QuadraticForm2}, we can write down the quadratic form\begi
 F_\gamma^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+(\gamma_R^{-1}-4\pi R)\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
 \end{aligned}
 \end{equation}
-It is worth to mention that the sign of $ T_{\text{off}} $ was crucially dependent on the antisymmetry of $ u $, and that for a bosonic system, $ T_{\text{off}} $ comes with opposite sign. Similarly to the $ 1+1 $ case we see a singular behaviour for $ R\to\infty $ unless we choose $ \gamma_R $ exactly to cancel the divergence. Thus we choose $ \gamma_R=(4\pi R -\alpha)^{-1} $ and we end up with the quadratic form (slightly abusing notation by denoting the renormalized quadratic form by the same name as the non-renormalized one) \begin{equation}
+It is worth to mention that the sign of $ T_{\text{off}} $ was crucially dependent on the antisymmetry of $ u $, and that for a bosonic system, $ T_{\text{off}} $ comes with opposite sign. Similarly to the $ 1+1 $ case we see a singular behaviour for $ R\to\infty $ unless we choose $ \gamma_R $ exactly to cancel the divergence. Thus we choose $ \gamma_R=(4\pi R +\alpha)^{-1} $ and we end up with the quadratic form (slightly abusing notation by denoting the renormalized quadratic form by the same name as the non-renormalized one) \begin{equation}
 \begin{aligned}
 F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
 \end{aligned}
@@ -1427,15 +1427,24 @@ F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
 Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $.\\
 Since we have reduced the problem to working with $ F^R_\alpha $ at finite $ R $. It is convenient to use the expression for $ F_\alpha^R $ given in \eqref{F at Finite R}
 \begin{equation}
-F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2.
+F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2.
 \end{equation}
 Defining $ \hat{\phi}(k)=\sqrt{\hat{G}(k)^{-1}}\hat{u}(k) $ this can be rewritten\begin{equation}
-F_\alpha^R(u)=\norm{\phi}_2^2-\mu\norm{u}_2^2-\frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2.
+F_\alpha^R(u)=\norm{\phi}_2^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2.
 \end{equation}
-Thus if we can show that $ \frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}^2 $ for all $ R>0 $, we find that $ F_\alpha^R(u)\geq-\mu\norm{u}_2^2 $ and $ F_\alpha^R $ is uniformly bounded from below. \\Notice that $ \frac{1}{4\pi R-\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}_2^2$ depends on the choice $ \mu $, thus we need only prove that there exist a finite $ \mu $ such that the bound holds. We now use the bound \begin{equation}
+Thus if we can show that $ \frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}^2 $ for all $ R>0 $, we find that $ F_\alpha^R(u)\geq-\mu\norm{u}_2^2 $ and $ F_\alpha^R $ is uniformly bounded from below. \\Notice that $ \frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}_2^2$ depends on the choice $ \mu $, thus we need only prove that there exist a finite $ \mu $ such that the bound holds. We now use the bound \begin{equation}
 \begin{aligned}
 \left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2=\left\lvert\int_{B_R(0)}\diff k_ih(k)\left(\hat{G}(k)\right)^{1/4}h(k)^{-1}\left(\hat{G}(k)\right)^{1/4}\hat{\phi}(k)\right\rvert^2\\
-\leq
+\leq \left(\int_{B_R(0)}\diff k_ih(k)^{-2}\hat{G}(k)^{1/2}\right)\left(\int_{B_R(0)}\diff k_i h(k)^{2}\hat{G}(k)^{1/2}\abs{\hat{\phi}(k)}^2\right)\\
+\leq 
+\end{aligned}
+\end{equation}
+Choosing $ h(k)=\sqrt{\frac{k_i^2}{k_j^2}} $ for $ j\neq i $ we find
+\begin{equation}
+\begin{aligned}
+\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2
+\leq \left(\int_{B_R(0)}\diff k_i\frac{k_j^2}{k_i^2}\hat{G}(k)^{1/2}\right)\left(\int_{B_R(0)}\diff k_i \frac{k_i^2}{k_j^2}\hat{G}(k)^{1/2}\abs{\hat{\phi}(k)}^2\right)\\
+\leq \sup_{k_j}\left(\int_{B_R(0)}\diff k_i\frac{k_j^2}{k_i^2}\hat{G}(k)^{1/2}\right)\sup_{k_i}\frac{k_i^2}{k_j^2}\hat{G}(k)^{1/2}\left(\int_{B_R(0)}\diff k_i \abs{\hat{\phi}(k)}^2\right)
 \end{aligned}
 \end{equation}
 Problem with factor $ N $ from the sum.
