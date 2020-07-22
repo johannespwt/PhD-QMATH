@@ -731,7 +731,7 @@ with domain\begin{equation}
 	F_\alpha^{n_j}(u_{n_j})=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2+2\Real\left[(\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k))\overline{\hat{w}(k)}\right]\right\}\\-\mu\|u_{n_j}\|^2_{L^2(\R^3)}+|\xi_{n_j}|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right).
 	\end{aligned}
 	\end{equation}
-Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong \|f\|_{H^1(\R^3)}^2 $ we see that either $ \liminf F_\alpha^{n}(u_n)=\infty $ or \\$ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H^1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H^1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H^1(\R^3) $ is a Hilbert space we then know that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H^1(\R^3) $ to some $ h\in H^1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H^1(\R^3) $ it also converges weakly in $ L^2(\R^3) $ to the same limit, since the dual space of $ H^1(\R^3) \subset L^2(\R^3) $ is $ H_{-1}(\R^3) \supset L^2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L^2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L^2(\R^3) $ and $ G_n\xrightarrow{\|\cdot\|_2} G $ so $ G_n\rightharpoonup G $ in $ L^2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L^2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H^1(\R^3) $. So $ h\in H^1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H^1(\R^3) $ and $ L^2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H^1(\R^3) $ and $ L^2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
+Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong \|f\|_{H^1(\R^3)}^2 $, and $ \mu>0 $ and $ (n_j)_{j\in\mathbb{N}} $ can be chosen such that\\ $ \left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right)>0 $, we see that either $ \liminf F_\alpha^{n}(u_{n})=\infty $ or $ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H^1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H^1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H^1(\R^3) $ is a Hilbert space we then know that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H^1(\R^3) $ to some $ h\in H^1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H^1(\R^3) $ it also converges weakly in $ L^2(\R^3) $ to the same limit, since the dual space of $ H^1(\R^3) \subset L^2(\R^3) $ is $ H_{-1}(\R^3) \supset L^2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L^2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L^2(\R^3) $ and $ G_n\xrightarrow{\|\cdot\|_2} G $ so $ G_n\rightharpoonup G $ in $ L^2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L^2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H^1(\R^3) $. So $ h\in H^1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H^1(\R^3) $ and $ L^2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H^1(\R^3) $ and $ L^2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
 \begin{equation}
 \begin{aligned}
 \lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})&=\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2\right\}-\mu\|u_{n_j}\|^2_{L^2(\R^3)}\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
@@ -911,7 +911,7 @@ We can actually get a closed form for $ L^R $ \begin{lemma}
 	\end{equation}
 	Thus the desired result follows.
 \end{proof}
-immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}
+immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}\label{LemmaLgreater0}
 	Let $ L^R $ be defined as above. Then $ L^R\geq0 $ for all $ R\geq0 $.
 \end{lemma}
 \begin{proof}
@@ -1362,9 +1362,9 @@ We now present a result generalizing Proposition \ref{F Gamma upper bound}
 	\end{aligned}
 	\end{equation}
 We are now ready to show the convergence of $ F_\alpha^n(u^n) $. We have \begin{equation}
-F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})}\right)
+F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
 \end{equation}
-The terms $ N\alpha\norm{\xi^n}_{L^2(\R^{3(N-1)})} $ and $ -\mu\norm{u^n}^2_2 $ converge as we want by the convergence of $ \xi^n $. Let us therefore write out\begin{equation}
+The terms $ N\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})} $ and $ -\mu\norm{u^n}^2_2 $ converge as we want by the convergence of $ \xi^n $. Let us therefore write out\begin{equation}
 \begin{aligned}
 \hspace*{-0.8cm}\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2=\int\diff k \hat{G}(k)^{-1}\Bigg\{\abs{\hat{w}(k)}^2+2\Real\hat{w}(k)\left(\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\right)\\
 +\sum_{i,j}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)^2\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^j)-\xi^n(\bar{k}^j)\right)\Bigg\}.
@@ -1447,7 +1447,40 @@ Choosing $ h(k)=\sqrt{\frac{k_i^2}{k_j^2}} $ for $ j\neq i $ we find
 \leq \sup_{k_j}\left(\int_{B_R(0)}\diff k_i\frac{k_j^2}{k_i^2}\hat{G}(k)^{1/2}\right)\sup_{k_i}\frac{k_i^2}{k_j^2}\hat{G}(k)^{1/2}\left(\int_{B_R(0)}\diff k_i \abs{\hat{\phi}(k)}^2\right)
 \end{aligned}
 \end{equation}
-Problem with factor $ N $ from the sum.
+Problem with factor $ N $ from the sum.\vspace{0.5cm}\\
+INSTEAD: Let $ \dom{F^n_\alpha}\ni u_n\to u\in\dom{F_\alpha} $ in $ L^2(\R^{3N}) $ we then show that \begin{equation}
+F_\alpha^n(u_n)\geq-M\norm{u_n}_2^2,
+\end{equation}
+for some $ M>0 $ independent of $ n\geq1 $.
+\vspace{0.5cm}\\
+OR SHOW $ \Gamma $-lower bound\begin{equation}
+\liminf_{n\to\infty}F^n_\alpha(u_n)\geq F_\alpha(u).
+\end{equation}
+If $ \liminf_{n\to\infty}F_\alpha^n(u_n)=\infty $ we are done. Assume therefore that $ \liminf_{n\to\infty}F_\alpha^n(u_n)<\infty $.
+Assume, by possibly passing to a subsequence that $ F_\alpha^n(u_n)\to\liminf_{n\to\infty}F_\alpha^n(u_n) $. We may write $ \hat{u}=\hat{w}+\hat{G}\hat{\rho} $, with $ w\in H_\text{as}^1(\R^{3N}) $ and $ \rho=\sum_{i=1}^{N}(-1)^{i+1}\xi $, with $ \xi\in H_{\text{as}}^{1/2}(\R^{3(N-1)}) $. Since $ \dom{F_\alpha^n}=H_{\text{as}}^1(\R^{3N}) $ for all $ n\in\mathbb{N} $ we may also write $ \hat{u}_n=\hat{w}+\hat{G}\hat{\zeta}^n $ with $ \zeta^n\in H_{\text{as}}^{-1}(\R^{3N}) $ and $ \hat{G}\hat{\zeta}^n\to\hat{G}\hat{\rho} $ in $ L^2(\R^{3N}) $, \ie $ \zeta^n\to\rho $ in $ H^{-2}(\R^{3N}) $. Thus we have\begin{equation}
+\begin{aligned}
+F_\alpha^n(u^n)
+=\int\diff k \hat{G}(k)^{-1}\abs{\hat{w}+(\hat{\zeta}^n-\hat{\rho}^n)\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
+\end{aligned}
+\end{equation}
+With $ \xi^n(\bar{k}^i)=\frac{(-1)^{i-1}}{4\pi n+\alpha}\int_{B_n(0)}\diff k_i\hat{u}_n(k)=\frac{(-1)^{i-1}}{4\pi n+\alpha}\int_{B_n(0)}\diff k_i \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\xi^n(\bar{k}^i) $. Knowing that \begin{equation}
+L^n(\bar{k}^N)\geq\pi\sqrt{4\beta-y^2}\left(\arctan\left(\frac{2n-\abs{y}}{\sqrt{4\beta-y^2}}\right)+\arctan\left(\frac{2n+\abs{y}}{\sqrt{4\beta-y^2}}\right)\right),
+\end{equation}
+where $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \beta=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $ (see the proof of lemma \ref{LemmaLgreater0}). On the other hand we also have \begin{equation}
+L^n(\bar{k}^N)\geq2\pi\left[R-\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\right],
+\end{equation}
+So for $ \abs{y}>2R $ we have \begin{equation}
+L^n(\bar{k}^N)\geq2\pi\left[R-\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\frac{2R\abs{y}}{R^2-R\abs{y}+\alpha}\right]\geq2\pi\left[R-\frac{4R\abs{y}}{4\abs{y}}\right].
+\end{equation}
+We now generalize the proof of Moser and Seiringer \cite{Moser_2017}.....\\
+\begin{equation}
+\begin{aligned}
+T^n_{\text{diag}}(\xi^n)&=\int\diff\bar{k}^N L^n(\bar{k}^N)\abs{\xi^n(\bar{k}^N)}^2,\\ T^n_{\text{off}}(\xi^n)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_n(0)}\diff s\int_{B_n(0)}\diff t\overline{\xi^n(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^n(t,\bar{q})
+\end{aligned}
+\end{equation}
+Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $\\
+\textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not. exists for $ m>\frac{4\beta}{y^2}-1>1/3 $.
+
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
