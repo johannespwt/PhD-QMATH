@@ -889,7 +889,7 @@ L^R(\bar{k}^N)&=4\pi R-\int_{B_R(0)} \diff k_N \hat{G}(k)\\
 \end{aligned}
 \end{equation}
 \textbf{Remark}: It follows from the definition of $ L^R $ that $ L^R(\bar{k}^N)<4\pi R $ for all $ R>0 $. Furthermore, it also follows that $ L^R(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $, which can be seen by the fact that $ L^R(\bar{k}^N)=\mathbbm{1}_{B_R(0)}(\bar{k}^N)L^R(\bar{k}^N)+\mathbbm{1}_{B_R(0)^\complement}(\bar{k}^N)L^R(\bar{k}^N) $. From \eqref{defL} we have $ \mathbbm{1}_{B_R(0)}(\bar{k}^N)L^R(\bar{k}^N)\leq C_1\mathbbm{1}_{B_R(0)}\sqrt{\abs{\bar{k}^N}^2+1} $, and since $ L^R(\bar{k}^N)<4\pi R $ we have $  \mathbbm{1}_{B_R(0)^\complement}(\bar{k}^N)L^R(\bar{k}^N)\leq4\pi R\mathbbm{1}_{B_R(0)^\complement}\leq C_2\mathbbm{1}_{B_R(0)^\complement}\sqrt{\abs{\bar{k}^N}^2+1} $.\\
-We can actually get a closed form for $ L^R $ \begin{lemma} 
+We can actually get a closed form for $ L^R $ \begin{lemma} \label{LemmaLEvaluation}
 	Let $ \hat{G} $ be defined as above and let $ q=k_N $, $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \alpha=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $, then
 	\begin{equation}
 	\begin{aligned}
@@ -1467,18 +1467,56 @@ With $ \xi^n(\bar{k}^i)=\frac{(-1)^{i-1}}{4\pi n+\alpha}\int_{B_n(0)}\diff k_i\h
 L^n(\bar{k}^N)\geq\pi\sqrt{4\beta-y^2}\left(\arctan\left(\frac{2n-\abs{y}}{\sqrt{4\beta-y^2}}\right)+\arctan\left(\frac{2n+\abs{y}}{\sqrt{4\beta-y^2}}\right)\right),
 \end{equation}
 where $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \beta=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $ (see the proof of lemma \ref{LemmaLgreater0}). On the other hand we also have \begin{equation}
-L^n(\bar{k}^N)\geq2\pi\left[R-\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\right],
+L^n(\bar{k}^N)\geq2\pi\left[n-\frac{(2n^2-y^2+2\beta)}{4\abs{y}}\ln\left(\frac{n(n+\abs{y})+\beta}{n(n-\abs{y})+\beta}\right)\right],
 \end{equation}
-So for $ \abs{y}>2R $ we have \begin{equation}
-L^n(\bar{k}^N)\geq2\pi\left[R-\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\frac{2R\abs{y}}{R^2-R\abs{y}+\alpha}\right]\geq2\pi\left[R-\frac{4R\abs{y}}{4\abs{y}}\right].
+So for $ \abs{y}>2n $ we have \begin{equation}
+L^n(\bar{k}^N)\geq2\pi\left[n-\frac{(2n^2-y^2+2\beta)}{4\abs{y}}\frac{2n\abs{y}}{n^2-n\abs{y}+\beta}\right]\geq2\pi\left[n-\frac{4n\abs{y}}{4\abs{y}}\right].
 \end{equation}
+We consider $ L^n(\bar{k}^N)/\abs{y} $ and define $ x=n/\abs{y} $, and $ \gamma=4\beta/y^2 $\begin{equation}
+\begin{aligned}
+l(x,\gamma):=L^n(\bar{k}^N)/\abs{y} =\pi\sqrt{\gamma-1}\left(\arctan\left(\frac{2x-1}{\sqrt{\gamma-1}}\right)+\arctan\left(\frac{2x+1}{\sqrt{\gamma-1}}\right)\right)\\+2\pi\left[x-\frac{(2x^2-1+\frac{\gamma}{2})}{4}\ln\left(\frac{x(x+1)+\frac{\gamma}{4}}{x(x-1)+\frac{\gamma}{4}}\right)\right]
+\end{aligned}
+\end{equation}
+with \begin{equation}
+\frac{\partial}{\partial x}l(x,\gamma)=2\pi\left(2-x\ln\left(\frac{x(x+1)+\gamma/4}{x(x-1)+\gamma/4}\right)\right)=2\pi\left(2-x\ln\left(1+\frac{2x}{x(x-1)+\gamma/4}\right)\right)
+\end{equation}
+Notice that $ l $ has no maximum in $ x $ if $ \gamma\geq 2 $ since \begin{equation}
+\frac{\partial}{\partial x}l(x,\gamma)\geq 2\pi\left(2-x\frac{\frac{2x}{x(x-1)+\gamma/4}}{\sqrt{1+\frac{2x}{x(x-1)+\gamma/4}}}\right),
+\end{equation} 
+where we used the inequality $ \ln(1+x)\geq\frac{x}{\sqrt{1+x}} $ for $ x\geq0 $. And for $ \gamma\geq2 $ we have \begin{equation}
+2-x\frac{\frac{2x}{x(x-1)+\gamma/4}}{\sqrt{1+\frac{2x}{x(x-1)+\gamma/4}}}>0.
+\end{equation} 
+Numerics suggest that $ l(x,\gamma) $ has no maximum in $ x $ for  $ \gamma\geq4/3 $. The following result will be useful\begin{lemma}\label{LemmaLConcave}
+	Let $ L^R(y,\alpha) $ be defined as in lemma \ref{LemmaLEvaluation}, where $ y $ and $ \beta $ are defined as above, and let $ \gamma=4\beta/y^2 $. Then $ L^R $ is a concave function of $ R $ whenever $ \gamma\geq4/3 $ (Analytic proof for $ \gamma\geq2 $, numerics suggest for $ \gamma\geq4/3 $) On the other hand $ L^R(y,\beta) $ is a concave function of $ R $ for any $ \gamma>1 $ and $ R\leq y/2 $.
+\end{lemma}
+\begin{proof}
+	This follows from the simple calculation of the second derivative\begin{equation}
+	\frac{\partial^2L^R(y,\beta)}{\partial R^2}=2\pi\left(\frac{2 R \left(R^2-\beta \right)}{\left(\beta +R(R- \abs{y})\right) (\beta +R (R+\abs{y}))}-\frac{\ln \left(\frac{\beta +R (R+\abs{y})}{\beta +R(R- \abs{y})}\right)}{\abs{y}}\right)
+	\end{equation}
+	Numerics suggest that $ \frac{\partial^2L^R(y,\beta)}{\partial R^2}\leq0 $ for $ \gamma\geq4/3 $ and the result follows. Furthermore, since $ \ln \left(\frac{\beta +R (R+\abs{y})}{\beta +R(R- \abs{y})}\right)=\ln \left(1+\frac{2R\abs{y}}{\beta +R(R- \abs{y})}\right)\geq\frac{2\left(\frac{2R\abs{y}}{\beta +R(R- \abs{y})}\right)}{2+\frac{2R\abs{y}}{\beta +R(R- \abs{y})}} $ we have \begin{equation}
+	\begin{aligned}
+	\frac{1}{2\pi}\frac{\partial^2L^R(y,\gamma y^2/4)}{\partial R^2}&\leq \frac{2 R \left(R^2-\gamma y^2/4 \right)}{\left(\gamma y^2/4 +R(R- \abs{y})\right) (\gamma y^2/4 +R (R+\abs{y}))}-\frac{1}{\abs{y}}\frac{2\left(\frac{2R\abs{y}}{\gamma y^2/4 +R(R- \abs{y})}\right)}{2+\frac{2R\abs{y}}{\gamma y^2/4 +R(R- \abs{y})}}\\&=-\frac{16 R \left(\gamma^2 \abs{y}^4+4 (\gamma-2) R^2 y^2\right)}{\left(\gamma y^2+4 R^2\right) \left(\gamma y^2+4 R^2-4 R \abs{y}\right) \left(\gamma y^2+4 R^2+4 R \abs{y}\right)}\leq0.
+	\end{aligned}
+	\end{equation}
+	for any $ R>0 $ $ \gamma\geq2 $ \emph{or} for any $ \gamma>1 $ and $ R\leq\abs{y}/2 $.
+\end{proof}
+\begin{corollary}
+	Let $ L^R $, $ y $, $ \beta $ and $ \gamma $ be defined as above, then for $ R\leq\abs{y}/2 $ we have \begin{equation}
+	L^R(y,\gamma y^2/4)\geq \frac{\pi}{2} \left((\gamma -1) \ln (\gamma -1)-(\gamma -1) \ln (\gamma +3)+4 \sqrt{\gamma -1} \arctan\left(\frac{2}{\sqrt{\gamma -1}}\right)+4\right)R
+	\end{equation}
+\end{corollary}
+\begin{proof}
+	This follows from lemma \ref{LemmaLConcave} and the fact that $ L^0=0  $ and \begin{equation}
+	\frac{2}{\abs{y}}L^{\abs{y}/2}(y,\gamma y^2/4)=\frac{\pi}{2} \left((\gamma -1) \ln (\gamma -1)-(\gamma -1) \ln (\gamma +3)+4 \sqrt{\gamma -1} \arctan\left(\frac{2}{\sqrt{\gamma -1}}\right)+4\right)
+	\end{equation}
+\end{proof}
 We now generalize the proof of Moser and Seiringer \cite{Moser_2017}.....\\
 \begin{equation}
 \begin{aligned}
 T^n_{\text{diag}}(\xi^n)&=\int\diff\bar{k}^N L^n(\bar{k}^N)\abs{\xi^n(\bar{k}^N)}^2,\\ T^n_{\text{off}}(\xi^n)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_n(0)}\diff s\int_{B_n(0)}\diff t\overline{\xi^n(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^n(t,\bar{q})
 \end{aligned}
 \end{equation}
-Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $\\
+Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $. Furthermore, we have\\ $ T^n_{\text{off}}(\xi^n)=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\phi^n(s,\bar{q})}\hat{J}^n(s,t,\bar{q})\phi^n(t,\bar{q}) $, with\\ $ \hat{J}^n(s,t,\bar{q})=\mathbbm{1}_{B_n(0)}(s)\mathbbm{1}_{B_n(0)}(t)\frac{1}{\sqrt{L^n(s,\bar{q})}}\hat{G}(s,t,\bar{q})\frac{1}{\sqrt{L^n(t,\bar{q})}} $\\
 \textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not. exists for $ m>\frac{4\beta}{y^2}-1>1/3 $.
 
 \appendix
