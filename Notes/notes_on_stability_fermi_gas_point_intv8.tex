@@ -914,7 +914,18 @@ We can actually get a closed form for $ L^R $ \begin{lemma} \label{LemmaLEvaluat
 immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}\label{LemmaLgreater0}
 	Let $ L^R $ be defined as above. Then $ L^R\geq0 $ for all $ R\geq0 $.
 \end{lemma}
-\begin{proof}
+\begin{proof}[Proof 1]
+	This follows from completing the square \begin{equation}
+	q^2+y\cdot q+\alpha=(q+y/2)^2+\alpha-y^2/4.
+	\end{equation}
+	Noting that $ \alpha-y^2/4>0 $ and the simple inequality for symmetric-decreasing rearrangements\begin{equation}
+	\int fg\leq\int f^*g^*,
+	\end{equation}
+	where $ f^* $ denotes the symmetric-decreasing rearrangement of $ f $ (\cite{lieb2001analysis} Section 3.3 and 3.4). To see this notice that if $ f $ is itself symmetric and decreasing, then $ f^*=f $, on the other hand if we define $ f_t(x):=f(x-t) $ then $ f_t^*=f^*=f $. Since $ \mathbbm{1}_{B_R(0)} $ is symmetric and decreasing and $ \frac{1}{q^2+\alpha-y^2/4} $ also is symmetric-decreasing it follows that \begin{equation}
+	\int_{B_R(0)}\diff q \frac{1}{q^2+q\cdot y+\alpha}=\int_{B_R(0)}\diff q \frac{1}{(q+y/2)^2+\alpha-y^2/4}\leq\int_{B_R(0)}\diff q \frac{1}{q^2+\alpha-y^2/4}\leq4\pi R.
+	\end{equation}
+\end{proof}
+\begin{proof}[Proof 2]
 	We notice first that $ L^0(\bar{k}^N)=0 $ furthermore, \begin{equation}
 	L^R(\bar{k}^N)\to2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2},
 	\end{equation} pointwise as $ R\to\infty $. Hence, for any $ \bar{k}^N\in\R^{3(N-1)} $ we can find $ \tilde{R}\geq0 $ such that $ L^R(\bar{k}^N)\geq0 $ for all $ R>\tilde{R} $. Now let us analyse $ L^R $ at any finite $ R $. Since\begin{equation}
@@ -1423,6 +1434,7 @@ F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
 \end{equation}
 	\end{proof}
 	\textbf{Remark:} It is worth pointing out that we actually circumvent showing that $ T^n_{\text{diag}/\text{off}}(\xi^n)\to T_{\text{diag}/\text{off}}(\xi) $. Although this might be true, showing it probably requires (it would at least be sufficient) that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)}) $, which we have not been able to show. However, $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ suffices in showing convergence of $ F_\alpha^n(u_n) $ as can be seen from the proof above.\\
+\subsection*{Lower bound}
 	\textbf{Next step:}
 Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $.\\
 Since we have reduced the problem to working with $ F^R_\alpha $ at finite $ R $. It is convenient to use the expression for $ F_\alpha^R $ given in \eqref{F at Finite R}
@@ -1463,7 +1475,7 @@ F_\alpha^n(u^n)
 =\int\diff k \hat{G}(k)^{-1}\abs{\hat{w}+(\hat{\zeta}^n-\hat{\rho}^n)\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
 \end{aligned}
 \end{equation}
-With $ \xi^n(\bar{k}^i)=\frac{(-1)^{i-1}}{4\pi n+\alpha}\int_{B_n(0)}\diff k_i\hat{u}_n(k)=\frac{(-1)^{i-1}}{4\pi n+\alpha}\int_{B_n(0)}\diff k_i \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\xi^n(\bar{k}^i) $. Knowing that \begin{equation}
+With $ \xi^n(\bar{k}^N)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N\hat{u}_n(k)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\xi^n(\bar{k}^i) $. Knowing that \begin{equation}
 L^n(\bar{k}^N)\geq\pi\sqrt{4\beta-y^2}\left(\arctan\left(\frac{2n-\abs{y}}{\sqrt{4\beta-y^2}}\right)+\arctan\left(\frac{2n+\abs{y}}{\sqrt{4\beta-y^2}}\right)\right),
 \end{equation}
 where $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \beta=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $ (see the proof of lemma \ref{LemmaLgreater0}). On the other hand we also have \begin{equation}
@@ -1486,8 +1498,29 @@ Notice that $ l $ has no maximum in $ x $ if $ \gamma\geq 2 $ since \begin{equat
 where we used the inequality $ \ln(1+x)\geq\frac{x}{\sqrt{1+x}} $ for $ x\geq0 $. And for $ \gamma\geq2 $ we have \begin{equation}
 2-x\frac{\frac{2x}{x(x-1)+\gamma/4}}{\sqrt{1+\frac{2x}{x(x-1)+\gamma/4}}}>0.
 \end{equation} 
-Numerics suggest that $ l(x,\gamma) $ has no maximum in $ x $ for  $ \gamma\geq4/3 $. The following result will be useful\begin{lemma}\label{LemmaLConcave}
-	Let $ L^R(y,\alpha) $ be defined as in lemma \ref{LemmaLEvaluation}, where $ y $ and $ \beta $ are defined as above, and let $ \gamma=4\beta/y^2 $. Then $ L^R $ is a concave function of $ R $ whenever $ \gamma\geq4/3 $ (Analytic proof for $ \gamma\geq2 $, numerics suggest for $ \gamma\geq4/3 $) On the other hand $ L^R(y,\beta) $ is a concave function of $ R $ for any $ \gamma>1 $ and $ R\leq y/2 $.
+Numerics suggest that $ l(x,\gamma) $ has no maximum in $ x $ for  $ \gamma\geq4/3 $. The following results will be useful
+\begin{lemma}
+	Let $ \beta $ and $ y $ be defined as above, and define $ \gamma=4\beta/y^2 $. Then\begin{equation}
+	\gamma=(m+1)+\frac{m(m+1)\sum_{i=1}^{N-1}k_i^2+(m+1)^2\mu}{\left(\sum_{i=1}^{N-1}k_i\right)^2}.
+	\end{equation} In particular $ \gamma\geq m+1+\frac{m(m+1)}{N-1}>1+m $
+\end{lemma}
+\begin{proof}
+	We immediately have \begin{equation}
+	4\beta=4\sum_{i=1}^{N}k_i^2+4\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+4\mu,
+	\end{equation}
+	and \begin{equation}
+	(m+1)y^2=\frac{4}{m+1}\sum_{i=1}^{N-1}k_i^2+4\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j.
+	\end{equation}
+	Thus we find \begin{equation}
+	4\beta-(m+1)y^2=\frac{4m}{m+1}\sum_{i=1}^{N-1}k_i^2+4\mu,
+	\end{equation}
+	which is equivalent to \begin{equation}
+	\frac{4\beta}{y^2}=(m+1)+\frac{m(m+1)\sum_{i=1}^{N-1}k_i^2+(m+1)^2\mu}{\left(\sum_{i=1}^{N-1}k_i\right)^2}\geq m+1+\frac{m(m+1)}{N-1}>m+1
+	\end{equation}
+	where we in the first inequality used that $ \frac{m(m+1)\sum_{i=1}^{N-1}k_i^2+(m+1)^2\mu}{\left(\sum_{i=1}^{N-1}k_i\right)^2} $ attain its minimum when all $ k_i $ are equal, and their magnitude to to infinity.
+\end{proof}
+\begin{lemma}\label{LemmaLConcave}
+	Let $ L^R(y,\beta) $ be defined as in lemma \ref{LemmaLEvaluation}, where $ y $ and $ \beta $ are defined as above, and let $ \gamma=4\beta/y^2 $. Then $ L^R $ is a concave function of $ R $ whenever $ \gamma\geq4/3 $ (Analytic proof for $ \gamma\geq2 $, numerics suggest for $ \gamma\geq4/3 $). On the other hand $ L^R(y,\beta) $ is a concave function of $ R $ for any $ \gamma>1 $ and $ R\leq y/2 $.
 \end{lemma}
 \begin{proof}
 	This follows from the simple calculation of the second derivative\begin{equation}
@@ -1516,9 +1549,63 @@ We now generalize the proof of Moser and Seiringer \cite{Moser_2017}.....\\
 T^n_{\text{diag}}(\xi^n)&=\int\diff\bar{k}^N L^n(\bar{k}^N)\abs{\xi^n(\bar{k}^N)}^2,\\ T^n_{\text{off}}(\xi^n)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_n(0)}\diff s\int_{B_n(0)}\diff t\overline{\xi^n(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^n(t,\bar{q})
 \end{aligned}
 \end{equation}
-Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $. Furthermore, we have\\ $ T^n_{\text{off}}(\xi^n)=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\phi^n(s,\bar{q})}\hat{J}^n(s,t,\bar{q})\phi^n(t,\bar{q}) $, with\\ $ \hat{J}^n(s,t,\bar{q})=\mathbbm{1}_{B_n(0)}(s)\mathbbm{1}_{B_n(0)}(t)\frac{1}{\sqrt{L^n(s,\bar{q})}}\hat{G}(s,t,\bar{q})\frac{1}{\sqrt{L^n(t,\bar{q})}} $\\
-\textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not. exists for $ m>\frac{4\beta}{y^2}-1>1/3 $.
+Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $. Furthermore, we have\\ $ T^n_{\text{off}}(\xi^n)=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\phi^n(s,\bar{q})}\hat{J}^n(s,t,\bar{q})\phi^n(t,\bar{q}) $, with\\ $ \hat{J}^n(s,t,\bar{q})=\mathbbm{1}_{B_n(0)}(s)\mathbbm{1}_{B_n(0)}(t)\frac{1}{\sqrt{L^n(s,\bar{q})}}\hat{G}(s,t,\bar{q})\frac{1}{\sqrt{L^n(t,\bar{q})}} $.
 
+
+\textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not exists for $ m>\frac{4\beta}{y^2}-1>1/3 $. At least there is no maximum for $ \frac{4\beta}{y^2}-1\geq0.33334 $ and there is a maximum for $ \frac{4\beta}{y^2}-1\leq0.33333 $. 
+\vspace{0.5cm}
+\\
+\begin{lemma}
+	Let $ (u_n)_{n\in\mathbb{N}}\subset\dom{F_\alpha^n}=H^1(\R^{3N}) $ such that $ u_n\to u\in\dom{F_\alpha} $ in $ L^2(\R^{3N}) $ then \begin{equation}
+	\liminf_{n\to\infty}F_\alpha^n(u_n/n)\geq 0
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Remember that \begin{equation}
+	F_\alpha^n(u_n/n)=\frac{1}{n^2}\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n(k)}^2-\frac{1}{n^2}\mu\norm{u_n}_2^2-\frac{1}{n^2}\frac{1}{4\pi n+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_n(0)}\diff k_i\hat{u}_n(k)\right\rvert^2.
+	\end{equation}
+	Thus we see that $ \liminf_{n\to\infty}F_\alpha^n(u_n/n)\geq\liminf_{n\to\infty}\left(-\frac{1}{n^2}\frac{1}{4\pi n+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_n(0)}\diff k_i\hat{u}_n(k)\right\rvert^2\right) $. By Cauchy-Schwartz it follows that \begin{equation}
+	\liminf_{n\to\infty}F_\alpha^n(u_n/n)\geq-\liminf_{n\to\infty}\left(N\frac{4/3\pi n^3}{n^2(4\pi n +\alpha)}\norm{u_n}^2_2\right)\geq-\frac{N}{3}\norm{u}_2^2.
+	\end{equation}
+	By possibly passing to a subsequence we may assume that \begin{equation}
+	\lim_{n\to\infty}F_\alpha^n(u_n/n)=\liminf_{n\to\infty}F_\alpha^n(u_n/n).
+	\end{equation}Thus we immediately see that either $ \liminf_{n\to\infty}F_\alpha^n(u_n/n)=\infty $ or $ u_n/n $ is $ H^1(\R^{3N}) $ norm bounded. In the first case we are done. Therefore assume that $ \norm{u_n/n}_{H^1(\R^{3N})} $ is bounded. Then we know that there by possibly passing to a subsequence that $ u_n/n\rightharpoonup\chi $ in $ H_1(\R^{3N}) $. But then $ u_n/n\rightharpoonup\chi $ in $ L^2(\R^{3N}) $ but we already know that $ u_n/n\rightharpoonup0 $ in $ L^2(\R^{3N}) $ so we conclude that $ \chi=0 $. Now write $ \hat{u}=\hat{w}+\hat{\rho}\hat{G} $ with $ w\in H^1(\R^{3N}) $ and $ \hat{\rho}=\sum_{i=1}^{N}(-1)^{(i-1)}\xi(\bar{k}^i) $, and $ \xi\in H^{1/2}(\R^{3(N-1)}) $ then we may write $ \hat{u}_n=\hat{w}+\hat{\zeta}^n\hat{G} $, where $ \zeta^n\to\rho $ in $ H^{-2}(\R^{3N}) $. Then we have $ \left(\hat{\zeta}^n\hat{G}/n\right)^\vee\rightharpoonup0 $ in $ H^1(\R^{3N}) $ or equivalently $ \zeta^n/n\rightharpoonup0 $ in $ H^{-1}(\R^{3N}) $ then we have\begin{equation}
+	\begin{aligned}
+	F_\alpha^n(u^n/n)
+	=\frac{1}{n^2}\int\diff k \hat{G}(k)^{-1}\abs{\hat{w}+(\hat{\zeta}^n-\hat{\rho}^n)\hat{G}}^2-\mu\norm{u_n/n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
+	\end{aligned}
+	\end{equation}
+	With $ \xi^n(\bar{k}^N)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N\hat{u}_n(k)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^i) $. NOT FINISHED
+\end{proof}
+\section{The $ 2+1 $ case}
+We will in this section study the $ 2+1 $ case. This will serve mostly as a transition from $ 1+1 $ to $ N+1 $, as this case is simpler than $ N+1 $ but indeed already shows many of the difficulties of the $ N+1 $ case such as a mass-region of instability. The quadratic forms of interest are just special cases of the $ N+1 $ forms and can be summarized as follows: At finite radius of the rank-one perturbations the quadratic forms can be written as\begin{equation}
+F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{2}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2,
+\end{equation}
+with domain \begin{equation}
+\dom{F_\alpha^R}=H^1(\R^6).
+\end{equation}
+Equivalently they can be written
+\begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}\\&\quad+2\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3})}^2\right),
+\end{aligned}
+\end{equation}
+where $ \xi^R(k_1)=\frac{1}{4\pi R+\alpha}\int_{B_R(0)}\diff k_2 \hat{u}(k_1,k_2) $ and \begin{equation}
+\begin{aligned}
+T^R_{\text{diag}}(\xi^R)&=\int\diff k_1 L^R(k_1)\abs{\xi^R(k_1)}^2,\\ T^R_{\text{off}}(\xi^R)&=\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t\overline{\xi^R(s)}\hat{G}(s,t)\xi^R(t),\\
+L^R(k_1)=&2\pi \Bigg[R-\frac{(2R^2+(2-4/(m+1)^2)k^2+2\mu)}{16k^2/(m+1)^2}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\\
+&\qquad+\frac{1}{2}\sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\Bigg]\\
+\hat{G}(s,t)&=\left(s^2+t^2+\frac{2}{m+1}s\cdot t+\mu\right)^{-1}.
+\end{aligned}
+\end{equation}
+$ \alpha=k^2+\mu $, $ y=\frac{2}{m+1}k $
+
+ The limit quadratic form can be written 
+\begin{equation}
+\begin{aligned}
+F_\alpha(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}\\&\quad+2\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3})}^2\right),
+\end{aligned}
+\end{equation}
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
