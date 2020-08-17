@@ -1,0 +1,51 @@
+ \newcommand{\noop}[1]{}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{albeverio2012solvable}
+S.~Albeverio, F.~Gesztesy, R.~Hoegh-Krohn, and H.~Holden, \emph{Solvable models
+  in quantum mechanics}, Theoretical and Mathematical Physics, Springer Berlin
+  Heidelberg, 2012.
+
+\bibitem{FINCO2012131}
+Domenico Finco and Alessandro Teta, \emph{Quadratic forms for the fermionic
+  unitary gas model}, Reports on Mathematical Physics \textbf{69} (2012),
+  no.~2, 131 -- 159.
+
+\bibitem{Folland}
+Gerald~B. Folland, \emph{Real analysis:}, 2nd ed. ed., Wiley,, New York:, 1999.
+
+\bibitem{grubb2008distributions}
+G.~Grubb, \emph{Distributions and operators}, Graduate Texts in Mathematics,
+  Springer New York, 2008.
+
+\bibitem{lieb2001analysis}
+E.H. Lieb, M.~Loss, M.A. LOSS, and American~Mathematical Society,
+  \emph{Analysis}, Crm Proceedings \& Lecture Notes, American Mathematical
+  Society, 2001.
+
+\bibitem{maso1993introduction}
+G.D. Maso, \emph{An introduction to [gamma]-convergence}, Progress in nonlinear
+  differential equations and their applications, Birkh{\"a}user, 1993.
+
+\bibitem{Moser_2017}
+Thomas Moser and Robert Seiringer, \emph{Stability of a fermionic n + 1
+  particle system with point interactions}, Communications in Mathematical
+  Physics \textbf{356} (2017), no.~1, 329–355.
+
+\bibitem{Qi_2009}
+Feng Qi, Shi-Qin Zhang, and Bai-Ni Guo, \emph{Sharpening and generalizations of
+  shafer’s inequality for the arc tangent function}, Journal of Inequalities
+  and Applications \textbf{2009} (2009), no.~1, 930294.
+
+\bibitem{JPS_lecturenotes}
+J.~P. Solovej, \emph{Rigorous stability theory of quantum mechanics},
+  unpublished, 1997.
+
+\end{thebibliography}

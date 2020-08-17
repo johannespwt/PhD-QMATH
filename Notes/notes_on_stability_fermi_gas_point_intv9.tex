@@ -1,0 +1,1790 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\numberwithin{equation}{section}
+\linespread{1.3}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Notes on stability of the Fermi gas with point interactions}
+\lhead{Johannes Agerskov}
+\rfoot{\thepage}
+\lfoot{Dated: \today}
+\author{Johannes Agerskov}
+\date{Dated: \today}
+\title{Notes on stability of the Fermi gas with point interactions}
+\begin{document}
+
+	\maketitle
+	\tableofcontents
+\vspace{1cm}
+We study in these notes the Fermi gas, \ie a many-body system of spin-$ \frac{1}{2} $ fermions or more generally just two species of fermions. The specific gas we study is interacting \emph{via.} point interactions \emph{or} zero-range interactions. We will restrict to the case where the two species can have different mass, but all fermions in one species have equal mass. The relevant quantity in this case is the relative mass of the two. Thus by setting the mass of one species to 1 and the mass of the other to $ m $ we have en mass-ratio of $ m $. Formally the system we are studying can thus be described by the Hamiltonian \begin{equation}\label{Formal Hamiltonian}
+H=-\frac{1}{2m}\sum_{j=1}^{M}\Delta_{y_j}-\frac{1}{2}\sum_{i=1}^{N}\Delta_{x_i}+\gamma\sum_{i=1}^{N}\sum_{j=1}^{M}\delta(x_i-y_j),
+\end{equation}
+where $ x_i\in\mathbb{R}^3 $ for all $ i\in\{1,...,N\} $ and $ y_j\in\mathbb{R}^3 $ for all $ j\in\{1,...,M\} $. Notice that we also restrict to the case of equal coupling between all particles. These formally defined Hamiltonians are clearly ill-defined as the $ \delta $-function is a  temperate distribution and thus is only defined on the Schwartz functions. However, restricting the domain to the Schwartz functions will not make the Laplacians self-adjoint. Furthermore, the codomain of $ \delta $ is not in $ L^2(\mathbb{R}^{3(N+M)}) $. Thus no self-adjoint operator on $ L^2(\R^{3(N+M)}) $ of this form exists.
+As a quadratic form $ \braket{\psi|H\psi} $ might make sense. Since the $ \delta $-function can be made to makes sense only on continuous functions, there exist no sensible domain of this quadratic form such that it is closed. If such a domain existed the Laplacians would be closed on it, however, this is only true for $ H^1(\mathbb{R}^3) $ which contains non-continuous functions (defined a.e.), making the $ \delta $-functions ill-defined.
+
+One way of rigorously studying such formal Hamiltonians is to consider self-adjoint extensions of more well defined Hamiltonians. While this approach is very successful in the $ N=M=1 $ case, it becomes increasingly difficult as the number of self-adjoint extension become infinite already at the $ N=2 $ and $ M=1 $ case.  
+In \cite{FINCO2012131} quadratic forms where developed in order to describe systems of the form \eqref{Formal Hamiltonian}. These quadratic forms are generally more well defined, however their origin and connection to the formal Hamiltonian might be obscured as they need regularization and renormalization procedures to make sense of the point interactions. We will in these notes aim to construct the quadratic form corresponding to the formal expression in \eqref{Formal Hamiltonian}, and show that they can be reaches by considering a sequence of rank one perturbations. We aim at showing that operators corresponding to these rank one perturbations actually converge, in the strong resolvent sense, to the operator of the quadratic form given by \cite{FINCO2012131}. Furthermore, it is our hope that this will shed light on the stability of these systems which has only been shown the cases of  $ (N,M)=(N,1) $ and $ (N,M)=(2,2) $.
+We start out by considering the simpler case which is $ (N,M)=(N,1) $ also denoted the $ N+1 $ case.
+\section{Formal Hamiltonian for the $ N+1 $ case}
+The formal Hamiltonian of \eqref{Formal Hamiltonian} can be rewritten in the $ N+1 $ case by separating the centre of mass. Notice that this indeed already restricts the set of possible self-adjoint Hamiltonians mimicking \eqref{Formal Hamiltonian} as this asserts the translational invariance of the Hamiltonian. Thus this separation of the centre of mass restricts to couplings that are independent of the centre of mass coordinate. Defining the centre of mass and the relative coordinates by\begin{equation}
+X=\frac{my+\sum_{i=1}^{N}x_i}{m+N}, \quad \tilde{x}_i=x_i-y,
+\end{equation}
+we obtain that \begin{equation}\begin{aligned}
+\Delta_{x_i}=\sum_{j=1}^{3}\dd_{x^j_i}\dd_{x^j_i}=\sum_{j=1}^{3}\left(\frac{\dd X^j}{\dd x^j_{i}}\dd_{X^j}+\frac{\dd \tilde{x_i}^j}{\dd x_i^j}\dd_{\tilde{x}_i^j}\right)\left(\frac{\dd X^j}{\dd x^j_{i}}\dd_{X^j}+\frac{\dd \tilde{x_i}^j}{\dd x_i^j}\dd_{\tilde{x}_i^j}\right)\\
+=\frac{1}{(m+N)^2}\Delta_{X}+\Delta_{\tilde{x}_i}+\frac{2}{m+N}\nabla_X\cdot\nabla_{\tilde{x}_i},
+\end{aligned}
+\end{equation}
+\begin{equation}\begin{aligned}
+\Delta_{y}=\sum_{j=1}^{3}\dd_{y^j}\dd_{y^j}=\sum_{j=1}^{3}\left(\frac{\dd X^j}{\dd y^j}\dd_{X^j}+\sum_{i=1}^{N}\frac{\dd \tilde{x_i}^j}{\dd y^j}\dd_{\tilde{x}_i^j}\right)\left(\frac{\dd X^j}{\dd y^j}\dd_{X^j}+\sum_{i=1}^{N}\frac{\dd \tilde{x_i}^j}{\dd y^j}\dd_{\tilde{x}_i^j}\right)\\
+=\frac{m^2}{(m+N)^2}\Delta_{X}+\sum_{i=1}^{N}\Delta_{\tilde{x}_i}+2\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}\nabla_{\tilde{x}_i}\cdot\nabla_{\tilde{x}_j}-\frac{2m}{m+N}\sum_{i=1}^{N}\nabla_X\cdot\nabla_{\tilde{x}_i}.
+\end{aligned}
+\end{equation}
+Thus we get the Hamiltonian \begin{equation}
+H=-\frac{1}{2(m+N)}\Delta_X-\frac{m+1}{2m}\sum_{i=1}^{N}\Delta_{\tilde{x}_i}-\frac{2}{2m}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}\nabla_{\tilde{x}_i}\cdot\nabla_{\tilde{x}_j}+\gamma\sum_{i=1}^{N}\delta(\tilde{x}_i),
+\end{equation}
+which can be recast as \begin{equation}
+H=H_{\text{CM}}+\frac{m+1}{2m}H_{\text{rel}},
+\end{equation}
+with $ H_{\text{CM}}=-\frac{1}{2(m+N)}\Delta_X $ the free centre of mass and the relative Hamiltonian given by \begin{equation}\label{Relative Hamiltonian}
+H_{\text{rel}}=-\sum_{i=1}^{N}\Delta_{\tilde{x}_i}-\frac{2}{m+1}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}\nabla_{\tilde{x}_i}\cdot\nabla_{\tilde{x}_j}+\tilde{\gamma}\sum_{i=1}^{N}\delta(\tilde{x}_i),
+\end{equation}
+where $ \tilde{\gamma}=\frac{2m}{m+1}\gamma $. Notice that the problem has now been split in two independent parts and thus we recognize the centre of mass part as the free particle which is solved by the Laplacian being essentially self adjoint on $ C^\infty_c(\mathbb{R}^3) $ functions with self-adjoint extension $ \Delta $ on $ H^2(\mathbb{R}^3) $ where $ \Delta $ acts in the distributional sense. The relative Hamiltonian on the other hand will be the main focus in the first part of these notes.
+\section{The $ 1+1 $ case}
+We are now going to study different ways of rigorously defining the relative Hamiltonian \eqref{Relative Hamiltonian} in the case of $ N=1 $. The first method is easily implemented for $ N=1 $ but is hard to generalize.
+\subsection{Self-adjoint extension}
+The first method we are going to study is that of self-adjoint extension. We thus restrict the formal Hamiltonian to a domain in which it is well defined. This could for example be $ C_c^\infty(\mathbb{R}^3\setminus\{0\}) $. Notice since we have removed $ \{0\} $ the $ \delta $-function has no support on this space and thus vanish. Therefore, we have the relative Hamiltonian \begin{equation}
+H_{\text{rel}}=-\Delta\rvert_{C_c^\infty(\mathbb{R}^3\setminus\{0\})}.
+\end{equation}
+We now seek to extend this operator to a self-adjoint operator on a larger domain. This is possible since $ H_{\text{rel}} $ is symmetric and its closure, denoted $ \dot{H}_{\text{rel}} $ have deficiency indices $ K_+=K_-=1 $, with $ K_\pm=\dim\text{Ran}(H_{\text{rel}}\pm iI)^\perp=\dim\ker(H_{\text{rel}}^*\mp iI) $ where $ H_{\text{rel}}^* $ denotes the adjoint of $ H_{\text{rel}} $. \\
+By definition on the adjoint we have that $ \dom{H_{\text{rel}}^*}=\{f\in L^2(\R^3)\rvert \braket{f|H_{\text{rel}}\cdot} \text{ is bounded on }\dom{H_{\text{rel}}}\} $, where the adjoint of the Laplacian acts as the Laplacian in the distributional sense. We determine first the closure of $ H_{\text{rel}} $. This can be done by taking the adjoint twice. Notice that the domain of the adjoint is $ \dom{H_{\text{rel}}^*}=\{f\in L^2(\R^3)\rvert \braket{f|\Delta\cdot} \text{ is bounded on }C_c^\infty(\R^3\setminus\{0\})\} $. This can be directly calculated to be \begin{equation}
+\dom{H_{\text{rel}}^*}=\{f\in H^{2,\text{loc}}(\R^3\setminus\{0\})\cap L^2(\R^3)\rvert \Delta f \in L^2(\R^3)\}
+\end{equation}
+We emphasise that all elements in $ \dom{H_{\text{rel}}^*} $ should be viewed as distributions in $ H^{2,\text{loc}}(\R^3\setminus\{0\}) $. Therefore the requirement $ \Delta f\in L^2(\R^3) $ does not simply restrict the domain to be $ H^2(\R^3) $ as elements or their derivative (up to second order) can have singular behaviour at $ 0 $, e.g. $ \delta $-functions.
+ Notice that $ C_c^\infty(\mathbb{R}^3\setminus\{0\}) $ is dense in $ L^2(\mathbb{R}^3\setminus\{0\})=L^2(\R^3) $ (only defined a.e).  The domain of the double adjoint is then given by \begin{equation}\begin{aligned}
+\dom{H_{\text{rel}}^{**}}&=\{f\in L^2(\R^3)\rvert \braket{H_{\text{rel}}^*\cdot|f} \text{ is bounded on }\dom{H_{\text{rel}}^*}\}=H^2_0(\R^3\setminus\{0\}),
+\end{aligned}
+\end{equation} 
+where $ \Delta $ acts in the distributional sense and we have defined\begin{equation}
+H^2_0(\R^3\setminus\{0\})=\left\{u\in L^2(\R^3)\ \big\rvert\ \Delta u\in L^2(\R^3)\text{ and } u(x)\to0\wedge\nabla u(x)\to0 \text{ for } |x|\to0\vee |x|\to\infty\right\}.
+\end{equation} Thus we have \begin{equation}
+\dot{H}_{\text{rel}}=-\Delta,\qquad \dom{\dot{H}_{\text{rel}}}=H^2_0(\R^3\setminus\{0\}).
+\end{equation}
+The adjoint of $ \dot{H}_{\text{rel}} $ is simply given by $ \dot{H}_{\text{rel}}^*=H_{\text{rel}}^* $, as the adjoint is already closed. Thus we are ready to find all self-adjoint extensions of $ H_{\text{rel}} $. By the Krein theorem there exist self-adjoint extension if and only if $ \dim\left(\Ran{H_{\text{rel}}-iI}^\perp\right)=\dim\left(\Ran{H_{\text{rel}}+iI}^\perp\right) $ or equivalently $ \dim\left(\ker{\left(H^*_{\text{rel}}+iI\right)}\right)=\dim\left(\ker{\left(H^*_{\text{rel}}-iI\right)}\right) $ thus we seek solutions of the equation \begin{equation}
+H_{\text{rel}}^*\psi_\pm=\pm i \psi_\pm,\quad \psi_\pm\in\dom{H_{\text{rel}}^*}.
+\end{equation}
+The equation $ -\Delta \psi_\pm=\pm i \psi_\pm $ has the unique solution \begin{equation}
+\psi(x)_\pm=\frac{\euler{ i\sqrt{\pm i}|x-y|}}{|x-y|},\qquad x\in\R^3\setminus\{y\}.
+\end{equation}
+In order for this function to be in the domain of $ H_{\text{rel}}^*$ we need to choose $ y=0 $.
+Thus we see that $ \dim\left(\ker{\left(H^*_{\text{rel}}+iI\right)}\right)=\dim\left(\ker{\left(H^*_{\text{rel}}-iI\right)}\right)=1 $. By Krein's extension theorem for symmetric operators we have that there exist a one-parameter family of self-adjoint extensions of $ H_{\text{rel}} $. Parametrizing the family by a complex phase we have the extensions \begin{equation}
+\dom{H_{\text{rel},\theta}}=\left\{ h+c(\xi_++\euler{i\theta}\xi_-)\Big\rvert h\in\dom{\dot{H}_{\text{rel}}},\ c\in\C \right\},
+\end{equation}
+where $ \theta\in[0,2\pi) $, $ \xi_+\in \ker\left(H_{\text{rel}}^*-iI\right),\xi_-\in \ker\left(H_{\text{rel}}^*+iI\right) $ are fixed with $ \|\xi_+\|=\|\xi_-\|=1 $, and where \begin{equation}
+H_{\text{rel},\theta}(h+c(\xi_++\euler{i\theta}\xi_-))=H_{\text{rel}}^*(h+c(\xi_++\euler{i\theta}\xi_-))=h+ic(\xi_+-\euler{i\theta}\xi_-).
+\end{equation}
+Following the methods of \cite{albeverio2012solvable}, we however now that there is another characterization of these extensions. By decomposing the Hilbert space into spherical coordinates we obtain the decomposition \begin{equation}
+L^2(\R^3,d^3x)=L^2((0,\infty),r^2dr)\otimes L^2(S^2,d\Omega).
+\end{equation}
+Furthermore by decomposing into spherical harmonics we have \begin{equation}
+L^2(\R^3,d^3x)=\bigoplus_{l=0}^{\infty}L^2((0,\infty),r^2dr)\otimes \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l}.
+\end{equation}
+Now using the unitary transformation $ U:L^2((0,\infty),r^2dr)\to L^2((0,\infty),dr) $, defined by\\ $ Uf(r)=rf(r) $
+\begin{equation}
+L^2(\R^3,d^3x)=\bigoplus_{l=1}^{\infty}U^{-1}L^2((0,\infty),dr)\otimes \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l},
+\end{equation}
+where $ \braket{...} $ denotes the span. Using the Laplacian in spherical coordinates \begin{equation}
+\Delta\phi=\frac{1}{\sqrt{g}}\partial_i(\sqrt{g}g^{ij}\partial_j(\phi))=\frac{1}{r}\frac{\partial^2}{\partial r^2}(r\phi)+\frac{1}{r^2\sin\varphi}\frac{\partial}{\partial\varphi}(\sin\varphi\frac{\partial\phi}{\partial\varphi})+\frac{1}{r^2\sin^2\varphi}\frac{\partial^2\phi}{\partial^2\theta},
+\end{equation} with the usual notation $ g_{ij} $ the metric, $ g^{ij} $ the inverse metric, $ g=\det(g_{ij}) $ and where $ \theta $ denotes the azimuthal angle and $ \varphi $ the zenith angle, it is straightforward to show that\begin{equation}
+\dot{H}_{\text{rel}}=\bigoplus_{l=0}^{\infty}U^{-1}h_lU\otimes\text{Id}_{l}
+\end{equation}
+with $ \text{Id}_\ell $ being the identity on $ \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l} $. Here we have defined \begin{equation}
+h_l=-\frac{d^2}{dr^2}+\frac{l(l+1)}{r^2}
+\end{equation}
+with the domains\begin{equation}
+\begin{aligned}\dom{h_0}=\left\{u\in L^2((0,\infty),dr)|u,u'\in\text{AC}_{\text{loc}}(0,\infty),u''\in L^2((0,\infty),dr), u(0_+)=0, u'(0_+)=0\right\}
+\end{aligned}
+\end{equation}
+\begin{equation}
+\begin{aligned}
+\dom{h_l}=\left\{u\in L^2((0,\infty),dr)|u,u'\in\text{AC}_{\text{loc}}(0,\infty),-u''+l(l+1)r^{-2}u\in L^2((0,\infty),dr)\right\},\quad l\geq 1
+\end{aligned}
+\end{equation}
+Here $ \text{AC}(0,\infty) $ denotes the absolutely continuous functions on $ (0,\infty) $, and $ \text{AC}_{\text{loc}}(0,\infty) $ denotes the locally absolutely continuous functions, \ie AC on all compact intervals. Notice that for $ l\geq1 $ the boundary conditions $ u(0_+)=0, u'(0_+)=0 $ are automatically satisfied by the requirement $ -u''+l(l+1)r^{-2}u\in L^2((0,\infty),dr) $ and continuity of $ u $.
+According to \cite{albeverio2012solvable}, it is a standard result that $ h_l $ is self-adjoint for $ l\geq1 $. However, it is not hard to see that $ h_0 $ has deficiency indices (1,1) and thus admits a one-parameter family of self-adjoint extensions. These extensions can all be characterized in terms of their self-adjoint boundary condition and are given by \begin{equation}
+h_{0,\alpha}=-\frac{d^2}{dr^2},
+\end{equation}
+with domain \begin{equation}
+\begin{aligned}
+\dom{h_0}=\left\{u\in L^2((0,\infty),dr)|u,u'\in\text{AC}_{\text{loc}}(0,\infty),u''\in L^2((0,\infty),dr), -4\pi \alpha u(0_+)+u'(0_+)=0\right\},
+\end{aligned}
+\end{equation}
+with $ \alpha\in (-\infty,\infty]$. The case $ \alpha=\infty $ simply corresponds to the boundary condition $ u(0+)=0 $, which simply implies $\lim\limits_{|x|\to 0}|x|\psi(x)=0$ for all $ \psi\in\dom{H_{\text{rel}}^\infty} $. This is the usual Friedrich extension \ie $ H_{\text{rel}}^\infty=-\Delta $ with $ \dom{H_{\text{rel}}^\infty}=H^2(\R^3) $, the free particle. 
+$ \alpha $ can be related to $ \theta $ from before by a simple computation:
+Let $ f=h+c(\xi_++\euler{i\theta}\xi_-)\in \dom{H_{\text{rel},\theta}} $ with $ \xi_\pm=\frac{\euler{i\sqrt{\pm i}|x|}}{4\pi |x|}= $ then
+ \begin{equation}
+ \lim\limits_{|x|\to0}|x|f(x)=\frac{c}{4\pi}(1+\euler{i\theta}),\qquad \lim\limits_{|x|\to0}\frac{d}{d|x|}(|x|f(x))=\frac{ic}{4\pi}(\sqrt{i}+\euler{i\theta}\sqrt{-i})
+\end{equation}
+Thus we have \begin{equation}
+4\pi\alpha(1+\euler{i\theta})=i(\sqrt{i}+\euler{i\theta}\sqrt{-i})=\sqrt{i}(i-\euler{i\theta})=(\euler{i\frac{3}{4}}-\euler{i(\theta+\frac{1}{4})})
+\end{equation}
+from which it follows that \begin{equation}
+\begin{aligned}
+\alpha=\frac{(\euler{i\frac{3}{4}}-\euler{i(\theta+\frac{1}{4})})}{4\pi(1+\euler{i\theta})}=\frac{1}{4\pi}\frac{\euler{i(\theta+1)/2}(\euler{-i(\theta-\frac{1}{2})/2}-\euler{i(\theta-\frac{1}{2})/2})}{\euler{i\theta/2}(\euler{-i\theta/2}+\euler{i\theta/2})}=\frac{1}{4\pi}\frac{i(\euler{-i(\theta-\frac{1}{2})/2}-\euler{i(\theta-\frac{1}{2})/2})}{(\euler{-i\theta/2}+\euler{i\theta/2})}\\=\frac{1}{4\pi}\frac{\sin((\theta-\frac{1}{2})/2)}{\cos(\theta/2)}=\frac{1}{4\pi}\frac{-\cos(\theta/2)\sin(\frac{1}{4})+\sin(\theta/2)\cos(\frac{1}{4})}{\cos(\theta/2)}=\frac{1}{4\sqrt{2}\pi}\left(\tan(\theta/2)-1\right)\\
+\end{aligned}
+\end{equation}
+Thereby we see that $ \alpha\in \R $ for $ \theta\in[0,\pi)\cup(\pi,2\pi) $ and that $ \alpha\to\infty $ when $ \theta\uparrow\pi $. Now we study the the resolvent of these extensions i.e. $ H_{\text{rel}}^{\alpha}=U^{-1}h_{0,\alpha}U\otimes\text{Id}_{0}\oplus\left(\bigoplus_{l=1}^{\infty}U^{-1}h_lU\otimes\text{Id}_{\ell} \right) $. To do this let us briefly summarize Krein's formula. In the following $ \rho(O) $ denotes the resolvent set of the operator $ O $.
+\begin{theorem}[Krein's formula, A.2 in \cite{albeverio2012solvable}]
+	\label{Krein's formula}
+	Let $ B $ and $ C $ be self-adjoint extensions of the densely defined, closed, and symmetric operator $ A $ on the Hilbert space $ H $ with deficiency indices $ (1,1) $. Then their resolvant are related by:\begin{equation}
+	(B-z)^{-1}-(C-z)^{-1}=\lambda(z)\braket{\phi(\bar{z}),\cdot}\phi(z),\qquad z\in\C\setminus\R,
+	\end{equation}
+	where $ \lambda(z)\neq0 $ for $ z\in\rho(B)\cap\rho(C) $ and $\lambda, \phi $ may be  chosen to be analytic functions in $ z\in\rho(B)\cap\rho(C) $. In fact, $ \phi $ may be taken as \begin{equation}
+	\label{phi relation}
+	\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0),\quad z\in \rho(C)
+	\end{equation}
+	with $ \phi(z_0) $, $ z_0\in \C\setminus\R $ being a solution of \begin{equation}
+	A^*\phi(z_0)=z_0\phi(z_0),
+	\end{equation}
+	Choosing this $ \phi $, we furthermore have $ \lambda $ satisfying the equation\begin{equation}
+	\label{lambda relation}
+	\lambda(z)^{-1}=\lambda(z')^{-1}-(z-z')\braket{\phi(\bar{z}),\phi(z')},\qquad z,z'\in\rho(B)\cap\rho(C).
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	In order to prove this we remember the Krein extension theorem for densely defined, closed, symmetric operators. We have that the $ B $ and $ C $ are both of the form\begin{equation}\begin{aligned}
+	\dom{B}=\{h+c(\xi_z+\euler{i\theta}\xi_{\bar{z}})\ |\ h\in\dom{A},c\in\C\},\qquad\qquad\qquad\qquad\\
+	B(h+c(\xi_z+\euler{i\theta}\xi_{\bar{z}}))=Ah+c(z\xi_z+\euler{i\theta}\bar{z}\xi_{\bar{z}}),\qquad\qquad\qquad\Imag(z)\neq0,\quad
+	\end{aligned}
+	\end{equation}
+	and 
+	\begin{equation}\begin{aligned}
+	\dom{C}=\{h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}})\ |\ h\in\dom{A},\ c\in\C\},\qquad\qquad\qquad\qquad\\
+	C(h+c(\xi_z+\euler{i\omega}\xi_{\bar{z}}))=Ah+c(z\xi_z+\euler{i\omega}\bar{z}\xi_{\bar{z}}).\qquad\qquad\qquad\Imag(z)\neq0\quad
+	\end{aligned}
+	\end{equation}
+	where $  \xi_z\in\ker(A^*-z), \xi_{\bar{z}}\in\ker(A^*-\bar{z}), \omega\in[0,2\pi) $ and $ \theta\in[0,2\pi) $ are fixed with $ \|\xi_z\|=\|\xi_{\bar{z}}\|=1 $,
+	Now for $ z\in\rho(C) $, we know that $ (C-z) $ has full range and thus for $ x\in H $ we write $ x=(C-z)y $. Assuming that $ \Imag(z)\neq0 $ we can write $ y=h+\xi_z+\euler{i\omega}\xi_{\bar{z}}\in\dom{C} $ where we have absorbed the $ c\in\C $ into the $ \xi_z $ and $ \xi_{\bar{z}} $. Consider now \begin{equation}
+	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})-(h+\xi_z+\euler{i\omega}\xi_{\bar{z}}).
+	\end{equation}
+	Clearly $ (B-z)^{-1}(C-z)h=h $ since $ h\in\dom{A} $, and $ C $ and $ B $ are both extension of $ A $. Thus we obtain\begin{equation}
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=(B-z)^{-1}((\bar{z}-z)\euler{i\omega}\xi_{\bar{z}})-(\xi_z+\euler{i\omega}\xi_{\bar{z}}).
+	\end{equation}
+	Since we have that $ (B-z)(\xi_z+\euler{i\theta}\xi_{\bar{z}})=\euler{i\theta}(\bar{z}-z)\xi_{\bar{z}} $, with $ \xi_z+\euler{i\theta}\xi_{\bar{z}}\in\dom{B} $, we find that \begin{equation}
+	\left((B-z)^{-1}-(C-z)^{-1}\right)x=(\euler{i(\omega-\theta)}-1)\xi_{z},\qquad x=(C-z)(h+\xi_z+\euler{i\omega}\xi_{\bar{z}})=(C-z)h+(\bar{z}-z)\euler{i\omega}\xi_{\bar{z}},
+	\end{equation}
+	and we conclude \begin{equation}
+		\left((B-z)^{-1}-(C-z)^{-1}\right)x=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\xi_{\bar{z}},x}}{\|\xi_{\bar{z}}\|^2}\xi_{z}=\lambda(z,\bar{z})\braket{\phi(\bar{z}),x}\phi(z)
+	\end{equation}
+	where we have used that $ (C-z)h=(A-z)h\in\Ran{A-z}\subset\ker(A^*-\bar{z})^\perp $, and the fact that by defining $\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0) $, with $ \phi(z_0) $ being a solution of $ A^*\phi(z_0)=z_0\phi(z_0) $, we clearly have $ \phi(z)\in\ker(A^*-z) $ such that $ \phi(z)\parallel\xi_z $.\\
+%	In order to calculate $ \lambda(z,\bar{z}) $ notice that \begin{equation}
+%	\xi_z=\frac{\braket{\phi(z),\xi_z}}{\|\phi(z)\|^2}\phi(z)
+%	\end{equation}
+%	and that \begin{equation}
+%	\begin{aligned}
+%	\braket{\phi(z),\xi_z}&=\braket{\phi(z_0),\xi_z}+(\bar{z}-\bar{z}_0)\braket{\phi(z_0),(C-\bar{z})^{-1}\xi_z}\\
+%	&=\braket{\phi(z_0),\xi_z}+\frac{\bar{z}-\bar{z}_0}{z-\bar{z}}\braket{\phi(z_0),\xi_z+\euler{i\omega}\xi_{\bar{z}}}
+%	\end{aligned}
+%	\end{equation}
+%	Thus we have \begin{equation}
+%	\begin{aligned}
+%	\braket{\phi(z_0),\phi(z)}=\braket{\phi(z_0),\phi(z_0)}+(z-z_0)\braket{\phi(z_0),(C-z)^{-1}\phi(z_0)}
+%	\end{aligned}
+%	\end{equation}
+%	such that \begin{equation}
+%	\begin{aligned}
+%	\braket{\phi(z),\phi(z)}=\braket{\phi(z_0),\phi(z)}+(\bar{z}-\bar{z}_0)\braket{(C-z)^{-1}\phi(z_0),\phi(z)}\\
+%	=\braket{\phi(z_0),\phi(z)}+(\bar{z}-\bar{z}_0)\braket{\phi(z_0),(C-\bar{z})^{-1}\phi(z)}\\
+%	=\braket{\phi(z_0),\phi(z)}+\frac{(\bar{z}-\bar{z}_0)}{z-\bar{z}}\braket{\phi(z_0),\phi(z)+\euler{i\omega}\phi(\bar{z})}
+%		\end{aligned}
+%	\end{equation}
+%	So\begin{equation}
+%	\begin{aligned}
+%	(\bar{z}-z)\braket{\phi(z),\phi(z)}=(\bar{z}-z)\braket{\phi(z_0),\phi(z)}-(\bar{z}-\bar{z}_0)\left(\braket{\phi(z_0),\phi(z)}+\euler{i\omega}\braket{\phi(z_0),\phi(\bar{z})}\right)\\
+%	=(\bar{z}_0-z)\braket{\phi(z_0),\phi(z)}+(\bar{z}_0-\bar{z})\braket{\phi(z_0),\phi(\bar{z})}
+%	\end{aligned}
+%	\end{equation}
+%	\\
+	We have that $ \lambda $ is given by the formula \begin{equation}
+	\lambda(z,\bar{z})=\frac{(\euler{-i\theta}-\euler{-i\omega})}{\bar{z}-z}\frac{\braket{\phi(z)\xi_{z}}}{\braket{\phi(\bar{z}),\xi_{\bar{z}}}\|\phi(z)\|^2}
+	\end{equation}
+Notice that the above calculation is for fixed $ z $. Thus if we want to vary $ z $, we get that $ \theta $ and $ \omega $ might depend on $ z $ as we may choose $ \xi_z $ and $ \xi_{\bar{z}} $ differently at each $ z $ making a fixed $ \theta $ or $ \omega $ correspond to different extensions for  each $ z $.
+ The fact that $ \lambda $ is analytic stems from the fact that all matrix elements of the resolvents are analytic in their resolvent sets and that we have chosen $ \phi(z) $ such that $ \braket{\phi(\bar{z}),x} $ is analytic for all $ x\in H $. To show that $ \lambda $ satisfies \eqref{lambda relation} is simply a long computation and we refer to appendix \ref{Lambda calculation} for the computation. 
+%	Thus \begin{equation}\begin{aligned}
+%	\lambda(z,\bar{z})^{-1}-\lambda(z',\bar{z}')^{-1}=\frac{1}{(\euler{-i\theta}-\euler{-i\omega})}\left((\bar{z}-z)\braket{\phi(z),\phi(z)}-(\bar{z'}-z')\braket{\phi(z'),\phi(z')}\right)\\
+%	=\frac{1}{(\euler{-i\theta}-\euler{-i\omega})}\left((\bar{z}-z)[\braket{\phi(z),\phi(z)}-\braket{\phi(\bar{z}),\phi(z')}+\braket{\phi(\bar{z}),\phi(z')}]-(\bar{z'}-z')\braket{\phi(z'),\phi(z')}\right)
+%	\end{aligned}
+%	\end{equation}
+\end{proof}
+Now we have two self-adjoint extension of $ \dot{H}_{\text{rel}} $, namely $ H_{\text{rel}}^\infty $ and $ H_{\text{rel}}^{\alpha} $. It is easily verified that by imposing $ \alpha=\infty $ we obtain the Friedrich extension, given by (see above)\begin{equation}
+\dom{H_{\text{rel}}^\infty}=H^2(\R^3),\qquad H_{\text{rel}}^\infty=-\Delta.
+\end{equation}  We have already found the solution of $ H_{\text{rel}}^*\phi(z)=z\phi(z) $ (although we only found it for $ z=\pm i $) namely\begin{equation}
+\phi(z)(x)=\frac{\euler{i\sqrt{z}|x|}}{4\pi|x|},\qquad \Imag(\sqrt{z})>0,
+\end{equation}
+Furthermore it is a straightforward generalization of this result that the Green function of $ (H_{\text{rel}}^\infty-z) $, \ie the integral kernel of the resolvent $ (H_{\text{rel}}^\infty-z)^{-1} $, is then \begin{equation}
+G_z(x,x')=\frac{\euler{i\sqrt{z}|x-x'|}}{4\pi|x-x'|}.
+\end{equation}
+We immediately see that then\begin{equation}
+\braket{\phi(\bar{z}),\phi(z')}=\frac{1}{4\pi}\int_{(0,\infty)}dr\euler{i(\sqrt{z'}-\overline{\sqrt{\bar{z}}})r}=\frac{1}{4\pi}\frac{-i}{\sqrt{z}-\sqrt{z'}},\qquad \Imag(\sqrt{z'}),\Imag(\sqrt{\bar{z}})>0
+\end{equation}
+Remember that $ \overline{\sqrt{\bar{z}}}\rvert_{\Imag(\sqrt{\bar{z}})>0}=\sqrt{z}|_{\Imag(\sqrt{z})<0}=-\sqrt{z}|_{\Imag(\sqrt{z})>0} $
+so we have \begin{equation}
+\lambda(z)^{-1}-\lambda(z')^{-1}=\frac{i}{4\pi}\frac{z'-z}{\sqrt{z}+\sqrt{z'}}=\frac{i}{4\pi}(\sqrt{z'}-\sqrt{z}),\qquad \Imag(z),\Imag(z')>0
+\end{equation}
+From which it follows that $ \lambda(z)=(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1} $, for some constant $ \kappa\in\C $. Furthermore we have from Krein's formula (Theorem \ref{Krein's formula}) that \begin{equation}
+(H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}\braket{\phi(\bar{z}),\cdot}\phi(z),
+\end{equation}
+where we notice that by \eqref{phi relation} we have\begin{equation}
+\begin{aligned}
+(\dot{H}_{\text{rel}}^*-z)\phi(z)=(\dot{H}_{\text{rel}}^*-z)\phi(z_0)+(z-z_0)(\dot{H}_{\text{rel}}^*-z)(H_{\text{rel}}^\infty-z)^{-1}\phi(z_0)&\\
+=(z_0-z)\phi(z_0)+(z-z_0)\phi(z_0)=0&\qquad z\in\rho(H_{\text{rel}}^\infty)
+\end{aligned}
+\end{equation}
+where we used that $ H_{\text{rel}}^\infty $ is a restriction of $ \dot{H}_{\text{rel}}^* $ such that $ (\dot{H}_{\text{rel}}^*-z)(H_{\text{rel}}^\infty-z)^{-1}=\text{Id} $. However from this we conclude that $ \phi(z)=G_{z}(x,0)=\frac{\euler{i\sqrt{z}|x|}}{|x|}, $ $ \Imag(\sqrt{z})>0 $. Thereby we have \begin{equation}
+(H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\kappa+i\sqrt{z})^{-1}\braket{G_{\bar{z}}(\ast,0),\cdot(\ast)}G_z(\cdot,0),\qquad z\in\rho(H_{\text{rel}}^\alpha)\cap\rho(H_{\text{rel}}^\infty),
+\end{equation}
+where the $ \ast $ refers to the integrated variable in the inner product.\\
+In order to determine $ \kappa $, we perform a simple calculation. Let $ u\in\dom{h^\alpha_0} $ Then $ \frac{1}{r}uY_0^0\in\dom{H_\text{rel}^\alpha} $ and we have \begin{equation}
+(H_\text{rel}^\alpha-z)\frac{1}{r}uY_0^0=\left(-\frac{1}{r}\frac{d^2u(r)}{dr^2}-z\frac{1}{r}u(r)\right)Y^0_0
+\end{equation}
+Thus we have \begin{equation}
+\begin{aligned}
+&u(0)=\lim\limits_{r\to0}r\left((H_\text{rel}^\alpha-z)^{-1}(H_\text{rel}^\alpha-z)\frac{1}{r}u\right)(r)\\&=\lim\limits_{r\to0}r4\pi\left(\int_{(0,\infty)}drr \left(-\frac{d^2u}{dr^2}-zu\right)G_z(r,0)+(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}G_z(r,0)\int dr r\overline{G_{\bar{z}}(r,0)}\left(-\frac{d^2u}{dr^2}-zu\right)\right)
+\end{aligned}
+\end{equation}
+Notice that $ \overline{G_{\bar{z}}(r,0)}=G_z(r,0) $ and that $ r4\pi G_z(r,0)=\euler{i\sqrt{z}r} $. By partial integration twice we have
+\begin{equation}
+\int_{(0,\infty)}dr \left(-\euler{i\sqrt{z}r}\frac{d^2}{dr^2}u+u\frac{d^2}{dr^2}\euler{i\sqrt{z}r}\right)=\frac{du}{dr}(0+)-i\sqrt{z}u(0+),
+\end{equation}
+from which we get
+\begin{equation}
+u(0)=(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}\frac{1}{4\pi}\left(\frac{du}{dr}(0+)-i\sqrt{z}u(0+)\right).
+\end{equation}
+By imposing the boundary condition on $ u $ at $ 0 $ we obtain the equation for $ \kappa $\begin{equation}
+1=(\kappa-\frac{i}{4\pi}\sqrt{z})^{-1}\frac{1}{4\pi}\left(4\pi\alpha-i\sqrt{z}\right),
+\end{equation}
+Thus that $ \kappa=\alpha $ and we have the resolvent \begin{equation}
+(H_{\text{rel}}^\alpha-z)^{-1}=(H_{\text{rel}}^\infty-z)^{-1}+(\alpha-\frac{i}{4\pi}\sqrt{z})^{-1}\braket{G_{\bar{z}}(\ast,0),\cdot(\ast)}G_z(\cdot,0),
+\end{equation}
+We are now ready to study the spectrum of the the operators $ (H_{\text{rel}}^\alpha)_{\{\alpha\in(-\infty,\infty]\}} $. Clearly $ z\in\sigma(H_{\text{rel}}^\alpha) $ if $ z\in\sigma(-\Delta|_{C_c^\infty(\R^3)})=[0,\infty) $. On the other hand we see that if $ \alpha<0 $ then $ z=-(4\pi\alpha)^2\in\sigma(H_{\text{rel}}^\alpha) $. Therefore the spectrum can be characterized as\begin{equation}
+\sigma(H_{\text{rel}}^\alpha)=\begin{cases}
+[0,\infty)&\text{if }\alpha\geq0,\\
+\{-(4\pi\alpha)^2\}\cup[0,\infty)&\text{if }\alpha<0.
+\end{cases}
+\end{equation}
+It is of course an exercise to show that no other points are in the spectrum. We refer to \cite{albeverio2012solvable} for a short proof, and further classification of different parts of the spectrum, \ie point-, singular continuous-, and absolute continuous spectrum. 
+We note that for $ \alpha<0 $ the point in the spectrum $ \{-(4\pi\alpha)^2\} $ is an eigenvalue (\ie a part of the point spectrum). Furthermore, we can actually, in the $ \alpha<0 $ case, determine the eigenfunction corresponding to the eigenvalue $ -(4\pi\alpha^2) $. To do this, notice that the domain of $ H_{\text{rel}}^\alpha $ can be written as\\ $ \dom{H_{\text{rel}}^\alpha}=\{w(x)+(\alpha-\frac{i}{4\pi}k)^{-1}w(0)G_{k^2}(x,0)\ |\ w\in H^2(\R^3),\ k^2\in\rho(H_{\text{rel}}^\alpha)\} $ for $ k\in\rho(H_{\text{rel}}^\alpha)\cap(H_{\text{rel}}^\alpha) $. This follows by the fact that \begin{equation}
+\dom{H_{\text{rel}}^\alpha}=(H_{\text{rel}}^\alpha-k^2)^{-1}(H_{\text{rel}}^\infty-k^2)\dom{H_{\text{rel}}^\infty},
+\end{equation}
+where we have used that $ \braket{G_{\bar{z}}(x,0),(H_{\text{rel}}^\infty-z)w}=\braket{(H_{\text{rel}}^\infty-\bar{z})G_{\bar{z}}(x,0),w}=\braket{\delta_0,w}=w(0) $. Notice that $ w\in H^2(\R^3) $ is continuous, so $ w(0) $ makes sense. We thus have the action of $ H_{\text{rel}}^\alpha $\begin{equation}
+(H_{\text{rel}}^\alpha-k^2)(w(x)+(\alpha-\frac{i}{4\pi}k)^{-1}w(0)G_{k^2}(x,0))=(H_{\text{rel}}^\infty-k^2)w(x)=(-\Delta-k^2)w(x).
+\end{equation}
+Now notice that if we fix $ w\in H^2(\R^3) $ such that $ w(0)=1 $ and we define $ (x_n)_{(n\geq1)} $ such that $ x_n\to0 $ as $ n\to\infty $, then $ x_nw\to0 $ in $ L^2(\R^3) $. Furthermore let $ k_n^2\to-(4\pi\alpha)^2 $ such that $ \left(\alpha-ik_n/(4\pi)\right)\frac{1}{x_n}=1 $ for all $ n\geq1 $, then we have \begin{equation}
+(H_{\text{rel}}^\alpha-k_n^2)(x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2})=x_n(-\Delta-k^2)w\to 0\qquad \text{as $ n\to\infty $},
+\end{equation}
+with the notation $ G_{k^2} $ for $ G_{k^2}(x,0) $. Thus we have that \begin{equation}
+\begin{aligned}
+\lim_{n\to\infty}\left(H_{\text{rel}}^\alpha(x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2})\right)=\lim\limits_{n\to\infty}\left(k_n^2(x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2})\right)\\= -(4\pi\alpha)^2G_{-(4\pi\alpha)^2}.
+\end{aligned}
+\end{equation}
+Where we have used that $ k_n^2I\to-(4\pi\alpha)^2I $ in operator norm as $ n\to \infty $ and that $ (k_n^2I)_{(n\geq1)} $ is uniformly bounded. Furthermore, we used that $ G_{k_n^2}\to G_{-(4\pi\alpha)^2} $ in $ L^2(\R^3) $ for $ \alpha<0 $. Thus we conclude that defining $ \chi_n=x_nw+(\alpha-\frac{i}{4\pi}k_n)^{-1}x_nG_{k_n^2} $ we have that $ \left(\chi_n\right)_{(n\geq1)}\subset\dom{H_{\text{rel}}^\alpha} $ converges in $ L^2(\R^3) $ to $ G_{-(4\pi\alpha)^2} $ and that $ \left(H_{\text{rel}}^\alpha\chi_n\right)_{(n\geq1)} $ converges in $ L^2(\R^3) $ to $ -(4\pi\alpha)^2G_{-(4\pi\alpha)^2} $. By closedness of the self-adjoint operator $ H_{\text{rel}}^\alpha $ we conclude that $ G_{-(4\pi\alpha)^2}\in\dom{H_{\text{rel}}^\alpha} $ and that\begin{equation}
+H_{\text{rel}}^\alpha G_{-(4\pi\alpha)^2}=-(4\pi\alpha)^2G_{-(4\pi\alpha)^2}.
+\end{equation}
+Thus $ G_{-(4\pi\alpha)^2} $ is the eigenfunction corresponding to the bound state with energy $ -(4\pi\alpha)^2 $. We have thus constructed the Hamiltonian of the point-interaction in $ 3d $. We have seen that the parameter $ \alpha $, in some sense, controls the strength of the interaction, \ie $ \alpha=\infty $ is the free particle, and $ \alpha<0 $ is the attractive point-interaction, since it has a bound state. By doing a analysis of the scattering theory of $ H_{\text{rel}}^\alpha $ one finds that $ -4\pi\alpha=\frac{1}{a} $, where $ a $ denotes the scattering length of the interaction \cite{albeverio2012solvable}. 
+\subsection{Quadratic form}
+\label{Subsection Quadratic form}
+An alternative way of studying the point interaction is by the means of quadratic forms. In \cite{FINCO2012131}, the quadratic form, $ F_\alpha $ describing a gas of point interacting fermions was obtained. It is a well-known result that if such a quadratic form is closed and bounded from below, then the corresponding operator is a bounded from below, self-adjoint operator. On the other hand it was proven in \cite{FINCO2012131} that if the quadratic form $ F_\alpha $ is not bounded from below, then the corresponding operator is not bounded from below and self-adjoint. The quadratic form was initially introduced by means of renormalization. On the other hand it is more clearly introduced as a rank-one perturbation of the free quadratic form. We write the rank-one perturbation as $ \gamma\braket{\phi,\cdot}\phi $. Thus we imagine perturbing the Hamiltonian as $ H=H_0-\gamma\braket{\phi,\cdot}\phi $. For the point interaction we do this by simply projecting onto a ball $ B_R(0) $, \ie the ball of radius $ R $ centred at $ 0 $, in momentum space \ie\begin{equation}
+\widehat{Hu}=\widehat{H_0u}-\mathbbm{1}_{B_R(0)}\frac{\gamma}{(2\pi)^3}\int_{B_R(0)}\!\!\!\!\!\!\!\!d^3p\ \hat{u}(p)=H_0u-\mathbbm{1}_{B_R(0)}\frac{\gamma}{(2\pi)^3}\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!\!\!\! d^3p\ \hat{u}(k+p).
+\end{equation}
+Thus we obtain the quadratic form\begin{equation}
+F^R_\gamma(\hat{u})=\int_{\R^3} d^3k\ \left(\bar{\hat{u}}(k)(k^2)\hat{u}(k)-\frac{\gamma}{(2\pi)^3}\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!\!\!\! d^3p\ \bar{\hat{u}}(k) \hat{u}(k+p)\right).
+\end{equation}
+This can be rewritten in the following form\begin{equation}
+	\begin{aligned}
+	F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
+	+2\Real \int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)-\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k),
+	\end{aligned}
+\end{equation}
+where $ \mu>0 $ and we have defined
+\begin{equation}
+\begin{aligned}
+\hat{G}(k)=\frac{1}{k^2+\mu},\qquad \hat{\rho}^R(k)=\gamma_R\mathbbm{1}_{B_R(0)}(k)\int_{B_R(-k)}\!\!\!\!\!\!\!\!\!d^3p\ \hat{u}(k+p) =\mathbbm{1}_{B_R(0)}(k)\xi_R,\\
+\xi_R=\gamma_R\int_{B_R(0)} d^3p\ \hat{u}(p),\qquad\qquad\qquad\qquad\qquad\qquad
+\end{aligned}
+\end{equation}
+furthermore, $ \widehat{G\rho^R}(k)=\hat{G}(k)\hat{\rho^R}(k) $ and $ \gamma_R=\frac{\gamma}{(2\pi)^3} $, which we have allowed to depend on $ R $, since it will need to be renormalized eventually. Now straightforward calculation shows that \begin{equation}
+\begin{aligned}
+\overline{\int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)}=\int_{\R^3} d^3k\ \overline{ \bar{\hat{u}}(k)\hat{\rho}^R(k)}=\gamma_R\int_{B_R(0)} d^3k\ \hat{u}(k) \int_{B_R(0)} d^3p\ \bar{\hat{u(p)}} \\
+=\gamma_R\int_{B_R(0)} d^3k\ \bar{\hat{u}}(k) \int_{B_R(0)} d^3p\ \hat{u(p)}=\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k)=\int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k),
+\end{aligned}
+\end{equation}
+such that $ 2\Real \int_{\R^3} d^3k\ \bar{\hat{u}}(k)(k^2+\mu)\widehat{G\rho^R}(k)=2\int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k) $. Thereby we find the quadratic form\begin{equation}
+\begin{aligned}
+F_\gamma^R(u)&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}-\int_{\R^3} d^3k\ (k^2+\mu)|\widehat{G\rho^R}(k)|^2\\
+&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+ \int_{\R^3} d^3k\ \bar{\hat{u}}(k)\hat{\rho}^R(k)\\
+&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}-|\xi_R|^2\int_{B_R(0)} d^3k \hat{G}(k)
++ \gamma_R^{-1}|\xi_R|^2.
+\end{aligned}
+\end{equation}
+Now by computing the \begin{equation}
+\begin{aligned}
+\int_{B_R(0)}\hat{G}=4\pi\int_{0}^{R}dr\ \frac{r^2}{r^2+\mu}=4\pi\sqrt{\mu}\int_{0}^{R/\sqrt{\mu}}dq\ \frac{q^2}{q^2+1}=4\pi\sqrt{\mu}\left(\frac{R}{\sqrt{\mu}}-\int_{0}^{R/\sqrt{\mu}}dq\ \frac{1}{q^2+1}\right)\\=4\pi\left(R-\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right).
+\end{aligned}
+\end{equation}
+Thereby we have the quadratic form\begin{equation}
+\begin{aligned}
+F_\gamma^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{u}(k)-\widehat{G\rho^R}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}\\-|\xi_R|^2\left(4\pi R-4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)-\gamma_R^{-1}\right).
+\end{aligned}
+\end{equation}
+Since we are interested in the limit $ R\to\infty $ (corresponding to localizing the interaction to a point) we choose $ \gamma_R $ such that the divergence in $ R $ is cancelled. Choosing the coupling $ \gamma_R^{-1}=4\pi R+\alpha $ we obtain the final quadratic form\begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
+\end{aligned}
+\end{equation}
+with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $. Notice, that the domain of this quadratic form is \begin{equation}
+\dom{F_\alpha^R}=\left\{u\in L^2(\R^3)\ |\ w_R\in H^1(\R^3) \right\}
+\end{equation} Heuristically, we can take the limit $ R\to\infty $. This is done by noticing that for $ w\in H^1(\R^3) $ we have that $ \hat{w}(k)=\frac{\hat{f}(k)}{(|k|^2+1)^{\frac{1}{2}}} $ for some $ f\in L^2(\R^3) $. By H\"older's inequality $ (2,2) $ we thus see \begin{equation}
+\int_{B_R(0)} \hat{w}\leq\left(\int_{B_R(0)}\left\lvert\frac{1}{|k|^2+1}\right\rvert^2 \right)^{\frac{1}{2}}\|f\|_2\lesssim\sqrt{R}
+\end{equation}
+where by $ f(x)\lesssim g(x)$ we mean that there exist some constant $ C\in\R $ such that $ f(x)\leq Cg(x) $. Thus we see that the equation for $ \xi_R $ \begin{equation}
+\xi_R=\frac{1}{(4\pi R+\alpha)}\int_{B_R(0)}\left(\hat{w}+\widehat{G\rho^R}\right)=\frac{1}{(4\pi R+\alpha)}\int_{B_R(0)}\left(\hat{w}+\xi_R\hat{G}\right),
+\end{equation} becomes in the limit $ R\to\infty $ the equation $ \xi_R=\xi_R $. Thus any choice of $ \xi_R $ is consistent and simply let it be a free parameter $ \xi_R\to\xi\in\C $. We also see that in the limit $ R\to\infty $ we have that $ \arctan\left(R/\sqrt{\mu}\right)\to\frac{\pi}{2} $. Thus we get the quadratic form\begin{equation}
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+\end{equation}
+with domain\begin{equation}
+\dom{F_\alpha(u)}=\left\{u\in L^2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H^1(\R^3),\ \xi\in\C \right\},
+\end{equation}
+which matches the expression of \cite{Moser_2017} in the $ N=M=1 $ case. Notice that the decomposition $ u=w+\xi G $ is unique by the fact that $ G\notin H^1(\R^3) $.
+\subsection{Hamiltonian from quadratic form}
+We are in this subsection going to construct the Hamiltonian for the point interactions from the quadratic form. This will serve both as an example of how to obtain the Hamiltonian given its quadratic form, but also as a motivation that the quadratic form given in the previous section is indeed equivalent to the the self-adjoint extension $ H_{\text{rel}}^\alpha $.\\
+First we need to define a few properties of quadratic forms.\begin{definition}
+	We say a quadratic form on some Banach space $ q: \dom{q}\to\R $ is bounded from below if $ q(v)\geq-c\|v\|^2 $ for some $ c>0 $. 
+\end{definition}
+\begin{definition}
+	We say that a quadratic form, $ q:\dom{q}\to\R $, which is bounded from below, $ q(v,v)\geq-c\|v\|^2 $, is closed if its domain, $ \dom{q} $, is a Banach space when equipped with the norm $ \|v\|^2_q=q(v,v)+C\|v\|^2 $, where $ C>c $.
+\end{definition}
+Notice that given a quadratic form $ q:\dom{q}\to\R $ we can always construct a symmetric sesquilinear from by \begin{equation}
+\begin{aligned}
+\Real (q(u,v))=\frac{1}{2}(q(u+v)-q(u)-q(v)),\\ \Imag(q(u,v))=\frac{1}{2i}(q(u+iv)-q(u)-q(v)).
+\end{aligned}
+\end{equation}
+where we abuse notation and use the symbol $ q $ for both the quadratic form and the sesquilinear form.
+This motivates the following proposition \begin{proposition}
+	A quadratic form on some Hilbert space $ H $, $ q:\dom{q}\to\R $, which is bounded from below, $ q(v)\geq-c\|v\|^2 $, is closed if and only if its domain, $ \dom{q} $, is a Hilbert space when equipped with the inner product $ \braket{u,v}_q=q(u,v)+C\braket{u,v} $, where $ C>c $.
+\end{proposition}
+\begin{proof}
+	Since the norm $ \|\cdot\|_q$ is generated by $ \braket{\cdot,\cdot}_q $ it is clear that this follows if we can show that $ \braket{u,v}_q $ is in fact an inner product. Sesquilinearity is obvious by construction. Furthermore $ \braket{v,v}_q=\|v\|_q^2\geq0 $ since $ q $ is bounded from below, $ q(v)\geq-c\|v\|^2 $, and $ \braket{v,v}_q=0 $ if and only if $ v=0 $ follows from the fact that $ \braket{v,v}_q\geq(C-c)\|v\|^2 $.
+\end{proof}
+Notice that it follows from the fact that $ \braket{\cdot,\cdot}_q $ is an inner product that $ \|\cdot\|_q $ is in fact a norm.
+We start out by the quadratic form from the previous section
+\begin{equation}
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+\end{equation}
+with domain\begin{equation}
+\dom{F_\alpha(u)}=\left\{u\in L^2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H^1(\R^3),\ \xi\in\C \right\}.
+\end{equation}
+This quadratic form is closed and bounded from below, it is also clear that this quadratic form has a corresponding symmetric sesquilinear form, with domain\\ $ \dom{F_\alpha(\cdot,\cdot)}=\dom{F_\alpha(\cdot)}\times\dom{F_\alpha(\cdot
+	)} $, given by\begin{equation}
+F_\alpha(u,v)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}(k)-\mu\braket{u,v}_{L^2(\R^3)}+\bar{\xi}\chi\left(\alpha+2\pi^2\sqrt{\mu}\right),
+\end{equation}
+where $ u=w+\xi G $ and $ v=h+\chi G $. The domain of the corresponding operator $ H_\alpha $ is defined by \begin{equation}
+\dom{H_\alpha}=\{u\in \dom{F_\alpha}\ |\ F_\alpha(u,\cdot) \text{ is an $ L^2(\R^3) $ bounded linear functional on }\dom{F_\alpha} \}.
+\end{equation}
+By density of $ \dom{F_\alpha} $ in $ L^2(\R^3) $ and Riez representation theorem, we known that if $ h\in\dom{H_\alpha} $ then $ F_\alpha(u,\cdot)=\braket{x,\cdot} $ and we define $ H_\alpha u=x $. Clearly $ H_\alpha $ is linear and symmetric by the very construction\begin{equation}
+\braket{H_\alpha u,v}=F_\alpha(u,v)=\overline{F_\alpha(v,u)}=\overline{\braket{H_\alpha v, u}}=\braket{u,H_\alpha v}
+\end{equation} 
+For $ u,v \in\dom{H_\alpha} $. Notice that \begin{equation}
+\begin{aligned}
+\dom{H_\alpha^*}&=\{v\in \dom{F_\alpha}\ |\ \braket{H_\alpha \cdot, v}\text{ is bounded on } \dom{H_\alpha} \}\\&=\{v\in L^2(\R^3)\ |\ F_\alpha(\cdot,v) \text{ is bounded on } \dom{H_\alpha} \}.
+\end{aligned}
+\end{equation}
+Assuming that $ \dom{H_\alpha} $ is dense in $ \dom{F_\alpha} $ and thus in $ L^2(\R^3) $ we then have $ \dom{H_\alpha^*}=\dom{H_\alpha} $ and the operator, $ H_\alpha $, is self-adjoint. It is a general fact that $ \dom{H_\alpha} $ is dense whenever $ F_\alpha $ is closed and bounded from below (\cite{grubb2008distributions}, Thm 12.18). Thus we are now ready to calculate the Hamiltonian of the quadratic form $ F_\alpha $. Notice that by the definition of $ \dom{H_\alpha} $ we must have that for $ u\in\dom{H_\alpha} $ and $  (v_n)_{n\geq1}\subset\dom{F_\alpha} $  such that $ v_n\to0 $ in $ L^2(\R^3) $ it holds that  $ F_\alpha(v,u_n)\to 0 $. Thus by writing $ u=w+\xi G $ with $ w\in H^1(\R^3) $ and $ \xi\in\C $ and $ v_n=h_n+\chi G\in\dom{F_\alpha} $, with $ h_n\in H^1(\R^3) $ such that $ h_n\to-\chi G $ in $ L^2(\R^3) $ we have \begin{equation}
+F(u,v_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}_n(k)-\mu\braket{u,v_n}_{L^2(\R^3)}+\bar{\xi}\chi\left(\alpha+2\pi^2\sqrt{\mu}\right).
+\end{equation}
+We immediately see that for the first term to be $ L^2(\R^3) $ bounded in $ h_n $ we must have that $ w\in H^2(\R^3) $. Secondly since the first term is $ L^2(\R^3) $ bounded (continuous) we must have \begin{equation}
+\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}_n(k)\to-\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\chi \hat{G}(k)=-\chi\int_{\R^3} d^3k\ \overline{\hat{w}(k)}\quad \text{as }n\to\infty.
+\end{equation} 
+The second term obviously goes to zero by continuity of the inner product. Thus we need to estimate $ \int_{\R^3}\hat{h} $. This is done in the following lemma.
+\begin{lemma}
+	Let $ w\in H^2(\R^3) $, then $ w $ is continuous and $ \frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{w}(k)e^{ik\cdot x}=w(x) $.
+\end{lemma}
+\begin{proof}
+	First that $ w $ is continuous follows from Sobolev's embedding theorem. Next notice that since $ w\in H^2(\R^3) $ we must have that \begin{equation}
+	\hat{w}(k)=\frac{\hat{f}(k)}{|k|^2+1},
+	\end{equation}
+	for some $ \hat{f}\in L^2(\R^3) $. Thus we also see that $ \hat{w} $ is clearly in $ L_1(\R^3) $ by H\"older's inequality and the fact that $ \frac{1}{|k|^2+1}\in L^2(\R^3) $ and therefore $ \check{\hat{w}} $ is bounded and continuous. By Fourier's inversion theorem we have that $ \check{\hat{w}}=w $ a.e, and by continuity of $ w $, we conclude that $ \check{\hat{w}}=w $. Since $ \hat{w}\in L_1(\R^3) $ this amounts to \begin{equation}
+	\frac{1}{(2\pi)^{3/2}}\int_{\R^3}d^3k\ \hat{w}(k)e^{ik\cdot x}=w(x) 
+	\end{equation}
+\end{proof}
+Given the above lemma we clearly see that \begin{equation}
+\chi\int_{\R^3} d^3k\ \overline{\hat{w}(k)}=(2\pi)^{3/2}\chi\overline{w(0)}.
+\end{equation}
+Thereby we find the condition on the domain\begin{equation}
+-(2\pi)^{3/2}\chi\overline{w(0)}+\bar{\xi}\chi(\alpha+2\pi^2\sqrt{\mu})=0
+\end{equation}
+correpsponding to the boundary condition $ w(0)=(2\pi)^{-3/2}\xi(\alpha+2\pi^2\sqrt{\mu}) $. Now turning to the action of the operator $ H_\alpha $ it is easier to consider $ H_\alpha+\mu $ since we then have \begin{equation}
+\begin{aligned}
+\braket{(H_\alpha+\mu)u,v}=F_\alpha(u,v)+\mu\braket{u,v}&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}(k)+\bar{\xi}\chi\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
+&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}(k)+\chi\int_{\R^3}d^3k \overline{\hat{w}(k)}\\
+&=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{h}(k)+\chi\int_{\R^3}d^3k(k^2+\mu) \overline{\hat{w}(k)}\hat{G}(k)\\
+&=\braket{(-\Delta+\mu)w,v},
+\end{aligned}
+\end{equation}
+with $ u=w+\xi G $ and $ v=h+\chi G $ and where we used the boundary condition we found above in line $ 2 $.\\
+ We can therefore write down the Hamiltonian in the following manner:\begin{equation}
+\begin{aligned}
+\dom{H_\alpha}=\left\{ u\in L^2(\R^3)\ |\ u=w+\xi G,\ w\in H^2(\R^3),\ w(0)=(2\pi)^{-3/2}\xi(\alpha+2\pi^2\sqrt{\mu}),\ \xi\in\C \right\}\\
+(H_\alpha+\mu)u=(-\Delta+\mu)w\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+\end{aligned}
+\end{equation}
+This concludes how to obtain the Hamiltonian given the quadratic form. Notice that this expression also matches the one we found by self-adjoint extension. To see this, we have to notice that there is a bit a mismatch between the normalizations of the Green functions used in the two methods. We see this by computing \begin{equation}
+\begin{aligned}
+\hat{G}_{-\mu}(k)=\frac{1}{(2\pi)^{3/2}}\int_{\R^3} d^3x G_{-\mu}(x,0)\euler{-ik\cdot x}=\frac{2\pi}{4\pi(2\pi)^{3/2}}\int_{-1}^{1} d[\cos(\varphi)]\int_{0}^{\infty}dr r \euler{-\sqrt{\mu}r}\euler{-i|k|r\cos(\varphi)}\\
+=\frac{1}{(2\pi)^{3/2}}\int_{0}^{\infty}dr r\frac{1}{(2\pi)^{3/2}} \frac{\euler{-\sqrt{\mu}r}\sin(|k|r)}{|k|r}
+=\frac{1}{(2\pi)^{3/2}}\frac{1}{2i|k|}\left[\frac{1}{i(i\sqrt{\mu}-|k|)}-\frac{1}{i(i\sqrt{\mu}+|k|)}\right]\\
+=\frac{1}{(2\pi)^{3/2}}\frac{1}{2|k|}\left[\frac{i\sqrt{\mu}-|k|-i\sqrt{\mu}-|k|}{-\mu-|p^2|}\right]=\frac{1}{(2\pi)^{3/2}}\frac{1}{\mu+|k|^2}=\frac{1}{(2\pi)^{3/2}}\frac{1}{\mu+|k|^2}
+\end{aligned}
+\end{equation}
+Thus we see that $ G_{-\mu}=\frac{1}{(2\pi)^{3/2}}G $, and we get
+\begin{equation}
+\begin{aligned}
+\dom{H_\alpha}=\left\{ u\in L^2(\R^3)\ |\ u=w+\xi G,\ w\in H^2(\R^3),\ w(0)=(2\pi)^{-3/2}\xi(\alpha+2\pi^2\sqrt{\mu}),\ \xi\in\C \right\}\\
+=\left\{ u\in L^2(\R^3)\ |\ u=w+(2\pi)^{3/2}(\alpha+2\pi^2\sqrt{\mu})^{-1}(2\pi)^{3/2}w(0) G_{-\mu},\ w\in H^2(\R^3)\right\}\\
+=\left\{ u\in L^2(\R^3)\ |\ u=w+\left(\frac{\alpha}{(2\pi)^3}+\frac{\sqrt{\mu}}{4\pi}\right)^{-1}w(0) G_{-\mu},\ w\in H^2(\R^3)\right\}
+\end{aligned}
+\end{equation}
+We see that this exactly equal to the domain found in the previous section except for the fact that $ \alpha $ has been replaced by $ \alpha/(2\pi)^{3} $\begin{equation}
+\dom{H_{\text{rel}}^\alpha}=\left\{ u\in L^2(\R^3)\ |\ u=w+\left(\alpha-i\frac{i\sqrt{\mu}}{4\pi}\right)^{-1}w(0) G_{-\mu},\ w\in H^2(\R^3)\right\}.
+\end{equation}
+Therefore we conclude that $ H_\alpha=H_{\text{rel}}^{\frac{\alpha}{(2\pi)^3}} $.
+\section{$ \Gamma $-convergence}
+In this section we are going to study the notion of $ \Gamma $-convergence and apply it to the convergence problem of the quadratic form constructed in the previous section. 
+\subsection{Introducing $ \Gamma $-convergence}
+Let us first introduce a few definitions in order to study the $ \Gamma $-convergence properties of $ F_\alpha^R $.
+\begin{definition}[Lower semicontinuity]
+	Let $ F:X\to\R $ be a function on some topological space $ X $. We say that $ F $ is lower semicontinuous at $ x\in X $ if for every $ t<F(x) $ there exist a neighbourhood $ N_{x,t} $ such that $ F(y)>t $ for all $ y\in N_{x,t} $. We furthermore say that $ F $ is lower semicontinuous if it is lower semicontinuous at every point $ x\in X $.  In particular, if $ X $ is a normed space, we say that $ F:X\to\R $ is norm lower semicontinuous if it is lower semicontinuous with respect to the norm topology. 
+\end{definition}
+An equivalent formulation of lower semicontinuity is given by the following proposition
+\begin{proposition}\label{Lower semicont prop}
+	Let $ F $ be a function on a topological vector space $ X $. Then $ F $ is lower semicontinuous at $ x\in X $ if and only if \begin{equation}
+	\liminf_{z\to x}F(z):=\sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq F(x),
+	\end{equation}
+	where $ \mathcal{N}_x $ denotes the set of all open neighbourhoods of $ x $.
+\end{proposition}
+\begin{proof}
+	"$ \implies $": Choose any $ t<F(x) $, then by lower semicontinuity of $ F $ there exist a neighbourhood $ U' $ of $ x $ such that $ F(y)>t $ for all $ y\in U' $ but then $ \inf_{y\in U'}F(y)>t $. Thus the existence of such a $ U' $ implies that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq t $. Since this was true for any $ t<F(x) $ we conclude that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\geq F(x) $\\
+	"$ \impliedby $": Assume that there exists a $ t<F(x) $ such that for all $ U\in\mathcal{N}_x $ there exist a $ y\in U $ with $ F(y)\leq t $. Then $ \inf_{z\in U} F(z)\leq t $ for all $ U\in\mathcal{N}_x $ which implies that $ \sup_{U\in\mathcal{N}_x}\inf_{z\in U}F(z)\leq t<F(x) $. Thus we have proven the contrapositive.
+\end{proof}
+\begin{definition}[$ \Gamma $-upper/-lower limit]
+	Given a topological space $ X $, and some sequence of functions $ F_n $ on $ X $, we define the $ \Gamma $-upper and $ \Gamma $-lower limits by \begin{equation}
+	\begin{aligned}
+	\Glimsup_{n\to\infty}F_n(x)&=\sup_{N_x\in\mathcal{N}_x}\limsup_{n\to\infty}\inf_{y\in N_x}F_n(y),\\
+	\Gliminf_{n\to\infty}F_n(x)&=\sup_{N_x\in\mathcal{N}_x}\liminf_{n\to\infty}\inf_{y\in N_x}F_n(y),
+	\end{aligned}
+	\end{equation}
+	where $ \mathcal{N}_x $ denotes the collection of open neighbourhoods of $ x $.
+\end{definition}
+\begin{definition}($ \Gamma $-limit)
+		Given a topological space $ X $, and some sequence of function $ F_n $ on $ X $, we say that $ F_n $ $ \Gamma $-converges to the $ \Gamma $-limit $ F $ if \begin{equation}
+		\Gliminf_{n\to\infty}F_n(x)=\Glimsup_{n\to\infty}F_n(x)=F(x),\quad\text{for all }x\in X.
+		\end{equation}
+\end{definition}
+One immediate result of having $ \Gamma $-convergence is lower semicontinuity of the limit, which is the following proposition
+\begin{proposition}\label{Gamma lower semicontinuity prop}
+	Let $ F_n $ be a sequence of functions on a topological space $ X $. Then the $ \Gamma $-lower and $ \Gamma $-upper limits are both lower semicontinuous in the topology of $ X $.
+\end{proposition}
+\begin{proof}
+	We proof this for the $ \Gamma $-lower limit, but the proof is equally valid for the upper limit by exchanging all $ \liminf $ by $ \limsup $.
+		For the lower-limit this follows immediately by observing that For any $ z\in X $ and $ U\in \mathcal{N}_z $ we have that 
+		$$ \Gliminf_{n\to\infty}F_n(z)\geq\liminf_{n\to\infty}\inf_{y\in U}F_n(y).  $$
+		It follows by the fact that $ U $ is an open neighbourhood of all its points that we then have \begin{equation}
+		\inf_{z\in U}\Gliminf_{n\to\infty}F_n(z)\geq\liminf_{n\to\infty}\inf_{y\in U}F_n(y).
+		\end{equation}
+		Now taking supremum on both sides gives us\begin{equation}
+		\sup_{U\in\mathcal{N}_x}\inf_{z\in U}\Gliminf_{n\to\infty}F_n(z)\geq\sup_{U\in\mathcal{N}_x}\liminf_{n\to\infty}\inf_{y\in U}F_n(y)=\Gliminf_{n\to\infty}F_n(x).
+		\end{equation}
+		By using Proposition \ref{Lower semicont prop} and the fact that the above inequality was for all $ x\in X $ we conclude that $ \Gliminf_{n\to\infty}F_n(x) $ is lower semicontinuous.
+\end{proof} 
+As an obvious consequence of the above proposition we get the following corollary.
+\begin{corollary}\label{Gamma-limit lower semicontinuity col}
+	Let $ F_n $ be a sequence of functions on a topological space $ X $, such that $ F_n $ $ \Gamma $-converge to $ F $. Then $ F $ is lower semicontinuous in the topology of $ X $.
+\end{corollary} 
+Now we state an interesting result relating lower semicontinuity of quadratic form to them being bounded from below. A tool that will be of great importance when applying tools of $ \Gamma $-convergence to prove stability of quantum mechanical systems. The following proposition and theorem is from lecture notes by Jan Philip Solovej.
+\begin{proposition}[Prop. 7.5 in \cite{JPS_lecturenotes}] \label{Norm low.sem.cont bounded from below prop.}
+	Let $ F_D\to \R\cup\{\infty\} $ be a norm lower semicontinuous functional on a subspace $ D $ of a Hilbert space, $ H $. If $ F $ satisfies $ F(\alpha\phi)=|\alpha|^2F(\phi) $ for all $ \alpha\in\R $ and all $ \phi\in D $, \ie $ F $ is homogenous of degree $ 2 $, then $ F $ is bounded from below in the sense that there exist $ M<\infty $ such that $ F(\phi)\geq-M\|\phi\|^2 $ for all $ \phi\in D $.
+\end{proposition}
+\begin{proof}
+	We consider the the set $ S=\{h\in D\ |\ F(\phi)>-1 \} $. By lower semi continuity of $ F $ we have that for every $ h\in S $ there exist a neighbourhood $ N_h\in\mathcal{N}_h $ such that $ F(h')>-1 $ for all $ h'\in N_h $, \ie all points of $ S $ are interior points. Thus $ S $ is open. By observing that $ 0\in S $ we conclude that there exist some $ \epsilon>0 $ such that the ball in $ D $, $ B_\epsilon(0)\subset D $ is contained in $ S $. Thereby we know that for all $ x\in D $ with $ \|x\|<\epsilon $, we have $ F(x)>-1 $. For all $ h\in D $ we therefore have 
+	$ F(\epsilon h/2\|h\|)>-1 $ which is equivalent to \begin{equation}
+	F(h)>-\frac{4}{\epsilon^2}\|h\|^2.
+	\end{equation}
+\end{proof}
+\begin{theorem}[Thm. 7.6 in \cite{JPS_lecturenotes}]\label{Quadratic form closable and bounded below iff low.semicont. Thm.}
+	A quadratic form $ Q $ defined on a subspace $ \dom{Q} $ of a Hilbert space $ H $ is closable and bounded from below if and only if it is norm lower semicontinuous.
+\end{theorem}
+\begin{proof}
+	Assume first that $ Q $ is bounded from below and closable. Then we can extend $ Q $ to a closed quadratic form on the set (Def. 7.4 in \cite{JPS_lecturenotes})
+	$$ \bar{\mathscr{D}}(Q)=\{\phi\in H\ |\ \text{there exist a Cauchy sequence in }\dom{Q}\text{ converging to }\phi \}. $$
+	Thus we may take $ Q $ to be closed. In that case we know that $ \dom{Q} $ is a Hilbert space with inner product $ \braket{\cdot,\cdot}_Q=Q(\cdot,\cdot)+M\braket{\cdot,\cdot} $, for some $ M>0 $ such that $ Q(v)>-M\|v\| $ for all $ v\in H $, and where $ Q(\cdot,\cdot) $ denotes the symmetric sesquilinear form associated to $ Q $. Thus the norm on the $ \dom{Q} $ is $\|\cdot\|_Q= Q(\cdot)+M\|\cdot\|^2 $. Assume now that we have some sequence $ (x_n)_{(n\geq1)}\subset\dom{Q} $ converging to $ x\in\dom{Q} $. Let $ x_{n_j} $ denotes a subsequence such that $$ \liminf_{n\to\infty}Q(x_n)=\lim\limits_{j\to\infty}Q(x_{n_j}). $$
+	Now if $ \liminf_{n\to\infty} Q(x_n)=\infty $ we trivially have $ \liminf_{n\to\infty} Q(x_n)\geq Q(x) $. On the other hand, by assuming $ \liminf_{n\to\infty} Q(x_n)<\infty $ we may conclude that $ Q(x_{n_j}) $ is bounded. Thus $ (x_{n_j})_{j\geq1} $ is bounded in $ \|\cdot\|_Q $ norm. By Alaoglu's theorem and the fact that $ \dom{Q} $ is a Hilbert space, we may conclude that any further subsequence $ x_{n_{j_k}} $ contain a subsequence $ x_{n_{j_{k_l}}} $ converging weakly in $ \dom{Q} $. However the limit is then bound to be $ x $ by the fact that the weak limit in $ \dom{Q} $ is also the weak limit in $ H $ and the weak limit in $ H $ is necessarily equal to the norm limit whenever it exists. Thus all subsequences, $ x_{n_{j_k}} $, of $ x_{n_j} $, contain a further subsequence $ x_{n_{j_{k_l}}} $ converging to weakly to $ x $ in $ \dom{Q} $. Therefore we may conclude that $x_{n_j}$ converge weakly to $ x $. However, it is a known fact that $ \liminf_{j\to\infty}\|v_j\|\geq\|v\| $ for any $ v_j\rightharpoonup v $, as it follows directly from Cauchy Schwartz. Using this we obtain \begin{equation}
+	\begin{aligned}
+	\liminf_{n\to\infty}Q(x_n)=\lim\limits_{j\to\infty}Q(x_{n_j})=\lim_{j\to\infty}\left(\|x_{n_j}\|_Q^2-M\|x_{n_j}\|\right)\geq\liminf_{j\to\infty}\|x_{n_j}\|_Q^2-M\|x\|^2\\\geq\||x\|_Q^2-M\|x\|^2=Q(x).
+	\end{aligned}
+	\end{equation}
+	Showing that $ Q $ is indeed norm lower semicontinuous (Proposition \ref{Lower semicont prop}).\\
+	Now assume instead that $ Q $ is lower semicontinuous. Then we now from Proposition \ref{Norm low.sem.cont bounded from below prop.} that $ Q $ is bounded from below. On the other hand let $ (x_n)_{n\geq1} $ be a sequence such that $ Q(x_n-x_m)\to0 $ for $ n,m\to\infty $ and $ x_n\to0 $. For any subsequence $ x_{n_j} $ we have Then $ 0\leq Q(x_{n_j})\leq\liminf_{m\to\infty}Q(x_{n_j}-x_m)\to 0 $ for $ j\to\infty $. Thus there exist a further subsequence such that $ Q(x_{n_{j_k}})\to0 $ for $ k\to\infty $, and we conclude that the original sequence $ Q(x_n) $ converge to $ 0 $. So $ Q $ is closable by definition of closability (Def. 7.2, \cite{JPS_lecturenotes}).
+\end{proof}
+See also \cite{JPS_lecturenotes}, Thm 7.6 for a possibly even stronger result.\\
+Finally in this subsection we state some important result from the book by Gianni Dal Maso \cite{maso1993introduction}.
+\begin{theorem}[Thm. 13.6(a), in \cite{maso1993introduction}]\label{Gamma conv. and strong res. conv. Thm}
+	Let $ F_n $ be a sequence of lower semicontinuous positive semi-definite quadratic forms on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous positive semi-definite quadratic form also on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
+	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
+	\end{equation}
+	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
+\end{theorem}
+Notice that we can construct a positive semi-definite quadratic form from any bounded from below quadratic form, $ q(v)\geq-m\|v\|^2 $ by $ Q=q+M\|\cdot\|^2 $ where $ M\geq m $. Thereby the result in Theorem \ref{Gamma conv. and strong res. conv. Thm} extends to bounded from below operators: Consider a bounded from below operator $ F_n(v)\geq-m\|v\|^2 $, and construct the positive semi-definite quadratic forms $ \tilde{F}_n=F_n+m\|\cdot\|^2 $ and $ \tilde{F}=F+m\|\cdot\|^2 $. If $ F_n $ and $ F $ satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}, then $ \tilde{F_n} $ and $ \tilde{F} $ also satisfies them. To see this, notice that $ m\|\cdot\|^2 $ is a constant sequence and thus it is pointwise (continuously) convergent therefore by Prop. 6.20 in \cite{maso1993introduction} we know that\begin{equation}
+\Glim_{n\to\infty}\tilde{F_n}=\Glim_{n\to\infty} F_n+m\|\cdot\|.
+\end{equation} 
+Furthermore, if $ x_n\to x $ weakly, it also holds that \begin{equation}
+\liminf_{n\to\infty}\tilde{F}_n(x_n)\geq\liminf_{n\to\infty}F_n(x_n)+m\liminf_{n\to\infty}\|x_n\|^2\geq\liminf_{n\to\infty}F_n(x_n)+m\|x\|^2\geq\tilde{F}(x),
+\end{equation}
+where we have used the basic property of $ \liminf $ that $ \liminf_n(a_n+b_n)\geq\liminf_na_n+\liminf_n b_n $, and that $ \liminf_{n\to\infty}\|x_n\|\geq\|x\| $ for $ x_n\to x $ weakly. The last property follows from the  Cauchy-Schwartz inequality: If $ x_n \rightharpoonup x$ (converges weakly), then $ |\braket{x_n,x}|\to\|x^2\| $, however $ |\braket{x_n,x}|\leq\|x_n\|\|x\| $, so ultimately we have for all $ \epsilon>0 $ there exist $ k\geq1 $ such that $ \|x_n\|\geq\|x\|-\epsilon $, but then $ \liminf_{n\to\infty}\|x_n\|\geq\|x\| $. Therefore we use Theorem \ref{Gamma conv. and strong res. conv. Thm} on $ \tilde{F} $ and conclude that its corresponding operators $ \tilde{A}_n $ converges to $ \tilde{A} $ in the norm resolvent sense. Now using that $ \tilde{A_n}=A_n+mI $ and $ \tilde{A}=A+mI $, where $ A $ and $ A_n $ denotes the operators corresponding to $ F $ and $ F_n $ respectively, and the fact that if $ R_z(A_n+mI)x\to R_z(A+mI)x $ in norm as $ n\to\infty $, then $ R_z(A_n)x=R_{z+m}(A_n+Im)x\to R_{z+m}(A+Im)x=R_z(A) $ in norm as $ n\to\infty $, we get the following corollary
+\begin{corollary}\label{Gamma conv. and strong res. conv. Col}
+	Let $ F_n $ be a sequence of lower semicontinuous bounded from below quadratic forms with a common lower bound, $ F_n(v)\geq-m\|v\|^2 $ on a Hilbert space $ H $ and let $ F $ be a lower semicontinuous bounded from below quadratic form with the same lower bound $ F(v)\geq-m\|v\|^2 $, on $ H $. Let $ A_n $ and $ A $ denote the corresponding operators of $ F_n $ and $ F $ respectively. If $ F_n $ $ \Gamma $-converges to $ F $ in the strong topology (norm topology), and in addition \begin{equation}
+	F(x)\leq\liminf_{n\to\infty}F_n(x_n),
+	\end{equation}
+	for all sequences $ x_n $ converging weakly to $ x $. Then $ A_n $ converges to $ A $ in the strong resolvent sense, \ie $ R_z(A_n)x\to R_z(A)x $ in norm for all $ x\in H $ and all $ z\in\rho(A)$ , where $ R_z(A)=(A-z)^{-1} $ denotes the resolvent of $ A $.
+\end{corollary}
+Another important result concerning $ \Gamma $-convergence, it the classification of $ \Gamma $-convergence in first countable spaces, such as for example normed spaces. The result can be characterized by the following proposition
+\begin{proposition}[Prop. 8.1 (e) and (f), in \cite{maso1993introduction}]\label{Gamma conv. first countable. prop}
+	Let $ X $ be a first countable space and $ F_n $ be a sequence of functions on $ X $. Then $ F_n $ $ \Gamma $-converges to the function $ F $ if and only the two following requirements are satisfied:\\
+	(i) For all $ x\in X $ and for every sequence $ x_n $ converging to $ x $ in $ X $ we have \begin{equation}
+	F(x)\leq\liminf_{n\to\infty}F_n(x_n);
+	\end{equation}
+	(ii) For all $ x\in X $ there exist a sequence $ (x_n)_(n\geq1)\subset X $ such that \begin{equation}
+	F(x)=\lim\limits_{n\to\infty}F_n(x_n).
+	\end{equation}
+\end{proposition}
+Other important result concerning $ \Gamma $-convergence are preservation of minimizers under $ \Gamma $-convergence. These can be found in chapter $ 7 $ of \cite{maso1993introduction}.
+\subsection{$ \Gamma $-convergence of $ F_\alpha^R $}
+We are in this subsection going to show that the quadratic forms, $ F_\alpha^R $ that we discussed earlier, have some $ \Gamma $-convergence properties, that will allow us to conclude on the convergence properties of their corresponding operators.\\
+In the following we will apply the lemma:\begin{lemma}\label{H1 int}
+	Let $ w\in H^1(\R^3) $, then \begin{equation}
+	 \frac{1}{\sqrt{n}}\int_{B_n(0)}\hat{w}\to0,\quad \text{as }n\to\infty,
+	\end{equation}
+	where $ \hat{w} $ denotes the Fourier transform of $ w $. In other notation \begin{equation}
+	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\sqrt{n},
+	\end{equation}
+	for some $ \epsilon $-function, $ \epsilon(n)\to0 $ as $ n\to\infty $.
+\end{lemma}
+\begin{proof}
+	Notice that we have already seen that for $ w\in H^1(\R^3) $ we have \begin{equation}
+	\int_{B_n(0)}\hat{w}\lesssim\sqrt{n},
+	\end{equation}
+	which follows from Cauchy-Schwartz inequality. To improve the bound, we split the integral. Clearly $ \hat{w}(k)=\frac{f(k)}{(k^2+1)^{1/2}} $ for some $ f\in L^2(\R^3) $. Let $ \epsilon_n=(\ln(n))^2/n^{3/2} $ and define the sets $ B_n^>=B_n(0)\cap\{|f|>\epsilon_n\} $ and $ B_n^\leq=B_n(0)\cap\{|f|\leq\epsilon_n\}  $. Notice that $ \epsilon_n\to0 $ as $ n\to\infty $. By the usual triangle inequality we have \begin{equation}
+	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert\leq\left\lvert\int_{B_n^>}\hat{w}\right\rvert+\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert.
+	\end{equation}
+	We see that \begin{equation}
+	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert\leq\|\mathbbm{1}_{|f|\leq\epsilon_n}f\|_2\sqrt{n}.
+	\end{equation}
+	By dominated convergence theorem we now that $ \|\mathbbm{1}_{|f|\leq\epsilon_n}f\|_2\to 0 $, since $ |\mathbbm{1}_{|f|\leq\epsilon_n}f|^2\to0 $ pointwise ($\epsilon_n\to0$), and is dominated by integrable function $ |f|^2 $. Thereby we have \begin{equation}
+	\left\lvert\int_{B_n^\leq}\hat{w}\right\rvert=\epsilon_1(n)\sqrt{n},
+	\end{equation}
+	for $ \epsilon_1(n)\to0 $ as $ n\to\infty $. On the other hand we use H\"older's inequality $ (3/2,3) $ on the other integral and obtain\begin{equation}
+	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\leq\int_{B_n^>}\left\lvert\hat{w}\right\rvert\leq\|\mathbbm{1}_{|f|>\epsilon_n}f\|_{3/2}\|\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}\|_3.
+	\end{equation}
+	Now $ \|\mathbbm{1}_{B_n(0)}(1+k^2)^{-1/2}\|_3\sim(\ln(n))^{1/3} $. Furthermore, we have \begin{equation}
+	\|\mathbbm{1}_{|f|>\epsilon_n}f\|_{3/2}\|=\left(\int_{f>\epsilon_n}|f|^{3/2}\right)^{2/3}<\left(\frac{1}{\sqrt{\epsilon_n}}\int_{f>\epsilon_n}|f|^{2}\right)^{2/3}=\frac{1}{\epsilon^{1/3}}\|f\|_2^{4/3}.
+	\end{equation}
+	Thus we have \begin{equation}
+	\left\lvert\int_{B_n^>}\hat{w}\right\rvert\lesssim\frac{1}{(\ln(n))^{1/3}}\|f\|_2^{4/3}\sqrt{n}=\epsilon_2(n)\sqrt{n},
+	\end{equation}
+	for some $ \epsilon_2(n)\to0 $ as $ n\to\infty $. Combining our two estimates gives us \begin{equation}
+	\left\lvert\int_{B_n(0)}\hat{w}\right\rvert\lesssim(\epsilon_1(n)+\epsilon_2(n))\sqrt{n}\implies \left\lvert\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\sqrt{n},
+	\end{equation}
+	for some $ \epsilon(n)\to0 $ as $ n\to\infty $. This concludes the proof.
+	\end{proof}
+We show that $ F_\alpha^n $ where $ n\in\mathbb{N} $ satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm}. By Proposition \ref{Gamma conv. first countable. prop} we see that it suffices to show that:\\
+\begin{enumerate}
+	\item For all $ u\in \dom{F_\alpha} $ there exist a sequence $ (u_n)_{n\geq1}$, such that $u_n\in \dom{F^n_\alpha} $, $ u_n $ converges in $ L^2(\R^3) $ to $ u $ and \begin{equation}
+	F_\alpha(u)=\lim\limits_{n\to\infty}F^n_\alpha(u_n).
+	\end{equation}
+	\item For all $ u\in\dom{F_\alpha} $ and all $ (u_n)_{n\geq1} $, with $ u_n\in\dom{F_\alpha^n} $, converging weakly to $ u $, we have\begin{equation}
+	F_\alpha(u)\leq\liminf_{n\to\infty}F_\alpha^n(u_n).
+	\end{equation} 
+\end{enumerate}
+Notice then that (2.) include both the weak lower bound on $ F_\alpha $ as required by Theorem \ref{Gamma conv. and strong res. conv. Thm} but also the strong lower bound on $ F_\alpha $ as required by Proposition \ref{Gamma conv. first countable. prop}, since all strongly converging sequences also are weakly convergent.
+Let us briefly remind ourselves that 
+\begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_R(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi_R|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{R}{\sqrt{\mu}}\right)\right),
+\end{aligned}
+\end{equation}
+with $ \hat{w}_R=\hat{u}-\widehat{G\rho^R} $, $ \hat{\rho}^R=\xi_R\mathbbm{1}_{B_R(0)}  $, $ \xi_R=(4\pi R+\alpha)^{-1}\int_{B_R(0)}\hat{u} $, and domain \begin{equation}
+\dom{F_\alpha^R}=\left\{u\in L^2(\R^3)\ |\ w_R\in H^1(\R^3) \right\}=H^1(\R^3).
+\end{equation}
+And 
+\begin{equation}
+F_\alpha(u)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+\end{equation}
+with domain\begin{equation}
+\dom{F_\alpha(u)}=\left\{u\in L^2(\R^3) \ |\ \hat{u}=\hat{w}+\xi\hat{G},\ w\in H^1(\R^3),\ \xi\in\C \right\},
+\end{equation}
+\begin{proposition}\label{F Gamma upper bound}
+	Let $ F_\alpha^n $ and $ F_\alpha $ be defined as earlier. Then for all $ u\in\dom{F_\alpha} $ there exist $ (u_n)_{(n\geq1)} $ with $ u_n\in\dom{F_n} $ such that \begin{equation}
+		F_\alpha(u)=\lim\limits_{n\to\infty}F^n_\alpha(u_n).
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	We prove this result by simply constructing the correct sequence $ u_n $. For $ u=w+\xi G $, with $ w\in H^1(\R^3) $, let $ u_n=w+\xi G_n $, where $ \widehat{G_n}=\mathbbm{1}_{B_n(0)}\hat{G} $. Then we clearly have \begin{equation}
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu\|u_n\|^2_{L^2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
+	\end{equation}
+	with $ \hat{w}_n=\hat{w}-(\xi_n-\xi)\mathbbm{1}_{B_n(0)}\hat{G} $. Now it is obvious that $ u_n\in H^1(\R^3) $ for all $ n $ and that $ u_n\to u $ in $ L^2(\R^3) $ as $ n\to\infty $. Furthermore, we see that \begin{equation}
+	\xi_n=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\hat{w}+\xi\hat{G},
+	\end{equation}
+	and since $ \int_{B_n(0)}\hat{w}\lesssim\sqrt{n} $, and $\int_{B_n(0)}\hat{G}\sim4\pi n $ we see that $ \xi_n\to \xi $ as $ n\to\infty $. We can even say that $ (\xi-\xi_n)\sim \frac{1}{4\pi n}\int_{B_n(0)}\hat{w} $. By lemma \ref{H1 int}, we know that $ \left\lvert\frac{1}{4\pi n}\int_{B_n(0)}\hat{w}\right\rvert=\epsilon(n)\frac{1}{\sqrt{n}} $ for some $ \epsilon $-function $ \epsilon(n)\to0 $ as $ n\to\infty $. Now expanding the expression for $ F_\alpha^n(u_n) $ above we have \begin{equation}
+	\begin{aligned}
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2&+|\xi_n-\xi|^2\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)|\hat{G}(k)|^2\\&-2\Real(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\\&-\mu\|u_n\|^2_{L^2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right).
+	\end{aligned}
+	\end{equation} 
+	Using that $ \hat{G}(k)=\frac{1}{k^2+\mu} $ we have\begin{equation}
+	|\xi_n-\xi|^2\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)|\hat{G}(k)|^2\sim\frac{\epsilon(n)^2}{n}\int_{B_n(0)} d^3k\ \hat{G}(k)\sim\epsilon(n)^2\to 0\quad\text{as }n\to\infty.
+	\end{equation}
+	Furthermore we know that \begin{equation}
+	\left\lvert(\xi_n-\xi)\int_{B_n(0)} d^3k\ \left(k^2+\mu\right)\overline{\hat{w}(k)}\hat{G}\right\rvert=\left\lvert(\xi_n-\xi)\int_{B_n(0)} d^3k\ \overline{\hat{w}(k)}\right\rvert\sim\epsilon(n)^2\to0\quad\text{as }n\to\infty.
+	\end{equation}
+	Finally we have that $  \|u_n\|\to\|u\|$ as $ n\to\infty $ since $ u_n\to u $ in $ L^2(\R^3) $ and that \begin{equation}
+	|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right)\to|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),\quad \text{as }n\to\infty,
+	\end{equation}
+	where we have used that the limit of a product is the product of the limits whenever both limits exist. Thus we have in total\begin{equation}
+	F_\alpha^n(u_n)\to\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
+	\end{equation}
+	as we wanted.
+\end{proof}
+\begin{proposition}\label{F Gamma lower bound}
+	Let $ (u_n)_{(n\geq1)} $ be any sequence such that $ u_n\in\dom{F_\alpha^n}=H^1(\R^3) $ for all $ n\geq1 $ and such that $ u_n $ converges weakly to $ u $ ($ u_n\rightharpoonup u $) in $ L^2(\R^3) $ as $ n\to\infty $. Then we have the following inequality\begin{equation}
+	F_\alpha(u)\leq\liminf_{n\to\infty}F_\alpha^n(u_n).
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Let $ u_n $ be as in the proposition above. Since the weak limit, $ u $, is in $ \dom{F_\alpha} $ it is of the form $ u=w+\xi G $ with $ w\in H^1(\R^3) $ and $ \xi\in\C $. On the other hand we then may without loss of generality take $ u_n $ to be of the form $ u_n=w+\xi g_n $, with $ g_n\in H^1(\R^3) $ such that $ g_n\rightharpoonup G $ in $ L^2(\R^3) $ as $ n\to\infty $. We then have \begin{equation}
+	F_\alpha^n(u_n)=\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}_n(k)|^2-\mu\|u_n\|^2_{L^2(\R^3)}+|\xi_n|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n}{\sqrt{\mu}}\right)\right),
+	\end{equation}
+	where we have defined $ \hat{w}_n(k)=\hat{w}(k)+\xi\hat{g}_n-\xi_n\hat{G}_n $, with $ \hat{G}_n=\mathbbm{1}_{B_n(0)}\hat{G} $, and \\$ \xi_n=(4\pi n+\alpha)^{-1}\int_{B_n(0)} \hat{w}+\xi \hat{g}_n $. Now there exist a subsequence $ F_\alpha^{n_j}(u_{n_j}) $ that converges to $ \liminf_{n\to\infty}F_\alpha^n(u_n) $. Expanding $ F_\alpha^{n_j}(u_{n_j}) $ we have \begin{equation}
+	\begin{aligned}
+	F_\alpha^{n_j}(u_{n_j})=\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2+2\Real\left[(\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k))\overline{\hat{w}(k)}\right]\right\}\\-\mu\|u_{n_j}\|^2_{L^2(\R^3)}+|\xi_{n_j}|^2\left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right).
+	\end{aligned}
+	\end{equation}
+Since $ \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{f}(k)|^2\cong \|f\|_{H^1(\R^3)}^2 $, and $ \mu>0 $ and $ (n_j)_{j\in\mathbb{N}} $ can be chosen such that\\ $ \left(\alpha+4\pi\sqrt{\mu}\arctan\left(\frac{n_j}{\sqrt{\mu}}\right)\right)>0 $, we see that either $ \liminf F_\alpha^{n}(u_{n})=\infty $ or $ (\xi g_{n_j}-\xi_{n_j}G_{n_j}) $ is $ H^1(\R^3) $ norm bounded. In the first case the desired result is trivially true. In the second case we observe that if $ h_j:=(\xi g_{n_j}-\xi_{n_j}G_{n_j})_{j\geq1} $ is $ H^1(\R^3) $ norm bounded such that \\$ (h_j)_{j\geq1}\subset B(0,M) $ for some $ M>0 $. By Alaoglu's theorem and the fact that $ H^1(\R^3) $ is a Hilbert space we then know that all subsequences $ h_{j_k} $ have a further subsequence $ h_{j_{k_l}} $ that converge weakly in $ H^1(\R^3) $ to some $ h\in H^1(\R^3) $. However, if $ h_{j_{k_l}} $ converge weakly in $ H^1(\R^3) $ it also converges weakly in $ L^2(\R^3) $ to the same limit, since the dual space of $ H^1(\R^3) \subset L^2(\R^3) $ is $ H_{-1}(\R^3) \supset L^2(\R^3) $. Thus we know that $ h_{j_{k_l}} $ converges weakly in $ L^2(\R^3) $. However, as we know that $ g_n\rightharpoonup G $ in $ L^2(\R^3) $ and $ G_n\xrightarrow{\|\cdot\|_2} G $ so $ G_n\rightharpoonup G $ in $ L^2(\R^3) $ we conclude that in order for $ h_{j_{k_l}}\rightharpoonup h $ in $ L^2(\R^3) $ we must have that $ \xi_{n_{j_{k_l}}}\to\chi $ for some $ \chi $ and then $ h=(\xi-\chi)G $. However notice that $ G\notin H^1(\R^3) $. So $ h\in H^1(\R^3) $ implies that $ \chi=\xi $, such that $ h_{j_{k_l}}\rightharpoonup0 $ in $ H^1(\R^3) $ and $ L^2(\R^3) $. But then we have shown that for all subsequences $ (h_{j_k})_{k\geq1} $ of $ (h_j)_{j\geq1} $, there exist a further subsequence, $ h_{j_{k_l}} $ converging weakly to $ 0 $. Thereby $ h_j\rightharpoonup 0 $ in $ H^1(\R^3) $ and $ L^2(\R^3) $ and $ \xi_{n_j}\to\xi $ as $ j\to\infty $. Thus we have 
+\begin{equation}
+\begin{aligned}
+\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})&=\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)\left\{|\hat{w}(k)|^2+|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2\right\}-\mu\|u_{n_j}\|^2_{L^2(\R^3)}\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)\\
+&\geq\lim\limits_{j\to\infty}\left(\int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2+\mu(\|\xi g_{n_j}-\xi_{n_j}G_{n_j}\|^2_{L^2(\R^3)}-\|u_{n_j}\|^2_{L^2(\R^3)})\right)\\&\qquad\qquad\qquad+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right),
+\end{aligned}
+\end{equation}
+where we in the second line threw away the positive term $ \int_{\R^3} d^3k\ k^2|\xi \hat{g}_{n_j}(k)-\xi_{n_j}\hat{G}_{n_j}(k)|^2 $. Now we see that \begin{equation}
+\begin{aligned}
+\|\xi g_{n_j}-\xi_{n_j}G_{n_j}\|^2-\|u_{n_j}\|^2=\|\xi g_{n_j}\|^2+\|\xi_{n_j}G_{n_j}\|^2-2\xi_{n_j}\bar{\xi}\Real\braket{g_{n_j},G_{n_j}}\\-\|w\|^2-\|\xi g_{n_j}\|^2-2\xi\Real\braket{w,g_{n_j}},
+\end{aligned}
+\end{equation}
+from which it follows that\begin{equation}
+\begin{aligned}
+\lim\limits_{j\to\infty}\left(\|\xi g_{n_j}-\xi_{n_j}G_{n_j}\|^2-\|u_{n_j}\|^2\right)&=\|\xi G\|^2-\|w\|^2-2|\xi|^2\braket{G,G}-2\xi\Real\braket{w,G}\\&=-\|w\|^2-\|\xi G\|^2-2\xi\Real\braket{w,G}=-\|w+\xi G\|^2\\&=-\|u\|^2,
+\end{aligned}
+\end{equation}
+where $ \|\cdot\|=\|\cdot\|_{L^2(\R^3)} $, $ \braket{\cdot,\cdot}=\braket{\cdot,\cdot}_{L^2(\R^3)} $ and we have used that for $ f_n\xrightarrow{\|\cdot\|}f $ and $ g_n\rightharpoonup g $ as $ n\to\infty $ we have $ \braket{g_n,f_n}\to\braket{g,f} $, which follows directly from norm boundedness of weakly convergent sequences. Collecting all the above we have \begin{equation}
+\begin{aligned}
+\lim\limits_{j\to\infty}F_\alpha^{n_j}(u_{n_j})\geq \int_{\R^3} d^3k\ \left(k^2+\mu\right)|\hat{w}(k)|^2-\mu\|u\|^2_{L^2(\R^3)}+|\xi|^2\left(\alpha+2\pi^2\sqrt{\mu}\right)=F_\alpha(u),
+\end{aligned}
+\end{equation}
+which was the desired result.
+\end{proof}
+Now collecting the above results in Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} we find that $ F_\alpha^n $ and $ F_\alpha $ indeed satisfies the assumptions of Theorem \ref{Gamma conv. and strong res. conv. Thm} (Corollary \ref{Gamma conv. and strong res. conv. Col}) assuming that $ F_\alpha^n $ admits a common lower bound (using that $ F_\alpha^n $ is independent of $ \mu $, this is actually easy to see), and thus we may conclude that the corresponding operator $ H_\alpha^n $ and $ H_\alpha $ fulfil that $ H_\alpha^n\to H_\alpha $ in the strong resolvent sense. This tells us that points in the spectrum cannot suddenly emerge under the convergence as the following proposition will show.
+\begin{proposition}
+	Let $ (A_n)_{n\geq1} $ be a sequence of operators on a Hilbert space $ H $ and let $ A $ be an operator on $ H $. Assume that $ A_n\to A $ in the strong resolvent sense. If $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ for some $ M_\lambda>0$, then $ \lambda\notin\sigma(A) $, where $ \sigma(\cdot) $ denotes the spectrum.
+\end{proposition}
+\begin{proof}
+	Let $ R_\lambda(A_n)=(A_n-\lambda I)^{-1} $ denote the resolvents of $ A_n $ at $ \lambda $. If there exist $ M_\lambda $ such that $ \lambda\notin\sigma(A_n) $ for all $ n\geq M_\lambda $ we know that $ R_\lambda(A_n)\in\mathcal{B}(H) $ (bounded operators on $ H $) for all $ n\geq M_\lambda $. By the strong resolvent convergence we know that $ R_\lambda(A_n)f $ converge to $ R_\lambda(A)f $ as $ n\to\infty $ for all $ f\in H $. Thus we conclude that \begin{equation}
+	\sup_{n\geq1}\left(\|R_\lambda(A_n)f\|\right)<\infty,\quad \text{ for all }f\in H.
+	\end{equation}
+	By the uniform boundedness principle (\cite{Folland}, 5.13) we conclude that \begin{equation}
+	\sup_{n\geq1}\left(||R_\lambda(A_n)||\right)<\infty.
+	\end{equation}
+	Now estimating the operator norm of $ R_\lambda(A) $ we find \begin{equation}
+	\|R_\lambda(A)f \|<\|R_{\lambda}(A_{n_\epsilon(f)})f \|+\epsilon,
+	\end{equation}
+	for some $ n_\epsilon(f)\geq1 $ depending on $ \epsilon $ and $ f $. Thus taking supremum on both sides over all $ f\in H $ with $ \|f\|\leq1 $ we find\begin{equation}
+	\begin{aligned}
+	\|R_\lambda(A)\|=\sup\left(\|R_\lambda(A)f \|\ |\ f\in H,\ \|f\|\leq1\right)&\leq\sup\left(\|R_\lambda(A_{n_\epsilon(f)})f \|\ |\ f\in H,\ \|f\|\leq1\right)+\epsilon\\& \leq\sup_{n\geq1}\left(||R_\lambda(A_n)||\right)+\epsilon<\infty.
+	\end{aligned}
+	\end{equation}
+	Thereby $ R_\lambda(A)\in\mathcal{B}(H) $ and $ \lambda\notin\sigma(A) $.
+\end{proof}
+Another immediate consequence of Propositions \ref{F Gamma upper bound} and \ref{F Gamma lower bound} is that $ F_\alpha^n $ $ \Gamma $-converge to $ F_\alpha $ in the norm topology. Thus we may conclude that $ F_\alpha $ is a norm lower semicontinuous quadratic form, an by Theorem \ref{Quadratic form closable and bounded below iff low.semicont. Thm.} we may conclude that $ F_\alpha $ is closable and bounded from below.
+
+\section{The $ N+1 $ case}
+We are in this section going to study the more general case of $ N $ fermions of one species and $ 1 $ of the other. We start by remembering that in this case we can split the formal Hamiltonian in two pieces; one regarding the centre of mass, and one regarding the $ N $ relative coordinates of the two species. This will not be possible in the $ N+M $ case, as there are too many relative coordinates. Now one might seek to analyse this problem by constructing self-adjoint extensions of the Laplacian on some restricted domain, as we did in the $ 1+1 $ case. However, this becomes tremendously more complicated. This can be realized by the fact that for each interaction, the coupling can end up depending on all other coordinates. Similar to the requirement of translational invariance in the $ 1+1 $ case, which eliminated the possibility of the coupling depending on the centre of mass position, we thus need to impose certain symmetries on the system to end up with a Hamiltonian of the desired form. A sufficient requirement would probably be the that of locality and permutation invariance, such that all couplings are equal and must be independent all coordinates. However one way to avoid these complications, as we saw in section \ref{Subsection Quadratic form}, is to consider a quadratic form instead. By this approach we can construct the quadratic form directly with the desired properties. Showing closability and boundedness from below of such a quadratic form, then allows us to conclude the existence of a self-adjoint and bounded from below Hamiltonian of such a system.
+\subsection{Quadratic form}
+Inspired by the approach in the $ 1+1 $ case, we define the quadratic form in the $ N+1 $ case, also by considering a limiting case of rank-one perturbations of the free Hamiltonian. Again we imagine the following family of Hamiltonians\begin{equation}
+H_\gamma^R=H_0-\gamma_R\sum_{i=1}^{N}\phi^i_R\braket{\phi^i_R,\cdot}.
+\end{equation}
+We choose the $ \phi^i_R $ such that its Fourier transform is a ball of radius $ R $ in the $ i^{\text{th}} $ coordinate, $ \hat{\phi}^i_R(k)=\mathbbm{1}_{B_R(0)}(k_i) $. The corresponding quadratic forms thus become\begin{equation}\label{F at Finite R}
+\begin{aligned}
+F_\gamma^R(u)=\int_{\R^{3N}}\diff k \left[\overline{\hat{u}}(k)\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{\substack{(i,j)=(1,1)\\i<j}}^{(N,N)}k_i\cdot k_j\right)\hat{u}(k)\qquad\qquad\right.\\\left.-\gamma_R\sum_{i=1}^{N}\overline{\hat{u}}(k)\mathbbm{1}_{B_R(0)}(k_i)\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i)\right],
+\end{aligned}
+\end{equation}
+where $ p^i=(0,0,...,\underbrace{p}_{i^\text{th}},0,0,...) $. Introducing the following notation\begin{equation}
+\begin{aligned}
+\hat{G}(k)=\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu\right)^{-1},\quad \mu>0
+\end{aligned}
+\end{equation}
+where we note that $ \sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu>0 $ since if $ \sum_{1\leq i<j\leq N}k_i\cdot k_j $ is negative then $ \sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu>(\sum_{i=1}^{N}k_i)^2+\mu>0 $ for $ m>0 $, and if $ \sum_{1\leq i<j\leq N}k_i\cdot k_j $ is non-negative, then it is obvious. Thus $ \hat{G} $ is well-defined. We also introduce \begin{equation}
+\hat{\rho}^R(k)=\gamma_R\sum_{i=1}^{N}\mathbbm{1}_{B_R(0)}(k_i)\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i):=\sum_{i=1}^{N}\mathbbm{1}_{B_R(0)}(k_i)\xi_i^R(\bar{k}^i)
+\end{equation}
+where $ \bar{k}^i=\{k_1,...,k_{i-1},k_{i+1},...,k_N\}\in\R^{3(N-1)} $. Here we defined \begin{equation}
+\xi^R_i(\bar{k}^i)=\gamma_R\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i).
+\end{equation}
+We observe that if $ u $ is fermionic we have $ \xi_i^R(\bar{k}^i)=(-1)^{i-1}\xi_1^R(\bar{k}^i):=(-1)^{i-1}\xi^R(\bar{k}^i) $. Thus we may write \begin{equation}
+\hat{\rho}^R(k)=\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_R(0)}(k_i)\xi^R(\bar{k}^i).
+\end{equation} 
+We notice also that $ \xi^R:\R^{3(N-1)}\to\C $ is itself fermionic if $ u $ is.\\
+The quadratic form $ F_\gamma^R(u) $ can now be rewritten as \begin{equation}
+\begin{aligned}
+F_\gamma^R(u)=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}-\int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2\\+2\Real\int_{\R^{3N}}\diff k \overline{\hat{\rho}^R(k)}\hat{u}(k)-\int_{\R^{3N}}\diff k \overline{\hat{u}(k)}\hat{\rho}^R(k),
+\end{aligned}
+\end{equation}
+where $ \widehat{\rho^RG}(k)=\hat{\rho}^R(k)\hat{G}(k) $.
+By a simple calculation we see that \begin{equation}
+\begin{aligned}
+\overline{\int_{\R^{3N}}\diff k \overline{\hat{\rho}^R(k)}\hat{u}(k)}=\gamma_R\sum_{i=1}^{N}\overline{\int_{\R^{3(N-1)}}\diff \bar{k}^i\left(\int_{B_R(0)}\diff k_i\hat{u}(k)\right)\overline{\left(\int_{B_R(-k_i)}\diff p\ \hat{u}(k+p^i)\right)}}\\
+=\int_{\R^{3N}}\diff k \overline{\hat{\rho}^R(k)}\hat{u}(k)=\gamma_R^{-1}\sum_{i=1}^{N}\int_{\R^{3(N-1)}}\diff \bar{k}^i\abs{\xi^R(\bar{k}^i)}^2=\gamma_R^{-1}N\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2.
+\end{aligned}
+\end{equation}
+Hence we conclude that $ \int_{\R^{3N}}\diff k \overline{\hat{\rho}^R(k)}\hat{u}(k) $ is real, such that 
+\begin{equation}\label{QuadraticForm2}
+\begin{aligned}
+F_\gamma^R(u)=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}-\int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2\\+\gamma_R^{-1}N\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2.\quad
+\end{aligned}
+\end{equation}
+Furthermore, we can rewrite the term\begin{equation}\label{QuadraticFormTerm3}
+\begin{aligned}
+\int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2&=\int_{\R^{3N}}\diff k\hat{G}(k)\left\lvert\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_R(0)}(k_i)\xi^R(\bar{k}^i)\right\rvert^2\\
+	&=\sum_{i=1}^{N}\int_{\R^{3(N-1)}}\diff \bar{k}^i\left(\int_{B_R(0)}\diff k_i \hat{G}(k)\right)\abs{\xi^R(\bar{k}^i)}^2\\&\qquad-2\sum_{1\leq i<j\leq N}\int_{\R^{3(N-2)}}\diff \bar{k}^{ij}\int_{B_R(0)}\diff k_i\int_{B_R(0)}\diff k_j\overline{\xi^R(k_i,\bar{k}^{ij})}G(k)\xi^R(k_j,\bar{k}^{ij})\\&=N\int_{\R^{3(N-1)}}\diff \bar{k}^N\left(\int_{B_R(0)}\diff k_N \hat{G}(k)\right)\abs{\xi^R(\bar{k}^N)}^2\\&\qquad-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q}).
+\end{aligned}
+\end{equation}
+where $ \bar{k}^{ij} $ is $ k $ with $ k_i $ and $ k_j $ removed, and we introduced $ \bar{q}=\bar{k}^{N-1,N} $ in the last step. Furthermore, we used the symmetry of $ \hat{G} $, and from the anti-symmetry of $ \xi^R $ that $ \overline{\xi^R(\bar{k}^j)}\xi^R(\bar{k}^i)=(-1)^{i-1+j-2}\overline{\xi^R(k_i,\bar{k}^{ij})}\xi^R(k_j,\bar{k}^{ij}) $ for $ i<j $. Thus we need to calculate the integral \begin{equation}
+\int_{B_R(0)} \diff k_N \hat{G}(k)=\int_{B_R(0)} \diff k_N \left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j+\mu\right)^{-1}.
+\end{equation}
+Notice that this is of the form \begin{equation}
+\begin{aligned}
+\int_{B_R(0)} \diff q \frac{1}{q^2+q\cdot y+\alpha}= \int_{B_R(0)} \diff q\left( \frac{1}{q^2}-\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}\right)\\=4\pi R-\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2},
+\end{aligned}
+\end{equation}
+with $ q=k_N $, $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \alpha=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $.\\ Now the remaining integral can be estimated by the following way lemma.
+\begin{lemma}\label{IntegralApproximationLemma}
+	Let $ y\in\R^3 $, $ \alpha\in\R $, and $ R>0 $. Assume furthermore that $ 4\alpha>y^2 $. Then we have \begin{equation}
+	\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}=\pi^2\sqrt{4\alpha-y^2}+\mathcal{O}\left(\frac{\abs{y}^2+\alpha}{R}\right)+\mathcal{O}\left(\frac{\abs{y}(\abs{y}^2+\alpha)}{R^2}\right).
+	\end{equation}
+	However, it is still bounded in $ \alpha $, as can be seen from the $ \alpha\to\infty $ limit, where we obtain\begin{equation}
+	\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}\simeq 4\pi R.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+ Notice first that by Feynman parametrization we have (assuming $ 4\alpha>y^2 $) \begin{equation}
+\frac{1}{(q^2+q\cdot y+\alpha)q^2}=\int_{0}^{1} \diff t \frac{1}{(t(q^2+q\cdot y+\alpha)+(1-t)q^2)^2}=\int_{0}^{1} \diff t \frac{1}{((q+ty/2)^2-t^2y^2/4+\alpha t)^2}
+\end{equation}
+Thus we find \begin{equation}
+\begin{aligned}
+\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}=\int_{0}^{1}\diff t\int_{B_R(0)} \diff q\frac{(q+ty/2)\cdot y-ty^2/2+\alpha}{((q+ty/2)^2-t^2y^2/4+\alpha t)^2}\\
+=\int_{0}^{1}\diff t\int_{B_R(ty/2)} \diff \tilde{q}\frac{\tilde{q}\cdot y-ty^2/2+\alpha}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}
+\end{aligned}
+\end{equation}
+Notice that around the ball $ B_R(ty/2) $ we can find a ball $ B_{R+t\abs{y}/2}(0) $. We have the simple geometric bound \begin{equation}
+\abs{\int_{B_{R+t\abs{y}/2}(0)} \diff \tilde{q}\frac{\tilde{q}\cdot y}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}-\int_{B_R(ty/2)} \diff \tilde{q}\frac{\tilde{q}\cdot y}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}}\leq C_1\frac{t\abs{y}^2R^2}{R^3},
+\end{equation}
+for some $ C_1>0 $ independent of $ y $ and $ \alpha $ and for $ R\gg t\abs{y} $. However, $ \int_{B_{R+t\abs{y}/2}(0)} \diff \tilde{q}\frac{\tilde{q}\cdot y}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}=0 $ since the integrand is odd. Thus we can bound the integral\begin{equation}
+\abs{\int_{B_R(ty/2)} \diff \tilde{q}\frac{\tilde{q}\cdot y}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}}\leq C_1\frac{\abs{y}^2}{R},\label{IntBound1}
+\end{equation}
+for $ R\gg\abs{y} $.
+Now considering instead the term \begin{equation}
+\int_{0}^{1}\diff t\int_{B_R(ty/2)} \diff \tilde{q}\frac{ty^2/2+\alpha}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2},
+\end{equation}
+this actually converges as $ R\to\infty $ by the dominated convergence theorem. Therefore, we may approximate it for $ R\to\infty $ by \begin{equation}
+\int_{0}^{1}\diff t\int_{\R^3} \diff \tilde{q}\frac{-ty^2/2+\alpha}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}=4\pi\int_{0}^{1}\diff t \frac{\pi(\alpha-t^2y^2/2)}{4\sqrt{\alpha t-t^2y^2/4}}.
+\end{equation}
+Changing variable $ s=t\abs{y}/2-\alpha/\abs{y} $ we find $ \diff s=\frac{\abs{y}}{2} \diff t $ such that\begin{equation}
+\int_{0}^{1}\diff t\int_{\R^3} \diff \tilde{q}\frac{-ty^2/2+\alpha}{(\tilde{q}^2-t^2y^2/4+\alpha t)^2}=\pi^2\int_{-\alpha/\abs{y}}^{\abs{y}/2-\alpha/\abs{y}}\diff s \frac{2}{\abs{y}}\frac{-\abs{y}s}{\sqrt{\alpha^2/y^2-s^2}}=\pi^2\sqrt{4\alpha-y^2}.\label{Int2}
+\end{equation}
+The error obtained by this approximation is a again straightforward to bound by geometrical considerations. Covering $ B_R(ty/2) $ by the ball $ B_{R+t\abs{y}/2}(0)$ and integrating over this domain instead, we make at most an error $ \epsilon_1\leq C'\abs{y}(\abs{y}^2+\alpha)/R^2 $. Now changing the domain of integration further to $ \R^3 $ we make at most an error $ \epsilon_2\leq C''(\abs{y}^2+\alpha)/R $. Thus we may conclude that we make a total error of $ \epsilon=\epsilon_1+\epsilon_2\leq C_2(\abs{y}^2+\alpha)/R $ for $ R\gg \abs{y} $ and some $ C_2 $ independent of $ y $ and $ \alpha $. Thus combining \eqref{IntBound1}, \eqref{Int2}, and the bounds above we have \begin{equation}
+\abs{\int_{B_R(0)} \diff q\frac{q\cdot y+\alpha}{(q^2+q\cdot y+\alpha)q^2}-\pi^2\sqrt{4\alpha-y^2}}\leq C\left(\frac{\abs{y}^2+\alpha}{R}+\frac{\abs{y}(\abs{y}^2+\alpha)}{R^2}\right),
+\end{equation}
+for some $ C $ independent of $ y $ and $ \alpha $. This proves the claim.\end{proof}
+Using Lemma \ref{IntegralApproximationLemma} we obtain and the fact that $ \alpha=\mathcal{O}\left(\abs{\bar{k}^N}^2+1\right) $ and $ \abs{y}=\mathcal{O}\left(\abs{\bar{k}^N}\right) $ \begin{equation}
+\begin{aligned}
+\int_{B_R(0)} \diff k_N \hat{G}(k)&=4\pi R-\pi^2\sqrt{\left(4-\frac{4}{(m+1)^2}\right)\sum_{i=1}^{N-1}k_i^2+\left(4-\frac{4}{m+1}\right)\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+4\mu}\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right)\qquad\\
+&=4\pi R-2\pi^2\sqrt{\left(\frac{m(m+2)}{(m+1)^2}\right)\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu}\\&\qquad\qquad\qquad\qquad\qquad\qquad+\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right),\qquad
+\end{aligned}
+\end{equation}
+Therefore we define \begin{equation}\label{defL}
+\begin{aligned}
+L^R(\bar{k}^N)&=4\pi R-\int_{B_R(0)} \diff k_N \hat{G}(k)\\
+&=2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2}\\&\qquad\qquad\qquad\qquad\qquad\qquad
++\mathcal{O}\left(\frac{\abs{\bar{k}^N}^2+1}{R}\right)+\mathcal{O}\left(\frac{\abs{\bar{k}^N}(\abs{\bar{k}^N}^2+1)}{R^2}\right)
+\end{aligned}
+\end{equation}
+\textbf{Remark}: It follows from the definition of $ L^R $ that $ L^R(\bar{k}^N)<4\pi R $ for all $ R>0 $. Furthermore, it also follows that $ L^R(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $, which can be seen by the fact that $ L^R(\bar{k}^N)=\mathbbm{1}_{B_R(0)}(\bar{k}^N)L^R(\bar{k}^N)+\mathbbm{1}_{B_R(0)^\complement}(\bar{k}^N)L^R(\bar{k}^N) $. From \eqref{defL} we have $ \mathbbm{1}_{B_R(0)}(\bar{k}^N)L^R(\bar{k}^N)\leq C_1\mathbbm{1}_{B_R(0)}\sqrt{\abs{\bar{k}^N}^2+1} $, and since $ L^R(\bar{k}^N)<4\pi R $ we have $  \mathbbm{1}_{B_R(0)^\complement}(\bar{k}^N)L^R(\bar{k}^N)\leq4\pi R\mathbbm{1}_{B_R(0)^\complement}\leq C_2\mathbbm{1}_{B_R(0)^\complement}\sqrt{\abs{\bar{k}^N}^2+1} $.\\
+We can actually get a closed form for $ L^R $ \begin{lemma} \label{LemmaLEvaluation}
+	Let $ \hat{G} $ be defined as above and let $ q=k_N $, $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \alpha=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $, then
+	\begin{equation}
+	\begin{aligned}
+		L^R(\bar{k}^N):=&4\pi R-\int_{B_R(0)}\diff k_N\hat{G}(k)\\=&
+		4\pi R-\int_{B_R(0)}\diff q\frac{1}{q^2+q\cdot y+\alpha}\\
+		=&2\pi \Bigg[R-\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\\
+		&\qquad+\frac{1}{2}\sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\Bigg]
+		\end{aligned}
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	This follows from straighforward calculation (most easily done in Mathematica)\begin{equation}
+	\begin{aligned}
+	&\int_{B_R(0)}\diff q\frac{1}{q^2+q\cdot y+\alpha}=2\pi\int_{-1}^{1}\diff \cos(\theta)\int_{0}^{\infty}\diff r r^2\frac{1}{r^2+\cos(\theta)r\abs{y}+\alpha}\\&
+	=2\pi\int_{-1}^{1}\diff \cos(\theta)  \Bigg[\frac{1}{2} \left| y\right|  \cos (\theta ) \left(\log (\alpha )-\log \left(\alpha +R \left| y\right|  \cos (\theta )+R^2\right)\right)\\&\qquad+\frac{\left(\left| y\right| ^2 \cos ^2(\theta )-2 \alpha \right) \left(\arctan\left(\frac{\left| y\right|  \cos (\theta )+2 R}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}\right)-\arctan\left(\frac{\left| y\right|  \cos (\theta )}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}\right)\right)}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}+R\Bigg]\\
+	&=2\pi \Bigg[R+\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\\
+	&\qquad-\frac{1}{2}\sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\Bigg].
+	\end{aligned}
+	\end{equation}
+	Thus the desired result follows.
+\end{proof}
+immediate consequence of this is that $ L^R\geq0 $ \begin{lemma}\label{LemmaLgreater0}
+	Let $ L^R $ be defined as above. Then $ L^R\geq0 $ for all $ R\geq0 $.
+\end{lemma}
+\begin{proof}[Proof 1]
+	This follows from completing the square \begin{equation}
+	q^2+y\cdot q+\alpha=(q+y/2)^2+\alpha-y^2/4.
+	\end{equation}
+	Noting that $ \alpha-y^2/4>0 $ and the simple inequality for symmetric-decreasing rearrangements\begin{equation}
+	\int fg\leq\int f^*g^*,
+	\end{equation}
+	where $ f^* $ denotes the symmetric-decreasing rearrangement of $ f $ (\cite{lieb2001analysis} Section 3.3 and 3.4). To see this notice that if $ f $ is itself symmetric and decreasing, then $ f^*=f $, on the other hand if we define $ f_t(x):=f(x-t) $ then $ f_t^*=f^*=f $. Since $ \mathbbm{1}_{B_R(0)} $ is symmetric and decreasing and $ \frac{1}{q^2+\alpha-y^2/4} $ also is symmetric-decreasing it follows that \begin{equation}
+	\int_{B_R(0)}\diff q \frac{1}{q^2+q\cdot y+\alpha}=\int_{B_R(0)}\diff q \frac{1}{(q+y/2)^2+\alpha-y^2/4}\leq\int_{B_R(0)}\diff q \frac{1}{q^2+\alpha-y^2/4}\leq4\pi R.
+	\end{equation}
+\end{proof}
+\begin{proof}[Proof 2]
+	We notice first that $ L^0(\bar{k}^N)=0 $ furthermore, \begin{equation}
+	L^R(\bar{k}^N)\to2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2},
+	\end{equation} pointwise as $ R\to\infty $. Hence, for any $ \bar{k}^N\in\R^{3(N-1)} $ we can find $ \tilde{R}\geq0 $ such that $ L^R(\bar{k}^N)\geq0 $ for all $ R>\tilde{R} $. Now let us analyse $ L^R $ at any finite $ R $. Since\begin{equation}
+	\sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\geq0,
+	\end{equation} we see that
+	\begin{equation}
+	L^R(\bar{k}^N)\geq2\pi\left( R-\frac{(2R^2-\abs{y}^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\right):=f(R,y,\alpha).
+	\end{equation}
+	We now show that $ f\geq0 $ whenever $ 4\alpha\geq y $. We start by showing that $ f\geq0 $ for $ y^2<2\alpha $: To see this, we compute \begin{equation}
+	\partial_R f(R,y,\alpha)=\frac{4 R^4+R^2 \left(4 \alpha -3 \abs{y}^2\right)+\alpha  \abs{y}^2}{2 \left(\alpha +R^2-R \abs{y}\right) (\alpha +R (R+\abs{y}))}-\frac{R \ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)}{\abs{y}}
+	\end{equation}
+	Let $ R^* $ denote any extremum of $ f(R,y,\alpha) $, \ie $ \partial_R f(R^*,y,\alpha)=0 $, then we clearly have \begin{equation}
+	\ln\left(\frac{R^*(R^*+\abs{y})+\alpha}{R^*(R^*-\abs{y})+\alpha}\right)=\frac{\abs{y}}{R^*}\frac{4 (R^*)^{4}+(R^*)^{2} \left(4 \alpha -3 \abs{y}^2\right)+\alpha  \abs{y}^2}{2 \left(\alpha +(R^*)^{2}-R^* \abs{y}\right) (\alpha +R^* (R^*+\abs{y}))}
+	\end{equation}
+	Thereby we find \begin{equation}
+	f(R^*,y,\alpha)=\frac{\left| y\right| ^2 \left((R^*)^2 \left(8 \alpha-3 \left| y\right| ^2\right)+\alpha \left(\left| y\right| ^2-2 \alpha\right)+2 (R^*)^4\right)}{8 R^* \left(-R^* \left| y\right| +(R^*)^2+\alpha\right) \left(R^* \left| y\right| +(R^*)^2+z\right)}.
+	\end{equation}
+	However, $ \frac{\left| y\right| ^2}{8 R^* \left(-R^* \left| y\right| +(R^*)^2+\alpha\right) \left(R^* \left| y\right| +(R^*)^2+\alpha\right)}>0 $. So $ f(R^*,y,\alpha)<0 $ if and only if\\ $ h(R^*,y,\alpha):=\left((R^*)^2 \left(8 \alpha-3 \left| y\right| ^2\right)+\alpha \left(\left| y\right| ^2-2 \alpha\right)+2 (R^*)^4\right)<0 $. We show that $ f>0 $ for $ y^2>2\alpha $. Notice that \begin{equation}
+	h(R,y,\alpha)\geq0
+	\end{equation}
+	for $ 2\alpha\leq\abs{y}^2\leq8\alpha/3 $. Furthermore, $ h $ takes the minimal value at $ (R^*)^2=(8\alpha-3\abs{y}^2)/4 $ for $ y^2>8\alpha/3 $. Reinserting this into $ h $ we find \begin{equation}
+	h\left(\sqrt{(8\alpha-3\abs{y}^2)/4},y,\alpha\right)=-10 \alpha ^2-\frac{9 y^4}{8}+7 \alpha  y^2
+	\end{equation} 
+	which is a concave downward parabola in $ y^2 $ with discriminant \begin{equation}
+	d=(7\alpha)^2-4\cdot(9/8)\cdot 10\alpha^2=(2\alpha)^2
+	\end{equation}
+	thus we find the $ h\left(\sqrt{(8\alpha-3\abs{y}^2)/4},y,\alpha\right) $ is zero at \begin{equation}
+	y^2=\frac{8(7\alpha\mp 2\alpha)}{18}=\begin{cases}
+	4\alpha\\
+	20/9\alpha
+	\end{cases}
+	\end{equation}
+	thus in-between these two points, it must be positive, and since $ 8/3>20/9 $, we conclude that $ f(R^*,y,\alpha)>0 $ for $ y^2>2\alpha $. \\ 
+	We know generalize this to $ y\leq4\alpha $:
+	 To see this we notice that $ f(R,0_+,\alpha)=0 $. On the other hand since $ y^2<4\alpha $ we also know that $ f(R,y,\alpha)>0 $ for $ \abs{y}\geq2\alpha $. Now assume that there exist some $ y>0 $ with $ y\leq4\alpha $ such that $ f(R,y,\alpha)<0 $, this would imply that $ f $ has a minimum for some $ 4\alpha\geq y^*>0 $. This $ y^* $ would satisfy\begin{equation}
+	\partial_yf(R,y,\alpha)\rvert_{y=y^*}=\frac{\left(2 \alpha +2 	R^2+(y^*)^2\right) \ln \ln\left(\frac{R(R+\abs{y^*})+\alpha}{R(R-\abs{y^*})+\alpha}\right)-\frac{2 R y^* \left(\alpha +R^2\right) \left(2 \alpha +2
+		R^2-(y^*)^2\right)}{\left(\alpha +R^2-R y^*\right) (\alpha +R (R+y^*))}}{4 (y^*)^2}=0,
+	\end{equation}
+	from which we conclude that \begin{equation}
+	\ln\left(\frac{R(R+\abs{y^*})+\alpha}{R(R-\abs{y^*})+\alpha}\right)=\frac{2 R \abs{y^*} \left(\alpha +R^2\right) \left(2 \alpha +2
+		R^2-(y^*)^2\right)}{\left(2 \alpha +2 	R^2+(y^*)^2\right)\left(\alpha +R^2-R \abs{y^*}\right) (\alpha +R (R+\abs{y^*}))}.
+	\end{equation}
+	Inserting this back into $ f(R,y^*,\alpha) $ we find that \begin{equation}
+	f(R,y^*,\alpha)=R-\frac{R \left(\alpha +R^2\right) \left(-2 \alpha -2 R^2+(y^*)^2\right)^2}{4 \left(\alpha +R^2-R \abs{y^*}\right) (\alpha +R (R+\abs{y^*})) \left( \alpha + R^2+(y^*)^2/2\right)}.
+	\end{equation}
+	It then follows from \begin{equation}
+	\frac{1}{4}\left(-2 \alpha -2 R^2+(y^*)^2\right)^2=(R^2+\alpha)^2+(y^*/2)^2-(R^2+\alpha)(y^*)^2\leq(R^2+\alpha)^2-R^2(y^*)^2,
+	\end{equation}
+	where we used that $ (y^*)^2/4\leq\alpha $, and from \begin{equation}
+	\left(\alpha +R^2-R y^*\right) (\alpha +R (R+y^*))=(R+\alpha)^2-R^2(y^*)^2
+	\end{equation}
+	that \begin{equation}
+	f(R,y^*,\alpha)> 0
+	\end{equation}
+	which contradict the assumption that there exist some $ y $ for which $ f(R,y,\alpha)<0 $. Thus we conclude that $ f(R,y,\alpha)\geq0 $ for all $ y\in\R^{3(N-1)} $.
+\end{proof}
+\vspace{0.5cm}
+From \eqref{QuadraticFormTerm3} we conclude that \begin{equation}
+\begin{aligned}
+\int_{\R^{3N}}\diff k\hat{G}(k)\abs{\hat{\rho}^R(k)}^2=&N4\pi R \norm{\xi}_{L^2(\R{3(N-1)})}-N\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2\\&-N(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q})\\
+&= -N\left(T_{\text{diag}}^R(\xi^R)+T_{\text{off}}(\xi^R)-4\pi R\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right),
+\end{aligned}
+\end{equation}
+where we in the last line defined\begin{equation}
+\begin{aligned}
+T^R_{\text{diag}}(\xi^R)&=\int_{\R^{3(N-1)}}\diff \bar{k}^N L^R(\bar{k}^N) \abs{\xi^R(\bar{k}^N)}^2,\\
+T^R_{\text{off}}(\xi^R)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t \overline{\xi^R(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^R(t,\bar{q}).
+\end{aligned}
+\end{equation}
+Thereby, using \eqref{QuadraticForm2}, we can write down the quadratic form\begin{equation}
+\begin{aligned}
+F_\gamma^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+(\gamma_R^{-1}-4\pi R)\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
+\end{aligned}
+\end{equation}
+It is worth to mention that the sign of $ T_{\text{off}} $ was crucially dependent on the antisymmetry of $ u $, and that for a bosonic system, $ T_{\text{off}} $ comes with opposite sign. Similarly to the $ 1+1 $ case we see a singular behaviour for $ R\to\infty $ unless we choose $ \gamma_R $ exactly to cancel the divergence. Thus we choose $ \gamma_R=(4\pi R +\alpha)^{-1} $ and we end up with the quadratic form (slightly abusing notation by denoting the renormalized quadratic form by the same name as the non-renormalized one) \begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
+\end{aligned}
+\end{equation}
+
+The domain of the quadratic form can also be determined, by requiring all terms to be well-defined as well as imposing the anti-symmetry of fermions. We see from the first term that we clearly need $ u\in H^1(\R^{3N}) $, however, from $ T_{\text{diag}} $ we see that we furthermore need $ \xi_R=\gamma_R\int_{B_R(0)} \diff k_N \hat{u}(k)\in H^{1/2}\left(\R^{3(N-1)}\right) $. Hence we have the domain\begin{equation}
+\mathscr{D}(F_\alpha^R)=\left\{u\in H_{\text{as}}^1(\R^{3N})\ \Big\vert\ \left(\int_{B_R(0)}\diff k_N \hat{u}(k)\right)^\vee\in H_{\text{as}}^{1/2}\left(\R^{3(N-1)}\right)\right\}.
+\end{equation}
+Now the following lemma will help us further simplifying this domain.\begin{lemma}\label{lemma domain of FR}
+	Let $ w\in H^1(\R^{3}) $, then $ \left(\int_{B_R(0)}\diff k_N \hat{w}(k)\right)^\vee\in H^1(\R^{3(N-1)}) $.
+	\end{lemma}
+	\begin{proof}
+	Notice first that since $ \abs{\bar{k}^N}^2+1\leq\abs{k}^2+1 $, we have that $ \int \diff\bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\abs{\hat{w}(k)}^2\in L^1(\R^3)$ (by Tornelli), and thus  $ \left[\int \diff\bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\abs{\hat{w}(k)}^2\right]^{1/2}\in L^2(\R^3)$. Now to prove the claim we need to show\begin{equation}
+	\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert\int_{B_R(0)}\diff k_N \hat{w}(k)\right\rvert^2<\infty.
+	\end{equation}	
+	By Minkowski's integral inequality we have \begin{equation}
+	\begin{aligned}
+	\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert\int_{B_R(0)}\diff k_N \hat{w}(k)\right\rvert^2\leq\left(\int_{B_R(0)}\diff k_N\left[\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert \hat{w}(k)\right\rvert^2\right]^{1/2}\right)^2,\\
+	\end{aligned}
+	\end{equation}
+	By Cauchy-Schwartz we then have \begin{equation}
+	\begin{aligned}
+	&\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert\int_{B_R(0)}\diff k_N \hat{w}(k)\right\rvert^2\\&\qquad\leq\norm{\mathbbm{1}_{B_R(0)}}_2^2\norm{\left[\int_{\R^{3(N-1)}} \diff \bar{k}^N \left(\abs{\bar{k}^N}^2+1\right)\left\lvert \hat{w}(k)\right\rvert^2\right]^{1/2}}_2^2<\infty.
+	\end{aligned}
+	\end{equation}
+	\end{proof}
+By lemma \ref{lemma domain of FR}, we may conclude that \begin{equation}
+\mathscr{D}(F_\alpha^R)=\left\{u\in H_{\text{as}}^1(\R^{3N})\ \Big\vert\ \left(\int_{B_R(0)}\diff k_N \hat{u}(k)\right)^\vee\in H_{\text{as}}^{1/2}\left(\R^{3(N-1)}\right)\right\}=H^1_{\text{as}}(\R^{3N}),
+\end{equation}
+and the domain is independent of $ R $.
+We can also take the na\"ive $ R\to\infty $ limit to obtain a candidate for a possible $ \Gamma $-limit. We find the quadratic form\begin{equation}
+\begin{aligned}
+F_\alpha(u)&=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\ &\qquad \qquad+N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right)\\
+&=\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}|^2-\mu\norm{u}_{L^2(\R^{3N})}+N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3(N-1)})}^2\right),
+\end{aligned}
+\end{equation}
+where we have defined $ \widehat{\rho G}=\sum_{i=1}^{N}(-1)^{i-1}\hat{G}(k)\xi(\bar{k}^i) $, and \begin{equation}
+\begin{aligned}
+T_{\text{diag}}(\xi)&=\int_{\R^{3(N-1)}}\diff \bar{k}^N L(\bar{k}^N) \abs{\xi(\bar{k}^N)}^2,\\
+T_{\text{off}}(\xi)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t \overline{\xi(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi(t,\bar{q}).
+\end{aligned}
+\end{equation} 
+with \begin{equation}
+L(\bar{k}^N)=2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2}.
+\end{equation}
+The domain is \begin{equation}
+\mathscr{D}(F_\alpha)=\left\{u\in L_{\text{as}}^2(\R^{3N})\ \Big\vert\ \hat{u}=\hat{w}+\widehat{\rho G},\ w\in H_{\text{as}}^1(\R^{3N}),\ \xi\in H_{\text{as}}^{1/2}(\R^{3(N-1)}) \right\}.
+\end{equation}
+This exactly match the quadratic forms used in \cite{FINCO2012131,Moser_2017}. Notice that the quadratic forms obtained in the $ N+1 $ case are direct generalizations of the $ 1+1 $ case, \ie we obtain the $ 1+1 $ case by setting $ N=1 $ as we should. We note that $ (\widehat{\rho G})^\vee\notin H^1(\R^{3N}) $ (where $ f^\vee $ is inverse Fourier transform of $ f $) for $ \xi\neq0 $, so the decomposition $ \hat{u}=\hat{w}+\widehat{\rho G} $ is unique. Interestingly, we see as in the $ 1+1 $ case that the domain changes in the $ R\to\infty $ limit, even though it is the same for all finite $ R $.\\
+We now give some generalization of results from the $ 1+1 $ case.
+\begin{lemma}\label{lemmawH1}
+		Let $ w\in H^1(\R^{3N}) $, then \begin{equation}
+		\frac{1}{\sqrt{n}}\int_{B_n(0)}\diff k_N\hat{w}(k)\to0,\textnormal{ a.e.},\quad \textnormal{as }n\to\infty,
+		\end{equation}
+		where $ \hat{w} $ denotes the Fourier transform of $ w $. More precisely \begin{equation}
+		\frac{1}{\sqrt{n}}\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert=\epsilon(n)\sqrt{n}\left(g(\bar{k}^N)+g(\bar{k}^N)^{4/3}\right),
+		\end{equation}
+		for some $ \epsilon $-function, $ \epsilon(n)\to0 $ as $ n\to\infty $, and some $ g\in L^{2}(\R^{3(N-1)}) $. Furthermore, we have 
+		\begin{equation}
+		\frac{1}{\sqrt{n}}\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert\leq g(\bar{k}^N).
+		\end{equation}
+		In conclusion we have \begin{equation}
+		\norm{\frac{1}{\sqrt{n}}\int_{B_n(0)}\diff k_N\hat{w}(k)}_2\to0,\text{ as }n\to\infty.
+		\end{equation}
+\end{lemma}
+\begin{proof}
+	The proof of the first two statements is a straightforward generalization of the proof of lemma \ref{H1 int} noticing that $ g(\bar{k}^N)=\norm{f(\bar{k}^N,\cdot)}_{L_2(\R^3)}\in L^2(\R^{3(N-1)}) $, for $ f\in L^2(\R^{3N}) $, by Tornelli's theorem. The last two statements simply follow by Cauchy-Schwartz and DCT. 
+\end{proof}
+We also have the following lemma \begin{lemma}\label{lemmawH1-2}
+	Let $ w\in H^1(\R^{3N}) $, then
+	\begin{equation}
+		\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\hat{w}(k)}_{H^{1/2}(\R^{3(N-1)})}\to0,\quad\text{for }n\to\infty.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Let $ \hat{w}(k)=f(k)/(\sqrt{\abs{k}^2+1}) $, and let $ g=\norm{f(\bar{k}^N,\cdot)}_{L_2(\R^3)}\in L^2(\R^{3(N-1)}) $. Then by Cauchy-Schwartz we have
+	\begin{equation}
+	\frac{1}{n}\left\lvert\int_{B_n(0)}\diff k_N\hat{w}(k)\right\rvert\leq\frac{C}{\sqrt{n}} \sqrt{1-\frac{\sqrt{\abs{\bar{k}^N}^2+1}}{n}\arctan\left(\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\right)}g(\bar{k}^N).
+	\end{equation}
+	Thus we may compute \begin{equation}
+	\begin{aligned}
+	&\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\hat{w}(k)}_{H^{1/2}(\R^{3(N-1)})}^2\\&\leq\frac{C}{n}\int\diff \bar{k}^N\sqrt{\abs{\bar{k}^N}^2+1}\left(1-\frac{\sqrt{\abs{\bar{k}^N}^2+1}}{n}\arctan\left(\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\right)\right)\abs{g(\bar{k}^N)}^2\\&
+	\leq\frac{C}{n}\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N\sqrt{\abs{\bar{k}^N}^2+1}\abs{g(\bar{k}^N)}^2+\frac{C}{n}\int_{\abs{\bar{k}^N}\geq n}\diff \bar{k}^N \sqrt{\abs{\bar{k}^N}^2+1}\frac{n^2}{(\abs{\bar{k}^N}^2+1)}\abs{g(\bar{k}^N)}^2.
+	\end{aligned}
+	\end{equation}
+	Now notice that we have \begin{equation}
+	\mathbbm{1}_{B_n(0)}(\bar{k}^N)\frac{1}{n}\sqrt{\abs{\bar{k}^N}^2+1}\abs{g(\bar{k}^N)}^2\leq\sqrt{2}\abs{g(\bar{k}^N)}^2
+	\end{equation}
+	and \begin{equation}
+	\mathbbm{1}_{B_n(0)}(\bar{k}^N)\frac{1}{n}\sqrt{\abs{\bar{k}^N}^2+1}\abs{g(\bar{k}^N)}^2\to0,\ \text{a.e. }\text{ for }n\to\infty.
+	\end{equation}
+	We also have \begin{equation}
+	\mathbbm{1}_{(B_n(0))^\complement}(\bar{k}^N)\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\abs{g(\bar{k}^N)}^2\leq\abs{g(\bar{k}^N)}^2
+	\end{equation}
+	and \begin{equation}
+	\mathbbm{1}_{(B_n(0))^\complement}(\bar{k}^N)\frac{n}{\sqrt{\abs{\bar{k}^N}^2+1}}\abs{g(\bar{k}^N)}^2\to0,\ \text{a.e. }\text{ for }n\to\infty.
+	\end{equation}
+	Thus by DCT we may conclude that \begin{equation}
+	\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\hat{w}(k)}_{H^{1/2}(\R^{3(N-1)})}^2\to 0,\quad \text{as }n\to\infty.
+	\end{equation}
+\end{proof}
+We also give the following lemmas, which will prove useful later
+\begin{lemma}\label{lemmaGxi} Let $ N\geq2 $ and $ \xi\in \mathcal{H} $, for $ \mathcal{H}=L^2(\R^{3(N-1)}) $ or $ \mathcal{H}=H^{1/2}(\R^{3(N-1)}) $, then we have the following bound
+	\begin{equation}
+	\norm{\frac{1}{n}\int_{B_n(0)}\diff k_N\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}_{\mathcal{H}}\leq C\norm{\xi}_{\mathcal{H}},
+	\end{equation}
+	where $ C>0 $ depends only on $ N $, $ m $, and $ \mu $, for all $ 1\leq i\leq N $.
+\end{lemma}
+\begin{proof}
+	For $ i=N $ this follows from the estimate \begin{equation}
+	\hat{G}(k)\leq\frac{1}{\frac{m (m+N)}{(m+1) (m+N-1)}\abs{k_N}^2+\mu},
+	\end{equation}
+	which can be seen by a simply optimization. We minimize $ \hat{G}(k)^{-1} $ \begin{equation}\label{optimization1}
+	\partial_{k_\alpha}\left(\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j\right)=2k_\alpha+\frac{1}{m+1}\sum_{i\neq\alpha}k_i=0,\text{ for all }\alpha\neq N.
+	\end{equation}
+	Thus \begin{equation}\label{optimization2}
+	\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j=\sum_{i=1}^{N}k_i\cdot\left(k_i+\frac{1}{m+1}\sum_{j\neq i}k_j\right)=k_N^2+k_N\cdot\sum_{i=1}^{N-1}k_i.
+	\end{equation}
+	Now by \eqref{optimization1} we have \begin{equation}
+	0=\sum_{\alpha=1}^{N-1}\left(k_\alpha+\frac{1}{m+1}\sum_{i\neq\alpha}k_i\right)=\sum_{i=1}^{N-1}k_i+\frac{1}{m+1}\left((N-2)\sum_{i=1}^{N-1}k_i+(N-1)k_N\right)
+	\end{equation}
+	from which we get \begin{equation}
+	\sum_{i=1}^{N-1}k_i=-\frac{N-1}{N+m-1}k_N.
+	\end{equation}
+	Inserting this into \eqref{optimization2} we get \begin{equation}
+	\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N}k_i\cdot k_j=\frac{m (m+N)}{(m+1) (m+N-1)}\abs{k_N}^2.
+	\end{equation}
+	Thereby, we find\begin{equation}
+	\norm{\frac{1}{n}\int_{B_n(0)} \diff k_N \hat{G}(k)\xi(\bar{k}^N)}_{\mathcal{H}}\lesssim\frac{1}{n}nC\norm{\xi}_{\mathcal{H}}=C\norm{\xi}_{\mathcal{H}},
+	\end{equation}
+	for some $ C>0 $, where $ \mathcal{H}=L^2(\R^{3(N-1)}) $ or $  \mathcal{H}=H^{1/2}(\R^{3(N-1)})  $.\\
+	Now for $ i\neq N $  we use the Cauchy-Schwartz inequality
+	\begin{equation}\label{GxiBound}
+	\begin{aligned}
+	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{\mathcal{H}}\leq\frac{1}{n^2}\int\diff \bar{k}^N\mathbbm{1}_{B_n(0)}(k_i)g^{-1}_\mathcal{H}(\bar{k}^N)\left(\int \diff k_N g_{\mathcal{H}}(\bar{k}^i)\abs{\hat{G}(k)}^{2}\right)\\\times\left(\int\diff k_N g^{-1}_{\mathcal{H}}(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\right),
+	\end{aligned}
+	\end{equation}
+	where \begin{equation}
+	 g_{\mathcal{H}}(\bar{k}^i)=\begin{cases}
+	 1&\text{for }\mathcal{H}=L^2(\R^{3(N-1)}),\\
+	 1/\sqrt{\abs{\bar{k}^i}^2+1}&\text{for }\mathcal{H}=H^{1/2}(\R^{3(N-1)}).
+	 \end{cases}
+	\end{equation}
+	To estimate this we use that \begin{equation}\label{Gbound}
+	\hat{G}(k)\leq\frac{1}{Ak_i^2+Ak_N^2+B\left(2k_i\cdot k_N\right)+\mu}
+	\end{equation}
+	where $ A=1-\frac{N-2}{(m+1)(m+N-2)} $ and $ B=\frac{1}{m+1}-\frac{N-2}{(m+1)(m+N-2)} $, so $ 0<B<A<1 $. Similar to above this can be seen by optimizing $ \hat{G}(k)^{-1} $ w.r.t $ k_\alpha $, for all $ \alpha\neq i,N $:
+	\begin{equation}\label{optimization3}
+	0=\partial_{k_\alpha}\hat{G}(k^*)^{-1}=2k^*_\alpha+\frac{2}{m+1}\left(k_i+k_N+\sum_{l\neq \alpha,i,N}k^*_l\right).
+	\end{equation}
+	Furthermore we have\begin{equation}\label{optimization4}
+	\hat{G}(k)^{-1}=k_i^2+k_N^2+\frac{2}{m+1}k_i\cdot k_N+\sum_{\alpha\neq i,N}k_\alpha\cdot\left(k_\alpha+\frac{2}{m+1}\left(k_i+k_N+\frac{1}{2}\sum_{l\neq\alpha,i,N}k_l\right)\right)+\mu.
+	\end{equation}
+	Using \eqref{optimization3} we have \begin{equation}\label{optimization5}
+	\hat{G}(k)^{-1}\geq k_i^2+k_N^2+\frac{2}{m+1}k_i\cdot k_N+\sum_{\alpha\neq i,N}k^*_\alpha\cdot\left(\frac{1}{m+1}\left(k_i+k_N\right)\right)+\mu.
+	\end{equation}
+	Also using \eqref{optimization3} we find \begin{equation}
+	0=\sum_{\alpha\neq i,N}\left(k^*_\alpha+\frac{1}{m+1}\left(k_i+k_N+\sum_{l\neq\alpha,i,N}k^*_l\right)\right)=\sum_{\alpha\neq i,N}k^*_\alpha+\frac{N-2}{m+1}(k_i+k_N)+\frac{N-3}{m+1}\sum_{\alpha\neq i,N}k^*_\alpha,
+	\end{equation}
+	from which it follows that \begin{equation}
+	\sum_{\alpha\neq i,N}k^*_\alpha=-\frac{N-2}{m+N-2}(k_i+k_N).
+	\end{equation}
+	Inserting in \eqref{optimization5} we find \begin{equation}
+	\hat{G}(k)^{-1}\geq k_i^2+k_N^2+\frac{2}{m+1}k_i\cdot k_N-\left(\frac{N-2}{(m+1)(m+N-2)}\left(k_i+k_N\right)^2\right)+\mu
+	\end{equation}
+	from which \eqref{Gbound} follows. Using this in \eqref{GxiBound} together with the fact that for $ \mathcal{H}=H^{1/2}(\R^{3(N-1)}) $ we have \begin{equation}
+	\mathbbm{1}_{B_n(0)}(k_i)\frac{g_\mathcal{H}(\bar{k}^i)}{g_\mathcal{H}(\bar{k}^N)}=\mathbbm{1}_{B_n(0)}(k_i)\frac{\sqrt{k_i^2+K}}{\sqrt{k_N^2+K}}\leq\mathbbm{1}_{B_n(0)}(k_i)\frac{\sqrt{n^2+K}}{\sqrt{k_N^2+K}}\leq\mathbbm{1}_{B_n(0)}(k_i)\left(1+\frac{n}{\abs{k_N}}\right),
+	\end{equation}
+	and for $ \mathcal{H}=L^{2}(\R^{3(N-1)}) $ we have \begin{equation}
+	\mathbbm{1}_{B_n(0)}(k_i)\frac{g_\mathcal{H}(\bar{k}^i)}{g_\mathcal{H}(\bar{k}^N)}=\mathbbm{1}_{B_n(0)}(k_i)\leq\mathbbm{1}_{B_n(0)}(k_i)\left(1+\frac{n}{\abs{k_N}}\right),
+	\end{equation} we find that \begin{equation}
+	\begin{aligned}
+	&\left(\int\diff k_i \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\left(1+\frac{n}{\abs{k_N}}\right)\abs{\hat{G}(k)}^{2}\right)\\&\leq\int\diff k_i \diff k_N\left(1+\frac{n}{\abs{k_N}}\right) \frac{\mathbbm{1}_{B_n(0)}(k_i)}{\left(Ak_i^2+Ak_N^2+B\left(2k_i\cdot k_N\right)+\mu\right)^{2}}\\&
+	\leq C\int_{(0,n)}\diff r\ r^2 \int_{(0,\infty)}\diff q\ q^2\left(1+\frac{n}{q}\right) \frac{1}{\left(Aq^2+Ar^2-2Bqr+\mu\right)^{2}}\\&
+	=C\int_{(0,n)}\diff r\ r^2 \int_{(0,\infty)}\diff \tilde{q}\ \tilde{q}^2r^3\left(1+\frac{n}{\tilde{q}r}\right) \frac{1}{\left(A\tilde{q}^2r^2+Ar^2-2B\tilde{q}r^2+\mu\right)^{2}}\\&
+	\leq C'\int_{(0,n)}\diff r\ r^2\left(\frac{1}{r}+\frac{n}{r^2}\right)\\&
+	\leq\tilde{C}n^2
+	\end{aligned}
+	\end{equation}
+	where we defined $ \tilde{q}=q/r $, and $ C,\ C' $ and $ \tilde{C} $ are positive constants depending only on $ A,\ B $ and $ \mu $. On the other hand we also have \begin{equation}
+	\int\diff \bar{k}^{i,N}\left(\int\diff k_N g_\mathcal{H}^{-1}(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\right)=\norm{\xi}^2_{\mathcal{H}}.
+	\end{equation}
+	Therefore we conclude that
+	\begin{equation}
+	\begin{aligned}
+	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_\mathcal{H}\leq\tilde{C}\norm{\xi}^2_{\mathcal{H}}.
+	\end{aligned}
+	\end{equation}
+	This concludes the proof.
+\end{proof}
+In the case of $ \xi\in H^{1/2}(\R^{3(N-1)}) $ we can also show the result
+\begin{lemma}\label{lemmaxiCon}
+	 Let $ N\geq2 $ and $ \xi\in H^{1/2}(\R^{3(N-1)}) $, then we have the following limits\begin{equation}
+	 	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}=\mathcal{O}\left(\frac{1}{n}\right)\to 0,\text{ for }i\neq N\text{ and }n\to\infty,
+	 \end{equation}
+	 and \begin{equation}
+		\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}=\mathcal{O}\left(\frac{1}{n}\right)\to 0,\text{ for }i= N\text{ and }n\to\infty,
+	 \end{equation}
+\end{lemma}
+\begin{proof}
+	For $ i\neq N $ this can be seen by \begin{equation}
+	\begin{aligned}
+	&\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^{2}(\R^{3(N-1)})}\\&\leq\frac{1}{n^2}\int\diff \bar{k}^N\mathbbm{1}_{B_n(0)}(k_i)(\bar{k}^N)\left(\int \diff k_N \frac{1}{\sqrt{\abs{\bar{k}^i}^2+1}}\abs{\hat{G}(k)}^{2}\right)\left(\int\diff k_N \sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}^2\right)\\
+	&\leq\frac{1}{n^2}\int\diff \bar{k}^N\mathbbm{1}_{B_n(0)}(k_i)(\bar{k}^N)\left(\int \diff k_N \frac{1}{\abs{k_N}}\frac{1}{(Ak_N^2+Ak_i^2+2Bk_N\cdot k_i+\mu)^2}\right)\left(\int\diff k_N \sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}^2\right)\\
+	&\leq\frac{1}{n^2}\int_{0}^{n}\diff r r^2\left(\int \diff q\ q\frac{1}{(Aq^2+Ar^2-2Bqr)^2}\right)\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\\
+	&=\frac{1}{n^2}\int_{0}^{n}\diff r r^2\left(\int \diff \tilde{q}\ \tilde{q} r^2\frac{1}{(A\tilde{q}^2r^2+Ar^2-2B\tilde{q}r^2)^2}\right)\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\\
+	&\leq\frac{1}{n^2}\int_{0}^{n}\diff r C\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\\
+	&=\frac{1}{n}C\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\to 0,\text{ as }n\to\infty.
+	\end{aligned}
+	\end{equation}
+	where we used Cauchy-Schwartz in the second line, bounded $ \hat{G} $ in the third line and changed variables $ q=\tilde{q}r $ in the fifth line. Furthermore, $ A=1-\frac{N-2}{(m+1)(m+N-2)} $ and $ B=\frac{1}{m+1}-\frac{N-2}{(m+1)(m+N-2)} $, so $ 0<B<A<1 $ as above.\\
+	For $ i=N $, we proceed by
+	\begin{equation}
+	\begin{aligned}
+	&\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\\&\qquad
+	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}\left(4\pi n-\int_{B_n(0)}\diff k_N\hat{G}(k)\right)\xi(\bar{k}^N)}^2\\&\qquad
+	=\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2.
+	\end{aligned}
+	\end{equation}
+	Now remember that $ L^n(\bar{k}^N)<4\pi n $, but we also have from the definition of $ L^n $, \eqref{defL}, that \begin{equation}
+	L^n(\bar{k}^N)=2\pi^2\left(\frac{m(m+2)}{(m+1)^2}\sum_{i=1}^{N-1}k_i^2+\frac{2m}{(m+1)^2}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu\right)^{1/2}\mathcal{O}(1)\leq CL(\bar{k}^N),
+	\end{equation} 
+	for $ \abs{\bar{k}^N}<n $. Thus we may estimate\begin{equation}
+	\begin{aligned}
+	\int\diff \bar{k}^N\abs{\frac{1}{4\pi n}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2&\leq \frac{C}{4\pi n}\int_{\abs{\bar{k}^N}\leq n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2+\int_{\abs{\bar{k}^N}>n}\abs{\xi(\bar{k}^N)}^2
+	\\&\leq\frac{C'}{4\pi n}\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}+\frac{1}{n}\int_{\abs{\bar{k}^N}>n}\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2\\&
+	\leq\frac{\tilde{C}}{n}\norm{\xi}^2_{H^{1/2}(\R^{3(N-1)})}\to0\text{ as }n\to\infty,
+	\end{aligned}
+	\end{equation}
+	where we used that $\left(\int_{\abs{\bar{k}^N}<n}\diff\bar{k}^N L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2\right)^{1/2}\equiv\norm{\xi}_{H^{1/2}(\R^{3(N-1)})}  $. This concludes the proof.
+\end{proof}
+This result can actually be made even stronger which is captured in the following lemma
+\begin{lemma}\label{lemmaxiCon2}
+	Let $ N\geq2 $ and $ \xi\in H^{1/2}(\R^{3(N-1)}) $, then we have the following limits\begin{equation}
+	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}=o\left(\frac{1}{n}\right)\to 0,\text{ for }i\neq N\text{ and }n\to\infty,
+	\end{equation}
+	and \begin{equation}
+	\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}=o\left(\frac{1}{n}\right)\to 0,\text{ for }i= N\text{ and }n\to\infty,
+	\end{equation}
+	where $ o\left(\frac{1}{n}\right)=\epsilon(n)\mathcal{O}(\frac{1}{n}) $ for some function $ \epsilon(n)\to $ as $ n\to\infty $.
+\end{lemma}
+\begin{proof}
+	The proof is a slight generalization of the proof of lemma \ref{lemmaxiCon}. For $ i\neq N $ we consider\begin{equation}
+	\begin{aligned}
+	\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^{2}(\R^{3(N-1)})}=\int\diff\bar{k}^{N,i}\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2.
+	\end{aligned}
+	\end{equation}
+	Therefore, we consider\begin{equation}
+	\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2=\int_{B_n(0)}\diff k_i\frac{1}{n^2}\left\lvert\int_{M_n} \diff k_N\hat{G}(k)\xi(\bar{k}^i)+\int_{M_n^\complement} \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2,
+	\end{equation}
+	with $ M_n=\left\{\left(\abs{\bar{k}^i}^2+1\right)^{1/4}\abs{\xi(\bar{k}^i)}<\varepsilon_n\right\} $ for some sequence $ \varepsilon_n\to0 $ as $ n\to\infty $. We now use H\"older's inequality, $ (2,2) $ on the first term and $ (3,3/2) $ on the second term
+	\begin{equation}
+	\begin{aligned}
+	&\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\\&\leq\int_{B_n(0)}\diff k_i\frac{1}{n^2}\Bigg\lvert\left(\int_{M_n} \diff k_N\frac{1}{\sqrt{\abs{\bar{k}^i}^2+1}}\hat{G}(k)^2\right)^{1/2}\left(\int_{M_n}\diff k_N\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}^2\right)^{1/2}\\&\qquad
+	+\left(\int_{M_n^\complement} \diff k_N\frac{1}{\left(\abs{\bar{k}^i}^2+1\right)^{3/4}}\hat{G}(k)^3\right)^{1/3}\left(\int_{M_n^\complement} \diff k_N\left(\left(\abs{\bar{k}^i}+1\right)^{1/4}\abs{\xi(\bar{k}^i)}\right)^{3/2}\right)^{2/3}\Bigg\rvert^2.
+		\end{aligned}
+	\end{equation}
+	Now notice that \begin{equation}
+	\left(\int_{M_n} \diff k_N\frac{1}{\sqrt{\abs{\bar{k}^i}^2+1}}\hat{G}(k)^2\right)^{1/2}\leq \frac{C_1}{\abs{k_i}},
+	\end{equation}
+	for some $ C_1>0 $, and by DCT we have \begin{equation}
+	\left(\int_{M_n}\diff k_N\sqrt{\abs{\bar{k}^i}+1}\abs{\xi(\bar{k}^i)}^2\right)^{1/2}=\epsilon_1(n)f(\bar{k}^{N,i})
+	\end{equation}
+	For $ f(\bar{k}^{i,N})=\left(\int\diff k_N\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^{i,N},k_N)}^2\right)^{1/2}\in L^2(\R^{3(N-2)})$, and $ \epsilon(n)\to0\text{ as }n\to\infty $. Furthermore, we have \begin{equation}
+	\left(\int_{M_n^\complement} \diff k_N\frac{1}{\left(\abs{\bar{k}^i}^2+1\right)^{3/4}}\hat{G}(k)^3\right)^{1/3}\leq\frac{C_2}{\abs{k_i}^{3/2}},
+	\end{equation}
+	for some $ C_2>0 $, and \begin{equation}
+	\left(\int_{M_n^\complement} \diff k_N\left(\left(\abs{\bar{k}^i}+1\right)^{1/4}\abs{\xi(\bar{k}^i)}\right)^{3/2}\right)^{2/3}\leq\frac{1}{\varepsilon_n^{1/3}}f(\bar{k}^{N,i})^{4/3}.
+	\end{equation}
+	Combining everything, we thus obtain\begin{equation}
+	\begin{aligned}
+	&\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\\&\leq\frac{1}{n^2}\epsilon_1(n)^2C_1^2\left(\int_{B_n(0)}\diff k_i\frac{1}{\abs{k}_i^2}\right)\abs{f}^2+\frac{1}{n^2}\frac{1}{\varepsilon_n^{2/3}}C_2^2\left(\int_{B_n(0)}\diff k_i\frac{1}{\abs{k}_i^3}\right)(\abs{f}^2)^{4/3}\\&\qquad+\frac{2}{n^2}\epsilon_1(n)\frac{1}{\varepsilon_n^{1/3}}C_1C_2\left(\int_{B_n(0)}\diff k_i\frac{1}{\abs{k}_i^{5/2}}\right)(\abs{f}^2)^{7/6}.
+	\end{aligned}
+	\end{equation}
+	Choosing $ \varepsilon_n=1/\ln(n)^3 $ we see that \begin{equation}
+	\begin{aligned}
+	n\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\leq\frac{C}{n}\left(\epsilon_1(n)^2n\abs{f}^2+\ln(n)^3(\abs{f}^2)^{4/3}+\epsilon_1(n)\ln(n)\sqrt{n}(\abs{f}^2)^{7/6}\right),
+	\end{aligned}
+	\end{equation}
+	from which is follows that \begin{equation}
+	n\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\to0\text{ a.e. as }n\to\infty.
+	\end{equation}
+	On the other hand by doing the above analysis over but with $ M_n=\R^3 $ we find \begin{equation}
+	n\int_{B_n(0)}\diff k_i\left\lvert\frac{1}{n}\int \diff k_N\hat{G}(k)\xi(\bar{k}^i)\right\rvert^2\leq C_1\abs{f}^2.
+	\end{equation}
+	Hence, we conclude by DCT that \begin{equation}
+	n\norm{\frac{1}{n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^{2}(\R^{3(N-1)})}\to0\text{ as }n\to\infty,
+	\end{equation}
+	which is the desired result.\\
+	For $ i=N $, consider\begin{equation}
+	\begin{aligned}
+	n\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})} =\int\diff \bar{k}^N\abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2.
+	\end{aligned}
+	\end{equation}
+	Furthermore, we have
+	\begin{equation}\label{EqLbound}
+	\begin{aligned}
+	\abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2&\leq C_1\mathbbm{1}_{\{\abs{\bar{k}^N}\leq n\}} L(\bar{k}^N)\abs{\xi(\bar{k}^N)}^2+C_2\mathbbm{1}_{\{\abs{\bar{k}^N}>n\}}\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2\\
+	&\leq C_3\sqrt{\abs{\bar{k}^N}^2+1}\abs{\xi(\bar{k}^N)}^2
+	\end{aligned}
+	\end{equation}
+	where we in the first term used that $ L^n(\bar{k}^N)\sim L(\bar{k}^N)\sim \abs{\bar{k}^N} $ for $ \bar{k}^N\leq n $, and in the second term we used that $ L^n<4\pi n $ and that $ \sqrt{\abs{\bar{k}^N}^2+1}>n $ for $ \abs{k_N}>n $. In the second inequality we used that $ L(\bar{k}^N)\leq C\sqrt{\abs{\bar{k}^N}^2+1} $ for some $ C>0 $. Clearly the right hand side is an $ L^1(\R^{3(N-1)}) $ function, and thus we conclude that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ is dominated by an $ L^1(\R^{3(N-1)}) $ function. We also note that $ \abs{\frac{1}{4\pi \sqrt{n}}L^n(\bar{k}^N)\xi(\bar{k}^N)}^2 $ converges pointwise a.e. to zero. Hence, by DCT we then have \begin{equation}
+		n\norm{\xi(\bar{k}^i)-\frac{1}{4\pi n}\int \diff k_N \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)}^2_{L^2(\R^{3(N-1)})}\to0\text{ as }n\to\infty.
+	\end{equation}
+	which is the desired result.
+\end{proof}
+The following lemma from \cite{Moser_2017} will also prove useful below\begin{lemma}[Lemma 1 in \cite{Moser_2017}]\label{lemmaMoserSeiringer}
+	The operator $ \sigma $ on $ L^2(\R^3) $ with integral kernel\begin{equation}
+	\sigma(s,t)=(s^2+1)^{(\beta-1)/4}\frac{1}{s^2+t^2+\lambda s\cdot t+1}(t^2+1)^{-(\beta+1)/4},
+	\end{equation}
+	is bounded for all $ -2<\lambda<2 $, and $ -2<\beta<2 $.
+\end{lemma}
+This lemma generalizes to higher dimensions and we actually get the lemma\begin{lemma}\label{lemmaMoserSeiringerGen}
+	Let $ i,j\in\{1,...,N\} $ and $ i\neq j $. The operator $ \sigma^j_G:L^2(\R^{3(N-1)})\to L^2(\tilde{\R}^{3(N-1)}) $ given by \begin{equation}
+	\sigma^j_G: f(\bar{k}^i)\mapsto h(\bar{k}^j)= \int\diff k_j \frac{1}{(\abs{\bar{k}^j}^2+1)^{1/4}}\hat{G}(k)\frac{1}{(\abs{\bar{k}^i}^2+1)^{1/4}}f(\bar{k}^i),
+	\end{equation}
+	is bounded.
+\end{lemma}
+\begin{proof}
+	We simply make the following estimate\begin{equation}
+	\begin{aligned}
+	\norm{\sigma_G^jf}_2^2&=\norm{\int\diff k_j \frac{1}{(\abs{\bar{k}^j}^2+1)^{1/4}}\hat{G}(k)\frac{1}{(\abs{\bar{k}^i}^2+1)^{1/4}}f(\bar{k}^i)}_2^2\\
+	&=\int\diff\bar{k}^j\left\lvert\int\diff k_j \frac{1}{(\abs{\bar{k}^j}^2+1)^{1/4}}\hat{G}(k)\frac{1}{(\abs{\bar{k}^i}^2+1)^{1/4}}f(\bar{k}^i)\right\rvert^2\\
+	&\leq\int\diff k_i\int\diff\bar{k}^{i,j}\left\lvert\int\diff k_j \frac{1}{(\abs{k_i}^2+1)^{1/4}}\frac{1}{Ak_i^2+Ak_j^2+2Bk_i\cdot k_j+\mu}\frac{1}{(\abs{k_j}^2+1)^{1/4}}f(\bar{k}^i)\right\rvert^2,
+	\end{aligned}
+	\end{equation}
+	where we know from above that $ 0<B<A<1 $. By a simple application of Minkowski's integral inequality we have \begin{equation}
+	\begin{aligned}
+	&\norm{\sigma_G^jf}_2^2\\&\leq\int\diff k_i\left(\int\diff k_j \frac{1}{(\abs{k_i}^2+1)^{1/4}}\frac{1}{Ak_i^2+Ak_j^2+2Bk_i\cdot k_j+\mu}\frac{1}{(\abs{k_j}^2+1)^{1/4}}\left(\int\diff\bar{k}^{i,j}\abs{f(\bar{k}^i)}^2\right)^{1/2}\right)^2.
+	\end{aligned}
+	\end{equation}
+	By Tornelli's theorem $ g(k_j):=\left(\int\diff\bar{k}^{i,j}\abs{f(\bar{k}^i)}^2\right)^{1/2}\in L^2(\R^3) $ with $ \norm{g}_{L^2(\R^3)}=\norm{f}_{L^2(\R^{3(N-1)})} $. Thus we have, by lemma \ref{lemmaMoserSeiringer} with $ \beta=0 $ that \begin{equation}
+	\norm{\sigma_G^jf}_2^2\leq C\norm{\sigma}^2\norm{g}_{L^2(\R^3)}^2=C'\norm{f}^2_{L^2(\R^{3(N-1)})} 
+	\end{equation}
+\end{proof}
+\textbf{Remark}: It is worth pointing out, that this is what makes $ T_{\text{off}} $ well-defined. Indeed it implies if we have $ \chi,\xi\in H^{1/2}(\R^{3(N-1)}) $, that \begin{equation}
+\int\diff k\overline{\chi(\bar{k}^j)}\hat{G}(k)\xi(\bar{k}^i)\leq \sqrt{C'}\norm{\chi}_{H^{1/2}(\R^{3(N-1)})}\norm{\xi}_{H^{1/2}(\R^{3(N-1)})}.
+\end{equation}
+In particular \begin{equation}
+T_{\text{off}}(\xi)=(N-1)\int\diff k\overline{\xi(\bar{k}^2)}\hat{G}(k)\xi(\bar{k}^1)\leq\sqrt{C'}(N-1)\norm{\xi}_{H^{1/2}(\R^{3(N-1)})}^2
+\end{equation}
+We now present a result generalizing Proposition \ref{F Gamma upper bound}
+\begin{proposition}\label{F Gamma upper bound(N+1)}
+	Let $ F_\alpha^n $ and $ F_\alpha $ be defined as above. Then for all $ u\in\dom{F_\alpha} $ there exist $ (u_n)_{(n\geq1)} $ with $ u_n\in\dom{F_n} $ such that \begin{equation}
+	F_\alpha(u)=\lim\limits_{n\to\infty}F^n_\alpha(u_n).
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	Similar to the proof of Proposition \ref{F Gamma upper bound} we simply construct the wanted sequence. Let $ u=w+\rho G \in\dom{F_\alpha}$, where $ \rho G=\left(\sum_{i=1}^{N}(-1)^{i-1}\hat{G}(k)\xi(\bar{k}^i)\right)^\vee $. We then choose the sequence $ u_n=w+(\widehat{\rho^nG})^\vee $, \ie\begin{equation}
+	\hat{u}_n(k)=\hat{w}(k)+\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i).
+	\end{equation}
+	To do this we need to show that for $ \xi\in H_{\text{as}}^{1/2}(\R^{3(N-1)}) $ we have $ (\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i))^\vee \in H_{\text{as}}^1(\R^{3N}) $. However, this actually follows from calculations we have previously made\begin{equation}
+	\norm{(\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i))^\vee}_{H^1(\R^{3N})}^2\equiv\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)^2\lvert\xi(\bar{k}^i)\rvert^2,
+	\end{equation}
+	where we use $ \equiv $ to denote equivalence of norms
+	By symmetry of $ \hat{G} $ we may rewrite this as\begin{equation}
+	\int_{\R^{3N}}\diff k \mathbbm{1}_{B_n(0)}(k_N)\hat{G}(k)\abs{\xi(\bar{k}^N)}^2=\int_{\R^{3(N-1)}}\diff\bar{k}^N(4\pi n-L^n(\bar{k}^N))\abs{\xi(\bar{k}^N)}^2\leq 4\pi n \norm{\xi}_{L^{2}(\R^{3(N-1)})}^2,
+	\end{equation}
+	for some $ C>0 $. Now we see that \begin{equation}
+	\begin{aligned}
+	\xi^n(\bar{k}^N)&=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\sum_{i=1}^{N}(-1)^{i-2+N}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)\right)\\
+	&=\frac{1}{4\pi n+\alpha}\left(\left(\int_{B_n(0)}\diff k_N \hat{w}(k)\right)+\sum_{i=1}^{N-1}(-1)^{i-2+N}\mathbbm{1}_{B_n(0)}(k_i)\braket{\hat{G}(\bar{k}^N,\cdot),\xi(\bar{k}^{iN},\cdot)}\right.\\
+	&\left.\qquad\qquad\qquad\qquad\qquad+\left(4\pi n-L^n(\bar{k}^N)\right)\xi(\bar{k}^N)\right.\Bigg)\to \xi(\bar{k}^N),\text{ a.e. as }n\to\infty.
+	\end{aligned}
+	\end{equation}
+	We can actually furthermore show norm $ L^2 $-convergence of $ \xi^n $. By lemmas \ref{lemmawH1} and \ref{lemmaxiCon2} we have \begin{equation}\label{xiConvergence}
+	\begin{aligned}
+	\hspace*{-0.3cm}\norm{\xi^n-\xi}_{L^{2}(\R^{3(N-1)}) }\leq\frac{1}{4\pi n+\alpha}&\Bigg(\norm{\int_{B_n(0)}\diff k_N \hat{w}(k)}_{L^{2}(\R^{3(N-1)}) }\\&+\sum_{i=1}^{N-1}\norm{\int\diff k_N\left(\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\xi(\bar{k}^i)\right)}_{L^{2}(\R^{3(N-1)}) }\\&+\norm{\int \diff k_N \mathbbm{1}_{B_n(0)}(k_N)\hat{G}(k)\xi(\bar{k}^N)-(4\pi n+\alpha)\xi(\bar{k}^N)}_{L^2(\R^{3(N-1)})}\Bigg)\\
+	=o\left(\frac{1}{\sqrt{n}}\right)\to 0\text{ as }n\to\infty.
+	\end{aligned}
+	\end{equation}
+We are now ready to show the convergence of $ F_\alpha^n(u^n) $. We have \begin{equation}
+F_\alpha^n(u^n)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
+\end{equation}
+The terms $ N\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})} $ and $ -\mu\norm{u^n}^2_2 $ converge as we want by the convergence of $ \xi^n $. Let us therefore write out\begin{equation}
+\begin{aligned}
+\hspace*{-0.8cm}\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2=\int\diff k \hat{G}(k)^{-1}\Bigg\{\abs{\hat{w}(k)}^2+2\Real\hat{w}(k)\left(\sum_{i=1}^{N}(-1)^{i-1}\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\right)\\
++\sum_{i,j}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)^2\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^j)-\xi^n(\bar{k}^j)\right)\Bigg\}.
+\end{aligned}
+\end{equation}
+The first term we want to keep. The second term goes to zero, by \eqref{xiConvergence} and Lemma \ref{lemmawH1}. The third term on the other hand, cancels $ N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)\right) $ and replaces it by $ N\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)\right) $, by the fact that \begin{equation}
+\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j).
+\end{equation}
+To see this, notice that by lemma \ref{lemmawH1-2} and \ref{lemmaGxi} we now that $ \xi^n $ is $ H^{1/2}(\R^{3(N-1)}) $ bounded. Thus for any subsequence, $ \xi^{n_j} $ there exist a further subsequence $ \xi^{n_{j_k}} $ such that $ \xi^{n_{j_k}} \rightharpoonup \chi  $ in $ H^{1/2}(\R^{3(N-1)}) $ for some $ \chi\in H^{1/2}(\R^{3(N-1)}) $. However, then $ \xi^{n_{j_k}} \rightharpoonup \chi $ in $ L^{2}(\R^{3(N-1)}) $, but since we know $ \xi^{n_{j_k}} \to \xi $ in $ L^{2}(\R^{3(N-1)}) $, we conclude that $ \chi=\xi $. Therefore, we infer that $ \xi^n\rightharpoonup\xi $ in $ H^{1/2}(\R^{3(N-1)}) $. By lemma \ref{lemmaMoserSeiringerGen} (the remark below) we know that for $ i\neq j $ $ \phi\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded linear functional on $ H^{1/2}(\R^{3(N-1)}) $ for $ \xi\in H^{1/2}(\R^{3(N-1)})  $. Hence we conclude that \begin{equation}
+\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j.
+\end{equation}
+Knowing this it is straightforward to show that \begin{equation}
+\int\diff k\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_i)\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j,
+\end{equation}
+since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT. Thus we find by antisymmetry of $ \xi^n $ and $ \xi $\begin{equation}\label{EqConOff}
+\begin{aligned}
+\int\diff k\sum_{\substack{i,j\\i\neq j}}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)&\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^j)-\xi^n(\bar{k}^j)\right)+NT^n_{\text{off}}(\xi^n)\\
+&\to -\int\diff k\sum_{\substack{i,j\\i\neq j}}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^j)\\&=N(N-1)\int\diff k \overline{\xi(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi(t,\bar{q})=NT_{\text{off}}(\xi)
+\end{aligned}
+\end{equation}
+For $i=N$ on the other hand we have \begin{equation}
+\begin{aligned}
+&\int\diff k \mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\\&\qquad=\int\diff\bar{k}^i(4\pi n-L^n(\bar{k}^i))\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2.
+\end{aligned}
+\end{equation}
+By lemma \ref{lemmaxiCon2} the first term converges to zero. The second term on the other hand can be written as \begin{equation}
+\begin{aligned}
+-\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2=\overbrace{-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2}^{-T_{\text{diag}}^n(\xi^n)}-\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\\+2\Real\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i).
+\end{aligned}
+\end{equation}
+Similar to above in \eqref{EqLbound} we have\begin{equation}
+L^n(\bar{k}^N)\leq C_1 \mathbbm{1}_{B_n(0)}(\bar{k}^N)L(\bar{k}^N)+C_2\mathbbm{1}_{B_n(0)^\complement}(\bar{k}^N)\sqrt{\abs{\bar{k}^N}^2+1}\leq C\sqrt{\abs{\bar{k}^N}^2+1},
+\end{equation}
+and $ L^n\to L $ pointwise a.e. as $ n\to \infty $. By DCT we infer that \begin{equation}\label{EqLnCon}
+\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2\to\int\diff \bar{k}^i L(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2.
+\end{equation} 
+Furthermore, we have \begin{equation}\label{EqLnCon2}
+\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi^n(\bar{k}^i)=\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^i)+\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i)).
+\end{equation}
+Since we know that $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ (Similar argument to the one above for $ \xi_n\rightharpoonup\xi $, just observe that $ \abs{\xi^n-\xi} $ is $ H^{1/2}(\R^{3(N-1)}) $ bounded and converge to zero in $ L^{2}(\R^{3(N-1)}) $ is ). Thus we know\begin{equation}
+\begin{aligned}
+\abs{\int\diff \bar{k}^i L^n(\bar{k}^i)\overline{\xi(\bar{k}^i)}(\xi^n(\bar{k}^i)-\xi(\bar{k}^i))}\leq\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}\\\leq C\int\diff \bar{k}^i\sqrt{\abs{\bar{k}^i}^2+1}\abs{\xi(\bar{k}^i)}\abs{\xi^n(\bar{k}^i)-\xi(\bar{k}^i)}=\braket{\abs{\xi},\abs{\xi^n-\xi}}_{H^{1/2}(\R^{3(N-1)})}\to0.
+\end{aligned}
+\end{equation}
+Combining with \eqref{EqLnCon} and \eqref{EqLnCon2} we obtain \begin{equation}
+-\int\diff\bar{k}^iL^n(\bar{k}^i)\left\lvert\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right\rvert^2+\int\diff \bar{k}^i L^n(\bar{k}^i)\abs{\xi^n(\bar{k}^i)}^2\to\int\diff \bar{k}^i L(\bar{k}^i)\abs{\xi(\bar{k}^i)}^2
+\end{equation}
+Combining all the above, we find \begin{equation}\label{EqConDiag}
+\left(\int\diff k\mathbbm{1}_{B_n(0)}(k_i)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^i)-\xi^n(\bar{k}^i)\right)\right)+T_{\text{diag}}^n(\xi^n)\to T_{\text{diag}}(\xi)\quad\text{ as }n\to\infty.
+\end{equation}
+Combining \eqref{EqConOff} and \eqref{EqConDiag} we find \begin{equation}
+\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n-\hat{\rho}^n\hat{G}}^2+N(T_{\text{diag}}^n(\xi^n)+T_{\text{off}}^n(\xi^n))\to \int\diff k \hat{G}(k)^{-1}\abs{\hat{w}(k)}^2+N(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)),
+\end{equation}
+as $ n\to\infty $, from which it follows that \begin{equation}
+F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
+\end{equation}
+	\end{proof}
+	\textbf{Remark:} It is worth pointing out that we actually circumvent showing that $ T^n_{\text{diag}/\text{off}}(\xi^n)\to T_{\text{diag}/\text{off}}(\xi) $. Although this might be true, showing it probably requires (it would at least be sufficient) that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)}) $, which we have not been able to show. However, $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ suffices in showing convergence of $ F_\alpha^n(u_n) $ as can be seen from the proof above.\\
+\subsection*{Lower bound}
+	\textbf{Next step:}
+Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $.\\
+Since we have reduced the problem to working with $ F^R_\alpha $ at finite $ R $. It is convenient to use the expression for $ F_\alpha^R $ given in \eqref{F at Finite R}
+\begin{equation}
+F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2.
+\end{equation}
+Defining $ \hat{\phi}(k)=\sqrt{\hat{G}(k)^{-1}}\hat{u}(k) $ this can be rewritten\begin{equation}
+F_\alpha^R(u)=\norm{\phi}_2^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2.
+\end{equation}
+Thus if we can show that $ \frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}^2 $ for all $ R>0 $, we find that $ F_\alpha^R(u)\geq-\mu\norm{u}_2^2 $ and $ F_\alpha^R $ is uniformly bounded from below. \\Notice that $ \frac{1}{4\pi R+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2\leq\norm{\phi}_2^2$ depends on the choice $ \mu $, thus we need only prove that there exist a finite $ \mu $ such that the bound holds. We now use the bound \begin{equation}
+\begin{aligned}
+\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2=\left\lvert\int_{B_R(0)}\diff k_ih(k)\left(\hat{G}(k)\right)^{1/4}h(k)^{-1}\left(\hat{G}(k)\right)^{1/4}\hat{\phi}(k)\right\rvert^2\\
+\leq \left(\int_{B_R(0)}\diff k_ih(k)^{-2}\hat{G}(k)^{1/2}\right)\left(\int_{B_R(0)}\diff k_i h(k)^{2}\hat{G}(k)^{1/2}\abs{\hat{\phi}(k)}^2\right)\\
+\leq 
+\end{aligned}
+\end{equation}
+Choosing $ h(k)=\sqrt{\frac{k_i^2}{k_j^2}} $ for $ j\neq i $ we find
+\begin{equation}
+\begin{aligned}
+\left\lvert\int_{B_R(0)}\diff k_i\sqrt{\hat{G}(k)}\hat{\phi}(k)\right\rvert^2
+\leq \left(\int_{B_R(0)}\diff k_i\frac{k_j^2}{k_i^2}\hat{G}(k)^{1/2}\right)\left(\int_{B_R(0)}\diff k_i \frac{k_i^2}{k_j^2}\hat{G}(k)^{1/2}\abs{\hat{\phi}(k)}^2\right)\\
+\leq \sup_{k_j}\left(\int_{B_R(0)}\diff k_i\frac{k_j^2}{k_i^2}\hat{G}(k)^{1/2}\right)\sup_{k_i}\frac{k_i^2}{k_j^2}\hat{G}(k)^{1/2}\left(\int_{B_R(0)}\diff k_i \abs{\hat{\phi}(k)}^2\right)
+\end{aligned}
+\end{equation}
+Problem with factor $ N $ from the sum.\vspace{0.5cm}\\
+INSTEAD: Let $ \dom{F^n_\alpha}\ni u_n\to u\in\dom{F_\alpha} $ in $ L^2(\R^{3N}) $ we then show that \begin{equation}
+F_\alpha^n(u_n)\geq-M\norm{u_n}_2^2,
+\end{equation}
+for some $ M>0 $ independent of $ n\geq1 $.
+\vspace{0.5cm}\\
+OR SHOW $ \Gamma $-lower bound\begin{equation}
+\liminf_{n\to\infty}F^n_\alpha(u_n)\geq F_\alpha(u).
+\end{equation}
+If $ \liminf_{n\to\infty}F_\alpha^n(u_n)=\infty $ we are done. Assume therefore that $ \liminf_{n\to\infty}F_\alpha^n(u_n)<\infty $.
+Assume, by possibly passing to a subsequence that $ F_\alpha^n(u_n)\to\liminf_{n\to\infty}F_\alpha^n(u_n) $. We may write $ \hat{u}=\hat{w}+\hat{G}\hat{\rho} $, with $ w\in H_\text{as}^1(\R^{3N}) $ and $ \rho=\sum_{i=1}^{N}(-1)^{i+1}\xi $, with $ \xi\in H_{\text{as}}^{1/2}(\R^{3(N-1)}) $. Since $ \dom{F_\alpha^n}=H_{\text{as}}^1(\R^{3N}) $ for all $ n\in\mathbb{N} $ we may also write $ \hat{u}_n=\hat{w}+\hat{G}\hat{\zeta}^n $ with $ \zeta^n\in H_{\text{as}}^{-1}(\R^{3N}) $ and $ \hat{G}\hat{\zeta}^n\to\hat{G}\hat{\rho} $ in $ L^2(\R^{3N}) $, \ie $ \zeta^n\to\rho $ in $ H^{-2}(\R^{3N}) $. Thus we have\begin{equation}
+\begin{aligned}
+F_\alpha^n(u^n)
+=\int\diff k \hat{G}(k)^{-1}\abs{\hat{w}+(\hat{\zeta}^n-\hat{\rho}^n)\hat{G}}^2-\mu\norm{u_n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
+\end{aligned}
+\end{equation}
+With $ \xi^n(\bar{k}^N)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N\hat{u}_n(k)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\xi^n(\bar{k}^i) $. Knowing that \begin{equation}
+L^n(\bar{k}^N)\geq\pi\sqrt{4\beta-y^2}\left(\arctan\left(\frac{2n-\abs{y}}{\sqrt{4\beta-y^2}}\right)+\arctan\left(\frac{2n+\abs{y}}{\sqrt{4\beta-y^2}}\right)\right),
+\end{equation}
+where $ y=\frac{2}{m+1}\sum_{i=1}^{N-1}k_i $, and $ \beta=\sum_{i=1}^{N-1}k_i^2+\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+\mu $ (see the proof of lemma \ref{LemmaLgreater0}). On the other hand we also have \begin{equation}
+L^n(\bar{k}^N)\geq2\pi\left[n-\frac{(2n^2-y^2+2\beta)}{4\abs{y}}\ln\left(\frac{n(n+\abs{y})+\beta}{n(n-\abs{y})+\beta}\right)\right],
+\end{equation}
+So for $ \abs{y}>2n $ we have \begin{equation}
+L^n(\bar{k}^N)\geq2\pi\left[n-\frac{(2n^2-y^2+2\beta)}{4\abs{y}}\frac{2n\abs{y}}{n^2-n\abs{y}+\beta}\right]\geq2\pi\left[n-\frac{4n\abs{y}}{4\abs{y}}\right].
+\end{equation}
+We consider $ L^n(\bar{k}^N)/\abs{y} $ and define $ x=n/\abs{y} $, and $ \gamma=4\beta/y^2 $\begin{equation}
+\begin{aligned}
+l(x,\gamma):=L^n(\bar{k}^N)/\abs{y} =\pi\sqrt{\gamma-1}\left(\arctan\left(\frac{2x-1}{\sqrt{\gamma-1}}\right)+\arctan\left(\frac{2x+1}{\sqrt{\gamma-1}}\right)\right)\\+2\pi\left[x-\frac{(2x^2-1+\frac{\gamma}{2})}{4}\ln\left(\frac{x(x+1)+\frac{\gamma}{4}}{x(x-1)+\frac{\gamma}{4}}\right)\right]
+\end{aligned}
+\end{equation}
+with \begin{equation}
+\frac{\partial}{\partial x}l(x,\gamma)=2\pi\left(2-x\ln\left(\frac{x(x+1)+\gamma/4}{x(x-1)+\gamma/4}\right)\right)=2\pi\left(2-x\ln\left(1+\frac{2x}{x(x-1)+\gamma/4}\right)\right)
+\end{equation}
+Notice that $ l $ has no maximum in $ x $ if $ \gamma\geq 2 $ since \begin{equation}
+\frac{\partial}{\partial x}l(x,\gamma)\geq 2\pi\left(2-x\frac{\frac{2x}{x(x-1)+\gamma/4}}{\sqrt{1+\frac{2x}{x(x-1)+\gamma/4}}}\right),
+\end{equation} 
+where we used the inequality $ \ln(1+x)\geq\frac{x}{\sqrt{1+x}} $ for $ x\geq0 $. And for $ \gamma\geq2 $ we have \begin{equation}
+2-x\frac{\frac{2x}{x(x-1)+\gamma/4}}{\sqrt{1+\frac{2x}{x(x-1)+\gamma/4}}}>0.
+\end{equation} 
+Numerics suggest that $ l(x,\gamma) $ has no maximum in $ x $ for  $ \gamma\geq4/3 $. The following results will be useful
+\begin{lemma}
+	Let $ \beta $ and $ y $ be defined as above, and define $ \gamma=4\beta/y^2 $. Then\begin{equation}
+	\gamma=(m+1)+\frac{m(m+1)\sum_{i=1}^{N-1}k_i^2+(m+1)^2\mu}{\left(\sum_{i=1}^{N-1}k_i\right)^2}.
+	\end{equation} In particular $ \gamma\geq m+1+\frac{m(m+1)}{N-1}>1+m $
+\end{lemma}
+\begin{proof}
+	We immediately have \begin{equation}
+	4\beta=4\sum_{i=1}^{N}k_i^2+4\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j+4\mu,
+	\end{equation}
+	and \begin{equation}
+	(m+1)y^2=\frac{4}{m+1}\sum_{i=1}^{N-1}k_i^2+4\frac{2}{m+1}\sum_{1\leq i<j\leq N-1}k_i\cdot k_j.
+	\end{equation}
+	Thus we find \begin{equation}
+	4\beta-(m+1)y^2=\frac{4m}{m+1}\sum_{i=1}^{N-1}k_i^2+4\mu,
+	\end{equation}
+	which is equivalent to \begin{equation}
+	\frac{4\beta}{y^2}=(m+1)+\frac{m(m+1)\sum_{i=1}^{N-1}k_i^2+(m+1)^2\mu}{\left(\sum_{i=1}^{N-1}k_i\right)^2}\geq m+1+\frac{m(m+1)}{N-1}>m+1
+	\end{equation}
+	where we in the first inequality used that $ \frac{m(m+1)\sum_{i=1}^{N-1}k_i^2+(m+1)^2\mu}{\left(\sum_{i=1}^{N-1}k_i\right)^2} $ attain its minimum when all $ k_i $ are equal, and their magnitude to to infinity.
+\end{proof}
+\begin{lemma}\label{LemmaLConcave}
+	Let $ L^R(y,\beta) $ be defined as in lemma \ref{LemmaLEvaluation}, where $ y $ and $ \beta $ are defined as above, and let $ \gamma=4\beta/y^2 $. Then $ L^R $ is a concave function of $ R $ whenever $ \gamma\geq4/3 $ (Analytic proof for $ \gamma\geq2 $, numerics suggest for $ \gamma\geq4/3 $). On the other hand $ L^R(y,\beta) $ is a concave function of $ R $ for any $ \gamma>1 $ and $ R\leq y/2 $.
+\end{lemma}
+\begin{proof}
+	This follows from the simple calculation of the second derivative\begin{equation}
+	\frac{\partial^2L^R(y,\beta)}{\partial R^2}=2\pi\left(\frac{2 R \left(R^2-\beta \right)}{\left(\beta +R(R- \abs{y})\right) (\beta +R (R+\abs{y}))}-\frac{\ln \left(\frac{\beta +R (R+\abs{y})}{\beta +R(R- \abs{y})}\right)}{\abs{y}}\right)
+	\end{equation}
+	Numerics suggest that $ \frac{\partial^2L^R(y,\beta)}{\partial R^2}\leq0 $ for $ \gamma\geq4/3 $ and the result follows. Furthermore, since $ \ln \left(\frac{\beta +R (R+\abs{y})}{\beta +R(R- \abs{y})}\right)=\ln \left(1+\frac{2R\abs{y}}{\beta +R(R- \abs{y})}\right)\geq\frac{2\left(\frac{2R\abs{y}}{\beta +R(R- \abs{y})}\right)}{2+\frac{2R\abs{y}}{\beta +R(R- \abs{y})}} $ we have \begin{equation}
+	\begin{aligned}
+	\frac{1}{2\pi}\frac{\partial^2L^R(y,\gamma y^2/4)}{\partial R^2}&\leq \frac{2 R \left(R^2-\gamma y^2/4 \right)}{\left(\gamma y^2/4 +R(R- \abs{y})\right) (\gamma y^2/4 +R (R+\abs{y}))}-\frac{1}{\abs{y}}\frac{2\left(\frac{2R\abs{y}}{\gamma y^2/4 +R(R- \abs{y})}\right)}{2+\frac{2R\abs{y}}{\gamma y^2/4 +R(R- \abs{y})}}\\&=-\frac{16 R \left(\gamma^2 \abs{y}^4+4 (\gamma-2) R^2 y^2\right)}{\left(\gamma y^2+4 R^2\right) \left(\gamma y^2+4 R^2-4 R \abs{y}\right) \left(\gamma y^2+4 R^2+4 R \abs{y}\right)}\leq0.
+	\end{aligned}
+	\end{equation}
+	for any $ R>0 $ $ \gamma\geq2 $ \emph{or} for any $ \gamma>1 $ and $ R\leq\abs{y}/2 $.
+\end{proof}
+\begin{corollary}\label{ColollaryConcaveLRBound}
+	Let $ L^R $, $ y $, $ \beta $ and $ \gamma $ be defined as above, then for $ R\leq\abs{y}/2 $ we have \begin{equation}
+	L^R(y,\gamma y^2/4)\geq \frac{\pi}{2} \left((\gamma -1) \ln (\gamma -1)-(\gamma -1) \ln (\gamma +3)+4 \sqrt{\gamma -1} \arctan\left(\frac{2}{\sqrt{\gamma -1}}\right)+4\right)R
+	\end{equation}
+\end{corollary}
+\begin{proof}
+	This follows from lemma \ref{LemmaLConcave} and the fact that $ L^0=0  $ and \begin{equation}
+	\frac{2}{\abs{y}}L^{\abs{y}/2}(y,\gamma y^2/4)=\frac{\pi}{2} \left((\gamma -1) \ln (\gamma -1)-(\gamma -1) \ln (\gamma +3)+4 \sqrt{\gamma -1} \arctan\left(\frac{2}{\sqrt{\gamma -1}}\right)+4\right)
+	\end{equation}
+\end{proof}
+We now generalize the proof of Moser and Seiringer \cite{Moser_2017}.....\\
+\begin{equation}
+\begin{aligned}
+T^n_{\text{diag}}(\xi^n)&=\int\diff\bar{k}^N L^n(\bar{k}^N)\abs{\xi^n(\bar{k}^N)}^2,\\ T^n_{\text{off}}(\xi^n)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_n(0)}\diff s\int_{B_n(0)}\diff t\overline{\xi^n(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi^n(t,\bar{q})
+\end{aligned}
+\end{equation}
+Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $. Furthermore, we have\\ $ T^n_{\text{off}}(\xi^n)=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\phi^n(s,\bar{q})}\hat{J}^n(s,t,\bar{q})\phi^n(t,\bar{q}) $, with\\ $ \hat{J}^n(s,t,\bar{q})=\mathbbm{1}_{B_n(0)}(s)\mathbbm{1}_{B_n(0)}(t)\frac{1}{\sqrt{L^n(s,\bar{q})}}\hat{G}(s,t,\bar{q})\frac{1}{\sqrt{L^n(t,\bar{q})}} $.
+
+
+\textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not exists for $ \frac{4\beta}{y^2}-1>1/3 $. At least there is no maximum for $ \frac{4\beta}{y^2}-1\geq0.33334 $ and there is a maximum for $ \frac{4\beta}{y^2}-1\leq0.33333 $. 
+\vspace{0.5cm}
+\\
+\begin{lemma}
+	Let $ (u_n)_{n\in\mathbb{N}}\subset\dom{F_\alpha^n}=H^1(\R^{3N}) $ such that $ u_n\to u\in\dom{F_\alpha} $ in $ L^2(\R^{3N}) $ then \begin{equation}
+	\liminf_{n\to\infty}F_\alpha^n(u_n/n)\geq 0
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Remember that \begin{equation}
+	F_\alpha^n(u_n/n)=\frac{1}{n^2}\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}_n(k)}^2-\frac{1}{n^2}\mu\norm{u_n}_2^2-\frac{1}{n^2}\frac{1}{4\pi n+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_n(0)}\diff k_i\hat{u}_n(k)\right\rvert^2.
+	\end{equation}
+	Thus we see that $ \liminf_{n\to\infty}F_\alpha^n(u_n/n)\geq\liminf_{n\to\infty}\left(-\frac{1}{n^2}\frac{1}{4\pi n+\alpha}\sum_{i=1}^{N}\int\diff\bar{k}^i\left\lvert\int_{B_n(0)}\diff k_i\hat{u}_n(k)\right\rvert^2\right) $. By Cauchy-Schwartz it follows that \begin{equation}
+	\liminf_{n\to\infty}F_\alpha^n(u_n/n)\geq-\liminf_{n\to\infty}\left(N\frac{4/3\pi n^3}{n^2(4\pi n +\alpha)}\norm{u_n}^2_2\right)\geq-\frac{N}{3}\norm{u}_2^2.
+	\end{equation}
+	By possibly passing to a subsequence we may assume that \begin{equation}
+	\lim_{n\to\infty}F_\alpha^n(u_n/n)=\liminf_{n\to\infty}F_\alpha^n(u_n/n).
+	\end{equation}Thus we immediately see that either $ \liminf_{n\to\infty}F_\alpha^n(u_n/n)=\infty $ or $ u_n/n $ is $ H^1(\R^{3N}) $ norm bounded. In the first case we are done. Therefore assume that $ \norm{u_n/n}_{H^1(\R^{3N})} $ is bounded. Then we know that there by possibly passing to a subsequence that $ u_n/n\rightharpoonup\chi $ in $ H_1(\R^{3N}) $. But then $ u_n/n\rightharpoonup\chi $ in $ L^2(\R^{3N}) $ but we already know that $ u_n/n\rightharpoonup0 $ in $ L^2(\R^{3N}) $ so we conclude that $ \chi=0 $. Now write $ \hat{u}=\hat{w}+\hat{\rho}\hat{G} $ with $ w\in H^1(\R^{3N}) $ and $ \hat{\rho}=\sum_{i=1}^{N}(-1)^{(i-1)}\xi(\bar{k}^i) $, and $ \xi\in H^{1/2}(\R^{3(N-1)}) $ then we may write $ \hat{u}_n=\hat{w}+\hat{\zeta}^n\hat{G} $, where $ \zeta^n\to\rho $ in $ H^{-2}(\R^{3N}) $. Then we have $ \left(\hat{\zeta}^n\hat{G}/n\right)^\vee\rightharpoonup0 $ in $ H^1(\R^{3N}) $ or equivalently $ \zeta^n/n\rightharpoonup0 $ in $ H^{-1}(\R^{3N}) $ then we have\begin{equation}
+	\begin{aligned}
+	F_\alpha^n(u^n/n)
+	=\frac{1}{n^2}\int\diff k \hat{G}(k)^{-1}\abs{\hat{w}+(\hat{\zeta}^n-\hat{\rho}^n)\hat{G}}^2-\mu\norm{u_n/n}^2_2+N\left(T^n_{\text{diag}}(\xi^n)+T^n_{\text{off}}(\xi^n)+\alpha\norm{\xi^n}^2_{L^2(\R^{3(N-1)})}\right)
+	\end{aligned}
+	\end{equation}
+	With $ \xi^n(\bar{k}^N)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N\hat{u}_n(k)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^i) $. NOT FINISHED
+\end{proof}
+\section{The $ 2+1 $ case}
+We will in this section study the $ 2+1 $ case. This will serve mostly as a transition from $ 1+1 $ to $ N+1 $, as this case is simpler than $ N+1 $ but indeed already shows many of the difficulties of the $ N+1 $ case such as a mass-region of instability. The quadratic forms of interest are just special cases of the $ N+1 $ forms and can be summarized as follows: At finite radius of the rank-one perturbations the quadratic forms can be written as\begin{equation}
+F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{2}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2,
+\end{equation}
+with domain \begin{equation}
+\dom{F_\alpha^R}=H^1(\R^6).
+\end{equation}
+Equivalently they can be written
+\begin{equation}
+\begin{aligned}
+F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}\\&\quad+2\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3})}^2\right),
+\end{aligned}
+\end{equation}
+where $ \xi^R(k_1)=\frac{1}{4\pi R+\alpha}\int_{B_R(0)}\diff k_2 \hat{u}(k_1,k_2) $ and \begin{equation}
+\begin{aligned}
+T^R_{\text{diag}}(\xi^R)&=\int\diff k_1 L^R(k_1)\abs{\xi^R(k_1)}^2,\\ T^R_{\text{off}}(\xi^R)&=\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t\overline{\xi^R(s)}\hat{G}(s,t)\xi^R(t),\\
+L^R(k)=&2 \pi  \left[\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }\! \left(\!\arctan\!\left(\frac{-\frac{\left| k\right|}{m+1}+R}{ \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\!\left(\frac{\frac{\left| k\right| }{m+1}+R}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\!\!\right)\vphantom{\frac{\log\left(\frac{\frac{R}{R}}{\frac{R}{R}}\right)}{R}}\right.
+\\&
+\left.\qquad R+\frac{\left(m (m+2) \left(k^2+\mu \right)-k^2+\mu +(m+1)^2 R^2\right) \ln \left(\frac{-\frac{2 R \left| k\right| }{m+1}+k^2+\mu +R^2}{\frac{2 R \left| k\right| }{m+1}+k^2+\mu
+		+R^2}\right)}{4(m+1) \left| k\right| }\!\right],\\
+\hat{G}(s,t)&=\left(s^2+t^2+\frac{2}{m+1}s\cdot t+\mu\right)^{-1}.
+\end{aligned}
+\end{equation}
+ The limit quadratic form can be written 
+\begin{equation}
+\begin{aligned}
+F_\alpha(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}+2\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3})}^2\right),
+\end{aligned}
+\end{equation}
+with domain \begin{equation}
+\dom{F_\alpha}=\left\{u\in L^2(\R^6)\vert \hat{u}(k)=\hat{w}(k)+\hat{G}(k)\left(\xi(k_1)-\xi(k_2)\right),\ w\in H^1(\R^6),\ \xi\in H^{1/2}(\R^3) \right\},
+\end{equation}
+and where \begin{equation}
+\begin{aligned}
+T_{\text{diag}}(\xi)&=\int\diff k_1 L(k_1)\abs{\xi(k_1)}^2,\\ T_{\text{off}}(\xi)&=\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\xi(s)}\hat{G}(s,t)\xi(t),\\
+L(k)=&2 \pi^2 \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }.
+\end{aligned}
+\end{equation}
+We now show a uniform lower bound of $ F_\alpha^R $  in the $ 2+1 $ case. \begin{proposition}
+	Let $ F_\alpha^R $ be defined as above with $ N=2 $ and let $ m\geq1/3 $. Then there exist $ K,M>0 $ such that $ F^R_\alpha(u)\geq-M\norm{u}_2^2 $ for all $ R\geq K $.
+\end{proposition}
+\begin{proof}
+	First we notice that by corollary \ref{ColollaryConcaveLRBound} we have for $ R\leq x^2/2 $ we have  $ L^R((m+1)x/2)\geq  $. SEEMS NOT TO WORK
+\end{proof}
+One way to show boundedness from below, is through the result of Moser and Seiringer \cite{Moser_2017}. We know that for $ \xi\in H^{1/2}(\R^3) $ we have $ T_{\text{off}}\geq-T_{\text{diag}}(\xi) $ for $ m\geq0.36 $. Since, $ (\xi^R\mathbbm{1}_{B_R(0)})^\vee\in H^1(\R^3)\subset H^{1/2}(\R^3) $ and $ T^R_{\text{off}}(\xi^R)=T_{\text{off}}(\xi^R\mathbbm{1}_{B_R(0)}) $, the problem at finite $ R>0 $ reduces to showing  $ T^R_{\text{diag}}(\xi^R)-T_{\text{diag}}(\xi^R\mathbbm{1}_{B_R(0)})\geq -M\norm{u}_2^2 $. A step on the way is provided by proposition \begin{proposition}
+	Let $ L(k) $ and $ L^R(k) $ be defined as above, then $ 2L^R(k)\geq L(k) $ for $ \abs{k}\leq R $ and $ R\geq(1+m)\sqrt{\mu} $.
+\end{proposition}
+	\begin{proof}
+	Notice first that $ L^R(k)/L(k)\big\rvert_{R\geq(1+m)\sqrt{\mu}} $ is a decreasing function of $ \abs{k} $. Therefore, we need only consider the case $ \abs{k}=R $. In this case we have \begin{equation}
+	\begin{aligned}
+	L^R(R)&=2 \pi  \Bigg( R-\frac{\left(\mu +m (m+2) \left(\mu +2 R^2\right)\right)\ln \left(1+\frac{4 R^2}{(m+1)\mu +2 m R^2}\right)}{4 (m+1) R}\\&\qquad\qquad\qquad\qquad+\sqrt{\mu +\frac{m
+			(m+2) R^2}{(m+1)^2}} \Bigg[\arctan\left(\frac{m R}{(m+1) \sqrt{\mu +\frac{m (m+2) R^2}{(m+1)^2}}}\right)\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\arctan \left(\frac{(m+2) R}{(m+1) \sqrt{\mu +\frac{m (m+2)
+				R^2}{(m+1)^2}}}\right)\Bigg]\Bigg),\\
+	L(R)&=2\pi^2\sqrt{\mu +\frac{m
+			(m+2) R^2}{(m+1)^2}}.
+	\end{aligned}
+	\end{equation}	
+	We then notice that $ L^R(R)/L(R)\big\rvert_{R\geq(1+m)\sqrt{\mu}} $ is a continuous decreasing function of $ m $. Thus we need only consider the limit $ \lim\limits_{m\to\infty}\left(L^R(R)/L(R)\big\rvert_{R\geq(1+m)\sqrt{\mu}}\right)=\frac{1}{2} $
+	\end{proof}
+	Boundedness from below now follows in the mass region where $ T_{\text{off}}\geq-\frac{1}{2}T_{\text{diag}} $. In \cite{Moser_2017} it was shown that $ T_{\text{off}}\geq-\geq-\Lambda(m)T_{\text{diag}} $ for a complicated function $ \Lambda(m) $. It was shown that stability holds whenever $ \Lambda(m)<1 $ which is true for $ m\geq0.36 $. Furthermore, it was shown that $ \Lambda_1(m)\geq2\Lambda(m) $ for some function $ \Lambda_1(m) $ which satisfies $ \Lambda_1(m)<1 $ for $ m\geq0.72 $. Thus we conclude that $ T_{\text{off}}\geq-\frac{1}{2}T_{\text{diag}} $ for $ m\geq0.72 $.
+	\begin{proposition}
+		Let $ F^R_\alpha $ be defined as above and let $ m\geq0.72$. Then the sequence $ (F^n_\alpha)_{n\geq(1+m)\sqrt{\mu}} $ is uniformly bounded from below.
+	\end{proposition}
+	\begin{proof}
+		The proof is based on the result by Moser and Seiringer \cite{Moser_2017}. We notice that $ T^R_{\text{off}}(\xi^R)=T_{\text{off}}(\xi^R\mathbbm{1}_{B_R(0)}) $ and that $ T^R_{\text{diag}}(\xi^R)\geq T^R_{\text{diag}}(\xi^R\mathbbm{1}_{B_R(0)}) $. Thus, we have\begin{equation}
+		\begin{aligned}
+		F^n_\alpha(u)\geq&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^n G}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}\\&+2\Bigg(T^n_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)^\complement})+T^n_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})-\frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})+\frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})\\&\qquad+T_{\text{off}}(\xi^n\mathbbm{1}_{B_n(0)})+\alpha\norm{\xi^n}_{L^2(\R^{3})}^2\Bigg)\\
+		&\geq -\mu\norm{u}_2^2+2\left(T^n_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)^\complement})+\frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})+T_{\text{off}}(\xi^n\mathbbm{1}_{B_n(0)})+\alpha\norm{\xi^n}_{L^2(\R^{3})}^2\right).
+		\end{aligned}
+		\end{equation}
+		It is known that for $ m\geq0.72 $ we have $ \frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})+T_{\text{off}}(\xi^n\mathbbm{1}_{B_n(0)})\geq\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi\mathbbm{1}_{B_n(0)}}_2^2>0 $. On the other hand, since $ L^R(k) $ is a concave function of $ R $ for $ m\geq1/3 $, we have \begin{equation}\label{EqL^nIneq}
+		\begin{aligned}
+		L^n(k)&\geq \frac{1}{k}L^k(k)n\\&=2 \pi n  \Bigg\{1+\frac{\left(m (m+2) \left(2 k^2+\mu \right)+\mu \right) \ln \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu +\mu  m}\right)}{4 k^2 (m+1)}+\frac{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}{k}\\
+		& \qquad\times\left[\arctan
+		\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\left(\frac{k (m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\right]\Bigg\} 
+		\end{aligned}
+		\end{equation} 
+		for $ \abs{k}\geq n $. Notice first that 
+		\begin{equation}
+		\lim\limits_{\mu\to\infty}\frac{1}{k}L^k(k)n=4\pi n.
+		\end{equation}
+		On the other hand we have \begin{equation}
+		\begin{aligned}
+		\lim\limits_{\mu\to0}\frac{1}{k}L^k(k)n=&\frac{\pi n}{m+1}  \Bigg(2 (m+1)-m (m+2) \log \left(\frac{m+2}{m}\right)\\
+		&\qquad+2 \sqrt{m} \sqrt{m+2} \left[\arctan\left(\frac{1}{\sqrt{\frac{m}{m+2}}}\right)+\arctan\left(\sqrt{\frac{m}{m+2}}\right)\right]\Bigg).
+		\end{aligned}
+		\end{equation}
+		Using Shafer's inequality $ \arctan(x)\geq \frac{3x}{1+2\sqrt{1+x^2}} $, \cite{Qi_2009}, and the logarithmic inequality $ \ln(1+x)\leq\frac{x}{\sqrt{1+x}} $ we find \begin{equation}
+		\lim\limits_{\mu\to0}\frac{1}{k}L^k(k)n\geq\frac{2 \pi}{m+1}  \left(\frac{3 m}{2 \sqrt{2} \sqrt{\frac{m+1}{m+2}}+1}+m+\frac{3 (m+2)}{2 \sqrt{\frac{2}{m}+2}+1}+\sqrt{m+2} \sqrt{m}+1\right)n\geq2\pi n.
+		\end{equation}
+		Thereby, we need only show that $ \frac{1}{k}L^k(k)n\geq2\pi n $ for any potential minimum in $ \mu $.
+		Differentiating \eqref{EqL^nIneq} w.r.t $ \mu $ we find \begin{equation}
+		\begin{aligned}
+		\frac{\partial}{\partial\mu}\left(\frac{1}{k}L^k(k)n\right)&=\frac{\pi}{2 k^2}  \Bigg\{(m+1) \log \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu +\mu  m}\right)+\frac{2 k}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\\&\times \left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\left(\frac{k
+					(m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\right]\Bigg\}.
+		\end{aligned}
+		\end{equation}
+		Thus we find that at any potential minimum in $ \mu $, say at $ \mu* $, we have\begin{equation}
+		\begin{aligned}
+		\left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}\right)+\arctan\left(\frac{k
+			(m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}\right)\right]=\\
+		-(m+1)\frac{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}{2 k} \log \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu^* +\mu^*  m}\right)
+		\end{aligned}
+		\end{equation}
+		Inserting this back into \eqref{EqL^nIneq} we find 
+		 \begin{equation}
+		L^n(k)\geq2\pi n\left\{1 -\frac{ \mu^*  (m+1)}{4 k^2} \ln \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu^* +\mu^*  m}\right)\right\}\geq2\pi n,
+		\end{equation}
+		for $ \abs{k}\geq n $. Now knowing that $ \frac{1}{k}L^k(k)n\geq2\pi n $ we easily see that \begin{equation}
+		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(2\pi n \norm{\xi^n\mathbbm{1}_{B_n(0)^\complement}}_2^2+\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi\mathbbm{1}_{B_n(0)}}_2^2+\alpha\norm{\xi}_2^2\right).
+		\end{equation}
+		And since $ n\geq(1+m)\sqrt{\mu} $ we find \begin{equation}
+		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi}_2^2+\alpha\norm{\xi}_2^2\right).
+		\end{equation}
+		From this it follows, by choosing $ \mu=-\alpha^2/(\pi^2(1-2\Lambda(m))) $ for $ \alpha<0 $ and $ \mu\to0 $ for $ \alpha\geq0 $, that \begin{equation}
+		F^n_\alpha(u)\geq\begin{cases}
+		-\alpha^2/(\pi^2(1-2\Lambda(m)))&\text{for }\alpha<0,\\
+		0&\text{for }\alpha\geq0
+		\end{cases}
+		\end{equation}
+	\end{proof}
+	Notice that the bound is not sharp, since the binding energy of a single $\delta$-potential is $ -\alpha^2/(2\pi^2) $ and $ \Lambda(m)\to0 $ as $ m\to\infty $.
+\appendix
+\section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
+\label{Lambda calculation}
+To show the relation of $ \lambda(z,\bar{z}) $ we use the following properties established in the proof in the main text. We have that \begin{equation}\label{Krein relation 1}
+(B-z)^{-1}-(C-z)^{-1}=\lambda(z)\braket{\phi(\bar{z}),\cdot}\phi(z),
+\end{equation}
+where we have already used that $ \lambda(z,\bar{z})=\lambda(z) $, and where we have defined \begin{equation}\label{Krein relation 2}
+\phi(z)=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0),
+\end{equation}
+for some $ \phi(z_0) $ satisfying $ A^*\phi(z_0)=z_0\phi(z_0) $. \\
+In the following we will switch to bra-ket notation to simplify the calculations and ease the notation. Now let us consider the relation \begin{equation}
+(B-z)^{-1}=(C-z)^{-1}+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}.
+\end{equation}
+By multiplying this relation with itself, but with $ z' $ instead of $ z $ we get\begin{equation}
+\begin{aligned}
+(B-z)^{-1}(B-z')^{-1}=(C-z)^{-1}(C-z')^{-1}+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}(C-z')^{-1}\\+\lambda(z')(C-z)^{-1}\ket{\phi(z')}\bra{\phi(\bar{z}')}+\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z')}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Now using that $ (B-z)^{-1}-(B-z')^{-1}=(z-z')(B-z)^{-1}(B-z')^{-1} $ and the same relation for $ C $ we get, by multiplying through with $ (z-z') $ that \begin{equation}
+\begin{aligned}
+(B-z)^{-1}-(B-z')^{-1}-(C-z)^{-1}+(C-z')^{-1}=\qquad\qquad\qquad\qquad\qquad\qquad\\(z-z')\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}(C-z')^{-1}+(z-z')\lambda(z')(C-z)^{-1}\ket{\phi(z')}\bra{\phi(\bar{z}')}\\+(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Using again the relation \eqref{Krein relation 1} we obtain\begin{equation}
+\begin{aligned}
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}-\lambda(z')\ket{\phi(z')}\bra{\phi(\bar{z}')}=\qquad\qquad\qquad\qquad\qquad\quad\qquad\qquad\qquad\\(z-z')\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}(C-z')^{-1}+(z-z')\lambda(z')(C-z)^{-1}\ket{\phi(z')}\bra{\phi(\bar{z}')}\\+(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')},
+\end{aligned}
+\end{equation}
+from which we obtain by simple rearrangement \begin{equation}
+\begin{aligned}
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}\left(I-(z-z')(C-z')^{-1}\right)-\lambda(z')\left(I-(z'-z)(C-z)^{-1}\right)\ket{\phi(z')}\bra{\phi(\bar{z}')}=\\(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Notice now that \begin{equation}
+\left(I-(z-z')(C-z')^{-1}\right)=(C-z')^{-1}(C-z),\quad\text{and}\quad \left(I-(z'-z)(C-z)^{-1}\right)=(C-z')(C-z)^{-1}.
+\end{equation}
+Now clearly by \eqref{Krein relation 2} we have \begin{equation}
+(C-z')(C-z)^{-1}\phi(z')=(C-z')(C-z)^{-1}\phi(z_0)+(z'-z_0)(C-z)^{-1}\phi(z_0),
+\end{equation}
+where we have used that $ (C-z')(C-z)^{-1}h=(C-z)^{-1}(C-z')h $ whenever $ h\in\dom{(C-z')} $. By using that  $ (C-z')(C-z)^{-1}=I+(z-z')(C-z)^{-1} $ we obtain\begin{equation}
+(C-z')(C-z)^{-1}\phi(z')=\phi(z_0)+(z-z_0)(C-z)^{-1}\phi(z_0)=\phi(z).
+\end{equation}
+By a similar computation we have \begin{equation}
+(C-z)(C-z')^{-1}\phi(z)=\phi(z_0)+(z'-z_0)(C-z')^{-1}\phi(z_0)=\phi(z'),
+\end{equation}
+and thus we obtain\begin{equation}
+\begin{aligned}
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z})}\left(I-(z-z')(C-z')^{-1}\right)-\lambda(z')\left(I-(z'-z)(C-z)^{-1}\right)\ket{\phi(z')}\bra{\phi(\bar{z}')}=\\
+\lambda(z)\ket{\phi(z)}\bra{\left(I-(\bar{z}-\bar{z}')(C-\bar{z}')^{-1}\right)\phi(\bar{z})}-\lambda(z')\ket{\left(I-(z'-z)(C-z)^{-1}\right)\phi(z')}\bra{\phi(\bar{z}')}=\\
+\lambda(z)\ket{\phi(z)}\bra{\phi(\bar{z}')}-\lambda(z')\ket{\phi(z)}\bra{\phi(\bar{z}')}=(z-z')\lambda(z)\lambda(z')\ket{\phi(z)}\braket{\phi(\bar{z}),\phi(z)'}\bra{\phi(\bar{z}')}.
+\end{aligned}
+\end{equation}
+Observing the last line in the above calculation we observe that we have the relation\begin{equation}
+\lambda(z)-\lambda(z')=\lambda(z)\lambda(z')(z-z')\braket{\phi(\bar{z}),\phi(z')},
+\end{equation}
+which is equivalent to the relation\begin{equation}
+\lambda(z)^{-1}-\lambda(z')^{-1}=-(z-z')\braket{\phi(\bar{z}),\phi(z')}.
+\end{equation}
+This proves equation \eqref{lambda relation}.
+\section{Schur test}
+We prove that given an operator with symmetric integral kernel $ \sigma(s,t) $ we have\begin{equation}
+\norm{\sigma}\leq\sup_{t}\left(h(t)\int\diff s \frac{\sigma(s,t)}{h(s)}\right).
+\end{equation}
+for any positive function $ h $.
+\begin{proof}
+	First notice that that by the regular Cauchy-Schwartz we have \begin{equation}
+	\begin{aligned}
+	\abs{\int\diff t\sigma(s,t)f(t)}^2&=\abs{\int\diff t\left(\frac{h(s)}{h(t)}\right)^{1/2}\sigma(t,s)^{1/2}\left(\frac{h(t)}{h(s)}\right)^{1/2}\sigma(s,t)^{1/2}f(t)}^2\\
+	&\leq \left(\int\diff t \abs{\sigma(t,s)}\frac{h(s)}{h(t)}\right)\left(\int\diff t \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\abs{f(t)}^2\right)
+	\end{aligned}
+	\end{equation}
+	where we used symmetry of $ \sigma $ in the first line, Cauchy-Schwartz in the second line Now integrating w.r.t $ s $ we find\begin{equation}
+	\begin{aligned}
+	\norm{\sigma}^2\norm{f}_2^2&\leq\int\diff s	\abs{\int\diff t\sigma(s,t)f(t)}^2\\&
+	\leq\int\diff s\left[\left(\int\diff t \abs{\sigma(t,s)}\frac{h(s)}{h(t)}\right)\left(\int\diff t \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\abs{f(t)}^2\right)\right]\\&
+	\leq\sup_{s}\left\{h(s)\left(\int\diff t \abs{\sigma(t,s)}\frac{1}{h(t)}\right)\right\}\left(\int\diff s\int\diff t \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\abs{f(t)}^2\right)
+	\\&
+	=\sup_{s}\left\{h(s)\left(\int\diff t \abs{\sigma(t,s)}\frac{1}{h(t)}\right)\right\}\left(\int\diff t\int\diff s\left[ \abs{\sigma(s,t)}\frac{h(t)}{h(s)}\right]\abs{f(t)}^2\right)
+	\\&
+	\leq\sup_{s}\left\{h(s)\left(\int\diff t \abs{\sigma(t,s)}\frac{1}{h(t)}\right)\right\}\sup_{t}\left\{h(t)\left(\int\diff s \abs{\sigma(s,t)}\frac{1}{h(s)}\right)\right\}\norm{f}^2_2
+	\\&=\left[\sup_{t}\left\{h(t)\left(\int\diff s \abs{\sigma(s,t)}\frac{1}{h(s)}\right)\right\}\right]^2\norm{f}^2_2,
+	\end{aligned}
+	\end{equation}
+	where we used Fubini's theorem in the fourth line and H\"older's inequality $ (1,\infty) $ in the firth line.
+	Thus the claim follows.
+\end{proof}
+\bibliographystyle{amsplain}
+\bibliography{bibliography}
+\end{document}
