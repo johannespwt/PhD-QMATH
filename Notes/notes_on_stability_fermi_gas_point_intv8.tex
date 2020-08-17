@@ -1533,7 +1533,7 @@ Numerics suggest that $ l(x,\gamma) $ has no maximum in $ x $ for  $ \gamma\geq4
 	\end{equation}
 	for any $ R>0 $ $ \gamma\geq2 $ \emph{or} for any $ \gamma>1 $ and $ R\leq\abs{y}/2 $.
 \end{proof}
-\begin{corollary}
+\begin{corollary}\label{ColollaryConcaveLRBound}
 	Let $ L^R $, $ y $, $ \beta $ and $ \gamma $ be defined as above, then for $ R\leq\abs{y}/2 $ we have \begin{equation}
 	L^R(y,\gamma y^2/4)\geq \frac{\pi}{2} \left((\gamma -1) \ln (\gamma -1)-(\gamma -1) \ln (\gamma +3)+4 \sqrt{\gamma -1} \arctan\left(\frac{2}{\sqrt{\gamma -1}}\right)+4\right)R
 	\end{equation}
@@ -1552,7 +1552,7 @@ T^n_{\text{diag}}(\xi^n)&=\int\diff\bar{k}^N L^n(\bar{k}^N)\abs{\xi^n(\bar{k}^N)
 Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\phi^n}_2^2 $. Furthermore, we have\\ $ T^n_{\text{off}}(\xi^n)=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\phi^n(s,\bar{q})}\hat{J}^n(s,t,\bar{q})\phi^n(t,\bar{q}) $, with\\ $ \hat{J}^n(s,t,\bar{q})=\mathbbm{1}_{B_n(0)}(s)\mathbbm{1}_{B_n(0)}(t)\frac{1}{\sqrt{L^n(s,\bar{q})}}\hat{G}(s,t,\bar{q})\frac{1}{\sqrt{L^n(t,\bar{q})}} $.
 
 
-\textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not exists for $ m>\frac{4\beta}{y^2}-1>1/3 $. At least there is no maximum for $ \frac{4\beta}{y^2}-1\geq0.33334 $ and there is a maximum for $ \frac{4\beta}{y^2}-1\leq0.33333 $. 
+\textbf{Conjecture:} Stability seems to be related to weather $ L^R $ has a maximum in $ R $ or not (Stability if no maximum). Numerics suggest that such a maximum does not exists for $ \frac{4\beta}{y^2}-1>1/3 $. At least there is no maximum for $ \frac{4\beta}{y^2}-1\geq0.33334 $ and there is a maximum for $ \frac{4\beta}{y^2}-1\leq0.33333 $. 
 \vspace{0.5cm}
 \\
 \begin{lemma}
@@ -1593,19 +1593,112 @@ F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R 
 where $ \xi^R(k_1)=\frac{1}{4\pi R+\alpha}\int_{B_R(0)}\diff k_2 \hat{u}(k_1,k_2) $ and \begin{equation}
 \begin{aligned}
 T^R_{\text{diag}}(\xi^R)&=\int\diff k_1 L^R(k_1)\abs{\xi^R(k_1)}^2,\\ T^R_{\text{off}}(\xi^R)&=\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t\overline{\xi^R(s)}\hat{G}(s,t)\xi^R(t),\\
-L^R(k_1)=&2\pi \Bigg[R-\frac{(2R^2+(2-4/(m+1)^2)k^2+2\mu)}{16k^2/(m+1)^2}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\\
-&\qquad+\frac{1}{2}\sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\Bigg]\\
+L^R(k)=&2 \pi  \left[\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }\! \left(\!\arctan\!\left(\frac{-\frac{\left| k\right|}{m+1}+R}{ \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\!\left(\frac{\frac{\left| k\right| }{m+1}+R}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\!\!\right)\vphantom{\frac{\log\left(\frac{\frac{R}{R}}{\frac{R}{R}}\right)}{R}}\right.
+\\&
+\left.\qquad R+\frac{\left(m (m+2) \left(k^2+\mu \right)-k^2+\mu +(m+1)^2 R^2\right) \ln \left(\frac{-\frac{2 R \left| k\right| }{m+1}+k^2+\mu +R^2}{\frac{2 R \left| k\right| }{m+1}+k^2+\mu
+		+R^2}\right)}{4(m+1) \left| k\right| }\!\right],\\
 \hat{G}(s,t)&=\left(s^2+t^2+\frac{2}{m+1}s\cdot t+\mu\right)^{-1}.
 \end{aligned}
 \end{equation}
-$ \alpha=k^2+\mu $, $ y=\frac{2}{m+1}k $
-
  The limit quadratic form can be written 
 \begin{equation}
 \begin{aligned}
-F_\alpha(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}\\&\quad+2\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3})}^2\right),
+F_\alpha(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{w}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}+2\left(T_{\text{diag}}(\xi)+T_{\text{off}}(\xi)+\alpha\norm{\xi}_{L^2(\R^{3})}^2\right),
 \end{aligned}
 \end{equation}
+with domain \begin{equation}
+\dom{F_\alpha}=\left\{u\in L^2(\R^6)\vert \hat{u}(k)=\hat{w}(k)+\hat{G}(k)\left(\xi(k_1)-\xi(k_2)\right),\ w\in H^1(\R^6),\ \xi\in H^{1/2}(\R^3) \right\},
+\end{equation}
+and where \begin{equation}
+\begin{aligned}
+T_{\text{diag}}(\xi)&=\int\diff k_1 L(k_1)\abs{\xi(k_1)}^2,\\ T_{\text{off}}(\xi)&=\int_{\R^3}\diff s\int_{\R^3}\diff t\overline{\xi(s)}\hat{G}(s,t)\xi(t),\\
+L(k)=&2 \pi^2 \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }.
+\end{aligned}
+\end{equation}
+We now show a uniform lower bound of $ F_\alpha^R $  in the $ 2+1 $ case. \begin{proposition}
+	Let $ F_\alpha^R $ be defined as above with $ N=2 $ and let $ m\geq1/3 $. Then there exist $ K,M>0 $ such that $ F^R_\alpha(u)\geq-M\norm{u}_2^2 $ for all $ R\geq K $.
+\end{proposition}
+\begin{proof}
+	First we notice that by corollary \ref{ColollaryConcaveLRBound} we have for $ R\leq x^2/2 $ we have  $ L^R((m+1)x/2)\geq  $. SEEMS NOT TO WORK
+\end{proof}
+One way to show boundedness from below, is through the result of Moser and Seiringer \cite{Moser_2017}. We know that for $ \xi\in H^{1/2}(\R^3) $ we have $ T_{\text{off}}\geq-T_{\text{diag}}(\xi) $ for $ m\geq0.36 $. Since, $ (\xi^R\mathbbm{1}_{B_R(0)})^\vee\in H^1(\R^3)\subset H^{1/2}(\R^3) $ and $ T^R_{\text{off}}(\xi^R)=T_{\text{off}}(\xi^R\mathbbm{1}_{B_R(0)}) $, the problem at finite $ R>0 $ reduces to showing  $ T^R_{\text{diag}}(\xi^R)-T_{\text{diag}}(\xi^R\mathbbm{1}_{B_R(0)})\geq -M\norm{u}_2^2 $. A step on the way is provided by proposition \begin{proposition}
+	Let $ L(k) $ and $ L^R(k) $ be defined as above, then $ 2L^R(k)\geq L(k) $ for $ \abs{k}\leq R $ and $ R\geq(1+m)\sqrt{\mu} $.
+\end{proposition}
+	\begin{proof}
+	Notice first that $ L^R(k)/L(k)\big\rvert_{R\geq(1+m)\sqrt{\mu}} $ is a decreasing function of $ \abs{k} $. Therefore, we need only consider the case $ \abs{k}=R $. In this case we have \begin{equation}
+	\begin{aligned}
+	L^R(R)&=2 \pi  \Bigg( R-\frac{\left(\mu +m (m+2) \left(\mu +2 R^2\right)\right)\ln \left(1+\frac{4 R^2}{(m+1)\mu +2 m R^2}\right)}{4 (m+1) R}\\&\qquad\qquad\qquad\qquad+\sqrt{\mu +\frac{m
+			(m+2) R^2}{(m+1)^2}} \Bigg[\arctan\left(\frac{m R}{(m+1) \sqrt{\mu +\frac{m (m+2) R^2}{(m+1)^2}}}\right)\\&\qquad\qquad\qquad\qquad\qquad\qquad\qquad+\arctan \left(\frac{(m+2) R}{(m+1) \sqrt{\mu +\frac{m (m+2)
+				R^2}{(m+1)^2}}}\right)\Bigg]\Bigg),\\
+	L(R)&=2\pi^2\sqrt{\mu +\frac{m
+			(m+2) R^2}{(m+1)^2}}.
+	\end{aligned}
+	\end{equation}	
+	We then notice that $ L^R(R)/L(R)\big\rvert_{R\geq(1+m)\sqrt{\mu}} $ is a continuous decreasing function of $ m $. Thus we need only consider the limit $ \lim\limits_{m\to\infty}\left(L^R(R)/L(R)\big\rvert_{R\geq(1+m)\sqrt{\mu}}\right)=\frac{1}{2} $
+	\end{proof}
+	Boundedness from below now follows in the mass region where $ T_{\text{off}}\geq-\frac{1}{2}T_{\text{diag}} $. In \cite{Moser_2017} it was shown that $ T_{\text{off}}\geq-\geq-\Lambda(m)T_{\text{diag}} $ for a complicated function $ \Lambda(m) $. It was shown that stability holds whenever $ \Lambda(m)<1 $ which is true for $ m\geq0.36 $. Furthermore, it was shown that $ \Lambda_1(m)\geq2\Lambda(m) $ for some function $ \Lambda_1(m) $ which satisfies $ \Lambda_1(m)<1 $ for $ m\geq0.72 $. Thus we conclude that $ T_{\text{off}}\geq-\frac{1}{2}T_{\text{diag}} $ for $ m\geq0.72 $.
+	\begin{proposition}
+		Let $ F^R_\alpha $ be defined as above and let $ m\geq0.72$. Then the sequence $ (F^n_\alpha)_{n\geq(1+m)\sqrt{\mu}} $ is uniformly bounded from below.
+	\end{proposition}
+	\begin{proof}
+		The proof is based on the result by Moser and Seiringer \cite{Moser_2017}. We notice that $ T^R_{\text{off}}(\xi^R)=T_{\text{off}}(\xi^R\mathbbm{1}_{B_R(0)}) $ and that $ T^R_{\text{diag}}(\xi^R)\geq T^R_{\text{diag}}(\xi^R\mathbbm{1}_{B_R(0)}) $. Thus, we have\begin{equation}
+		\begin{aligned}
+		F^n_\alpha(u)\geq&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^n G}(k)|^2-\mu\norm{u}_{L^2(\R^{6})}\\&+2\Bigg(T^n_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)^\complement})+T^n_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})-\frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})+\frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})\\&\qquad+T_{\text{off}}(\xi^n\mathbbm{1}_{B_n(0)})+\alpha\norm{\xi^n}_{L^2(\R^{3})}^2\Bigg)\\
+		&\geq -\mu\norm{u}_2^2+2\left(T^n_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)^\complement})+\frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})+T_{\text{off}}(\xi^n\mathbbm{1}_{B_n(0)})+\alpha\norm{\xi^n}_{L^2(\R^{3})}^2\right).
+		\end{aligned}
+		\end{equation}
+		It is known that for $ m\geq0.72 $ we have $ \frac{1}{2}T_{\text{diag}}(\xi^n\mathbbm{1}_{B_n(0)})+T_{\text{off}}(\xi^n\mathbbm{1}_{B_n(0)})\geq\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi\mathbbm{1}_{B_n(0)}}_2^2>0 $. On the other hand, since $ L^R(k) $ is a concave function of $ R $ for $ m\geq1/3 $, we have \begin{equation}\label{EqL^nIneq}
+		\begin{aligned}
+		L^n(k)&\geq \frac{1}{k}L^k(k)n\\&=2 \pi n  \Bigg\{1+\frac{\left(m (m+2) \left(2 k^2+\mu \right)+\mu \right) \ln \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu +\mu  m}\right)}{4 k^2 (m+1)}+\frac{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}{k}\\
+		& \qquad\times\left[\arctan
+		\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\left(\frac{k (m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\right]\Bigg\} 
+		\end{aligned}
+		\end{equation} 
+		for $ \abs{k}\geq n $. Notice first that 
+		\begin{equation}
+		\lim\limits_{\mu\to\infty}\frac{1}{k}L^k(k)n=4\pi n.
+		\end{equation}
+		On the other hand we have \begin{equation}
+		\begin{aligned}
+		\lim\limits_{\mu\to0}\frac{1}{k}L^k(k)n=&\frac{\pi n}{m+1}  \Bigg(2 (m+1)-m (m+2) \log \left(\frac{m+2}{m}\right)\\
+		&\qquad+2 \sqrt{m} \sqrt{m+2} \left[\arctan\left(\frac{1}{\sqrt{\frac{m}{m+2}}}\right)+\arctan\left(\sqrt{\frac{m}{m+2}}\right)\right]\Bigg).
+		\end{aligned}
+		\end{equation}
+		Using Shafer's inequality $ \arctan(x)\geq \frac{3x}{1+2\sqrt{1+x^2}} $, \cite{Qi_2009}, and the logarithmic inequality $ \ln(1+x)\leq\frac{x}{\sqrt{1+x}} $ we find \begin{equation}
+		\lim\limits_{\mu\to0}\frac{1}{k}L^k(k)n\geq\frac{2 \pi}{m+1}  \left(\frac{3 m}{2 \sqrt{2} \sqrt{\frac{m+1}{m+2}}+1}+m+\frac{3 (m+2)}{2 \sqrt{\frac{2}{m}+2}+1}+\sqrt{m+2} \sqrt{m}+1\right)n\geq2\pi n.
+		\end{equation}
+		Thereby, we need only show that $ \frac{1}{k}L^k(k)n\geq2\pi n $ for any potential minimum in $ \mu $.
+		Differentiating \eqref{EqL^nIneq} w.r.t $ \mu $ we find \begin{equation}
+		\begin{aligned}
+		\frac{\partial}{\partial\mu}\left(\frac{1}{k}L^k(k)n\right)&=\frac{\pi}{2 k^2}  \Bigg\{(m+1) \log \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu +\mu  m}\right)+\frac{2 k}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\\&\times \left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\left(\frac{k
+					(m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\right]\Bigg\}.
+		\end{aligned}
+		\end{equation}
+		Thus we find that at any potential minimum in $ \mu $, say at $ \mu* $, we have\begin{equation}
+		\begin{aligned}
+		\left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}\right)+\arctan\left(\frac{k
+			(m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}\right)\right]=\\
+		-(m+1)\frac{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}{2 k} \log \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu^* +\mu^*  m}\right)
+		\end{aligned}
+		\end{equation}
+		Inserting this back into \eqref{EqL^nIneq} we find 
+		 \begin{equation}
+		L^n(k)\geq2\pi n\left\{1 -\frac{ \mu^*  (m+1)}{4 k^2} \ln \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu^* +\mu^*  m}\right)\right\}\geq2\pi n,
+		\end{equation}
+		for $ \abs{k}\geq n $. Now knowing that $ \frac{1}{k}L^k(k)n\geq2\pi n $ we easily see that \begin{equation}
+		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(2\pi n \norm{\xi^n\mathbbm{1}_{B_n(0)^\complement}}_2^2+\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi\mathbbm{1}_{B_n(0)}}_2^2+\alpha\norm{\xi}_2^2\right).
+		\end{equation}
+		And since $ n\geq(1+m)\sqrt{\mu} $ we find \begin{equation}
+		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi}_2^2+\alpha\norm{\xi}_2^2\right).
+		\end{equation}
+		From this it follows, by choosing $ \mu=-\alpha^2/(\pi^2(1-2\Lambda(m))) $ for $ \alpha<0 $ and $ \mu\to0 $ for $ \alpha\geq0 $, that \begin{equation}
+		F^n_\alpha(u)\geq\begin{cases}
+		-\alpha^2/(\pi^2(1-2\Lambda(m)))&\text{for }\alpha<0,\\
+		0&\text{for }\alpha\geq0
+		\end{cases}
+		\end{equation}
+	\end{proof}
+	Notice that the bound is not sharp, since the binding energy of a single $\delta$-potential is $ -\alpha^2/(2\pi^2) $ and $ \Lambda(m)\to0 $ as $ m\to\infty $.
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
