@@ -904,7 +904,7 @@ We can actually get a closed form for $ L^R $ \begin{lemma} \label{LemmaLEvaluat
 	This follows from straighforward calculation (most easily done in Mathematica)\begin{equation}
 	\begin{aligned}
 	&\int_{B_R(0)}\diff q\frac{1}{q^2+q\cdot y+\alpha}=2\pi\int_{-1}^{1}\diff \cos(\theta)\int_{0}^{\infty}\diff r r^2\frac{1}{r^2+\cos(\theta)r\abs{y}+\alpha}\\&
-	=2\pi\int_{-1}^{1}\diff \cos(\theta)  \Bigg[\frac{1}{2} \left| y\right|  \cos (\theta ) \left(\log (\alpha )-\log \left(\alpha +R \left| y\right|  \cos (\theta )+R^2\right)\right)\\&\qquad+\frac{\left(\left| y\right| ^2 \cos ^2(\theta )-2 \alpha \right) \left(\arctan\left(\frac{\left| y\right|  \cos (\theta )+2 R}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}\right)-\arctan\left(\frac{\left| y\right|  \cos (\theta )}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}\right)\right)}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}+R\Bigg]\\
+	=2\pi\int_{-1}^{1}\diff \cos(\theta)  \Bigg[\frac{1}{2} \left| y\right|  \cos (\theta ) \left(\ln (\alpha )-\ln \left(\alpha +R \left| y\right|  \cos (\theta )+R^2\right)\right)\\&\qquad+\frac{\left(\left| y\right| ^2 \cos ^2(\theta )-2 \alpha \right) \left(\arctan\left(\frac{\left| y\right|  \cos (\theta )+2 R}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}\right)-\arctan\left(\frac{\left| y\right|  \cos (\theta )}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}\right)\right)}{\sqrt{4 \alpha -\left| y\right| ^2 \cos ^2(\theta )}}+R\Bigg]\\
 	&=2\pi \Bigg[R+\frac{(2R^2-y^2+2\alpha)}{4\abs{y}}\ln\left(\frac{R(R+\abs{y})+\alpha}{R(R-\abs{y})+\alpha}\right)\\
 	&\qquad-\frac{1}{2}\sqrt{4\alpha-y^2}\left(\arctan\left(\frac{2R-\abs{y}}{\sqrt{4\alpha-y^2}}\right)+\arctan\left(\frac{2R+\abs{y}}{\sqrt{4\alpha-y^2}}\right)\right)\Bigg].
 	\end{aligned}
@@ -1577,7 +1577,7 @@ Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\ph
 	\end{equation}
 	With $ \xi^n(\bar{k}^N)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N\hat{u}_n(k)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^i) $. NOT FINISHED
 \end{proof}
-\section{The $ 2+1 $ case}
+\subsection{Uniform lower bound in the $ 2+1 $ case}
 We will in this section study the $ 2+1 $ case. This will serve mostly as a transition from $ 1+1 $ to $ N+1 $, as this case is simpler than $ N+1 $ but indeed already shows many of the difficulties of the $ N+1 $ case such as a mass-region of instability. The quadratic forms of interest are just special cases of the $ N+1 $ forms and can be summarized as follows: At finite radius of the rank-one perturbations the quadratic forms can be written as\begin{equation}
 F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{2}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2,
 \end{equation}
@@ -1593,7 +1593,7 @@ F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R 
 where $ \xi^R(k_1)=\frac{1}{4\pi R+\alpha}\int_{B_R(0)}\diff k_2 \hat{u}(k_1,k_2) $ and \begin{equation}
 \begin{aligned}
 T^R_{\text{diag}}(\xi^R)&=\int\diff k_1 L^R(k_1)\abs{\xi^R(k_1)}^2,\\ T^R_{\text{off}}(\xi^R)&=\int_{B_R(0)}\diff s\int_{B_R(0)}\diff t\overline{\xi^R(s)}\hat{G}(s,t)\xi^R(t),\\
-L^R(k)=&2 \pi  \left[\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }\! \left(\!\arctan\!\left(\frac{-\frac{\left| k\right|}{m+1}+R}{ \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\!\left(\frac{\frac{\left| k\right| }{m+1}+R}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\!\!\right)\vphantom{\frac{\log\left(\frac{\frac{R}{R}}{\frac{R}{R}}\right)}{R}}\right.
+L^R(k)=&2 \pi  \left[\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }\! \left(\!\arctan\!\left(\frac{-\frac{\left| k\right|}{m+1}+R}{ \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\!\left(\frac{\frac{\left| k\right| }{m+1}+R}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\!\!\right)\vphantom{\frac{\ln\left(\frac{\frac{R}{R}}{\frac{R}{R}}\right)}{R}}\right.
 \\&
 \left.\qquad R+\frac{\left(m (m+2) \left(k^2+\mu \right)-k^2+\mu +(m+1)^2 R^2\right) \ln \left(\frac{-\frac{2 R \left| k\right| }{m+1}+k^2+\mu +R^2}{\frac{2 R \left| k\right| }{m+1}+k^2+\mu
 		+R^2}\right)}{4(m+1) \left| k\right| }\!\right],\\
@@ -1615,12 +1615,7 @@ T_{\text{diag}}(\xi)&=\int\diff k_1 L(k_1)\abs{\xi(k_1)}^2,\\ T_{\text{off}}(\xi
 L(k)=&2 \pi^2 \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }.
 \end{aligned}
 \end{equation}
-We now show a uniform lower bound of $ F_\alpha^R $  in the $ 2+1 $ case. \begin{proposition}
-	Let $ F_\alpha^R $ be defined as above with $ N=2 $ and let $ m\geq1/3 $. Then there exist $ K,M>0 $ such that $ F^R_\alpha(u)\geq-M\norm{u}_2^2 $ for all $ R\geq K $.
-\end{proposition}
-\begin{proof}
-	First we notice that by corollary \ref{ColollaryConcaveLRBound} we have for $ R\leq x^2/2 $ we have  $ L^R((m+1)x/2)\geq  $. SEEMS NOT TO WORK
-\end{proof}
+We now show a uniform lower bound of $ F_\alpha^R $  in the $ 2+1 $ case for $ m\geq0.72 $. 
 One way to show boundedness from below, is through the result of Moser and Seiringer \cite{Moser_2017}. We know that for $ \xi\in H^{1/2}(\R^3) $ we have $ T_{\text{off}}\geq-T_{\text{diag}}(\xi) $ for $ m\geq0.36 $. Since, $ (\xi^R\mathbbm{1}_{B_R(0)})^\vee\in H^1(\R^3)\subset H^{1/2}(\R^3) $ and $ T^R_{\text{off}}(\xi^R)=T_{\text{off}}(\xi^R\mathbbm{1}_{B_R(0)}) $, the problem at finite $ R>0 $ reduces to showing  $ T^R_{\text{diag}}(\xi^R)-T_{\text{diag}}(\xi^R\mathbbm{1}_{B_R(0)})\geq -M\norm{u}_2^2 $. A step on the way is provided by the lemma \begin{lemma}\label{Lemma2LR>L}
 	Let $ L(k) $ and $ L^R(k) $ be defined as above, then $ 2L^R(k)\geq L(k) $ for $ \abs{k}\leq R $ and $ R\geq(1+m)\sqrt{\mu} $.
 \end{lemma}
@@ -1635,7 +1630,7 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\end{aligned}
 	\end{equation}	
 	We then notice that $ L^R(R)/L(R)\big\rvert_{R\geq(1+m)\sqrt{\mu}} $ is an increasing function of $ R $, which is verified by finding the derivative\begin{equation}
-	\frac{\partial}{\partial R}(L^R(R)/L(R))=\frac{\mu  \left(\mu  (m+1) \log \left(\frac{\mu +\frac{2 (m+2) R^2}{m+1}}{\mu +\frac{2 m R^2}{m+1}}\right)+4 R^2\right)}{4 \pi  R^2 \left(\mu +\frac{m (m+2) R^2}{(m+1)^2}\right)^{3/2}}
+	\frac{\partial}{\partial R}(L^R(R)/L(R))=\frac{\mu  \left(\mu  (m+1) \ln \left(\frac{\mu +\frac{2 (m+2) R^2}{m+1}}{\mu +\frac{2 m R^2}{m+1}}\right)+4 R^2\right)}{4 \pi  R^2 \left(\mu +\frac{m (m+2) R^2}{(m+1)^2}\right)^{3/2}}
 	\end{equation}
 	Thus we find that \begin{equation}
 	\begin{aligned}
@@ -1645,16 +1640,16 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\end{aligned}
 	\end{equation}
 	
-	 This is a decreasing function of $ m $, as is verified by considering the derivative\begin{equation}
+	 This is a non-increasing function of $ m $, as is verified by considering the derivative\begin{equation}
 	 \frac{\partial}{\partial m}h(m,\mu)=\frac{\mu ^{3/2} (m+1) \left(-\left(2 m^2+4 m+3\right) \ln \left(\frac{ 2 m^2+6 m+5}{2 m^2+2 m+1}\right)+4 (m+1)\right)}{4 \pi 
 	 	\left(\mu  (m+1)^2\right)^{3/2}}.
 	 \end{equation}
 	 Using the inequality $ \ln(1+x)\geq\frac{2x}{2+x} $ we find \begin{equation}
 	 \frac{\partial}{\partial m}h(m,\mu)\leq \frac{\mu ^{3/2} (m+1) \left(4 (m+1)-\frac{2 (4 m+4) (2 m (m+2)+3)}{(2 m (m+1)+1) \left(\frac{4 m+4}{2 m (m+1)+1}+2\right)}\right)}{4 \pi  \left(\mu  (m+1)^2\right)^{3/2}}=0.
 	 \end{equation}
-	 Knowing that $ L^R(k)/L(k)\rvert_{R\geq(1+m)\sqrt{\mu}}\geq h(m,\mu) $ and that $ h(m,\mu) $ is non-increasing, we need only consider the limit $ L^R(R)/L(R)\big\rvert_{R\geq(1+m)\sqrt{\mu}}\geq\lim\limits_{m\to\infty}\left(h(m,\mu)\right)=\frac{1}{2} $.
+	 Knowing that $ L^R(k)/L(k)\rvert_{R\geq(1+m)\sqrt{\mu}}\geq h(m,\mu) $ and that $ h(m,\mu) $ is non-increasing, we need only consider the limit $ L^R(k)/L(k)\big\rvert_{R\geq(1+m)\sqrt{\mu}}\geq\lim\limits_{m\to\infty}\left(h(m,\mu)\right)=\frac{1}{2} $.
 	\end{proof}
-	Boundedness from below now follows in the mass region where $ T_{\text{off}}\geq-\frac{1}{2}T_{\text{diag}} $. In \cite{Moser_2017} it was shown that $ T_{\text{off}}\geq-\geq-\Lambda(m)T_{\text{diag}} $ for a complicated function $ \Lambda(m) $. It was shown that stability holds whenever $ \Lambda(m)<1 $ which is true for $ m\geq0.36 $. Furthermore, it was shown that $ \Lambda_1(m)\geq2\Lambda(m) $ for some function $ \Lambda_1(m) $ which satisfies $ \Lambda_1(m)<1 $ for $ m\geq0.72 $. Thus we conclude that $ T_{\text{off}}\geq-\frac{1}{2}T_{\text{diag}} $ for $ m\geq0.72 $.
+	Boundedness from below now follows in the mass region where $ T_{\text{off}}>-\frac{1}{2}T_{\text{diag}} $. In \cite{Moser_2017} it was shown that $ T_{\text{off}}\geq-\Lambda(m)T_{\text{diag}} $ for a complicated function $ \Lambda(m) $. It was shown that stability holds whenever $ \Lambda(m)<1 $ which is true for $ m\geq0.36 $. Furthermore, it was shown that $ \Lambda_1(m)\geq2\Lambda(m) $ for some function $ \Lambda_1(m) $ which satisfies $ \Lambda_1(m)<1 $ for $ m\geq0.72 $. Thus we conclude that $ T_{\text{off}}>-\frac{1}{2}T_{\text{diag}} $ for $ m\geq0.72 $.
 	\begin{proposition}
 		Let $ F^R_\alpha $ be defined as above and let $ m\geq0.72$. Then the sequence $ (F^n_\alpha)_{n\geq(1+m)\sqrt{\mu}} $ is uniformly bounded from below.
 	\end{proposition}
@@ -1678,7 +1673,7 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 		\end{equation}
 		On the other hand we have \begin{equation}
 		\begin{aligned}
-		\lim\limits_{\mu\to0}\frac{1}{k}L^k(k)n=&\frac{\pi n}{m+1}  \Bigg(2 (m+1)-m (m+2) \log \left(\frac{m+2}{m}\right)\\
+		\lim\limits_{\mu\to0}\frac{1}{k}L^k(k)n=&\frac{\pi n}{m+1}  \Bigg(2 (m+1)-m (m+2) \ln \left(\frac{m+2}{m}\right)\\
 		&\qquad+2 \sqrt{m} \sqrt{m+2} \left[\arctan\left(\frac{1}{\sqrt{\frac{m}{m+2}}}\right)+\arctan\left(\sqrt{\frac{m}{m+2}}\right)\right]\Bigg).
 		\end{aligned}
 		\end{equation}
@@ -1688,7 +1683,7 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 		Thereby, we need only show that $ \frac{1}{k}L^k(k)n\geq2\pi n $ for any potential minimum in $ \mu $.
 		Differentiating \eqref{EqL^nIneq} w.r.t $ \mu $ we find \begin{equation}
 		\begin{aligned}
-		\frac{\partial}{\partial\mu}\left(\frac{1}{k}L^k(k)n\right)&=\frac{\pi}{2 k^2}  \Bigg\{(m+1) \log \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu +\mu  m}\right)+\frac{2 k}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\\&\times \left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\left(\frac{k
+		\frac{\partial}{\partial\mu}\left(\frac{1}{k}L^k(k)n\right)&=\frac{\pi}{2 k^2}  \Bigg\{(m+1) \ln \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu +\mu  m}\right)+\frac{2 k}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\\&\times \left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\left(\frac{k
 					(m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\right]\Bigg\}.
 		\end{aligned}
 		\end{equation}
@@ -1696,7 +1691,7 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 		\begin{aligned}
 		\left[\arctan\left(\frac{k m}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}\right)+\arctan\left(\frac{k
 			(m+2)}{(m+1) \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}\right)\right]=\\
-		-(m+1)\frac{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}{2 k} \log \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu^* +\mu^*  m}\right)
+		-(m+1)\frac{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu^* }}{2 k} \ln \left(1-\frac{4 k^2}{2 k^2 (m+2)+\mu^* +\mu^*  m}\right)
 		\end{aligned}
 		\end{equation}
 		Inserting this back into \eqref{EqL^nIneq} we find 
@@ -1707,17 +1702,27 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(2\pi n \norm{\xi^n\mathbbm{1}_{B_n(0)^\complement}}_2^2+\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi\mathbbm{1}_{B_n(0)}}_2^2+\alpha\norm{\xi}_2^2\right).
 		\end{equation}
 		And since $ n\geq(1+m)\sqrt{\mu} $ we find \begin{equation}
-		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi}_2^2+\alpha\norm{\xi}_2^2\right).
+		F^n_\alpha(u)\geq-\mu\norm{u}_2^2+2\left(\pi^2(1-2\Lambda(m))\sqrt{\mu}\norm{\xi}_2^2+\alpha\norm{\xi}_2^2\right),
 		\end{equation}
-		From this it follows, by choosing $ \mu=-\alpha^2/(\pi^2(1-2\Lambda(m))) $ for $ \alpha<0 $ and $ \mu\to0 $ for $ \alpha\geq0 $, that \begin{equation}
+		where we used that $ 2\pi(1+m)>\pi^2 $ for $ m\geq0.72 $.
+		From this it follows, by choosing $ \mu=-\alpha^2/(\pi^2(1-2\Lambda(m)))^{2} $ for $ \alpha<0 $ and $ \mu\to0 $ for $ \alpha\geq0 $, that \begin{equation}
 		F^n_\alpha(u)\geq\begin{cases}
-		-\alpha^2/(\pi^2(1-2\Lambda(m)))&\text{for }\alpha<0,\\
+		-\alpha^2/(\pi^2(1-2\Lambda(m)))^{2}&\text{for }\alpha<0,\\
 		0&\text{for }\alpha\geq0.
 		\end{cases}
 		\end{equation}
 		Since the bound is independent of $ n $, we conclude that the sequence is uniformly bounded from below.
 	\end{proof}
-	Notice that the bound is not sharp, since the binding energy of a single $\delta$-potential is $ -\alpha^2/(2\pi^2) $ and $ \Lambda(m)\to0 $ as $ m\to\infty $.
+	Notice that the bound is not sharp, since the binding energy of a single $\delta$-potential is $ -\alpha^2/(2\pi^2)^2 $ and $ \Lambda(m)\to0 $ as $ m\to\infty $. We now proceed to show the $ \Gamma $-lower bound for the 2+1 case\begin{theorem}
+		Let $ u_n\rightharpoonup u $ in $ L^2(\R^6) $ as $ n\to\infty $. Furthermore, let $ m\geq0.72 $ then \begin{equation}
+		\liminf_{n\to\infty}F^n_\alpha(u_n)\geq F_\alpha(u).
+		\end{equation}
+	\end{theorem}
+	\begin{proof}
+		By possibly restricting to a subsequence we may assume $ F^n_\alpha(u_n)\to\liminf_{n\to\infty}F_\alpha^n(u_n) $, as $ n\to\infty $. Since $ m\geq0.72 $ we know that $ F^n_\alpha $ is uniformly bounded from below, and we know that $ \norm{u_n}_2 $ is bounded by weak convergence and the uniform boundedness principle, we may conclude that either $ \liminf_{n\to\infty}F^n_\alpha(u_n)=\infty $ or $ u_n-\rho^nG $ is $ H^1(\R^6) $ bounded where $ \widehat{\rho^nG}(k)=(\mathbbm{1}_{B_n(0)}(k_1)\xi^n(k_2)-\mathbbm{1}_{B_n(0)}(k_2)\xi^n(k_1))\hat{G}(k) $. In the first case, the theorem in obvious. Therefore, assume that $ u_n-\rho^nG $ is $ H^1(\R^6) $ bounded. By Alaoglu's theorem we infer, by possibly passing to a subsequence that $ u_n-\rho^nG\rightharpoonup \chi $ for some $ \chi\in H^1(\R^6) $. Since $ H^1(\R^6)\subset L^2(\R^6) $ it is clear that $ u_n-\rho^nG\rightharpoonup \chi $ in $ L^2(\R^6) $. Since we already know that $ u_n\to u $ in $ L^2(\R^6) $ we conclude that $ \rho^n\hat{G}\rightharpoonup u-\chi $ in $ L^2(\R^6) $.
+	\end{proof}
+	\subsection{Uniform lower bound in the $ N+1 $ case}
+	We will now generalize the results from the previous subsection. The problem is analogous to the problem in the $ 2+1 $ case, except for the substitution $ k\to\abs{\sum_{i=1}^{N-1}k_i} $ and $ \mu\to\mu- $ 
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
@@ -1804,12 +1809,12 @@ for any positive function $ h $.
 	where we used Fubini's theorem in the fourth line and H\"older's inequality $ (1,\infty) $ in the firth line.
 	Thus the claim follows.
 \end{proof}
-\section{Monotonicity of $ L^R(k)/L(k)$ for $ k\leq R $ }
+\section{Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }
 \label{AppendixMonotonicityOfL^R/L}
 \begin{lemma}\label{lemmaMonotonicityOfL^R/L}
 	Let \begin{equation}
 	\begin{aligned}
-	L^R(k)=&2 \pi  \left[\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }\! \left(\!\arctan\!\left(\frac{-\frac{\left| k\right|}{m+1}+R}{ \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\!\left(\frac{\frac{\left| k\right| }{m+1}+R}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\!\!\right)\vphantom{\frac{\log\left(\frac{\frac{R}{R}}{\frac{R}{R}}\right)}{R}}\right.
+	L^R(k)=&2 \pi  \left[\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }\! \left(\!\arctan\!\left(\frac{-\frac{\left| k\right|}{m+1}+R}{ \sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)+\arctan\!\left(\frac{\frac{\left| k\right| }{m+1}+R}{\sqrt{\frac{k^2 m (m+2)}{(m+1)^2}+\mu }}\right)\!\!\right)\vphantom{\frac{\ln\left(\frac{\frac{R}{R}}{\frac{R}{R}}\right)}{R}}\right.
 	\\&
 	\left.\qquad R+\frac{\left(m (m+2) \left(k^2+\mu \right)-k^2+\mu +(m+1)^2 R^2\right) \ln \left(\frac{-\frac{2 R \left| k\right| }{m+1}+k^2+\mu +R^2}{\frac{2 R \left| k\right| }{m+1}+k^2+\mu
 			+R^2}\right)}{4(m+1) \left| k\right| }\!\right],\\
