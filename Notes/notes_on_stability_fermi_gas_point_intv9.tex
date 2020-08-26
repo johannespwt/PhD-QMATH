@@ -1713,16 +1713,69 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 		\end{equation}
 		Since the bound is independent of $ n $, we conclude that the sequence is uniformly bounded from below.
 	\end{proof}
-	Notice that the bound is not sharp, since the binding energy of a single $\delta$-potential is $ -\alpha^2/(2\pi^2)^2 $ and $ \Lambda(m)\to0 $ as $ m\to\infty $. We now proceed to show the $ \Gamma $-lower bound for the 2+1 case\begin{theorem}
+	Notice that the bound is not sharp, since the binding energy of a single $\delta$-potential is $ -\alpha^2/(2\pi^2)^2 $ and $ \Lambda(m)\to0 $ as $ m\to\infty $. 
+	The following simple lemma will be useful below\begin{lemma}\label{lemmaAntisymmetricConvergence}
+		Let $ f_n :A\to \C $ be a sequence of functions. If $ \Delta f_n:A\times A\to \C $ defined by $ \Delta f_n:(x,y)\mapsto f_n(x)-f_n(y) $ converges pointwise to $ h(x,y) $, then $ h $ is antisymmetric and furthermore, $ h(x,y)=f(x)-f(y) $ for some function $ f $.
+	\end{lemma}
+	\begin{proof}
+		Notice first that $ h(x,y)=f(x)-f(y) $ for some function $ f $, if and only if $ h(x,y)=h(x,0)-h(y,0) $. Now if $ f_n(x)-f_n(y)\to h(x,y) $ as $ n\to\infty $ it is obvious that $ h $ is antisymmetric. Furthermore, we have $ h(x,y)=\lim\limits_{n\to\infty}\left(f_n(x)-f_n(y)\right)=\lim\limits_{n\to\infty}\left(f_n(x)-f(0)-f_n(y)+f(0)\right)=h(x,0)-h(y,0) $, which proves the claim.
+	\end{proof}
+	We now proceed to show the $ \Gamma $-lower bound for the 2+1 case\begin{theorem}
 		Let $ u_n\rightharpoonup u $ in $ L^2(\R^6) $ as $ n\to\infty $. Furthermore, let $ m\geq0.72 $ then \begin{equation}
 		\liminf_{n\to\infty}F^n_\alpha(u_n)\geq F_\alpha(u).
 		\end{equation}
 	\end{theorem}
 	\begin{proof}
-		By possibly restricting to a subsequence we may assume $ F^n_\alpha(u_n)\to\liminf_{n\to\infty}F_\alpha^n(u_n) $, as $ n\to\infty $. Since $ m\geq0.72 $ we know that $ F^n_\alpha $ is uniformly bounded from below, and we know that $ \norm{u_n}_2 $ is bounded by weak convergence and the uniform boundedness principle, we may conclude that either $ \liminf_{n\to\infty}F^n_\alpha(u_n)=\infty $ or $ u_n-\rho^nG $ is $ H^1(\R^6) $ bounded where $ \widehat{\rho^nG}(k)=(\mathbbm{1}_{B_n(0)}(k_1)\xi^n(k_2)-\mathbbm{1}_{B_n(0)}(k_2)\xi^n(k_1))\hat{G}(k) $. In the first case, the theorem in obvious. Therefore, assume that $ u_n-\rho^nG $ is $ H^1(\R^6) $ bounded. By Alaoglu's theorem we infer, by possibly passing to a subsequence that $ u_n-\rho^nG\rightharpoonup \chi $ for some $ \chi\in H^1(\R^6) $. Since $ H^1(\R^6)\subset L^2(\R^6) $ it is clear that $ u_n-\rho^nG\rightharpoonup \chi $ in $ L^2(\R^6) $. Since we already know that $ u_n\to u $ in $ L^2(\R^6) $ we conclude that $ \rho^n\hat{G}\rightharpoonup u-\chi $ in $ L^2(\R^6) $.
+		By possibly restricting to a subsequence we may assume $ F^n_\alpha(u_n)\to\liminf_{n\to\infty}F_\alpha^n(u_n) $, as $ n\to\infty $. Since $ m\geq0.72 $ we know that $ F^n_\alpha $ is uniformly bounded from below, and we know that $ \norm{u_n}_2 $ is bounded by weak convergence and the uniform boundedness principle, we may conclude that either $ \liminf_{n\to\infty}F^n_\alpha(u_n)=\infty $ or $ u_n-\rho^nG $ is $ H^1(\R^6) $ bounded where $ \widehat{\rho^nG}(k)=(\mathbbm{1}_{B_n(0)}(k_1)\xi^n(k_2)-\mathbbm{1}_{B_n(0)}(k_2)\xi^n(k_1))\hat{G}(k) $. In the first case, the theorem in obvious. Therefore, assume that $ u_n-\rho^nG $ is $ H^1(\R^6) $ bounded. By Alaoglu's theorem we infer, by possibly passing to a subsequence that $ u_n-\rho^nG\rightharpoonup \chi $ for some $ \chi\in H^1(\R^6) $. Since $ H^1(\R^6)\subset L^2(\R^6) $ it is clear that $ u_n-\rho^nG\rightharpoonup \chi $ in $ L^2(\R^6) $. Since we already know that $ u_n\to u $ in $ L^2(\R^6) $ we conclude that $ \rho^n\hat{G}\rightharpoonup u-\chi $ in $ L^2(\R^6) $. Writing \begin{equation}
+		\hat{u}(k)=\hat{w}(k)+(\xi(k_2)-\xi(k_1))\hat{G}(k)
+		\end{equation}
+		for $ \xi\in H^{1/2}(\R^3) $ and \begin{equation}
+		\hat{u}_n(k)=\hat{w}(k)+(\xi(k_2)-\xi(k_1))\hat{g}_n(k) +\hat{h}_n(k),
+		\end{equation}
+		with $ \wedge\xi\hat{g}_n\to\wedge\xi\hat{G} $ and $ h_n\to 0 $ in $ L^2(\R^6) $, where $ \wedge\xi(k):=\xi(k_2)-\xi(k_1) $.\\
+		Convergence $ \rho^nG\rightharpoonup \zeta $ in $ L^2(\R^6) $, means that $ \rho^n\rightharpoonup \eta $ in $ H^{-2}(\R^6) $ such that $ \rho^nG\rightharpoonup \eta G $ in $ L^2(\R^6) $. Thus we have $ u_n-\rho^nG\rightharpoonup w+((\wedge\xi-\hat{\eta})\hat{G})^\vee=\chi\in H^1(\R^6) $.\\
+		\\
+		Notice now that weak $ H^1 $-convergence of $ u_n-\rho^nG $ gives strong $ L^2 $-convergence on all bounded Lipschitz domains $ \Omega $, by the Rellich-Kondrachov theorem, since it states that $ H^1(\Omega)\subset\subset L^2(\Omega) $, \ie compact embedding. Thus for all balls of radius $ r $, $ \Omega_r=B_r(0) $, we have that $ \rho^nG\rvert_{\Omega_r}\to \zeta\rvert_{\Omega_r} $ in $ L^2(\Omega_r) $ (since weak convergence of $ x_n $ implies norm convergence of $ Tx_n $ for $ T $ compact, and $ \mathbb{I} $ is compact operator from $ H^1 $ to $ L^2 $). \\
+		Thus, $ (u_n-\rho^nG)\mathbbm{1}_{\Omega_r} $ converges to $ (w+((\wedge\xi-\hat{\eta})\hat{G})^\vee)\mathbbm{1}_{\Omega_r}$ in $ L^2(\R^6) $ as $ n\to\infty $. By Cantors diagonalization argument (choosing the diagonal sequence) we may, by possibly passing to a subsequence, assume that  $ u_n-\rho^nG\to w+((\wedge\xi-\hat{\eta})\hat{G})^\vee $ pointwise a.e.
+		
+		
+		
+		Therefore we also have by continuity of the Fourier transform that \begin{equation}
+		(\rho^nG\mathbbm{1}_{\Omega_r})^\wedge\to (\zeta\mathbbm{1}_{\Omega_r})^\wedge,\text{ as }n\to\infty.
+		\end{equation} 
+		\begin{equation}
+		\abs{\widehat{\rho^nG}(k)-\zeta(k)}=\abs{\widehat{\rho^nG}(k)-(\rho^nG\mathbbm{1}_{\Omega_r})^\wedge(k)+(\rho^nG\mathbbm{1}_{\Omega_r})^\wedge(k)+(\zeta\mathbbm{1}_{\Omega_r})^\wedge(k)-(\zeta\mathbbm{1}_{\Omega_r})^\wedge(k)-\hat{\zeta}(k)}
+		\end{equation}
+		
+		Thus, by possibly passing to a subsequence, we may assume that $ (\rho^nG\mathbbm{1}_{\Omega_r})^\wedge $ converges pointwise to $ (\zeta\mathbbm{1}_{\Omega_r})^\wedge $, but since $ (\zeta\mathbbm{1}_{\Omega_r})^\wedge $ converges to $ \hat{\zeta} $ in $ L^2(\R^6) $, we may, by passing to a further subsequence, assume that $ (\zeta\mathbbm{1}_{\Omega_r})^\wedge $ converges pointwise to $ \hat{\zeta} $ as $ r\to\infty $. we see that...
+		\\
+		Notice that \begin{equation}
+		\lim\limits_{r\to\infty}\lim\limits_{n\to\infty}(\rho^nG\mathbbm{1}_{\Omega_r})^\wedge=\widehat{\zeta},
+		\end{equation}
+		and on the other hand we have \begin{equation}
+		\lim\limits_{n\to\infty}\lim\limits_{r\to\infty}(\rho^nG\mathbbm{1}_{\Omega_r})^\wedge=\lim\limits_{n\to\infty}\widehat{\rho^nG}
+		\end{equation}
+		\\
+		Notice that $ \rho^nG\to\eta G $ in $ L^2(\R^6) $ means that, by possibly passing to a subsequence, we may assume that $ \hat{\rho}^n(k)\hat{G}(k) \to \hat{\eta}(k)\hat{G}(k)$ as $ n\to\infty $, \ie pointwise convergence. By lemma \ref{lemmaAntisymmetricConvergence} we then know that $ \hat{\eta}(k)=f(k_2)-f(k_1) $ for some function $ k $.
+		Now use that $ (g(k_2)-g(k_1))\hat{G}\notin H^1(\R^6) $ for $ g(k)\neq\text{ const.} $
+		
+		Use that weak $ H^1 $ convergence gives pointwise convergence of a subsequence (and understand this statement).
+		\\
+%		\\
+%		\\
+%		(THIS SEEMS NOT TO WORK)Let us now show that $ \xi^n(k)\to\xi(k) $ pointwise. This follows directly from the calculation\begin{equation}
+%		\xi^n(k)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff q\left( \hat{w}(q,k)+(\xi(k)-\xi(q))\hat{g}_n(q,k)+\hat{h}_n(q,k)\right).
+%		\end{equation} 
+%		The first an last terms vanish by lemma \ref{lemmawH1}. Thus we have \begin{equation}
+%		\xi^n(k)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff q\left(\xi(k)(\hat{g}_n(q,k)-\hat{G}(q,k))-\xi(q)\hat{g}_n(q,k)\right)+\xi(k)\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff q \hat{G}(q,k)
+%		\end{equation}
+%		
 	\end{proof}
 	\subsection{Uniform lower bound in the $ N+1 $ case}
-	We will now generalize the results from the previous subsection. The problem is analogous to the problem in the $ 2+1 $ case, except for the substitution $ k\to\abs{\sum_{i=1}^{N-1}k_i} $ and $ \mu\to\mu- $ 
+	We will now generalize the results from the previous subsection. The problem is analogous to the problem in the $ 2+1 $ case, except for the substitution $ k\to\abs{\sum_{i=1}^{N-1}k_i} $ and $ \mu\to\mu- $.
+	
+	Use that $ \xi^R\in H^1 $ so we have better large $ q $ behavior than Moser and Seiringer, and remember that Moser and Seiringer use symmetry of $ \xi $.
+	
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
