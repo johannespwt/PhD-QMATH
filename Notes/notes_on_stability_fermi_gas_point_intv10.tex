@@ -17,6 +17,7 @@
 \usepackage{lastpage}
 \usepackage{enumitem}
 \usepackage{setspace}
+\usepackage{xcolor}
 \usepackage[english]{babel} 
 
 \usepackage[square,sort,comma,numbers]{natbib}
@@ -1390,7 +1391,7 @@ To see this, notice that by lemma \ref{lemmawH1-2} and \ref{lemmaGxi} we now tha
 Knowing this it is straightforward to show that \begin{equation}
 \int\diff k\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_i)\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi^n(\bar{k}^j)\to\int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\xi(\bar{k}^j),\quad\text{for }i\neq j,
 \end{equation}
-since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT. Thus we find by antisymmetry of $ \xi^n $ and $ \xi $\begin{equation}\label{EqConOff}
+since for $ i\neq j $ and $ \phi,\xi\in H^{1/2}(\R^{3(N-1)}) $, $ (\xi,\phi)\mapsto \int\diff k\overline{\xi}(\bar{k}^i)\hat{G}(k)\phi(\bar{k}^j)$ is a bounded sesquilinear form on $ H^{1/2}(\R^{3(N-1)}) $, and since $ \mathbbm{1}_{B_n(0)}(k_j)\xi(\bar{k}^i)\to\xi(\bar{k}^i) $ in $ H^{1/2}(\R^{3(N-1)}) $ norm, and $ \mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^j)\rightharpoonup\xi(\bar{k}^j) $ in $ H^{1/2}(\R^{3(N-1)}) $ which is are simple consequences of DCT. Thus we find by antisymmetry of $ \xi^n $ and $ \xi $\begin{equation}\label{EqConOff}
 \begin{aligned}
 \int\diff k\sum_{\substack{i,j\\i\neq j}}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)&\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)\left(\overline{\xi(\bar{k}^i)}-\overline{\xi^n(\bar{k}^i)}\right)\left(\xi(\bar{k}^j)-\xi^n(\bar{k}^j)\right)+NT^n_{\text{off}}(\xi^n)\\
 &\to -\int\diff k\sum_{\substack{i,j\\i\neq j}}(-1)^{i+j}\mathbbm{1}_{B_n(0)}(k_i)\mathbbm{1}_{B_n(0)}(k_j)\hat{G}(k)\overline{\xi(\bar{k}^i)}\xi(\bar{k}^j)\\&=N(N-1)\int\diff k \overline{\xi(s,\bar{q})}\hat{G}(s,t,\bar{q})\xi(t,\bar{q})=NT_{\text{off}}(\xi)
@@ -1433,7 +1434,7 @@ as $ n\to\infty $, from which it follows that \begin{equation}
 F^n_\alpha(u_n)\to F_\alpha(u),\qquad\text{as }n\to\infty
 \end{equation}
 	\end{proof}
-	\textbf{Remark:} It is worth pointing out that we actually circumvent showing that $ T^n_{\text{diag}/\text{off}}(\xi^n)\to T_{\text{diag}/\text{off}}(\xi) $. Although this might be true, showing it probably requires (it would at least be sufficient) that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)}) $, which we have not been able to show. However, $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ suffices in showing convergence of $ F_\alpha^n(u_n) $ as can be seen from the proof above.\\
+	\textbf{Remark:} It is worth pointing out that we actually circumvent showing that $ T^n_{\text{off}}(\xi^n)\to T_{\text{off}}(\xi) $. Although this might be true, showing it probably requires (it would at least be sufficient) that $ \xi^n\to\xi $ in $ H^{1/2}(\R^{3(N-1)}) $, which we have not been able to show. However, $ \abs{\xi^n-\xi}\rightharpoonup0 $ in $ H^{1/2}(\R^{3(N-1)}) $ suffices in showing convergence of $ F_\alpha^n(u_n) $ as can be seen from the proof above.\\
 \subsection*{Lower bound}
 	\textbf{Next step:}
 Show uniform lower bound of $ F^n_\alpha $, since combining with the upper bound of Proposition \ref{F Gamma upper bound(N+1)} gives lower bound of $ F_\alpha $. We want to show that $ \left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right) $ is positive under certain requirements of the mass ratio, $ m $ and for certain choice of $ \mu $. If $ \mu $ can be chosen independently of $ R $, this indeed provides a uniform lower bound, as we then have $ F_\alpha^n(u)\geq-\mu\norm{u}_2^2 $.\\
@@ -1899,24 +1900,44 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	
 	NEW IDEA (USE UNIRFORM BOUNDEDNESS PRINCIPLE):\\
 	\begin{lemma}
-		Let $ T^n_{\text{diag/off}} $ be defined as above. Then for each $ n\geq1 $, we have that $  T^n_{\text{diag}}+T^n_{\text{diag}}  $ is closed/closable and bounded from below.
+		Let $ T^n_{\text{diag/off}} $ be defined as above. Then for each $ n\geq1 $, we have that $  T^n_{\text{diag}}+T^n_{\text{off}}  $ is closed/closable and bounded from below.
 	\end{lemma}
 	\begin{proof}
 		Needs proof
 	\end{proof}
 	Thus to $ T^n_{\text{diag}}+T^n_{\text{diag}} $ we may assign an operator $ \Gamma^n $.
-	\begin{lemma}
+	\begin{lemma}\label{lemmaGammaNegativePartBounded}
 		Let $ \Gamma^n $ be defined as above. Then for each $ n\geq1 $ the negative part of $ \Gamma^n $, denoted by $ \Gamma^n_- $, is a bounded operator.
 	\end{lemma}
 	\begin{proof}
 		This follows from the fact that for each $ n\geq1 $, $ \Gamma^n $ is bounded from below and the spectral theorem.
 	\end{proof}
-	\begin{lemma}
-		Let $ \Gamma^n_- $ be the negative part of $ \Gamma^n $ defined above. Then $ \Gamma^n_- u\rightharpoonup0 $ as $ n\to\infty $, for all $ u\in L^2(\R^{3N}) $. In particular, $ \Gamma^n_- u $ is norm bounded.
+	\begin{lemma}\label{lemmaGammaBoundednessWeakConvergence1}
+			Let $ \Gamma^n_- $ be the negative part of $ \Gamma^n $ defined above. If $ \Gamma^n $ is uniformly bounded from below, then $ \Gamma^n_- u\rightharpoonup0 $ as $ n\to\infty $, for all $ u\in L^2(\R^{3N}) $.
 	\end{lemma}
 	\begin{proof}
-		It is known for $ u\in \dom{\Gamma^n}=H^2(\R^{3N}) $ that $ \abs{\braket{u,\Gamma^nu}}\leq C \norm{\xi^n}^2_{H^{1/2}(\R^{3(N-1)})} $ for some $ C>0 $ independent of $ u $, where $ \xi^n(\bar{k}^N)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N \hat{u}(k) $. Furthermore, by lemma \ref{lemmawH1-2}, it is known that $ \norm{\xi^n}_{H^{1/2}(\R^{3(N-1)})}\to0 $ as $ n\to\infty $. Thus we see that $ \braket{v,\Gamma^n u}\to0 $ for all $ u,v\in\dom{\Gamma^n} $ Since $ \braket{u+iv,\Gamma^n (u+iv)}\to0 $ and $ \braket{u+v,\Gamma^n (u+v)}\to0 $. So $ \Gamma^nu\rightharpoonup0 $ as $ n\to\infty $ since $ \dom{\Gamma^n} $ is dense in $ L^2(\R^{3N}) $. Now that $ \Gamma^n_-u\rightharpoonup0 $ as $ n\to\infty $ can be seen by the following: Notice that $ \Ran{\Gamma_-^n}\subset\ker\Gamma^n_+ $, and thus $ \overline{\Ran{\Gamma_-^n}}\subset\ker\Gamma^n_+ $. Now decompose $ u=u_1+u_2 $ with $ u_1\in\overline{\Ran{\Gamma^n_-}} $ and $ u_2\in\ker\Gamma^n_- $, so $ \Gamma^n_-u=\Gamma_-^n u_1 $, furthermore, any $ v\in L^2(\R^{3N}) $ may be decomposed similarly $ v=v_1+v_2 $ with $ v_1\in\overline{\Ran{\Gamma^n_-}} $ and $ v_2\in\ker\Gamma^n_- $. Thus $ \braket{v,\Gamma^n_-u}=\braket{v_1,\Gamma^n_-u_1}=-\braket{v_1,\Gamma^n u}\to0 $ as $ n\to\infty $. So $ \Gamma^n_-u\rightharpoonup 0 $ as $ n\to\infty $.
+		Since $ \Gamma^n $ is uniformly bounded from below, we know that $ \Gamma^n_- $ (the negative part of $ \Gamma^n $) is uniformly bounded. Now if $ u\in H^1(\R^{3N}) $, we know that as a quadratic form we have $ \abs{\braket{u,\Gamma^nu}}\leq C \norm{\xi^n}^2_{H^{1/2}(\R^{3(N-1)})} $ for some $ C>0 $ independent of $ u $, where $ \xi^n(\bar{k}^N)=\frac{1}{4\pi n+\alpha}\int_{B_n(0)}\diff k_N \hat{u}(k) $. Furthermore, by lemma \ref{lemmawH1-2}, it is known that $ \norm{\xi^n}_{H^{1/2}(\R^{3(N-1)})}\to0 $ as $ n\to\infty $. Thus we see that as a sesquiliniear form we have $ \braket{v,\Gamma^n u}\to0 $ for all $ u,v\in H^1(\R^{3N}) $, since $ \braket{u+iv,\Gamma^n (u+iv)}\to0 $ and $ \braket{u+v,\Gamma^n (u+v)}\to0 $. From this we conclude that $ \braket{v,\Gamma^n_-u}\to 0 $ for all $ v,u\in L^2(\R^{3N}) $. So $ \Gamma^n_-u\rightharpoonup0 $ as $ n\to\infty $ since $ H^1(\R^{3N}) $ is dense in $ L^2(\R^{3N}) $ and $ \norm{\Gamma^n_-} $ is uniformly bounded. Hence $ \Gamma^n_-u\rightharpoonup0 $ for all $ u\in L^2(\R^{3N}) $.
 	\end{proof}
+	\begin{lemma}\label{lemmaGammaBoundednessWeakConvergence2}
+		If $ \Gamma^n_- u\rightharpoonup\chi_u $ for all $ u\in L^2(\R^{3N}) $, then $ \Gamma^n_- $ is uniformly bounded. In particular, is $ \Gamma^n $ uniformly bounded from below and $ \chi_u=0 $.
+	\end{lemma}
+	\begin{proof}
+		By the uniform boundedness principle we know that $ \norm{\Gamma^n_- u }$ is bounded if $ \Gamma^n_- u\rightharpoonup\chi_u $. Thus by the uniform boundedness principle we again know that $ \sup_{n\geq1}\norm{\Gamma^n_-}<\infty $. It clearly follows that $ \Gamma^n $ is uniformly bounded from below, and by lemma \ref{lemmaGammaBoundednessWeakConvergence1} it follows that $ \chi_u=0 $.
+	\end{proof}
+	\begin{proposition}\label{propositionUniformLowerBoundiffWeakConvergence}
+		$ \Gamma^n $ is uniformly bounded from below if and only if $ \Gamma^n_-u\rightharpoonup0 $ for all $ u\in L^2(\R^{3N}) $.
+	\end{proposition}
+	\begin{proof}
+		This follows from lemma \ref{lemmaGammaBoundednessWeakConvergence1} and \ref{lemmaGammaBoundednessWeakConvergence2}.
+	\end{proof}
+	\begin{lemma}\label{lemmaGammaNegativePartPointwiseUniformBounded}
+		Let $ \Gamma^n_- $ be the negative part of $ \Gamma^n $ defined above. If as a sesquilinear form we have $ \braket{v,\Gamma^n u}\to0 $ as $ n\to\infty $ for all  $v,u\in H^1(\R^{3N})$, then  $ \braket{v,\Gamma^n_- u}\to0 $ as $ n\to\infty $.
+	\end{lemma}
+	\begin{proof}
+	 Notice that $ \Ran{\Gamma_-^n}\subset\ker\Gamma^n_+ $, and thus $ \overline{\Ran{\Gamma_-^n}}\subset\ker\Gamma^n_+ $. Now decompose $ u=u_1+u_2 $ with $ u_1\in\overline{\Ran{\Gamma^n_-}} $ and $ u_2\in\ker\Gamma^n_- $, so $ \Gamma^n_-u=\Gamma_-^n u_1 $, furthermore, any $ v\in L^2(\R^{3N}) $ may be decomposed similarly $ v=v_1+v_2 $ with $ v_1\in\overline{\Ran{\Gamma^n_-}} $ and $ v_2\in\ker\Gamma^n_- $. Thus $ \braket{v,\Gamma^n_-u}=\braket{v_1,\Gamma^n_-u_1}=-\braket{v_1,\Gamma^n u}\to0 $ as $ n\to\infty $. So $ \Gamma^n_-u\rightharpoonup 0 $ as $ n\to\infty $. \textcolor{red}{check this proof w.r.t domains etc}
+	\end{proof}
+	From proposition \ref{propositionUniformLowerBoundiffWeakConvergence} we see that uniform lower boundedness of $ \Gamma^n $ is equivalent to showing pointwise weak convergence of $ \Gamma^n $ (which will in fact automatically be pointwise weak convergence to $ 0 $ then). \\
+	\textbf{IDEA}: Maybe, $ F_\alpha^n $ need only be uniformly bounded from below on $   \dom{F_\alpha}\subset L^2(\R^{3N}) $ to show boundedness from below of $ F_\alpha $. Then maybe use the above classification of proposition \ref{propositionUniformLowerBoundiffWeakConvergence}, if it generalizes to subsets of $ L^2 $.
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}

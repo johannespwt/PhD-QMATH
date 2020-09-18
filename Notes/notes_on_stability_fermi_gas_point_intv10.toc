@@ -12,5 +12,5 @@
 \contentsline {subsection}{\numberline {4.2}Uniform lower bound in the $ 2+1 $ case}{55}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Uniform lower bound in the $ N+1 $ case}{61}{subsection.4.3}
 \contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{66}{appendix.A}
-\contentsline {section}{\numberline {B}Schur test}{67}{appendix.B}
-\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{68}{appendix.C}
+\contentsline {section}{\numberline {B}Schur test}{68}{appendix.B}
+\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{69}{appendix.C}
