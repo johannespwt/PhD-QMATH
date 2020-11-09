@@ -1936,8 +1936,26 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\begin{proof}
 	 Notice that $ \Ran{\Gamma_-^n}\subset\ker\Gamma^n_+ $, and thus $ \overline{\Ran{\Gamma_-^n}}\subset\ker\Gamma^n_+ $. Now decompose $ u=u_1+u_2 $ with $ u_1\in\overline{\Ran{\Gamma^n_-}} $ and $ u_2\in\ker\Gamma^n_- $, so $ \Gamma^n_-u=\Gamma_-^n u_1 $, furthermore, any $ v\in L^2(\R^{3N}) $ may be decomposed similarly $ v=v_1+v_2 $ with $ v_1\in\overline{\Ran{\Gamma^n_-}} $ and $ v_2\in\ker\Gamma^n_- $. Thus $ \braket{v,\Gamma^n_-u}=\braket{v_1,\Gamma^n_-u_1}=-\braket{v_1,\Gamma^n u}\to0 $ as $ n\to\infty $. So $ \Gamma^n_-u\rightharpoonup 0 $ as $ n\to\infty $. \textcolor{red}{check this proof w.r.t domains etc}
 	\end{proof}
-	From proposition \ref{propositionUniformLowerBoundiffWeakConvergence} we see that uniform lower boundedness of $ \Gamma^n $ is equivalent to showing pointwise weak convergence of $ \Gamma^n $ (which will in fact automatically be pointwise weak convergence to $ 0 $ then). \\
+	From proposition \ref{propositionUniformLowerBoundiffWeakConvergence} we see that uniform lower boundedness of $ \Gamma^n $ is equivalent to showing pointwise weak convergence of $ \Gamma^n_- $ (which will in fact automatically be pointwise weak convergence to $ 0 $ then). \\
 	\textbf{IDEA}: Maybe, $ F_\alpha^n $ need only be uniformly bounded from below on $   \dom{F_\alpha}\subset L^2(\R^{3N}) $ to show boundedness from below of $ F_\alpha $. Then maybe use the above classification of proposition \ref{propositionUniformLowerBoundiffWeakConvergence}, if it generalizes to subsets of $ L^2 $.
+	\subsection{Rank-one perturbation}
+	We analyze in this subsection the simpler problem of perturbing the free one-body Hamiltonian by a rank one perturbation, like the one used above, in order to understand better the sequence $ F_\alpha^n $. This corresponds to removing the term from the Hamiltonian given by $ \frac{-2}{m+1}\sum_{i<j}^{N}\nabla_i\cdot\nabla_j $, rendering the Hamiltonian non-interacting, \ie of the form $ H_\alpha^n=\oplus_{i=1}^{N}H_i$, with $ H_i=-\Delta-\gamma_\alpha\braket{\mathbbm{1}_{B_n},\hat{\cdot}}\mathbbm{1}_{B_n}^\vee $. It is our hope that fully analysing this special case ($ m\to\infty $) will help solve the more general problem, \eg by perturbation theory.\\
+	To begin with, we notice that we need only analyze the one-body Hamiltoninan. Furthermore, we notice that one may split the degrees of freedom, such that only only a certain subspace of the Hilbert space ($ L^2(\R^3) $) is affected by the rank-one perturbation. This is done in the following way. We may factor $ L^2(\hat{\R}^3) $ (momentum space) according to a angular momentum decomposition \begin{equation}
+		L^2(\hat{\R}^3)=L^2(\R_+,r^2\diff r)\otimes L^2(S^2,\diff\Omega)=\oplus_{l=0}^{\infty}L^2(\R_+,r^2\diff r)\otimes\braket{(Y^m_l)_{m=-l}^{l}}:=\oplus_{l=0}^{\infty}\mathcal{H}_l,
+	\end{equation} 
+	where $ Y_l^m $ are the spherical harmonics. Since $ Y_0^0 $ is the constant function, it is clear that $ \braket{\mathbbm{1}_{B_n},\hat{\cdot}}\mathbbm{1}_{B_n}^\vee $ acts the zero operator on $ \mathcal{H}_l $ for all $ l>0 $. Thus $ H_\alpha \rvert_{\mathcal{H}_l}=k^2=M_{r^2} $ for $ l>0 $. On the other hand, for $ l=0 $ the rank-one perturbation cannot be ignored. In this case, we study the generalized eigenvalue equation of the radial function (since the angular part is unique, the constant function). In the following $ k\in\R $ denoted a scalar (the magnitude of the momentum), even though we usually denote the three-momentum by $ k $. The generalized eigenvalue equation for $ l=0 $ reads\begin{equation}\label{GeneralizedEigenvalueEq}
+	k^2\hat{f}(k)-4\pi\gamma_\alpha\int_{0}^{n}\hat{f}(r)r^2\diff r\mathbbm{1}_{[0,n)}(k)=\lambda\hat{f}(k),
+	\end{equation}
+	where the $ 4\pi $ comes from the normalization of $ \mathbbm{1}_{B_n}=\sqrt{4\pi}\mathbbm{1}_{[0,n)}(k)\otimes Y_0^0 $. In order to solve the generalized eigenvalue equation, we consider first the case $ k=0 $, where the equation reads\begin{equation}
+	-4\pi\gamma_\alpha\int_{0}^{n}\hat{f}(r)r^2\diff r=\lambda f(0).
+	\end{equation}
+	Substituting this back into \eqref{GeneralizedEigenvalueEq} we find \begin{equation}
+		(k^2-\lambda)\hat{f}(k)=-\lambda f(0).
+	\end{equation}
+	We seek distributional solutions to this equation. The homogenous solutions are the usual free solutions $ \hat{f}(k)=\delta(k^2-\lambda)=\frac{1}{2k}\delta(k-\sqrt{\lambda}) $ (where we discarded $ \frac{1}{2k}\delta(k+\sqrt{\lambda})=0 $ on $ \R_+ $). The particular solution on the other hand, may be found \begin{equation}\label{EqParticularSol}
+	\hat{f}(k)=\mathcal{P}\frac{-\lambda f(0)}{k^2-\lambda},
+	\end{equation}
+	where $ \mathcal{P} $ denotes the Cauchy principal value. Notice that \eqref{EqParticularSol} is self-consistent for any value of $ f(0) $.
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
