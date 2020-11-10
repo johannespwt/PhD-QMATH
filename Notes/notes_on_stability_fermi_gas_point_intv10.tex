@@ -1946,7 +1946,7 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	where $ Y_l^m $ are the spherical harmonics. Since $ Y_0^0 $ is the constant function, it is clear that $ \braket{\mathbbm{1}_{B_n},\hat{\cdot}}\mathbbm{1}_{B_n}^\vee $ acts the zero operator on $ \mathcal{H}_l $ for all $ l>0 $. Thus $ H_\alpha \rvert_{\mathcal{H}_l}=k^2=M_{r^2} $ for $ l>0 $. On the other hand, for $ l=0 $ the rank-one perturbation cannot be ignored. In this case, we study the generalized eigenvalue equation of the radial function (since the angular part is unique, the constant function). In the following $ k\in\R $ denoted a scalar (the magnitude of the momentum), even though we usually denote the three-momentum by $ k $. The generalized eigenvalue equation for $ l=0 $ reads\begin{equation}\label{GeneralizedEigenvalueEq}
 	k^2\hat{f}(k)-4\pi\gamma_\alpha\int_{0}^{n}\hat{f}(r)r^2\diff r\mathbbm{1}_{[0,n)}(k)=\lambda\hat{f}(k),
 	\end{equation}
-	where the $ 4\pi $ comes from the normalization of $ \mathbbm{1}_{B_n}=\sqrt{4\pi}\mathbbm{1}_{[0,n)}(k)\otimes Y_0^0 $. In order to solve the generalized eigenvalue equation, we consider first the case $ k=0 $, where the equation reads\begin{equation}
+	where the $ 4\pi $ comes from the normalization of $ \mathbbm{1}_{B_n}=\sqrt{4\pi}\mathbbm{1}_{[0,n)}(k)\otimes Y_0^0 $. In order to solve the generalized eigenvalue equation, we consider first the case $ k=0 $, where the equation reads\begin{equation} \label{EqConsistency}
 	-4\pi\gamma_\alpha\int_{0}^{n}\hat{f}(r)r^2\diff r=\lambda f(0).
 	\end{equation}
 	Substituting this back into \eqref{GeneralizedEigenvalueEq} we find \begin{equation}
@@ -1955,7 +1955,10 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	We seek distributional solutions to this equation. The homogenous solutions are the usual free solutions $ \hat{f}(k)=\delta(k^2-\lambda)=\frac{1}{2k}\delta(k-\sqrt{\lambda}) $ (where we discarded $ \frac{1}{2k}\delta(k+\sqrt{\lambda})=0 $ on $ \R_+ $). The particular solution on the other hand, may be found \begin{equation}\label{EqParticularSol}
 	\hat{f}(k)=\mathcal{P}\frac{-\lambda f(0)}{k^2-\lambda},
 	\end{equation}
-	where $ \mathcal{P} $ denotes the Cauchy principal value. Notice that \eqref{EqParticularSol} is self-consistent for any value of $ f(0) $.
+	where $ \mathcal{P} $ denotes the Cauchy principal value. Notice that \eqref{EqParticularSol} is self-consistent for any value of $ f(0) $. Thus in order to have consistency we need only that the solution satisfies \eqref{EqConsistency}. Notice that \begin{equation}
+	\hat{f}(k)=\mathcal{P}\frac{-\lambda f(0)}{k^2-\lambda}+B\delta(k-\sqrt{\lambda}),
+	\end{equation}
+	satisfies is consistent in the way $ f(0)=f(0) $ and by adjusting $ B $ appropriately is also satisfies \eqref{EqConsistency}. 
 \appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
