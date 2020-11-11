@@ -12,6 +12,6 @@
 \contentsline {subsection}{\numberline {4.2}Uniform lower bound in the $ 2+1 $ case}{55}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Uniform lower bound in the $ N+1 $ case}{61}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Rank-one perturbation}{66}{subsection.4.4}
-\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{67}{appendix.A}
-\contentsline {section}{\numberline {B}Schur test}{69}{appendix.B}
-\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{70}{appendix.C}
+\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{68}{appendix.A}
+\contentsline {section}{\numberline {B}Schur test}{70}{appendix.B}
+\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{71}{appendix.C}
