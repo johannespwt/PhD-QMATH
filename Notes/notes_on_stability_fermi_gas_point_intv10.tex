@@ -1990,6 +1990,31 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\mathcal{P}\int_{0}^{n}\left(\frac{1}{k^2-\lambda}\right)^2k^2\diff k=\frac{\left(n^2-\lambda \right) \arctanh\left(\frac{n}{\sqrt{\lambda
 			}}\right)+\sqrt{\lambda } n}{2 \sqrt{\lambda } \left(\lambda -n^2\right)},
 	\end{equation}
+	Since $ (f_\lambda)_{\lambda\in[0,n)} $ are supported in $ [0,n) $ and $ (f_\lambda)_{\lambda\geq n} $ are supported in $ [n,\infty) $, we expect that $ (f_\lambda)_{\lambda\in[0,n)}  $ span all $ L^2 $-functions that are supported in $ [0,n) $. To see that notice that for $ g\in C^\infty([0,n)) $ (notice also that that $ A $ can depend on $ \lambda $, $ A=A_\lambda $) \begin{equation}
+	\begin{aligned}
+	\int_{0}^{n}& f_\lambda(k')\int_{0}^{n}f_\lambda(k)g(k) k^2 \diff k\frac{\sqrt{\lambda}}{2} \diff\lambda\\&
+	=\int_{0}^{n}A_\lambda^2 f_\lambda(k')\left(\mathcal{P}\int_{0}^{n}\frac{g(k)k^2}{k^2-\lambda}\diff k+\frac{\left(\arctanh\left(\frac{\sqrt{\lambda}}{n}\right)+\frac{\alpha}{4\pi\sqrt{\lambda}}\right)}{\sqrt{\lambda}}g(\sqrt{\lambda})\right)\frac{\sqrt{\lambda}}{2} \diff \lambda\\
+	&=\mathbbm{1}_{[0,n)}(k')\Bigg(\mathcal{P}\int_{0}^{n}\mathcal{P}\int_{0}^{n}\frac{A_{\mu^2}^2\mu^2 k^2g(k)}{(k'^2-\mu^2)(k^2-\mu^2)}\diff k\diff \mu\\&\qquad+\mathcal{P}\int_{0}^{n}A_{\mu^2}^2\frac{g(\mu)\mu^2}{k'^2-\mu^2}\frac{\arctanh(\mu/n)+\frac{\alpha}{4\pi\mu}}{\mu}\diff\mu\\
+	&+A_{k'^2}^2\frac{\arctanh(k'/n)+\frac{\alpha}{4\pi k'}}{k'}k'^2\left(\mathcal{P}\int_{0}^{n}\frac{k^2g(k)}{(k^2-k'^2)}\diff k+\frac{\arctanh(k'/n)+\frac{\alpha}{4\pi k'}}{k'}g(k')\right)\Bigg),\\
+	\end{aligned}
+	\end{equation}
+	where we changed coordinates $ \lambda=\mu^2 $.
+	Now it is non-trivial that the integrations in the first term can be interchanged. But using the Sokhotski–Plemelj theorem we see that \begin{equation}
+	\begin{aligned}
+	\mathcal{P}\int_{0}^{n}\mathcal{P}\int_{0}^{n}\frac{\mu^2 k^2g(k)}{(k'^2-\mu^2)(k^2-\mu^2)}\diff k\diff \mu=...
+	\end{aligned}
+	\end{equation}
+	\colorbox{red}{Assuming} that we can switch the order of integration in the above we have \begin{equation}
+	\begin{aligned}
+	\int_{0}^{n}& f_{\mu^2}(k')\int_{0}^{n}f_{\mu^2}(k)g(k) k^2 \diff k\mu^2 \diff\mu=A_{k'^2}^2\left(\arctanh(k'/n)+\frac{\alpha}{4\pi k'}\right)^2g(k')
+	\end{aligned}
+	\end{equation}
+	therefore, choosing $ A_{\mu^2}=\left(\arctanh(\mu/n)+\frac{\alpha}{4\pi \mu}\right)^{-1} $, we have \begin{equation}
+	\int_{0}^{n} f_{\mu^2}(k')\int_{0}^{n}f_{\mu^2}(k)g(k) k^2 \diff k\mu^2 \diff\mu=g(k').
+	\end{equation}
+	Thus we have found the orthonormalized generalized eigenfunctions in the s-orbital subspace \begin{equation}
+	f_{\mu^2}(k)=\left(\left(\arctanh(\mu/n)+\frac{\alpha}{4\pi \mu}\right)^{-1}\mathcal{P}\frac{1}{k^2-\mu^2}\mathbbm{1}_{[0,n)}(k)+\frac{1}{\mu}\delta(k-\mu)\right),\quad \mu<n.
+	\end{equation}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
