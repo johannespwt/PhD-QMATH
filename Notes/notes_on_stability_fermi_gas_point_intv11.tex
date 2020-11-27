@@ -2038,6 +2038,11 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\end{theorem}
 	\begin{proof}
 		Proof needs. We have numerical evidence for the first inversion theorem, next step is to try second inversion numerically.
+		If there is an $ A_\mu $ such that the theorem is true we must have 
+		\begin{equation}
+		\int_{0}^{n} \frac{1}{A_\nu}f_{\nu^2}(k) \left(\int_{0}^{n}\frac{1}{A_\mu}f_{\mu^2}(k)\mu^2\diff\mu\right)k^2\diff k=\frac{1}{A_\nu^2},
+		\end{equation}
+		however, this is an equation for $ A_\nu $ since $ \frac{1}{A_\mu}f_{\mu^2}(k) $ is known and independent of $ A_\mu $.
 	\end{proof}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
