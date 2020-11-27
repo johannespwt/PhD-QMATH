@@ -2004,17 +2004,41 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\mathcal{P}\int_{0}^{n}\mathcal{P}\int_{0}^{n}\frac{\mu^2 k^2g(k)}{(k'^2-\mu^2)(k^2-\mu^2)}\diff k\diff \mu=...
 	\end{aligned}
 	\end{equation}
-	\colorbox{red}{Assuming} that we can switch the order of integration in the above we have \begin{equation}
-	\begin{aligned}
-	\int_{0}^{n}& f_{\mu^2}(k')\int_{0}^{n}f_{\mu^2}(k)g(k) k^2 \diff k\mu^2 \diff\mu=A_{k'^2}^2\left(\arctanh(k'/n)+\frac{\alpha}{4\pi k'}\right)^2g(k')
-	\end{aligned}
+	We notice that the principal value $ \mathcal{P}(\frac{1}{k^2-\mu^2}) $ is anti-symmetric in $ k $ and $ \mu $. Thus in order to have the correct normalization, \ie $ \int f_{\mu^2}(k')f_{\mu^2}(k)\diff \Omega_\mu=\frac{\delta(k-k')}{k} $, where $ \Omega_\mu $ denotes the measure on the spectral parameter $ \mu $, and $ \int f_{\mu^2}(k)f_{\nu^2}(k)k^2\diff k=\delta_{\Omega_\mu}(\mu-\nu) $, where $ \delta_{\Omega_\mu} $ is defined such that $ \int\delta_{\Omega_\mu}(\mu)\diff \Omega_\mu=1  $ (Think about these normalizations, what about the free case.), we expect a normalization constant $ A_\mu $ that depends on $ \mu $. One example of this is to consider the constant function on $ \mathbbm{1}_{[0,n)} $, where \begin{equation}
+	\int_{0}^{n}f_\mu^2(k) k^2\diff k=\left(4\pi\gamma_\alpha\right)^{-1}\mathbbm{1}_{[0,n)}=\left(n+\frac{\alpha}{4\pi}\right)\mathbbm{1}_{[0,n)}.
 	\end{equation}
-	therefore, choosing $ A_{\mu^2}=\left(\arctanh(\mu/n)+\frac{\alpha}{4\pi \mu}\right)^{-1} $, we have \begin{equation}
-	\int_{0}^{n} f_{\mu^2}(k')\int_{0}^{n}f_{\mu^2}(k)g(k) k^2 \diff k\mu^2 \diff\mu=g(k').
+	but the inverse transform (without a normalization constant depending on $ \mu $) will clearly not give $ \mathbbm{1}_{[0,n)} $ back, since the first term in the generalized eigenfunctions is anti-symmetric. Thus since the transform from $ k $ to $ \mu $ returned $ \mathbbm{1}_{[0,n)} $ the same cannot be true for the inverse, in fact we have with normalization constant $ A_\mu=1 $ and the na\"ive measure $ \diff\Omega_\mu=\mu^2\diff\mu $ that  \begin{equation}
+	\int_{0}^{n}f_{\mu^2}(k')\int_{0}^{n}f_\mu^2(k) k^2\diff k\mu^2\diff\mu=\left(-n+\frac{\alpha}{4\pi}+2k'\arctanh(k'/n)\right)\left(n+\frac{\alpha}{4\pi}\right)
+	\end{equation} 
+	Thus we need to find $ A_\mu $ and $ \diff\Omega_\mu $ that gives us the correct normalizations.\\
+	\textbf{Idea:} Assuming that $ \int_{0}^{n}f_{\mu^2}(k)f_{\nu^2}(k)k^2\diff k=C\delta(\mu-\nu) $ we have, if we can exchange integrals, \begin{equation}
+	\int_{0}^{n} f_{\nu^2}(k) \left(\int_{0}^{n}\frac{1}{A_\mu}f_{\mu^2}(k)\mu^2\diff\mu\right)k^2\diff k=\frac{C}{A_\nu}
 	\end{equation}
-	Thus we have found the orthonormalized generalized eigenfunctions in the s-orbital subspace \begin{equation}
-	f_{\mu^2}(k)=\left(\left(\arctanh(\mu/n)+\frac{\alpha}{4\pi \mu}\right)^{-1}\mathcal{P}\frac{1}{k^2-\mu^2}\mathbbm{1}_{[0,n)}(k)+\frac{1}{\mu}\delta(k-\mu)\right),\quad \mu<n.
+	As seen above we can solve the generalized eigenvalue, problem, \eqref{GeneralizedEigenvalueEq}, for the Hamiltonian $ H_\alpha\rvert_{\mathcal{H}_0} $, with eigenvalue $ \mu^2<n^2 $ by the functions\begin{equation}\label{EqGeneralizedEigenfunctions}
+	f_\mu^2=A_\mu\left(\mathcal{P}\frac{1}{k^2-\mu^2}\mathbbm{1}_{[0,n)}(k)+\frac{\left(\arctanh\left(\frac{\mu}{n}\right)+\frac{\alpha}{4\pi\mu}\right)}{\mu}\delta(k-\mu)\right),\quad \mu^2<n^2.
 	\end{equation}
+	The normalizationm $ A_\mu $, is left unspecified at this point, however the following theorem motivates a specific choice
+	\begin{theorem}
+		Let $ f_\mu^2 $ denote the functions in \eqref{EqGeneralizedEigenfunctions}. Let further $ A_\mu $ be defined by\begin{equation}
+		\begin{aligned}
+		A_\mu:=4 \pi \Bigg(\alpha ^2+8 i \pi ^3 \mu ^2 \log \left(\frac{4 n^2}{n^2-\mu
+					^2}\right)+8 \pi  \alpha  \mu  \arctanh\left(\frac{\mu }{n}\right)+32 \pi
+				^2 \mu ^2 \arctanh\left(\frac{\mu }{n}\right)^2\\+8 \pi ^2 \mu  n \log
+				\left(\frac{\mu +n}{n-\mu }\right)-16 \pi ^2 \mu  n \arctanh\left(\frac{\mu
+				}{n}\right)\\+8 \pi ^2 \mu ^2 \textnormal{Li}_2\left(\frac{2 n}{n-\mu }\right)+8 \pi
+				^2 \mu ^2 \textnormal{Li}_2\left(\frac{2 n}{n+\mu }\right)\Bigg)^{-1/2},
+				\end{aligned}
+		\end{equation}
+		we have the following inversion theorem\begin{equation}
+		\int_{0}^{n}f_{\mu^2}(k)\int_{0}^{n}f_{\nu^2}(k) g(\nu) \nu^2\diff\nu k^2\diff k=g(\mu)
+		\end{equation}
+		for any function $ g\in L^1([0,n)) $. Furthermore, we have \begin{equation}
+		\int_{0}^{n}f_{\nu^2}(k')\int_{0}^{n}f_{\nu^2}(k) h(k) k^2\diff k\nu^2\diff\nu=h(k')
+		\end{equation}
+	\end{theorem}
+	\begin{proof}
+		Proof needs. We have numerical evidence for the first inversion theorem, next step is to try second inversion numerically.
+	\end{proof}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}

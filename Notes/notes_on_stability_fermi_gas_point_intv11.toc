@@ -1,0 +1,17 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Formal Hamiltonian for the $ N+1 $ case}{2}{section.1}
+\contentsline {section}{\numberline {2}The $ 1+1 $ case}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Self-adjoint extension}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Quadratic form}{11}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Hamiltonian from quadratic form}{13}{subsection.2.3}
+\contentsline {section}{\numberline {3}$ \Gamma $-convergence}{17}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introducing $ \Gamma $-convergence}{17}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}$ \Gamma $-convergence of $ F_\alpha ^R $}{21}{subsection.3.2}
+\contentsline {section}{\numberline {4}The $ N+1 $ case}{27}{section.4}
+\contentsline {subsection}{\numberline {4.1}Quadratic form}{27}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Uniform lower bound in the $ 2+1 $ case}{55}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Uniform lower bound in the $ N+1 $ case}{61}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Rank-one perturbation}{66}{subsection.4.4}
+\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{70}{appendix.A}
+\contentsline {section}{\numberline {B}Schur test}{72}{appendix.B}
+\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{73}{appendix.C}
