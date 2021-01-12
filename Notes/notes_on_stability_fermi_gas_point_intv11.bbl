@@ -6,12 +6,17 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{albeverio2012solvable}
 S.~Albeverio, F.~Gesztesy, R.~Hoegh-Krohn, and H.~Holden, \emph{Solvable models
   in quantum mechanics}, Theoretical and Mathematical Physics, Springer Berlin
   Heidelberg, 2012.
+
+\bibitem{berezanskii1968expansions}
+I.U.M. Berezanskii, \emph{Expansions in eigenfunctions of selfadjoint
+  operators}, Translations of mathematical monographs, American Mathematical
+  Society, 1968.
 
 \bibitem{FINCO2012131}
 Domenico Finco and Alessandro Teta, \emph{Quadratic forms for the fermionic

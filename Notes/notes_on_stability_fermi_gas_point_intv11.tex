@@ -28,6 +28,7 @@
 \newcommand{\euler}[1]{\text{e}^{#1}}
 \newcommand{\Real}{\text{Re}}
 \newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
 \newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
@@ -2015,11 +2016,11 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\int_{0}^{n} f_{\nu^2}(k) \left(\int_{0}^{n}\frac{1}{A_\mu}f_{\mu^2}(k)\mu^2\diff\mu\right)k^2\diff k=\frac{C}{A_\nu}
 	\end{equation}
 	As seen above we can solve the generalized eigenvalue, problem, \eqref{GeneralizedEigenvalueEq}, for the Hamiltonian $ H_\alpha\rvert_{\mathcal{H}_0} $, with eigenvalue $ \mu^2<n^2 $ by the functions\begin{equation}\label{EqGeneralizedEigenfunctions}
-	f_\mu^2=A_\mu\left(\mathcal{P}\frac{1}{k^2-\mu^2}\mathbbm{1}_{[0,n)}(k)+\frac{\left(\arctanh\left(\frac{\mu}{n}\right)+\frac{\alpha}{4\pi\mu}\right)}{\mu}\delta(k-\mu)\right),\quad \mu^2<n^2.
+	f_{\mu^2}(k)=A_\mu\left(\mathcal{P}\frac{1}{k^2-\mu^2}\mathbbm{1}_{[0,n)}(k)+\frac{\left(\arctanh\left(\frac{\mu}{n}\right)+\frac{\alpha}{4\pi\mu}\right)}{\mu}\delta(k-\mu)\right),\quad \mu^2<n^2.
 	\end{equation}
-	The normalizationm $ A_\mu $, is left unspecified at this point, however the following theorem motivates a specific choice
+	The normalizationm $ A_\mu $, is left unspecified at this point, however the following theorems motivates a specific choice
 	\begin{theorem}
-		Let $ f_\mu^2 $ denote the functions in \eqref{EqGeneralizedEigenfunctions}. Let further $ A_\mu $ be defined by\begin{equation}
+		Let $ f_{\mu^2} $ denote the functions in \eqref{EqGeneralizedEigenfunctions}. Let further $ A_\mu $ be defined by\begin{equation}\label{EqAmu}
 		\begin{aligned}
 		A_\mu:=4 \pi \Bigg(\alpha ^2+8 i \pi ^3 \mu ^2 \log \left(\frac{4 n^2}{n^2-\mu
 					^2}\right)+8 \pi  \alpha  \mu  \arctanh\left(\frac{\mu }{n}\right)+32 \pi
@@ -2029,21 +2030,89 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 				^2 \mu ^2 \textnormal{Li}_2\left(\frac{2 n}{n+\mu }\right)\Bigg)^{-1/2},
 				\end{aligned}
 		\end{equation}
-		we have the following inversion theorem\begin{equation}
-		\int_{0}^{n}f_{\mu^2}(k)\int_{0}^{n}f_{\nu^2}(k) g(\nu) \nu^2\diff\nu k^2\diff k=g(\mu)
+		then we have the following inversion theorems\begin{equation}
+		\begin{aligned}
+		\int_{0}^{n}f_{\mu^2}(k)\int_{0}^{n}f_{\nu^2}(k) g(\nu) \nu^2\diff\nu k^2\diff k=g(\mu)\\
+		\int_{0}^{n}f_{\nu^2}(k')\int_{0}^{n}f_{\nu^2}(k) h(k)k^2\diff k \nu^2\diff\nu =h(k')
+		\end{aligned}
 		\end{equation}
-		for any function $ g\in L^1([0,n)) $. Furthermore, we have \begin{equation}
-		\int_{0}^{n}f_{\nu^2}(k')\int_{0}^{n}f_{\nu^2}(k) h(k) k^2\diff k\nu^2\diff\nu=h(k')
-		\end{equation}
+		almost everywhere, for any function $ g\in L^2([0,n)) $.
 	\end{theorem}
 	\begin{proof}
-		Proof needs. We have numerical evidence for the first inversion theorem, next step is to try second inversion numerically.
-		If there is an $ A_\mu $ such that the theorem is true we must have 
+		(We have numerical evidence.)
+		Notice first, if there is an $ A_\mu $ such that the theorem is true we must have 
 		\begin{equation}
 		\int_{0}^{n} \frac{1}{A_\nu}f_{\nu^2}(k) \left(\int_{0}^{n}\frac{1}{A_\mu}f_{\mu^2}(k)\mu^2\diff\mu\right)k^2\diff k=\frac{1}{A_\nu^2},
 		\end{equation}
-		however, this is an equation for $ A_\nu $ since $ \frac{1}{A_\mu}f_{\mu^2}(k) $ is known and independent of $ A_\mu $.
+		however, this is an equation for $ A_\nu $ since $ \frac{1}{A_\mu}f_{\mu^2}(k) $ is known and independent of $ A_\mu $. Solving this equation we find exactly $ A_\mu $ as defined in \eqref{EqAmu}. Now existence of $ A_\mu $ follows from Theorem 2.2 in \cite{berezanskii1968expansions}
 	\end{proof}
+	\subsubsection{Many-body rank-one pair interactions}
+	Given an explicit diagonalization of the one particle rank-one perturbation, we are ready to analyze the the many-body Hamiltonian with rank-one pair interactions, given by \begin{equation}
+	H=-\sum_{i=1}^{N}\Delta_i-\frac{2}{m+1}\sum_{i<j}\nabla_i\cdot\nabla_j-\gamma_\alpha\sum_{i=1}^{N}\braket{\mathbbm{1}_{B_n},\hat{\cdot}}\mathbbm{1}_{B_n}^\vee.
+	\end{equation}
+	or in momentum space \begin{equation}
+	H=\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{i<j}k_i\cdot k_j-\gamma_\alpha\sum_{i=1}^{N}\braket{\mathbbm{1}_{B_n},\cdot}\mathbbm{1}_{B_n}.
+	\end{equation}
+	For simplicity, we assume to begin with that $ \alpha\geq0 $ such that the one-particle system has no bound states. We know from the one-particle case that there exist a unitary operator $ U $ such that \begin{equation}
+	UH_0U^\dagger=\sum_{i=1}^{N}\mu_i^2, \qquad H_0=\sum_{i=1}^{N}k_i^2-\gamma_\alpha\sum_{i=1}^{N}\braket{\mathbbm{1}_{B_n},\cdot}\mathbbm{1}_{B_n}.
+	\end{equation}
+	Furthermore, we know that that the unitary $ U $ in each coordinate act trivially one the orthogonal complement of spherical symmetric functions, supported on the ball $ B_n $ and $ \mu_i=k_i $ in this case. Now let $ Q_i$ denote the projection onto this orthogonal complement in the $ i^\text{th} $ coordinate,\ie \begin{equation}
+	Q_i=P_M,\qquad M=\{\psi\in L^2(\R^3):\psi=f\otimes Y_0^0,\ \supp(f)\subset\mathbbm{1}_{\overline{B_n}} \}^\perp
+	\end{equation}
+	and let $ P_i=1-Q_i $. Now notice that if we define $ P=\sum_{i=1}^{N}I^{\otimes i-1}\otimes P_i \otimes I^{\otimes N-i+1} $ and $ Q=\sum_{i=1}^{N}I^{\otimes i-1}\otimes Q_i \otimes I^{\otimes N-i+1} $ we have $ P+Q=I^{\otimes N} $ and  \begin{equation}
+	PH_0Q=QH_0P=0, 
+	\end{equation}
+	so we have  \begin{equation}
+	H_0=(P+Q)H_0(P+Q)=PH_0P+QH_0Q=PU^\dagger\sum_{i=1}^{N}\mu_i^2UP+Q\sum_{i=1}^{N}k_i^2Q.
+	\end{equation}
+	Now for the remaining terms we have \begin{equation}
+	\begin{aligned}
+	\frac{2}{m+1}\sum_{i<j} k_i\cdot k_j=\frac{2}{m+1}\sum_{i<j}(P_i+Q_i)(P_j+Q_j)(k_i\cdot k_j)(P_i+Q_i)(P_j+Q_j)\\
+	=\frac{2}{m+1}\sum_{i<j}(P_i+Q_i)k_i(P_i+Q_i)\cdot (P_j+Q_j)k_j(P_J+Q_j).
+	\end{aligned}
+	\end{equation} 
+	Now remember that the operator $ k_i $ resembles an electric dipole, and thus selection rules are known for computing transitionvalues $ \braket{l,m|k|l',m'} $. These are exactly that $ \Delta l=\pm1 $ (conservation of spin, photon spin is 1) and $ \Delta m= 0,\pm 1 $. As a consequence of this we know that $ P_ik_iP_i=0 $ for all $ i=1,...,N $. Hence, we may write \begin{equation}
+	\frac{2}{m+1}\sum_{i<j} k_i\cdot k_j=QQQQ+PQQQ+QPQQ+QQPQ+QQQP+PPQQ+PQQP+QPPQ+QQPP.
+	\end{equation} 
+	where \eg $ PQQP=\frac{2}{m+1}\sum_{i<j}P_iQ_jk_i\cdot k_jQ_iP_j $. These terms, may be collected to simplify the expression greatly. To see this, we write out all the terms:
+	\begin{equation}
+	\begin{aligned}
+	PQQP&=\frac{2}{m+1}\sum_{i<j} P_ik_iQ_i\cdot Q_jk_j P_j,\\
+	QPPQ&=\frac{2}{m+1}\sum_{i<j} Q_ik_iP_i\cdot P_jk_j Q_j,\\
+	PPQQ&=\frac{2}{m+1}\sum_{i<j} P_ik_iQ_i\cdot P_jk_j Q_j=\frac{1}{m+1}\left(\sum_{i=1}^{N}P_ik_iQ_i\right)^2,\\
+	QQPP&=\frac{2}{m+1}\sum_{i<j} Q_ik_iP_i\cdot Q_jk_j P_j=\frac{1}{m+1}\left(\sum_{i=1}^{N}Q_ik_iP_i\right)^2
+	\end{aligned}
+	\end{equation}
+	Collecting these terms, we see that we have \begin{equation}
+	\begin{aligned}
+	PQQP+QPPQ+PPQQ+QQPP&=\frac{1}{m+1}\left(\sum_{i=1}^{N}Q_ik_iP_i+\sum_{i=1}^{N}P_ik_iQ_i\right)^2\\& \qquad-\frac{1}{m+1}\left(\sum_{i=1}^{N}Pk_iQ_ik_iP_i+\sum_{i=1}^{N}Q_ik_iP_ik_iQ_i\right)\\
+	&=\frac{1}{m+1}\left(\sum_{i=1}^{N}Q_ik_iP_i+\sum_{i=1}^{N}P_ik_iQ_i\right)^2\\& \qquad-\frac{1}{m+1}\left(\sum_{i=1}^{N}Pk_i^2P_i+\underbrace{\sum_{i=1}^{N}Q_ik_iP_ik_iQ_i}_{\substack{=\sum_{i=1}^{N}k_iP_ik_i\\=\sum_{i=1}^{N}k_i^2-\sum_{i=1}^{N}k_iQ_ik_i}}\right)\\
+	\end{aligned}
+	\end{equation}
+	Furthermore, we have \begin{equation}
+	\begin{aligned}
+	PQQQ+QPQQ&=\frac{2}{m+1}\sum_{i<j}\left(P_ik_iQ_i\cdot Q_jk_jQ_j+Q_ik_iQ_i\cdot P_jk_jQ_j\right)\\&=\frac{2}{m+1}\left(\sum_{i=1}^{N}P_ik_iQ_i\right)\cdot\left(\sum_{j=1}^{N}Q_jk_jQ_j\right)-\frac{2}{m+1}\underbrace{\sum_{i=1}^{N}P_ik_iQ_ik_iQ_i}_{=\sum_{i=1}^{N}P_ik_i^2Q_i=0}\\
+	&=\frac{2}{m+1}\left(\sum_{i=1}^{N}P_ik_iQ_i\right)\cdot\left(\sum_{j=1}^{N}Q_jk_jQ_j\right),
+	\end{aligned}
+	\end{equation}
+	and similarly\begin{equation}
+	\begin{aligned}
+	QQQP+QQPQ&=\frac{2}{m+1}\sum_{i<j}\left(Q_ik_iQ_i\cdot Q_jk_jP_j+Q_ik_iP_i\cdot Q_jk_jQ_j\right)\\&=\frac{2}{m+1}\left(\sum_{i=1}^{N}Q_ik_iP_i\right)\cdot\left(\sum_{j=1}^{N}Q_jk_jQ_j\right)-\frac{2}{m+1}\underbrace{\sum_{i=1}^{N}Q_ik_iQ_ik_iP_i}_{=\sum_{i=1}^{N}Q_ik_i^2P_i=0}\\
+	&=\frac{2}{m+1}\left(\sum_{i=1}^{N}P_ik_iQ_i\right)\cdot\left(\sum_{j=1}^{N}Q_jk_jQ_j\right).
+	\end{aligned}
+	\end{equation}
+	Collecting all terms with three $ Q $s we have \begin{equation}
+	PQQQ+QPQQ+QQPQ+QQQP=\frac{2}{m+1}\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)\cdot\left(\sum_{i=1}^{N}P_ik_iQ_i+\sum_{i=1}^{N}Q_ik_iP_i\right).
+	\end{equation}
+	And finally, noting that \begin{equation}
+	QQQQ=\frac{1}{m+1}\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)^2-\frac{1}{m+1}\sum_{i=1}^{N}Q_ik_iQ_ik_iQ_i
+	\end{equation} collecting all terms we have \begin{equation}
+	\begin{aligned}
+	QQQQ+PQQQ+QPQQ+QQPQ+QQQP+PQQP+QPPQ+PPQQ+QQPP=\\
+	\frac{1}{m+1}\left[\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)+\left(\sum_{i=1}^{N}P_ik_iQ_i+\sum_{i=1}^{N}Q_ik_iP_i\right)\right]^2
+	-\frac{1}{m+1}\left(\sum_{i=1}^{N}P_ik_i^2P_i+\sum_{i=1}^{N}Q_ik_i^2Q_i\right)
+	\end{aligned}
+	\end{equation}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
