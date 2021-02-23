@@ -1000,12 +1000,12 @@ T^R_{\text{off}}(\xi^R)&=(N-1)\int_{\R^{3(N-2)}}\diff \bar{q}\int_{B_R(0)}\diff 
 \end{equation}
 Thereby, using \eqref{QuadraticForm2}, we can write down the quadratic form\begin{equation}
 \begin{aligned}
-F_\gamma^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+(\gamma_R^{-1}-4\pi R)\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
+F_\gamma^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}^2_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+(\gamma_R^{-1}-4\pi R)\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
 \end{aligned}
 \end{equation}
 It is worth to mention that the sign of $ T_{\text{off}} $ was crucially dependent on the antisymmetry of $ u $, and that for a bosonic system, $ T_{\text{off}} $ comes with opposite sign. Similarly to the $ 1+1 $ case we see a singular behaviour for $ R\to\infty $ unless we choose $ \gamma_R $ exactly to cancel the divergence. Thus we choose $ \gamma_R=(4\pi R +\alpha)^{-1} $ and we end up with the quadratic form (slightly abusing notation by denoting the renormalized quadratic form by the same name as the non-renormalized one) \begin{equation}
 \begin{aligned}
-F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
+F_\alpha^R(u)=&\int_{\R^{3N}}\diff k \hat{G}(k)^{-1}|\hat{u}(k)-\widehat{\rho^R G}(k)|^2-\mu\norm{u}^2_{L^2(\R^{3N})}\\&\quad+N\left(T^R_{\text{diag}}(\xi^R)+T^R_{\text{off}}(\xi^R)+\alpha\norm{\xi^R}_{L^2(\R^{3(N-1)})}^2\right).
 \end{aligned}
 \end{equation}
 
@@ -2108,9 +2108,21 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	QQQQ=\frac{1}{m+1}\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)^2-\frac{1}{m+1}\sum_{i=1}^{N}Q_ik_iQ_ik_iQ_i
 	\end{equation} collecting all terms we have \begin{equation}
 	\begin{aligned}
-	QQQQ+PQQQ+QPQQ+QQPQ+QQQP+PQQP+QPPQ+PPQQ+QQPP=\\
-	\frac{1}{m+1}\left[\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)+\left(\sum_{i=1}^{N}P_ik_iQ_i+\sum_{i=1}^{N}Q_ik_iP_i\right)\right]^2
-	-\frac{1}{m+1}\left(\sum_{i=1}^{N}P_ik_i^2P_i+\sum_{i=1}^{N}Q_ik_i^2Q_i\right)
+	QQQQ+PQQQ+QPQQ+QQPQ+QQQP+PQQP+QPPQ+PPQQ+QQPP\\
+	=\frac{1}{m+1}\left[\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)+\left(\sum_{i=1}^{N}P_ik_iQ_i+\sum_{i=1}^{N}Q_ik_iP_i\right)\right]^2
+	-\frac{1}{m+1}\left(\sum_{i=1}^{N}P_ik_i^2P_i+\sum_{i=1}^{N}Q_ik_i^2Q_i\right)\\
+	=\frac{1}{m+1}\left[\left(\sum_{i=1}^{N}Q_ik_iQ_i\right)+\left(\sum_{i=1}^{N}P_ik_i+\sum_{i=1}^{N}k_iP_i\right)\right]^2
+	-\frac{1}{m+1}\sum_{i=1}^{N}k_i^2\\
+	=\frac{1}{m+1}\left[\begin{pmatrix}
+		0& \sum_{i}k_i\\\sum_{i}k_i&\sum_{i}k_i
+	\end{pmatrix}^2-\begin{pmatrix}
+	\sum_{i}k_i^2&0\\
+	0& \sum_{i}k_i^2
+	\end{pmatrix}\right]\\
+	=\frac{1}{m+1}\begin{pmatrix}
+	(\sum_{i}k_i)^2-\sum_{i}k_i^2&(\sum_{i}k_i)^2\\
+	(\sum_{i}k_i)^2& 2(\sum_{i}k_i)^2-\sum_{i}k_i^2 
+	\end{pmatrix}
 	\end{aligned}
 	\end{equation}
 	\appendix
