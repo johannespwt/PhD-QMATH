@@ -1,0 +1,173 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\numberwithin{equation}{section}
+\linespread{1.3}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Assigment 1 - Diffun}
+\lhead{Johannes Agerskov}
+\rfoot{\thepage}
+\lfoot{Dated: \today}
+\author{Johannes Agerskov}
+\date{Dated: \today}
+\title{Assigment 3 - CoCo}
+\begin{document}
+\maketitle	
+\section*{4.29}
+Let $ A=\{\braket{R,S}\ \vert\ R\text{ and }S\text{ are regular expressions and }L(R)\subseteq L(S)\} $. We give a TM that desides $ A $. Consider the following TM, $ M $.\\
+$ M $ first controls if $ R $ and $ S $ are regular expressions, if not \emph{reject}. If they are both regular expression, $ M $ constructs DFAs, $ D_1 $ and $ D_2 $, that recognize $ L(R) $ and $ L(S)^\complement $ (complement of $ L(S) $). This is done by the usual conversion of regular expression to DFA, with the interchange of accept and non-accept states in the case of $ S $. $ M $ now constructs a DFA, $ D $, from $ D_1 $ and $ D_2 $ that recognizes $ L(R)\cap L(S)^\complement $ by the same method as one would prove that regular languages are closed under intersection. Then $ M $ runs $ M_1 $ on $ D $ where $ M_1 $ is the TM from the proof of theorem 4.4 that desides if $ L(D) $ is empty. If $ M_1 $ accepts, $ M $ \emph{accepts}. If $ M_1 $ rejects, $ M $ \emph{rejects}.\\
+Thus $ M $ accepts if $ L(R)\cap L(S)^\complement=\emptyset $ which is equivalent to $ L(R)\subseteq L(S) $ and reject if $ L(R)\cap L(S)^\complement\neq\emptyset $ which is equivalent to $ L(R)\cancel{\subseteq}L(S) $.
+Notice that $ D_1 $, $ D_2 $ and $ D $ can be constructed directly from the input. $ M_1 $ needs to be encoded as a subroutine on $ M $. However, this requires adding finitely many states and tape letters to the TM.
+
+\section*{4.13}
+Let $ C_{\text{CFG}}=\{\braket{G,k}\ \vert\ G\text{ is a CFG and }L(G)\text{ contains exactly }k\text{ strings where }k\geq0\text{ or }k=\infty\} $.\\
+We give a TM, $ M $, that desides $ C_{\text{CFG}} $. In the following $ R $ is the TM from the proof of theorem 4.8 that given input $ \braket{G} $ where $ G $ is some CFG, desides if $ L(G)=\emptyset $. $ S $ is the  TM from the proof of theorem 4.7 that given input $ \braket{G,w} $ where $ G $ is a CFG and $ w $ is a string desides if $ G $ generates $ w $. We also notice that if a CFG is in Chomsky normal form then every generation of a string of length $ n $ requires $ 2n-1 $ steps (derivations). We are then going to utilize the pumping lemma for CFGs. Basically if $ G $ contains $ n $ variable and let $ b $ be the maximum number of symbols on the righthand side of any rule in $ G $, we know that any string if $ L(G) $ of length greater than or equal to $ p:=b^{n+1} $ can be pumped (for more details see the proof of theorem 2.34), and thus if any such string is in the CFG, it has inifinitely many string.
+Now let us describe $ M $. For simplicity let $ M $ have two tapes, one for the computation and one for storing variables below such as $ i $.
+$ M $ acts as follows. On input $ \braket{G,k} $ \begin{enumerate}
+	\item Convert $ G $ to Chomsky normal form.
+	\item Set $ j=0 $ and $ i=0 $ on the second tape (in binary numbers).
+	\item Run $ R $ on $ G $, if $ R $ accepts and $ k=i $, $ M $ \emph{accept}. If $ R $ reject and $ j=p $ and $ k=\infty $, $ M $ \emph{accept}. If $ R $ accepts and $ j=p $, $ M $ \emph{rejects}.
+	\item Count number of strings of terminals that can be obtained from the start variable, and add this number to $ i $ on the second tape.
+	\item Add rules from the start variable that directly generate all possible string that can be reached in 2 derivation from the start variable and remove all rules from the start variable with strings of terminals on the righthand side..
+	\item Add $ 1 $ to $ j $ ($ j=j+1 $) and return to 3.
+\end{enumerate}
+The machine, $ M $, then accept if either it has counted $ k $ string in the language and the language can generate no other string \emph{or} is there \emph{is} at least one string with length greater than or equal to $ p $ \emph{and} $ k=\infty $, and rejects otherwise.  
+
+TOO DIFICULT METHOD
+\\
+\\
+Let $ C_{\text{CFG}}=\{\braket{G,k}\ \vert\ G\text{ is a CFG and }L(G)\text{ contains exactly }k\text{ strings where }k\geq0\text{ or }k=\infty\} $.\\
+We give an NTM, $ M $, that desides $ C_{\text{CFG}} $. In the following $ R $ is the TM from the proof of theorem 4.8 that given input $ \braket{G} $ where $ G $ is some CFG, desides if $ L(G)=\emptyset $. $ S $ is the  TM from the proof of theorem 4.7 that given input $ \braket{G,w} $ where $ G $ is a CFG and $ w $ is a string desides if $ G $ generates $ w $. We also notice that if a CFG is in Chomsky normal form then every generation of a string of length $ n $ requires $ 2n-1 $ steps (derivations). We are then going to utilize the pumping lemma for CFGs. Basically if $ G $ contains $ n $ variable and let $ b $ be the maximum number of symbols on the righthand side of any rule in $ G $, we know that any string if $ L(G) $ of length greater than or equal to $ p:=b^{n+1} $ can be pumped (for more details see the proof of theorem 2.34), and thus if any such string is in the CFG, it has inifinitely many string.
+Now let us describe $ M $.
+$ M $ acts as follows. On input $ \braket{G,k} $, $ M $ converts $ G $ to Chomsky normal form and non-deterministically perfom all derivations of $ 2p-1 $ steps or less. It then counts the numbers of strings of only terminal letters, say $ i $, generated. Furthermore, it construct $ G' $ which is just $ G $ but with every rule involing $ S\to $ removed and with the rules $ S\to w_1|w_2|...|w_d $ added, where $ w_d $ are all strings that was generated with length $ p $ Thus $ G' $ can generate all the same strings as $ G $ that have lenght greater than or equal to $ p $. $ M $ now runs $ R $ on $ G' $, and if $ R $ accepts and $ i=k $ $ M $ \emph{accepts} and if $ R $ rejects and $ k=\infty $, $ M $ \emph{accepts} and otherwise $ M $ \emph{rejects}.
+\\
+\\
+Non-determanism does not work, as it can not count number of string generated across branches.
+\\
+\\
+Let $ C_{\text{CFG}}=\{\braket{G,k}\ \vert\ G\text{ is a CFG and }L(G)\text{ contains exactly }k\text{ strings where }k\geq0\text{ or }k=\infty\} $.\\
+We give a TM, $ M $, that desides $ C_{\text{CFG}} $. In the following $ R $ is the TM from the proof of theorem 4.8 that given input $ \braket{G} $ where $ G $ is some CFG, desides if $ L(G)=\emptyset $. We also notice that if a CFG is in Chomsky normal form then every derivation of a string of length $ n $ requires $ 2n-1 $ steps (derivations). We are then going to utilize the pumping lemma for CFGs. Basically if $ G $ contains $ m $ variable and let $ b $ be the maximum number of symbols on the righthand side of any rule in $ G $ (two in the case of Chomsky normal form), we know that any string if $ L(G) $ of length greater than or equal to $ p:=b^{m+1} $ can be pumped (for more details see the proof of theorem 2.34), and thus if any such string is in the CFG, it has inifinitely many string.
+Now let us describe $ M $.
+$ M $ acts as follows. On input $ \braket{G,k} $, $ M $ converts $ G $ to Chomsky normal form and perfom all derivations of $ 2p-1 $ steps or less simultaneously. This is done by simply starting with the start varibale on the tape, and then use all possible rules, each rule separated on the tape by $\#$s. Continue this process with all new variables generated. It then counts the numbers of strings of only terminal letters generated without a $\#$ in it, but with a $\#$ on each side, say there are $ i $ of them. Furthermore, it construct $ G' $ which is just $ G $ but with every rule involing, $ S\to... $, removed and with the rules $ S\to w_1|w_2|...|w_d $ added, where $ w_d $ are all strings that was generated with length $ p $. Thus $ G' $ can generate all the same strings as $ G $ that have lenght greater than or equal to $ p $. $ M $ now runs $ R $ on $ G' $, and if $ R $ accepts and $ i=k $ $ M $ \emph{accepts} and if $ R $ rejects and $ k=\infty $, $ M $ \emph{accepts}. Otherwise $ M $ \emph{rejects}.
+
+
+\section*{5.4}
+We show that if $ A\leq_m B $ and $ B $ is a regular language, then $ A $ need not be a regular language.
+\begin{proof} We proceed by constructing an example of the satement where $ A $ is non-regular and $ B $ is regular with $ A\leq_m B $.\\
+	By definition of $ A\leq_m B $, there exist a computable function $ f:\Sigma^*\to\Sigma^* $ such that $ f(A)\subseteq B $ and $ f(A^\complement)\subseteq B^\complement $. By definition of computable there exist a TM, $ M_1 $, such that for each input $ w $, $ M_1 $ halts with only $ f(w) $ on its tape. Let $ B $ be the regular language $ 1^* $ and let $ A $ be the non-regular language $ \{0^n1^n\ \vert\ n\geq0\} $. We let the computable function be defined by\begin{equation}
+	f(w)=\begin{cases}
+	1^n&\text{if }w=0^n1^n\text{ for }n\geq0\\
+	0&\text{ if }w\neq0^n1^n\text{ for }n\geq0\\
+	\end{cases}
+	\end{equation}
+	This is clearly a computable function as it is computed by the TM that scans it input to verify that it is of the form $ 0^n1^n $ for some $ n\geq 0 $, if so, it deletes all $ 0 $s and moves the $ 1 $s to the beginning of the tape before halting. If the input is not of the form $ 0^n1^n $ for some $ n\geq 0 $, it simply deletes the entire tape and put down a $ 0 $ on the leftmost tape position before halting.
+	Notice that $ f:\{0,1\}^*\to\{0,1\}^* $ with $ f(A)\subseteq B $ and $ f(A^\complement)\subset B^\complement $. Thus, we have constructet a \emph{non-regular} $ A $ and \emph{regular} $ B $ with $ A\leq_m B $.
+\end{proof}
+	It might be noted that the reason for mapping reducibility of a language, $ A $, to a regular language, $ B $, does not induce regularity of $ A $, is to be found in the definition of mapping reducibility. We require only the mapping to be computable, which means that $ A $ can be reduced to $ B $ only via a (decider) TM. Thus we might during this reduction utilize that TMs are more powerful than DFAs. In other word, computing with a TM and a DFA in series, is not equivalent to having a single DFA.
+
+\section*{5.28}
+We consider the problem of wether a Turing machine ever writes a blank symbol over a nonblank symbol during its course of computation on any input string. Formulated as a laguage we might state the problem as \begin{equation*}
+\begin{aligned}
+L=&\{\braket{B,w} \vert B\text{ is a TM, $ w $ is a string, and there exist for some $ l\geq0 $ a sequence of configurations }\\ &C_1C_2,....,C_l\text{ of B on input string }w\text{ such that }C_1\text{ is the start configuration, }C_{j}\text{ yields }C_{j+1}\\&\text{for all }j< l,\text{ and }C_i=...aq_ic....\text{ and }C_{i+1}=...a\sqcup q_{i+1}... \text{ or }C_{i+1}=...q_{i+1}a\sqcup... \text{for some }i<l\}
+\end{aligned}
+\end{equation*}
+We now show that $ L $ is undecidable. We show this by reducibility. We show that $ A_{TM} $ is reducible to $ L $.\begin{proof}
+	Assume that we have a decider, $ D $, for $ L $. We then construc a desider, $ M $, for $ A_{TM} $. First we notice that given any TM $ G $ we can modify it to never write a blank symbol, by just including a special letter in its tape alphabet, $ \aleph $, and adding all the transition functions $ \delta(q,\aleph)=(q',a,L/R) $ whenever $ G $ contains the transition function $ \delta(q,\sqcup)=(q',a,L/R) $ (and $ \delta(q,\aleph)=(q',\aleph,L/R) $ for any $ \delta(q,\sqcup)=(q',\sqcup,L/R) $) and then replace all transition functions $ \delta(q,a)=(q',\sqcup,L/R) $ with $ \delta(q,a)=(q',\aleph,L/R) $, where $ q,q' $ are any pair of states, $ a $ is any nonblank tape letter, and $ L/R $ is $ L $ or $ R $.\\
+	It is also clear given $ G' $ that we can further modify this to $ G'' $ that accepts the same language, but erases the entire tape by overwriting it with blanks before accepting, by just adding a new state with corresponding transition functions that erase the tape, and goes to the accept state when the tape is empty.
+ 	
+	 We describe $ M $ as follows: On input $ \braket{G,w} $\begin{enumerate}
+		\item Check that $ \braket{G,w} $ is a correct encoding of a TM and a string. If not \emph{reject}.
+		\item Construct $ G'' $, as described above, from $ G $.
+		\item Run $ S $ on $ \braket{G'',w} $. If $ S $ accepts, $ M $ \emph{accepts}. If $ S $ rejects, $ M $ \emph{rejects}. 
+	\end{enumerate}
+	It is then clear that if $ S $ accepts $ \braket{G'',w} $ then $ G'' $ writes a blank over a nonblank, which it can do, if it accepts $ w $, which is again only possible if $ G' $ and thus $ G $ accept $ w $. On the other hand if $ S $ rejects, it is clear that $ G'' $ and thus $ G' $ and $ G $ does not accept $ w $. Thus $ M $ decides $ A_{TM} $.
+\end{proof}
+
+\section*{5.18b}
+We use Rice's theorem to prove that the following language is undecidable: \begin{equation*}
+P=\{\braket{M}\ \vert\ M\text{ is a TM and } 1011\in L(M)  \}
+\end{equation*}
+\begin{proof}
+We note that $ P $ is a laguage consisting of TM descriptions. We first show that $ P $ is nontrivial, i.e. that there exist a TM, $ S $, such that $ \braket{S}\in P $. Let $ S $ be the TM, that accepts all strings in $ \{0,1\}^* $, then $ 1011\in L(S) $, this TM is easily constructed by letting, every transition function map the start state to the accept state.
+We then show that for $ \braket{M}\in P $, $ P $ is a property of $ L(M) $. To see this, let $ M_1 $ and $M_2 $ be TMs with $ L(M_2)=L(M_1), $ then clearly $ 1011\in L(M_1)$ if and only if $1011\in L(M_2) $ so $ \braket{M_1}\in P $ if and only if $ \braket{M_2}\in P $. Thus we have shown that for any $ \braket{M}\in P $, $ P $ is a nontrivial property of the language of $ M $. It then follows from Rice's theorem that $ P $ is undecidable.
+\end{proof}
+
+\section*{Exam 2019}
+\subsection*{Q 2.1}
+Let \begin{equation*}
+\begin{aligned}
+SAMETAPE_{TM}=\{\braket{M_1,M_2,w_1,w_2}\ \vert\  &M_1 \text{ and }  M_2 \text{ are TMs and } \exists  t_1,t_2\in \mathbb{N}_0\text{ such that}\\ &\text{the tape content of } M_1 \text{ after } t_1 \text{ computations on}\\&\text{input } w_1 \text{ match the tape content of } M_2 \text{ after } t_2\\& \text{ computations on input } t_2 \}
+\end{aligned}
+\end{equation*}
+we show that $ SAMETAPE_{TM} $ is Turring recognizable. Notice first that theorem 3.13 says that every multitape TM has an equivalent single tape TM. Furhtermore, theorem 3.16 say similarly that every non-deterministic TM has an equivalent TM. Now it \emph{does not} follows from these two result alone that every multitape non-deterministic TM has an equivalent TM. However, it \emph{does} follows by combining their proofs. First the proof of theorem 3.16 uses a three tape (input tape, simulation tape and adress tape) TM, that simulates the NTM. Now in order to simular an $ m $-tape NTM we use an $ m+2 $-tape TM (input tape, $ m $ simulation tapes, and the adress tape). Now clearly by following the steps of the proof of theorem 3.16 we construct a four tape TM that simulates a multitape. Notice we need only one input tape, since this tape is never altered anyway. Thus we conclude that every multitape TM has an equivalent TM. We refer to the book (M. Sipser, \emph{Introduction to the theory of computation, 3rd International edition}) for the remaining details of the two individual proofs.
+\\
+Now to show that $ SAMETAPE_{TM} $ is Turing recognizable, we construct a two tape NTM that recognizes it. On input $ \braket{M_1,M_2,w_1,w_2} $ the two-tape NTM, $ M $, puts $ w_1 $ and $ w_2 $ on its two tapes, it then iteratively non-deterministically simulates a single computation \emph{or} does nothing, on each tape. In this way the non-deterministic branches after $ n $ non-deterministic computations contain two tapes: the tape of $ M_1 $ on input $ w_1 $ after $ i $ computations and the tape of $ M_2 $ on input $ w_2 $ after $ j $ computations on the second where $ i,j\leq n $. Inbetween each step $ M $ checks on each non-deterministic branch if the tape content of the two tapes mathces, if yes, it \emph{accepts} if not it keeps going. It is clear that $ M $ accepts if and only if $ \braket{M_1,M_2,w_1,w_2}\in SAMETAPE_{TM} $.
+\subsection*{Q 2.2}
+We no show that $ \overline{SAMETAPE_{TM}} $ is not Turing recognizable. This follows if we can show that $ SAMETAPE_{TM} $ is not decidable, since we have by theorem 4.22 that a language is decidable if and only if it is Turing-recognizable and co-Turing-recognizable. Now to show that $ SAMETAPE_{TM} $ is not decidable we show that $ A_{TM}$ is reducible to $SAMETAPE_{TM} $. To see this assume that we have a decider, $ S $, for $SAMETAPE_{TM} $, and let $ R $ be a TM that does nothing when its head is on a blank tape entry or on the special letter $ \aleph $ expect moving right and left over and over. consider TM, $ M $ defined as follows. On input $ \braket{M_1,w} $\begin{enumerate}
+	\item Check if $ \braket{M_1,w} $ is and encoding of a TM and a string, if not reject.\\
+	\item Modify $ M_1 $ to $ M_1' $ such that $ M_1' $ have a speciel letter $ \aleph $ in its tape alphabet, and $ M_1' $ empties its tape and put down an $ \aleph $ in the first slot, before accepting.
+	\item Run $ S $ on $ \braket{M,R,w,\aleph} $, if $ S $ accept, $ M $ \emph{accepts}. If $ S $ rejects $ M $ \emph{rejects}.
+\end{enumerate}
+from this construction it is clear that $ M $ accept $ \braket{M_1,w} $ if and only if $ \braket{M_1,w}\in A_{TM} $. Thus we conclude that no decider $ S $ for $ SAMETAPE_{TM}  $ exists, and thus $ SAMETAPE_{TM}  $ is not co-Turing-recognizable as desired.
+\end{document}
