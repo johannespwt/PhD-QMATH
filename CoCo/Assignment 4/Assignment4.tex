@@ -1,0 +1,180 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{pgfplots}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+\newcommand{\pipe}{\ \vert \ }
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\numberwithin{equation}{section}
+\linespread{1.3}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CoCo - Assignment 4}
+\lhead{}
+\rfoot{\thepage}
+\lfoot{Dated: \today}
+\author{Johannes Agerskov, Mads Friis Frand-Madsen, and Sifan Huang}
+\date{Dated: \today}
+\title{CoCo - Assignment 4}
+\begin{document}
+
+\maketitle
+\section*{6.23}
+Let $ t $ be the computable function that, in a TM describtion interchange the accept and reject states. We give a concrete example of a fixed point of $ t $. We notice that the proof fixed point version of the recursion theorem (Theorem 6.8) gives a construction of a fixed point, $ F $, which obtain its own describtion and then simulate the TM described by $ t(\braket{F}) $. However, in this specific example of $ t $, migth actually conclude that $ F $ is the Turring machine that neither accepts nor rejects any string. This is easily seen by the fact that if $ w $ is string such that $ F $ accepts $ w $, then the TM, $ G $, described by $ T(\braket{F}) $ will reject $ w $. But since $ F $ simulates exactly $ G $, we conclude that $ F $ also rejects $ w $ which is a contradiction. Thus $ F $ cannot accept any string. Swapping \emph{accept} and \emph{reject} in the previous argument shows the $ F $ also cannot reject any string. Conversely, if $ F $ is a TM such that it neither accept nor reject any state, $ t(\braket{text}) $ obviously describes an equivalent TM. Thus any TM, $ F $, which never halts on any string is a fixed point of $ t $.\\ 
+Therefore we describe $ F $ by $ F=(Q,\Sigma,\Gamma,\delta,q_0,q_{\text{accepts}},q_{\text{reject}}) $, where $ Q=\{q_0,q_{\text{accepts}},q_{\text{reject}}\} $. $ \Sigma=\{1\} $, $ \Gamma=\{\sqcup,1\} $, $ \delta: Q\times \Gamma\to Q\times\Gamma\times\{L,R\} $ is defined by $ \delta(q_0,1)=(q_0,1,R) $ and $ \delta(q_0,\sqcup)=(q_0,\sqcup,L) $, and $ \delta $ need not be defined, or rather could be defined to be anything, on the accept and reject state, since the machine halts there anyway. Thus, $ F $ loops forever by going to the last $ 1 $ in any input string and then going back and forth between $ \sqcup $ and $ 1 $ at the end of the string. On the empty string it loops by trying to move left on the tape, but stays at the first tape position. This TM is a fixed point of $ t $ be the above argument.
+
+\section*{6.6}
+For each $ m>1 $ let $ \mathcal{Z}_m=\{0,1,2,...,m-1\} $, and let $ \mathcal{F}_m=(\mathcal{Z}_m,+,\times) $ be the model whose universe is $ \mathcal{Z}_m $ and that has relations corresponding to the $ + $ and $ \times $ relations modulo $ m $. We show in the following that $ \text{Th}(\mathcal{F}_m) $ is decidable. \begin{proof}
+	We construct an $ TM $ that decides $ \text{Th}(\mathcal{F}_m) $. We know from Theorem 6.12 that $ \text{Th}(\mathcal{N},+) $ is decidable. Let $ S $ be the TM that decides $ \text{Th}(\mathcal{N},+) $. We can clearly use this TM to show that $ \text{Th}(\mathcal{Z}_m,+) $ is decidable. We can design, $ M_1  $, to be a TM that has $ S $ as a subroutine, such that $ M_1 $ can add modulo $ m $. For any formula $ \phi $, $ M_1 $ simply does the following:
+	\begin{enumerate}
+		\item identify all substrings of $ \phi $ of the form $ x_1+...+x_n=y $.
+		\item Generate a new substring $ \tilde{\phi} $ by replacing every substring of $ \phi $ of the form $ x_1+...+x_n=y $, by $ \bigvee_{i=1}^n(x_1+...+x_n=y+\underbrace{m+m+...+m}_{i\text{ terms}}) $, where $ \bigvee_{i=1}^{n}\varphi(i)=\varphi(1)\vee...\vee\varphi(n) $, for any formula $ \varphi(i) $ depending on $ i $.
+		\item Run $ S $ on $ \tilde{\phi} $, if true \emph{accept}. If false \emph{reject}
+	\end{enumerate}
+	Thus $M_1 $ accepts a formula if and only if it is true modulo $ m $. Clearly we can never have $ z-m\geq x_1+...+x_n\geq z+\underbrace{m+m+...+m}_{n\text{ terms}} $ for $ x,y\in \mathcal{Z}_m  $, so this TM desides $ \text{Th}(\mathcal{Z}_m,+) $. Thus we have shown that $ \text{Th}(\mathcal{Z}_m,+)$ is reducible to $ \text{Th}(\mathcal{\mathcal{N}},+) $, so from Theorem 6.12 it follows that $ \text{Th}(\mathcal{Z}_m,+) $ is decidable. Now that $ \text{Th}(\mathcal{Z}_m,+,\times) $ is decidable can be shown by the fact that $ \text{Th}(\mathcal{Z}_m,+,\times)$ reduces to  $\text{Th}(\mathcal{Z}_m,+) $. Given a decider $ M_1 $ for $ \text{Th}(\mathcal{Z}_m,+) $, we design the TM, $ M $ that desides $ \text{Th}(\mathcal{Z}_m,+,\times) $ it can be described as: On formula $ \varphi $ follows\begin{enumerate}
+		\item Identify all substrings of $ \varphi $ of the form, $ x\times y $ where $ y $ is a free variable, and rewrite the substring to $ \underbrace{x+x+x+...}_{y\text{ times}} $.
+		\item Indentify any formula that has a substring of the form, $ x\times y $ where $ y $ is not a free variable. Then we consider two cases:\begin{enumerate}
+			\item $\varphi $ contains a substring of the form $ \forall y $, \ie can be written $ \forall y[\phi(y)]\Phi $, for some formula $ \phi(y) $ depending on $ y $ and some string $ \Phi $, which is just the rest of $ \varphi $. In this case $ M $ discards the quantifier of $ y $ and generate the formula \begin{equation}
+			\bigwedge_{i=0}^{m-1}\phi(i)\Phi,
+			\end{equation}.
+			where $ \bigwedge_{i=1}^N \phi(i)=\phi(1)\wedge\phi(2)\wedge...\wedge\phi(N) $
+			\item $\varphi $ contains a substring of the form $ \exists y $, \ie can be written $ \exists y[\phi(y)]\Phi $, for some formula $ \phi(y) $ depending on $ y $ and some string $ \Phi $, which is just the rest of $ \varphi $, in which case $ M $ discards the quantifier of $ y $ and generate the formula \begin{equation}
+			\bigvee_{i=0}^{m-1}\phi(i)\Phi,
+			\end{equation}.
+			where $ \bigvee_{i=1}^N \phi(i)=\phi(1)\vee\phi(2)\vee...\vee\phi(N) $
+		\end{enumerate}
+		this process is repeated iteratively til no products are left.
+		\item Run $ M_1 $ on the generated formula, if true \emph{accept}, else \emph{reject.}
+	\end{enumerate}
+	Now since $ \mathcal{Z}_m $ is finite, there are always only finitely many terms in the above description. Thus $ M $ will always halt, making it a decider. Furhtermore, it is obvious by construction, that $ M $ accepts any formula if and only if it is true in the usual model of $ \mathcal{Z}_m $ with addition and multiplication modulo $ m $.
+\end{proof}
+
+
+
+\section*{6.7}
+Let $ A $ and $ B $ be any two languages, we show that then there exist a language $ J $ such that $ A\leq_T J $ and $ B\leq_T J $.
+\begin{proof}
+	Let $ \aleph $ be a special symbol that is not in the alphabet of $ A $ or $ B $. Construct the the language $ \aleph A $ \ie all string of the form $ \aleph w $ for $ w\in A $. Define the language $ J=\aleph A\cup B $. We then construct an oracle TM, $ M^J_A $ with an oracle for $ J $ that desides $ A $. $ M_A^J $ acts as follows in input $ w $. \begin{enumerate}
+		\item Construct the string $ \aleph w $.
+		\item Query the oracle for $ J $ if $ \aleph w\in J $, if true, \emph{accept}, if false, \emph{reject}.
+	\end{enumerate}
+	Clearly $ M_A^J $ accepts $ w $ if and only if $ \aleph w\in J $ but since $ \aleph w\notin B $, we conclude that $ \aleph w\in J $ if and only if $ \aleph w\in \aleph A $ which can be true if and only if $ w\in A $. Thus $ M_A^J $ decides $ A $, and $ A $ is reducible relative to $ J $, \ie $ A\leq_T J $.\\
+	We now proceed by also constructing and oracle TM, $ M_B^J $, that decides $ B $. $ M_B^J $ acts as follows in input $ w $. \begin{enumerate}
+		\item Query the oracle for $ J $ if $ w\in J $, if true, \emph{accept}, if false, \emph{reject}.
+	\end{enumerate}
+	Clearly $ M_B^J $ accept if and only if $ w\in J $ but since $ w\notin \aleph A $ we conclude that $ w\in J $ if and only if $ w\in B $. So $ M_B^J $ decides $ B $, and $ B $ is reducible relative to $ J $, \ie $ B\leq_T J $. This concludes the proof.
+\end{proof}
+
+\section*{6.11} We show that the complement of $ EQ_{TM} $ is recognizable by a TM with an oracle for $ A_{TM} $. 
+\begin{proof}
+	First we define the oracle TM, $ S_{\braket{G,F}}^{A_{TM}} $, that, given two $ TM $s $ G $ and $ F $, decides the language $ L(G)\Delta L(F)=(L(G)\cap  L(F)^\complement)\cup (L(G)^\complement\cap L(F))  $, \ie the symmetric difference of the languages. Let $ S_{\braket{G,F}}^{A_{TM}} $ be the oracle TM that acts a follows: On input $ w $ \begin{enumerate}
+		\item Query the oracle of $ A_{TM} $ if $ G $ accepts $ w $, and store the result.
+		\item Query the oracle of $ A_{TM} $ if $ F $ accepts $ w $, and store the result.
+		\item If exactly one of step 1 and step 2 returned True, \emph{accept}. If both or neither of step 1 and step 2 returned True, \emph{reject}.
+	\end{enumerate}
+	Clearly $ S_{\braket{G,F}}^{A_{TM}} $ is a decider, and accept $ w $ if and only if $ w\in L(G)\Delta L(F) $.
+	Now we define the oracle TM $ M^{A_{TM}} $ which recognizes $ EQ_{TM} $. On input $ \braket{G,F} $, where $ G $ and $ F $ are TMs, $ M^{A_{TM}} $ acts as follows:\begin{enumerate}
+		\item Check that $ F $ and $ G $ have the same input alpabet alphabet, $ \Sigma $, if not \emph{accept}.
+		\item Construct the oracle TM $ S^{A_{TM}}_{\braket{G,F}} $ using the oracle of $ A_{TM} $, as described above.
+		\item Run $ S^{A_{TM}}_{\braket{G,F}} $ on $ w $ for each string in $ w\in \Sigma^\ast $, say in lexicographical ordering. If for some string $ \tilde{w}\in\Sigma^* $, $ S^{A_{TM}}_{\braket{F,G}} $ accepts, \emph{accept}.
+	\end{enumerate}
+	It is easily seen that $ M^{A_{TM}} $ accepts if and only if $ L(G) $ and $ L(F) $ does not have the same alphabet, \emph{or} they have the same alphabet $ \Sigma $ and there exist a string $ w $ in $ \Sigma^* $ such that $ w\in L(G)\Delta(F) $ which is again true if and only if $ L(G)\neq L(F) $. Thus $ M^{A_{TM}} $ accepts input $ \braket{G,F} $ if and only if $ L(G)\neq L(F) $ which is equaivalent to $ L(M^{A_{TM}})=EQ_{TM}^\complement $, as desired.
+\end{proof}
+
+\section*{6.14}
+Given a string $ x $, we show how to compute the descriptive complexity $ K(x) $, given an oracle for $ A_{TM} $. Given a string, $ x $, over the alphabet $ \Sigma=\{0,1\} $ we simply check all strings in $ \Sigma^* $ one by one, in lexocographical ordering. Given a string $ v\in\Sigma^* $ we split it in all possible ways $ v=v_1v_2 $ and query the oracle if $ v_1 $ as a descriptions of a TM accepts $ v_2 $, if so, we run the TM that $ v_1 $ decribes on $ v_2 $ and read of the tape after acceptance. We then check wether the read off tape matches $ x $ if so, $ K(x)=\abs{v} $, where $ v $ is the first string in lexicographilcal ordering that succesfully could be split in a description of a TM and an input such that the TM run on the input printed $ x $. Clearly this can be done, since we never encounter any loops, so we are guarenteed to finish this proceedure after finitely many steps, especially beacuse of Theorem 6.24 that bounds $ K(x)\leq \abs{x}+b $.
+\\
+Notice that there is a subtlety in the above argument, namely that in a general encoding $ \braket{M}w $ of $ x $, $ M $ need not \emph{accept} $ w $, but only \emph{halt}. However, if there is a TM $ M $ that \emph{rejects} $ w $ with $ x $ on its tape, we can describe the correpsonding TM, $ \bar{M} $ with $ q_{\text{accepts}} $ and $ q_{\text{reject}} $ by a string $ \braket{\bar{M}} $ such that $ \abs{\braket{\bar{M}}}=\abs{\braket{M}} $, and thus we can restrict to encodings TMs that accept the input, without increasing $ K(x) $. It is clear by definition of $ K(x) $ that we are also \emph{not} decreasing $ K(x) $ by restricting the TM. \\
+Alternatively one migth argue that an oracel for $ A_{TM} $ gives us an oracle for $ HALT_{TM} $, by reducibility, and then use this oracle instead.
+
+\section*{$ PCP $ and $ E_{TM} $}
+We show that $ PCP\leq_T E_{TM} $ and that $ E_{TM}\leq_T PCP$. We use in the followsing the proof of Theorem 5.15 (that $ PCP $ is undecidable) and Example 6.19 i the book. By the proof of Theorem 5.15, we have that $ A_{TM}\leq_m MPCP\leq_m PCP $, (as also noted in example 5.25) which implies $ A_{TM}\leq_T PCP $ by transitivity of $ \leq_m $ and by the fact that $ A\leq_m B $ implies $ A\leq_T B $. By Example 6.19 we have that $ E_{TM}\leq_T A_{TM} $. By transitivity of $ \leq_T $ we thus only need to show $ A_{TM}\leq_T PCP $ and $ E_{TM}\leq_T A_{TM} $...\\
+\\
+\\
+We show that $ PCP\leq_T E_{TM} $ and that $ E_{TM}\leq_T PCP$.
+\begin{proof}
+	We start by showing that $ PCP\leq_T E_{TM} $. Given an oracle for $ E_{TM} $ and an instance of the $ PCP $, we simply construct a TM, $ S $, such that $ S $ has non-empty language only if there is a match in the given instance of the $ PCP $. Let $ P= \left\{\left[\frac{t_1}{b_1}\right],\left[\frac{t_2}{b_2}\right],...,\left[\frac{t_k}{b_k}\right]\right\} $ be an instance of the $ PCP $. We design $ S_P $ to have an input alphabet $ a_1,...,a_k $. $ S_P $ also contain the $ PCP $ instance, $ P $, in the sense, that it associates to every $ a_i $ the domino $ \left[\frac{t_i}{b_i}\right] $. We may decribe $ S_P $ in the following way: On input $ w $, $ S_P $ does the following\begin{enumerate}
+		\item Check that $ w\in \{a_1,a_2,...,a_k\}^+ $ \ie $ w=a_{\sigma(1)}...a_{\sigma(m)} $ for some function $ \sigma:\{1,...,m\} \to\{1,...,k\} $ and some $ m\geq 1 $. If not, $ S_P $ \emph{rejects}.
+		\item Rewrite $ a_i $ on the tape as $ \left[t_i/b_i\right] $, for every $ i=1,...,k $, where $ [,\ /,\text{ and } ] $ are tape letters. (This will require to rearrange the tape in order to make room for the extra letters).
+		\item Check if $ t_{\sigma(1)}...t_{\sigma(m)}=b_{\sigma(1)}...b_{\sigma(m)} $, if true, $ S_P $ \emph{accepts}, if false, $ S_P $ \emph{rejects}.
+	\end{enumerate}
+Clearly $ S $ accepts $ w $ if and only if $ w $ corresponds via the bijective map $ a_i\mapsto \left[\frac{t_i}{b_i}\right] $, to a match of $ P $.\\
+Now given an oracle for $ E_{TM} $ is clear that we can decide $ PCP $ defined by\\ $ PCP=\{\braket{P} \ \vert\  P\text{ is an instance of }PCP\text{ with a match}\} $ with the following oracle TM, $ M^{E_{TM}} $.
+On input $ \braket{P} $, $ M^{E_{TM}} $ does the following \begin{enumerate}
+	\item Check that $ \braket{P} $ encodes an instance of the PCP.
+	\item Construct $ S_P $ as described above.
+	\item Query the oracle for $ E_{TM} $, wether $ L(S_P)=\emptyset $, if true $ M^{E_{TM}} $ \emph{rejects}, if false, $ M^{E_{TM}} $ \emph{accepts}.
+\end{enumerate} 
+Thus $ M^{E_{TM}} $ accepts input $ \braket{P} $ if and only if $ P $ is an instance of $ PCP $ and $ S_P $ has non-empty language, which is again true if and only if $ P $ has a match. This shows that $ PCP $ is Turing reducible to $ E_{TM} $ \ie $ PCP\leq_T E_{TM} $. \\
+\\
+We show not that $ E_{TM}\leq_T A_{TM} $, this can be seen in the following way. Construct the oracle TM, $ R^{A_{TM}} $ that on the input $ \braket{K} $ (which is a TM describtion), in lexicographcical order, checks for all strings, $ w $, if $ K $ accepts $ w $. It halts and accepts, if if finds a string that is accepted by $ N $. Consider then the oracle TM $ S_N^{A_{TM}} $ that ignores its input and simulate $ R $ on $ N $. From these machines we construct the oracle TM, $ M^{A_{TM}} $, that on input $ \braket{N} $, queries the oracle if $ S_N^{A_{TM}} $ accepts $ \varepsilon $, if true, it \emph{accepts}, if false , it \emph{rejects}.\\
+\\
+We show now that $ E_{TM}\leq_T PCP $, this can be seen in the following way. We take inspiration from the proof of Theorem 5.15, and modify it slightly. Given a TM describtion $ \braket{M} $, we construct an instance of the $ PCP $, $ P_M $, such that $ P_M $ has a match if and only if $ \braket{M}\in E_{TM} $. 
+Let $ P_M $ have all the same dominos as $ P $ in the proof of theorem 5.15, except for the first domino. instead we include the dominos $ \left[\frac{\ast\ast\aleph}{\ast\ast\aleph\ast\ast\aleph\ast\ast}\right],\ \left[\frac{\ast\ast\aleph}{\aleph\ast\ast\aleph\ast\ast}\right],\ \left[\frac{\ast\ast\aleph}{a\ast}\right],\ \left[\frac{\ast\ast\aleph\ast}{\#\ast}\right] $ for every $ a $ in the alpabet of $ M $. It is clear that any match must start with $ \left[\frac{\ast\ast\aleph\ast}{\ast\ast\aleph\ast\ast\aleph\ast\ast}\right] $, since this is the only domino that has upper string matches the first part of the lower string. Also since we have more $ \aleph $s in the lower string of the first domino by construction, the upper string can catch up in two ways: It can catch up by simply using $ \left[\frac{\ast\ast\aleph\ast}{\#\ast}\right]  $ at which case we have $ \left[\frac{\ast\ast\aleph\ast\ast\aleph\ast\quad }{\ast\ast\aleph\ast\ast\aleph\ast\#\ast}\right] $, thus we are set to simulate the empty string, by use of the dominos from the proof of Theorem 5.15.
+Alternatively it catches up by first using dominos of the form $ \left[\frac{\ast\ast\aleph}{\aleph\ast\ast\aleph\ast\ast}\right] $ \ie it actually falls behind in the upper string, but then catches back up by using first dominos of the form $ \left[\frac{\ast\ast\aleph}{a\ast}\right] $ until it is forced to use the domino $ \left[\frac{\ast\ast\aleph\ast}{\#\ast}\right] $, as an example we might have $ \left[\frac{\ast\ast\aleph\ast}{\#\ast}\right]  $ at which case we have $ \left[\frac{\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\quad\quad \qquad }{\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast\aleph\ast\ast a_1\ast a_2\ast\#\ast}\right] $, where we used domino $ \left[\frac{\ast\ast\aleph}{\aleph\ast\ast\aleph\ast\ast}\right] $ twice, followed by $ \left[\frac{\ast\ast\aleph}{a_1\ast}\right] $, $ \left[\frac{\ast\ast\aleph}{a_2\ast}\right] $ and $ \left[\frac{\ast\ast\aleph\ast}{\#\ast}\right] $. It is clear that by doing this we have set up the $ P_M $ instance to simulate $ M $ on input $ a_1a_2 $ by constructing any match, if it exists. By this last method we can clearly generate strings of arbitrary length. Thus we see that the constructed $ PCP $ instance, $ P_M $, will have a match if and  only if there \emph{exist} a string $ w $ such that $ M $ accepts $ w $ or equivalently $ P_M $ has a match if and only if $ L(M) $ is non-empty.  
+Thus we see that we may construct an oracle TM $ M^{PCP} $ with an oracle for $ PCP $ such that $ M^{PCP} $ decides $ E_{TM} $. $ M^{PCP} $ acts as follows on input $ \braket{K} $ which is a TM describtion:\begin{enumerate}
+	\item Construct $ P_K $ as decribed above.
+	\item Query the oracle for $ PCP $, if $ P_K\in PCP $, if true \emph{reject}, if false, \emph{accept}.
+\end{enumerate}
+Thus by the arguments above we clearly have that $ M^{PCP} $ accepts $ \braket{K} $ if and only if $ L(K)=\emptyset $. This shows that $ E_{TM}\leq_T PCP $.
+\end{proof}
+\end{document}

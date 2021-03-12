@@ -66,35 +66,37 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{Assigment 1 - Diffun}
+\rhead{Mandatory Assigment 1 - Diffun}
 \lhead{Johannes Agerskov}
 \rfoot{\thepage}
 \lfoot{Dated: \today}
 \author{Johannes Agerskov}
 \date{Dated: \today}
-\title{Assigment 1 -Diffun}
+\title{Mandatory Assigment 1 - Diffun}
 \begin{document}
 \maketitle	
 \section*{Ex 1}
+\setcounter{section}{1}
 Let $ \varphi\in C^\infty_0(\R^2) $ and $ u\in\mathcal{D}'(\R) $. We show that $ f(x)=\braket{u,\varphi(x,\cdot)} $ defines a function in $ C^\infty_0(\R) $ with $ f'(x)=\braket{u,\partial_x\varphi(x,\cdot)} $.
 \begin{proof}
-	We first of all notice that in the product topology the projection maps $ \pi_1: \R^2\ni(x,y)\mapsto x\in \R $ and $ \pi_2: \R^2\ni(x,y)\mapsto y\in \R $ are continuous. Therefore, $ \pi_1(\supp(\varphi))\subset \R $ and $ \pi_2(\supp(\varphi))\subset \R $ are compact sets, as they are images of compact sets under continuous maps.	
-	 Now clearly, we have $ \supp(\varphi(x,\cdot))\subset \pi_2(\supp(\varphi)) $ for all $ x\in \R $, so $ \supp(\varphi(x,\cdot)) $ is closed subset of a compact set, and therefore $ \varphi(x,\cdot) $ has compact support for all $ x\in \R $. Furthermore, $ \varphi(x,\cdot) $ is a $ C^\infty $ function, since all derivatives are equal to some partial derivative of $ \varphi $ which is continuous by assumtion. Hence $ \varphi(x,\cdot)\in C^{\infty}_0(\R) $ for all $ x\in \R $ and, $ f $ is well-defined. Now by a similar argument we have that $ \supp(\varphi(\cdot,y))\subset\pi_1\supp(\varphi) $ for all $ y\in R $ and therefore $ \varphi(x,\cdot)\neq0 $ only if $ x\in\pi_1\supp(\varphi) $. Therefore, we may conclude that $ \supp(f(x))\subset \pi_1(\supp(\varphi)) $. Thus $ \supp(f(x)) $ is a closed subset of a compact set, hence it is compact.\\
-	 Thus we know that $ f(x) $ is well-defined and have compact support. to show that $ f $ is a $ C^\infty $ function. We compute the difference coefficient for $ f $\begin{equation}
+	We first of all notice that in the product topology the projection maps $ \pi_1: \R^2\ni(x,y)\mapsto x\in \R $ and $ \pi_2: \R^2\ni(x,y)\mapsto y\in \R $ are continuous. Therefore, $ \pi_1(\supp(\varphi))\subset \R $ and $ \pi_2(\supp(\varphi))\subset \R $ are compact sets, as they are images of a compact set under continuous maps.	
+	 Now clearly, we have $ \supp(\varphi(x,\cdot))\subset \pi_2(\supp(\varphi)) $ for all $ x\in \R $, so $ \supp(\varphi(x,\cdot)) $ is closed subset of a compact set, and therefore $ \varphi(x,\cdot) $ has compact support for all $ x\in \R $. Furthermore, $ \varphi(x,\cdot) $ is a $ C^\infty $ function, since the map $ \sigma_x:\R\ni y\mapsto(x,y)\in\R^2 $ is continuous, and all derivatives of $ \varphi(x,\cdot) $ are equal to $ \partial_y^m\varphi(x,\cdot)=\partial_y^m\varphi\circ \sigma_x $ for some $ m\geq0 $, where the partial derivatites of $ \varphi $ which are continuous in the product topology by assumtion. Hence $ \varphi(x,\cdot)\in C^{\infty}_0(\R) $ for all $ x\in \R $, and $ f $ is well-defined. Now by a similar argument we have that $ \supp(\varphi(\cdot,y))\subset\pi_1\supp(\varphi) $ for all $ y\in R $ and therefore $ \varphi(x,\cdot)\neq0 $ only if $ x\in\pi_1\supp(\varphi) $. Therefore, we may conclude that $ \supp(f(x))\subset \pi_1(\supp(\varphi)) $. Thus $ \supp(f(x)) $ is a closed subset of a compact set, hence it is compact.\\
+	 Thus we know that $ f(x) $ is well-defined and have compact support. to show that $ f $ is a $ C^\infty $ function. We compute the difference quotient for $ f $\begin{equation}\label{diff.quotient}
 	 \frac{f(x+h)-f(x)}{h}=\left\langle u, \frac{\varphi(x+h,\cdot)-\varphi(x,\cdot)}{h}\right\rangle,
 	 \end{equation}
 	 where we used linearity of $ \braket{u,\cdot} $.
-	 Now we show that for any sequence $ h_n $, such that $ h_n\to 0 $, we have $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\to\partial_x\varphi(x,\cdot) $ in $ C^\infty_0(\R) $. This is seen by the mean value theorem, since $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}=\partial_x\varphi(x+\xi_n(x,h_n,\cdot),\cdot) $ for some $ 0\leq\xi(x,h_n,\cdot)\leq h_n $. However, since we by the above argument have that $ \supp(\varphi(x,\cdot))\in\pi_2\supp(\varphi)\subset\subset\R $ for all $ x\in\R $, we see that $ \supp\left(\frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\right)\subset\pi_2\supp(\varphi) $ for all $ n\geq1 $. Thus there exist a $ j\geq1 $ such that $\supp\left(\frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\right)\in K_j  $ for all $ n\geq1 $, where $ K_j $ is the increasing sequence of compact sets defined in lemma 2.2 in the book. Furthermore, since $ \partial_x\varphi(\cdot,\cdot) $ is continuous with compact support, it a well known result that it is uniformly continuous. But then it is clear that $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}=\partial_x\varphi(x+\xi_n(x,h_n,\cdot),\cdot)\to\partial_x\varphi(x,\cdot) $ uniformly for all $ x\in \R $. The same holds for all the derivatives, $ \partial_y^m\varphi(x,\cdot) $, by the same argument applied to $ \partial_y^m\varphi(x,\cdot) $.
+	 Now Let $ h_n $ be any sequence, such that $ h_n\to 0 $. Let $ R>0 $ such that $ h_n\in B(0,R) $, for all $ n\geq1 $, where $ B(0,R) $ is the ball centered at $ 0 $ with radius $ R $. Then we have $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\to\partial_x\varphi(x,\cdot) $ in $ C^\infty_0(\R) $. This is seen by the mean value theorem: First we have $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}=\partial_x\varphi(x+\xi(x,h_n,\cdot),\cdot) $ for some $ 0\leq\xi(x,h_n,\cdot)\leq h_n $. Furthermore, since we by the above argument have that $ \supp(\varphi(x,\cdot))\subset\pi_2\supp(\varphi)\subset\subset\R $ for all $ x\in\R $, we see that $ \supp\left(\frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\right)\subset\pi_2\supp(\varphi)+\overline{B(0,R)}\subset\subset \R $ for all $ n\geq1 $. Thus there exist a $ j\geq1 $ such that $\supp\left(\frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\right)\in K_j  $ for all $ n\geq1 $, where $ K_j $ is the increasing sequence of compact sets defined in lemma 2.2 in the book. Furthermore, since $ \partial_x\varphi(\cdot,\cdot) $ is continuous with compact support, it a well known result that it is uniformly continuous. But then it is clear that $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}=\partial_x\varphi(x+\xi_n(x,h_n,\cdot),\cdot)\to\partial_x\varphi(x,\cdot) $ uniformly (in $ \cdot $) as $ n\to\infty $, for all $ x\in \R $. The same result holds for all the derivatives, $ \partial_y^m\varphi(x,\cdot) $, by the same argument applied to $ \partial_y^m\varphi(x,\cdot) $ instead of $ \varphi(x,\cdot) $.
 	 Thus we have shown that there exist a $ j\geq1 $ such that $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\in C^\infty_{K_j}(\R) $ for all $ n\geq1 $ and \begin{equation}
-	 \sup\left\{\abs{\partial^m_y\left(\frac{\varphi(x+h_n,y)-\varphi(x,y)}{h_n}-\partial_x\varphi(x,y)\right)}\ :\ y\in K_j,\ m\leq\alpha \right\}\to0 \text{ as }n\to\infty
+	 \sup\left\{\abs{\partial^m_y\left(\frac{\varphi(x+h_n,y)-\varphi(x,y)}{h_n}-\partial_x\varphi(x,y)\right)}\ :\ y\in K_j,\ m\leq\alpha \right\}\to0 \text{ as }n\to\infty,
 	 \end{equation}
 	 for all $ \alpha\geq0 $. Hence by theorem 2.5(a) we have that $ \frac{\varphi(x+h_n,\cdot)-\varphi(x,\cdot)}{h_n}\to \partial_x\varphi(x,\cdot) $ in $ C_0^\infty(\R) $.
-	 It then follows from continuity of $ u: C^\infty_0(\R)\to\C $ that $ \frac{f(x+h_n)-f(x)}{h_n}\to\braket{u,\partial_x\varphi(x,\cdot)} $ as $ n\to\infty $, but since this was for any sequence, $ h_n $, converging to $ 0 $, we then may conclude that $ \frac{f(x+h)-f(x)}{h}\to \braket{u,\partial_x\varphi(x,\cdot)}$ as $ h\to 0 $, such that $ f'(x)=\braket{u,\partial_x\varphi(x,\cdot)} $. It then follows that $ f $ is continuous, since it is differentiable. Now to see that $ f $ is $ C^\infty $, we simply proceed by induction. Iterating the argument with $ \varphi $ replaced by $ \partial^m_x\varphi $, shows that $ f $ is $ m+1 $ times differentiable with $ f^{(m+1)}(x)=\braket{u,\partial^{m+1}_x\varphi(x,\cdot)} $, thus $ f\in C_0^m(\R) $. Therefore, by induction, $ f\in C^k_0(\R) $ for all $ k\geq0 $ such that $ f\in C^{\infty}_0(\R) $, which completes the proof.
+	 It then follows from continuity of $ u: C^\infty_0(\R)\to\C $ and \eqref{diff.quotient} that $ \frac{f(x+h_n)-f(x)}{h_n}\to\braket{u,\partial_x\varphi(x,\cdot)} $, as $ n\to\infty $. Since this was shown for \emph{any} sequence, $ h_n $, converging to $ 0 $, we then may conclude that $ \frac{f(x+h)-f(x)}{h}\to \braket{u,\partial_x\varphi(x,\cdot)}$ as $ h\to 0 $, such that $ f'(x)=\braket{u,\partial_x\varphi(x,\cdot)} $. It then follows that $ f $ is continuous, since it is differentiable. Now to see that $ f $ is $ C^\infty $, we simply proceed by induction. Iterating the argument with $ \varphi $ replaced by $ \partial^m_x\varphi $, which also is in $ C^\infty_0(\R) $, shows that $ f $ is $ m+1 $ times differentiable with $ f^{(m+1)}(x)=\braket{u,\partial^{m+1}_x\varphi(x,\cdot)} $, thus $ f\in C_0^m(\R) $. Therefore, by induction, $ f\in C^k_0(\R) $ for all $ k\geq0 $ such that $ f\in C^{\infty}_0(\R) $, which completes the proof.
 \end{proof} 
 
 
 
 \section*{Ex 2}
+\setcounter{section}{2}
 Consider the function $ u:\R\to\C $ given by $ u(x)=\exp(-\abs{x}) $, $ x\in\R $.\\
 \textbf{1)} We show that $ u\in L^1(\R) $ and that in the sense of distributions we have \begin{equation}\label{dist.eq}
 \left(1-\frac{\diff^2}{\diff x^2}\right)u=2\delta_0.
@@ -103,16 +105,17 @@ where $ \delta_0 $ is the $ \delta $-distribution at $ 0 $.
 That $ u\in L^1(\R) $ is easily verified: $ u $ is measurable, since it is continuous. Futhermore, \begin{equation}
 \begin{aligned}
 \int_\R \abs{u(x)}\diff x=2\int_{[0,\infty)}\exp(-x)\diff x=2\lim\limits_{N\to\infty}\int_{[0,N]}\exp(-x)\diff x\\
-=2\lim\int_{0}^{N}\exp(-x)\diff x=2\lim\limits_{N\to\infty}\left[-\exp(-x)\right]_0^N=2<\infty.
+=2\lim\int_{0}^{N}\exp(-x)\diff x=2\lim\limits_{N\to\infty}\left[-\exp(-x)\right]_0^N=2<\infty,
 \end{aligned}
 \end{equation}
-So $ u\in L^1(\R) $. To verify $ \eqref{dist.eq} $, notice that $ u $ is $ C^\infty $ on $ \R_+ $ and $ \R_- $, and that $ u $ is continuous on $ \R $. Therefore, by lemma 3.6 in G. Grubb, we have that \begin{equation}
- \frac{\diff}{\diff x}u=\begin{cases}
+where we used that $ \exp(-\abs{x}) $ is even, the monotone convergence theorem, that we can convert Lebesgue integrals of continuous functions on bounded intervals to Riemann integrals, and finally the fundamental theorem of calculus. So $ u\in L^1(\R) $. To verify $ \eqref{dist.eq} $, notice that $ u $ is $ C^\infty $ on $ \R_+ $ and $ \R_- $, and that $ u $ is continuous on $ \R $. Therefore, by lemma 3.6 in G. Grubb, we have that \begin{equation}
+ \frac{\diff}{\diff x}u(x)=\begin{cases}
  -\exp(-x),&x>0\\
  \exp(x),&x<0.
  \end{cases}
 \end{equation}
-which is again an $ L^1(\R) $ function. Now notice that $ \frac{\diff}{\diff x}u+2H $ is extendible to a continuous function on $ \R $, where $ H $ is the Heaviside step function $ H=\mathbbm{1}_{(0,\infty)} $. Thus lemma 3.6 again applies to this function, giving us\begin{equation}
+which is again an $ L^1(\R) $ function (also by lemma 3.6). Now notice that $ \frac{\diff}{\diff x}u(x)+2H(x) $ is extendible to a continuous function on $ \R $, where $ H $ is the Heaviside step function $ H=\mathbbm{1}_{(0,\infty)} $.
+This is easily verified, as $ H $ does not change the continuity properties on $ \R_+ $ or $ \R_- $, however, $ \lim\limits_{x\to0_+}\left[\frac{\diff}{\diff x}u(x)+2H(x)\right]=-1+2=1 $ and $ \lim\limits_{x\to0_-}\left[\frac{\diff}{\diff x}u(x)+2H(x)\right]=1+0=1 $. Thus lemma 3.6 again applies to this function, giving us\begin{equation}
 \frac{\diff}{\diff x}\left(\frac{\diff}{\diff x}u+2H\right)=\frac{\diff^2}{\diff x^2}u+2\delta_0=\begin{cases}
 \exp(-x),&x>0,\\
 \exp(x),&x<0.
@@ -131,6 +134,7 @@ That $ u\ast \phi\in C^\infty(\R) $ follows from theorem 3.16 and by noticing th
 where we also used theorem 3.16 in the third equality again.
 
 \section*{Ex 3}
+\setcounter{section}{3}
 \textbf{a)}\\ Let $ f(x)=x^{-3/2}H(x) $, where $ H $ is the Heaviside step function. We show that $ f\lvert_{\R_+}\in L^1_{\loc}(\R_+) $, but $ f $ is not in $ L^1_\loc(\R) $.
 \begin{proof}
 	Notice first that $ f_n=\mathbbm{1}_{(1/n,\infty)}f $ is a non-negative increasing sequence of functions such that $ f_n\uparrow f $ pointwise. $ f_n $ are measurable, since \begin{equation}
@@ -140,10 +144,11 @@ where we also used theorem 3.16 in the third equality again.
 	\emptyset& a\geq n^{3/2},\\
 	\R&a< 0
 	\end{cases}
-	\end{equation} which are all open sets, \ie $ \{f_n>a\}\in\mathcal{B}(\R) $ for all $ a\in\R $. Thus by the monotone convergence theorem we have  $ f $ is measurable. Now for any compact set $ K\in\R_+ $ we have that there exist $ a,b>0 $ such that $ K\in[a,b] $. Thus we estimate \begin{equation}
-	\int_K \abs{f(x)} \diff x=\int_K f(x) \diff x\leq\int_{[a,b]}f(x) \diff x
+	\end{equation} which are all open sets, \ie $ \{f_n>a\}\in\mathcal{B}(\R) $ for all $ a\in\R $. By the monotone convergence theorem we therefore have that  $ f $ is measurable. Now for any compact set $ K\in\R_+ $ we have that there exist $ a,b>0 $ such that $ K\subset[a,b] $. Thus we estimate \begin{equation}
+	\int_K \abs{f(x)} \diff x=\int_K f(x) \diff x\leq\int_{[a,b]}f(x) \diff x,
 	\end{equation}
-	since $ f $ is continuous on the interval $ (a,b) $ we may rewrite this integral as a Riemann integral\begin{equation}
+	where we used that $ f $ is non-negative.
+	Since $ f $ is continuous on the interval $ (a,b) $ we may rewrite this integral as a Riemann integral\begin{equation}
 	\int_K \abs{f(x)} \diff x\leq \int_{a}^{b}f(x)\diff x=\int_{a}^{b}x^{-3/2}\diff x=\left[-2x^{-1/2}\right]_{a}^{b}=2(a^{-1/2}-b^{-1/2})<\infty.
 	\end{equation}
 	Thus $ f\in L^1_\loc(\R_+) $. On the other hand, $ [0,1] $ is clearly a compact set in $ \R $, and by the monotone convergence theorem we have \begin{equation}
@@ -154,19 +159,19 @@ where we also used theorem 3.16 in the third equality again.
 	\end{equation}
 	from which it follows that $ f\notin L^1_\loc(\R) $.
 \end{proof}
-We now show that $ \braket{\Lambda,\varphi}=\int_{(0,\infty)}x^{-3/2}\left(\varphi(x)-\varphi(0)\right) $ defines a distribution in $ \mathcal{D}'(\R) $, which is equal to $ f $ on $ \R_+ $ and on $ \R_- $. \begin{proof}
-	We have already shown that $ x^{-3/2}\mathbbm{1}_{[0,\infty)} $ is measurable so $ \braket{\Lambda,\varphi} $ is well defined.  That $ \braket{\Lambda,\cdot} $ is a linear functional is obvious from linearity of the integral. $ \braket{\Lambda,\varphi}\neq\infty $ will follows from the proof of continuity below. We thus need to show, that $ \braket{\Lambda,\cdot} $ is also continuous on $ C^\infty_0(\R) $. To see this, let $ a>0 $ and let $ \varphi\in C_{K_j}^\infty(\R) $ and notice that \begin{equation}
+We now show that $ \braket{\Lambda,\varphi}=\int_{(0,\infty)}x^{-3/2}\left(\varphi(x)-\varphi(0)\right) \diff x$ defines a distribution in $ \mathcal{D}'(\R) $, which is equal to $ f $ on $ \R_+ $ and on $ \R_- $. \begin{proof}
+	We have already shown that $ x^{-3/2}\mathbbm{1}_{[0,\infty)} $ is measurable and in $ L^1_{\loc}(\R_+) $. It will follows from the proof below that $ \mathbbm{1}_{(0,\infty)}x^{-3/2}(\varphi(x)-\varphi(0)) $ is in $ L^1(\R_+) $ for any $ \varphi\in C^\infty_0(\R) $ so $ \braket{\Lambda,\varphi} $ is well defined.  That $ \braket{\Lambda,\cdot} $ is a linear functional is obvious from linearity of the integral. $ \braket{\Lambda,\varphi}\neq\infty $ will follows from the proof of continuity below. We show, that $ \braket{\Lambda,\cdot} $ is also continuous on $ C^\infty_0(\R) $. To see this, let $ a>0 $ and let $ \varphi\in C_{K_j}^\infty(\R) $ and notice that \begin{equation}
 \begin{aligned}
-	\abs{\braket{\Lambda,\varphi}}&=\abs{\int_{(0,\infty)}x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x}\\&\leq\abs{\int_{(0,a]}x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x}+\abs{\int_{(a,\infty)}x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x}.
+	\abs{\braket{\Lambda,\varphi}}&=\abs{\int_{(0,\infty)}x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x}\\&\leq\int_{(0,a]}\abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\diff x+\int_{(a,\infty)}\abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\diff x.
 \end{aligned}
 	\end{equation}
-	Now by the mean value theorem $ \abs{\braket{\Lambda,\varphi}}\left(\varphi(x)-\varphi(0)\right)=\varphi'(\xi(x))x $ where $ 0\leq \braket{\Lambda,\varphi}=\xi(x)\leq x $. Thus we have \begin{equation}
+	Now by the mean value theorem $ \left(\varphi(x)-\varphi(0)\right)=\varphi'(\xi(x))x $ where $ 0\leq \xi(x)\leq x $. Thus we have \begin{equation}
 	\begin{aligned}
-	\abs{\braket{\Lambda,\varphi}}\leq\abs{\int_{(0,a]}x^{-1/2}\varphi'(\xi(x))\diff x}+\abs{\int_{(a,\infty)}x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x}\\
+	\abs{\braket{\Lambda,\varphi}}\leq\int_{(0,a]}\abs{x^{-1/2}\varphi'(\xi(x))}\diff x+\int_{(a,\infty)}\abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\diff x\\
 	\leq \max_{x\in \R }(\abs{\varphi'(x)})\int_{(0,a]} x^{-1/2}\diff x+2\max_{x\in \R }(\abs{\varphi(x)})\int_{(a,\infty)} x^{-3/2}\diff x.
 	\end{aligned}
 	\end{equation}
-	where the maxima $ \max_{x\in \R}(\abs{\varphi'(x)})=\max_{x\in K_j }(\abs{\varphi'(x)}) $ and $ \max_{x\in \R }(\abs{\varphi(x)})=\max_{x\in K_j }(\abs{\varphi(x)}) $ exist since, $ \varphi \in C^{\infty}_{K_j}(\R) $. By the usual conversion of Lebsgue integrals to Riemann integrals, via \eg monotone convergence theorem, we get \begin{equation}
+	where the maxima, $ \max_{x\in \R}(\abs{\varphi'(x)})=\max_{x\in K_j }(\abs{\varphi'(x)}) $ and $ \max_{x\in \R }(\abs{\varphi(x)})=\max_{x\in K_j }(\abs{\varphi(x)}) $ exist since, $ \varphi \in C^{\infty}_{K_j}(\R) $. By the usual conversion of Lebsgue integrals to Riemann integrals, via \eg monotone convergence theorem, we get \begin{equation}
 	\begin{aligned}
 	\max_{x\in K_j }(\abs{\varphi'(x)})\int_{(0,a]} x^{-1/2}\diff x+2\max_{x\in K_j}(\abs{\varphi(x)})\int_{(a,\infty)} x^{-3/2}\diff x\qquad\qquad\qquad\qquad\qquad\qquad\\
 	=2\max_{x\in K_j }(\abs{\varphi'(x)}) a^{1/2}+4\max_{x\in K_j}(\abs{\varphi(x)})a^{-1/2}\leq C \sup\left\{\abs{\varphi^{(m)}(x)} : x\in K_j,\ m\leq 1\right\}
@@ -175,17 +180,17 @@ We now show that $ \braket{\Lambda,\varphi}=\int_{(0,\infty)}x^{-3/2}\left(\varp
 	where $ C $ might be choosen to be \eg $ C=6 $, which is easily seen by setting $ a=1 $. 
 	Thereby we have shown for any $ j\in \N $ that \begin{equation}
 	\braket{\Lambda,\varphi}\leq C \sup\left\{\abs{\varphi^{(m)}(x)} : x\in K_j,\ m\leq 1\right\},
-	\end{equation} for all $ \varphi\in C^\infty_{K_j}(\R) $. Thus by theorem 2.5(d) we see that $ \braket{\Lambda,\cdot} $ defines a distribution in $ \mathcal{D}'(\R) $.\\
+	\end{equation} for all $ \varphi\in C^\infty_{K_j}(\R) $. Thus by theorem 2.5(d) we see that $ \braket{\Lambda,\cdot} $ is continuous and therefore defines a distribution in $ \mathcal{D}'(\R) $.\\
 	That $ \Lambda=\Lambda_f $ on $ \R_+ $ is easily seen: Let $ \varphi\in C^\infty_0(\R_+) $, then \begin{equation}
 	(\Lambda-\Lambda_f)(\varphi)=\int_{(0,\infty)} x^{-3/2} \left(\varphi(x)-\underbrace{\varphi(0)}_{=0}\right)\diff x-\int_{(0,\infty)} x^{-3/2}\varphi(x)\diff x=0.
 	\end{equation}
-	where we used that $ f\in L^1_\loc(\R) $ in the first equality and that $ \supp(\varphi)\subset(0,\infty) $ implies that $ \varphi(0)=0 $ and linearity of the integral in the second equality. Thus we have shown that $ \Lambda\lvert_{\R_+}-\Lambda_f\lvert_{\R_+}=0 $ which by definition means that $ \Lambda=\Lambda_f\ (=f) $ on $ \R_+ $. On $ \R_- $ both distributions are trivially zero, so $ \Lambda=\Lambda_f\ (=f) $ on $ \R_- $ as well. 
+	where we used that $ f\in L^1_\loc(\R) $ in the first equality and that $ \supp(\varphi)\subset(0,\infty) $ implies that $ \varphi(0)=0 $. Thus we have shown that $ \Lambda\lvert_{\R_+}-\Lambda_f\lvert_{\R_+}=0 $ which by definition means that $ \Lambda=\Lambda_f\ (=f) $ on $ \R_+ $. On $ \R_- $ both distributions are trivially zero, so $ \Lambda=\Lambda_f\ (=f) $ on $ \R_- $ as well. 
 \end{proof}
 \vspace{0.2cm}
 \noindent\textbf{b)}\\
 Let $ g(x)=-2x^{-1/2}H(x) $. We show that $ g\in L^1_\loc(\R) $ and that $ g'=\Lambda $.
 \begin{proof}
-Define $ g_n=\mathbbm{1}_{(1/n,\infty)}g $, then $ -g_n $ is an increasing sequence of non-negative functions such that $ -g_n\uparrow-g $. $ g_n $ are measurable, by a similar argument to one made in (a), or by noticing that $ g_n $ may be written as a product of a continuous function $ \tilde{g}(x)=\begin{cases}
+Define $ g_n=\mathbbm{1}_{(1/n,\infty)}g $, then $ -g_n $ is an increasing sequence of non-negative functions such that $ -g_n\uparrow-g $ pointwise as $ n\to\infty $. $ g_n $ are measurable, by a similar argument to one made in (a), or by noticing that $ g_n $ may be written as a product of a continuous function $ \tilde{g}(x)=\begin{cases}
 g(x)&x>1/n\\
 -2xn^{3/2}&x\leq1/n
 \end{cases} $, and the measurable function $ \mathbbm{1}_{(1/n,\infty)} $. Thus, $ -g_n $ are measurable and by the monotone convergence theorem $ -g $ is measurable, from which it follows that $ g $ is measurable. Now let $ K $ be a compact subset of $ \R $, then there exist $ a>0 $ such that $ K\in(-a,a) $ therefore, we estimate \begin{equation}
@@ -199,26 +204,32 @@ Thus it follows that $ g\in L^1_\loc(\R) $. It therefore makes sense to compute 
 \end{equation}
 where we used that $ \left(\varphi(x)-\varphi(0)\right)'=\varphi'(x) $ in the last equality. Noticing that $ \abs{-2x^{1/2}\varphi'(x)}\in L^1(\R_+) $, since $ \varphi'\in C^\infty_0(\R) $, it follows from the dominated convergence theorem that \begin{equation}
 \begin{aligned}
-\braket{g',\varphi}=\lim\limits_{n\to\infty}\int_{(1/n,n)} 2x^{-1/2}\left(\varphi(x)-\varphi(0)\right)'\diff x
+\braket{g',\varphi}=\lim\limits_{n\to\infty}\int_{(1/n,n)} 2x^{-1/2}\left(\varphi(x)-\varphi(0)\right)'\diff x.
 \end{aligned}
 \end{equation}
 By rewriting in terms of Riemann integrals we have
-\begin{equation}
+\begin{equation}\label{eq1}
 \begin{aligned}
-\braket{g',\varphi}&=\lim\limits_{n\to\infty}\int_{1/n}^{n} 2x^{-1/2}\left(\varphi(x)-\varphi(0)\right)'\diff x\\&=\lim\limits_{n\to\infty}\left(\left[2x^{-1/2}\left(\varphi(x)-\varphi(0)\right)\right]_{1/n}^{n}+\int_{(1/n,n)} x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x\right)
+\braket{g',\varphi}&=\lim\limits_{n\to\infty}\int_{1/n}^{n} 2x^{-1/2}\left(\varphi(x)-\varphi(0)\right)'\diff x\\&=\lim\limits_{n\to\infty}\left(\left[2x^{-1/2}\left(\varphi(x)-\varphi(0)\right)\right]_{1/n}^{n}+\int_{(1/n,n)} x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x\right),
 \end{aligned}
 \end{equation}
+where we used partial integration in the second equality.
 Now we use that \begin{equation}
+\label{eq2}
 \lim\limits_{n\to\infty}\left(\left[2x^{-1/2}\left(\varphi(x)-\varphi(0\right)\right]_{1/n}^{n}\right)=2\lim\limits_{n\to\infty}\left[n^{-1/2}(\varphi(n)-\varphi(0))-n^{1/2}(\varphi(1/n)-\varphi(0))\right]=0,
 \end{equation}
-which can be seen from the fact that $ \varphi(n) $ is bounded, and $ \varphi(1/n)-\varphi(0)=\varphi'(\xi_n)/n\leq C/n $ for some $ C>0 $ by the mean value theorem. Now notice also that $  \abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\in L^1(\R_+) $ since, as was also used in part a), we have \begin{equation}
+which can be seen from the fact that $ \varphi(n) $ is bounded, and $ \abs{\varphi(1/n)-\varphi(0)}=\abs{\varphi'(\xi_n)/n}\leq C_1/n $ for some $ C_1>0 $ by the mean value theorem. In this case $ C_1 $ can be taken to be $ \max(\abs{\varphi'}) $. Now notice also that $  \abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\in L^1(\R_+) $ since, as was also used in part a), we have \begin{equation}
 \abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\leq\begin{cases}
 \max(\abs{\varphi'})x^{-1/2}&0<x<1\\
 2\max(\abs{\varphi})x^{-3/2} & x\geq 1
 \end{cases}
-\end{equation} where as usual the top estimate follows from the mean value theorem and the bottom one is straightforward. Clearly, as seen by above in part a), this shows that $ \abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\in L^1(\R_+) $. But then notice that by the dominated convergence theorem it follows that \begin{equation}
+\end{equation} where as usual the top estimate follows from the mean value theorem and the bottom one is straightforward. Clearly, as seen by above in part a), this shows that $ \abs{x^{-3/2}\left(\varphi(x)-\varphi(0)\right)}\in L^1(\R_+) $. But then notice that by the dominated convergence theorem it follows that \begin{equation}\label{eq3}
 \int_{(1/n,n)} x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x\to\int_{(0,\infty)} x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x,\text{ as }n\to\infty.
 \end{equation}
-We have thereby shown that $ \braket{g',\phi}=\int_{(0,\infty)} x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x=\braket{\Lambda,\varphi} $, for all $ \varphi\in C^\infty_0(\R) $, such that $ g'=\Lambda $.
+Combining \eqref{eq1}, \eqref{eq2}, and \eqref{eq3}, we have thereby shown that \begin{equation}
+\braket{g',\varphi}=\int_{(0,\infty)} x^{-3/2}\left(\varphi(x)-\varphi(0)\right)\diff x=\braket{\Lambda,\varphi}, 
+\end{equation} 
+for all $ \varphi\in C^\infty_0(\R)$,
+such that $ g'=\Lambda $.
 \end{proof}
 \end{document}
