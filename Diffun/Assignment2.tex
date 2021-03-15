@@ -77,12 +77,14 @@
 \maketitle	
 
 \section*{Ex 1}
+\setcounter{section}{1}
 Let $ S $ be a symmetric and densely defined operator on a Hilbert space $ H $, such that $ S $ has a bounded, everywhere defined, inverse. Then $ S $ is self-adjoint.
 \begin{proof}
-	Since $ S^{-1} $ is everywhere defined we have $ \Ran{S}=H $, which is easily seen by noticing that for any $ x\in H $ we have $ SS^{-1}x=x $ and therefore $ x\in \Ran{S} $. It follows that $ \ker{S^*}=\Ran{S}^\perp=\{0\} $ and $ S^* $ is therefore injective. Furthermore, since $ S $ is symmetric we have by definition that $ S\subset S^* $ from which is trivially follows that $ \Ran{S}=H\subset\Ran{S^*} $. Thus $ \Ran{S^*}=H $, and we conclude that $ S^* $ has a bounded everywhere defined inverse, $ (S^*)^{-1} $. However, we notice that $ (S^*)^{-1}=S^{-1} $, by the following observation: Clearly we have $ S^*(S^{-1}x)=S(S^{-1}x)=x $ for any $ x\in H $, since $ S^* $ is an extension of $ S $. On the contrary we also have $ S^*(S^{-1}(S^*y))=S^*y $ for any $ y\in\mathcal{D}(S^*) $ by the previous observation, but by injectivity of $ S^* $ it then follows that $ S^{-1}S^*y=y $. Thus $ S^{-1} $ is exactly the unique two-sided inverse of $ S $, and we conclude that $ (S^*)^{-1}=S^{-1} $. It then follows that $ \mathcal{D}(S)=S^{-1}H=\mathcal{D}(S^*) $, such that $ S^*=S $ and $ S $ is self-adjoint. Notice that nowhere did we use that $ S^{-1} $ is bounded, and this follows automatically, in this case, if it is everywhere defined.
+	Since $ S^{-1} $ is everywhere defined we have $ \Ran{S}=H $, which is easily seen by noticing that for any $ x\in H $ we have $ S(S^{-1}x)=x $ and therefore $ x\in \Ran{S} $. It follows that $ \ker{S^*}=\Ran{S}^\perp=\{0\} $ and $ S^* $ is therefore injective. Furthermore, since $ S $ is symmetric we have by definition that $ S\subset S^* $ from which is trivially follows that $ \Ran{S}=H\subset\Ran{S^*} $. Thus $ \Ran{S^*}=H $, and we conclude that $ S^* $ has an everywhere defined inverse, $ (S^*)^{-1} $ (which is bounded by the closed graph theorem). However, we notice that $ (S^*)^{-1}=S^{-1} $, by the following observation: Clearly we have $ S^*(S^{-1}x)=S(S^{-1}x)=x $ for any $ x\in H $, since $ S^* $ is an extension of $ S $. On the contrary we also have $ S^*(S^{-1}(S^*y))=S^*y $ for any $ y\in\mathcal{D}(S^*) $ by the previous observation, but by injectivity of $ S^* $ it then follows that $ S^{-1}S^*y=y $. Thus $ S^{-1} $ is exactly the unique two-sided inverse of $ S $, and we conclude that $ (S^*)^{-1}=S^{-1} $. It then follows that $ \mathcal{D}(S)=S^{-1}H=\mathcal{D}(S^*) $, such that $ S^*=S $ and $ S $ is self-adjoint. Notice that nowhere did we use that $ S^{-1} $ is bounded, and this follows automatically, in this case, if it is everywhere defined, by the closed graph theorem.
 \end{proof}
 
 \section*{Ex 2, Exam 2016, Q1}
+\setcounter{section}{2}
 \subsection*{(a)}
 We show that for all $ u\in\mathcal{D}'(\R) $ we have $ (\euler{x^3/3}u)'=e^{x^3/3}(u'+x^2u) $. We furhermore use this conclude that any solution of $ u'+x^2u $ in $ \mathcal{D}'(\R) $ has the form $ u(x)=C\euler{-x^3/3} $.
 \begin{proof}
@@ -105,6 +107,7 @@ Now let $ u_1 $ and $ u_2 $ be solutions of \eqref{eq1}. Then clearly $ (u_1-u_2
 
 
 \section*{Ex 3 Exam 2016, Q2}
+\setcounter{section}{3}
 Consider the unbounded operator $ A $ on $ L^2(\R) $ defined by $ A=-\frac{\diff^2}{\diff x^2}+1 $ on the domain $ D(A)=C^\infty_0(\R\setminus\{-1,1\}) $.
 \subsection*{(a)} 
 We show that $ A $ is densely defined symmetric operator.
@@ -124,4 +127,154 @@ where we used that we can convert the Lebesgue integrals of continuous functions
 
 \subsection*{(b)}
 We show that $ u\in\ker(A^*) $ if and only if $ u\in L^2(\R) $ and the distribution $ u''-u\in\mathcal{D}'(\R) $ has support in $ \{-1,1\} $.
+\begin{proof}
+	We show first the left direction. Let $ u\in L^2(\R) $ such that $ \supp(u''-u)\subset\{-1,1\} $. Then for any $ v\in D(A) $ we have \begin{equation}
+	\begin{aligned}
+	(u,Av)=\int_{\R}u(x) \overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)} \diff x=\int_{\R}u(x) \left(-\frac{\diff^2}{\diff x^2}+1\right)\overline{v(x)} \diff x\\=\braket{ (-u''+u),\overline{v}},
+	\end{aligned}
+	\end{equation}
+	where we identified $ v $ with a $ C^\infty_0(\R) $ function via extension by $ 0 $, and we used the definition of the distributional derivative.
+	Now by assumption $ \supp(u''(x)-u)\subset\{-1,1\} $ which, by definition 3.10, is equivalent to $$ \supp(u''-u)^\complement=\bigcup\{w\ \vert\ w\text{ is open and }u''-u=0\text{ on }w \}\supset \{-1,1\}^\complement. $$
+	By lemma 3.11 we have that $ u''-u=0 $ on $ \supp(u''-u)^\complement $.
+	Thus it clear that \begin{equation}
+	(u,Av)=\braket{ (-u''+u),\overline{v}}=0=\braket{0,\bar{v}}, \qquad\text{for any } v\in D(A)
+	\end{equation} 
+	since we, by extension by $ 0 $, have that $ v\in C^{\infty}_0\left(\supp(u''-u)^\complement\right) $. This concludes that $ u\in D(A^*) $ and that $ A^*u=0 $.\\
+	For the right direction, notice that if $ u\in \ker(A^*) $ then trivially $ u\in D(A^*)\subset L^2(\R) $. Furthermore, we have \begin{equation}
+	(u,Av)=\braket{ (-u''+u),\overline{v}}=0,\quad \text{for any }v\in D(A)=C_0^\infty(\R\setminus\{-1,1\}),
+	\end{equation}
+	which, by definition 3.10, implies that $ u''-u=0 $ on $ \R\setminus\{-1,1\}=\{-1,1\}^\complement $. Thus \begin{equation}
+	\begin{aligned}
+	\supp(u''-u)&=\left(\bigcup\{w\ \vert\ w\text{ is open and }u''-u=0\text{ on }w \}\right)^\complement\\&
+	=\bigcap\left\{w^\complement \ \vert\ w\text{ is open and }u''-u=0\text{ on }w \right\}\\&
+	\subset\left(\{-1,1\}^\complement\right)^\complement=\{-1,1\}.
+	\end{aligned}
+	\end{equation}
+	This concludes the proof.
+\end{proof}
+\subsection*{(c)}
+We find four linearly independt solutions in the subspace $ \ker(A^*)\subset L^2(\R) $, \ie four element $ v_i $, $ i\in\{1,2,3,4\} $ such that $ v_i\in D(A^*) $ and $ A^*v_i=0 $ for all $ i\in\{1,2,3,4\} $.\\
+Consider the functions \begin{equation}
+\begin{aligned}
+f_1(x)&=\exp(x)\mathbbm{1}_{(-\infty,-1)}(x),\\
+f_2(x)&=\exp(-x)\mathbbm{1}_{(1,\infty)}(x),\\
+f_3(x)&=\exp(x)\mathbbm{1}_{(-1,1)}(x),\\
+f_4(x)&=\exp(-x)\mathbbm{1}_{(-1,1)}(x).
+\end{aligned}
+\end{equation}
+Evidently, these are linearly independent since they either have disjoint support except for $ f_3 $ and $ f_4 $, which are independent of each other since they are not a multiple of one another. They are also all in $ L^2(\R) $ since they are exponentially decaying and it hold that $ \norm{f_i}_{L^2(\R)}\leq\norm{\euler{2}\ \exp(-\abs{x})}_{L^2(\R)}<\infty $ for all $ i\in\{1,2,3,4\} $. Furhtermore, we may compute the distributional derivetives, by noticing that $ f_1+\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)} $ satisfies all assumptions in lemma 3.6. Therefore we may conclude that \begin{equation}
+f_1'=(f_1+\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)})'-\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)}'
+\end{equation}
+where $ (f_1+\frac{1}{\euler{}}\mathbbm{1}_{(0,\infty)})'(x)=f_1 $ by lemma 3.6, and $ \mathbbm{1}_{(0,\infty)}'=\delta_{-1} $ by a translation of eq (3.23) in the book. Thus we have\begin{equation}
+f_1'=f_1-\frac{1}{\euler{}}\delta_{-1}
+\end{equation}
+Similarly we may compute \begin{equation}
+\begin{aligned}
+f_2'=\left((f_2+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}\right)'-\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}'=\left(f_2+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}\right)'-\frac{1}{\euler{}}(\mathbbm{1}_{(-\infty,1)}-1)'\\=\left(f_2+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}\right)'+\frac{1}{\euler{}}\mathbbm{1}_{(1,\infty)}'
+\end{aligned}
+\end{equation}
+where we used that $ 1'=0 $, so $ \mathbbm{1}_{(-\infty,1)}'=(\mathbbm{1}_{(-\infty,1)}-1)'=\mathbbm{1}_{(1,\infty)}' $. Thus we see that \begin{equation}
+f_2'=-f_2+\frac{1}{\euler{}}\delta_1
+\end{equation}
+where we used lemma 3.6 and a translation of eq (3.23) again. For $ f_3 $ we have \begin{equation}
+\begin{aligned}
+f_3'=\left(f_3+\euler{}\mathbbm{1}_{(1,\infty)}+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,-1)}\right)'-\left(\euler{}\mathbbm{1}_{(1,\infty)}+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,-1)}\right)'=f_3-\euler{}\delta_1+\frac{1}{\euler{}}\delta_{-1},
+\end{aligned}
+\end{equation}
+and similarly for $ f_4 $
+\begin{equation}
+\begin{aligned}
+f_4'=\left(f_4+\frac{1}{\euler{}}\mathbbm{1}_{(1,\infty)}+\euler{}\mathbbm{1}_{(-\infty,-1)}\right)'-\left(\frac{1}{\euler{}}\mathbbm{1}_{(1,\infty)}+\euler{}\mathbbm{1}_{(-\infty,-1)}\right)'=-f_4-\frac{1}{\euler{}}\delta_1+\euler{}\delta_{-1},
+\end{aligned}
+\end{equation}
+where we again used lemma 3.6 and translated versions of eq (3.23) of the book.
+Thus we can now calculate
+\begin{equation}\label{LinEqSys}
+	\begin{aligned}
+	f_1''-f_1&=\left(f_1-\frac{1}{\euler{}}\delta_{-1}\right)'-f_1=-\frac{1}{\euler{}}\delta_{-1}-\frac{1}{\euler{}}\delta_{-1}',\\
+	f_2''-f_2&=\left(-f_2+\frac{1}{\euler{}}\delta_{1}\right)'-f_2=-\frac{1}{\euler{}}\delta_1+\frac{1}{\euler{}}\delta_1',\\
+	f_3''-f_3&=\left(f_3-\euler{}\delta_1+\frac{1}{\euler{}}\delta_{-1}\right)'-f_3=-\euler{}\delta_1'+\frac{1}{\euler{}}\delta_{-1}'-\euler{}\delta_1+\frac{1}{\euler{}}\delta_{-1},\\
+	f_4''-f_4&=\left(-f_4-\frac{1}{\euler{}}\delta_1+\euler{}\delta_{-1}\right)'-f_4=-\frac{1}{\euler{}}\delta_1'+\euler{}\delta_{-1}'+\frac{1}{\euler{}}\delta_1-\euler{}\delta_{-1}.
+	\end{aligned}
+\end{equation}
+%
+% \begin{equation}
+%f_1''-f_1=\left(f_1-\frac{1}{\euler{}}\delta_{-1}\right)'-f_1=-\frac{1}{\euler{}}\delta_{-1}-\frac{1}{\euler{}}\delta_{-1}',
+%\end{equation}
+%\begin{equation}
+%f_2''-f_2=\left(-f_2+\frac{1}{\euler{}}\delta_{1}\right)'-f_2=-\frac{1}{\euler{}}\delta_1+\frac{1}{\euler{}}\delta_1',
+%\end{equation}
+%\begin{equation}
+%f_3''-f_3=\left(f_3-\euler{}\delta_1+\frac{1}{\euler{}}\delta_{-1}\right)'-f_3=-\euler{}\delta_1'+\frac{1}{\euler{}}\delta_{-1}'-\euler{}\delta_1+\frac{1}{\euler{}}\delta_{-1},
+%\end{equation}
+%\begin{equation}
+%f_4''-f_4=\left(-f_4-\frac{1}{\euler{}}\delta_1+\euler{}\delta_{-1}\right)'-f_4=-\frac{1}{\euler{}}\delta_1'+\euler{}\delta_{-1}'+\frac{1}{\euler{}}\delta_1-\euler{}\delta_{-1}.
+%\end{equation}
+Since we have that $ \supp(\delta_x)=\supp(\delta_x')=\{x\} $, which is clear from the facts $ \delta_x\neq0,\ \delta_x'\neq 0 $, and $ \delta_x|_{\R\setminus\{x\}}=\delta_x'|_{\R\setminus\{x\}}=0 $, we conclude that all $ f_i $, $ i\in\{1,2,3,4\} $ satisfies that $ f_i\in L^2(\R) $ and $ \supp(f_i''-f_i)\subset \{-1,1\} $. Therefore, by (b), we find that $ f_i $ with $ i\in\{1,2,3,4\} $ are four linearly independent solutions in $ \ker A^* $.
+\subsection*{(d)}
+We find an element  $u\in\ker(A^*)$ that satisfies $ -u''+u=\delta_1+\delta_{-1} $. We find this solution in $ \Span{\{f_1,f_2,f_3,f_4\}} $. Let $ u=a_1f_1+a_2f_2+a_3f_3+a_4f_4 $, we may use the system of equations \eqref{LinEqSys}, to conclude that \begin{equation}
+-u''+u=\begin{pmatrix}
+\delta_{-1}&\delta_{1}&\delta_{-1}'&\delta_1'
+\end{pmatrix}
+\begin{pmatrix}
+\frac{1}{\euler{}}&0&-\frac{1}{\euler{}}&\euler{}\\
+0&\frac{1}{\euler{}}&\euler{}&-\frac{1}{\euler{}}\\
+\frac{1}{\euler{}}&0&-\frac{1}{\euler{}}&-\euler{}\\
+0&-\frac{1}{\euler{}}&\euler{}&\frac{1}{\euler{}}
+\end{pmatrix}
+\begin{pmatrix}
+a_1\\a_2\\a_3\\a_4
+\end{pmatrix}.
+\end{equation}
+Seeking solutions of the form $ -u''+u=\delta_{-1}+\delta_{1} $ is thus equivalent to solving the equation \begin{equation}
+\begin{pmatrix}
+\delta_{-1}&\delta_{1}&\delta_{-1}'&\delta_1'
+\end{pmatrix}
+\begin{pmatrix}
+\frac{1}{\euler{}}&0&-\frac{1}{\euler{}}&\euler{}\\
+0&\frac{1}{\euler{}}&\euler{}&-\frac{1}{\euler{}}\\
+\frac{1}{\euler{}}&0&-\frac{1}{\euler{}}&-\euler{}\\
+0&-\frac{1}{\euler{}}&\euler{}&\frac{1}{\euler{}}
+\end{pmatrix}
+\begin{pmatrix}
+a_1\\a_2\\a_3\\a_4
+\end{pmatrix}=\begin{pmatrix}
+\delta_{-1}&\delta_{1}&\delta_{-1}'&\delta_1'
+\end{pmatrix}\begin{pmatrix}
+1\\1\\0\\0
+\end{pmatrix}
+\end{equation}
+which by linear independent of $ \delta_{-1} $, $ \delta_{1} $, $ \delta_{-1}' $, and $ \delta_1' $ is again equivalent to \begin{equation}
+\begin{pmatrix}
+\frac{1}{\euler{}}&0&-\frac{1}{\euler{}}&\euler{}\\
+0&\frac{1}{\euler{}}&\euler{}&-\frac{1}{\euler{}}\\
+\frac{1}{\euler{}}&0&-\frac{1}{\euler{}}&-\euler{}\\
+0&-\frac{1}{\euler{}}&\euler{}&\frac{1}{\euler{}}
+\end{pmatrix}
+\begin{pmatrix}
+a_1\\a_2\\a_3\\a_4
+\end{pmatrix}=\begin{pmatrix}
+1\\1\\0\\0
+\end{pmatrix}
+\end{equation}
+Subtracting row $ 3 $ from row $ 1 $ we get \begin{equation}\label{1-3}
+2\euler{}a_4=1.
+\end{equation}
+Adding row $ 2 $ and $ 4 $ we get \begin{equation}\label{2+4}
+2\euler{}a_3=1.
+\end{equation}
+Adding row $ 1 $ and $ 3 $ we get the equation \begin{equation}
+\frac{2}{\euler{}}(a_1-a_3)=\frac{2}{\euler{}}a_1-\frac{1}{\euler{2}}=1,
+\end{equation}
+where we used \eqref{2+4} in the first equality.\\
+Subtracting row $ 4 $ from row $ 2 $ we get\begin{equation}
+\frac{2}{\euler{}}(a_2-a_4)=\frac{2}{\euler{}}a_2-\frac{1}{\euler{2}}=1,
+\end{equation}
+where we used \eqref{1-3} in the first equality.\\
+Thus we find \begin{equation}
+a_1=a_2=\frac{1}{2}\left(\euler{}+\frac{1}{\euler{}}\right)\text{  and  } a_3=a_4=\frac{1}{2\euler{}},
+\end{equation}
+which corresponds to \begin{equation}
+u(x)=\frac{1}{2}\left(\euler{}+\frac{1}{\euler{}}\right)\euler{-\abs{x}}\ \mathbbm{1}_{\{\abs{x}>1\}}+\frac{1}{2\euler{}}(\euler{x}+\euler{-x})\mathbbm{1}_{\{\abs{x}<1\}}.
+\end{equation}
 \end{document}
