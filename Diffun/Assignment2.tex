@@ -80,24 +80,24 @@
 \setcounter{section}{1}
 Let $ S $ be a symmetric and densely defined operator on a Hilbert space $ H $, such that $ S $ has a bounded, everywhere defined, inverse. Then $ S $ is self-adjoint.
 \begin{proof}
-	Since $ S^{-1} $ is everywhere defined we have $ \Ran{S}=H $, which is easily seen by noticing that for any $ x\in H $ we have $ S(S^{-1}x)=x $ and therefore $ x\in \Ran{S} $. It follows that $ \ker{S^*}=\Ran{S}^\perp=\{0\} $ and $ S^* $ is therefore injective. Furthermore, since $ S $ is symmetric we have by definition that $ S\subset S^* $ from which is trivially follows that $ \Ran{S}=H\subset\Ran{S^*} $. Thus $ \Ran{S^*}=H $, and we conclude that $ S^* $ has an everywhere defined inverse, $ (S^*)^{-1} $ (which is bounded by the closed graph theorem). However, we notice that $ (S^*)^{-1}=S^{-1} $, by the following observation: Clearly we have $ S^*(S^{-1}x)=S(S^{-1}x)=x $ for any $ x\in H $, since $ S^* $ is an extension of $ S $. On the contrary we also have $ S^*(S^{-1}(S^*y))=S^*y $ for any $ y\in\mathcal{D}(S^*) $ by the previous observation, but by injectivity of $ S^* $ it then follows that $ S^{-1}S^*y=y $. Thus $ S^{-1} $ is exactly the unique two-sided inverse of $ S $, and we conclude that $ (S^*)^{-1}=S^{-1} $. It then follows that $ \mathcal{D}(S)=S^{-1}H=\mathcal{D}(S^*) $, such that $ S^*=S $ and $ S $ is self-adjoint. Notice that nowhere did we use that $ S^{-1} $ is bounded, and this follows automatically, in this case, if it is everywhere defined, by the closed graph theorem.
+	Since $ S^{-1} $ is everywhere defined we have $ \Ran{S}=H $, which is easily seen by noticing that for any $ x\in H $ we have $ S(S^{-1}x)=x $ and therefore $ x\in \Ran{S} $. It follows that $ \ker{S^*}=\Ran{S}^\perp=\{0\} $ and $ S^* $ is therefore injective. Furthermore, since $ S $ is symmetric we have by definition that $ S\subset S^* $ from which is trivially follows that $ \Ran{S}=H\subset\Ran{S^*} $. Thus $ \Ran{S^*}=H $, and we conclude that $ S^* $ has an everywhere defined inverse, $ (S^*)^{-1} $ (which is bounded by the closed graph theorem, since the inverse of a closed operator is closed). However, we notice that $ (S^*)^{-1}=S^{-1} $, by the following observation: Clearly we have $ S^*(S^{-1}x)=S(S^{-1}x)=x $ for any $ x\in H $, since $ S^* $ is an extension of $ S $. On the contrary we also have $ S^*(S^{-1}(S^*y))=S^*y $ for any $ y\in\mathcal{D}(S^*) $ by the previous observation, but by injectivity of $ S^* $ it then follows that $ S^{-1}S^*y=y $. Thus $ S^{-1} $ is exactly the unique two-sided inverse of $ S $, and we conclude that $ (S^*)^{-1}=S^{-1} $. It then follows that $ D(S)=S^{-1}H=D(S^*) $, so $ S^*=S $ and $ S $ is self-adjoint. Notice that nowhere did we use that $ S^{-1} $ is bounded, and this follows automatically, in this case, if it is everywhere defined, by the closed graph theorem.
 \end{proof}
 
 \section*{Ex 2, Exam 2016, Q1}
 \setcounter{section}{2}
 \subsection*{(a)}
-We show that for all $ u\in\mathcal{D}'(\R) $ we have $ (\euler{x^3/3}u)'=e^{x^3/3}(u'+x^2u) $. We furhermore use this conclude that any solution of $ u'+x^2u $ in $ \mathcal{D}'(\R) $ has the form $ u(x)=C\euler{-x^3/3} $.
+We show that for all $ u\in\mathcal{D}'(\R) $ we have $ (\euler{x^3/3}u)'=e^{x^3/3}(u'+x^2u) $. We furhermore use this to conclude that any solution of $ u'+x^2u=0 $ in $ \mathcal{D}'(\R) $ has the form $ u(x)=C\euler{-x^3/3} $.
 \begin{proof}
 	By the usual Leibniz rule for distributions and $ C^\infty $ functions, lemma 3.7, we have \begin{equation}
 	(\euler{x^3/3}u)'=(\euler{x^3/3})'u+\euler{x^3/3}u'=\euler{x^3/3}(x^2 u+u')
 	\end{equation}
-	which is the desired result. Now notice that $ u'+x^2u=0 $ if and only if $ (\euler{x^3/3}u)'=0 $, since $ \euler{x^3/3} $ is non-zero. However, $ \euler{x^3/3}u $ is a distribution, and by theorem 4.19, we have that $ (\euler{x^3/3}u )'=0 $ if and only if $ \euler{x^3/3}u =C $ for some constant $ C\in\C $. Multiplying both sides of this relation by $ \euler{-x^3/3} $ we get $ u=C\euler{-x^3/3} $. Here we of cause used that $ f(gu)=(fg)u $ for $ f,g\in C^\infty(\R) $ and $ u\in\mathcal{D}'(\R) $, which is obvious by definition of $ (fg)u $ and $ f(gu) $ as adjoints of multiplication with $ C^\infty $ functions on $ C^\infty_0(\R) $, and by comutativity of products of functions. This concludes the proof.
+	which is the desired result. Now notice that $ u'+x^2u=0 $ if and only if $ (\euler{x^3/3}u)'=0 $, since $ \euler{x^3/3} $ is non-zero. Indeed we have that $ \braket{u'+x^2u,\varphi}=0 $ for all $ \varphi\in C_0^\infty(\R) $, if and only if $ \braket{\euler{x^3/3}(u'+x^2u),\euler{-x^3/3}\varphi}=\braket{u'+x^2u,\varphi}=0 $ for all $ \varphi\in C_0^\infty(\R) $ and since $ M_{\euler{-x^3/3}}\rvert_{C_0^\infty(\R)}: C_0^\infty(\R)\to C_0^\infty(\R) $ is surjective, we see that $ (u'+x^2u)= 0 $ if and only if $ \euler{x^3/3}(u'+x^2u)= 0 $ for all $ \varphi\in C_0^\infty(\R) $. Now, we notice that $ \euler{x^3/3}u $ is a distribution, and by theorem 4.19, we have that $ (\euler{x^3/3}u )'=0 $ if and only if $ \euler{x^3/3}u =C $ for some constant $ C\in\C $. Multiplying both sides of this relation by $ M_{\euler{-x^3/3}}:\mathcal{D}'(\R)\to\mathcal{D}'(\R) $ we get $ u=C\euler{-x^3/3} $. Here we of cause used that $ f(gu)=(fg)u $ for $ f,g\in C^\infty(\R) $ and $ u\in\mathcal{D}'(\R) $, which is obvious by definition of $ (fg)u $ and $ f(gu) $ as adjoints of multiplication with $ C^\infty $ functions on $ C^\infty_0(\R) $, and by comutativity of products of functions. This concludes the proof.
 \end{proof}
 \subsection*{(b)}
 We show that $ u=H(x)\euler{-x^3/3} $ solves \begin{equation} \label{eq1}
 u'+x^2u=\delta_0,
 \end{equation}
-and we find all solutions to \eqref{eq1} in $ \mathcal{D}(\R) $.
+and we find all solutions to \eqref{eq1} in $ \mathcal{D}'(\R) $.
 By the usual Leibniz rule for distributions and $ C^\infty $ functions, lemma 3.7, we have \begin{equation}
 u'=(H(x)\euler{-x^3/3})'=\euler{-x^3/3}((H(x))'-x^2 H(x))=\euler{-x^3/3}(\delta_0-x^2H(x))=\delta_0-x^2 u
 \end{equation}
@@ -117,9 +117,10 @@ That $ \overline{D(A)}=L^2(\R) $ follows from from Theorem 2.15 ($ 3^\circ $) wi
 where the integral makes sence, since $ \left(-\frac{\diff^2}{\diff x^2}+1\right)v $ and $ u $ are a.e. equal to $ L^2(\R) $ functions. For the sake of simplicity we will, without loss of generality, define $ v=u=0 $ on $ \{-1,1\} $, such that they are continuous. Since $ v $ and $ u $ have compact support, there exist an $ N\in \N $ such that $ \supp(u)\cap \supp(v)\subset [-N+1,N-1] $. But then we have \begin{equation}
 \begin{aligned}
 \int_{\R} \left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)\overline{u(x)} \diff x&=\int_{[-N,N]} \left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)\overline{u(x)}\diff x\\
-&=\int_{-N}^{N}\left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)\overline{u(x)} \diff x = \int_{\R} \left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)\overline{u(x)} \diff x\\
-&=\int_{[-N,N]} \left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)\overline{u(x)}\diff x=\int_{-N}^{N}v(x)\left(-\frac{\diff^2}{\diff x^2}+1\right)\overline{u(x)} \diff x\\
-&=\int_{-N}^{N}v(x)\overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)u(x)} \diff x=\int_{[-N,N]}v(x)\overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)u(x)} \diff x\\
+&=\int_{-N}^{N}\left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)\overline{u(x)} \diff x\\
+&=\int_{-N}^{N}v(x)\left(-\frac{\diff^2}{\diff x^2}+1\right)\overline{u(x)} \diff x\\
+&=\int_{-N}^{N}v(x)\overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)u(x)} \diff x\\
+&=\int_{[-N,N]}v(x)\overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)u(x)} \diff x\\
 &=\int_{\R}v(x)\overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)u(x)} \diff x=(v,Au)
 \end{aligned}
 \end{equation}
@@ -130,16 +131,16 @@ We show that $ u\in\ker(A^*) $ if and only if $ u\in L^2(\R) $ and the distribut
 \begin{proof}
 	We show first the left direction. Let $ u\in L^2(\R) $ such that $ \supp(u''-u)\subset\{-1,1\} $. Then for any $ v\in D(A) $ we have \begin{equation}
 	\begin{aligned}
-	(u,Av)=\int_{\R}u(x) \overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)} \diff x=\int_{\R}u(x) \left(-\frac{\diff^2}{\diff x^2}+1\right)\overline{v(x)} \diff x\\=\braket{ (-u''+u),\overline{v}},
+	(u,Av)=\int_{\R}u(x) \overline{\left(-\frac{\diff^2}{\diff x^2}+1\right)v(x)} \diff x&=\int_{\R}u(x) \left(-\frac{\diff^2}{\diff x^2}+1\right)\overline{v(x)} \diff x\\&=\braket{u,-\overline{v}''+\overline{v}}=\braket{ (-u''+u),\overline{v}},
 	\end{aligned}
 	\end{equation}
 	where we identified $ v $ with a $ C^\infty_0(\R) $ function via extension by $ 0 $, and we used the definition of the distributional derivative.
-	Now by assumption $ \supp(u''(x)-u)\subset\{-1,1\} $ which, by definition 3.10, is equivalent to $$ \supp(u''-u)^\complement=\bigcup\{w\ \vert\ w\text{ is open and }u''-u=0\text{ on }w \}\supset \{-1,1\}^\complement. $$
+	Now by assumption $ \supp(u''(x)-u)\subset\{-1,1\} $ which, by definition 3.10, is equivalent to $$ \{-1,1\}^\complement\subset\supp(u''-u)^\complement=\bigcup\{w\ \vert\ w\text{ is open and }u''-u=0\text{ on }w \}. $$
 	By lemma 3.11 we have that $ u''-u=0 $ on $ \supp(u''-u)^\complement $.
 	Thus it clear that \begin{equation}
 	(u,Av)=\braket{ (-u''+u),\overline{v}}=0=\braket{0,\bar{v}}, \qquad\text{for any } v\in D(A)
 	\end{equation} 
-	since we, by extension by $ 0 $, have that $ v\in C^{\infty}_0\left(\supp(u''-u)^\complement\right) $. This concludes that $ u\in D(A^*) $ and that $ A^*u=0 $.\\
+	since we, by extension by $ 0 $, have that $ v\in C^{\infty}_0\left(\supp(u''-u)^\complement\right) $ for any $ v\in D(A) $. This concludes that $ u\in D(A^*) $ and that $ A^*u=0 $, so $ u\in\ker(A^*) $.\\
 	For the right direction, notice that if $ u\in \ker(A^*) $ then trivially $ u\in D(A^*)\subset L^2(\R) $. Furthermore, we have \begin{equation}
 	(u,Av)=\braket{ (-u''+u),\overline{v}}=0,\quad \text{for any }v\in D(A)=C_0^\infty(\R\setminus\{-1,1\}),
 	\end{equation}
@@ -162,10 +163,10 @@ f_3(x)&=\exp(x)\mathbbm{1}_{(-1,1)}(x),\\
 f_4(x)&=\exp(-x)\mathbbm{1}_{(-1,1)}(x).
 \end{aligned}
 \end{equation}
-Evidently, these are linearly independent since they either have disjoint support except for $ f_3 $ and $ f_4 $, which are independent of each other since they are not a multiple of one another. They are also all in $ L^2(\R) $ since they are exponentially decaying and it hold that $ \norm{f_i}_{L^2(\R)}\leq\norm{\euler{2}\ \exp(-\abs{x})}_{L^2(\R)}<\infty $ for all $ i\in\{1,2,3,4\} $. Furhtermore, we may compute the distributional derivetives, by noticing that $ f_1+\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)} $ satisfies all assumptions in lemma 3.6. Therefore we may conclude that \begin{equation}
-f_1'=(f_1+\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)})'-\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)}'
+Evidently, these are linearly independent since they either have disjoint support except for $ f_3 $ and $ f_4 $, which are independent of each other since they are not a multiple of one another. They are also all in $ L^2(\R) $ since they are exponentially decaying and it hold that $ \norm{f_i}_{L^2(\R)}\leq\norm{\euler{2}\ \exp(-\abs{x})}_{L^2(\R)}<\infty $ for all $ i\in\{1,2,3,4\} $. Furhtermore, we may compute the distributional derivatives, by noticing that \eg that $ f_1+\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)} $ satisfies all assumptions in lemma 3.6. Therefore we may conclude that \begin{equation}
+f_1'=\left(f_1+\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)}\right)'-\frac{1}{\euler{}}\mathbbm{1}_{(-1,\infty)}'
 \end{equation}
-where $ (f_1+\frac{1}{\euler{}}\mathbbm{1}_{(0,\infty)})'(x)=f_1 $ by lemma 3.6, and $ \mathbbm{1}_{(0,\infty)}'=\delta_{-1} $ by a translation of eq (3.23) in the book. Thus we have\begin{equation}
+where $ (f_1+\frac{1}{\euler{}}\mathbbm{1}_{(0,\infty)})'=f_1 $ by lemma 3.6 and the fact that $ (\euler{x})'=\euler{x} $ and $ 1'=0 $. Furthermore, $ \mathbbm{1}_{(-1,\infty)}'=\delta_{-1} $ by a translation of eq (3.23) in the book. Thus we have\begin{equation}
 f_1'=f_1-\frac{1}{\euler{}}\delta_{-1}
 \end{equation}
 Similarly we may compute \begin{equation}
@@ -173,7 +174,7 @@ Similarly we may compute \begin{equation}
 f_2'=\left((f_2+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}\right)'-\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}'=\left(f_2+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}\right)'-\frac{1}{\euler{}}(\mathbbm{1}_{(-\infty,1)}-1)'\\=\left(f_2+\frac{1}{\euler{}}\mathbbm{1}_{(-\infty,1)}\right)'+\frac{1}{\euler{}}\mathbbm{1}_{(1,\infty)}'
 \end{aligned}
 \end{equation}
-where we used that $ 1'=0 $, so $ \mathbbm{1}_{(-\infty,1)}'=(\mathbbm{1}_{(-\infty,1)}-1)'=\mathbbm{1}_{(1,\infty)}' $. Thus we see that \begin{equation}
+where we used that $ 1'=0 $, so $ \mathbbm{1}_{(-\infty,1)}'=(\mathbbm{1}_{(-\infty,1)}-1)'=-\mathbbm{1}_{(1,\infty)}' $. Thus we see that \begin{equation}
 f_2'=-f_2+\frac{1}{\euler{}}\delta_1
 \end{equation}
 where we used lemma 3.6 and a translation of eq (3.23) again. For $ f_3 $ we have \begin{equation}
@@ -266,15 +267,14 @@ Adding row $ 2 $ and $ 4 $ we get \begin{equation}\label{2+4}
 Adding row $ 1 $ and $ 3 $ we get the equation \begin{equation}
 \frac{2}{\euler{}}(a_1-a_3)=\frac{2}{\euler{}}a_1-\frac{1}{\euler{2}}=1,
 \end{equation}
-where we used \eqref{2+4} in the first equality.\\
-Subtracting row $ 4 $ from row $ 2 $ we get\begin{equation}
+where we used \eqref{2+4} in the first equality. Subtracting row $ 4 $ from row $ 2 $ we get\begin{equation}
 \frac{2}{\euler{}}(a_2-a_4)=\frac{2}{\euler{}}a_2-\frac{1}{\euler{2}}=1,
 \end{equation}
-where we used \eqref{1-3} in the first equality.\\
-Thus we find \begin{equation}
+where we used \eqref{1-3} in the first equality. Thus we find \begin{equation}
 a_1=a_2=\frac{1}{2}\left(\euler{}+\frac{1}{\euler{}}\right)\text{  and  } a_3=a_4=\frac{1}{2\euler{}},
 \end{equation}
 which corresponds to \begin{equation}
 u(x)=\frac{1}{2}\left(\euler{}+\frac{1}{\euler{}}\right)\euler{-\abs{x}}\ \mathbbm{1}_{\{\abs{x}>1\}}+\frac{1}{2\euler{}}(\euler{x}+\euler{-x})\mathbbm{1}_{\{\abs{x}<1\}}.
 \end{equation}
+This $ u $ constitutes a solution of the desired form.
 \end{document}
