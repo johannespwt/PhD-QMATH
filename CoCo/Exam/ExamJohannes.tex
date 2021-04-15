@@ -82,6 +82,7 @@
 \begin{document}
 	
 	\maketitle
+	\textbf{Some of the problem describtions below have been copied from the exam sheet.}
 	\section*{Question 1}
 	Consider the following languages over the alphabet $\Sigma=\{a, b, c\}:$
 	
@@ -161,14 +162,60 @@
 	We assume that $ \N=\{1,2,3,...\} $, but the proof works for $ \N=\{0,1,2,...\} $ with small modifications. Consider the log-space TM, $ M= $"On input $ w $\begin{enumerate}
 			\item Scan the input, and compare neighboring letters (by storing and overwriting one letter on the worktape all the way). If ever substring $ ab $, $ ca $, $ ba $ or $ bc $ is found, \emph{reject}.
 			\item Count the number of $ a $s, $ b $s and $ c $s with three counters, $ i,j,k $ respectively, on the worktape. 
-			\item Check that $ i^2+j^2=k $. If yes $ \emph{accept} $, if no, \emph{reject}.		
+			\item Check that $ i^2+j^2=k $. If yes $ \emph{accept} $, if no, \emph{reject}."	
 			\end{enumerate}
 			Evidently this $ M $ decides $ L_4 $. Furthermore, it is log-space, as the first step requires only one slot on the worktape, step $ 2 $ requires only tree counters (in binary) which take up only logarithmic space. And finally we may multiply $ i\cdot i $ by adding $ i $, $ i $ times, which can be done by having an extra counter keeping track of how many times we have added $ i $. Of course we also need the obviuous seperator symbols, which can clearly be included in log space. Thus we see that $ M $ run in logarithmic space, and we conclude that $ L_4 $ is in L.
 	\end{proof}
 	\section*{Question 2}
+	For any string $ w $ we let $ rev(w) $ denote the reverse of $ w $.
+	\subsection*{Part 2.1}
+	We consider in the following the language 
+	\begin{equation*}
+		\begin{aligned}
+		\mathrm{REV}_{\mathrm{TM}}=\{\langle M, w\rangle \mid M\text{ is a TM such that at some point during the execution of $M$ on $w$}\\
+		\text{the tape of $M$ consists of $rev(w)$ followed by only blank symbols }\}
+		\end{aligned}
+	\end{equation*}
+	\subsection*{Part 2.2}
+	We show that $ \text{REV}_{\text{TM}} $ is Turing recognizable.
+	\begin{proof}
+		The following TM, recognizes $ \text{REV}_{\text{TM}} $, $ M'= $"On input $ \braket{M,w} $\begin{enumerate}
+			\item Simulate $ M $ on $ w $ 
+			\item While $ M $ is running: 
+			\item\qquad keep a counter, $ i $, of how many computation steps of $ M $ have been simulated.
+			
+			\item \begin{addmargin}[2em]{0em}In each computation step of $ M $, compare the first $ \min(i,\abs{w}) $ entries of the tape to $ rev(w) $, if at some point the tape content mathces $ rev(w) $ \emph{accept}. If $ M $ halts without $ rev(w) $ appearing on the tape, \emph{reject}.
+				\end{addmargin}
+		\end{enumerate}
+		Clearly $ M' $ accept if and only if there is some point where the tape content of $ M $ running on $ w $ mathces $ rev(w) $. Notice that the counter $ i $ ensures that the checking in each step can be done in finite time, and also that the tape content of $ M $ clearly cannot be anything but blank beyond $ i $, since $ M $ have not have time to alter these tape cells yet.
+	\end{proof} 
+	\subsection*{Part 2.3}
+	We show that $ \text{REV}_{\text{TM}} $ is not decidable.
+	\begin{proof}
+		This follows by simply noting that we can reduce $ A_{TM} $ to $ \text{REV}_{TM} $ by the following reduction: For any $ \braket{M,w} $ construct $ \braket{\tilde{M},w} $, where $ \tilde{M} $ is equivalent to $ M $ but it starts by writing a special character, which is not in the input alphabet, on the tape, say $\aleph $, which does not interfere with the computation, and it erases the tape (including $ \aleph $) and writes $ rev(w) $ on the tape before accepting. Then clearly $ \braket{\tilde{M},w}\in \text{REV}_{\text{TM}} $ if and only if $ \braket{M,w}\in A_{TM} $. Furthermore, this reduction is clearly done by a computatble function. Thus we conclude that $ A_{TM}\leq \text{REV}_{\text{TM}} $ and it follows by Theorem 4.11 and Corollary 5.23 that $ \text{REV}_{\text{TM}} $ is undecidable.
+	\end{proof}
 	
+	\subsection*{Part 2.4}
+	Let $f: \Sigma^{*} \rightarrow \Sigma^{*}$ be a computable function. We show that there is a TM $M$ with the property that $f(\langle M\rangle)$ is a description of a TM $M^{\prime}$ such that for each $w \in \Sigma^{*}$,
 	
+	\begin{enumerate}
+		\item $M$ halts on $w$ if and only if $M^{\prime}$ halts on $w$, and
+		\item if $M^{\prime}$ halts on $w$ with a string $s_{w}$ on its tape then $M$ halts on $w$ with the string $s_{w} s_{w}$ on its tape.
+	\end{enumerate}
+\begin{proof}
+	Consider the following TM, $ M= $"On input $ w $\begin{enumerate}
+		\item Obtain own describtion via recursion theorem (Thm 6.3).
+		\item Compute $ f(M) $, and let $ G $ be the TM such that $ \braket{G}=f(M) $.
+		\item Simulate $ G $ on $ w $. If $ G $ halts, erase everything on the tape exept the tape content of $ G $ and duplicate the tape content. \emph{Accept} if $ G $ accepted and \emph{reject} if $ G $ rejected.
+	\end{enumerate}
+	Clearly, if $ f(M) $ is a describtion of the TM $ M' $ we see that $ M $ halts if and only if $ M' $ halts, since $ M $ simulates $ M' $ in its describtion. Also we see that by design, $ M $ will have exactly $ s_ws_w $ on the tape when halting on $ w $, if $ M' $ have $ s_w $ on the tape when halting on $ w $. Thus $ M $ is exactly a describtion of the desired TM.
+\end{proof}
 	\section*{Question 3}
+	For a directed graph $G=(V, E)$ and a subset $V^{\prime}$ of $V$, the induced subgraph $G\left[V^{\prime}\right]$ is the subgraph of $G$ with vertex set $V^{\prime}$ and edge set consisting of those edges of $E$ with both endpoints in $V^{\prime}$.
+	
+	When we refer to a cycle in the following, we refer to a directed graph consisting of distinct vertices $v_{1}, v_{2}, \ldots, v_{m}$ and edges $\left(v_{i}, v_{i+1}\right)$ for $i=1,2, \ldots, m-1$, and an edge $\left(v_{m}, v_{1}\right) ; m$ is the size of the cycle. Let $s \geq 2$ be a given integer and consider the following decision problem:
+	
+	
 	
 	
 	\section*{Question 4}
