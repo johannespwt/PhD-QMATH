@@ -206,7 +206,7 @@
 	Consider the following TM, $ M= $"On input $ w $\begin{enumerate}
 		\item Obtain own describtion via recursion theorem (Thm 6.3).
 		\item Compute $ f(M) $, and let $ G $ be the TM such that $ \braket{G}=f(M) $.
-		\item Simulate $ G $ on $ w $. If $ G $ halts, erase everything on the tape exept the tape content of $ G $ and duplicate the tape content. \emph{Accept} if $ G $ accepted and \emph{reject} if $ G $ rejected.
+		\item Simulate $ G $ on $ w $. If $ G $ halts, erase everything on the tape exept the tape content of $ G $ and duplicate the tape content. \emph{Accept} if $ G $ accepted and \emph{reject} if $ G $ rejected."
 	\end{enumerate}
 	Clearly, if $ f(M) $ is a describtion of the TM $ M' $ we see that $ M $ halts if and only if $ M' $ halts, since $ M $ simulates $ M' $ in its describtion. Also we see that by design, $ M $ will have exactly $ s_ws_w $ on the tape when halting on $ w $, if $ M' $ have $ s_w $ on the tape when halting on $ w $. Thus $ M $ is exactly a describtion of the desired TM.
 \end{proof}
@@ -215,9 +215,113 @@
 	
 	When we refer to a cycle in the following, we refer to a directed graph consisting of distinct vertices $v_{1}, v_{2}, \ldots, v_{m}$ and edges $\left(v_{i}, v_{i+1}\right)$ for $i=1,2, \ldots, m-1$, and an edge $\left(v_{m}, v_{1}\right) ; m$ is the size of the cycle. Let $s \geq 2$ be a given integer and consider the following decision problem:
 	
+	Let $s \geq 2$ be a given integer and consider the following decision problem:
+	\begin{equation*}
+		s-C Y C L E=\{\langle G\rangle \mid G=(V, E)\text{ is a directed graph with a cycle of size $s$ as subgraph}\}
+	\end{equation*}
+	\subsection*{Part 3.1}
+	We show that $ s-CYCLE $ belongs to P.
+	\begin{proof}
+		Consider the following TM $ M= $"On input $ \braket{G} $\begin{enumerate}
+			\item For each collection of $ s $ vertices in $ G $, $ v_1,...,v_s $:
+			\item \begin{addmargin}[2em]{0em} Check that there are edges in $ G $: $(v_i,v_{i+1}) $ for $ i=1,...,m-1 $ and an edge $ (v_s,v_1) $. If yes, \emph{accept}.
+			\end{addmargin}
+			\item \emph{reject.}"
+		\end{enumerate}
+		Clearly, the loop in step one have at most $ n^s $ iterations, where $ n $ is the number of vertices in $ G $, as there are less than $ n^s $ ways of choosing $ s $ vertices out of $ n $. And it is clear that step $ 2 $ is polynomial in time as there are at most $ n^2 $ edges in $ G $. Thus, $M $ runs in polynomial time. It is also clear by design, that $ M $ accepts $ \braket{G} $ if and only if, $ G $ has a cycle of size $ s $ as a subgraph. Therefore $ s-CYCLE $ is in P.
+		
+%		The problem is similar to $ PATH $ and we construct a polynomial time TM, that resembles the one from the proof that $ PATH $ is in P.\\
+%		Consider the TM $ M= $"In input $ \braket{G} $\begin{enumerate}
+%			\item For each node, $ v $, in $ G $: 
+%			\item \qquad Place a mark on $ v $ and set $ i:=0 $.
+%			\item \qquad Repeat until no more vertices are marked or $ i=s $:
+%			\item \begin{addmargin}[4em]{0em} If $ i<s $: Scan all edges of $ G $, if there is an edge from a marked vertex to an unmarked vertex, mark the unmarked one.
+%			\end{addmargin}
+%			\item\begin{addmargin}[4em]{0em}
+%				If $ i=s $: Scan all edges of $ G $, if there is an edge from a marked vertex to an unmarked vertex, mark the unmarked one with a special mark, \eg a $ * $.
+%			\end{addmargin}
+%			\item\begin{addmargin}[4em]{0em}
+%				$ i:=i+1 $
+%			\end{addmargin}
+%			\item\qquad If $ v $ is marked by $ \ast $, \emph{accept}.
+%			\item \emph{reject.}
+%		\end{enumerate}
+%		Notice that the all steps $ 2-6 $ are repeated $ n $ times, where $ n $ is number of vertices. Step $ 2 $ is trivially polynomial in time. Step $ 4- 6 $ are repeated at most $ s $ times, and each of them are clearly polynomial in time. 
+%		Thus collecting all the above, we see that the runtime of $ M $ is clearly at most polynomial in the number of vertices, and therefore in the input length. It is also clear by design that $ M $ accepts $ \braket{G} $ is and only if 
+	\end{proof}
 	
+	\subsection*{Part 3.2}
+	For $ s\geq2 $ consider now
+	\begin{equation*}
+		\begin{aligned}
+		s-C Y C L E-H I T T I N G-S E T=\{\langle G, k\rangle \mid G=(V, E)\text{ is a directed graph, $k \in \mathbb{N}$,}\\ \text{and there is
+		a subset $V^{\prime} \subseteq V$ of size $k$ such that $G\left[V \backslash V^{\prime}\right]$}\\ \text{
+		contains no cycle of size $s$ as subgraph }\}
+		\end{aligned}
+	\end{equation*}
+	We show that $ s-C Y C L E-H I T T I N G-S E T $ is in NP.
+	\begin{proof}
+		We construct a polynomial time verifier, $ V $, that verifies $ s-C Y C L E-H I T T I N G-S E T $. $ V $ takes as a certificate a subset $ V' $ of vertices of $ G $. $ V= $"On input $ (\braket{G,k},c) $\begin{enumerate}
+			\item Check that $ \abs{c}=k $, if not \emph{reject}.
+			\item Construct $ G'=G[V\setminus V'] $.
+			\item Run $ M $, from Part 3.1, on $ \braket{G'} $, if $ M $ accepts, \emph{reject}, if  $ M $ rejects, \emph{accept}.
+		\end{enumerate}
+		Clearly $ V $ runs in polynomial time, as each step if polynomial in time (step 3 because of the result in 3.1). Furthermore, if $ \braket{G,k} $ is in $ s-C Y C L E-H I T T I N G-S E T $ there exist a $ c $ such that $ V $ accepts $ (\braket{G,k},c) $, and if $ \braket{G,k} $ is not in $ s-C Y C L E-H I T T I N G-S E T $ such a $ c $ can clearly not exist. Thus we conclude that $ V$ is a polynomial time verifier for $ s-C Y C L E-H I T T I N G-S E T $ and therefore it belongs to NP.
+	\end{proof}
 	
+	\subsection*{Part 3.3}
+	We show that $ s-C Y C L E-H I T T I N G-S E T $ is NP-complete for every $ s\geq 2 $.
+	\begin{proof}
+		By the result of Part 3.2 we need only show that $ s-C Y C L E-H I T T I N G-S E T $ is NP-hard. This is done by polynomial time reducing from $ VERTEX\tm COVER $ which is NP-complete by Theorem 7.44, it then follows from Theorem 7.36 that $ s-C Y C L E-H I T T I N G-S E T $ is NP-hard (actually the theorem states that then $ s-C Y C L E-H I T T I N G-S E T $ is NP-complete, since it is NP).\\
+		Consider the following reduction: Given $ \braket{G,k} $ where $ G $ is an undirected graph, construct $ \braket{G',k} $ where $ G' $ is the directed graph with all edges in $ G $, $ (u,v) $ replaced by a (directed) cycle of size $ s $ $ (v_1,v_2),...,(v_m,u),\ (u,v_m+1),...,(v_{s-2},v) $. Clearly if $ \braket{G,k} $ is in $ VERTEX\tm COVER $, then there is a $ k $-node vertex cover of $ G $ and that exact vertex-cover is a subset of vertices $ V' $ of $ G' $ such that $ G'[V\setminus V'] $ does not contain a cycle of size $ s $, since such a cycle had to come from an edge of $ G $ but all edges touched at least one vertex in $ V' $. Thus, if $ \braket{G,k}\in VERTEX\tm COVER $ we have $ \braket{G',k} $ is in $ s-C Y C L E-H I T T I N G-S E T  $. On the other hand if $ \braket{G,k} $ is not in $ VERTEX\tm COVER $, then for any subset of vertices, $ V' $ of $ G $ of size $ k $, there is an edge $ (u,v) $ such that $ u,v\notin V' $. \\
+		On the contrary if $ \braket{G',k} $ is in $ s-C Y C L E-H I T T I N G-S E T $, then there is a subset of vertices $ V' $ of $ G' $ of size $ k $ such that $ G'[V\setminus V'] $ contains no cycle of size $ s $ as a subgraph. But then $ V' $ must contain a vertex in each of the constructed cycles between the vertices of $ G $ or equivalently for each vertex $ v' $ in $ V' $, $ v' $ sits in a cycle of length $ s $ between two vertices of $ G $ (by construction) and there is a vertex $ v $ in $ G $ such that $ v $ is the first vertex of $ G $ , which is reached by following that cycle. Let then $ \tilde{V} $ be the set consisting of vertices of $ G $, that are reached first from the vertices of $ V' $ by following their corresponding cycles. Clearly because $ v\in \tilde{V} $ sits in the same cycles as $ v'\in V' $, we see that $ G'[V\setminus\tilde{V}] $ has no cycle of size $ s $ as a subgraph. But then any edge in $ G $ must touch a vertex in $ \tilde{V} $. Since if an edge $ (u,v) $ did not touch any $ v\in\tilde{V} $, the corresponding cycle comming from that edge in the construction above would be a cycle of size $ s $ in $ G'[V\setminus \tilde{V}] $.\\
+		Therefore we conclude that $ \braket{G,k} $ is in $ VERTEX\tm COVER $ if and only if $ \braket{G',k} $ is in $ s-C Y C L E-H I T T I N G-S E T $. 
+		We also note that the construction $ \braket{G,k}\mapsto \braket{G',k} $ clearly is computable in polynomial time, as we need only include $ s-2 $ extra vertices, remove one edge, and add $ s $ extra edges, for each edge in $ G $. Therefore we conclude that \begin{equation*}
+			VERTEX\tm COVER\leq_P s-C Y C L E-H I T T I N G-S E T
+		\end{equation*}
+		and it follows from Theorem 7.36 that $ s-C Y C L E-H I T T I N G-S E T $ is NP-complete.
+	\end{proof}
 	
 	\section*{Question 4}
+		Recall that a string $x$ is a substring of a string $y$ if there are (possibly empty) strings $w, r$ such that $y=w x r$. For example, every string is a substring of itself, and the string $b a$ is a substring of $a b b a$, but the string $a a$ is not a substring of $a b b a$. Consider the following two sets:
+		\begin{equation*}
+			\begin{aligned}
+			\mathrm{NFA-NO-GO}=\{(a, A): a\text{ is a letter, and
+			$A$ is an NFA such that no string accepted by $A$}\\
+		\text{contains $a$ as a substring }\}
+			\end{aligned}
+		\end{equation*}
+		\begin{equation*}
+			\begin{aligned}
+			\mathrm{NFA-NO-GO-NFA} =\{(B, A): B\text{ and $A$ are NFAs over the same alphabet such that no}\\\text{
+			string accepted by $A$ contains any string accepted by $B$
+			as a substring }\}
+			\end{aligned}
+		\end{equation*}
+	\subsection*{Part 4.1}
+	We show that $ \mathrm{NFA-NO-GO} $ is NL-complete.
+	\begin{proof}
+		First we show that $ \mathrm{NFA-NO-GO} $ is in NL. We do this by showing that $ \mathrm{NFA-NO-GO} $ is in coNL, and it then follows by Theorem 8.27 (NL$ = $coNL) that $ \mathrm{NFA-NO-GO} $ is in NL. Notice first that if an NFA $ A $ accept a string with the letter $ a $ in it, then it accepts a string of lenght at most $ 2p $ with the letter $ a $ in it, where $ p $ is number of states of the NFA. This can be seen by the pigeon hole principle. Assume that $ A $ accepts $ w $, $ a $ is a substring of $ w $, and $ \abs{w}>2p $, then clearly $ A $ must loop at least twice on $ w $. Therefore the substring $ a $ is read while $ A $ is in one of loops, or before or after the loops. In any case, we may remove all parts of the string $ w $ that does not contain $ a $ and that makes $ A $ loop. After this removal we are left with a string $ w' $ that contains $ a $ and which makes $ A $ loop at most once, thus it has lenght $ \abs{w'}\leq 2p $.  Now consider the following logarithmic space NTM $ M= $"On input $ (a,A) $\begin{enumerate}
+			\item Check that $ a $ is a letter, if not \emph{accept}.
+			\item Check that $ A $ is an NFA, if not \emph{accept}.
+			\item Set $ p:= $the number of states of $ A $.
+			\item Set $i:=1  $ and $ j=0 $.
+			\item While $ i\leq 2p $
+			\item \begin{addmargin}[2em]{0em} Non-determinitically store a letter, $ b $, on the worktape (overwrite if one is already stored).
+			\end{addmargin} 
+			\item \qquad If $ b=a $, set $ j:=1 $.
+			\item \qquad Simulate $ A $ on $ b $ and store its current state, if it accepts and $ j=1 $, $ \emph{accept} $. 
+			\item \qquad If $ i=2p $ and $ A $ does not accept, \emph{reject}.
+			\item \qquad $ i:=i+1 $
+		\end{enumerate} 
+		Evidently, by the above discussion, $ M $ accepts the language \begin{equation*}
+			\begin{aligned}
+			\overline{\mathrm{NFA-NO-GO}}=\{(a,A)\pipe a\text{ is not a letter, or }A \text{ is not an NFA, or }A\text{ accept a string with }a\\
+			\text{ as a substring.}   \}
+			\end{aligned}
+		\end{equation*}
+		Furthermore, $ M $ clearly runs in at most logarithmic space since it stores only counters of size up to $ 2p $ where $ p $ is number of states of $ A $, and simulates an NFA, which requires no space. Thus we conclude that $ \overline{\mathrm{NFA-NO-GO}}\in \text{NL} $, or equivalently that $ \mathrm{NFA-NO-GO}\in\text{coNL}=\text{NL} $.
+	\end{proof}
+	\subsection*{Part 4.2}
 	
 \end{document}
