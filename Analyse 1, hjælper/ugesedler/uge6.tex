@@ -1,0 +1,153 @@
+\begin{itemize}
+    \item Tirsdag skal vi opbygge den grundlæggende teori for trigonometriske rækker, som vi introducerer for at undersøge punkterne på randen af konvergensområdet for en (kompleks) potensrække. Vi skal således vise fundamentale resultater vedrørende særligt uniform konvergens og se en række eksempler (MC 5.2).
+    
+    I lineær algebra så I, at hvis $\inProd{\cdot,\cdot}$ er et indre produkt på vektorrummet $\mR^d$ ($\mC^d$), så kan enhver vektor $v \in \mR^d$ ($v \in \mC^d$) skrives som en linearkombination af basisvektorer $\{b_i\}_{i=1, \ldots, d}$ der er ortonormale med hensyn til det indre produkt, og hvor koefficienten foran $b_i$ er givet ved vektorens indre produkt med $b_i$, nemlig
+    $$ v=\sum_{i=1}^d \inProd{v, b_i} b_i. $$
+    I denne uge skal vi betragte funktioner som vektorer i et vektorrum, eksempelvis kan vi tænke på en potensrække $\sum_{n=0}^\infty a_nx^n$ med sumfunktion $f\pare{x}$ som netop sumfunktionen udtrykt som en linearkombination af funktionerne $x\mapsto 1$, $x\mapsto x$, $x\mapsto x^2$, $\ldots$. Vi skal imidlertid særligt fokusere på $2\pi$-periodiske funktioner som vektorer i et vektorrum og funktionerne $e_k\colon\mR\to\mC$, $k \in \mZ$, givet ved $e_k(x)=e^{ikx}$ som en (uendelig) basis. Vi udstyrer vektorrummet med et indre produkt, der gør $\{e_k\}_{k \in \mZ}$ til et ortonormalt system. (MC 5.3)
+    
+    Til øvelserne arbejder vi med Opgave 1-3.
+    
+    \item Torsdag skal vi i forlængelse af tirsdagens opbygning undersøge, hvordan og hvorledes en $2\pi$-periodisk funktion $f$ kan udtrykkes som
+    $$f \sim \sum_{k=-\infty} ^\infty \langle f , e_k \rangle e_k. $$
+    Rækken på højre side kaldes Fourierrækken for $f$. Udover at lægge grundlaget for vores studie af Fourierrækker, så vil vi arbejde med Pythagoras' formel, Parsevals identitet og Bessels ulighed, som alle tre kredser om spørgsmålet
+    $$\|f\|_2^2 \overset{?}{\sim} \sum_{k=-\infty} ^\infty
+        \abs{\inProd{f,e_k}}^2, $$
+    som måske virker naturligt, hvis vi tænker på det velkendte, endeligtdimensionale tilfælde fra lineær algebra, nemlig $\|v\|_2^2= \sum_{i=1}^d |\langle v, b_i \rangle|^2$ (MC 5.4-5.5).
+    
+    Til øvelserne arbejder vi med Opgave 4-6.
+    
+    \item Der er ingen svær opgave i denne uge, dog er særligt udfordrende delopgaver markeret med $\ast$.
+\end{itemize}
+
+\begin{opg} \hfill
+\begin{enumerate}
+	\item Lad $g$ være sumfunktionen for $\sum_{n=1}^\infty \frac{x^n}{n^3}$ i konvergensområdet. Argumentér for, at $0$ er et indre punkt i konvergensområdet og at $g$ er uendeligt ofte differentiabel på det indre af konvergensområdet. 
+	
+	\item Bestem Taylorrækkerne i $x_0=0$ for funktionerne $\cos$ og $\sin$. Brug disse til at finde Taylorrækkerne i $x_0=0$ for funktionerne $f, g$ og $h$ givet ved
+	$$ f(x) = \cos(3x^2), \quad 
+	    g(x) =\begin{cases}
+            \frac{\sin x}{x}, \; &x \neq 0  \\
+            1, \; &x= 0 \end{cases}, \quad
+        h(x) = \cos(x)+ i \sin(x). $$
+
+	\item Vi undersøger i denne opgave Taylorrækker med udviklingspunkt $x_0\neq 0$.
+	\begin{enumerate}[label=\roman*)]
+		\item Bestem Taylorrækken for
+		 $f: \mR \to \mR$, $ f(x)=x^3 - 2x^2 + 7x -4$ i  $x_0=-1$.
+		\item Find  Taylorrækken for
+		$g: (0,\infty) \to \mR$ givet ved $g(x) = \frac{1}{x}$ i $x_0=1$.
+		\item Lad $a>0$.  Find  Taylorrækken for funktionen $g$ ovenfor i udviklingspunktet $x_0=a$, og bestem derefter rækkens konvergensradius.
+	\end{enumerate}
+
+	\item[d*)] Lad $\sum_{n=0}^\infty a_n x^n$ og $\sum_{n=0}^\infty b_n x^n$ være potensrækker med konvergensradier $r_a>0$ hhv. $r_b >0$. Sæt $r=\min\{r_a, r_b\}$; da er begge rækker konvergente på det åbne interval $(-r,r)$.
+	
+	Vis, at hvis der eksisterer et (ikke-tomt) åbent delinterval $(-\alpha, \alpha) \subseteq (-r,r)$, hvorpå rækkernes sumfunktioner er lig hinanden, så må $a_n=b_n$ for alle $n \in \mN_0$.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $\alpha\in\mR$ og definér $f\colon [-1,\infty)\to\mR$ givet ved
+$$ f\pare{x} = \pare{1+x}^\alpha $$
+\begin{enumerate}
+    \item Bestem Taylorrækken i $0$ for $f$.\footnote{Du kan med fordel bruge notationen $\binom{\alpha}{n} = \frac{\alpha\pare{\alpha-1}\cdot\ldots\cdots\pare{\alpha-n+1}}{n!}$.}
+    
+    \item Vis, at Taylorrækken for $f$ har konvergensradius $r = 1$.
+    
+    \item[c*)] Antag $\alpha\leq -1$. Vis at Taylorrækken for $f$ i $0$ \textit{ikke} konvergerer på randen af konvergensområdet.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Betragt rækken 
+$$ \sum_{n=0}^\infty 2\pare{n+1}x^{2n}, x\in\mR $$
+\begin{enumerate}
+    \item Bestem konvergensområdet for ovenstående række.
+    
+    \item Lad $f$ notere sumfunktionen i konvergensområdet, og definér
+    $$ g\pare{x} = \int_0^x tf\pare{t}\, dt. $$
+    Bestem Taylorræken i $0$ for $g$.
+    
+    \item Angiv en forskrift for $f$ og $g$.
+\end{enumerate}
+\end{opg}
+
+
+\begin{opg}
+Betragt den trigonometriske række
+$$ \sum_{n=1}^\infty \frac{\sin\pare{nx}}{n}. $$
+Herunder er tegnet graferne for afsnitssummerne {\color{red!80!black}$s_1$}, {\color{blue!80!black}$s_5$} og {\color{green!80!black}$s_{10}$} på intervallet $[-4,4]$.
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+    \def\xMax{4}
+    \def\xMin{-4}
+    \def\yMax{1}
+    \def\yMin{-1}
+    \draw[thick, ->] (\xMin-.5,0) -- (\xMax+.5,0) node[below right] {$x$};
+    \draw[thick, ->] (0,\yMin-.5) -- (0,\yMax+.5) node[above left] {};
+
+    \foreach \z in {\xMin,...,\xMax}{
+        \draw[opacity=0.1,dashed] (\z,\yMin-.5) -- (\z,\yMax+.5);
+        \draw[thick] (\z,-.1) -- (\z,.1);
+        \ifthenelse{\z=0}{}{\node[below] at (\z,0) {\z}};}
+        \foreach \w in {\yMin,...,\yMax}{
+            \draw[opacity=0.1,dashed] (\xMin-.5,\w) -- (\xMax+.5,\w);
+            \draw[thick] (-.1,\w) -- (.1,\w);
+            \ifthenelse{\w=0}{}{
+                \node[left] at (0,\w) {\w}};
+            }
+    \draw[domain=\xMin:\xMax,smooth,variable=\x,red,thick] plot ({\x},{sin(360*\x/3.28)});
+    \draw[domain=\xMin:\xMax,smooth,variable=\x,blue,thick] plot ({\x},{sin(360*\x/3.28)+sin(2*360*\x/3.28)/2+sin(3*360*\x/3.28)/3+sin(4*360*\x/3.28)/4+sin(5*360*\x/3.28)/5)});
+    \draw[domain=\xMin:\xMax,smooth,variable=\x,green,thick] plot ({\x},{sin(360*\x/3.28)+sin(2*360*\x/3.28)/2+sin(3*360*\x/3.28)/3+sin(4*360*\x/3.28)/4+sin(5*360*\x/3.28)/5+sin(6*360*\x/3.28)/6+sin(7*360*\x/3.28)/7+sin(8*360*\x/3.28)/8+sin(9*360*\x/3.28)/9+sin(10*360*\x/3.28)/10)});
+\end{tikzpicture}
+\end{center}
+	
+\begin{enumerate}
+	\item Vis, at rækken konvergerer i punkterne $- \pi, -\pi/2, \pi/2$ og $\pi$. Spørg eventuelt din underviser, om man kan vise konvergens i andre punkter.
+
+	\item Antag uden bevis, at rækken konvergerer punktvist på hele $\mR$. Vis, at rækkens sumfunktion $f$ er ulige, altså opfylder $f(-x)=-f(x)$ for alle $x \in \mR$. 
+	
+	Diskutér med din underviser, hvad en mulig forskrift for $f$ er. Overvej ligeledes, om konvergensen er uniform.
+	
+	\item Omskriv rækken til formen $\sum_{k=-\infty}^{\infty} c_k e^{ikx}$, hvor $c_k\in\mC$ for alle $k\in\mZ$.
+	
+	\item Gentag delopgaverne a) og b) for rækken
+	$$ \sum_{n=1}^\infty \frac{-\cos(n x)}{n^2}.$$
+	
+    Vis, at rækken konvergerer uniformt på hele $\mR$ mod en kontinuert funktion $F$, og vis at $F$ er lige, det vil sige opfylder $F(-x)=F(x)$ for alle $x \in \mR$. Angiv et gæt på en forskrift for $F$.
+
+    Diskutér med din underviser, hvad sammenhængende mellem de to trigonometriske rækker er.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}\hfill
+\begin{enumerate}
+	\item Omskriv følgende funktioner til trigonometriske polynomier
+	i ren cosinus- eller sinus-form (Se MC 5.7).
+	\begin{tasks}{3}
+		\item $D_3(x)$
+		\item $|D_3(x)|^2$
+		\item $\cos(x)^3$
+	\end{tasks}
+	Her betegner $D_N$ Dirichlet-kernen, givet ved $D_N(x)=\sum_{k=-N}^Ne^{ikx}$.
+	
+	\item Lad $c_k = 2^{-|k|}$ for $k \in \mZ$. Vis, at den trigonometriske række $ \sum_{k=-\infty}^\infty c_k e^{ik x}$ er uniformt konvergent på $\mR$, og vis at sumfunktionen $f$ er kontinuert og kun antager reelle værdier. Overvej, hvorfor 
+	$$ f(x) = -1+ \sum_{k=0}^\infty 2^{-k} e^{ikx} +  \sum_{k=0}^\infty 2^{-k} e^{-ikx}, \quad x \in \mR, $$
+	og find et eksplicit udtryk for sumfunktionen $f$.
+	
+    \item Beregn eksplicit summen af talrækken $\sum_{k=-\infty}^\infty |c_k|^2$.
+    
+	\item[d*)] Gentag delopgave b) og c) med $c_k = r^{\lvert k \rvert}$, $k \in \mZ$, hvor $r \in (0,1)$ er vilkårlig. Bestem sumfunktionen og brug Parsevals identitet til at beregne $\norm{f}_2$. 
+\end{enumerate}
+\end{opg}
+
+\begin{opg}\hfill
+\begin{enumerate}
+    \item Lad $N\in\mN_0$ og vis at
+    $$ \abs{D_N\pare{x}}^2 = \sum_{n=0}^{2N} D_n\pare{x} $$
+    
+    \item Bestem
+    $$ \int_{-\pi}^\pi D_N\pare{x} \, dx $$
+    og brug dette til at vise, at
+    $$ \frac{1}{2\pi}\int_{-\pi}^\pi \abs{D_N\pare{x}}^2 \, dx = 2N+1 $$
+\end{enumerate}
+\end{opg}

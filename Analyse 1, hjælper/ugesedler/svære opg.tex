@@ -1,0 +1,76 @@
+\section{Uge 2}
+\begin{opg}[Den svære] 
+Betragt nedenstående følge
+$$ \seq{a}, \QUAD a_n = \sin\pare{n} $$
+For hvilke $x\in\mR$ findes en delfølge $\cbrac{a_{n_k}}_{k\in\mN}$, som konvergerer mod $x$?
+\end{opg}
+
+	\begin{opg}
+		Definér følgen $(a_n)_{n\in\N}$ rekursivt ved $a_1 = 1$ og 
+		$$
+		a_{n+1} = \frac{1}{1 + a_n}.
+		$$
+		Vis, at
+			$$
+			\abs{a_{n+1} - a_n} < \frac{1}{2}\abs{a_n - a_{n-1}},
+			$$
+			for $n \geq 2$, og brug det til at vise, at $(a_n)_{n\in\N}$ er en Cauchyfølge. Følgen er således konvergent. Find grænseværdien og giv mening til udsagnet
+			$$
+			\frac{1 + \sqrt{5}}{2} = 1 + \frac{1}{1 + \frac{1}{1 + \dots}}.
+			$$
+			(Denne identitet kaldes \emph{kædebrøksfremstillingen for det gyldne snit}.)
+	\end{opg}
+	Løsning: For $n \geq 2$ har vi
+	\begin{align*}
+	\abs{a_{n+1} - a_n} &= \abs{\frac{1}{1 + a_n} - a_n} 
+	= \abs{\frac{1 - a_n(1 + a_n)}{1 + a_n}} 
+	= \frac{1}{1 + a_n}\abs{1 - \frac{1}{1 + a_{n-1}}(1 + a_n)} 
+	\\&= \frac{1}{1 + a_n}\abs{\frac{1 + a_{n-1} - (1 + a_n)}{1 + a_{n-1}}} = \frac{1}{(1 + a_n)(1 + a_{n-1})}\abs{a_n - a_{n-1}}.
+	\end{align*}
+	Da
+	$$
+	(1 + a_n)(1 + a_{n-1}) = (1 + \frac{1}{1 + a_{n-1}})(1 + a_{n-1}) = 1 + a_{n-1} + 1 > 2,
+	$$
+	har vi altså
+	$$
+	\abs{a_{n+1} - a_n} < \frac{1}{2}\abs{a_n - a_{n-1}}.
+	$$
+	Ved at bruge dette gentagne gang får vi for $n \geq 2$
+	$$
+	\abs{a_{n+1} - a_n} < \frac{1}{2^{n-1}}\abs{a_2 - a_1} = \frac{1}{2^n}.
+	$$
+	Nu fås for $m > n \geq 2$
+	$$
+	\abs{a_m - a_n} \leq \sum_{k = n}^{m-1} \abs{a_{k+1} - a_k} < \sum_{k = n}^{m-1} \frac{1}{2^k},
+	$$
+	og da rækken $\sum_{k = 1}^{\infty} 2^{-k}$ er konvergent, fås heraf, at $(a_n)_{n\in\N}$ er en Cauchyfølge.
+	
+	\section{Uge 3}
+	\begin{opg}
+		Vis, at 
+		$$
+		\sum_{n = 1}^{N} \frac{1}{n} - \log N = \sum_{n = 1}^{N - 1} \int_{n}^{n+1} \frac{1}{n} - \frac{1}{t}\,dt + \frac{1}{N},
+		$$
+		og brug det til at vise, at udtrykket har en grænseværdi for $N \to \infty$. (Grænseværdien, der betegnes $\gamma$, kaldes \emph{Euler-Mascheroni-konstanten}, og $\gamma \approx 0.57721$.)
+	\end{opg}
+	Løsning: Ved at bruge, at $\log N = \int_{1}^{N} 1/t\,dt$ og $1/n = \int_{n}^{n + 1} 1/n\,dt$, fås
+	$$
+	\sum_{n = 1}^{N} \frac{1}{n} - \log N = \sum_{n = 1}^{N-1}\int_{n}^{n + 1} \frac{1}{n}\,dt + \frac{1}{N} - \int_1^N \frac{1}{t}\,dt = \sum_{n = 1}^{N-1}\int_{n}^{n + 1} \frac{1}{n} - \frac{1}{t}\,dt + \frac{1}{N}.
+	$$
+	Ved at bruge, at $-1/x$ er en stamfunktion til $1/x^2$ fås
+	$$
+	\abs{\int_{n}^{n + 1} \frac{1}{n} - \frac{1}{t}\,dt} = \abs{\int_{n}^{n + 1}\int_{n}^{t}\frac{1}{x^2}\,dxdt} \leq \int_{n}^{n+1}\int_{n}^{n+1} \frac{1}{x^2} \,dxdt \leq \frac{1}{n^2},
+	$$
+	så
+	$$
+	\sum_{n = 1}^{\infty} \int_{n}^{n+1} \frac{1}{n} - \frac{1}{t}\,dt
+	$$
+	er absolut konvergent. Med andre ord har udtrykket
+	$$
+	\sum_{n = 1}^{N - 1} \int_{n}^{n+1} \frac{1}{n} - \frac{1}{t}\,dt
+	$$
+	en grænseværdi for $N \to \infty$. Da $1/N \to 0$ for $N \to \infty$, følger det, at
+	$$
+	\sum_{n = 1}^{N} \frac{1}{n} - \log N = \sum_{n = 1}^{N - 1} \int_{n}^{n+1} \frac{1}{n} - \frac{1}{t}\,dt + \frac{1}{N}
+	$$
+	har en grænseværdi for $N \to \infty$.

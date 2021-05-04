@@ -1,0 +1,246 @@
+\begin{opg}
+Lad $a\in\mR\setminus\{0\}$ og definér $f\colon\mR\setminus\{a\}\to\mR$ ved
+$$ f\pare{x}
+    = \frac{1}{a-x}, \QUAD x\in \mR\setminus\{a\} $$
+\begin{enumerate}
+    \item Bestem Taylorrækken for $f$ i $0$.
+    
+    
+    \begin{proof}[Løsning]
+    Bemærk først, at $f$ er uendeligt ofte differentiabel med 
+    $$ f^{\pare{n}}\pare{x} = \frac{n!}{\pare{a-x}^{n+1}},
+        \Quad n\in\mN_0, $$
+    hvilket vi viser ved induktion.
+    
+    \begin{indent}
+    \underline{Grundtilfælde}: Vi har $f^{\pare{0}}\pare{x}=\frac{1}{a-x}$ som ønsket.
+    
+    \underline{Induktionsskridt}. Antag $f^{\pare{n}}\pare{x} = \frac{n!}{\pare{a-x}^{n+1}}$. Da haves
+    $$ f^{\pare{n+1}}\pare{x} = -\pare{n+1}\frac{n!}{\pare{a-x}^{n+2}}\pare{-1} = \frac{\pare{n+1}!}{\pare{a-x}^{n+2}}, $$
+    hvilket er det ønskede.
+    \end{indent}
+    Vi har således, at Taylorrækken i $0$ for $f$ er givet ved
+    $$ \sum_{n=0}^\infty \frac{f^{\pare{n}}\pare{a}}{n!}x^n
+        = \sum_{n=0}^\infty a^{-\pare{n+1}}x^n $$
+    \end{proof}
+    
+    
+    \item Bestem konvergensradius for Taylorrækken for $f$ i $0$. Afgør om rækken er konvergent i endepunkterne.
+    
+    
+    \begin{proof}[Løsning]
+    Det følger af HS 4.2(5), at konvergensradius $r$ for Taylorrækken opfylder
+    $$ r^{-1} = \lim_{n\to\infty} 
+        \abs{\frac{a^{-\pare{n+2}}}{a^{-\pare{n+1}}}}
+        = \frac{1}{\abs{a}}, $$
+    hvorfor Taylorrækken har konvergensradius af $r = \abs{a}$. 
+    
+    For $x = \pm a$ opfylder Taylorrækkens led
+    $$ \abs{a^{-\pare{n+1}}x^n} = \frac{1}{\abs{a}}, $$
+    hvorfor det følger at rækken i begge tilfælde er divergent jævnfør divergenstesten.
+    \end{proof}
+    
+\end{enumerate}
+\end{opg}
+
+\begin{opg}\hfill
+\begin{enumerate}
+    \item Vis, at
+    $ \lim_{n\to\infty} n^3\pare{\frac{1}{n}-\sin\pare{\frac{1}{n}}}
+        = \frac{1}{6} $
+    og brug dette til at vise, at rækken
+    $$ \sum_{n=1}^\infty \pare{\frac{1}{n} - \sin\pare{\frac{1}{n}}} $$
+    er konvergent.
+    
+    
+    \begin{proof}[Løsning]
+    Lad $f\colon\mR\setminus\{0\}\to\mR$ være givet ved
+    $$ f\pare{x} = \frac{1}{x^3}\pare{x-\sin\pare{x}}, $$
+    og bemærk indledningsvis at Taylorrækken for sinus konvergerer punktvis mod sinus som følge af MC 4.14, hvorfor vi har
+    $$ f\pare{x} \sim 
+    \frac{1}{x^3}\pare{x - \sum_{k=0}^\infty \frac{\pare{-1}^k}{\pare{2k+1}!} x^{2k+1}} = \sum_{k=0}^\infty \frac{\pare{-1}^k}{\pare{2k+3}!}x^{2k}. $$
+    Det følger desuden af MC 4.2, at rækken da konvergerer uniformt på ethvert interval på formen $\brac{-a,a}$ for $a>0$. Endelig har vi så af MC 3.13, at sumfunktionen er kontinuert, hvorfor
+    $$ \lim_{x\to 0} f\pare{x} = \sum_{k=0}^\infty
+            \frac{\pare{-1}^k}{\pare{2k+3}!}0^{2k}
+        = \frac{\pare{-1}^0}{3!} = \frac{1}{6} $$
+    med konventionen $0^0 = 1$.
+    Det følger således, at 
+    $$ \lim_{n\to\infty} n^3\pare{\frac{1}{n} - \sin\pare{\frac{1}{n}}}     = \lim_{n\to\infty} f\pare{\frac{1}{n}}
+        = \frac{1}{6} $$
+    som ønsket. Vælg nu $N\in\mN$, så for alle $n\in\mN$, der opfylder $n\geq N$, haves
+    $$ \abs{\frac{1}{n}-\sin\pare{\frac{1}{n}}} \leq \frac{1}{n^3}. $$
+    Da er $\sum_{n=N}^\infty \pare{\frac{1}{n}-\sin\pare{\frac{1}{n}}}$ absolut konvergent som følge af sammenligningstesten, så specielt konvergent, hvorfor den angivne række er konvergerer som følge af MC 2.12.
+    \end{proof}
+    
+    
+    \item Betragt potensrækken
+    $$ \sum_{n=1}^\infty \pare{\frac{1}{n}-\sin\pare{\frac{1}{n}}}x^n, 
+        \QUAD x\in\mR. $$
+    Bestem konvergensradius $r$ for potensrækken, og vis at rækken er uniformt konvergent i intervallet $[-r,r]$.
+
+    
+    \begin{proof}[Løsning]
+    Lad $f\colon\mR\setminus\{0\}\to\mR$ være givet ved $f\pare{x} = \frac{1}{x^3}\pare{x-\sin\pare{x}}$, og bemærk at det følger af HS 4.2(5), at konvergensradius $r$ for potensrækken opfylder
+    $$ r^{-1}
+        = \lim_{n\to\infty}\abs{\frac{\frac{1}{n+1}-\sin\pare{\frac{1}{n+1}}}
+            {\frac{1}{n}-\sin\pare{\frac{1}{n}}}}
+        = \lim_{n\to\infty}\abs{\frac{\pare{n+1}^3f\pare{\frac{1}{n+1}}}{n^3f\pare{\frac{1}{n}}}} = \lim_{n\to\infty} \pare{\pare{\frac{n+1}{n}}^3\frac{f\pare{\frac{1}{n+1}}}
+            {f\pare{\frac{1}{n}}}} = 1 $$
+    hvor vi bruger $f\pare{\frac{1}{n}}\to \frac{1}{6}$ for $n\to\infty$ fra Opgave 2a). Dette viser, at konvergensradius for rækken er $1$. 
+    
+    For alle $n\in\mN$ og $x\in\brac{-1,1}$ haves
+    $$ \abs{\pare{\frac{1}{n}-\sin\pare{\frac{1}{n}}}x^n}
+        \leq \abs{\frac{1}{n}-\sin\pare{\frac{1}{n}}}
+        \overset{\pare{\dagger}}{=} \frac{1}{n}-\sin\pare{\frac{1}{n}}, $$
+    hvor $\pare{\dagger}$ følger, da $\sin\pare{x} \leq x$ for alle $x\in\mR_+$. Da rækken $\sum_{n=1}^\infty \pare{\frac{1}{n}-\sin\pare{\frac{1}{n}}}$ er konvergent jævnfør Opgave 2a), så følger det af Weierstrass' Majoranttest, at $\sum_{n=0}^\infty \pare{\frac{1}{n}-\sin\pare{\frac{1}{n}}}x^n$ er uniformt konvergent på $[-1,1]$.
+    \end{proof}
+    
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $f\colon\mR\to\mR$ være en uendeligt ofte differentiabel funktion og betragt Taylorrækken i $0$, altså
+$$ \sum_{n=0}^\infty \frac{f^{\pare{n}}\pare{0}}{n!}x^n, \Quad x\in\mR $$
+Lad $\seq a$ være givet ved $a_n = \frac{f^{\pare{n}}\pare{0}}{n!}$.
+\begin{enumerate}
+    \item Vis, at hvis $f$ er en lige funktion, så er $a_{2n-1}=0$ for alle $n\in\mN$.
+    
+    \begin{proof}[Løsning]
+    Lad $g\colon\mR\to\mR$ være en vilkårlig differentiabel funktion, og lad $\text{minus}\colon\mR\to\mR$ være givet ved $\text{minus}\pare{x} = -x$. Vi viser først, at hvis $g$ er lige, så er $g'$ ulige og vice versa. 
+    \begin{indent}
+    \underline{Tilfælde 1}: Hvis $g$ er lige, så er $g\circ\text{minus} = g$, hvorfor
+    $$ g'\pare{x} = \pare{g\circ\text{minus}}'\pare{x}
+        = \pare{g'\circ\text{minus}}\pare{x}\text{minus}'\pare{x}
+        = -\pare{g'\circ\text{minus}}\pare{x}
+        = -g'\pare{-x}, $$
+    hvilket viser $g'$ er ulige.
+
+    \underline{Tilfælde 2}: Hvis $g$ er ulige, så er $g\circ\text{minus} = -g$, hvorfor
+    $$ g'\pare{x} = \pare{-g\circ\text{minus}}'\pare{x}
+        = -\pare{g'\circ\text{minus}}\pare{x}\text{minus}'\pare{x}
+        = \pare{g'\circ\text{minus}}\pare{x}
+        = g'\pare{-x}, $$
+    hvilket viser $g'$ er lige.
+    \end{indent}
+    Bemærk nu, at enhver ulige funktion $u$ opfylder
+    $$ u\pare{0} = u\pare{-0} = -u\pare{0}, $$
+    hvorfor $u\pare{0} = 0$. Da $f$ er lige, følger det således af ovenstående, at $f^{\pare{1}}$, $f^{\pare{3}}$, $f^{\pare{5}}$,$\ldots$ er ulige, hvorfor 
+    $$ f^{\pare{1}}\pare{0} = 0, \quad f^{\pare{3}}\pare{0} = 0, \quad f^{\pare{5}}\pare{0} = 0, \quad \ldots, $$
+    hvilket endelig viser $a_{2n-1} = 0$ for alle $n\in\mN$. 
+    \end{proof}
+    
+    
+    \item Antag Taylorrækken konvergerer mod $f$ i et åbent interval $\pare{-r,r}$ omkring $0$. Vis, at hvis $a_{2n-1} = 0$ for alle $n\in\mN$, så er $f\pare{-x} = f\pare{x}$ for alle $x\in\pare{-r,r}$.
+    
+    
+    \begin{proof}[Løsning]
+    Da $a_{2n-1} = 0$ for alle $n\in\mN$ kan vi skrive Taylorrækken for $f$ i $0$ som $\sum_{n=0}^\infty\frac{f^{\pare{2n}}\pare{0}}{\pare{2n}!}x^{2n}$. Det er således klart, at
+    $$ f\pare{-x}
+        \sim \sum_{n=0}^\infty
+            \frac{f^{\pare{2n}}\pare{0}}{\pare{2n}!}\pare{-x}^{2n}
+        = \sum_{n=0}^\infty
+            \frac{f^{\pare{2n}}\pare{0}}{\pare{2n}!}x^{2n}
+        \sim f\pare{x}, $$
+    hvorfor vi konkluderer $f$ er lige på intervallet $\pare{-r,r}$.
+    \end{proof}
+    
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Betragt potensrækken givet ved
+$$ \sum_{n=0}^\infty \frac{n}{n+1}x^n, \Quad x\in\mR $$
+\begin{enumerate}
+    \item Bestem rækkens konvergensradius, og afgør om rækken er konvergent i konvergensintervallets endepunkter.
+    
+    
+    \begin{proof}[Løsning]
+    Det følger af HS 4.2(5), at konvergensradius $r$ for potensrækken opfylder
+    $$ r^{-1}
+        = \lim_{n\to\infty} \abs{\frac{\quad\frac{n+1}{n+2}\quad}{\frac{n}{n+1}}}
+        = \lim_{n\to\infty} \frac{\pare{n+1}^2}{n\pare{n+2}} = 1, $$
+    hvorfor rækken har konvergensradius $r = 1$.
+    
+    For $x=\pm 1$ opfylder rækkens led
+    $$ \abs{\frac{n}{n+1}x^n} = \frac{n}{n+1} \to 1, \quad n\to\infty, $$
+    hvorfor det følger af divergenstesten, at rækken ikke er konvergent i $x=\pm1$. 
+    \end{proof}
+    
+    
+    \item Bestem rækkens sumfunktion.
+    
+    
+    \begin{proof}[Løsning]
+    Lad $f,g,h\colon\pare{-1,1}\to\mR$ sumfunktioner for rækkerne
+    $$ f\pare{x} \sim \sum_{n=0}^\infty \frac{n}{n+1}x^n,\Quad
+        g\pare{x} \sim \sum_{n=0}^\infty nx^n, \Quad
+        h\pare{x} = \frac{1}{1-x} \sim \sum_{n=0}^\infty x^n, $$
+    som alle har konvergensradius $1$, hvilket let kan vises med HS 4.2(5). Vi bemærker først, at MC 4.9 giver
+    $$ xh'\pare{x} \sim x\sum_{n=1}^\infty n x^{n-1} \sim g\pare{x}, $$
+    hvorfor det følger, at
+    $$ g\pare{x} = \frac{x}{\pare{1-x}^2}, \QUAD x\in\pare{-1,1} $$
+    Bemærk nu, at MC 4.9 giver
+    $$ \int_0^x g\pare{t} \, dt \sim \sum_{n=0}^\infty \frac{n}{n+1}x^{n+1}
+        \sim xf\pare{x}, $$
+    hvorfor det følger, at for $x\neq 0$ haves
+    \begin{align*}
+        f\pare{x} = \frac{1}{x}\int_0^x \frac{t}{\pare{1-t}^2} \, dt
+                = \frac{1}{x}\int_0^x \frac{t}{\pare{1-t}^2} \, dt
+                = \frac{1}{x}\int_1^{1-x} \frac{s-1}{s^2} \, ds
+            &= \frac{1}{x}\brac{\log\pare{s} + \frac{1}{s}}_{s = 1}^{s = 1-x} \\
+            &= \frac{1}{x}\pare{\frac{1}{1-x} + \log\pare{1-x} - 1} \\
+            &= \frac{1}{1-x} + \frac{\log\pare{1-x}}{x},
+    \end{align*}
+    og desuden har vi $f\pare{0} = 0$ fra definitionen af $f$.
+    \end{proof}
+    
+\end{enumerate}
+\end{opg}
+
+\iffalse
+\begin{opg}\hfill
+\begin{enumerate}
+    \item Betragt rækken
+    $$ \sum_{n=0}^\infty \frac{\pare{-1}^n}{n!}
+        \pare{x\log \pare{x}}^n $$
+    Bestem rækkens sumfunktion.
+    
+    \begin{proof}[Løsning]
+    Bemærk at for $x\in\mR_+$ haves
+    $$ \frac{1}{x^x} = e^{-x\log\pare{x}}
+        \sim \sum_{n=0}^\infty \frac{\pare{-1}^n}{n!}\pare{x\log\pare{x}}^n, $$
+    hvilket viser at rækken er konvergent for alle $x\in\mR_+$ med sumfunktion $f\pare{x} = x^{-x}$. 
+    \end{proof}
+    
+    \item For alle $n\in\mN$ gælder det, at
+    $$ \int_0^1 \pare{-x\log\pare{x}}^n \, dx
+        = \frac{n!}{\pare{n+1}^{n+1}}, $$
+    hvilket kan benyttes uden bevis. Vis, at rækken
+    $$ \sum_{n=1}^\infty \frac{1}{n^n} $$
+    er konvergent med sum $\displaystyle\int_0^1 \frac{1}{x^x} \, dx$.
+    
+    \begin{proof}[Løsning]
+    Lad $S_N\colon[0,\infty)\to\mR$ være givet ved
+    $$ S_N\pare{x}=\sum_{n=0}^N\frac{\pare{-1}^n}{n!}\pare{x\log\pare{x}}^n, 
+        \QUAD S_N\pare{0} = 1, $$
+    og definér tilsvarende $f\colon[0,\infty)\to\mR$ ved $f\pare{x} = x^x$ for $x\in\mR_+$ og $f\pare{0} = 1$. Da haves for alle $x\in[0,1]$, at $0\leq -x\log\pare{x} \leq \frac{1}{e}$, hvorfor
+    $$ \sup_{x\in[0,1]}\abs{f\pare{x} - S_N\pare{x}}
+        = \sup_{x\in(0,1]}\abs{e^{-x\log\pare{x}} - \sum_{n=0}^N \frac{\pare{-1}^n}{n!}\pare{x\log\pare{x}}^n}
+        \leq \sup_{y\in\brac{0,e^{-1}}}\abs{e^y - \sum_{n=0}^N \frac{1}{n!}y^n}. $$
+    Som følge af MC 4.14 kan vi for ethvert $\varepsilon>0$ vælge $N\in\mN$ tilstrækkeligt stort, så højresiden er mindre end $\varepsilon$. Dette viser, at $S_N$ konvergerer uniformt med $f$ på intervallet $[0,1]$.
+    
+    Bemærk nu
+    $$ \sum_{n=1}^N \frac{1}{n^n}
+        = \sum_{n=0}^N \frac{1}{n!}\frac{n!}{\pare{n+1}^{n+1}} 
+        = \sum_{n=0}^N \frac{1}{n!}
+            \int_0^1\pare{-x\log\pare{x}}^n\, dx
+        = \int_0^1 S_N\pare{x} \, dx $$
+    Da $\seqI{S}{N}$ konvergerer uniformt mod $f$ på intervallet $[0,1]$, så følger det af MC 3.16, at
+    $$ \sum_{n=1}^\infty \frac{1}{n^n}
+        \sim \lim_{N\to\infty} \int_0^1 S_N\pare{x} \, dx
+        \overset{3.16}{=} \int_0^1 \lim_{N\to\infty} S_N\pare{x} \, dx
+        = \int_0^1 \frac{1}{x^x} \, dx. $$
+    \end{proof}
+\end{enumerate}
+\end{opg}
+\fi

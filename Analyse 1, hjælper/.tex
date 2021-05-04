@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage{ANpreamble}
+
+\title{Analyse 1 2019/2020 - Ugeseddel 9}
+\author{}
+\date{\vspace{-1cm}15. juni 2020}
+
+\begin{document}
+
+\maketitle
+
+\noindent
+\textbf{Forelæsninger}: Henrik Schlichtkrull, schlicht@math.ku.dk \\
+\textbf{Øvelser}: Mads Friis Frand-Madsen, mffm@math.ku.dk
+
+\setcounter{section}{9}
+
+\begin{itemize}
+    \item Tirsdag er kursets sidste undervisningsdag. Vi afslutter vores studie af metriske rum med at se nærmere på en særlige type delmængder, nemlig \textit{kompakte} mængde (MC 6.3 side 173-). Kompakte mængder kan ses som generalisering af afsluttede, begrænsede mængder, som allerede i Analyse 0 gav anledning til nogle signifikante resultater i deres samspil med kontinuerte funktioner,\footnote{Tænk eksempelvis på Ekstremalværdisætningen.} men også her i Analyse 1 har vi set at punktvis konvergens af potensrækker på et lukket og begrænset interval medfører uniform konvergens. Vi vil udvikle vores forståelse ved introduktion af det topologiske begreb kompakthed gennem det mindre abstrakte \textit{sekventiel kompakthed}, som til sidst vises at være ækvivalent med topologisk kompakthed i metriske rum (MC 6.53).
+    
+    Alle opgaverne diskuteres til øvelsesmøderne tirsdag.
+\end{itemize}
+
+\noindent
+\textbf{Definition.} Lad $\pare{X,d_X}$ og $\pare{Y,d_Y}$ være metriske rum, og lad $f\colon X\to Y$ være en funktion og $a\in X$.  Vi siger, at $f$ er \textit{kontinuert i $a$ med hensyn til metrikken $d_X$ på $X$ og $d_Y$ på $Y$}, hvis
+$$ \forall\varepsilon>0\exists \delta>0\forall x\in X\colon\quad d_X\pare{x,a} < \delta \Rightarrow d_Y\pare{f\pare{x},f\pare{a}} < \varepsilon. $$
+Vi siger, at $f$ er \textit{kontinuert med hensyn til metrikken $d_X$ på $X$ og $d_Y$ på $Y$}, hvis $f$ er kontinuert i alle $a\in X$.\footnote{Når det er klart fra konteksten med hensyn til hvilken metrik $f$ er kontinuert udelades dette.}
+
+\begin{opg}
+Lad $\pare{X,d_X}$ og $\pare{Y,d_Y}$ være metriske rum, og lad $f\colon X\to Y$ være en funktion.
+
+\begin{enumerate}
+    \item Vis, at hvis $f$ er kontinuert i et punkt $a\in X$, så gælder om enhver konvergent følge $\seq x$ i $X$ med grænsepunkt $a$, at
+    $$ \lim_{n\to\infty} f\pare{x_n} = f\pare{a}. $$
+    
+    \item Vis, at hvis der om enhver konvergent følge $\seq x$ i $X$ med grænsepunkt $a\in X$ gælder, at
+    $$ \lim_{n\to\infty} f\pare{x_n} = f\pare{a}, $$
+    så er $f$ kontinuert i $a$.
+    
+    \item Diskutér Opgave 9.1a)-b) i relation til MC 3.5 med din underviser.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $\pare{X,d_X}$ og $\pare{Y,d_Y}$ være metriske rum, og lad $f\colon X\to Y$ være en funktion og $A\subseteq X$.
+\begin{enumerate}
+    \item Vis, at hvis $A$ er kompakt og $f$ er kontinuert, så er 
+    $$ f\pare{A} \coloneqq \setbrac{y\in Y}{\exists x\in A\colon\, f\pare{x} = y} $$
+    kompakt.
+    
+    \item Vis, at hvis $A$ er kompakt og $g\colon X\to \mR$ er en kontinuert, så antager $g$ et minimum og et maksimum på $A$.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Vis, at ethvert kompakt metrisk rum $\pare{X,d_X}$ er fuldstændigt.
+\end{opg}
+
+
+
+%\import{/}{uge1.tex}
+%\import{/}{uge2.tex}
+%\import{/}{uge3.tex}
+%\import{/}{uge4.tex}
+%\import{/}{uge5.tex}
+%\import{/}{uge6.tex}
+%\import{/}{uge7.tex}
+%\import{/}{uge8.tex}
+%\import{/}{uge9.tex}
+
+
+
+
+
+\end{document}

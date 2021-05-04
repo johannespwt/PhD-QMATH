@@ -1,0 +1,119 @@
+\ProvidesPackage{ANpreamble}
+
+\usepackage[utf8]{inputenc} % to write æÆøØåÅ.
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs,latexsym,mathtools,amsthm}
+\usepackage[danish]{babel}
+\usepackage{import}
+\usepackage{bbold} % to write double 1
+\usepackage[inline]{enumitem} %inline to make horizontal lists
+    \setenumerate[1]{label={\alph*)}}
+\usepackage[margin=0.9in]{geometry}
+\setlength\parindent{6pt}
+\usepackage{tikz,tkz-euclide}
+\usetikzlibrary{arrows,calc,patterns}
+\usepackage{multicol} % multiple columns itemize/enumerate
+\usepackage{hyperref}
+\usepackage{ifthen}
+
+
+% Theorem Commands
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lem}[definition]{Lemma}
+\newtheorem{prop}[definition]{Sætning}
+\newtheorem{thm}[definition]{Theorem}
+\newtheorem{cor}[definition]{Korollar}
+\newtheorem{conj}[definition]{Konjektur}
+\newtheorem{prob}[definition]{Problem}
+\newtheorem{opg}[definition]{Opgave}
+\newtheorem{exer}[definition]{Øvelse}
+\newtheorem{quest}[definition]{Spørgsmål}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+
+% Custom Commands
+\newcommand{\m}[1]{\mathbb{#1}}
+    \newcommand{\mOne}{\m{1}}
+    \newcommand{\mC}{\m{C}}
+    \newcommand{\mF}{\m{F}}
+    \newcommand{\mN}{\m{N}}
+    \newcommand{\mQ}{\m{Q}}
+    \newcommand{\mR}{\m{R}}
+        \newcommand{\mRext}{\overline{\m{R}}}
+    \newcommand{\mZ}{\m{Z}}
+\renewcommand{\c}[1]{\mathcal{#1}}
+    \newcommand{\cA}{\c{A}}
+    \newcommand{\cB}{\c{B}}
+    \newcommand{\cC}{\c{C}}
+    \newcommand{\cD}{\c{D}}
+    \newcommand{\cE}{\c{E}}
+    \newcommand{\cF}{\c{F}}
+    \newcommand{\cH}{\c{H}}
+    \newcommand{\cI}{\c{I}}
+    \newcommand{\cJ}{\c{J}}
+    \newcommand{\cM}{\c{M}}
+    \newcommand{\cN}{\c{N}}
+    \newcommand{\cQ}{\c{Q}}
+    \newcommand{\cR}{\c{R}}
+    \newcommand{\cU}{\c{U}}
+    \newcommand{\cV}{\c{V}}
+    \newcommand{\cX}{\c{X}}
+    \newcommand{\cY}{\c{Y}}
+\renewcommand{\t}[1]{\text{#1}}
+    \newcommand{\Tr}{\t{Tr}}
+    \newcommand{\LOCC}{\t{LOCC}}
+    \renewcommand{\L}{\t{L}}
+    \newcommand{\CP}{\t{CP}}
+    \newcommand{\End}{\t{End}}
+    \newcommand{\Hom}{\t{Hom}}
+    \newcommand{\rank}{\t{rank}}
+    \newcommand{\textast}{$^*$}
+    \newcommand{\diff}{\text{d}}
+    \newcommand{\N}{\mathbb{N}}
+    \newcommand{\R}{\mathbb{R}}
+    \newcommand{\C}{\mathbb{C}}
+    \newcommand{\e}{\text{e}}
+
+\newcommand{\pipe}{\hspace{.5mm}|\hspace{.5mm}}
+\newcommand{\Quad}{\quad\quad}
+\newcommand{\QUAD}{\Quad\Quad}
+
+\def\indent{\list{}{\leftmargin 6pt}\item[]}
+\let\endindent=\endlist
+
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+
+\renewcommand{\d}{\,d}
+\newcommand{\abs}[1]{\left| #1\right|}
+\newcommand{\pare}[1]{\left( #1\right)}
+\newcommand{\bigpare}[1]{\bigg( #1\bigg)}
+\newcommand{\cbrac}[1]{\left\{ #1\right\}}
+\newcommand{\setbrac}[2]{\left\{ #1 \hspace{.5mm}\middle|\hspace{.5mm} #2 \right\}}
+\newcommand{\brac}[1]{\left[ #1\right]}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\inProd}[1]{\left\langle#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle#1\right|}
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\braket}[2]{\left\langle#1\middle|#2\right\rangle}
+\newcommand{\ketbra}[2]{\left|#1\middle\rangle\middle\langle#2\right|}
+\newcommand{\relEnt}[2]{\pare{#1\hspace{.5mm}\middle\Vert\hspace{.5mm}#2}}
+\newcommand{\seq}[1]{\left\{#1_n\right\}_{n\in\mN}}
+\newcommand{\seqI}[2]{\left\{#1_#2\right\}_{#2\in\mN}}
+\newcommand{\subseq}[2]{\left\{#1_{n_#2}\right\}_{#2\in\mN}}
+\newcommand{\subseqI}[3]{\left\{#1_{#2_#3}\right\}_{#3\in\mN}}
+
+\renewcommand{\to}{\rightarrow}
+\newcommand{\from}{\leftarrow}
+\renewcommand{\Re}{\textup{Re}}
+\renewcommand{\Im}{\textup{Im}}
+
+\newenvironment{tasks}[1]
+    {\begin{multicols}{#1}
+    \begin{enumerate}[label=\roman*)]
+    }
+    { 
+    \end{enumerate}
+    \end{multicols}
+    }

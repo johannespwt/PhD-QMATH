@@ -1,0 +1,229 @@
+\begin{opg}
+Betragt den trigonometriske række
+$$
+\sum_{n=-\infty}^\infty\frac1{1+n^2}\,e^{inx}
+$$
+Rækkens sumfunktion betegnes $f$. De følgende spørgsmål skal helst besvares uden at bestemme en forskrift for $f$.
+\begin{enumerate}
+\item Gør rede for rækkens konvergensegenskaber (punktvis og/eller uniformt?), 
+og vis at $f$ er $2\pi$-periodisk, kontinuert, lige, og har reelle værdier.
+
+\begin{proof}[Løsning]
+Lad $\cbrac{c_n}_{n\in\mZ}$ være givet ved $c_n = \frac{1}{1+n^2}$, og bemærk at
+$$ \sum_{n=-\infty}^\infty \abs{c_n}
+    = \abs{c_0} + \sum_{n=1}^\infty \pare{\abs{c_n}+\abs{c_{-n}}} 
+    = 1 + \sum_{n=1}^\infty \frac{2}{1+n^2} $$
+er konvergent som følge af sammenligningstesten, eftersom $\frac{1}{1+n^2}\leq \frac{1}{n^2}$. Det følger således af MC 5.12, at rækken
+$$ \sum_{n=-\infty}^\infty\frac1{1+n^2}\,e^{inx} $$
+er uniformt konvergent på $\mR$ med kontinuert sumfunktion, hvorfor den specielt er punktvist konvergent.
+
+Lad nu $x\in\mR$ og bemærk
+$$ \sum_{n=-\infty}^\infty\frac1{1+n^2}\,e^{inx}
+    = 1 + \sum_{n=1}^\infty \frac{1}{1+n^2}\pare{e^{inx} + e^{-inx}} 
+    = 1 + \sum_{n=1}^\infty \frac{2}{1+n^2}\cos\pare{nx}. $$
+Da afsnitssummerne $2\pi$-periodiske, lige og reelle funktioner, så er rækkens sumfunktion ligeledes er $2\pi$-periodisk, lige og reel. 
+\end{proof}
+
+\item Bestem integralerne 
+$$ \int_{-\pi}^\pi f(x)\,dx,\quad\quad \int_{-\pi}^\pi f(x)\sin(x)\,dx \quad \text{og}\quad \int_{-\pi}^\pi  f(x)\cos(x)\,dx . $$
+
+\begin{proof}[Løsning]
+Da $f$ betegner sumfunktionen for en uniformt konvergent trigonometrisk række, så følger det af MC 5.22, at
+$$ \int_{-\pi}^\pi f\pare{x} \, dx = 2\pi c_0 = 2\pi $$
+
+Dernæst bemærker vi, at $x\mapsto f\pare{x}\sin\pare{x}$ er ulige, eftersom $f$ er lige og $\sin$ er ulige. Vi får altså
+$$ \int_{-\pi}^\pi f\pare{x}\sin\pare{x} \, dx = 0. $$
+
+Ved et tilsvarende argument fås af MC 5.22, at eftersom $f$ betegner sumfunktionen for en uniformt konvergent trigonometrisk række, så haves
+$$ \int_{-\pi}^\pi f\pare{x}\cos\pare{x} \, dx 
+    = \frac{1}{2}\int_{-\pi}^\pi f\pare{x}e^{ix} \, dx 
+        + \frac{1}{2}\int_{-\pi}^\pi f\pare{x}e^{-ix} \, dx 
+    = \pi c_{-1} + \pi c_1 = \pi. $$
+\end{proof}
+\end{enumerate}
+\end{opg}
+
+\begin{opg} \hfill
+
+\begin{enumerate}
+\item Lad $f\in\operatorname{PC}_{2\pi}$ være givet ved
+$f(x)=e^{-|x|}$, $x\in [-\pi,\pi]$. Bestem Fourierrækken for $f$.
+
+\begin{proof}[Løsning]
+Lad $k\in\mZ$. Da er den $k$'te Fourierkoefficient $c_k$ givet ved
+\begin{align*}
+    c_k = \frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x} e^{-ikx} \, dx
+        &= \frac{1}{2\pi}\int_{-\pi}^0 e^{\pare{1-ik}x} \, dx
+            + \frac{1}{2\pi}\int_0^\pi e^{\pare{-1-ik}x} \, dx \\
+        &= \frac{1}{2\pi}\brac{\frac{1}{1-ik}e^{\pare{1-ik}x}}_{-\pi}^0
+        + \frac{1}{2\pi}\brac{\frac{1}{-1-ik}e^{\pare{-1-ik}x}}_0^\pi \\
+        &= \frac{1}{2\pi}\pare{\frac{1-e^{-\pare{1-ik}\pi}}{1-ik}
+            + \frac{e^{\pare{-1-ik}\pi} - 1}{-1-ik}} \\
+        &= \frac{1}{2\pi}\pare{\frac{1-\pare{-1}^ke^{-\pi}}{1-ik}
+            - \frac{\pare{-1}^ke^{-\pi} - 1}{1+ik}} \\
+        &= \frac{\pare{1-\pare{-1}^ke^{-\pi}}\pare{1+ik} - \pare{\pare{-1}^ke^{-\pi}-1}\pare{1-ik}}{2\pi\pare{1+k^2}} \\
+        &= \frac{1 + \pare{-1}^{k+1}e^{-\pi}}{\pi\pare{1+k^2}},
+\end{align*}
+hvorfor Fourierrækken for $f$ er givet ved 
+$$ \sum_{k=-\infty}^\infty
+    \frac{1 + \pare{-1}^{k+1}e^{-\pi}}{\pi\pare{1+k^2}} e^{ikx} $$
+\end{proof}
+
+\item Lad $g\in\operatorname{PC}_{2\pi}$ være givet ved 
+$g(x)=e^{-x}$ for $x\in(-\pi,\pi)$ og $g(-\pi)=g(\pi)=\frac12(e^\pi+e^{-\pi})$. Bestem Fourierrækken for $g$.
+
+\begin{proof}[Løsning]
+Lad $k\in\mZ$. Da er den $k$'te Fourierkoefficient $c_k$ givet ved
+\begin{align*}
+    c_k = \frac{1}{2\pi}\int_{-\pi}^\pi g\pare{x} e^{-ikx} \, dx
+        = \frac{1}{2\pi}\int_{-\pi}^\pi e^{\pare{-1-ik}x} \, dx
+        &= \frac{1}{2\pi}\brac{\frac{1}{-1-ik}e^{\pare{-1-ik}x}}_{-\pi}^\pi \\
+        &= \frac{e^{\pare{1+ik}\pi} - e^{\pare{-1-ik}\pi}}{2\pi\pare{1+ik}}
+        = \frac{\pare{-1}^k\pare{e^\pi - e^{-\pi}}}{2\pi\pare{1+ik}},
+\end{align*}
+hvorfor Fourierrækken for $g$ er givet ved
+$$ \sum_{k=-\infty}^\infty
+    \frac{\pare{-1}^k\pare{e^\pi - e^{-\pi}}}{2\pi\pare{1+ik}} e^{ikx} $$
+\end{proof}
+
+\item Afgør for hver af de to Fourierrækker om den er punktvis konvergent på
+$(-\pi,\pi)$, og bestem i givet fald dens sumfunktion på dette interval.
+
+\begin{proof}
+Det vises i Opgave 2d), at Fourierrækkerne for $f$ er uniformt konvergent på $\brac{-\pi,\pi}$ med sumfunktion $f$, hvorfor Fourierrækken for $f$ specielt er punktvist konvergent i $\pare{-\pi,\pi}$ mod $f$.
+
+Bemærk nu at $g\in\operatorname{PC}_{2\pi}$ og $g$ er differentiabel på $\pare{-\pi,\pi}$, hvorfor det følger af MC 5.37, at Fourierrækken for $g$ konvergerer punktvist mod $g$ på intervallet $\pare{-\pi,\pi}$.
+\end{proof}
+
+\begin{proof}[Alternativ løsning]
+Bemærk at $f\in\operatorname{PC}_{2\pi}$ og $f$ er differentiabel på $\pare{-\pi,0}\cup\pare{0,\pi}$, mens $f$ både er højre- og venstredifferentiabel i $x=0$. Det følger således af MC 5.37, at Fourierrækken for $f$ konvergerer punktvist mod $f$ på $\pare{-\pi,\pi}$.
+
+Vi fører samme argument for $g$ som før.
+\end{proof}
+
+\item Afgør for hver af de to Fourierrækker om den er uniformt konvergent på
+$[-\pi,\pi]$, og bestem i givet fald dens sumfunktion på dette interval.
+
+\begin{proof}[Løsning]
+Bemærk indledningsvis, at $f\in\operatorname{PC}_{2\pi}$ er differentiabel i $\pare{-\pi,0}\cup\pare{0,\pi}$, så definér en $2\pi$-periodisk funktion $h\colon \mR\to\mR$ ved
+$$ h\pare{x} = \begin{cases}
+    e^x, &\quad -\pi< x< 0 \\
+    -e^{-x}, &\quad 0 < x < \pi \\
+    0, &\quad x \in\cbrac{-\pi,0}
+\end{cases}, $$
+og bemærk $h$ er stykkevis kontinuert med
+$$ \frac{h^-\pare{-\pi} + h^+\pare{-\pi}}{2} = \frac{-e^{-\pi} + e^{-\pi}}{2} = 0 = h\pare{-\pi}, \QUAD
+    \frac{h^-\pare{0} + h^+\pare{0}}{2} = \frac{e^0 - e^0}{2} = 0
+        = h\pare{0}. $$
+Dette viser, at $h\in\operatorname{PC}_{2\pi}$. Bemærk desuden $f\in\operatorname{PC}_{2\pi}$ er kontinuert og stykkevis differentiabel med $f' = h$ på mængden $\pare{-\pi,0}\cup\pare{0,\pi}$, mens
+\begin{align*}
+    \lim_{t\to 0^-} \frac{f\pare{-\pi + t} - f\pare{-\pi}}{t}
+        &= \lim_{t\to 0^-}\frac{e^{-\pi - t} - e^{-\pi}}{t} = -e^{-\pi} \\
+    \lim_{t\to 0^+} \frac{f\pare{-\pi + t} - f\pare{-\pi}}{t}
+        &= \lim_{t\to 0^+} \frac{e^{-\pi + t} - e^{-\pi}}{t} = e^{-\pi}
+\end{align*}
+og
+\begin{align*}
+\lim_{t\to 0^-} \frac{f\pare{0 + t} - f\pare{0}}{t}
+        &= \lim_{t\to 0^-}\frac{e^{t} - e^{0}}{t} = 1 \\
+    \lim_{t\to 0^+} \frac{f\pare{0 + t} - f\pare{0}}{t}
+        &= \lim_{t\to 0^+} \frac{e^{-t} - e^{0}}{t} = -1,
+\end{align*}
+hvilket viser, at $x = -\pi,0$ er knækpunkter for $f$. Det følger endelig af HS 5.42 i An1-62.pdf, at Fourierrækken for $f$ er uniformt konvergent med sumfunktion $f$.
+
+Antag for modstrid Fourierrækken for $g$ er uniformt konvergent på intervallet $\brac{-\pi,\pi}$ med sumfunktion $g^*$. Som følge af punktvis konvergens fra Opgave 2c) bemærker vi, at $g^* = g$ på intervallet $\pare{-\pi,\pi}$, hvorfor
+\begin{alignat*}{3}
+    \lim_{x\to -\pi^-} g^*\pare{x} &= \lim_{x\to -\pi^-} g\pare{x}
+        &&= \lim_{x\to -\pi^-} e^{-x} &&= e^{-\pi}, \\
+    \lim_{x\to -\pi^+} g^*\pare{x} &= \lim_{x\to -\pi^+} g\pare{x}
+        &&= \lim_{x\to -\pi^+} e^{-x} &&= e^\pi. \\
+\end{alignat*}
+Dette viser, at $g^*$ \textit{ikke} er kontinuert, hvilket er i modstrid med  MC 3.13, eftersom $g^*$ er den uniforme grænse af kontinuerte funktioner. Dette viser, at Fourierrækken for $g$ \textit{ikke} er uniformt konvergent på $\brac{-\pi,\pi}$.
+\end{proof}
+
+\begin{proof}[Alternativ løsning]
+I Opgave 2a) bestemte vi Fourierkoefficienterne for $f$, og bemærk at rækken
+$$ \sum_{k=-\infty}^\infty \abs{\frac{1 + \pare{-1}^{k+1}e^{-\pi}}{\pi\pare{1+k^2}}} $$
+er konvergent som følge af sammenligningstesten, eftersom $\abs{\frac{1+\pare{-1}^{k+1}e^{-\pi}}{\pi\pare{1+k^2}}}\leq\frac{2e^{-\pi}}{\pi\pare{1+k^2}}$. Det følger således af MC 5.12, at Fourierrækken for $f$ er uniformt konvergent med kontinuret sumfunktion $f^*$. Vi så i Opgave 2c), at Fourierrækken er punktvist konvergent på $\pare{-\pi,\pi}$ med sumfunktion $f$, hvorfor vi har $f^* = f$ på $\pare{-\pi,\pi}$, og eftersom $f,f
+^*$ er kontinuerte, så følger det at $f^* = f$ på $[-\pi,\pi)$. Dette viser, at Fourierrækken for $f$ konvergerer uniformt mod $f$. 
+
+Vi fører samme argument for $g$ som før.
+\end{proof}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $d_1$ og $d_2$ være to metrikker på en
+mængde $M$.  
+\begin{enumerate}
+\item
+Vis, at $D$ givet ved $D(x,y)=\max\{d_1(x,y),d_2(x,y)\}$ også er en metrik på $M$.
+
+\begin{proof}[Løsning]
+Vi viser de tre betingelser, som $D$ skal opfylde for at være en metrik.
+\begin{itemize}
+    \item Lad $x,y\in M$. Da $d_1,d_2$ opfylder positivitet, så haves 
+    $$ D\pare{x,y} = \max\cbrac{d_1\pare{x,y},d_2\pare{x,y}} \geq 0 $$
+    med lighed, hvis og kun hvis $d_1\pare{x,y} = 0$ og $d_2\pare{x,y} = 0$, hvilket er tilfældet netop når $x = y$.
+    
+    \item Lad $x,y\in M$. Da $d_1,d_2$ er symmetriske, så haves
+    $$ D\pare{x,y} = \max\cbrac{d_1\pare{x,y},d_2\pare{x,y}}
+        = \max\cbrac{d_1\pare{y,x},d_2\pare{y,x}} = D\pare{y,x} $$
+    
+    \item Lad $x,y,z\in M$. Da $d_1,d_2$ opfylder trekantsuligheden, så haves
+    \begin{align*}
+        d_1\pare{x,z} &\leq d_1\pare{x,y} + d_1\pare{y,z}
+            \leq D\pare{x,z} + D\pare{y,z} \\
+        d_2\pare{x,z} &\leq d_2\pare{x,y} + d_2\pare{y,z}
+            \leq D\pare{x,y} + D\pare{y,z},
+    \end{align*}
+    hvorfor det følger, at $D\pare{x,z} = \max\cbrac{d_1\pare{x,z},d_2\pare{x,z}} \leq D\pare{x,y} + D\pare{y,z}$.
+\end{itemize}
+Dette viser, at $D$ er metrik.
+\end{proof}
+
+\item Lad $a\in M$ og $r>0$. Lad $K_1(a,r)$, $K_2(a,r)$, og $K_D(a,r)$ betegne kuglerne omkring $a$ i $M$ med radius $r$, med hensyn til de tre metrikker. Vis, at for $0<r$ og $0<s$ gælder
+$$ K_D(a,\min\{r,s\})\subseteq K_1(a,r)\cap K_2(a,s)  \subseteq K_D(a,\max\{r,s\}). $$
+
+\begin{proof}[Løsning]
+Lad $x\in K_D\pare{a,\min\cbrac{r,s}}$. Da haves
+$$ d_1\pare{x,a} \leq D\pare{x,a} < \min\pare{r,s} \leq r, $$
+hvorfor $x\in K_1\pare{a,r}$. Et tilsvarende argument kan føres for $d_2$, hvilket viser den første inklusion.
+
+Lad nu $x\in K_1\pare{a,r}\cap K_2\pare{a,s}$, og antag uden tab af generalitet $D\pare{x,a} = d_1\pare{x,a}$. Da haves
+$$ D\pare{x,a} = d_1\pare{x,a} < r \leq \max\cbrac{r,s}, $$
+hvilket viser den anden inklusion.
+\end{proof}
+
+\item
+Lad $A\subseteq M$. Vis, at hvis $A$ er åben med hensyn til mindst en af metrikkerne $d_1$ og $d_2$, så er den også
+åben med hensyn til $D$.
+
+\begin{proof}[Løsning]
+Antag uden tab af generalitet, at $A$ er åben med hensyn til $d_1$, og lad $x\in A$. Da findes $r>0$, så
+$$ K_1\pare{x,r} \subseteq A. $$
+Det følger da af Opgave 3b), at $K_D\pare{x,r}\subseteq K_1\pare{x,r} \subseteq A$, hvilket viser $x$ er et indre punkt i $A$ med hensyn til metrikken $D$. Da $x\in A$ var vilkårligt valgt viser dette, at $A$ er åben med hensyn til $D$.
+\end{proof}
+
+\item
+Antag $A\subseteq M$ er kompakt med hensyn til $D$. Vis, at så er den også kompakt med hensyn til både
+$d_1$ og $d_2$.
+
+\begin{proof}[Løsning]
+Bemærk indledningsvis at MC 6.53 giver, at det er tilstrækkeligt at vise, at hvis $A$ er sekventiel kompakt med hensyn til $D$, så er den sekventielt kompakt med hensyn til $d_1,d_2$. 
+
+Lad $\seq x$ være en følge i $A$. Da $A$ er sekventielt kompakt med hensyn til $D$, så har $\seq x$ et fortætningspunkt $a\in A$ med hensyn til $D$, hvorfor MC 6.21 lader os slutte, at der findes en delfølge $\subseq{x}{k}$, der konvergerer mod $a$ i metrikken $D$.
+
+Lad $\varepsilon>0$. Da findes $K\in\mN$, så for alle $k\in\mN$, der opfylder $k\geq K$, haves $D\pare{x_{n_k},a} < \varepsilon$. Men da haves
+$$ d_1\pare{x_{n_k},a} \leq D\pare{x_{n_k},a} < \varepsilon, $$
+hvorfor $\subseq{x}{k}$ ligeledes konvergerer mod $a$ i metrikken $d_1$. Som følge af MC 6.21 har $\seq x$ således $a$ som fortætningspunkt med hensyn til $d_1$, hvilket viser $A$ er sekventielt kompakt med hensyn til $d_1$. Et tilsvarende argument kan bruges for $d_2$, hvorfor dette viser det ønskede.
+\end{proof}
+
+\begin{proof}[Alternativ løsning]
+Lad $A\subseteq M$ være kompakt med hensyn til $D$, og lad $\cbrac{U_i}_{i\in I}$ være en åben overdækning af $A$ med hensyn til $d_1$. Vi så i Opgave 3c), at $\cbrac{U_i}_{i\in I}$ i så fald også er en åben overdækning med hensyn til $D$. Eftersom $A$ er kompakt med hensyn til $D$, så findes en endelig udtynding $\cbrac{U_{i_n}}_{n=1}^N$ som stadig er åben overdækning af $A$ med hensyn til $D$, hvorfor den ligeledes er en åben overdækning af $A$ med hensyn til $d_1$. 
+
+Et tilsvarende argument kan føres for $d_2$.
+\end{proof}
+
+\end{enumerate}
+\end{opg}

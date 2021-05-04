@@ -1,0 +1,108 @@
+\setcounter{section}{1}
+\begin{opg}
+Lad $z\in\mC$ være givet ved
+$$ z = \sqrt{3}\frac{5}{12}+i\frac{5}{12} $$
+og lad $b\in\mR$. Definér følgen $\seq a$ ved $a_n = \pare{b\cdot z}^n$.
+\begin{enumerate}
+    \item Skriv $z$ på polær form, og udregn $z$, $z^2$, $z^3$ og $z^6$. 
+%    \begin{proof}[Løsning]
+%    	Polærformen af $ z=a+ib $, med $ a\neq0 $ findes på sædvanligvis ved $ z=re^{i\theta} $, hvor $ r=\sqrt{a^2+b^2} $\\ og $ \cos(\theta)=a/r $ samt $ \sin(\theta)=b/r $. Dermed findes det at \begin{equation*}
+%    		r=\left(3\frac{25}{144}+\frac{25}{144}\right)^{1/2}=\left(\frac{10^2}{12^2}\right)^{1/2}=\frac{5}{6},
+%    	\end{equation*}
+%    	og siden at $ a>0 $ findes \begin{equation*}
+%    	\theta=\arctan(1/\sqrt{3})=\pi/6
+%    	\end{equation*}
+%    	Dermed findes det, at $ z=\frac{5}{6}e^{i\pi/6} $, $ z^2=\frac{25}{36}e^{i\pi/3} $, $ z^3=\frac{5^3}{6^3}e^{i\pi/2} $ og $ z^6=-\frac{5^6}{6^6} $
+%    \end{proof}
+    
+    
+    \item Angiv et udtryk for $\abs{a_n}$ for alle $n\in\mN$.
+%    \begin{proof}[Løsning]
+%    	Ved resultatet fra a) findes det at $ \abs{a_n}=(\abs{z}\abs{b})^n=r^n\abs{b}^n=\left(\frac{5}{6}\right)^n\abs{b}^n $.
+%    \end{proof}
+
+    
+    
+    \item Bestem alle $b\in\mR$, hvor $\seq a$ er konvergent.
+%    \begin{proof}[Løsning]
+%    	Bemærk at $ a_n=w^n $, Hvor $ w\in\C $ er et komplekst tal med, $ \abs{w}=\frac{5}{6}\abs{b} $. Hvis $ \abs{b}<\frac{6}{5} $ ses det, at $ \abs{w}<1 $ og det følger af observation 1.42 samt det velkendte faktum, at $ \lim\limits_{x\to\infty}c^x=0 $ når $ \abs{c}<1 $, at $ \seq a $ konvergerer mod 0. Hvis $ \abs{b}>\frac{6}{5} $ ses det at $ \abs{w}>1 $ og det følger $ \seq a $ ikke er begrænset (modulus er eksponentielt voksende). Dermed ses ved lemma 1.37, at $ \seq a $ er divergent når $ \abs{b}>\frac{6}{5} $. For $ \abs{b}=\frac{5}{6} $ ses det, at $ \abs{w}=1 $. Men da gælder det, at $ a_n=e^{i\pi/6} $ hvis $ b=\frac{6}{5} $ og $ a_n=-e^{i\pi/6}=e^{i7\pi/6} $ hvis $ b=-\frac{6}{5} $. I begge tilfælde følger det af Proporsition 1.30, at $ \seq a $ har $ 12 $ fortætningspunkter, og det følger dermed yderligere ved kontraposition af lemma 1.35 at $ \seq a $ er divergent. Dermed gælder det altså, at $ \seq a $ konvergerer, hvis og kun hvis $ b\in\left(-\frac{5}{6},\frac{5}{6}\right) $
+%    \end{proof}
+    
+    
+    \item Bestem alle $b\in\mR$, hvor $\seq a$ har en konvergent delfølge.
+%    \begin{proof}[Løsning]
+%    	Vi så i løsningen til 1.b), at $ \seq a $ var begrænset hvis $ \abs{b}\leq 5/6 $. Det konkluderes fra Bolzano-Weierstrass, Sætning 1.64, at $ \seq a $ i dette tilfælde har en konvergent delfølge. Hvis derimod $ \abs{b}>5/6 $ ses det, at $ (\abs{a_n})_{\N} $ er monoton og divergerer mod uendelig. Lad $ \seq b $ være en delfølge af $ (\abs{a_n})_{\N} $, da er $ \seq b $ også monoton og divergerer mod uendelig. Det følger af opgave 1.6 på ugeseddel 1, at $ \seq b $ ikke er konvergent, og da $ \seq b $ var vilkårlig, konkluderer vi, at $ \seq a $ ikke har nogen konvergent delfølge når $ b>\frac{6}{5} $. Dermed konkluderes at $ \seq a $ har en konvergent delfølge hvis og kun hvis $ \abs{b_n}\leq \frac{6}{5} $. 
+%    \end{proof}
+
+\end{enumerate}
+\end{opg}
+\begin{opg}
+Definér følgen $\seq a$ givet ved
+    $$ a_n = \frac{1}{n^2} - \frac{1}{(n+1)^2} $$
+\begin{enumerate}
+    \item Afgør, om $\seq a$, $(n^2a)_{n\in \N}$ er konvergente, og bestem i så fald deres grænseværdier.
+    
+%    \begin{proof}[Løsning]
+%    	Det ses gælder åbenlyst at $ (1/n^2)_{n\in\N} $ og $ (1/(n+1)^2)_{n\in\N} $ begge konvergerer mod $ 0 $. Dermed ses per sætning 1.39.1 at $ \seq a $ konvergerer mod $ 0-0=0 $. Det gælder tydeligvis også at $ n^2a_n=1-\frac{n^2}{(n+1)^2}=1-\frac{1}{(1+1/n)^2} $, hvor $ \lim\limits_{n\to\infty}\left(\frac{1}{(1+1/n)^2}\right)=1 $ per sætning 1.39.1 og 1.39.4. Dermed gælder per sætning 1.39.1 at $ (n^2a_n)_{n\in\N} $ konvergerer mod $ 1-1=0 $.
+%    \end{proof}
+    
+    
+    \item Vis, at $(n^3a)_{n\in\N}$ er konvergent med grænseværdi $2$.
+%    \begin{proof}[Løsning]
+%    	Bemærk, at $ a_n=\frac{(n+1)^2-n^2}{n^2(n+1)^2}=\frac{2n+1}{n^2(n+1)^2} $, hvoraf det ses at $ n^3a_n=\frac{2n^4+n^3}{n^4+2n^3+n^2}=\frac{2+1/n}{1+2/n+1/n^2} $. Per sætning 1.39.1 og 1.39.4 gælder det at $ (n^3a_n)_{n\in\N} $ konvergerer mod $ \frac{2}{1}=2 $.
+%    \end{proof}
+    
+    \item Definér følgen $\seqI{A}{N}$ givet ved
+    $$ A_N = \sum_{n=1}^N a_n = a_1 + a_2 + \ldots + a_N, $$
+    Vis at $\seqI{A}{N}$ er konvergent med grænseværdi $1$.
+%    \begin{proof}[Løsning]
+%    	Bemærk at $ A_N=\sum_{n=1}^{N}a_n=\sum_{n=1}^{N}\frac{1}{n^2}-\sum_{n=1}^{N}\frac{1}{(n+1)^2}=\sum_{n=1}^{N}\frac{1}{n^2}-\sum_{n=2}^{N+1}\frac{1}{n^2}=1-\frac{1}{(N+1)^2} $. Det ses dermed let at $ (A_N)_{N\in \N} $ konvergerer mod $ 1 $.
+%    \end{proof}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}\hfill
+	\begin{enumerate}
+		\item Vis, at f\o{}lgen $\{x_n\}_{n\in\N}$ givet ved
+		\[
+		x_n=\frac{1-an}{1+an}
+		\]	
+		er konvergent for alle $a\in [0,\infty)$, og bestem gr\ae{}nsev\ae{}rdien som en funktion af $a$.
+		
+%		\begin{proof}[Løsning]
+%			For $ a=0 $ gælder det, at $ x_n=\frac{1}{1}=1 $ og $ \seq x $ konvergerer åbenlyst mod $ 1 $. For $ a\neq 0 $ gælder at $ x_n=\frac{1/n-a}{1/n+a} $, og siden at $ \lim\limits_{n\to\infty}\frac{1}{n}=0 $, følger det af sætning 1.39 at $ \seq x $ konvergerer mod $ \frac{-a}{a}=-1 $. Dermed ses det, at \begin{equation}
+%			\lim\limits_{n\to\infty}x_n=\begin{cases}
+%			1& \text{for }a=0,\\
+%			-1&\text{for }a>0.
+%			\end{cases}
+%			\end{equation}
+%		\end{proof}
+		
+		
+		\item Vis, at f\o{}lgen $\{y_n\}_{n\in\N}$ givet ved
+		\[
+		y_n=n^2\cos\left(\frac1n\right)-n^2
+		\]	
+		er konvergent, og bestem gr\ae{}nsev\ae{}rdien.
+		
+%		\begin{proof}[Løsning]
+%			Betragt funktionen $ f:\R\to\R  $ givet ved $ f(x)=x^2\cos(1/x)-x^2 $ for $ x\neq 0 $ og $ f(0)=0 $ ($ f(0) $ er irrelevant). Da gælder, at $ f(x)=\frac{\cos(1/x)-1}{1/x^2} $. Dermed ses at $ f(x) $ er et $ 0/0 $-udtryk i grænsen $ x\to\infty $. Det vides, at $ (\cos(1/x)-1)'=\frac{1}{x^2}\sin(1/x) $ og $ (1/x^2)'=-(1/(2x^3)) $. Ved brug af L'H\^opital's regel, finder vi $ \lim\limits_{x\to\infty}f(x)=\lim\limits_{x\to\infty}\left(-\frac{\sin(1/x)}{1/(2x)}\right)=-1/2 $, hvor vi har brugt den velkendte grænse $ \lim\limits_{x\to\infty}\frac{\sin(1/x)}{1/x}=1 $ (denne kan alternativt ses ved at benytte L'H\^opital's regel endnu en gang). Det følger nu af Observation 1.42, samt at $ y_n=f(n) $, at $ y_n $ er konvergent og $ \lim\limits_{n\to\infty}y_n=\lim\limits_{x\to\infty}f(x)=-1/2 $ 
+%		\end{proof}
+		
+		
+		\item Vis, at f\o{}lgen $\{z_n\}_{n\in\N}$ givet ved
+		\[
+		z_n=\sum_{k=1}^n\frac1{n+k}
+		\]	
+		er konvergent, og bestem gr\ae{}nsev\ae{}rdien. \textsl{[Vink: Omskriv 
+			$
+			z_n$ til $\sum_{k=1}^n\frac1{1+\frac kn}\frac 1n
+			$
+			og bem\ae{}rk at udtrykket er en middelsum for integralet af funktionen $1/x$ over et passende valgt interval.]}
+		
+%		
+%		\begin{proof}[Løsning]
+%			Bemærk, at $ z_n=\sum_{k=1}^{n}\frac{1}{1+\frac{k}{n}}\frac{1}{n} $. Lad nu $ f: [1,2]\to \R $ være givet ved $ f(x)=\frac{1}{x} $. De ses let, at $ z_n=\sum_{k=1}^{n}f(t_k)(t_k-t_{k-1}) $, hvor $t_k=1+k/n $ for $ k=0,1,2,...,n $, således at $ t_k-t_{k-1}=\frac{1}{n} $ for $ k=1,2,...,n $. Det noteres at $ (t_k)_{k=0}^{n} $ udgør en inddeling af intervallet $ [1,2] $ med findhed $ 1/n $. Da $ f $ er kontinuert er den Riemann integrable og dermed er $ z_n $ en middelsum for integralet af $ 1/x $ på intervallet $ [1,2] $. Siden $ f $ er Riemann integrable, findes der per definition for ethvert $ \varepsilon>0 $ et $ \delta>0 $ således at $ \abs{\int_{1}^{2}f(x)\text{d} x-z_n} $ for $ n>\frac{1}{\delta} $ (husk at $ \frac{1}{n} $ var finheden af inddelingen udgjort af $ (t_k)_{k=0}^{n} $). Ækvivalent gælder der, at $ \seq z $ konvergerer mod $ \int_{1}^{2} f(x)\text{d} x=\int_{1}^{2} \frac{1}{x}\text{d} x $. Det følger da ved analysens fundamentalsætning at $ \lim\limits_{n\to\infty}z_n=\log(2)-\log(1)=\log(2) $.
+%		\end{proof}
+	\end{enumerate}
+\end{opg}

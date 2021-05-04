@@ -13,6 +13,7 @@
 \contentsline {subsection}{\numberline {4.3}Uniform lower bound in the $ N+1 $ case}{61}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Rank-one perturbation}{66}{subsection.4.4}
 \contentsline {subsubsection}{\numberline {4.4.1}Many-body rank-one pair interactions}{70}{subsubsection.4.4.1}
-\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{73}{appendix.A}
-\contentsline {section}{\numberline {B}Schur test}{75}{appendix.B}
-\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{76}{appendix.C}
+\contentsline {subsection}{\numberline {4.5}Second quantization}{73}{subsection.4.5}
+\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{77}{appendix.A}
+\contentsline {section}{\numberline {B}Schur test}{78}{appendix.B}
+\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{79}{appendix.C}

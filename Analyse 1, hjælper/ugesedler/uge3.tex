@@ -1,0 +1,134 @@
+\begin{itemize}
+\item Tirsdag i denne uge skal vi afslutte vores undersøgelse af talrækker. Vi skal færdiggøre arbejdet med positive talrækker (MC 2.2), og vi skal se nærmere på talrækker, som også har negative led (MC 2.3) - blandt andet skal vi se, hvordan man kan ombytte leddene i en betinget konvergent talrække, så at den konvergerer til et vilkårligt tal! Til øvelserne behandler vi Opgave 3.1-3.2.
+
+\item Torsdag starter vi med at se på følger af funktioner $\seq f$, f.eks $f_n(x)=x^n$ for $x \in [0,1]$ (MC 3.1). For et givet $x$ er $\{f_n(x) \}_{n \in \mN }$ selvfølgelig bare en talfølge med leddene $a_n=f_n(x)$, og vi kan undersøge for hvilke værdier af $x$ talfølgen er konvergent (punktvis konvergens). Men hastigheden af konvergensen kan være meget forskellig, selv for punkter, som ligger meget tæt på hinanden, og det kan føre til, at en følge af kontinuerte funktioner konvergerer mod en diskontinuert funktion (overvej eksempelvis for hvilke værdier $x\in\mR$ vi har konvergens af $x^n$ når $n\to\infty$?). Vi skal derfor undersøge et stærkere konvergensbegreb (uniform konvergens), der sikrer kontinuitet af grænsefunktionen. Til øvelserne behandler vi Opgave 3.3-3.5.
+
+\item Opgave 3.6 er tænkt som en ekstra udfordring til de særligt interesserede. Opgaven kan løses på baggrund af pensum fra Kursusuge 2, og kan derfor diskuteres allerede tirsdag.
+\end{itemize}
+
+\begin{opg}[Introduktion til talrækker  -- den geometriske række] \hfill
+
+\noindent
+Husk, at en \emph{geometrisk række} er en række på formen $\sum_{n=0}^\infty a  r^n$. Geometriske rækker er ekstremt vigtige; vi ved præcist, hvornår de konvergerer (nemlig netop når $\lvert r \rvert < 1$), og hvad deres sum i dette tilfælde er (nemlig $\frac{a}{1-r}$). To af de vigtige konvergenstests for rækker -- rodtesten og forholdstesten ($=$ kvotienttesten) -- er baseret på denne viden.
+
+\begin{enumerate}
+	\item 
+	Betragt følgende geometriske rækker.
+	\begin{tasks}{2}
+		\item $14 + 2 + \frac{2}{7} + \frac{2}{49} + \dots$
+		\item $1 - x + x^2 - x^3 + \dots$ for $|x|< 1$
+		\item $4 - \frac{2}{3} + \frac{1}{9} - \frac{1}{54} + \dots$
+		\item $ x^2 - 4x^4 + 16x^6 - \dots$ for $|x|<\tfrac{1}{2}$
+		\item $2+2i-2-2i+2+ \ldots $
+	\end{tasks}
+	Angiv for hver af rækkerne den tilsvarende værdi af $a$ og $r$, når rækken opskrives på formen $\sum_{n=0}^\infty a  r^n$. Opskriv et eksplicit udtryk for den $N$'te afsnitsum, afgør om rækken konvergerer, og bestem i så fald dens sum.
+
+    \item Lad $q \in (0,1)$, og lad $\seq x$ være en talfølge sådan at $\abs{x_{n+1}-x_n} \leq  q^n$ for alle $n \in \mN$. 
+ 
+    Vis, at $\abs{x_m-x_n} \leq  q^n + q^{n+1} \ldots + q^{m-1}$ for alle $n,m\in\mN$ med $n < m$, og brug dette til at vise, at følgen $\seq x$ er en Cauchy-følge. Er følgen konvergent? (Sammenlign med Opgave 2.7)
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Talrækker med positive led] \hfill 
+\begin{enumerate}
+	\item
+	 Afgør, om følgende rækker konvergerer.
+	\begin{tasks}{3}
+		\item $\displaystyle\sum_{n=1}^\infty\frac{1}{(n+1)^4}$
+		\item $\displaystyle\sum_{n=1}^\infty\frac{1}{n+2}$ 
+		\item $\displaystyle\sum_{n=1}^\infty\frac{1}{\sqrt{n+3}}$ 
+	\end{tasks}
+	
+	\item Vis, at følgende rækker konvergerer.
+    \begin{tasks}{4}
+		\item $\displaystyle\sum_{n=1}^\infty\frac{1}{2^n}$
+		\item $\displaystyle\sum_{n=1}^\infty  \frac{1}{2^{n^2}}$
+		\item $\displaystyle\sum_{n=1}^\infty \frac{1}{n!}$
+		\item $\displaystyle\sum_{n=1}^\infty e^{3-n}$
+	\end{tasks}
+	
+	Hvilke af rækkerne kan du finde summen til? Angiv summen i disse tilfælde. 
+    
+    \item Afgør, om følgende rækker konvergerer.
+    \begin{tasks}{3}
+        \item $\displaystyle\sum_{n=2}^\infty \frac{n^2-4}{(n-1)^2(n+3)^2}$
+        \item $\displaystyle\sum_{n=2}^\infty \frac{n^2}{2^n}$
+        \item $\displaystyle\sum_{n=1}^\infty \frac{2^n}{n^n}$
+        \item $\displaystyle\sum_{n=1}^\infty \frac{n!}{n^n}$
+        \item $\displaystyle\sum_{n=1}^\infty \frac{1}{n (\log(n)+1)}$
+        \item $\displaystyle\sum_{n=1}^\infty \left(1- \frac{1}{n}\right)^n$
+    \end{tasks}
+    Beskriv eksplicit hvilke regneregler og tests, du benytter. Kan du finde summen til nogen af de konvergente rækker overhovedet?
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Alternerende talrækker]\hfill \\
+\begin{enumerate}
+    \item Skitsér de første ti led af afsnitsfølgen for rækken $\sum_{n=1}^\infty\frac{(-1)^n}{\sqrt{n}}$. 
+    Vis, ved brug af testen for alternerende rækker, at rækken konvergerer. 
+    
+    \item Afgør for hver af følgende rækker, om rækken er absolut konvergent, betinget konvergent, eller divergent:
+	\begin{tasks}{3}
+		\item $\displaystyle\sum_{n=1}^\infty \frac{(-1)^n}{n^2}$
+		\item $\displaystyle\sum_{n=1}^\infty \frac{(-1)^n}{\sqrt n}$
+		\item $\displaystyle\sum_{n=1}^\infty (-1)^n\sin(n)$
+	\end{tasks}
+    
+    \item Lad 
+    $$ a_n = \begin{cases}
+        \frac{1}{n} &\quad n \text{ lige} \\
+        -\frac{1}{n^2} &\quad n \text{ ulige}\;.
+    \end{cases} $$
+    Vis, at den alternerende række $ \sum_{n=1}^\infty a_n$ divergerer. Forklar, hvorfor dette ikke strider imod testen for alternerende rækker.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Generelle talrækker] \hfill
+\begin{enumerate}
+	 \item Afgør om følgende rækker konvergerer ved brug af sammenligningstesten.
+	
+	\begin{enumerate}[label=\roman*)]
+		\item $\displaystyle\sum_{n=1}^\infty \frac{-1}{n^2+4}$.
+		\item $\displaystyle\sum_{n=1}^\infty \log (1 + n^{-2})$.
+	\end{enumerate}
+
+    \item Lad $\sum_{n=1}^\infty a_n$ være en vilkårlig talrække. Vis, at rækken $\sum_{n=1}^\infty a_n$ konvergerer, hvis og kun hvis rækken $\sum_{n=1}^\infty a_{n+5}$ konvergerer. Hvordan afhænger summerne af hinanden?
+	\item Vi definerer den \textit{itererede ($10$-tals-)logaritme} rekursivt for $x\in \mR$ som
+	$$ \log^\ast_{10}(x) = \begin{cases}
+	    0 &\quad x\leq 1 \\
+	    1+ \log^\ast_{10}(\log_{10} x) &\quad x>1
+	\end{cases} $$
+	Beregn $\log^\ast_{10}(10), \log^\ast_{10}(100)$ og $\log^\ast_{10}(1000)$. Beregn også $\log^\ast_{10}(10^{10})$ og $\log^\ast_{10}(10^{10^{10}})$. Overvej, hvorfor den itererede logaritme $\log^\ast_{10}(x)$ angiver hvor mange logaritmer, der skal bruges på $x$, før man får et tal mindre end eller lig med $1$. 
+	
+	Hvad er $\log^\ast_{10}(\textnormal{googolplex})$? (Vink: Hvis du ikke ved, hvad googolplex er, kan \href{https://www.google.com}{denne hjemmeside} være nyttig.) 
+	
+	Vis, at $\log^\ast_{10}$ er en monotont voksende funktion, og vis derefter at talrækken $\sum_{n=2}^\infty \frac{(-1)^n}{\log^\ast_{10} (n)}$ er betinget konvergent.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Ombytning af led]
+Betragt den alternerende harmoniske række 
+$$ \sum_{n=1}^\infty\frac{(-1)^n}{n}. $$
+
+\begin{enumerate}
+	\item Brug algoritmen fra Riemanns sætning (MC 2.34, se beviset) til at ombytte leddene i rækken, indtil afsnitssummerne er indenfor en afstand af $\varepsilon = \frac{1}{7}$ fra tallet $0$.
+	
+	\item Riemanns sætning gælder ikke for komplekse talrækker. Find et eksempel, der viser dette. Hvor i beviset for Riemanns sætning går det galt?
+	
+	\item Lad $\sum_{n=1}^\infty a_n$ være en betinget konvergent reel talrække og lad $a<b$.
+	\begin{enumerate}[label=\roman*)]
+		\item Justér beviset for Riemanns sætning, og find en algoritme sådan at $a$ og $b$ bliver til fortætningspunkter for følgen af afsnitssummer for den ombyttede række. 
+
+        \item Vis, at faktisk \emph{alle} punkter i $[a,b]$ bliver fortætningspunkter for afsnitsfølgen til den ombyttede række.
+
+        Kan man ombytte leddene sådan, at kun $a$ og $b$ bliver til fortætningspunkter?
+	\end{enumerate}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Den svære, af Erik Lange]
+Vis, at 
+$$ \sum_{n = 1}^{N} \frac{1}{n} - \log N
+    = \sum_{n = 1}^{N - 1} \int_{n}^{n+1} \pare{\frac{1}{n} - \frac{1}{t}} \,dt + \frac{1}{N}, $$
+og brug det til at vise, at udtrykket har en grænseværdi for $N \to \infty$.  Denne grænseværdi $\gamma$ kaldes \textit{Euler-Mascheroni-konstanten}, og $\gamma \approx 0.57721$.
+\end{opg}

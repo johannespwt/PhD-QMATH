@@ -1579,8 +1579,7 @@ Define $ \phi^n=\sqrt{L^n}\xi^n $ such that $ T^n_{\text{diag}}(\xi^n)=\norm{\ph
 	\end{aligned}
 	\end{equation}
 	With $ \xi^n(\bar{k}^N)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N\hat{u}_n(k)=\frac{1}{n(4\pi n+\alpha)}\int_{B_n(0)}\diff k_N \left(\hat{w}(k)+\hat{G}(k)\zeta^n(k)\right) $, and\\ $ \rho^n(k)=\sum_{i=1}^{N}(-1)^{i+1}\mathbbm{1}_{B_n(0)}(k_i)\xi^n(\bar{k}^i) $. NOT FINISHED
-\end{proof}
-\subsection{Uniform lower bound in the $ 2+1 $ case}
+\end{proof}\subsection{Uniform lower bound in the $ 2+1 $ case}
 We will in this section study the $ 2+1 $ case. This will serve mostly as a transition from $ 1+1 $ to $ N+1 $, as this case is simpler than $ N+1 $ but indeed already shows many of the difficulties of the $ N+1 $ case such as a mass-region of instability. The quadratic forms of interest are just special cases of the $ N+1 $ forms and can be summarized as follows: At finite radius of the rank-one perturbations the quadratic forms can be written as\begin{equation}
 F_\alpha^R(u)=\int\diff k \hat{G}(k)^{-1}\abs{\hat{u}(k)}^2-\mu\norm{u}_2^2-\frac{1}{4\pi R+\alpha}\sum_{i=1}^{2}\int\diff\bar{k}^i\left\lvert\int_{B_R(0)}\diff k_i\hat{u}(k)\right\rvert^2,
 \end{equation}
@@ -1940,7 +1939,7 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\end{proof}
 	From proposition \ref{propositionUniformLowerBoundiffWeakConvergence} we see that uniform lower boundedness of $ \Gamma^n $ is equivalent to showing pointwise weak convergence of $ \Gamma^n_- $ (which will in fact automatically be pointwise weak convergence to $ 0 $ then). \\
 	\textbf{IDEA}: Maybe, $ F_\alpha^n $ need only be uniformly bounded from below on $   \dom{F_\alpha}\subset L^2(\R^{3N}) $ to show boundedness from below of $ F_\alpha $. Then maybe use the above classification of proposition \ref{propositionUniformLowerBoundiffWeakConvergence}, if it generalizes to subsets of $ L^2 $.
-	\subsection{Rank-one perturbation}
+	\subsection{Rank-one perturbation}\label{SectionRankOnePerturbation}
 	We analyze in this subsection the simpler problem of perturbing the free one-body Hamiltonian by a rank one perturbation, like the one used above, in order to understand better the sequence $ F_\alpha^n $. This corresponds to removing the term from the Hamiltonian given by $ \frac{-2}{m+1}\sum_{i<j}^{N}\nabla_i\cdot\nabla_j $, rendering the Hamiltonian non-interacting, \ie of the form $ H_\alpha^n=\oplus_{i=1}^{N}H_i$, with $ H_i=-\Delta-\gamma_\alpha\braket{\mathbbm{1}_{B_n},\hat{\cdot}}\mathbbm{1}_{B_n}^\vee $. It is our hope that fully analysing this special case ($ m\to\infty $) will help solve the more general problem, \eg by perturbation theory.\\
 	To begin with, we notice that we need only analyze the one-body Hamiltoninan. Furthermore, we notice that one may split the degrees of freedom, such that only only a certain subspace of the Hilbert space ($ L^2(\R^3) $) is affected by the rank-one perturbation. This is done in the following way. We may factor $ L^2(\hat{\R}^3) $ (momentum space) according to a angular momentum decomposition \begin{equation}
 		L^2(\hat{\R}^3)=L^2(\R_+,r^2\diff r)\otimes L^2(S^2,\diff\Omega)=\oplus_{l=0}^{\infty}L^2(\R_+,r^2\diff r)\otimes\braket{(Y^m_l)_{m=-l}^{l}}:=\oplus_{l=0}^{\infty}\mathcal{H}_l,
@@ -2125,6 +2124,101 @@ One way to show boundedness from below, is through the result of Moser and Seiri
 	\end{pmatrix}
 	\end{aligned}
 	\end{equation}
+\subsection{Second quantization}
+We are in this subsection gonna proceed by writing up the problem in the second quantization formalism. It is the hope, that this will better enable us to locate the relevant terms in the Hamiltonian for proving a uniform lower bound of the rank-one-perturbation with increasing radius.\\
+The Hamiltonian can be written\begin{equation}
+H=\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{i<j} k_i\cdot k_j -\gamma_R\sum_{i=1}^{N}\braket{\hat{\phi}_i\vert \cdot}\hat{\phi}_i.
+\end{equation}	
+We may rewrite this as \begin{equation}
+H=\frac{m}{m+1}\sum_{i=1}^{N}k_i^2+\frac{1}{m+1}\left(\sum_{i=1}^{N}k_i\right)^2 -\gamma_R\sum_{i=1}^{N}\braket{\hat{\phi}_i\vert \cdot}\hat{\phi}_i.
+\end{equation}
+We know from section \ref{SectionRankOnePerturbation} that $ H_1:=\frac{m}{m+1}\sum_{i=1}^{N}k_i^2-\gamma_R\sum_{i=1}^{N}\braket{\hat{\phi}_i\vert \cdot}\hat{\phi}_i $ have a spectrum with (at most) one negative eigenvalue, and continuous spectrum consisting of $ (0,\infty) $. Thus we may write $ H $ as \begin{equation}
+H=\sum_{i} \varepsilon_i c^\dagger_ic_i+\frac{1}{m+1}\sum_{m=1}^{3}\left(\sum_{ij}a^m_{ij}c_i^\dagger c_j\right)^2
+\end{equation}
+where $ a_{ij}^m=\braket{\psi_i\vert k^m\vert \psi_j} $, and $ m $ is just the vector index of $ k=(k^1,k^2,k^3):=(k_x,k_y,k_z) $ and $ \psi_i $ are the (generalized) eigenfunctions of $ H_1 $, and $ \varepsilon_i $ are the generalized eigenvalues of $ \psi_i $. Furthermore, as a consequence of the fact that $ \sigma(\frac{m+1}{m}H_1)=\begin{cases}
+\{-\lambda\}\cup (0,\infty),& \text{for }\frac{m+1}{m}\gamma_R=\frac{m+1}{m}\frac{1}{4\pi R+\alpha}>\frac{1}{4\pi R}\\
+(0,\infty),&\text{for }\frac{m+1}{m}\gamma_R\leq\frac{1}{4\pi R}.
+\end{cases} $, we index $ \varepsilon_i $ with $ i=0 $ for the ground state energy if there is any and otherwise we just put $ \varepsilon_0=0 $. Thus we know that $ \varepsilon_i>0 $ for $ i>0 $. Furthermore, we know that $ \psi_0 $ us sperically symmetric, as was seen in section \ref{SectionRankOnePerturbation} or by the fact that $ H_1 $ is sperically symmetric. Therefore $ a^m_{00}=\braket{\psi_0\vert k^m\vert \psi_0}=0 $ by simple selection rules. We thus have \begin{equation}
+H=\sum_{i} \varepsilon_i c^\dagger_ic_i+\frac{1}{m+1}\sum_{m=1}^{3}\sum_{i,j,k,l}a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l
+\end{equation}
+we analyze the last term, by splitting it in the cases where $ \{i,j,k,l\} $ contains $ 0,1,2,3 $ and $ 4 $ $ 0 $s. 
+\subsubsection*{Four $ 0 $s}
+In the case where $ \{i,j,k,l\}=\{0,0,0,0\} $ we have \begin{equation}
+\sum_{m=1}^{3}a^m_{00}a^m_{00}c_0^\dagger c_0c_0^\dagger c_0=0,
+\end{equation}
+since $ a_{00}^m=0 $.
+\subsubsection*{Three $ 0 $s}
+If three of $ i,j,k,l $ are $ 0 $, we see that \begin{equation}
+a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=0
+\end{equation}
+since either $ i,j=0 $ \emph{or} $ k,l=0 $, and then $ a^m_{ij}=0 $ \emph{or} $ a^m_{kl}=0 $.
+\subsubsection*{Two $ 0 $s}
+In the cases where $ i=j=0 $ (or $ k=l=0 $) we clearly get no contribution as\begin{equation}
+a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=a^m_{00}a^m_{kl}c_0^\dagger c_0c_k^\dagger c_l=0.
+\end{equation}
+In the cases where $ i=l=0 $ we get \begin{equation}
+a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=a^m_{0j}a^m_{k0}c_0^\dagger c_jc_k^\dagger c_0=N_0a^m_{0j}a^m_{k0} c_jc_k^\dagger=N_0a^m_{0j}a^m_{k0}(\delta_{jk}-c^\dagger_kc_j).
+\end{equation}
+In the case where $ j=k=0 $ we get \begin{equation}
+a^m_{i0}a^m_{0l}c_i^\dagger c_0c_0^\dagger c_l=a^m_{i0}a^m_{0l}c_i^\dagger c_l(1-N_0),
+\end{equation}
+where we defined $ N_0=c_0^\dagger c_0 $.
+If $ i=k=0 $ we get \begin{equation}
+a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=a^m_{0j}a^m_{0l}c_0^\dagger c_jc_0^\dagger c_l=-a^m_{0j}a^m_{0l}c_0^\dagger c_0^\dagger c_j c_l=0,
+\end{equation}
+since $ (c^\dagger)^2=0 $. Similarly we have for $ j=l=0 $
+\begin{equation}
+a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=a^m_{i0}a^m_{k0}c_i^\dagger c_0c_k^\dagger c_0=-a^m_{i0}a^m_{k0}c_i^\dagger c_0c_0c_k^\dagger=0,
+\end{equation}
+since $ c_0^2=0 $. Hence we see that the only contributing terms with two $ 0 $s are $ j=k=0 $ and $ i=l=0 $.
+\subsubsection*{One $ 0 $}
+If $ i=0 $ then we have \begin{equation}
+0\#\#\#=\sum_{m=1}^{3}\sum_{j,k,l}a^m_{0j}a^m_{kl}c_0^\dagger c_jc_k^\dagger c_l.
+\end{equation} 
+On the other hand if $ k=0 $ we have \begin{equation}
+\#\#0\#=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_i^\dagger c_jc_0^\dagger c_l=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_0^\dagger(c_lc_i^\dagger-\delta_{il}) c_j
+\end{equation}
+So summing these we get\begin{equation}
+0\#\#\#+\#\#0\#=2\cdot 0\#\#\#-\sum_{m=1}^{3}\sum_{i,j>0} a^m_{ij}a_{0i}^mc_0^\dagger c_j.
+\end{equation}
+Similarly in the cases where $ j=0 $ we have \begin{equation}
+\#0\#\#=\sum_{m=1}^{3}\sum_{i,k,l}a^m_{i0}a^m_{kl}c_i^\dagger c_0c_k^\dagger c_l
+\end{equation}
+and for $ l=0 $ we have \begin{equation}
+\begin{aligned}
+\#\#\#0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger c_jc_k^\dagger c_0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger  c_0(\delta_{jk}-c_k^\dagger c_j)\\=\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0+\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0} c_k^\dagger c_0 c_i^\dagger  c_j=\#0\#\#+\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0
+\end{aligned}
+\end{equation}
+\subsubsection*{No $ 0 $s}
+If all indices are non-zero we have \begin{equation}
+\#\#\#\#=\sum_{m=1}^{3}\sum_{i,j,k,l}a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=\left(\sum_{i,j>0}\overline{a}_{ij}c_i^\dagger c_j\right)^2,
+\end{equation}
+where $ \overline{a}_{ij} $ is a three-dimensional vector for each $ i,j $.
+\subsubsection*{Collecting the terms}
+Notice that we may conclude that the term comming from having no $ 0 $s is positive since it is a sum of squares of self-adjoint operators $ \sum_{i,j>0}a^m_{ij}c_i^\dagger c_j $, $ m=1,2,3 $.\\
+The terms comming from two $ 0 $s may be collected to give
+\begin{equation}
+\begin{aligned}
+\text{two $ 0 $s}=\sum_{m=1}^{3}\sum_{j,k}\left(N_0a^m_{0j}a^m_{k0}(\delta_{jk}-c^\dagger_kc_j)+a^m_{k0}a^m_{0j}c_k^\dagger c_j(1-N_0)\right)\\
+=\sum_{m=1}^{3}\sum_{j,k}\left((1-2N_0)a^m_{0j}a^m_{k0}c^\dagger_kc_j\right)+N_0\sum_{m=1}^{3}\sum_{i}a_{0i}^ma_{i0}^m
+\end{aligned}
+\end{equation}
+Now remember that $ a_{0i}=\braket{0|k|i} $. Thus $ \sum_{i>0} a^m_{0i}a^m_{i0}=\braket{0|k^m|i}\braket{i|k^m|0}=\braket{0|(k^m)^2|0} $. Thus we see that the coefficient of $ N_0 $ in $ H $ is $ \braket{0|\frac{m}{m+1}\sum_{i}k_i^2+\frac{1}{m+1}\sum_{i}k_i^2-\gamma_R\sum_{i}\braket{\hat{\phi}_i,\cdot}\hat{\phi}_i|0}=\braket{0|\sum_{i}k_i^2-\gamma_R\sum_{i}\braket{\hat{\phi}_i,\cdot}\hat{\phi}_i|0}\geq -\lambda $ for some $ \lambda $ independent of $ R $. The last inequality follows direct diagonalization of the operator $ \sum_{i}k_i^2-\gamma_R\sum_{i}\braket{\hat{\phi}_i,\cdot}\hat{\phi}_i $, or in fact by just finding it eigenvalue, if it exists. Now for the remaining term comming from two $ 0 $s we notice that $ 0\leq(1-2N_0)\leq 1 $ and that \begin{equation}
+a_{0j}^ma_{i0}^m=\braket{i|k^m|0}\braket{0|k^m|j}=\braket{i|k^m P_0 k^m|j},
+\end{equation}
+where $ P_0=\ket{0}\bra{0} $ is the projector onto the ground state. Thus we see that $ \sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right) $ is the second quantization of the operator $ \sum_{m=1}^{3}k^mP_0k^m $. Thus we clearly have \begin{equation}
+(1-2N_0)\sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right)\geq -\sum_{m=1}^{3}k^mP_0k^m\geq -P_0^\perp k^2P_0^\perp.
+\end{equation}
+We are thus interested in estimating $ \frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R $ in relation to $ -\frac{1}{m+1}P_0^\perp k^2P_0^\perp $
+\\
+The term comming from one $ 0 $ may be estimated by Cauchy-Schwartz inequality
+\begin{equation}
+\abs{\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0}\leq \sum_{m=1}^{3}\sum_{j}\left(\sum_{i}a^m_{ij}c_i^\dagger\right) a^m_{j0}  c_0
+\end{equation}
+\begin{equation}
+\norm{0\#\#\#+\#0\#\#+\#\#0\#+\#\#\#0}\leq\norm{2(0\#\#\#+\#\#\#0)}+\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}\norm{c_i^\dagger c_i}^{1/2}\norm{c_0^\dagger c_0}^{1/2}
+\end{equation}
+Again we may use $ \sum_{j>0} a^m_{ij}a^m_{j0}=\braket{0|k^m|j}\braket{j|k^m|0}=\braket{i|(k^m)^2|0} $.
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}

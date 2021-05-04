@@ -1,0 +1,183 @@
+\setcounter{section}{2}
+
+
+\begin{opg}[\emph{Den udvidede reelle talakse}] \hfill
+
+\noindent
+Supremumsegenskaben for $\mR$ betyder, at enhver \textit{ikke-tom, begrænset} delmængde $A$ af $\mR$ har et supremum, altså en mindste øvre grænse. I visse situationer kan betingelsen på mængden $A$ være unødigt hæmmende -- f.eks. kunne vi med rette have lyst til at tilskrive den ubegrænsede mængde $\mN$ værdien  $+\infty$ som supremum: `$\sup \mN = \infty$'. 
+
+Det er derfor naturligt at indføre \textit{den udvidede reelle talakse}, 
+
+$$ \overline{\mR} = [- \infty, \infty] := \mR \cup \cbrac{- \infty, \infty}, $$
+som består af alle de reelle tal, samt to tilføjede punkter `$\infty$' og `$- \infty$'. Den udvidede reelle talakse $\overline{\mR}$ udstyres med den oplagte ordning $\leq$, som udvider ordningen på $\mR$, og om hvilken der gælder $- \infty \leq x \leq  \infty$ for ethvert $x \in \overline{\mR}$. 
+ 
+Som vi skal se i denne opgave, så bliver mange udsagn mere simple i $\overline{\mR}$.
+
+
+\begin{enumerate}
+	\item Begrund, at enhver ikke-tom delmængde $A$ af $\mR$ har et supremum (altså en mindste øvre grænse) i $\overline{\mR}$. Begrund endvidere, at enhver ikke-tom delmængde $A$ af $\overline{\mR}$ har et supremum i $\overline{\mR}$. Overvej, om man kan udtale sig om supremum og infimum af den tomme mængde $\emptyset$ - hvorfor / hvorfor ikke?
+	
+	\item Vis, at enhver monoton følge i $\overline{\mR}$ har er konvergent i $\overline{\mR}$. (Hvis en følge `divergerer mod $+ \infty$ eller $- \infty$' jf. Def. 1.46 i MC, vil vi sige at den konvergerer mod $+ \infty$ hhv. $- \infty$ som grænseværdi i $\overline{\mR}$.)
+	
+	Sammenhold dette udsagn med Sætning 1.53 i MC. 
+	
+	\item Betragt to monotone følger i $ \R $, $ \seq a $ og $ \seq b $. Gælder det, at $ (a_n+b_n)_{n\in \N} $ er konvergent i $ \overline{\R} $?
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Forståelse af definitioner]\hfill
+\begin{enumerate}
+	\item \label{klemme} Lad $\seq x$ være en reel talfølge, der konvergerer mod $x$. Antag, at $a \in \mR$ opfylder $a \leq x_n$ for alle $n \in \mN$. Vis, ved brug af definitionen af konvergens, at $a \leq x$.\\
+	 \emph{\textbf{Vink}: Antag for modstrid at $a > x$.}
+	
+    \item Lad $\seq a$ være en talfølge. Husk at $a\in\mR$ kaldes et fortætningspunkt for $\seq a$, hvis der for ethvert $\varepsilon>0$ findes uendeligt mange $n\in\mN$, sådan at $|a_n-a|<\varepsilon$. Vis, at $a$ er et fortætningspunkt for $\seq a$,  hvis og kun hvis
+    $$ \forall\varepsilon>0\forall N\in\mN\exists n \geq N\colon\quad  |a_n -a|< \varepsilon $$
+    
+    Sammenlign dette med definitionen af konvergens mod $a$, altså
+    $$ \forall\ \varepsilon>0\exists N\in\mN\forall n \geq N\colon\quad|a_n -a|< \varepsilon. $$
+    Hvorfor er definitionen af konvergens strengere end definitionen af fortætningspunkt? Hvad er forskellen?
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Delfølger og fortætningspunkter]
+Lad $\seq a$ være en følge. Husk, at en delfølge af $\seq a$ er en følge $\subseq{a}{k}$, hvor $\seqI{n}{k}$ er en strengt voksende følge af naturlige tal. 
+
+\begin{enumerate}
+    \item Lad $\seq a$ være talfølgen givet ved
+    $a_n = \frac{(-1)^n}{n^2}$. 
+    Angiv de tre første elementer af delfølgen $\{a_{2k}\}_{k \in \mN}$, og vis at delfølgen er monoton. Er delfølgen konvergent? 
+   
+    Er den oprindelige følge $\seq a$ konvergent?
+
+    \item Find en konvergent delfølge af $\seq b$, hvor $b_n=i^n$. Kan du finde konvergente delfølger med andre grænseværdier?  
+    
+%    \item Forsøg for dig selv at bevise følgende resultat uden at kigge i noterne:
+%    
+%    \textit{Et tal $a$ er fortætningspunkt for en følge $\seq a$, hvis og kun hvis $\seq a$ har en delfølge, der konvergerer mod $a$.} 
+    
+    \item \begin{enumerate}[label=\roman*]
+    	\item Vis, at en følge $ \seq a $ konvergerer mod $ a $ hvis og kun hvis enhver delfølge af $ \seq a $ har $ a $ som fortætningspunkt.
+    	\item Vis, at hvis $ \seq a $ er en begrænset følge, og enhver konvergent delfølge af $ \seq a $ konvergerer mod $ a $, så konvergerer $ \seq a $ mod $ a $.\\
+    	\emph{\textbf{Vink}: Brug Bolzano-Weierstrass' sætning (Sætning 1.64)} og resultatet fra d) i.
+    \end{enumerate}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Cauchy-følger]\hfill
+\begin{enumerate}
+	\item Betragt følgen $\{a_n\}_{n\in\N}=\{\frac{1}{n^2}\}_{n\in\mN}$. Find for ethvert $\varepsilon>0$, et $N\in\mN$, således at $\abs{a_m-a_n}<\varepsilon$ for alle $m,n\geq N$. Konkludér at $ \{\frac{1}{n^2}\}_{n\in\mN} $ er en Cauchy-følge.
+	
+	\item Vis, at enhver Cauchy-følge $\seq x$ har følgende egenskab: For alle $\varepsilon> 0$ findes et $N \in \mN$, sådan at $|x_{n+1} - x_n|<\varepsilon$ for alle $n \geq N$.
+
+    Overvej, om enhver følge $\seq x$, der har denne egenskab, er en Cauchy-følge.
+\end{enumerate}
+\end{opg}
+
+\iffalse
+\begin{opg}[Fuldstændighed -- Cauchy og Dedekind]\hfill
+
+\noindent
+I noterne er det vist, hvordan Dedekind-fuldstændigheden af $\mR$ (supremumsegenskaben) kan bruges til at udlede den såkaldte \textit{Cauchy-fuldstændighed} af $\mR$, nemlig den egenskab ved de reelle tal, at enhver Cauchy-følge i $\mR$ er konvergent i $\mR$. 
+
+Man kan omvendt ud fra Cauchy-fuldstændigheden af $\mR$ bevise supremumegenskaben, og de to formuleringer udtrykker således den samme egenskab ved $\mR$. Formålet med denne opgave er at bevise supremumsegenskaben ud fra Cauchy-fuldstændigheden.\\
+
+Lad $A$ være en ikke-tom opad begrænset delmængde af $\mR$. Delopgaverne a)-d) viser, at $A$ har et supremum i $\mR$.
+\begin{enumerate}
+	\item Vis, at der for ethvert $\varepsilon > 0$ findes et element $a \in A$ og en øvre grænse $c$ for $A$, sådan at $\abs{c-a} < \varepsilon$. Hint: Givet $\varepsilon>0$, lad $c'$ være en eller anden øvre grænse for $A$, og betragt følgen $c', c' - \varepsilon, c' - 2\varepsilon, c'-3\varepsilon, \ldots$.
+	
+	\item Brug resultatet fra forrige delopgave -- eller brug samme idé som i beviset -- til at vise, at der findes en monotont voksende følge $\seq a$ af elementer i $A$ og en monotont aftagende følge $\seq c$ af øvre grænser for $A$, sådan at $\abs{c_n- a_n} < 1/n$ for alle $n \in \mN$. Med andre ord har vi
+	$$ \underbrace{a_1 \leq a_2 \leq \ldots \leq a_n \leq \ldots}_{\text{elementer i $A$}} \leq	\underbrace{\ldots \leq  c_n \leq ... \leq c_2 \leq c_1}_{\text{øvre grænser for $A$}}, $$
+	med $\abs{c_n -a_n} < 1/n$ for alle $n \in\mN$.
+
+	\item Argumentér for, at følgerne $\seq a$ og $\seq c$ er Cauchy-følger. 
+
+	Konkludér, under antagelse af Cauchy-fuldstændigheden af $\mR$, at $\seq a$ konvergerer mod et $a\in\mR$, og at $\seq c$ konvergerer mod et $c\in\mR$.
+		
+	\item Vis følgende om grænseværdierne $a$ og $c$:
+	\begin{enumerate}[label=\roman*)]
+	    \item Vis at $c$ er en øvre grænse for $A$. Hint: brug resultatet fra 2.2 a).
+	    \item Vis, at hvis $r$ er en øvre grænse for $A$, så er $a \leq r$.
+	    \item Vis, at $c = a$.
+	\end{enumerate}
+	Konkludér, at mængden $A$ har et supremum, nemlig $a=c$.
+\end{enumerate}
+\end{opg}
+\fi
+
+\begin{opg}[Forberedelse til talrækker]\hfill 
+\begin{enumerate}
+    \item Lad $\seq a$ være følgen givet ved
+    \begin{align*}
+    a_1 &= 1, \\
+    a_{n+1} &= a_n+\frac{1}{2^n} \quad \text{for $n \in \mN$}. 
+    \end{align*}
+  
+    Opskriv de ti første led i følgen $\seq a$ . Vis, at følgen konvergerer og bestem dens grænseværdi. 
+%    \item Lad $\seq b$ være følgen givet ved 
+%    \begin{align*}
+%    b_1 &= 1, \\ 
+%    b_2 = b_1 + \frac{1}{2}, & \qquad b_3 = b_2 + \frac{1}{2}, \\
+%    b_4 = b_3 + \frac{1}{3}, \qquad  b_5 &= b_4 + \frac{1}{3}, \qquad  b_6 = b_5 + \frac{1}{3}, \\
+%    b_7 = b_6 + \frac{1}{4},\qquad   b_8 = b_7 + \frac{1}{4},&  \qquad  b_9 = b_8 + \frac{1}{4},
+%        \qquad  b_{10} = b_9 + \frac{1}{4}, \\
+%    &\vdots
+%    \end{align*}
+%  
+%    Vis, at $\seq b$ divergerer.
+  
+    \item Lad $\seq c$ være en talfølge. Lad $s_n = c_1 + \dots + c_n$ og $t_n = c_1 + \dots + c_{2n}$ for $n \in \mN$.
+  
+    Vis, at hvis $\seq s$ konvergerer, så konvergerer $\seq t$ også og har samme grænseværdi. Gælder den modsatte implikation?
+\end{enumerate}
+\end{opg}
+
+%\begin{opg}
+%Lad $ a,b\in\R $ med $ a,b\leq \frac{1}{2} $ og lad $ N\in \N $. Bestem $$
+%\sum_{n=1}^{N}\sum_{i=1}^{n}\begin{pmatrix}
+%n\\
+%i
+%\end{pmatrix}a^ib^{n-i},
+%$$	
+%hvor $ \begin{pmatrix}
+%n\\
+%i
+%\end{pmatrix}:=\frac{n!}{i!(n-i)!} $ er binomial koefficienten.
+%\end{opg}
+
+
+\begin{opg}[\emph{Følger med en variable}]\hfill \\
+	\begin{enumerate}
+		\item Lad $ a\in(-1,\infty) $ og betragt følgen $ (\frac{1}{1+a^n})_{n\in\N} $. Bestem for hvilke værdier af $ a $ der gælder at $ (\frac{1}{1+a^n})_{n\in\N}  $ er konvergent, og find for disse værdier af $ a $ grænseværdien.
+		\item Lad $ a\in\R $ og betragt følgen $ \left(\frac{n^3}{a^{-n}+3n^3}\right)_{n\in\N} $. Bestem for hvilke værdier af $ a $ der gælder at $ \left(\frac{n^3}{a^{-n}+3n^3}\right)_{n\in\N}  $ er konvergent, og find for disse værdier af $ a $ grænseværdien.
+		\item Lad $ a\in\R $ og betragt følgen $ \left(e^{ia(n+1/n)}\right)_{n\in\N} $. Bestem for hvilke værdier af $ a $ der gælder at $ \left(e^{ia(n+1/n)}\right)_{n\in\N}  $ er konvergent, og find for disse værdier af $ a $ grænseværdien.
+		\item Lad $ a\in\R $ og betragt følgen $ \left(\exp{(-na^2)}\right)_{n\in\N} $. Bestem for hvilke værdier af $ a $ der gælder at $ \left(\exp{(-na^2)}\right)_{n\in\N}  $ er konvergent, og find for disse værdier af $ a $ grænseværdien.
+	\end{enumerate}
+\end{opg}
+
+\begin{opg} [\emph{Lineær differensligning}]\hfill \\
+	\begin{enumerate}
+		\item Lad $ a=1/2$ og $ b=3/2 $. Betragt den rekursivt defineret følge $ x_{n+1}=ax_{n}+b $ for alle $ n\in\N $ med $ x_1=1 $. Find en eksplicit definition af $ \seq x $.\\
+		\emph{\textbf{Vink}: Hvordan ser definitionen ud, hvis du omskriver den ud fra $ y_n:=x_n-b/(1-a) $?}
+		\item Vis at følgen $ (x_n)_{n\in\N} $ er konvergent of bestem dens grænseværdi.
+	\end{enumerate}
+	
+\end{opg}
+
+%\begin{opg}[\emph{Poisson fordelingen}]
+%	Lad $ k\in\N $, $ n\geq k $, $ \lambda>0 $ og definer $ P_n(k)=\begin{pmatrix}
+%	n\\
+%	k
+%	\end{pmatrix}(\lambda/n)^k(1-\lambda/n)^{n-k}. $
+%	Vis for fastholdt $ k\in\N $ og $ \lambda>0 $, at $ \{P_n(k)\}_{n>k} $ konvergerer mod $ P(k)=\frac{\exp{(-\lambda)}}{k!}\lambda^k $ når.\\
+%	\emph{\textbf{Vink:} Kig på eksempel 1.45, og generelisér dette.}
+%\end{opg}
+
+\begin{opg}[\emph{kædebrøksfremstillingen for det gyldne snit}]\hfill \\
+Definér følgen $(a_n)_{n\in\mN}$ rekursivt ved $a_1 = 1$ og 
+$$ a_{n+1} = \frac{1}{1 + a_n}. $$
+Vis, at
+$$ \abs{a_{n+1} - a_n} < \frac{1}{2}\abs{a_n - a_{n-1}}, $$
+for $n \geq 2$, og brug det til at vise, at $(a_n)_{n\in\mN}$ er en Cauchyfølge. Følgen er således konvergent. Find grænseværdien og giv mening til udsagnet
+$$ \frac{1 + \sqrt{5}}{2} = 1 + \frac{1}{1 + \frac{1}{1 + \dots}}. $$
+Denne identitet kaldes \emph{kædebrøksfremstillingen for det gyldne snit}.
+\end{opg}

@@ -1,0 +1,125 @@
+\begin{itemize}
+    \item Tirsdag fortsætter vi arbejdet med metriske rum (MC 6.2), hvor vi skal se, hvordan vi kan abstrahere fællestræk fra talfølger og funktionsfølger til en samlet teori. Som bekendt er talfølger defineret af elementer fra mængden $\mR$ (eller $\mC$) og konvergens undersøges med metrikken $d_2\pare{x,y} = \abs{x-y}$, mens vi i funktionsfølger taler om begrænsede funktioner defineret på en mængde $A$ og konvergens undersøges med metrikken $d_A\pare{f,g} = \sup_{x\in A}\abs{f\pare{x}-g\pare{x}}$. Nærmere bestemt skal vi således undersøge fællestrækkene mellem disse objekter.
+    
+    Til øvelsesmøderne taler vi om Opgave 1-3, eventuelt Opgave 4.
+    
+    \item Torsdag skal vi se nærmere på en særlig type delmængder i metriske rum (MC 6.3), som er en naturlig generalisering af åbne intervaller $\pare{a,b}$ og lukkede intervaller $\brac{a,b}$ i $\pare{\mR,d_2}$. Vi skal undersøge og nuancere vores forståelse af disse delmængder ved at introducere en række nye begreber, og alt dette kan ses som en kort introduktion til et fundamentalt matematiske område, som kaldes \textit{topologi}. Vores studie har til formål at vi skal nærme os en forståelse af, hvad de underliggende topologiske årsager til den hyppige skelnen mellem åbne og lukkede intervaller i analyse er (tænk på Cauchy-Hadamard (MC 4.2) eller Ekstramalværdisætningen (An0)). 
+    
+    Til øvelsesmøderne taler vi eventuelt om Opgave 4, men i hvert fald Opgave 5-7.
+\end{itemize}
+
+\begin{opg}[Punktvis konvergens og Uniform konvergens af Fourierrækker]\hfill \\
+Betragt endnu en gang de to $2 \pi$-periodiske funktioner $f$ og $F$ givet ved
+$$ f(x) = \begin{cases}
+	        - \frac{\pi}{2} - \frac{x}{2}, &\quad x\in[-\pi,0) \\
+	        0, &\quad x=0 \\
+	        \frac{\pi}{2} - \frac{x}{2} &\quad x\in(0,\pi)
+	    \end{cases} , \Quad
+	F(x) = \begin{cases}
+	    \frac{\pi^2}{12_{\vphantom 2}}- \frac{1}{4} (x +\pi)^2 & x\in[-\pi,0)\\ 
+	    \\
+	    \frac{\pi^2}{12}- \frac{1}{4} (x -\pi)^2 & x\in[0,\pi)
+	\end{cases} $$
+\begin{enumerate}
+	\item Vis nu (endelig!), at Fourierrækkerne for $f$ og $F$ konvergerer punktvist mod funktionerne selv. Vis også, at konvergensen er uniform for $F$, men ikke for $f$. 
+	
+    \item Husk, at Fourierrækken for den ulige funktion $f$ på sinus-form er givet som $\sum_{n=1}^\infty \frac{\sin(n x)}{n}$. Vis, hvorledes man ved at sætte $x=\pi/2$ opnår resultatet 
+
+    $$ \sum_{k=0}^\infty  \frac{(-1)^k}{2k+1} \sim \frac{\pi}{4}, $$
+    som allerede kendes fra noterne (MC side 145).
+
+    Fourierrækken for den lige funktion $F$ er givet på cosinus-form ved $\sum_{n=1}^\infty \frac{-\cos(n x)}{n^2}$. Vis, at 
+    $$ \sum_{n=1}^\infty  \frac{(-1)^{n+1}}{n^2} \sim \frac{\pi^2}{12} \QUAD\text{og}\QUAD \sum_{n=1}^\infty  \frac{1}{n^2} \sim \frac{\pi^2}{6} $$
+	
+    \item Gælder Parsevals identitet for funktionerne $f$ og $F$? Undersøg, hvad identiteten i så fald fortæller.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Metriske rum I]
+Lad $d\colon \mR \times \mR \to \mR$ være givet ved
+$$ d(x,y)=\begin{cases}|x|+|y|, &\quad  x\neq y\\0, &\quad  x=y \end{cases} $$
+\begin{enumerate}
+	\item Vis, at $d$ definerer en metrik på $\mR$, og giv en visuel beskrivelse af metrikken. Diskutér eventuelt med din underviser.
+	
+	\item Vis, at $K_d(2,r)=\{2\}$ for $r \leq 2$, og bestem kuglen $K_d(2,3)$. Findes der et $r >0$, sådan at $K_d(2,r)$ er en åben mængde i $(\mR, d_2)$, hvor $d_2$ er den sædvanlige metrik på $\mR$? Illustrér dine resultater i den visuelle beskrivelse fra Opgave 8.2a).
+	
+	\item Lad $A\subseteq\mR$ og betragt det metriske rum $\pare{\mR,d}$. Et punkt $x\in A$ kaldes et \textit{isoleret punkt} af $A$, hvis der findes en kugle $K_d\pare{x,r}$ omkring $x$, der ikke indeholder andre punkter fra $A$ end $x$ selv.
+	
+	Vis, at ethvert $x \in \mR \setminus \{0\}$ er et isoleret punkt af $\mR$ i $(\mR, d)$. Konkludér, at en konvergent følge i $(\mR, d)$, der ikke konvergerer mod $0$, må være konstant fra et vist trin. 
+	
+	Er $0$ isoleret i $(\mR, d)$?
+	\item[d*)] Vis, at det metriske rum $(\mR, d)$ er fuldstændigt. 
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Metriske rum II]\hfill \\
+Lad $M$ være en mængde, og lad $d\colon X\times X\to\mR$ være en metrik på $M$.
+\begin{enumerate}
+    \item Bestem alle $a\in\mR$, hvor
+    \begin{enumerate}[label=\roman*)]
+        \item $d_a\colon M\times M\to\mR$ givet ved $d_a\pare{x,y}=a+d\pare{x,y}$ er en metrik på $M$.
+        
+        \item $d_a\colon M\times M\to\mR$ givet ved $d_a\pare{x,y} = a\cdot d\pare{x,y}$ er en metrik på $M$.
+    \end{enumerate}
+    
+    \item Lad $x,y,z,w\in M$. Vis, at
+    $$ \abs{d\pare{x,y}-d\pare{z,w}} \leq d\pare{x,z} + d\pare{y,w} $$
+    
+    \item Lad $d'\colon M\times M\to\mR$ og antag, at for alle $x,y,z\in M$ haves
+    \begin{enumerate}[label=(M\arabic*)]
+        \item $d'\pare{x,y} = 0$, hvis og kun hvis $x = y$.
+        \item $d'\pare{x,y} = d'\pare{y,x}$.
+        \item $d'\pare{x,z} \leq d'\pare{x,y} + d'\pare{y,z}$.
+    \end{enumerate}
+    Vis, at $d'\pare{x,y}\geq 0$ for alle $x,y\in M$.\footnote{Bemærk at dette viser, at $d'$ er metrik på $M$.}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Følgekonvergens]\hfill \\
+Lad $\pare{M,d}$ være et metrisk rum, og lad $\seq x$ være en konvergent punktfølge.
+\begin{enumerate}
+    \item Lad $f\colon\mN\to\mN$ være en bijektiv afbildning. Vis, at $\seq y$ givet ved $y_n = x_{f\pare{n}}$ er konvergent.
+    
+    \item Antag $\seq x$ er konvergent mod $x$ og lad $y\in M$. Vis, at $d\pare{x_n,y}$ er konvergent mod $d\pare{x,y}$.
+    \item Antag nu $\seq x$ og $\seq y$ begge er konvergente mod henholdsvis $x$ og $y$. Vis, at $d\pare{x_n,y_n}$ er konvergent mod $d\pare{x,y}$.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $(M,d)$ være et metrisk rum. For $x_0 \in M$ og $r> 0$ er \emph{kuglen med centrum $x_0$ og radius $r$} givet ved $K(x_0,r)= \{x \in M : d(x,x_0)<r\}$.
+\begin{enumerate}
+	\item Man refererer ofte til $K(x_0,r)$ som den \emph{åbne} kugle. Vis, at $K(x_0,r)$ er en åben mængde. Vis også, at mængden 
+	\begin{align*}
+	\overline{K}(x_0, r) := \{x \in M : d(x,x_0) \leq r\}
+	\end{align*}
+	er afsluttet. $\overline{K}(x_0, r)$ kaldes undertiden den \emph{afsluttede} kugle.
+	
+	\item Vis, at den åbne kugles afslutning $\overline{K(x_0, r)}$ altid er en delmængde af den afsluttede kugle, $\overline{K}(x_0, r)$. Diskutér med din underviser, om de to mængder kan være forskellige.
+	
+	\item[c*)] Vis, at der i ethvert normeret rum gælder $\overline{K(x_0,r)}=\overline{K}(x_0, r)$.
+	\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $\pare{V, \norm{\cdot}}$ være et normeret vektorrum. For en følge $\seq x$ af punkter $V$ kan vi opskrive den tilhørende \textit{række}, $\sum_{n=1}^\infty x_n$. Vi kalder rækken \textit{konvergent med sum $x$} netop hvis følgen af afsnitssummer $s_N := \sum_{n=1}^N x_n$ konvergerer mod $x$ i $(V, \norm{\cdot})$. Lad os også kalde rækken \textit{absolut konvergent}, hvis talrækken $\sum_{n=1}^\infty \norm{x_n}$ er konvergent.
+
+\begin{enumerate}
+\item Vis ``divergenstesten'' for normerede vektorrum: Hvis rækken $\sum_{n=1}^\infty x_n$ er konvergent, så må følgen $\seq x$ konvergere mod $0$ i $(V, \norm{\cdot})$.
+
+\item Vis, at hvis rækken $\sum_{n=1}^\infty x_n$ er absolut konvergent, så er følgen af afsnitssummer $\seqI{s}{N}$ en Cauchy-følge. Konkludér, at hvis $(V, \norm{\cdot})$ er et Banach rum, så er en absolut konvergent række konvergent.
+
+Diskutér med din underviser, hvordan Weierstrass' M-test kan ses som et specialtilfælde af dette i Banach rummet $(\textup{B}(A, \mC), \norm{\cdot}_\infty)$.
+
+\item[c*)] Vis omvendt, at hvis $(V, \norm{\cdot})$ er et normeret rum med den egenskab, at enhver absolut konvergent række er konvergent, så er $(V, \norm{\cdot})$ faktisk et Banach rum.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Bestem det indre, afslutningen og randen af følgende mængder.
+	\begin{tasks}{3}
+	    \item $(0,1]$ i $(\mR,\norm{\cdot}_1)$.
+		\item $\mQ \times \mZ$ i $(\mR^2,\norm{\cdot}_2)$.
+		\item $S^2$ i $(\mR^3,\norm{\cdot}_2)$,
+	\end{tasks}
+	hvor $S^2\coloneqq \left\{x\in\mR^3 : \norm{x}_2=1\right\}$ er enhedssfæren i $\mR^3$.
+\end{opg}

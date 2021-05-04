@@ -1,0 +1,272 @@
+\begin{opg}\hfill
+\begin{enumerate}
+    \item Afgør om følgende række er konvergent.
+    $$ \sum_{n=1}^\infty \frac{\log n}{n!} $$
+    
+    \begin{proof}[Løsning]
+    Lad $\seq a$ være givet ved $a_n = \frac{\log n}{n!}$ og bemærk at dette er en positiv følge, hvor
+    $$ \frac{a_{n+1}}{a_n}
+        = \frac{\,\frac{\log\pare{n+1}}{\pare{n+1}!}\,}{\frac{\log n}{n!}}
+        = \frac{\log\pare{n+1}}{\log n}\cdot\frac{n!}{\pare{n+1}!}
+        \overset{\pare{\dagger}}{\leq} \frac{n}{\log\pare{n}}\cdot\frac{1}{n+1}
+        \to 0 \quad\text{for } n\to \infty, $$
+    hvor $\pare{\dagger}$ følger af uligheden $\log\pare{x}\leq x-1$ for $x\in\mR_+$. Det følger således af kvotienttesten, at rækken er konvergent.
+    
+    Opgaven kan ligeledes løses med adskillige andre tests, eksempelvis sammenligningstesten.
+    \end{proof}
+    
+    \item Afgør om følgende række er absolut konvergent, betinget konvergent eller divergent.
+    $$ \sum_{n=2}^\infty
+        \frac{\cos\pare{\dfrac{\pi n}{2}}}{\sqrt{n}\log\pare{n}},  $$
+    \begin{proof}[Løsning]
+    Lad $\seq b$ være givet ved $b_n = \frac{\cos\pare{\frac{\pi n}{2}}}{\sqrt{n}\log\pare{n}}$, og bemærk indledningsvis at for $m\in\mN$ har vi
+    $$ b_{2m-1} = \frac{\cos\pare{\frac{\pare{2m-1}\pi }{2}}}
+                {\sqrt{2m-1}\log\pare{2m-1}}
+            = \frac{\cos\pare{-\frac{\pi}{2}}}
+                {\sqrt{2m-1}\log\pare{2m-1}} = 0 $$
+    og
+    $$ b_{2m} = \frac{\cos\pare{\frac{2m\pi }{2}}}
+                {\sqrt{2m}\log\pare{2m}}
+            = \frac{\cos\pare{m\pi}}{\sqrt{2m}\log\pare{2m}}
+            = \frac{\pare{-1}^m}{\sqrt{2m}\log\pare{2m}}. $$
+    Lad nu
+    $$ S_N = \sum_{n=1}^N b_n \QUAD\text{og}\QUAD  T_M =\sum_{m=1}^M b_{2m}, $$
+    og bemærk $S_{2N} = S_{2N+1} = T_N$, eller med andre ord $S_N = T_{\floor{\frac{N}{2}}}$. Det er let at se, at rækken
+    $$ \sum_{m=1}^\infty b_{2m}
+        = \sum_{m=1}^\infty \frac{\pare{-1}^m}{\sqrt{2m}\log\pare{2m}} $$
+    er alternerende og $\lim_{m\to\infty} \abs{b_{2m}} = \lim_{m\to\infty} \frac{1}{\sqrt{2m}\log\pare{2m}} = 0$, hvorfor det følger af testen for alternerende rækker, at den er konvergent. Da $S_N=T_{\floor{\frac{N}{2}}}$ følger det således, at den angivne række er konvergent.
+    
+    For at vise, at rækken ikke er absolut konvergent, bemærk først at
+    $$ \abs{b_{2m-1}} = 0, \QUAD
+        \abs{b_{2m}} = \frac{1}{\sqrt{2m}\log\pare{2m}}. $$
+    Der findes $M\in\mN$, så for alle $m\geq M$ haves $\log\pare{m}\leq \sqrt{m}$,\footnote{Faktisk er $M=1$ tilstrækkelig.} og det følger af MC 2.12, at den givne række er absolut konvergent, hvis og kun hvis rækken
+    $$ \sum_{m = M}^\infty \frac{1}{\sqrt{2m}\log\pare{2m}} $$
+    er absolut konvergent. For $m\geq M$ haves imidlertid 
+    $$ \frac{1}{\sqrt{2m}\log\pare{2m}} \geq \frac{1}{2m}, $$
+    og af MC 2.23 har vi at rækken $\sum_{m=M}^\infty \frac{1}{2m}$ er divergent, hvorfor det følger af sammenligningstesten, at den angivne række \textit{ikke} er absolut konvergent.
+    
+    Vi konkluderer således, at den angivne række er betinget konvergent.
+    \end{proof}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $a,b > 0$ og betragt rækken givet ved
+$$ \sum_{n=0}^\infty \pare{b^n - a^n}. $$
+\begin{enumerate}
+    \item Vis at rækken er konvergent for $a = \frac{1}{3}$, $b = \frac{1}{2}$, og bestem summen.
+    
+    \begin{proof}[Løsning]
+    Bemærk først at $\frac{1}{3} < 1$ og $\frac{1}{2} < 1$, hvorfor MC 2.4 giver at følgende rækker er konvergente med sum som angivet.
+    $$ \sum_{n=0}^\infty \frac{1}{3^n} = \frac{1}{1-\frac{1}{3}} = \frac{3}{2}, \QUAD
+        \sum_{n=0}^\infty \frac{1}{2^n} = \frac{1}{1-\frac{1}{2}} = 2. $$
+    Det følger da af MC 2.9, at
+    $$ \sum_{n=0}^\infty \pare{\frac{1}{2^n} - \frac{1}{3^n}}
+        = \sum_{n=0}^\infty \frac{1}{2^n} - \sum_{n=0}^\infty \frac{1}{3^n} = 2-\frac{3}{2} = \frac{1}{2}. $$
+    \end{proof}
+    
+    \item Bestem samtlige værdier $a,b>0$, hvor rækken er konvergent.
+    
+    \begin{proof}[Løsning]
+    Vi inddeler beviset i følgende tre tilfælde.
+    
+    \begin{indent}
+    \underline{Tilfælde 1}: Antag $a = b$. Da er rækken trivielt konvergent.
+    
+    \underline{Tilfælde 2}: Antag $0 < a,b<1$. Da er rækkerne
+    $$ \sum_{n=0}^\infty a^n, \QUAD \sum_{n=0}^\infty b^n $$ 
+    begge konvergente, hvorfor det følger af MC 2.9, at
+    $$ \sum_{n=0}^\infty \pare{b^n - a^n} $$
+    er konvergent.
+    
+    \underline{Tilfælde 3}: Antag uden tab af generalitet $a<b$ og $1\leq b$. Da haves
+    $$ \pare{b^n - a^n}
+        = b^n\pare{1 - \pare{\frac{a}{b}}^n}, $$
+    så eftersom $0<a<b$ får vi $\pare{\frac{a}{b}}^n \to 0$ for $n\to\infty$, og da $1\leq b$ får vi
+    $$ \lim_{n\to\infty} \pare{b^n-a^n} = \begin{cases}
+        1, &\quad\text{hvis } b = 1, \\
+        \infty, &\quad\text{hvis } b > 1
+    \end{cases}. $$
+    I begge tilfælde går leddene altså \textit{ikke} mod $0$, hvorfor det følger af MC 2.2, at rækken er divergent.
+    \end{indent}
+    \end{proof}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Betragt rækken givet ved
+$$ \sum_{n=1}^\infty \frac{1}{2n}x^{2n}, \QUAD\text{hvor } x\in\mR $$
+og lad $0\leq a < 1$. 
+\begin{enumerate}
+    \item Vis, at rækken konvergerer uniformt på intervallet $[-a,a]$.
+    
+    \begin{proof}[Løsning]
+    Lad $x\in[-a,a]$ og bemærk
+    $$ \abs{\frac{1}{2n}x^{2n}} \leq \frac{1}{2n}a^{2n} \leq a^{2n}. $$
+    Eftersom $0\leq a < 1$ har vi desuden, at
+    $\sum_{n=1}^\infty a^{2n}$ er konvergent, hvorfor det følger er Weierstrass' Majoranttest, at rækken er uniformt konvergent.
+    \end{proof}
+
+    \item Vis, at rækkens sumfunktion $f\colon [-a,a]\to\mR$ er differentiabel, og der gælder
+    $$ f'\pare{x} = \frac{x}{1-x^2}, \Quad x\in[-a,a] $$
+    
+    \begin{proof}[Løsning]
+    Lad $\seqI{S}{N}$ være en funktionsfølge med $S_N\colon [-a,a]\to\mR$ givet ved
+    $$ S_N\pare{x} = \sum_{n=1}^N \frac{1}{2n}x^{2n}, \Quad x\in [-a,a], $$
+    og bemærk $\seqI{S}{N}$ er en kontinuert differentiabel funktionsfølge med $S_N'\pare{x} = \sum_{n=1}^N x^{2n-1}$. Vi har for alle $x\in[-a,a]$, at 
+    $$ \abs{x^{2n-1}} \leq a^{2n-1}, $$
+    og eftersom $0\leq a < 1$ er rækken $\sum_{n=1}^\infty a^{2n-1}$ konvergent, hvorfor vi kan slutte at $\sum_{n=0}^\infty x^{2n-1}$ konvergerer uniformt på intervallet $[-a,a]$. Efter en mindre omskrivning genkender vi rækken som en geometrisk række med $y = x^2$, hvorfor det følger af MC 3.21, at
+    $$ \sum_{n=1}^\infty x^{2n-1} = x\sum_{n=0}^\infty x^{2n}
+        = \frac{x}{1-x^2}. $$
+    Det følger nu af MC 3.18, at rækkens sumfunktion $f$ er differentiabel med $f'\pare{x} = \frac{x}{1-x^2}$.
+    \end{proof}
+    
+    \item Bestem sumfunktionen $f$, og brug dette til at vise
+    $$ \sum_{n=1}^\infty \frac{1}{2^nn} = \log\pare{2} $$
+    
+    \begin{proof}[Løsning]
+    Det følger af Opgave 3b), at $f$ er en stamfunktion til $x\mapsto\frac{x}{1-x^2}$. Ved at betragte rækken fra Opgave 3a) får vi nødvendigvis $f\pare{0} = 0$, så for $x\in[-a,a]$ har vi
+    $$ f\pare{x} = \int_0^x \frac{y}{1-y^2} \,dy
+        = \int_1^{1-x^2} -\frac{1}{2t} \,dt
+        = -\frac{1}{2}\log\pare{t}\bigg|_{t=1}^{t=1-x^2} = -\frac{1}{2}\log\pare{1-x^2} $$
+    Ved indsættelse af $x = \frac{1}{\sqrt{2}}$ fås da
+    $$ \log\pare{2} = \log\pare{\frac{1}{1-\pare{\frac{1}{\sqrt{2}}}^2}}
+        = 2f\pare{\frac{1}{\sqrt{2}}}
+        = 2\sum_{n=1}^\infty \frac{1}{2n}\pare{\frac{1}{\sqrt{2}}}^{2n}
+        = \sum_{n=1}^\infty \frac{1}{2^nn}, $$
+    hvilket er det ønskede.
+    \end{proof}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $p,r\in\mR$ og betragt rækken
+$$ \sum_{n=2}^\infty \frac{\log\pare{n}^r}{n^p}. $$
+\begin{enumerate}
+    \item Lad $p = 1$. Bestem alle $r\in\mR$, hvor rækken er konvergent.
+    
+    \begin{proof}[Løsning]
+    Lad $\seq a$ være givet ved $a_n = \frac{\log\pare{n}^r}{n}$. 
+    
+    Antag først $r\geq -1$ og bemærk for $n\geq 3$ haves $\log\pare{n}\geq 1$, hvorfor
+    $$ \frac{\log\pare{n}^r}{n} \geq \frac{1}{n\log n}. $$
+    Da $\cbrac{\frac{1}{n\log n}}_{n\in\mN}$ er en positiv, aftagende følge, så kan vi udlede af MC 2.22, at $\sum_{n=2}^\infty \frac{1}{n\log n}$ er konvergent, hvis og kun hvis
+    $$ \sum_{k=1}^\infty 2^k \frac{1}{2^k\log\pare{2^k}}
+        = \sum_{k=1}^\infty \frac{1}{k\log\pare{2}} $$
+    er konvergent. Det følger imidlertid, at ovenstående række er divergent som konsekvens af sammenligningstesten og MC 2.23. Dette viser igen ved sammenligningstesten, at den angivne række er divergent for $r\geq -1$.
+    
+    Antag nu $r < -1$. Vi viser i Opgave 4b), at $\seq a$ er en aftagende følge, så det følger af MC 2.22, at den angivne række er konvergent, hvis og kun hvis 
+    $$ \sum_{k=1}^\infty 2^ka_{2^k} = \sum_{k=1}^\infty 2^k\frac{\log\pare{2^k}^r}{2^k} = \sum_{k=1}^\infty \pare{k\log 2}^r $$
+    konvergerer. Det følger imidlertid, at ovenstående række er konvergent som konsekvens af sammenligningstesten og MC 2.23. Dette viser, at den angivne række er konvergent for $r < -1$.
+    \end{proof}
+    
+    \item Bestem samtlige $p,r\in\mR$, hvor rækken er konvergent.
+    
+    \begin{proof}[Løsning]
+    Lad $\seq b$ være givet ved $b_n = \frac{\log\pare{n}^r}{n^p}$.
+    
+    \begin{indent}
+    \underline{Tilfælde 1}: Antag $p > 1$. Da findes $\varepsilon>0$, så $p-\frac{\varepsilon}{2}>1$, og bemærk at der findes $N\in\mN$, så for alle $n\in\mN$, der opfylder $n\geq N$, haves
+    $$ \frac{\log\pare{n}^r}{n^{\varepsilon/2}} \leq 1. $$
+    Men da fås
+    $$ \frac{\log\pare{n}^r}{n^p} = \frac{\log\pare{n}^r}{n^{\varepsilon/2}}\cdot\frac{1}{n^{p-\varepsilon/2}}
+    \leq \frac{1}{n^{p-\varepsilon/2}}, $$
+    hvorfor det følger af sammenligningstesten og MC 2.23, at $\sum_{n=N}^\infty \frac{\log\pare{n}^r}{n^p}$ er konvergent. Som følge af MC 2.12 viser dette, at $\sum_{n=2}^\infty \frac{\log\pare{n}^r}{n^p}$ er konvergent. \\
+    
+    \underline{Tilfælde 2}: Antag $p < 1$. Da findes $\varepsilon>0$, så $p+\frac{\varepsilon}{2} < 1$, og bemærk at der findes $N\in\mN$, så for alle $n\in\mN$, der opfylder $n\geq N$, haves
+    $$ n^{\varepsilon/2}\log\pare{n}^{\varepsilon/2} \geq 1 $$
+    Men da fås
+    $$ \frac{\log\pare{n}^r}{n^p}
+        = n^{\varepsilon/2}\log\pare{n}^r\cdot\frac{1}{n^{p+\varepsilon/2}}
+        \leq \frac{1}{n^{p+\varepsilon/2}}, $$
+    hvorfor det følger af sammenligningstesten og MC 2.23, at $\sum_{n=N}^\infty \frac{\log\pare{n}^r}{n^p}$ er divergent. Som følge af MC 2.12 viser dette, at $\sum_{n=2}^\infty \frac{\log\pare{n}^r}{n^p}$ er divergent.
+    \end{indent}
+    Resultatet i Opgave 4a) samt ovenstående giver, at rækken $\sum_{n=2}^\infty \frac{\log\pare{n}^r}{n^p}$ er konvergent, netop når $p=1$ og $r<-1$ eller blot $p>1$ og $r\in\mR$.
+    \end{proof}
+    
+    \iffalse
+    \begin{proof}
+    Lad $\seq b$ være givet ved $b_n = \frac{\log\pare{n}^r}{n^p}$.
+    
+    \begin{indent}
+    \underline{Tilfælde 1}: Antag $p\leq 0$. Da haves
+    $$ \frac{\log\pare{n}^r}{n^p} \geq \log\pare{n}^r, $$
+    så ved sammenligningstesten er det tilstrækkeligt at vise, at $\sum_{n=2}^\infty \log\pare{n}^r$ er divergent for alle $r\in\mR$. 
+    
+    For $r\geq 0$ følger det af divergenstesten at rækken divergerer, eftersom leddene ikke går mod $0$.
+    
+    For $r<0$ udgør rækkens led en monotont aftagende, positiv følge, hvorfor det følger af MC 2.22, at rækken er divergent, hvis og kun hvis
+    $$ \sum_{k=1}^\infty 2^k\log\pare{2^k}^r
+        = \sum_{k=1}^\infty 2^kk^r\log\pare{2}^r $$ 
+    er divergent. Vi bemærker, at
+    $$ \frac{2^{k+1}\pare{k+1}^r\log\pare{2}^r}{2^kk^r\log\pare{2}^r}
+        = 2\pare{\frac{k+1}{k}}^r \to 2 \quad \text{for } k\to\infty, $$
+    hvorfor det følger af kvotienttesten MC 2.20, at rækken er divergent. Dette viser det ønskede.
+    
+    \underline{Tilfælde 2}: Antag $p>0$. Lad $f\colon\pare{0,\infty}\to\mR$ være givet ved $f\pare{x}=\frac{\log\pare{x}^r}{x^p}$, og bemærk
+    $$ f'\pare{x} = \frac{r\log\pare{x}^{r-1} - p\log\pare{x}^r}{x^{p+1}}
+        = \frac{\log\pare{x}^{r-1}}{x^{p+1}}\pare{r-p\log\pare{x}}. $$
+    For tilstrækkeligt store $x\in\mR$, nærmere bestemt $x \geq \exp\pare{\frac{r}{p}}$, har vi $f'\pare{x}\leq 0$, hvorfor vi kan vælge $N\in\mN$, som opfylder $N > \exp\pare{\frac{r}{p}}$, og for alle $n\geq N$ haves da $b_n \geq b_{n+1}$. Definér følgen $\seq{b'}$ ved $b_n' = b_{N+n}$, og betragt rækken
+    $$ \sum_{n=N}^\infty b_n = \sum_{n=0}^\infty b_n' $$
+    Leddene i denne række er positive og monotont aftagende, hvorfor det følger af MC 2.22, at rækken er konvergent, hvis og kun hvis
+    $$ \sum_{k=0}^\infty 2^kb_{2^k}'
+        = \sum_{k=N}^\infty 2^kb_{N+2^k}
+        = \sum_{k=1}^\infty 2^k\frac{\log\pare{N+2^k}^r}{\pare{N+2^k}^p} $$
+    er konvergent. Lad nu $\seqI{b''}{k}$ være givet ved $b_k''=2^k\frac{\log\pare{N+2^k}^r}{\pare{N+2^k}^p}$ og bemærk
+    \begin{align*}
+        \frac{b_{k+1}''}{b_k''}
+        = \frac{\quad\frac{2^{k+1}\log\pare{N+2^{k+1}}^r}
+            {\pare{N+2^{k+1}}^p}\quad}
+            {\frac{2^k\log\pare{N+2^k}^r}{\pare{N+2^k}^p}}
+        &= 2\cdot \pare{\frac{N+2^k}{N+2^{k+1}}}^p \pare{\frac{\log\pare{N+2^{k+1}}}{\log\pare{N+2^k}}}^r \\
+        &= 2\cdot \pare{\frac{\frac{N}{2^k} + 1}{\frac{N}{2^k}+2}}^p
+            \pare{\frac{k\log\pare{2} + \log\pare{\frac{N}{2^{k}} + 2}}
+            {k\log\pare{2} + \log\pare{\frac{N}{2^{k}} + 1}}}^r \\
+        &\to 2\cdot \frac{1}{2^p} = \frac{1}{2^{p-1}} \quad \text{for } k\to\infty.
+    \end{align*}
+    Det følger nu af kvotienttesten MC 2.20, at rækken er konvergent for $p>1$, mens rækken er divergent for $p < 1$.
+    \end{indent}
+    Opsummerende har vi således, at rækken konvergerer netop hvis $p>1$ og $r\in\mR$ eller $p = 1$ og $r<-1$.
+    
+    Lad $\seq b$ være givet ved $b_n = \frac{\log\pare{n}^r}{n^p}$. Vi inddeler beviset i følgende tilfælde.
+    
+    \begin{indent}
+    \underline{Tilfælde 1}: Antag $r> 0$. Hvis $p\leq 1$, da er
+    $$ b_n = \frac{\log\pare{n}^r}{n^p} \geq \frac{1}{n}, $$
+    hvorfor det følger af sammenligningstesten og MC 2.23, at den angivne række er divergent.
+    
+    Hvis $p > 1$, så findes $N\in\mN$, så for alle $n\in\mN$, der opfylder $n\geq N$, haves $\log\pare{n}^r\leq n^{\frac{p-1}{2}}$, hvilket giver
+    $$ b_n = \frac{\log\pare{n}^r}{n^p} \leq \frac{n^{\frac{p-1}{2}}}{n^p}
+        = \frac{1}{n^{\frac{p+1}{2}}}, $$ 
+    hvorfor det følger af sammenligningstesten og MC 2.23, at den angivne række er konvergent.
+    
+    \underline{Tilfælde 2}: Antag $r\leq 0$. Lad $f\colon (0,\infty)\to\mR$ være givet ved $f\pare{x} = \frac{\log\pare{x}^r}{x^p}$. Da haves
+    $$ f'\pare{x} = \frac{r\log\pare{x}^{r-1} - p\log\pare{x}^r}{x^{p+1}}
+        \leq 0, $$
+    hvorfor det følger at $\seq b$ er en aftagende følge af positive elementer. Det følger således af MC 2.22, at den angivne række er konvergent, hvis og kun hvis
+    $$ \sum_{k=1}^\infty 2^ka_{2^k}
+        = \sum_{k=1}^\infty 2^k\frac{\log\pare{2^k}^r}{2^{kp}}
+        = \sum_{k=1}^\infty \frac{\log\pare{2^k}^r}{2^{k\pare{p-1}}}
+        = \sum_{k=1}^\infty \frac{\pare{k\log 2}^r}{2^{k\pare{p-1}}} $$
+    Lad nu $\seqI{b'}{k}$ være givet ved $b_k' = \frac{\pare{k\log 2}^r}{2^{k\pare{p-1}}}$ og bemærk
+    $$ \sqrt[k]{b_k'} = \sqrt[k]{\frac{\pare{k\log 2}^r}{2^{k\pare{p-1}}}}
+        = \frac{\pare{k^{1/k}\log \pare{2}^{1/k}}^r}{2^{p-1}}
+        \to \frac{1}{2^{p-1}}, $$
+    hvorfor det følger af rodtesten, at den angivne række er konvergent for $p > 1$ og divergent for $p < 1$. Tilfældet $p = 1$ er dækket i Opgave 4a).
+    \end{indent}
+    \end{proof}
+    \fi
+    
+    \item Betragt funktionsrækken
+    $$ \sum_{n=2}^\infty \frac{\log\pare{n}^x}{n}, \QUAD x\in\mR. $$
+    Lad $r<-1$ og vis at funktionsrækken er uniformt konvergent for alle $x \leq r$. 
+    
+    \begin{proof}[Løsning]
+    Lad $x\leq r$. For alle $n\in\mN$, som opfylder $n\geq 3$, haves $\log\pare{n}\geq 1$, hvorfor
+    $$ \frac{\log\pare{n}^x}{n} \leq \frac{\log\pare{n}^r}{n} $$
+    for alle $x\leq r$. Bemærk endvidere at Opgave 4a) giver os, at rækken $\sum_{n=3}^\infty \frac{\log\pare{n}^r}{n}$ er konvergent, hvorfor det følger af Weierstrass Majoranttest, at rækken
+    $$ \sum_{n=3}^\infty \frac{\log\pare{n}^x}{n} $$
+    er uniformt konvergent på intervallet $(-\infty,r]$. Lader vi $f$ notere rækkens sumfunktion får vi således, at $\sum_{n=2}^\infty \frac{\log\pare{n}^x}{n}$ er uniformt konvergent med grænsefunktion $f\pare{x} + \frac{\log\pare{2}^x}{2}$.
+    \end{proof}
+\end{enumerate}
+\end{opg}

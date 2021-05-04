@@ -1,0 +1,80 @@
+\begin{itemize}
+    \item Hvis $f\colon U \to \mR$ ($\mC$) er en uendeligt ofte differentiabel funktion (her er definitionsmængden $U \subseteq \mR$ åben), kan man knytte en særlig potensrække til $f$ kaldet dens Taylor-række. Tirsdag afslutter vi emnet potensrækker med at undersøge sådanne Taylorrækker (MC 4.3).
+    
+    Vi påbegynder derefter et nyt kapitel. Man kan spørge sig selv, hvad der sker på randen af det åbne konvergensområde for en potensrække ($\abs{x}=r$), og i undersøgelsen af dette spørgsmål kan man uden tab af generalitet antage, at $r=1$. Vi kan da skrive $x$ på polarformen $x=e^{i \theta}$ og betragte rækken som en række i $\theta\in\mR$, nemlig $\sum_{n=0}^\infty a_n e^{i n \theta}$. Det viser sig naturligt også at betragte rækken $\sum_{n=0}^\infty a_{-n} e^{-i n \theta}$, hvor $a_{0}, a_{-1}, a_{-2}, \ldots$ er en følge der udvider følgen $\{a_n\}_{n \in \mN}$ til en dobbelsidet uendelig følge $\{a_n\}_{n \in \mZ}$, og endda begge rækker samtidigt som $\sum_{n=-\infty}^\infty a_n e^{i n \theta}$. Hvis denne række er konvergent (defineret på passende vis), er dens sumfunktion $f$ en $2\pi$-periodisk funktion i $\theta$. Rækker af denne type kaldes trigonometriske rækker (husk Eulers identitet $e^{i x}= \cos(x)+ i \sin(x)$, der knytter de trigonometriske funktioner sammen med den komplekse eksponentialfunktion). Hovedformålet er nu at undersøge konvergensegenskaberne for sådanne rækker, og at finde ud af hvornår og hvordan $2\pi$-periodiske funktioner kan skrives som sumfunktioner af trigonometriske rækker.	Dette emne hedder Fourieranalyse og viser sig at være yderst vigtigt	i både abstrakt matematik (harmonisk analyse) og anvendt matematik (signalanalyse). I denne uge starter ved med definitioner og eksempler (MC 5.1-5.2).
+    
+    I øvelsestimerne behandler vi Opgave 1-3, eventuelt Opgave 4.
+\end{itemize}
+
+\begin{opg}[Potensrækker]
+I denne opgaver benytter vi konventionen, at $x$ er reel og $z$ er kompleks.
+\begin{enumerate}
+	\item
+	Find konvergensområdet for følgende rækker, 
+	\begin{tasks}{3}
+		\item $\displaystyle \sum_{n=1}^\infty \sqrt{n} \left(\frac x2\right)^n, \quad x\in\mR$.
+		\item $\displaystyle \sum_{n=1}^\infty \frac{z^n}{n^2}, \quad z\in\mC$
+		\item $\displaystyle \sum_{n=1}^\infty \sqrt{\frac{x}{n}}^n, \quad x\in\mR_+$
+	\end{tasks}
+
+    \item Lad $p\in\mN$. Vis, at hvis 
+    $$ \sum_{n=0}^\infty a_n x^n, \QUAD x\in\mR $$
+    har konvergensradius $r$, så har 
+    $$ \sum_{n=0}^\infty a_n x^{pn}, \QUAD x\in\mR $$
+    konvergensradius $\sqrt[p]{r}$. 
+    
+    \item Find konvergensområdet og kontinuitetsområdet for følgende rækker og deres sumfunktioner:
+    \begin{tasks}{2}
+	    \item $\displaystyle \sum_{n=0}^\infty (z-2)^n$ %TL 12.6.1 a
+	    \item $\displaystyle \sum_{n=0}^\infty \max\{0,(-2)^n\}{(x-1)^n}$
+    \end{tasks}
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Potensrækker, integration og differentiation] \hfill
+\begin{enumerate}
+	\item Vis, at rækken ${\displaystyle \sum_{n=0}^\infty \pare{-1}^nx^n}$ konvergerer uniformt mod $\displaystyle \frac1{1+x}$ på intervallet $[-a,a]$, for ethvert $a\in[0,1)$. Brug dette til at vise uniform konvergens af følgende funktionsrækker	mod de angivne funktioner på samme interval:
+	\begin{tasks}{2}
+		\item $\displaystyle \sum_{n=1}^\infty \pare{-1}^nnx^{n-1}$ \; mod \; $\displaystyle -\frac{1}{(1+x)^2}$
+		\item $\displaystyle \sum_{n=0}^\infty \frac{\pare{-1}^n}{n+1}x^{n+1}$ \; mod \; $\displaystyle \log(1+x)$
+	\end{tasks}
+	
+	\item Betragt rækken fra ii) i forrige delopgave. Kan du finde en talrække med sum $\log(2)$?
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Bessels funktion, af Henrik Schlichtkrull] \hfill \\
+Lad $\alpha\in\mN$ og definér \textit{Bessels funktion} $J_\alpha\colon \mR\to\mR$ ved
+$$ J_\alpha\pare{x}\coloneqq \sum_{n=0}^\infty
+    \frac{\pare{-1}^n}{2^{2n+\alpha}n!\pare{n+\alpha}!}x^{2n+\alpha} $$
+\begin{enumerate}
+    \item Bestem konvergensradius $r$ for Bessels funktion.
+    
+    \item Vis, at $J_\alpha$ er en løsning til differentialligningen
+    $$ x^2\frac{\partial^2 y}{\partial x^2} + x\frac{\partial y}{\partial x}
+        + \pare{x^2-\alpha^2}y = 0 $$
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Den svære, af Erik Lange]
+Lad $f_1\colon\mR\to\mR$ være givet ved $f_1\pare{x} = 0$, og definér følgen $\seq f$ af funktioner $f_n\colon\mR\to\mR$ givet ved
+$$ f_n\pare{x} = \int_0^x f_{n-1}\pare{t} + \sin\pare{t} \,dt $$
+Bemærk at følgen er veldefineret, eftersom $f_n$ er kontinuert for alle $n\in\mN$.
+
+\begin{enumerate}
+    \item Vis ved induktion, at
+    $$ \abs{f_{n+1}\pare{x} - f_n\pare{x}} \leq \frac{\abs{x}^{n+1}}{\pare{n+1}!} $$
+    for alle $n\in\mN$ og $x\in\mR$. Brug dette til at vise, at
+    $$ \abs{f_m - f_n} \leq \frac{\abs{x}^{n+1}}{\pare{n+1}!} + \ldots + \frac{\abs{x}^m}{m!} $$
+    for alle $m\geq n$. 
+    
+    \item Vis, at der findes en funktion $f\colon\mR\to\mR$, så $\seq f$ konvergerer punktvist mod $f$.
+    
+    \item Vis, at konvergens er uniform på intervaller af typen $[-a,a]$.
+    
+    \item Vis, at $f$ løser differentialligningen
+    $$ \frac{\partial y}{\partial x} = y + \sin $$
+    på hele $\mR$ med begyndelsesbetingelsen $y\pare{0} = 0$.
+\end{enumerate}
+Idéerne fra denne opgave kan generaliseres og bruges til et bevis for Picard-Lindlöfs sætning om eksistens af løsninger til visse typer differentialligninger.
+\end{opg}
