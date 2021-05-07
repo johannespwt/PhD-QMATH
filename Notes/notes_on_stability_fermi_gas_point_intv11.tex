@@ -41,6 +41,7 @@
 \newcommand{\interior}[1]{%
 	{\kern0pt#1}^{\mathrm{o}}%
 }
+\renewcommand{\braket}[1]{\left\langle#1\right\rangle}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
 \newcommand{\ie}{\emph{i.e.} }
 \newcommand{\eg}{\emph{e.g.} }
@@ -2132,7 +2133,7 @@ H=\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{i<j} k_i\cdot k_j -\gamma_R\sum_{i=1}^{
 We may rewrite this as \begin{equation}
 H=\frac{m}{m+1}\sum_{i=1}^{N}k_i^2+\frac{1}{m+1}\left(\sum_{i=1}^{N}k_i\right)^2 -\gamma_R\sum_{i=1}^{N}\braket{\hat{\phi}_i\vert \cdot}\hat{\phi}_i.
 \end{equation}
-We know from section \ref{SectionRankOnePerturbation} that $ H_1:=\frac{m}{m+1}\sum_{i=1}^{N}k_i^2-\gamma_R\sum_{i=1}^{N}\braket{\hat{\phi}_i\vert \cdot}\hat{\phi}_i $ have a spectrum with (at most) one negative eigenvalue, and continuous spectrum consisting of $ (0,\infty) $. Thus we may write $ H $ as \begin{equation}
+We know from section \ref{SectionRankOnePerturbation} that $ H_1:=\frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}\vert \cdot}\hat{\phi} $ have a spectrum with (at most) one negative eigenvalue, and continuous spectrum consisting of $ (0,\infty) $. Thus we may write $ H $ as \begin{equation}
 H=\sum_{i} \varepsilon_i c^\dagger_ic_i+\frac{1}{m+1}\sum_{m=1}^{3}\left(\sum_{ij}a^m_{ij}c_i^\dagger c_j\right)^2
 \end{equation}
 where $ a_{ij}^m=\braket{\psi_i\vert k^m\vert \psi_j} $, and $ m $ is just the vector index of $ k=(k^1,k^2,k^3):=(k_x,k_y,k_z) $ and $ \psi_i $ are the (generalized) eigenfunctions of $ H_1 $, and $ \varepsilon_i $ are the generalized eigenvalues of $ \psi_i $. Furthermore, as a consequence of the fact that $ \sigma(\frac{m+1}{m}H_1)=\begin{cases}
@@ -2206,10 +2207,65 @@ The terms comming from two $ 0 $s may be collected to give
 Now remember that $ a_{0i}=\braket{0|k|i} $. Thus $ \sum_{i>0} a^m_{0i}a^m_{i0}=\braket{0|k^m|i}\braket{i|k^m|0}=\braket{0|(k^m)^2|0} $. Thus we see that the coefficient of $ N_0 $ in $ H $ is $ \braket{0|\frac{m}{m+1}\sum_{i}k_i^2+\frac{1}{m+1}\sum_{i}k_i^2-\gamma_R\sum_{i}\braket{\hat{\phi}_i,\cdot}\hat{\phi}_i|0}=\braket{0|\sum_{i}k_i^2-\gamma_R\sum_{i}\braket{\hat{\phi}_i,\cdot}\hat{\phi}_i|0}\geq -\lambda $ for some $ \lambda $ independent of $ R $. The last inequality follows direct diagonalization of the operator $ \sum_{i}k_i^2-\gamma_R\sum_{i}\braket{\hat{\phi}_i,\cdot}\hat{\phi}_i $, or in fact by just finding it eigenvalue, if it exists. Now for the remaining term comming from two $ 0 $s we notice that $ 0\leq(1-2N_0)\leq 1 $ and that \begin{equation}
 a_{0j}^ma_{i0}^m=\braket{i|k^m|0}\braket{0|k^m|j}=\braket{i|k^m P_0 k^m|j},
 \end{equation}
-where $ P_0=\ket{0}\bra{0} $ is the projector onto the ground state. Thus we see that $ \sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right) $ is the second quantization of the operator $ \sum_{m=1}^{3}k^mP_0k^m $. Thus we clearly have \begin{equation}
-(1-2N_0)\sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right)\geq -\sum_{m=1}^{3}k^mP_0k^m\geq -P_0^\perp k^2P_0^\perp.
+where $ P_0=\ket{0}\bra{0} $ is the projector onto the ground state. Thus we see that $ \sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right) $ is the second quantization of the operator $ \sum_{m=1}^{3}k^mP_0k^m $, which is positive. Thus we clearly have \begin{equation}
+(1-2N_0)\sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right)\geq-\sum_{m=1}^{3}\sum_{j,k}\left(a^m_{0j}a^m_{k0}c^\dagger_kc_j\right)  %\geq -P_0^\perp k^2P_0^\perp.
 \end{equation}
-We are thus interested in estimating $ \frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R $ in relation to $ -\frac{1}{m+1}P_0^\perp k^2P_0^\perp $
+where the righthand side is simply the second quantization of the one-particle operator $ \sum_{m=1}^{3}k^mP_0k^m $. We now want to estimate $ P_0^\perp H_1 P_0^\perp-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m  $, were $ P_0 $ is the orthogonal projection onto the groundstate of $ H_1 $. For now we assume that $ m\geq 1 $ such that $ m-1\geq 0 $. Using that $ \sum_{m=1}^{3}k^mP_0k^m\leq k^2 $, we find \begin{equation}
+H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\geq \frac{m-1}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R.
+\end{equation}
+Now notice that $ \left(H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\right)\ket{0}=H_1\ket{0}=-\lambda\ket{0} $, since $ k^mP_0k^m\ket{0}=0 $ by spherical symmetry of $ \ket{0} $. On the contrary by the min-max principle, we bound the next element in the spectrum, by \begin{equation}
+\begin{aligned}
+\lambda_1&=\min_{\psi,\varphi\in H^2(\R^3)}\max_{u\in\Span{\psi,\varphi}}\left(\braket{\hat{u}\Bigg|\left(H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\right)\hat{u}}\right)\\
+&\geq\min_{\psi,\varphi\in H^2(\R^3)}\max_{u\in\Span{\psi,\varphi}}\left(\braket{\hat{u}\Bigg|\left(\frac{m-1}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R\right)\hat{u}}\right)\geq0.
+\end{aligned}
+\end{equation}
+Notice that it is a general fact that a rank one perturbation of a non-negative operator, has at most one negative eigenvalue, as can be seen by the min-max principle, since one can always find vector in any two-dimensional subspace that is orthogonal to the rank-one perturbation.
+By the above we conclude that $ \ket{0} $ is the unique groundstate of $ H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m $ with eigenvalue $ -\lambda $. Now it is clear that $ k^mP_0k^m=P_0^\perp k^mP_0k^mP_0^\perp $, so we get\begin{equation}
+P_0^\perp \left(H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\right)P_0^\perp=P_0^\perp H_1P_0^\perp-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\geq 0.
+\end{equation}
+Now we may improve the inequality $  \sum_{m=1}^{3}k^mP_0k^m\leq k^2 $, by simply writing out \begin{equation}
+\braket{v|(\sum_{m=1}^{3}k^mP_0k^m)v}=
+\end{equation}
+DO NOT USE LAST INEQUALITY, USE INSTEAD JAN PHILIPS ARGUMENT FOR POSITIVITY WITH NEXT TO LAST INEQUALITY. RANK-ONE PERTUB. OF POSITIVE OPERATOR HAS AT MOST ONE NEGATIVE EIGENVALUE, AND GROUNDSTATE OF $ H_1 $ IS THEN ALSO THE GROUNDSTATE WITH EXTRA TERM\\
+We are thus interested in estimating $ \frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R $ in relation to $ -\frac{1}{m+1}P_0^\perp k^2P_0^\perp $.
+To begin with, let us consider the one-particle operator \begin{equation}
+\tilde{H}_1=\left(\frac{m}{m+1}-\epsilon\right)k^2-\gamma_R\braket{\hat{\phi_R},\cdot}\hat{\phi_R}
+\end{equation}
+where $ 0<\epsilon<\frac{m}{m+1} $. In this case, we know that $ \tilde{H}_1 $ has a ground state with energy $ -\tilde{\lambda} $ which can found by solving the eigenvalue equation (for $ \varepsilon $ sufficiently large or $ m<\infty $ and $ R $ sufficiently large). We may denote the projection onto this groundstate by $ \tilde{P}_0 $. It is clear that \begin{equation}
+\begin{aligned}
+P_0^\perp\tilde{H}_1P_0^\perp&\geq P_0^\perp(-\tilde{\lambda}\tilde{P}_0)P_0^\perp=(1-P_0)(-\tilde{\lambda}\tilde{P}_0)(1-P_0)\\
+&=-\tilde{\lambda}(\ket{\tilde{\psi}_0}-\braket{\psi_0|\tilde{\psi_0}}\ket{\psi_0})(\bra{\tilde{\psi}_0}-\braket{\tilde{\psi_0}|\psi_0}\bra{\psi_0})\\
+&=-\tilde{\lambda} P_{\tilde{\psi_0}-\braket{\psi_0|\tilde{\psi_0}}\psi_0}\\
+&\geq-\tilde{\lambda}\norm{\tilde{\psi_0}-\braket{\psi_0|\tilde{\psi_0}}\psi_0}^2\\
+&=-\tilde{\lambda}\left(1-\abs{\braket{\psi_0|\tilde{\psi}_0}}^2\right),
+\end{aligned}
+\end{equation}
+We are therefore interested in computing the overlap $ \braket{\psi_0|\tilde{\psi}_0} $ of the ground states of two Hamiltonians, $ H_1 $ and $ \tilde{H}_1 $. This can be straightforwardly found, as the ground states are known.
+We notice that the radial parts of the ground states are $ f_0(k)=A\frac{1}{k^2+\lambda^2} $ and $ \tilde{f}_0(k)=\tilde{A}\frac{1}{k^2+\tilde{\lambda}} $ where $ -\lambda $ and $ -\tilde{\lambda} $ are the ground state energies. The angular part are trivially $ Y_0^0 $ in both cases. such that $ \psi_0=f_0Y_0^0 $. The eigenvalues are determined by the equations\begin{equation}
+\begin{aligned}
+4\pi\frac{m+1}{m}\gamma_R\int_{0}^{R}\frac{1}{k^2+\frac{m+1}{m}\lambda} k^2\diff k&=1,\\
+4\pi\left(\frac{m}{m+1}-\epsilon\right)^{-1}\gamma_R\int_{0}^{R}\frac{1}{k^2+\left(\frac{m}{m+1}-\epsilon\right)^{-1}\tilde{\lambda}} k^2\diff k&=1
+\end{aligned}
+\end{equation}
+Straigthforward computation shows that \begin{equation}
+4\pi\frac{m+1}{m}\gamma_R\int_{0}^{R}\frac{1}{k^2+\frac{m+1}{m}\lambda} k^2\diff k=\frac{1}{R+\frac{\alpha}{4\pi}}\frac{m+1}{m}\left(R-\sqrt{\frac{m+1}{m}\lambda}\arctan\left(R\Bigg/\sqrt{\frac{m+1}{m}\lambda}\right)\right)
+\end{equation}
+and
+\begin{equation}
+\begin{aligned}
+&4\pi\left(\frac{m}{m+1}-\epsilon\right)^{-1}\gamma_R\int_{0}^{R}\frac{1}{k^2+\left(\frac{m}{m+1}-\epsilon\right)^{-1}\tilde{\lambda}} k^2\diff k \\&\quad=\frac{1}{R+\frac{\alpha}{4\pi}}\left(\frac{m}{m+1}-\epsilon\right)^{-1}\left(R-\sqrt{\left(\frac{m}{m+1}-\epsilon\right)^{-1}\tilde{\lambda}}\arctan\left(R\Bigg/\sqrt{\left(\frac{m}{m+1}-\epsilon\right)^{-1}\tilde{\lambda}}\right)\right).
+\end{aligned}
+\end{equation}
+Now $ A $ and $ \tilde{A} $ are easily determined by straightforward normalization of $ f_0 $ and $ \tilde{f}_0 $. And we then find the overlap \begin{equation}
+\begin{aligned}
+\braket{\psi_0|\tilde{\psi}_0}=\braket{Y_0^0|Y_0^0}_{L^2(S^2,\diff\Omega)}\braket{f_0,\tilde{f_0}}_{L^2((0,\infty),k^2\diff k)}=A\tilde{A}\int_{0}^{R}\frac{k^2}{(k^2+\lambda)(k^2+\tilde{\lambda})}\diff k\\
+=\frac{2 \left(\sqrt{\lambda } \arctan\left(\frac{R}{\sqrt{\lambda }}\right)-\sqrt{\tilde{\lambda}
+	} \arctan\left(\frac{R}{\sqrt{\tilde{\lambda} }}\right)\right)}{(\lambda -\tilde{\lambda} )
+	\sqrt{\frac{\arctan\left(\frac{R}{\sqrt{\lambda }}\right)}{\sqrt{\lambda
+			}}-\frac{R}{\lambda +R^2}} \sqrt{\frac{\arctan\left(\frac{R}{\sqrt{\tilde{\lambda}
+			}}\right)}{\sqrt{\tilde{\lambda} }}-\frac{R}{\tilde{\lambda} +R^2}}}
+\end{aligned}
+\end{equation}
 \\
 The term comming from one $ 0 $ may be estimated by Cauchy-Schwartz inequality
 \begin{equation}
