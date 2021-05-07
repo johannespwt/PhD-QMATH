@@ -2223,9 +2223,47 @@ Notice that it is a general fact that a rank one perturbation of a non-negative 
 By the above we conclude that $ \ket{0} $ is the unique groundstate of $ H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m $ with eigenvalue $ -\lambda $. Now it is clear that $ k^mP_0k^m=P_0^\perp k^mP_0k^mP_0^\perp $, so we get\begin{equation}
 P_0^\perp \left(H_1-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\right)P_0^\perp=P_0^\perp H_1P_0^\perp-\frac{1}{m+1}\sum_{m=1}^{3}k^mP_0k^m\geq 0.
 \end{equation}
-Now we may improve the inequality $  \sum_{m=1}^{3}k^mP_0k^m\leq k^2 $, by simply writing out \begin{equation}
-\braket{v|(\sum_{m=1}^{3}k^mP_0k^m)v}=
+Now we may improve the inequality $  \sum_{m=1}^{3}k^mP_0k^m\leq k^2 $, by simply writing out, using regular selection rules for the eletric dipole \begin{equation}
+\braket{v\Bigg|\left(\sum_{m=1}^{3}k^mP_0k^m\right)v}=\braket{P_{l=1}v\Bigg|\left(\sum_{m=1}^{3}k^mP_0k^m\right)P_{l=1}v}
 \end{equation}
+where $ P_{l=1} $ is the orthogonal projection onto the angular subspace spanned by $ (Y_1^m)_{m=-1} ^{1}$. Now we use the following relations \begin{equation}
+\braket{Y_0^0|\hat{\omega}|Y_1^m}=\begin{pmatrix}
+a\\
+ima\\
+0
+\end{pmatrix} \qquad m=\pm 1
+\end{equation}
+and \begin{equation}
+\braket{Y_0^0|\hat{\omega}|Y_1^0}=\begin{pmatrix}
+0\\
+0\\
+b
+\end{pmatrix}.
+\end{equation}
+Here $ a $ and $ b $ are given by\begin{equation}
+\begin{aligned}
+a&=\int_{S^2}Y^0_0(\theta,\phi)\sin(\theta)\cos(\phi)Y_1^m(\theta,\phi)\diff \Omega\\
+b&=\int_{S^2}Y^0_0(\theta,\phi)\cos(\theta)Y_1^0(\theta,\phi)\diff \Omega
+\end{aligned}
+\end{equation}
+In conclusion we have $ \braket{Y_1^{m'}|\hat{\omega}|Y_0^0}\cdot\braket{Y_0^0|\hat{\omega}|Y_1^m}=0 $ when $ m\neq m' $ and\begin{equation}
+\braket{Y_1^{m}|\hat{\omega}|Y_0^0}\cdot\braket{Y_0^0|\hat{\omega}|Y_1^m}=\begin{cases}
+2\abs{a^2}&\text{for }m=\pm1,\\
+\abs{b}^2
+&\text{for }m=0\end{cases}.
+\end{equation} Now notice that \begin{equation}
+\braket{v|k^2v}=\sum_{l=0}^{\infty}\sum_{m=-l}^{l}\int_{0}^{\infty}\braket{v|k,l,m}\braket{k,l,m|k^2v}k^2\diff k
+\end{equation}
+where $ \braket{k,l,m|v}=\int_{S^2}Y_l^m(\theta,\phi)v(k,\theta,\phi)\diff\Omega $. Furthermore, we have \begin{equation}
+\begin{aligned}
+\braket{v\Bigg|\left(\sum_{m=1}^{3}k^mP_0k^m\right)v}=\braket{P_{l=1}v\Bigg|\left(\sum_{m=1}^{3}k^mP_0k^m\right)P_{l=1}v}\\
+=\sum_{m=-1}^{1}\sum_{m'=-1}^{1}\int_{0}^{\infty}\braket{v|k,1,m}\braket{Y_1^m|\hat{\omega}|Y_0^0}\cdot\braket{Y_0^0|\hat{\omega}|Y_1^{m'}}\braket{k,1,m'|k^2v}k^2\diff k\\
+\leq \max(2\abs{a}^2,\abs{b}^2)\sum_{m=-1}^{1}\int_{0}^{\infty}\braket{v|k,1,m}\braket{k,1,m|k^2v}k^2\diff k\\
+\leq \max(2\abs{a}^2,\abs{b}^2)\braket{v|k^2v},
+\end{aligned}
+\end{equation}
+and we conclude that $ \sum_{m=1}^{3}k^mP_0k^m\leq \max(2\abs{a}^2,\abs{b}^2) k^2 $. (FIX INDICES... $ m $ used multiple times)\\
+Notice that $ 2\abs{a}^2=\abs{b}^2=\frac{1}{3} $!!! so argument holds for $ m\leq 1/3 $
 DO NOT USE LAST INEQUALITY, USE INSTEAD JAN PHILIPS ARGUMENT FOR POSITIVITY WITH NEXT TO LAST INEQUALITY. RANK-ONE PERTUB. OF POSITIVE OPERATOR HAS AT MOST ONE NEGATIVE EIGENVALUE, AND GROUNDSTATE OF $ H_1 $ IS THEN ALSO THE GROUNDSTATE WITH EXTRA TERM\\
 We are thus interested in estimating $ \frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R $ in relation to $ -\frac{1}{m+1}P_0^\perp k^2P_0^\perp $.
 To begin with, let us consider the one-particle operator \begin{equation}
