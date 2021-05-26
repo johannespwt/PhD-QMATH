@@ -14,5 +14,96 @@
     Til øvelsesmøderne taler vi om Opgave 4-6.
     
     \item Ugens svære Opgave 7 diskuteres mest naturligt torsdag.
+    
+    \begin{opg}[Fourierrækker I]\hfill \\
+\begin{enumerate}
+ \item Lad $g: \mathbb{R} \rightarrow \mathbb{R}$ være funktionen givet ved
+ $$
+ g(x)=e^{-i x}-3 e^{-3 i x}+\frac{1}{2} \sin (x)
+ $$
+ Bestem Fourierkoefficienterne og Fourierrækken for $g$, både på formen med den komplekse eksponentialfunktion og på formen med sinus og cosinus. Kan du trække nogle analogier til Opgave $6.1 \mathrm{c}) \mathrm{i})$ ?
+ 
+ \item Vi ved fra opgave $6.5 \mathrm{~b}$ ), at den trigonometriske række $\sum_{n=-\infty}^{\infty} 2^{-|n|} e^{i n x}$ er uniformt konvergent. Bestem Fourierkoefficienterne og Fourierrækken for dens sumfunktion $f$\footnote{Opgaven kan faktisk loses uden at kende $f$ eksplicit - du kan evt. finde inspiration på side 125 i MC.}
+ \item Betragt den $2 \pi$ -periodiske funktion $f: \mathbb{R} \rightarrow \mathbb{R}$ givet ved
+ $$
+ f(x)=\left\{\begin{array}{ll}
+ 0 & x \in(-\pi, 0) \\
+ x & x \in[0, \pi) \\
+ \pi / 2 & x=\pi
+ \end{array}\right.
+ $$
+ Beregn Fourierkoefficienterne, og bestem Fourierrækken for $f$, både på formen med den komplekse eksponentialfunktion og på formen med sinus og cosinus.
+ Kan du sige noget om, hvorvidt Fourierrækken konvergerer uniformt?
+ \item Lad $f: \mathbb{R} \rightarrow \mathbb{R}$ være givet ved $f(x)=\sin (x)^{3}$. Vis, at $f$ er $2 \pi$ -periodisk. Bestem Fourierkoefficienterne $c_{k}(f)$ hørende til den komplekse skrivemåde, og angiv den tilsvarende Fourierrække for $f$\footnote{Hint: Det er fordelagtigt først at omskrive $f$ ved hjælp af eksponentialfunktioner.}
+\end{enumerate}
+    \end{opg}
+    
+\begin{opg}[Vektorrumsstruktur]\hfill \\
+	$\operatorname{Lad} N \in \mathbb{N}_{0}$ og lad $V_{N}$ være mængden af trigonometriske polynomier af $\operatorname{grad} N$, det vil sige mængden af funktioner $f: \mathbb{R} \rightarrow \mathbb{R}$ på formen
+	$$
+	f(x)=\sum_{k=-N}^{N} c_{k} e^{i k x}
+	$$
+	$\operatorname{med} c_{-N}, \ldots, c_{N} \in \mathbb{C}$
+	\begin{enumerate}
+	 \item Overvej følgende punkter uden at forsøge at lave et formelt bevis.
+	 \begin{enumerate}[label=\roman*)]
+	\item Overvej kort, hvorfor $V_{N}$ er et vektorrum over $\mathbb{C}$ (sammenlign med MC 5.18) udstyret med den naturlige skalarmultiplikation og addition af funktioner. Overvej også, hvorfor
+	$$
+	V_{N}=\operatorname{span}_{\mathrm{C}}\left\{e_{-N}, \ldots, e_{N}\right\}
+	$$
+	hvor $e_{k}: \mathbb{R} \rightarrow \mathbb{R}$ som sædvanlig betegner funktionen givet ved $e_{k}(x)=e^{i k x}$ for $k \in \mathbb{Z} .$ Hvad siger dette om dimensionen $\operatorname{dim}_{\mathbb{C}}\left(V_{N}\right)$ af $V_{N} ?$
+	\item Argumentér for, at $V_{0}=\operatorname{span}_{C}\{1\}$ og at $V_{1}=\operatorname{span}_{C}\{1, \cos , \sin \}$, hvor 1 betegner den konstante funktion $x \mapsto 1$.
+	\item Begrund, at $V_{M}$ er et underrum af $V_{N}$ hvis $M \leq N$, og giv et eksempel på en kontinuert, $2 \pi$ -periodisk funktion $f: \mathbb{R} \rightarrow \mathbb{R}$, som ikke tilhører vektorrummet $V_{N}$ for noget $N \in \mathbb{N}$
+	\end{enumerate}
+	\item Vis, at afbildningen $\langle\cdot, \cdot\rangle_{V_{N}}: V_{N} \times V_{N} \rightarrow V_{N}$ givet ved
+	$$
+	\langle f, g\rangle_{V_{N}}=\frac{1}{2 \pi} \int_{-\pi}^{\pi} f(x) \overline{g(x)} \mathrm{d} x
+	$$
+	definerer et indre produkt (MC side 121 ) på vektorrummet $V_{N}$, det vil sige vis, at ...
+	\begin{enumerate}[label=\roman*)]
+	\item ... afbildningen $f \mapsto\left\langle f, g_{0}\right\rangle_{V_{N}}$ er lineær for ethvert fastholdt $g_{0} \in V_{N} ;$
+	\item ... $\langle g, f\rangle_{V_{N}}=\overline{\langle f, g\rangle}_{V_{N}}$ for alle $f, g \in V_{N} ;$ og
+	\item ... $\langle f, f\rangle_{V_{N}} \geq 0$ for alle $f \in V_{N}$ med lighed kun hvis $f=0$.
+	\end{enumerate}
+	\item Vis, at funktionerne $\left\{e_{k}\right\}_{k=-N, \ldots, N}$ udgor et ortonormalt system i $V_{N}$ med hensyn til det indre produkt $\langle\cdot, \cdot\rangle_{V_{N}} .$
+	Konkludér, at systemet er lineært uafhængigt over $\mathbb{C}, \operatorname{og}$ at $\operatorname{dim}_{\mathbb{C}} V_{N}=2 N+1$.
+	\item Vis, at $V_{N}$ er isomorft med $\mathbb{C}^{2 N+1}$ som vektorrum med indre produkt, det vil sige find en lineær bijektiv afbildning $\Pi_{N}: V_{N} \rightarrow \mathbb{C}^{2 N+1}$, sådan at
+	$$
+	\langle f, g\rangle_{N}=\left\langle\Pi_{N}(f), \Pi_{N}(g)\right\rangle_{\mathbb{C}^{2 N+1}} \quad \text { for alle } f, g \in V_{N}
+	$$
+	hvor $\langle x, y\rangle_{\mathbb{C}^{2 N+1}}=\sum_{i=0}^{2 N} x_{i} \overline{y_{i}}$ for $x, y \in \mathbb{C}^{2 N+1}$.
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Fourierrækker II]\hfill \\
+	\begin{enumerate}
+		\item Betragt funktionerne $F_{\text {fløjte }}: \mathbb{R} \rightarrow \mathbb{R} \operatorname{og} \mathcal{F}_{N}: \mathbb{R} \rightarrow \mathbb{R}, N \in \mathbb{N}$, givet ved
+		$$
+		\begin{aligned}
+		F_{\text {fløjte }}(x) &=\sin (x)+9 \sin (2 x)+\frac{15}{4} \sin (3 x)+\frac{9}{5} \sin (4 x), \\
+		\mathcal{F}_{N}(x) &=\frac{1}{N} \sum_{n=0}^{N-1} D_{n}(x)
+		\end{aligned}
+		$$
+		hvor $D_{n}$ som tidligere betegner Dirichlet-kernen. Bestem Fourierkoefficienterne og Fourierrækken for $F_{\text {fløjte }}$ og $ \mathcal{F}_{N}$
+		Fun fact: $F_{\text {fløjte }}$ beskriver kammertonen (A440) for en fløjte, og $\mathcal{F}_{N}$ kaldes Fejér-kernen.
+		
+		\item Beregn Fourierkoefficienterne for de $2 \pi$ -periodiske funktioner $f$ og $F$ defineret ved
+		$$
+		f(x)=\begin{cases}
+		-\frac{\pi}{2}-\frac{x}{2}, & x \in[-\pi, 0) \\
+		0, & x=0 \\
+		\frac{\pi}{2}-\frac{x}{2} & x \in(0, \pi)
+		\end{cases}, \quad F(x)=\begin{cases}
+		\frac{\pi^{2}}{12}-\frac{1}{4}(x+\pi)^{2}, & x \in[-\pi, 0) \\
+		\frac{\pi^{2}}{12}-\frac{1}{4}(x-\pi)^{2}, & x \in[0, \pi)
+		\end{cases}
+		$$
+		Vis, at Fourierrækkerne for $f$ og $F$ er lig de trigonometriske rækker fra Opgave $6.4$. Diskutér med din underviser, hvad det kan bruges til.
+	\end{enumerate}
+\end{opg}
+
+\begin{opg}[Pythagoras, Bessel og Parseval]
+	
+\end{opg}
 \end{itemize}
 

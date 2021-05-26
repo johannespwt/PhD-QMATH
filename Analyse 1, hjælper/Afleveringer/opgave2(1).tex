@@ -6,9 +6,9 @@
     \ifanswers
     \begin{proof}[Løsning]
     	Bemærk at $ \abs{\frac{(-1)^n n! }{(2n)!}}=\frac{ n! }{(2n)!} $ og der gælder \begin{equation*}
-    	\lim\limits_{n\to\infty}\left(\frac{ (n+1)! }{(2(n+1))!}\Bigg/\frac{ n! }{(2n)!}\right)=\lim\limits_{n\to\infty}\left(\frac{n+1}{(2n+1)(2n+2)}\right)=0.
+    	\lim\limits_{n\to\infty}\left(\frac{ (n+1)! }{(2(n+1))!}\Bigg/\frac{ n! }{(2n)!}\right)=\lim\limits_{n\to\infty}\left(\frac{n+1}{(2n+1)(2n+2)}\right)=0,
     	\end{equation*}
-    	Det konkluderes dermed ved kvotienttesten (Sætning 2.24) at $ \sum_{n=1}^\infty \frac{ n! }{(2n)!}<\infty $ og rækken er absolut konvergent.
+    	hvor det følger af sidste lighedstegn, at grænsen eksisterer. Det konkluderes dermed ved kvotienttesten (Sætning 2.24), at $ \sum_{n=1}^\infty \frac{ n! }{(2n)!}<\infty $ og rækken er absolut konvergent.
     \end{proof}
     \fi
     
@@ -17,9 +17,9 @@
         \frac{\cos\pare{\pi n}}{\log\pare{\log\pare{n}}}.  $$
         \ifanswers
         \begin{proof}[Løsning]
-        	Bemærk at rækken er alternerende, da $ \cos(\pi n)=(-1)^n $.
-        	Ydermere gælder at $ \abs{\frac{(-1)^n}{\log\pare{\log\pare{n}}}}=\frac{1}{\log\pare{\log\pare{n}}} $ er monotont aftagende med $\lim\limits_{n\to\infty}\left(\frac{1}{\log\pare{\log\pare{n}}}\right)= 0 $. Per Leibniz' test (Sætning 2.30) konkluderes at $ \sum_{n=2}^\infty
-        	\frac{\cos\pare{\pi n}}{\log\pare{\log\pare{n}}} $ er konvergent. Det ses samtidig let at $ \sum_{n=1}^{\infty}\frac{1}{\log\pare{\log\pare{n}}} $ er divergent ved sammeligningstesten (Korollar 2.17) da $ 1/\log(\log(n))>1/n $. Altså er rækken betinget konvergent.
+        	Bemærk at rækken $ \sum_{n=3}^{\infty}\frac{\cos\pare{\pi n}}{\log\pare{\log\pare{n}}} $ er alternerende, da $ \cos(\pi n)=(-1)^n $.
+        	Ydermere gælder at $ \left\{\abs{\frac{(-1)^n}{\log\pare{\log\pare{n}}}}\right\}_{n=3}^\infty=\left\{\frac{1}{\log\pare{\log\pare{n}}}\right\}_{n=3}^\infty $ er monotont aftagende med $\lim\limits_{n\to\infty}\left(\frac{1}{\log\pare{\log\pare{n}}}\right)= 0 $. Per Leibniz' test (Sætning 2.30) konkluderes at $ \sum_{n=3}^\infty
+        	\frac{\cos\pare{\pi n}}{\log\pare{\log\pare{n}}} $ er konvergent, hvoraf det følger at den oprindelige række er konvergent per Proporsition 2.12. Det ses samtidig let at $ \sum_{n=3}^{\infty}\frac{1}{\log\pare{\log\pare{n}}} $ er divergent ved sammeligningstesten (Korollar 2.17) da $ 1/\log(\log(n))>1/n $ for $ n\geq 3 $, hvoraf det følger at den oprindelige række er divergent per Proporsition 2.12	. Altså er rækken betinget konvergent.
         \end{proof}
         \fi
     \item Afgør om følgende række er absolut konvergent, betinget konvergent eller divergent.
@@ -50,25 +50,29 @@
 %\end{opg}
 
 \begin{opg}
-	Lad $ a,b\in\R $ og betragt rækken $ \sum_{n=1}^{\infty}n^{an+b} $
+	Lad $ a,b\in\R $ og betragt rækken $ \displaystyle\sum_{n=1}^{\infty}n^{an+b} $
 	\begin{enumerate}
-		\item Lad $ a=0 $. Bestem for hvilke $ b\in\R $, rækken er konvergent.
+		\item Lad $ a=0 $. Bestem m\ae{}ngden af  $ b\in\R $ hvor rækken er konvergent.
 		\ifanswers
 		\begin{proof}[Løsning]
-			For $ a=0 $ har vi $ \sum_{n=1}^{\infty}n^b $. Det genkendes som en $ p $-række med $ p=-b $. Det konkluderes fra eksempel 2.23 at rækken er konvergent hvis og kun hvis $ b<-1 $.
+			For $ a=0 $ har vi $ \sum_{n=1}^{\infty}n^b $. Det genkendes som en $ p $-række med $ p=-b $. Det konkluderes fra Eksempel 2.23 at rækken er konvergent hvis og kun hvis $ b<-1 $.
 		\end{proof}
 		\fi
-		\item Bestem alle $ a,b\in\R $ for hvilke rækken er konvergent.
+		\item Bestem m\ae{}ngden af  $ a,b\in\R $ for hvilke rækken er konvergent.
 		\ifanswers
 		\begin{proof}[Løsning]
-			For $ a> 0 $ benytter vi rodtesten. Vi ser først at \begin{equation*}
-			\left(n^{an+b}\right)^{1/n}=n^{a+b/n}=n^an^{b/n}.
-			\end{equation*}
-			Bemærk at $n^{b/n}=\exp(\log(n^{b/n}))=\exp\left(\frac{b}{n}\log(n)\right) $. Det vides at $ x\mapsto\exp(x) $ er kontinuert på hele $ \R $. Det følger yderligere af L'H\^opital's regel og Observation 1.42 at $ \lim\limits_{n\to\infty}b\frac{\log(n)}{n}=\lim\limits_{x\to\infty}b\frac{\log(x)}{x}=\lim\limits_{n\to\infty}b\frac{1}{x}=0 $. Dermed gælder per Sætning 1.43, at $ \lim\limits_{n\to\infty}n^{b/n}=\exp(0)=1 $. For $ a<0 $ har vi nu ved regnereglerne for konvergente følger (Sætning 1.39) \begin{equation*}
-			\lim\limits_{n\to\infty}\left(n^{an+b}\right)^{1/n}=\lim\limits_{n\to\infty}n^an^{b/n}=0,
-			\end{equation*}
-			hvor vi har brugt den velkendte grænseværdi $ \lim\limits_{n\to\infty}n^a=0 $ for $ a<0 $. Det følger af rodtesten (Sætning 2.26), at rækken er konvergent.\\
-			Hvis $ a>0 $ har vi derimod $ \lim\limits_{n\to\infty}n^{an+b}=\infty $. Dette kan ses ved at bemærke, at $ n^{an+b}=\exp(\log(n^{an+b}))=\exp((an+b)\log n) $. Det er tydeligt at $ \lim\limits_{n\to\infty}(an+b)\log n=\infty $, og det gælder per observation 1.42 samt $ \lim\limits_{x\to\infty}e^x=\infty $, at $ \lim\limits_{n\to\infty}n^{an+b}=\infty $. Det følger da ved kontraposition af (Sætning 2.2) at rækken er divergent.\\
+			For $ a<0 $ bemærkes, at der eksistere $ N\in\N $ således at $ an+b<-2 $ for alle $ n>\N $. Men da gælder at $ n^{an+b}<n^{-2} $ for alle $ n>\N $, og ved sammeligningtesten (Korollar 2.17) ses at $ \sum_{n=N+1}^{\infty}n^{an+b} $ er konvergent, da det vides at $ \sum_{n=N+1}^{\infty}\frac{1}{n^2} $ er konvergent per Eksempel 2.23,\\
+			For $ a>0 $ vides det, at der eksistere $ N'\in\N $ således at $ an+b>1 $ for $ n>N' $. Da gælder klart at $ n^{an+b}>n $ for alle $ n>N' $, hvoraf det konkluderes ved divergenstesten (kontraposition af Sætning 2.2), at $ \sum_{n=1}^{\infty}n^{an+b} $ er divergent, da $ n^{an+b} $ ikke konvergerer mod $ 0 $.
+			
+			
+%			For $ a< 0 $ benytter vi rodtesten. Vi ser først at \begin{equation*}
+%			\left(n^{an+b}\right)^{1/n}=n^{a+b/n}=n^an^{b/n}.
+%			\end{equation*}
+%			Bemærk at $n^{b/n}=\exp(\log(n^{b/n}))=\exp\left(\frac{b}{n}\log(n)\right) $. Det vides at $ x\mapsto\exp(x) $ er kontinuert på hele $ \R $. Det følger yderligere af L'H\^opital's regel og Observation 1.42 at $ \lim\limits_{n\to\infty}b\frac{\log(n)}{n}=\lim\limits_{x\to\infty}b\frac{\log(x)}{x}=\lim\limits_{x\to\infty}b\frac{1}{x}=0 $. Dermed gælder per Sætning 1.43, at $ \lim\limits_{n\to\infty}n^{b/n}=\exp(0)=1 $. For $ a<0 $ har vi nu ved regnereglerne for konvergente følger (Sætning 1.39) \begin{equation*}
+%			\lim\limits_{n\to\infty}\left(n^{an+b}\right)^{1/n}=\lim\limits_{n\to\infty}n^an^{b/n}=0,
+%			\end{equation*}
+%			hvor vi har brugt den velkendte grænseværdi $ \lim\limits_{n\to\infty}n^a=0 $ for $ a<0 $. Det følger af rodtesten (Sætning 2.26), at rækken er konvergent.\\
+%			Hvis $ a>0 $ har vi derimod $ \lim\limits_{n\to\infty}n^{an+b}=\infty $. Dette kan ses ved at bemærke, at $ n^{an+b}=\exp(\log(n^{an+b}))=\exp((an+b)\log n) $. Det er tydeligt at $ \lim\limits_{n\to\infty}(an+b)\log n=\infty $, og det gælder per observation 1.42 samt $ \lim\limits_{x\to\infty}e^x=\infty $, at $ \lim\limits_{n\to\infty}n^{an+b}=\infty $. Det følger da ved kontraposition af (Sætning 2.2) at rækken er divergent.\\
 			Tilfældet $ a=0 $ er dækket i opgave a). Vi konkluderer alt i alt, at rækken konvergerer hvis og kun hvis $ a<0 $ eller $ a=0 $ \emph{og} $ b<-1 $.
 		\end{proof}
 		\fi
@@ -78,15 +82,18 @@
 \begin{opg}
 		Betragt rækken $$ \sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}. $$
 		\begin{enumerate}
-			\item Vis at rækken er konvergent. Samt at $ \sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}\in\left[1,\frac{11}{10}\right] $	
+			\item Vis at rækken er konvergent med en sum, der ligger i intervallet $\left[1,\frac{11}{10}\right] $	
 		\end{enumerate}
+		\textsl{[Estimater skal som altid begrundes, og i det omfang der er brugt computeralgebrasystemer skal output herfra underbygges teoretisk.]}
+
 		\ifanswers
 		\begin{proof}[Løsning]
-			At rækken er konvergent konkluderes let ved sammeligningstesten, da $ \ceil{n/\pi}\leq n $ og dermed gælder $ \frac{\ceil{\frac{n}{\pi}}}{n^4}\leq \frac{1}{n^3} $. Det følger da af $ \sum_{n=1}^{\infty}\frac{1}{n^3}<\infty $, at rækken konvergerer.\\
-			For at estimere rækken, bemærkes først at $ \sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}=1+\sum_{n=2}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}>1 $. På den anden side gælder det at $ \ceil{n/\pi}<n/\pi+1 $, hvoraf vi får \begin{equation*}
-			\sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}\leq \sum_{n=1}^{N}\frac{\ceil{\frac{n}{\pi}}}{n^4}+\sum_{n=N+1}^{\infty}\frac{\frac{n}{\pi}+1}{n^4}\leq \sum_{n=1}^{N}\frac{\ceil{\frac{n}{\pi}}}{n^4}+\frac{\frac{N+1}{\pi}+1}{(N+1)^4}+\int_{N+1}^{\infty}\frac{\frac{x}{\pi}+1}{x^4}\diff x.
+			At rækken er konvergent konkluderes let ved sammeligningstesten, da $ \ceil{n/\pi}\leq n $ og dermed gælder $ \frac{\ceil{\frac{n}{\pi}}}{n^4}\leq \frac{1}{n^3} $. Det følger da af $ \sum_{n=1}^{\infty}\frac{1}{n^3}<\infty $ (Eksempel 2.23), at rækken konvergerer.\\
+			For at estimere rækken, bemærkes først at $ \sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}=1+\sum_{n=2}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}>1 $. På den anden side gælder det at $ \ceil{n/\pi}<n/\pi+1 $. Dermed har vi \begin{equation*}
+			\sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}\leq \sum_{n=1}^{N}\frac{\ceil{\frac{n}{\pi}}}{n^4}+\sum_{n=N+1}^{\infty}\frac{\frac{n}{\pi}+1}{n^4}\leq \sum_{n=1}^{N}\frac{\ceil{\frac{n}{\pi}}}{n^4}+\frac{\frac{N+1}{\pi}+1}{(N+1)^4}+\int_{N+1}^{\infty}\frac{\frac{x}{\pi}+1}{x^4}\diff x,
 			\end{equation*}
-			Vælger vi $ N=3 $ finder vi\begin{equation*}
+			hvor den anden ulighed følger af Observation 2.21.
+			Vælger vi $ N=3 $ findes\begin{equation*}
 			\sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}\leq 1+\frac{1}{2^4}+\frac{1}{3^4}+\frac{4/\pi+1}{4^4}+\int_{4}^{\infty}\frac{x/\pi+1}{x^4}\diff x=1+\frac{1}{2^4}+\frac{1}{3^4}+\frac{4/\pi+1}{4^4}+\frac{1}{2\pi}\frac{1}{4^2}+\frac{1}{3}\frac{1}{4^3}=1.0988...
 			\end{equation*}
 			Altså konkluderes at $\sum_{n=1}^{\infty}\frac{\ceil{\frac{n}{\pi}}}{n^4}\in(1,1.099)\subset\left[1,\frac{11}{10}\right]  $.
@@ -113,7 +120,7 @@
 			Den ledvist afledte række findes\begin{equation*}
 			\sum_{n=1}^{\infty}2\left(n-\frac{1}{2}\right)\frac{x^{2n-2}}{n-\frac12}=2\sum_{n=0}^{\infty}(x^2)^n.
 			\end{equation*}
-			Det ses at den ledvist afledte række er uniform konvergent på intervallet $ [-a,a] $, da det blot er en (generaliseret) geometrisk række. Det ses yderligere at hvert led er i $ C^1([-a,a]) $.
+			Det ses at den ledvist afledte række er uniform konvergent på intervallet $ [-a,a] $, da det blot er en (generaliseret) geometrisk række. Det ses yderligere at hvert led i den oprindelige række er kontinuert differentiable på intervallet $ [-a,a] $.
 			Det følger af Korollar 3.20 fra forelæsningsslides at rækkens sumfunktion er differentiable og at den afledte sumfunktion er givet ved den ledvist afledte række. vi får dermed \begin{equation*}
 			f'(x)=\sum_{n=1}^{\infty}2x^{2n-2}=2\sum_{n=0}^{\infty}(x^2)^n=\frac{2}{1-x^2},
 			\end{equation*}
@@ -122,18 +129,18 @@
 		\fi
 		
 		
-		\item Vis at $ g(x)=\log(1+x)-\log(1-x) $ også opfylder at $ g'(x)=\frac2{1-x^2} $ og konkluder at formlen
-		$ \sum_{n=1}^\infty \frac{x^{2n-1}}{n-\frac12}=\log(1+x)-\log(1-x) $ gælder for alle $ x\in [-a,a] $.
+		\item Vis at $ g(x)=\log(1+x)-\log(1-x) $ også opfylder at $ g'(x)=\frac2{1-x^2} $ og vis at formlen
+		$\sum_{n=1}^\infty \frac{x^{2n-1}}{n-\frac12}=\log(1+x)-\log(1-x) $ gælder for alle $ x\in [-a,a] $.
 		\ifanswers
 		\begin{proof}[Løsning]
 			Det gælder åbenlyst at $ g'(x)=\left(\log(1+x)-\log(1-x)\right)'=\frac{1}{1+x}-\frac{1}{1-x}=\frac{1-x+1+x}{1-x^2}=\frac{2}{1-x^2} $. Derfor gælder $ (g(x)-f(x))'=g'(x)-f'(x)=0 $, og vi konkluderer at $ g(x)-f(x)=\text{konst.}=g(0)-f(0) $. Men der gælder klart at $ f(0)=0=g(0) $, hvorfor vi konkluderer $ f(x)=g(x) $.
 		\end{proof}
 		\fi
 		\item
-		Vis at $ \sum_{n=0}^{\infty}\frac{1}{2n+1}\frac{1}{4^n}=\log(3) $.
+		Vis at $ \displaystyle \sum_{n=0}^{\infty}\frac{1}{2n+1}\frac{1}{4^n}=\log(3) $.
 		\ifanswers
 		\begin{proof}[Løsning]
-			Bemærk at $ \sum_{n=0}^{\infty}\frac{1}{2n+1}\frac{1}{4^n}=\sum_{n=1}^{\infty}\frac{1}{2n-1}\frac{1}{4^{n-1}}=\sum_{n=1}^{\infty}\frac{1}{n-\frac12}\frac{1}{2^{2n-2+1}}=\sum_{n=1}^{\infty}\frac{1}{n-\frac12}\left(\frac12\right)^{2n-1} $. Ved at lade $ a=1/2 $ ses det nu let fra c) at $$ \sum_{n=1}^{\infty}\frac{1}{n-\frac12}\left(\frac{1}{2}\right)^{2n-1}=\log(1+1/2)-\log(1-2)=\log(3/2)-\log(1/2)=\log(3/2)+\log(2)=\log(3), $$ hvoraf det ønskede resulat følger. 
+			Bemærk at $ \sum_{n=0}^{\infty}\frac{1}{2n+1}\frac{1}{4^n}=\sum_{n=1}^{\infty}\frac{1}{2n-1}\frac{1}{4^{n-1}}=\sum_{n=1}^{\infty}\frac{1}{n-\frac12}\frac{1}{2^{2n-2+1}}=\sum_{n=1}^{\infty}\frac{1}{n-\frac12}\left(\frac12\right)^{2n-1} $. Ved at lade $ a=1/2 $ ses det nu let fra c) at $$ \sum_{n=1}^{\infty}\frac{1}{n-\frac12}\left(\frac{1}{2}\right)^{2n-1}=\log(1+1/2)-\log(1-1/2)=\log(3/2)-\log(1/2)=\log(3/2)+\log(2)=\log(3), $$ hvoraf det ønskede resulat følger. 
 		\end{proof}
 		\fi
 		

@@ -1,0 +1,526 @@
+\begin{opg}[Fourierrækker I]\hfill
+\begin{enumerate}
+	\item Lad $g: \mR \to \mR$ være funktionen givet ved
+	$$ g(x) = e^{-ix} - 3 e^{-3ix} +\frac{1}{2}\sin(x). $$
+	Bestem Fourierkoefficienterne og Fourierrækken for $g$, både på formen med den komplekse eksponentialfunktion og på formen med sinus og cosinus.
+	    
+	Kan du trække nogle analogier til Opgave 6.1c)i)?
+	\iffalse\begin{proof}[Løsning]
+	Lad $k\in\mZ$. Da fås
+	\begin{align*}
+	    c_k = \frac{1}{2\pi}\int_{-\pi}^\pi g\pare{x}e^{-ikx}\, dx
+            &= \frac{1}{2\pi}\pare{\int_{-\pi}^\pi e^{-ix}e^{-ikx}\, dx
+                - \int_{-\pi}^\pi 3e^{-3ix}e^{-ikx}\, dx
+                + \int_{-\pi}^\pi \frac{1}{2}\sin\pare{x} e^{-ikx}\, dx} \\
+            &= \frac{1}{2\pi}\pare{\int_{-\pi}^\pi e^{-i\pare{k+1}x}\, dx
+                - 3\int_{-\pi}^\pi e^{-i\pare{k+3}x}\, dx
+                - \frac{i}{4}\int_{-\pi}^\pi
+                    e^{-i\pare{k-1}x} - e^{-i\pare{k+1}x}\, dx} \\
+            &\overset{\pare{\dagger}}{=} \delta_{-k-1,0} - 3\delta_{-k-3,0}
+                - \frac{i}{4}\pare{\delta_{-k+1,0} -\delta_{-k-1,0}}
+	\end{align*}
+	hvor $\pare{\dagger}$ følger af MC (5.1). Det følger således, at
+	$$ c_{-3} = -3, \Quad 
+	    c_{-1} = 1+\frac{i}{4}, \Quad
+        c_1 = -\frac{i}{4}, $$
+    mens de øvrige $c_k = 0$. Fourierrækken for $g$ er således givet ved
+    $$ -3e^{-i3x} + \pare{1+\frac{i}{4}}e^{-ix} -\frac{i}{4}e^{ix} $$
+    eller på cosinus-sinus form
+    $$ -3\cos\pare{3x} + 3i\sin\pare{3x} + \cos\pare{x}
+        + \pare{\frac{1}{2}-i}\sin\pare{x}. $$
+    Man kan bemærke, at begge ovenstående udtryk er lig med $g$ selv, lige som vi så at Taylorrækken for et polynomium er polynomiet selv. Ovenstående er et specialtilfælde af MC 5.21.
+	\end{proof}\fi
+	\item Vi ved fra opgave 6.5b), at den trigonometriske række $\sum_{n=-\infty}^\infty 2^{-\abs{n}}e^{inx}$ er uniformt konvergent. Bestem Fourierkoefficienterne og Fourierrækken for dens sumfunktion $f$\footnote{Opgaven kan faktisk løses uden at kende $f$ eksplicit -- du kan evt. finde inspiration på side 125 i MC.}.
+
+	\iffalse\begin{proof}[Løsning]
+	Da rækken er uniformt konvergent, så følger det, at
+	\begin{align*}
+	    c_k = \frac{1}{2\pi}\int_{-\pi}^\pi \sum_{n=-\infty}^\infty \pare{2^{-\abs{n}}e^{inx}}e^{-ikx} \, dx
+	    &\overset{\pare{\dagger}}{=} \sum_{n=-\infty}^\infty\frac{1}{2\pi}\int_{-\pi}^\pi 2^{-\abs{n}}e^{inx}e^{-ikx} \, dx \\
+	    &= \sum_{n=-\infty}^\infty2^{-\abs{n}}\frac{1}{2\pi}\int_{-\pi}^\pi e^{-i\pare{k-n}x} \, dx \\
+	    &= \sum_{n=-\infty}^\infty2^{-\abs{n}}\delta_{n,k} \\
+	    &= 2^{-\abs{k}},
+	\end{align*}
+	hvor $\pare{\dagger}$ følger af MC 3.16 og linearitet af integralet. I tråd med MC 5.22 får vi således
+	$$ \sum_{n=-\infty}^\infty 2^{-\abs{n}}e^{inx}. $$
+	Vi kan tænke på MC 5.22 som resultatet for Fourierrækker svarende til MC 4.15 for Taylorrækker.
+	\end{proof}\fi
+	
+	\item Betragt den $2\pi$-periodiske funktion $f\colon\mR\to\mR $ givet ved
+	$$ f(x) = \begin{cases}
+	    0 & x\in(-\pi,0) \\
+	    x & x\in[0,\pi)\\
+	    \pi/2 & x = \pi
+	\end{cases}. $$
+	Beregn Fourierkoefficienterne, og bestem Fourierrækken for $f$,
+	både på formen med den komplekse eksponentialfunktion og på formen med sinus og cosinus.
+	
+    Kan du sige noget om, hvorvidt Fourierrækken konvergerer uniformt? 
+	
+	\iffalse\begin{proof}[Løsning]
+	Vi får for $k\in\mZ\setminus\{0\}$, at
+	\begin{align*}
+	    c_k = \frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x}e^{-ikx} \, dx
+	        &= \frac{1}{2\pi}\int_0^\pi xe^{-ikx} \, dx \\
+	        &= \frac{1}{2\pi}\pare{\brac{x \frac{1}{-ik}e^{-ikx}}_{x=0}^\pi + \frac{1}{ik}\int_0^\pi e^{-ikx} \, dx} \\
+	        &= \frac{1}{2\pi}\pare{\frac{\pare{-1}^k}{k}i\pi + \frac{\pare{-1}^k-1}{k^2}} \\
+	        &= \frac{-1 + \pare{-1}^k\pare{1+i\pi k}}{2\pi k^2},
+	\end{align*}
+	mens $c_0 = \frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x}\, dx = \frac{\pi}{4}$
+	hvorfor Fourierrækken er givet ved
+	$$ \frac{\pi}{4} + \sum_{k=1}^\infty
+	    \pare{\frac{-1 + \pare{-1}^k\pare{1+i\pi k}}{2\pi k^2} e^{ikx}
+	    + \frac{-1 + \pare{-1}^k\pare{1-i\pi k}}{2\pi k^2} e^{-ikx}}$$
+	eller cosinus-sinus form
+	$$ \frac{\pi}{4} + \sum_{k=1}^\infty \pare{\frac{\pare{-1}^k-1}{\pi k^2}\cos\pare{kx} + \frac{\pare{-1}^k}{k+1}\sin\pare{kx}}. $$
+	Bemærk at Fourierrækken ikke kan være uniformt konvergent på hele $\mR$ med $f$ som grænsefunktion, da $f$ er diskontinuert. 
+	\end{proof}\fi
+	
+	\item Lad $f\colon \mR \to \mR$ være givet ved $f(x)=\sin\pare{x}^3$. Vis, at $f$ er $2\pi$-periodisk. Bestem Fourierkoefficienterne $c_k(f)$ hørende til den komplekse skrivemåde, og angiv den tilsvarende Fourierrække for $f$.\footnote{Hint: Det er fordelagtigt først at omskrive $f$ ved hjælp af eksponentialfunktioner.}
+	
+	\iffalse\begin{proof}[Løsning]
+	Bemærk først at $\sin$ er $2\pi$-periodisk, hvorfor $f$ ligeledes er $2\pi$-periodisk. Før vi beregner Fourierkoefficienterne omskrives $x$ ved hjælp af eksponentialfunktioner, nemlig
+	$$ f\pare{x} = \sin\pare{x}^3 = \pare{\frac{e^{ix} - e^{-ix}}{2i}}^3
+        = \frac{1}{i8}\pare{e^{-i3x} - 3e^{-ix} + 3e^{ix} - e^{i3x}} $$
+    Vi får således af MC 5.21, at dette er netop Fourierrækken for $f$ med koefficenter
+    $$ c_{-3} = \frac{1}{i8}, \Quad c_{-1} = -\frac{3}{i8}
+     \Quad c_1 = \frac{3}{i8}, \Quad c_3 = -\frac{1}{i8}. $$
+	
+	\end{proof}\fi
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Vektorrumstruktur]
+Lad $N\in\mN_0$ og lad $V_N$ være mængden af trigonometriske polynomier af grad $N$, det vil sige mængden af funktioner $f: \mR \to \mR$ på formen 
+$$ f(x) =  \sum_{k=-N}^N c_k e^{ikx}$$, med $c_{-N}, \ldots, c_N \in \mC$. 
+\begin{enumerate}
+
+    \item Overvej følgende punkter uden at forsøge at lave et formelt bevis.
+	
+	\begin{enumerate}[label=\roman*)]
+    \item Overvej kort, hvorfor $V_N$ er et vektorrum over $\mC$ (sammenlign med MC 5.18) udstyret med den naturlige skalarmultiplikation og addition af funktioner. Overvej også, hvorfor 
+	$$ V_N = \text{span}_{\mC}\{e_{-N}, \ldots, e_N\}, $$
+	hvor $e_k\colon \mR \to \mR$ som sædvanlig betegner funktionen givet ved $e_k(x) = e^{ikx}$ for $k \in \mZ$. Hvad siger dette om dimensionen $\dim_{\mC}\pare{V_N}$ af $V_N$?
+	
+    \item Argumentér for, at $V_0 = \textup{span}_\mC \{1\}$ og at $V_1=\textup{span}_\mC\{1, \cos, \sin\}$, hvor $1$ betegner den konstante funktion $x \mapsto 1$. 
+	
+	\item Begrund, at $V_M$ er et underrum af $V_N$ hvis $M \leq N$, og giv et eksempel på en kontinuert, $2 \pi$-periodisk funktion $f: \mR \to \mR$, som ikke tilhører vektorrummet $V_N$ for noget $N \in \mN$.
+    \end{enumerate}
+    
+    \iffalse\begin{proof}[Løsning]
+	Udelades. Spørg din underviser eller til spørgetimen.
+	\end{proof}\fi
+	
+    \item Vis, at afbildningen $\inProd{\cdot,\cdot}_{V_N}\colon V_N\times V_N \to V_N$ givet ved 
+    $$ \inProd{f,g}_{V_N}
+        = \frac{1}{2\pi}\int_{-\pi}^{\pi} {f(x)}\overline{g(x)}\,\mathrm{d}x $$
+	definerer et indre produkt (MC side 121) på vektorrummet $V_N$, det vil sige vis, at ...
+	\begin{enumerate}[label=\roman*)]
+		\item ... afbildningen $f \mapsto \langle f, g_0 \rangle_{V_N}$ er lineær for ethvert fastholdt $g_0 \in V_N$;
+		\item ... $\langle  g,f \rangle_{V_N}= \overline{\langle f, g \rangle}_{V_N}$ for alle $f,g \in V_N$; og 
+		\item ... $\langle f,f \rangle_{V_N} \geq 0$ for alle $f \in V_N$ med lighed kun hvis $f=0$.
+    \end{enumerate}
+    
+    \iffalse\begin{proof}[Løsning]\hfill
+    \begin{enumerate}[label=\roman*)]
+        \item Lad $\alpha,\beta\in\mC$ og $f,g\in V_N$. Da haves
+        \begin{align*}
+            \inProd{\alpha f+\beta g,g_0}
+                &= \frac{1}{2\pi}\int_{-\pi}^\pi
+                    \pare{\alpha f\pare{x} + \beta g\pare{x}}
+                    \overline{g_0\pare{x}} \, dx \\
+                &= \alpha\frac{1}{2\pi}\int_{-\pi}^\pi
+                    f\pare{x}\overline{g_0\pare{x}} \, dx
+                    + \beta\frac{1}{2\pi}\int_{-\pi}^\pi
+                    g\pare{x}\overline{g_0\pare{x}} \, dx \\
+                &= \alpha\inProd{f,g_0} + \beta\inProd{g,g_0}
+        \end{align*}
+        
+        \item Lad $f,g\in V_N$. Da haves
+        $$ \inProd{f,g}
+        = \frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x}\overline{g\pare{x}} \, dx
+        = \overline{\frac{1}{2\pi}\int_{-\pi}^\pi g\pare{x}
+            \overline{f\pare{x}} \, dx}
+        = \overline{\inProd{g,f}} $$
+        
+        \item Lad $f\in V_N$. Da haves
+        $$ \inProd{f,f}
+            = \frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x}\overline{f\pare{x}} \, dx
+            = \frac{1}{2\pi}\int_{-\pi}^\pi \abs{f\pare{x}}^2 \, dx
+            \geq 0. $$
+        Vi bemærker således, at $\inProd{f,f} = 0$, hvis og kun hvis $\frac{1}{2\pi}\int_{-\pi}^\pi \abs{f\pare{x}}^2 \, dx = 0$, og dette holder hvis og kun hvis $f\equiv 0$, eftersom alle trigonometriske polynomier er kontinuerte.
+    \end{enumerate}
+    \end{proof}\fi
+
+    \item Vis, at funktionerne $\cbrac{e_k}_{k =-N, \ldots, N}$ udgør et ortonormalt system i $V_N$ med hensyn til det indre produkt $\inProd{\cdot,\cdot}_{V_N}$. 
+
+    Konkludér, at systemet er lineært uafhængigt over $\mC$, og at $\dim_\mC V_N = 2N+1$. 
+	
+	\iffalse\begin{proof}[Løsning]
+	I beviset for MC 5.19 ses, at $\cbrac{e_k}_{k=-N,\ldots,N}$ udgør et ortonormalt system i $V_N$ med hensyn til $\inProd{\cdot,\cdot}$. 
+	
+	Det følger af resultater fra lineær algebra, at $\cbrac{e_k}_{k=-N,\ldots,N}$ er lineært uafhængige i $\text{PC}_{2\pi}$, hvorfor de ligeledes er lineært uafhængige som elementer i $V_N$. Endelig har vi, at 
+	$$ V_N = \text{span} \setbrac{e_k}{k = -N, \ldots, N}, $$
+	hvorfor det følger at $\dim_\mC\pare{V_N} = 2N+1$.
+	\end{proof}\fi
+	
+	\item Vis, at $V_N$ er isomorft med $\mC^{2N+1}$ som vektorrum med indre produkt, det vil sige find en lineær bijektiv afbildning 
+	$\Pi_N: V_N \to \mC^{2N+1}$,
+	sådan at
+    $$ \inProd{f,g}_N = \inProd{\Pi_N(f),\Pi_N(g)}_{\mC^{2N+1}}
+            \quad \text{for alle $f,g \in V_N$}, $$
+	hvor $\inProd{x,y}_{\mC^{2N+1}}=\sum _{i=0}^{2N} x_i \overline{y_i}$ for $x,y\in\mC^{2N+1}$.
+	
+	\iffalse\begin{proof}[Løsning]
+	Definér $\Pi_N\colon V_N\to\mC^{2N+1}$ ved 
+	$$ \Pi_N\pare{e_k}
+	    = \begin{pmatrix}0\\ \vdots\\0 \\ 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix}
+	    \leftarrow (N+k)'\text{te koordinat}.$$
+	og udvid $\Pi_N$ til en lineær afbildning. Det er let at se, at $\Pi_N$ er bijektiv.
+	
+	Lad nu $f,g\in V_N$ og skriv
+	$$ f = \sum_{k=-N}^N a_ke_k, \QUAD g = \sum_{l=-N}^N b_le_l, $$
+	for $a_k,b_l\in\mC$. Da er 
+	$$ \inProd{f,g}_{V_N} = \sum_{k,l=-N}^N a_k\overline{b_l}\inProd{e_k,e_l}_{V_N}
+	    = \sum_{k,l=-N}^N a_k\overline{b_l}\delta_{k,l}
+	    = \sum_{k=-N}^N a_k\overline{b_k}
+	    = \inProd{\begin{pmatrix} a_{-N} \\ \vdots \\ a_N\end{pmatrix}, \begin{pmatrix} b_{-N} \\ \vdots \\ b_N\end{pmatrix}}_\mC
+	    = \inProd{\Pi_N\pare{f},\Pi_N\pare{g}}_\mC $$
+	\end{proof}\fi
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Fourierrækker II]\hfill
+\begin{enumerate}
+	\item Betragt funktionerne $F_{\text{fløjte}}\colon \mR \to \mR$ og $\mathcal{F}_N\colon \mR \to \mR$, $N \in \mN$, givet ved 
+	\begin{align*}
+	    F_{\text{fløjte}}(x) &= \sin(x) + 9 \sin(2x) + \frac{15}{4} \sin(3x)
+	        + \frac{9}{5} \sin(4x), \\
+	    \mathcal F_N(x) &= \frac{1}{N} \sum_{n=0}^{N-1} D_n(x),
+	\end{align*}
+	hvor $D_n$ som tidligere betegner Dirichlet-kernen. Bestem Fourierkoefficienterne og Fourierrækken for $F_{\text{fløjte}}$ og $\mathcal{F}_N$. 
+	
+	Fun fact: $F_{\text{fløjte}}$ beskriver kammertonen (A440) for en fløjte,
+	og $\mathcal{F}_N$ kaldes \href{https://en.wikipedia.org/wiki/Fejer_kernel}{Fej\'er-kernen}.
+	
+	\iffalse\begin{proof}[Løsning]
+	Bemærk indledningsvis
+	\begin{align*}
+	    F_{\text{fløjte}}\pare{x}
+            &=\sin(x)+9\sin(2x)+\frac{15}{4}\sin(3x)+\frac{9}{5} \sin(4x) \\
+            &= \frac{1}{i2}\pare{-\frac{9}{5}e^{-i4x} - \frac{15}{4}e^{-i3x}
+                - 9e^{-i2x} - e^{-ix} + e^{ix} + 9e^{i2x} + \frac{15}{4}e^{i3x}
+                + \frac{9}{5}e^{i4x}},
+	\end{align*}
+	hvilket er Fourierrækken for $F_{\text{fljøte}}$ som følge af MC 5.21. 
+	
+	Bemærk nu
+	\begin{align*}
+	    \cF_N\pare{x} &= \frac{1}{N} \sum_{n=0}^{N-1} D_n(x) \\
+	        &= \frac{1}{N}\pare{
+	            e^{-i\pare{N-1}x}+2e^{-i\pare{N-2}x}+\ldots+\pare{N-1} e^{-ix} + N +  \pare{N-1} e^{ix} + \ldots + 2e^{i\pare{N-2}x}
+	            + e^{-i\pare{N-1}x}},
+	\end{align*}
+	hvilket er Fourierrækken for $\cF_N$ som følge af MC 5.21.
+	\end{proof}\fi
+	
+	\item Beregn Fourierkoefficienterne for de $2\pi$-periodiske funktioner $f$ og $F$ defineret ved
+	$$ f(x) = \begin{cases}
+	    - \frac{\pi}{2} - \frac{x}{2}, &\quad x\in[-\pi,0) \\
+	    0, &\quad x=0 \\
+	    \frac{\pi}{2} - \frac{x}{2} &\quad x\in(0,\pi)
+	\end{cases}, \Quad
+	F(x) = \begin{cases}
+	    \frac{\pi^2}{12}- \frac{1}{4} (x +\pi)^2, &\quad x\in[-\pi,0) \\ \\
+    	\frac{\pi^2}{12}- \frac{1}{4} (x -\pi)^2, &\quad x\in[0,\pi)
+	\end{cases} $$
+	
+	Vis, at Fourierrækkerne for $f$ og $F$ er lig de trigonometriske rækker fra Opgave 6.4. Diskutér med din underviser, hvad det kan bruges til.
+	
+	\iffalse\begin{proof}[Løsning]
+	Vi bestemmer først Fourierkoefficienterne til $f$. For $k\in\mZ\setminus\{0\}$ får vi
+	\begin{align*}
+	    c_k = \intFourier{f\pare{x}e^{-ikx}}
+	        &= \frac{1}{2\pi}\int_{-\pi}^0 \pare{-\frac{\pi}{2}
+	                - \frac{x}{2}}e^{-ikx} \, dx
+	            + \frac{1}{2\pi}\int_0^\pi \pare{\frac{\pi}{2}-\frac{x}{2}}e^{-ikx} \, dx \\
+	        &= \frac{1}{4}\pare{-\int_{-\pi}^0e^{-ikx} \, dx
+	            + \int_0^\pi e^{-ikx} \, dx}
+	            -\frac{1}{4\pi} \int_{-\pi}^\pi xe^{-ikx} \, dx \\
+	        &= \frac{1}{4}\pare{\frac{i\pare{-1+\pare{-1}^k}}{k} - \frac{i\pare{1-\pare{-1}^k}}{k}}-\frac{i}{2\pi}\pare{\frac{\pi\cos\pare{k\pi}}{k} - \frac{\sin\pare{k\pi}}{k^2}} \\
+	        &= \frac{1 - \pare{-1}^k}{i2k} + \frac{\pare{-1}^k}{i2k} 
+	            = \frac{1}{i2k}
+	\end{align*}
+	og endelig får vi $c_0 = \frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x} \, dx = 0$. Lad os nu bestemme koefficienterne til cosinus-sinus formen. Vi får
+	$$ a_0 = 0, \quad a_k = c_k + c_{-k} = 0, \QUAD
+	    b_k = i\pare{c_k - c_{-k}} = \frac{1}{k}, $$
+	hvilket viser at Fourierrækken for $f$ er givet ved 
+	$$ \sum_{n=1}^\infty \frac{\sin\pare{nx}}{n} $$
+	Ve bestemmer nu Fourierkoefficienterne til $F$. For $k\in\mZ\setminus\{0\}$ får vi
+	\begin{align*}
+	    c_k = \intFourier{F\pare{x}e^{-ikx}}
+            &= \frac{1}{2\pi}\int_{-\pi}^0 \pare{\frac{\pi^2}{12}
+                    - \frac{1}{4}\pare{x+\pi}^2}e^{-ikx} \, dx
+                + \frac{1}{2\pi}\int_0^\pi \pare{\frac{\pi^2}{12}
+                    - \frac{1}{4}\pare{x-\pi}^2}e^{-ikx} \, dx \\
+            &= -\frac{1}{8\pi}\int_{-\pi}^\pi
+                    \pare{\frac{2\pi^2}{3} + x^2}e^{-ikx} \, dx
+                - \frac{1}{4}\int_{-\pi}^0 xe^{-ikx} \, dx
+                + \frac{1}{4}\int_0^\pi xe^{-ikx} \, dx \\
+            &= -\frac{1}{8\pi}\int_{-\pi}^\pi
+                    x^2e^{-ikx} \, dx
+                - \frac{1}{4}\pare{\int_{-\pi}^0 xe^{-ikx} \, dx
+                - \int_0^\pi xe^{-ikx} \, dx} \\
+            &= -\frac{\pare{-1}^k}{2k^2} - \frac{1}{4}\pare{\frac{1+\pare{-1}^k\pare{-1+ik\pi}}{k^2}
+                - \frac{-1+\pare{-1}^k\pare{1+ik\pi}}{k^2}} \\
+            &= -\frac{\pare{-1}^k}{2k^2} - \frac{1 - \pare{-1}^k}{2k^2}
+                = - \frac{1}{2k^2}
+	\end{align*}
+	og endelig får vi 
+	\begin{align*}
+	    c_0 &= \frac{1}{2\pi}\int_{-\pi}^0 \pare{\frac{\pi^2}{12}
+	            - \frac{1}{4}\pare{x+\pi}^2}\, dx 
+                + \frac{1}{2\pi}\int_0^\pi \pare{\frac{\pi^2}{12}
+	            - \frac{1}{4}\pare{x-\pi}^2}\, dx \\
+            &\overset{\pare{\dagger}}{=} \frac{1}{2\pi}\int_\pi^0 \pare{\frac{\pi^2}{12}
+	            - \frac{1}{4}\pare{-y+\pi}^2}\, dy 
+                + \frac{1}{2\pi}\int_0^\pi \pare{\frac{\pi^2}{12}
+	            - \frac{1}{4}\pare{x-\pi}^2}\, dx
+	         = 0,
+	\end{align*}
+	hvor $\pare{\dagger}$ følger af substitutionen $y = -x$. Lad os nu bestemme koefficienterne til cosinus-sinus formen. Vi får
+	$$ a_0 = 0, \quad a_k = c_k + c_{-k} = - \frac{1}{k^2}, \QUAD
+	    b_k = i\pare{c_k - c_{-k}} = 0, $$
+	hvilket viser, at Fourierrækken for $f$ er givet ved
+	$$ \sum_{n=1}^\infty \frac{-\cos\pare{nx}}{n^2}. $$
+	\end{proof}\fi
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Pythagoras, Bessel og Parseval]\hfill
+\begin{enumerate}
+	\item Husk fra Opgave 7.2 definitionen af det $(2N+1)$-dimensionelle komplekse vektorrum $V_N = \text{span}_\mC\{e_{-N}, \ldots, e_N\}$. Vis, at Parsevals identitet holder for alle funktioner $f$ tilhørende $V_N$, det vil sige vis at
+	$$ \norm{f}_2^2 = \sum_{k=-N}^N |c_k|^2, $$
+    for $f=\sum_{k=-N}^N c_k \, e_k$, hvor som sædvanligt $\norm{f}_2^2  =	\frac{1}{2\pi}\int_{-\pi}^{\pi} |f(x)|^2 \mathrm{d} x$.
+	
+	For en endelig sum bærer identiten ofte Pythagoras' navn. Overvej hvorfor sammen med din underviser.
+        
+	\iffalse\begin{proof}[Løsning]
+	Ved direkte beregning fås
+	\begin{align*}
+	    \norm{f}_2^2 = \frac{1}{2\pi}\int_{-\pi}^\pi \abs{f\pare{x}}^2 \, dx
+	        &=\frac{1}{2\pi}\int_{-\pi}^\pi \pare{\sum_{k=-N}^N c_ke_k\pare{x}}
+	            \pare{\sum_{l=-N}^N\overline{c_le_l\pare{x}}}\,dx \\
+	       &=\sum_{k,l=-N}^N c_k\overline{c_l} \frac{1}{2\pi}\int_{-\pi}^\pi
+	            e^{ikx}e^{-ilx} \, dx
+	       = \sum_{k,l=-N}^N c_k\overline{c_l} \delta_{k,l}
+	       = \sum_{k=-N}^N \abs{c_k}^2
+	\end{align*}
+	\end{proof}\fi
+	
+	\item Betragt de $2\pi$-periodiske funktioner $f$ og $F$ fra Opgave 7.3b).	Beregn $\inProd{f,f}=\norm{f}_2^2$ og $\inProd{F,F}= \norm{F}_2^2$.
+	
+	\iffalse\begin{proof}[Løsning]
+	Ved direkte beregning fås
+	$$ \norm{f}_2^2 = \frac{1}{2\pi}\int_{-\pi}^\pi \abs{f\pare{x}}^2 \, dx
+                = \frac{1}{2\pi}\int_{-\pi}^0 \pare{\frac{-x-\pi}{2}}^2 \, dx
+                    + \frac{1}{2\pi}\int_0^\pi \pare{\frac{x-\pi}{2}}^2 \, dx
+                = \frac{\pi^2}{12} $$
+    og 
+    \begin{align*}
+        \norm{F}_2^2 = \frac{1}{2\pi}\int_{-\pi}^\pi \abs{F\pare{x}}^2 \, dx
+                &= \frac{1}{2\pi}\int_{-\pi}^0\pare{\frac{\pi^2}{12}     - \frac{1}{4}\pare{x+\pi}^2}^2 \, dx
+                    + \frac{1}{2\pi}\int_0^\pi
+                    \pare{\frac{\pi^2}{12}-\frac{1}{4}\pare{x-\pi}^2}^2\,dx
+                = \frac{\pi^4}{180}
+    \end{align*}
+    \end{proof}\fi
+	
+	\item Betragt den trigonometriske række $\sum_{n=-\infty}^\infty c_n e^{in x}$, hvor $c_n = 2^{-|n|}$ for $n \in \mZ$. 
+	
+	Vi viste i Opgave 6.5b), at denne række er uniformt konvergent. 
+	
+	Angiv Fourierkoefficienterne $c_n(f)$ for alle $n \in \mZ$ for rækkens sumfunktion $f$, og vis at 
+	$$ \sum_{n=-\infty}^\infty 4^{- \lvert n \rvert} \sim \frac{5}{3}
+        = \frac{1}{2 \pi} \int_{-\pi}^\pi\abs{f\pare{x}}^2\mathrm{d}x. $$
+    
+    \iffalse\begin{proof}[Løsning]
+    Vi har af MC 5.22, at Fourierkoefficienterne for $f$ er givet ved $c_n\pare{f} = 2^{-\abs{n}}$ for alle $n\in\mZ$. Vi får således af Parsevals identitet, at
+    $$ \norm{f}_2^2 = \sum_{n=-\infty}^\infty \abs{2^{-\abs{n}}}^2
+        = -1 + 2\sum_{n=0}^\infty 4^{-n} 
+        \sim -1 + 2\cdot \frac{1}{1-\frac{1}{4}}
+        = \frac{5}{3}, $$
+    og vi husker, at $\norm{f}_2^2 = \frac{1}{2\pi}\int_{-\pi}^\pi \abs{f\pare{x}}^2 \, dx$.
+    \end{proof}\fi
+	
+	\item Modificér og løs Opgave 7.4c) ved at lade $c_n = r^{\abs{n}}$ for $r \in (0,1)$, eller endda $c_n = z^{\abs{n}}$ for et vilkårligt $z\in\mC$ med $\abs{z} < 1$.
+	
+	\iffalse\begin{proof}[Løsning]
+	Lad $z\in\mC$ og antag $\abs{z} < 1$. Da er rækken $\sum_{n=-\infty}^\infty z^{\abs{n}}$ ligeledes uniformt konvergent ved at argument svarende til det givne i Opgave 6.5d), hvorfor det følger af Parsevals identitet, at
+	$$ \norm{f}_2^2 = \sum_{n=-\infty}^\infty \abs{z^{\abs{n}}}^2
+        = -1 + 2\sum_{n=0}^\infty \abs{z}^n 
+        \sim -1+2\cdot\frac{1}{1-\abs{z}} = \frac{1+\abs{z}}{1-\abs{z}}. $$
+	\end{proof}\fi
+\end{enumerate}
+\end{opg}
+
+\begin{opg}
+Lad $f\colon\mR\to\mR$ være den $2\pi$-periodiske funktion defineret ved
+$$ f\pare{x} = \begin{cases}
+    x, &\quad x\in\pare{-\pi,\pi} \\
+    0, &\quad x = \pi 
+\end{cases} $$
+Grafen for $f$ er vist herunder.
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+    \def\xMax{3}
+    \def\xMin{-3}
+    \def\yMax{3}
+    \def\yMin{-3}
+    \draw[thick, ->] (\xMin-.5,0) -- (\xMax+.5,0) node[below right] {$x$};
+    \draw[thick, ->] (0,\yMin-.5) -- (0,\yMax+.5) node[above left] {};
+
+    \foreach \z in {\xMin,...,\xMax}{
+        \draw[opacity=0.1,dashed] (\z,\yMin-.5) -- (\z,\yMax+.5);
+        \draw[thick] (\z,-.1) -- (\z,.1);
+        \ifthenelse{\z=0}{}{\node[below] at (\z,0) {\z}};}
+        \foreach \w in {\yMin,...,\yMax}{
+            \draw[opacity=0.1,dashed] (\xMin-.5,\w) -- (\xMax+.5,\w);
+            \draw[thick] (-.1,\w) -- (.1,\w);
+            \ifthenelse{\w=0}{}{
+                \node[left] at (0,\w) {\w}};
+            }
+    \node (A) at (3.14,0) {\color{red}$\bullet$};
+    \draw[domain=\xMin+.14:\xMax+.14,smooth,variable=\x,red,thick] plot ({\x},{\x});
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}
+    \item Udregn Fourierkoefficienterne for $f$, og angiv Fourierrækken for $f$.
+    
+    \iffalse\begin{proof}[Løsning]
+    Lad $k\in\mZ\setminus\{0\}$. Da haves
+    $$ c_k = \intFourier{xe^{-ikx}} = i\frac{\pare{-1}^k}{k}, $$
+    og $c_0 = 0$. Fourierrækken for $f$ er således
+    $$ \sum_{k=1}^\infty i\frac{\pare{-1}^k}{k}\pare{e^{ikx} - e^{-ikx}} $$ 
+    Bemærk desuden, at på cosinus-sinus formen fås
+    $$ a_0 = 0, \quad a_k = i\frac{\pare{-1}^k}{k} - i\frac{\pare{-1}^k}{k} = 0, \Quad b_k = i\pare{i\frac{\pare{-1}^k}{k} + i\frac{\pare{-1}^k}{k}}
+        = 2\frac{\pare{-1}^{k+1}}{k}, $$
+    altså bliver Fourierrækken
+    $$ \sum_{n=1}^\infty 2\frac{\pare{-1}^{n+1}}{n}\sin\pare{nx} $$
+    \end{proof}\fi
+    
+    \item Lad $g\colon\mR\to\mR$ være givet ved $g\pare{x} = f\pare{x} + 2$. Udregn Fourierkoefficienterne for $g$, og angiv Fourierkoefficienterne. 
+    
+    \iffalse\begin{proof}[Løsning]
+    Lad $k\in\mZ\setminus\{0\}$. Da haves
+    $$ c_k = \intFourier{\pare{x+2}e^{-ikx}} =
+    \intFourier{xe^{-ikx}} + 2\intFourier{e^{-ikx}}
+    = i\frac{\pare{-1}^k}{k}, $$
+    og $c_0 = 2$. Fourierrækken for $g$ er således 
+    $$ 2 + \sum_{k=1}^\infty i\frac{\pare{-1}^k}{k}\pare{e^{ikx} - e^{-ikx}} $$
+    \end{proof}\fi
+    
+    \item Betragt funktionsrækken $\sum_{n=1}^\infty \frac{f\pare{n^2x}}{n^2}$. Hvis at rækken konvergerer uniformt på $\mR$.
+    
+    \iffalse\begin{proof}[Løsning]
+    Bemærk først, at $\abs{f\pare{n^2x}} \leq \pi$ for alle $x\in\mR$. Det følger såledesaf MC 5.12, at rækken
+    $$ \sum_{n=1}^\infty \frac{f\pare{n^2x}}{n^2} $$
+    er uniformt konvergent på hele $\mR$, eftersom $\sum_{n=1}^\infty \frac{1}{n^2}$ er konvergent.
+    \end{proof}\fi
+\end{enumerate}
+\end{opg}
+
+\begin{opg}[Ekstraopgave]\hfill
+\begin{enumerate}
+	\item Lad $N \in \mN_0$ og betragt afbildningen $P_N\colon \textup{PC}_{2\pi}\to\textup{PC}_{2 \pi}$ givet ved 
+	$$ P_N( f)= \sum_{k=-N}^N c_k(f) e_k. $$
+	Vis, at $P_N$ er en lineær afbildning, der opfylder $P_N \circ P_N = P_N$ (altså $P_N(P_N(f)) = P_N(f)$ for alle $f\in\textup{PC}_{2\pi}$).  
+	
+	Man kan tænke på $P_N$ som en \textit{projektion} i vektorrummet $\textup{PC}_{2\pi} $. 
+	
+	\iffalse\begin{proof}[Løsning]
+	Lad $\alpha,\beta\in\mC$ og $f,g\in \text{PC}_{2\pi}$. Da haves
+	\begin{align*}
+	    P_N\pare{\alpha f + \beta g}
+	    = \sum_{k=-N}^N c_k\pare{\alpha f + \beta g}e_k
+	    &= \sum_{k=-N}^N \pare{\frac{1}{2\pi}\int_{-\pi}^\pi \pare{\alpha f\pare{x} + \beta g\pare{x}}e^{-ikx} \, dx} e_k \\
+	    &= \sum_{k=-N}^N \pare{\alpha\frac{1}{2\pi}\int_{-\pi}^\pi f\pare{x}e^{-ikx} \, dx  + \beta \frac{1}{2\pi}\int_{-\pi}^\pi g\pare{x}e^{-ikx} \, dx} e_k \\
+	    &= \sum_{k=-N}^N \pare{\alpha c_k\pare{f}  + \beta c_k\pare{g}} e_k \\
+	    &= \alpha\sum_{k=-N}^N c_k\pare{f}e_k 
+	        + \beta\sum_{k=-N}^N c_k\pare{g} e_k \\
+	    &= \alpha P_N\pare{f} + \beta P_N\pare{g},
+	\end{align*}
+	hvilket viser $P_N$ er lineær. For at vise, at $P_N^2 = P_N$, bemærk
+	$$ P_N^2\pare{f} = P_N\pare{\sum_{k=-N}^N c_k\pare{f}e_k}
+        = \sum_{k=-N}^N c_k\pare{f} P_N\pare{e_k} 
+        = \sum_{k=-N}^N c_k\pare{f} e_k = P_N\pare{f}, $$
+    hvilket er det ønskede.
+	\end{proof}\fi
+	\end{enumerate}
+\end{opg}
+
+
+\begin{opg}
+Definér $\mathbb{T}\coloneqq\setbrac{z\in\mC}{\abs{z} = 1}$ og lad $f\colon\mR\to\mathbb{T}$ være en kontinuert, $2\pi$-periodisk funktion, der opfylder
+$$ f\pare{x+y} = f\pare{x}f\pare{y} \quad x,y\in\mR$$
+Antag $f$ ikke er konstant lig $1$. 
+\begin{enumerate}
+    \item Vis, at $\int_{-\pi}^{\pi} f(x)\,dx = 0$.
+    
+    \iffalse\begin{proof}[Løsning]
+    Lad $x_0\in\mR$ og antag $f\pare{x_0}\neq 1$. Da $f$ er $2\pi$-periodisk kan vi antage $x_0\in[0,2\pi)$. Vi får ved integration ved substitution, at
+    $$ \int_{-\pi}^\pi f\pare{x} \, dx
+        = \int_{-\pi-x_0}^{\pi-x_0} f\pare{x+x_0} \, dx
+        = f\pare{x_0}\int_{-\pi-x_0}^{\pi-x_0} f\pare{x} \, dx $$
+    Ved at udnytte $2\pi$-periodiciteten af $f$, får vi
+    \begin{align*}
+        \int_{-\pi-x_0}^{\pi-x_0} f\pare{x} \, dx  
+            = \int_{-\pi-x_0}^{-\pi} f\pare{x} \, dx
+                + \int_{-\pi}^{\pi-x_0} f\pare{x} \, dx 
+            &= \int_{-\pi-x_0}^{-\pi} f\pare{x+2\pi} \, dx
+                + \int_{-\pi}^{\pi-x_0} f\pare{x} \, dx \\
+            &\overset{\pare{\dagger}}{=} \int_{\pi-x_0}^{\pi} f\pare{x} \, dx
+                + \int_{-\pi}^{\pi-x_0} f\pare{x} \, dx \\
+            &= \int_{-\pi}^{\pi} f\pare{x} \, dx
+    \end{align*}
+    hvor $\pare{\dagger}$ følger ved integration ved substitution med $y = x+2\pi$. 
+    
+    Ved indsættelse i den oprindelige ligning fås nu
+    $$ \pare{1-f\pare{x_0}}\int_{-\pi}^\pi f\pare{x} \, dx
+        = 0, $$
+    hvorfor vi konkluderer $\int_{-\pi}^\pi f\pare{x} \, dx = 0$.
+    \end{proof}\fi
+    
+    \item Lad $k\in\mZ$ og definer en funktion $f_k\colon\mR\to\mathbb{T}$ ved $f_k\pare{x} = f\pare{kx}$. Vis at
+    $$ \inProd{f_k, f_l} = \delta_{kl}\quad \forall k,l \in \mZ, $$
+    hvor $\inProd{\cdot,\cdot}$ noterer det indre produkt op $\text{PC}_{2\pi}$.
+    
+    \iffalse\begin{proof}[Løsning]
+    Vi viser først, at $f_0\equiv 1$ og $f_n \not\equiv 1$ for alle $n\in\mZ\setminus\{0\}$. Bemærk først, at
+    $$ f_0\pare{x} = f\pare{0\cdot x} = f\pare{0} = f\pare{0+0} = f\pare{0}f\pare{0}, $$
+    hvorfor det følger, at $f_0\pare{x} = f\pare{0} = 1$. Lad nu $n\in\mZ\setminus\{0\}$ og vælg $x_0\in\mR$, så $f\pare{x_0}\neq 1$. Da er
+    $$ f_n\pare{\frac{x_0}{n}} = f\pare{x_0} \neq 1, $$
+    hvilket viser $f_n\not\equiv 1$.
+    
+    Vi begynder nu udregningen af det indre produkt, nemlig
+    $$ \inProd{f_k,f_l} = \frac{1}{2\pi}\int_{-\pi}^\pi 
+            f_k\pare{x}\overline{f_l\pare{x}} \, dx
+        \overset{\pare{\dagger}}{=} \frac{1}{2\pi}\int_{-\pi}^\pi 
+            f\pare{\pare{k-l}x} \, dx
+        = \frac{1}{2\pi}\int_{-\pi}^\pi f_{k-l}\pare{x} \, dx $$
+    hvor $\pare{\dagger}$ følger, da der findes $\theta\in\mR$, så $f\pare{x} = e^{i\theta}$, og derfor
+    $$ f_k\pare{x}\overline{f_l\pare{x}} = f\pare{kx}\overline{f\pare{lx}}
+        = f\pare{x}^k\overline{f\pare{x}^l} = e^{ik\theta}e^{-il\theta}
+        = e^{i\pare{k-l}\theta} = f\pare{x}^{k-l} = f\pare{\pare{k-l}x} = f_{k-l}\pare{x}. $$
+    Bemærk nu, at 
+    $$ f_{k-l}\pare{x + 2\pi} = f\pare{\pare{k-1}\pare{x+2\pi}}
+        = f\pare{x+2\pi}^{k-l} = f\pare{x}^{k-l} = f\pare{\pare{k-l}x} = f_{k-l}\pare{x} $$
+    og 
+    $$ f_{k-l}\pare{x+y} = f\pare{\pare{k-l}\pare{x+y}} = f\pare{\pare{k-l}x}f\pare{\pare{k-l}y} = f_{k-l}\pare{x}f_{k-l}\pare{y}, $$
+    hvorfor $f_{k-l}$ har du samme egenskaber som $f$, så det følger af Opgave 7.7a), at
+    $$ \inProd{f_k,f_l} =\frac{1}{2\pi}\int_{-\pi}^\pi f_{k-l}\pare{x} \, dx
+        = \delta_{k,l}. $$
+    \end{proof}\fi
+\end{enumerate}
+Man kan faktisk vise, at der findes et $n \in \mZ$ så $f(x) = e^{inx}$.
+\end{opg}

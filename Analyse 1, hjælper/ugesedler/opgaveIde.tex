@@ -1,0 +1,25 @@
+\begin{opg}
+Lad $ \seq b $ være en talfølge således at $ 0<\varepsilon<b_n\leq 1 $ for alle $ n\in\N $. Definer da $ \seq a $ ved \begin{equation*}
+a_n=b_n\prod_{i=1}^{n-1}(1-b_i)\text{ for }n\geq 2,\quad a_1=b_1.
+\end{equation*}
+Vis at $ \sum_{n=1}^{\infty}a_n=1 $
+\end{opg}
+\begin{proof}[Løsning]
+	Bemærk at, \begin{equation}
+	\sum_{n=1}^{N}a_n=b_1+\sum_{n=2}^{N}(1-(1-b_n))\prod_{i=1}^{n-1}(1-b_i).
+	\end{equation}
+	Definer $ c_n=\prod_{i=1}^{n}(1-b_i) $, da ses det at\begin{equation}
+	\sum_{n=1}^{N}a_n=b_1+\sum_{n=2}^{N}(c_{n-1}-c_n)=b_1+c_1-c_N=b_1+(1-b_1)-c_N.
+	\end{equation}
+	Det gælder åbenlyst at $ \lim\limits_{N\to\infty}c_N=0 $, da $ 0<c_N<(1-\varepsilon)^N $, og derfor konkluderes at $ \sum_{n=1}^{\infty}a_n=1 $
+\end{proof}
+
+\begin{opg}
+	Betragt rækken $ \sum_{n=1}^{\infty}\frac{1}{n^p} $, med $ p\in\R $.
+	\begin{enumerate}
+		\item  Vis at der for ethvert $ p>1 $ eksistrerer en konvergent række $ \sum_{n=1}^{\infty}a_n $ således at $ \lim\limits_{n\to\infty}(a_n n^p)=\infty $.
+		\item Vis at der for ethvert $ p\leq 1 $ eksisterer en divergent række $ \sum_{n=1}^{\infty}b_n $ således at $ \lim\limits_{n\to\infty}(b_n n^p)=0 $
+		\item Vis at der for enhver konvergent positiv række, $ \sum_{n=1}^{\infty}c_n $, eksisterer en positiv konvergent række $ \sum_{n=1}^{\infty}C_n $ således at $ \lim\limits_{n\to\infty}\frac{C_n}{c_n}=\infty $, samt at der for enhver positiv divergent række $ \sum_{n=1}^{\infty}D_n $ eksisterer en positiv divergent række $ \sum_{n=1}^{\infty}d_n $ således at $ \lim\limits_{n\to\infty}\frac{d_n}{D_n}\to 0 $
+	\end{enumerate}
+	
+\end{opg}
