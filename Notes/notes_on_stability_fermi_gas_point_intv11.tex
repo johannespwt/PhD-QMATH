@@ -2174,22 +2174,42 @@ a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=a^m_{i0}a^m_{k0}c_i^\dagger c_0c_
 since $ c_0^2=0 $. Hence we see that the only contributing terms with two $ 0 $s are $ j=k=0 $ and $ i=l=0 $.
 \subsubsection*{One $ 0 $}
 If $ i=0 $ then we have \begin{equation}
-0\#\#\#=\sum_{m=1}^{3}\sum_{j,k,l}a^m_{0j}a^m_{kl}c_0^\dagger c_jc_k^\dagger c_l.
-\end{equation} 
-On the other hand if $ k=0 $ we have \begin{equation}
-\#\#0\#=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_i^\dagger c_jc_0^\dagger c_l=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_0^\dagger(c_lc_i^\dagger-\delta_{il}) c_j
-\end{equation}
-So summing these we get\begin{equation}
-0\#\#\#+\#\#0\#=2\cdot 0\#\#\#-\sum_{m=1}^{3}\sum_{i,j>0} a^m_{ij}a_{0i}^mc_0^\dagger c_j.
-\end{equation}
-Similarly in the cases where $ j=0 $ we have \begin{equation}
-\#0\#\#=\sum_{m=1}^{3}\sum_{i,k,l}a^m_{i0}a^m_{kl}c_i^\dagger c_0c_k^\dagger c_l
-\end{equation}
-and for $ l=0 $ we have \begin{equation}
 \begin{aligned}
-\#\#\#0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger c_jc_k^\dagger c_0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger  c_0(\delta_{jk}-c_k^\dagger c_j)\\=\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0+\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0} c_k^\dagger c_0 c_i^\dagger  c_j=\#0\#\#+\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0
+0\#\#\#=\sum_{m=1}^{3}\sum_{j,k,l}a^m_{0j}a^m_{kl}c_0^\dagger c_jc_k^\dagger c_l&=\sum_{m=1}^{3}\sum_{j,k,l}a^m_{0j}a^m_{kl}c_0^\dagger (\delta_{jk}-c_k^\dagger c_j) c_l\\
+&=\sum_{m=1}^{3}\left(\sum_{k,l}a^m_{kl}c_k^\dagger c_l\right)\left(\sum_{j}a_{0j}^m c_0^\dagger c_j\right)+\sum_{m=1}^{3}\sum_{j,l}a^m_{0j}a^m_{jl}c_0^\dagger c_l.
+\end{aligned}
+\end{equation} 
+If $ l=0 $ we have \begin{equation}
+\begin{aligned}
+\#\#\#0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger c_jc_k^\dagger c_0&=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger (\delta_{jk}-c_k^\dagger c_j) c_0\\
+&=\sum_{m=1}^{3}\left(\sum_{k}a^m_{k0}c_k^\dagger c_0\right)\left(\sum_{i,j}a_{ij}^m c_i^\dagger c_j\right)+\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger c_0.
 \end{aligned}
 \end{equation}
+If $ j=0 $ we have \begin{equation}
+\#0\#\#=\sum_{m=1}^{3}\sum_{i,k,l}a^m_{i0}a^m_{kl}c_i^\dagger c_0c_k^\dagger c_l=\sum_{m=1}^{3}\left(\sum_{i}a_{i0}^m c_i^\dagger c_0\right)\left(\sum_{k,l}a^m_{kl}c_k^\dagger c_l\right).
+\end{equation}
+If $ k=0 $ we have \begin{equation}
+\#\#0\#=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_i^\dagger c_jc_0^\dagger c_l=\sum_{m=1}^{3}\left(\sum_{i,j}a_{ij}^m c_i^\dagger c_j\right)\left(\sum_{l}a^m_{0l}c_0^\dagger c_l\right).
+\end{equation}
+Now using the inequality $ \abs{A^\dagger B+B^\dagger A}\leq \frac{1}{\epsilon}A^\dagger A+\epsilon B^\dagger B $ on $ 0\#\#\#+\#\#\#0+ \#0\#\#+\#\#0\# $ we find \begin{equation}\label{Eqone0estimate}
+\text{one }0\text{ terms}\geq -\frac{2}{\epsilon}\sum_{m=1}^{3}\sum_{i,j}a^m_{i0}a^m_{0j}c_i^\dagger \underbrace{c_0c_0^\dagger}_{(1-N_0)} c_j-2\epsilon \sum_{m=1}^{3}\sum_{i,j,k,l}a_{ij}^ma_{kl}^mc_i^\dagger c_j c_k^\dagger c_l+\sum_{m=1}^{3}\sum_{i,j}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)
+\end{equation}
+
+
+%On the other hand if $ k=0 $ we have \begin{equation}
+%\#\#0\#=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_i^\dagger c_jc_0^\dagger c_l=\sum_{m=1}^{3}\sum_{i,j,l}a^m_{ij}a^m_{0l}c_0^\dagger(c_lc_i^\dagger-\delta_{il}) c_j
+%\end{equation}
+%So summing these we get\begin{equation}
+%0\#\#\#+\#\#0\#=2\cdot 0\#\#\#-\sum_{m=1}^{3}\sum_{i,j>0} a^m_{ij}a_{0i}^mc_0^\dagger c_j.
+%\end{equation}
+%Similarly in the cases where $ j=0 $ we have \begin{equation}
+%\#0\#\#=\sum_{m=1}^{3}\sum_{i,k,l}a^m_{i0}a^m_{kl}c_i^\dagger c_0c_k^\dagger c_l
+%\end{equation}
+%and for $ l=0 $ we have \begin{equation}
+%\begin{aligned}
+%\#\#\#0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger c_jc_k^\dagger c_0=\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0}c_i^\dagger  c_0(\delta_{jk}-c_k^\dagger c_j)\\=\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0+\sum_{m=1}^{3}\sum_{i,j,k}a^m_{ij}a^m_{k0} c_k^\dagger c_0 c_i^\dagger  c_j=\#0\#\#+\sum_{m=1}^{3}\sum_{i,j}a^m_{ij}a^m_{j0}c_i^\dagger  c_0
+%\end{aligned}
+%\end{equation}
 \subsubsection*{No $ 0 $s}
 If all indices are non-zero we have \begin{equation}
 \#\#\#\#=\sum_{m=1}^{3}\sum_{i,j,k,l}a^m_{ij}a^m_{kl}c_i^\dagger c_jc_k^\dagger c_l=\left(\sum_{i,j>0}\overline{a}_{ij}c_i^\dagger c_j\right)^2,
@@ -2325,6 +2345,10 @@ Again we may use $ \sum_{j>0} a^m_{ij}a^m_{j0}=\braket{0|k^m|j}\braket{j|k^m|0}=
 \\
 \begin{equation}
 \left(\sum_{i} k_i\right)\cdot\left(\sum_{i}(P_0^\perp)_ik_i(P_0^\perp)_i\right)+\left(\sum_{i}(P_0^\perp)_ik_i(P_0^\perp)_i\right)\cdot\left(\sum_{i} k_i\right)-\left(\sum_{i}(P_0^\perp)_ik_i(P_0^\perp)_i\right)^2
+\end{equation}
+\subsection{Collecting all terms part 2}
+Collecting all terms and using estimate \eqref{Eqone0estimate} with $ \epsilon=1/2 $, we see that \begin{equation}
+H\geq \sum_{i}\tilde{\varepsilon}_i N_i-\frac{3}{m+1}\left(1-\frac23 N_0\right)\sum_{m=1}^{3}\sum_{i,j}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\frac{1}{m+1}\sum_{m=1}^{3}\sum_{i,j}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)
 \end{equation}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
