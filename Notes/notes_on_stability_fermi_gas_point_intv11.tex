@@ -2133,7 +2133,7 @@ H=\sum_{i=1}^{N}k_i^2+\frac{2}{m+1}\sum_{i<j} k_i\cdot k_j -\gamma_R\sum_{i=1}^{
 We may rewrite this as \begin{equation}
 H=\frac{m}{m+1}\sum_{i=1}^{N}k_i^2+\frac{1}{m+1}\left(\sum_{i=1}^{N}k_i\right)^2 -\gamma_R\sum_{i=1}^{N}\braket{\hat{\phi}_i\vert \cdot}\hat{\phi}_i.
 \end{equation}
-We know from section \ref{SectionRankOnePerturbation} that $ H_1:=\frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}\vert \cdot}\hat{\phi} $ have a spectrum with (at most) one negative eigenvalue, and continuous spectrum consisting of $ (0,\infty) $. Thus we may write $ H $ as \begin{equation}
+We know from section \ref{SectionRankOnePerturbation} that $ H_1:=\frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}\vert \cdot}\hat{\phi} $ have a spectrum with (at most) one negative eigenvalue, and continuous spectrum consisting of $ (0,\infty) $. Thus we may write $ H $ as \begin{equation}\label{EqSecondQuant.form}
 H=\sum_{i} \varepsilon_i c^\dagger_ic_i+\frac{1}{m+1}\sum_{m=1}^{3}\left(\sum_{ij}a^m_{ij}c_i^\dagger c_j\right)^2
 \end{equation}
 where $ a_{ij}^m=\braket{\psi_i\vert k^m\vert \psi_j} $, and $ m $ is just the vector index of $ k=(k^1,k^2,k^3):=(k_x,k_y,k_z) $ and $ \psi_i $ are the (generalized) eigenfunctions of $ H_1 $, and $ \varepsilon_i $ are the generalized eigenvalues of $ \psi_i $. Furthermore, as a consequence of the fact that $ \sigma(\frac{m+1}{m}H_1)=\begin{cases}
@@ -2347,8 +2347,34 @@ Again we may use $ \sum_{j>0} a^m_{ij}a^m_{j0}=\braket{0|k^m|j}\braket{j|k^m|0}=
 \left(\sum_{i} k_i\right)\cdot\left(\sum_{i}(P_0^\perp)_ik_i(P_0^\perp)_i\right)+\left(\sum_{i}(P_0^\perp)_ik_i(P_0^\perp)_i\right)\cdot\left(\sum_{i} k_i\right)-\left(\sum_{i}(P_0^\perp)_ik_i(P_0^\perp)_i\right)^2
 \end{equation}
 \subsection{Collecting all terms part 2}
-Collecting all terms and using estimate \eqref{Eqone0estimate} with $ \epsilon=1/2 $, we see that \begin{equation}
-H\geq \sum_{i}\tilde{\varepsilon}_i N_i-\frac{3}{m+1}\left(1-\frac23 N_0\right)\sum_{m=1}^{3}\sum_{i,j}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\frac{1}{m+1}\sum_{m=1}^{3}\sum_{i,j}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)
+Collecting all terms and using estimate \eqref{Eqone0estimate} with $ \epsilon=1/2 $, we see that \begin{equation}\label{EqHBound1}
+H\geq \sum_{i}\tilde{\varepsilon}_i N_i-\frac{3}{m+1}\left(1-\frac23 N_0\right)\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\frac{1}{m+1}\sum_{m=1}^{3}\sum_{i,j>0}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)
+\end{equation}
+where $ \tilde{\varepsilon}_0=\braket{0\left\lvert k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R\right\rvert0} $, and $ \tilde{\varepsilon}_i=\braket{i\left\lvert \frac{m}{m+1}k^2-\gamma_R\braket{\hat{\phi}_R,\cdot}\hat{\phi}_R\right\rvert i} $ for $ i>0 $.
+Consider now a trial function of the form $ \psi=\psi_0+\psi_1 $, where $ N_0\psi_0=0 $ and $ N_0\psi_1=\psi_1 $. We then clearly have \begin{equation}
+\begin{aligned}
+\braket{\psi|H\psi}\geq&\sum_{i> 0}\tilde{\varepsilon}_i\braket{\psi_0|N_i\psi_0}-\frac{3}{m+1}\braket{\psi_0\Bigg\vert\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j\ \psi_0}\\&+\sum_{i\geq 0}\tilde{\varepsilon}_i\braket{\psi_1|N_i\psi_1}-\frac{1}{m+1}\braket{\psi_1\Bigg\vert\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j\ \psi_1}\\
+&+\frac{2}{m+1}\Real\left[\braket{\psi_0\Bigg\vert \sum_{m=1}^{3}\sum_{i,j>0}a_{0j}^ma_{ji}^mc_0^\dagger c_i\ \psi_1}\right]
+\end{aligned}
+\end{equation}
+Use \eqref{EqSecondQuant.form} for the $ \psi_0 $ part instead. Then $ \braket{\psi_0\vert H\psi_0}\geq 0 $. Therefore we have \begin{equation}
+\braket{\psi\vert H\psi}\geq \braket{\psi_1\vert H\psi_1}+\frac{2}{m+1}\Real \left[\braket{\psi_0\Bigg\vert \sum_{m=1}^{3}\left(\sum_{ij}a^m_{ij}c_i^\dagger c_j\right)^2 \psi_1}\right].
+\end{equation}
+\subsubsection{Collecting all terms part 3}
+We now try doing the same computation as above but now splitting the wave function in the following way $ \psi=\psi_0+\psi_1 $, where $ N_0\psi_0=0 $ and $ N_0\psi_1=\psi_1 $. We then use individual bounds for the $ \psi_0 $ and $ \psi_1 $ parts. Notice first that \begin{equation}
+\braket{\psi\vert H\psi}=\braket{\psi_0\vert H\psi_0}+\braket{\psi_1\vert H\psi_1}+2\Real\left[\braket{\psi_1\vert H\psi_0}\right].
+\end{equation}
+Since $ \sum_{i}\epsilon_iN_i $ commutes with $ N_0 $ we see that $ \braket{\psi_1\vert (\sum_{i}\epsilon_iN_i)\psi_0 }=0 $. In fact, we see that only terms from $ \frac{1}{m+1}\sum_{m=1}^{3}\left(\sum_{i,j}a_{ij}^mc_i^\dagger c_j\right) $ containing exactly one $ c_0^\dagger $ can contribute in this term. Thus we conclude that \begin{equation}
+2\abs{\Real\left[\braket{\psi_1\vert H\psi_0}\right]}\geq\frac{2}{m+1}\abs{\braket{\psi_i\vert\sum_{m=1}^{3}\sum_{i,j,k}a_{ }}}
+\end{equation}
+NEW IDEA: We proceed by using bound \eqref{EqHBound1}, and the fact that \begin{equation}
+\begin{aligned}
+\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\sum_{m=1}^{3}\sum_{i,j>0}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)\\=\diff \Gamma\left(\sum_{m=1}^{3}P_0^\perp k^m P_0 k^m P_0^\perp+P_0^\perp k^2P_0+P_0k^2P_0^\perp\right)\\
+=\diff \Gamma\left(k^2-P_0^\perp kP_0^\perp k P_0^\perp-P_0k^2P_0\right)
+\end{aligned}
+\end{equation}
+Therefore, we find \begin{equation}
+H\geq \sum_{i}\tilde{\varepsilon}_iN_i-\frac{4}{m+1}\left(1-\frac{N_0}{2}\right)\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\frac{1}{m+1}\diff \Gamma\left(k^2-P_0^\perp kP_0^\perp k P_0^\perp-P_0k^2P_0\right)
 \end{equation}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}

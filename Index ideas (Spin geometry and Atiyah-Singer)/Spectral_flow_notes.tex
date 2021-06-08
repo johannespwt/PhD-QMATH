@@ -1,0 +1,122 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage[english]{babel} 
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+\usepackage{fancyhdr}
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\renewcommand{\braket}[1]{\left\langle#1\right\rangle}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newcommand{\pipe}{\hspace{.5mm}|\hspace{.5mm}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\title{spectral flow}
+\author{ }
+\date{June 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\section{Special case}
+For each $ t\in\R $ let $ A_t $ be a self-adjoint operator on the Hilbert space $ H $ with domain $ D(A_t)=W $ independent of $ t $. We assume that $ W $ is compactly embedded and dense in $ H $. Assume furthermore, that $ t\mapsto A_t $ is continuously differentiable in the weak operator topology (WOT), \ie a differentiable map, with derivative that is continuous in the WOT. In the following, we shall assume that $ A_t $ takes the form $ A_t=\sum_{j} \lambda_j(t)\ket{u_j}\bra{u_j} $. Define the operator $ D_A=\frac{\diff}{\diff t}-A_t $, with domain \begin{equation*}
+D(D_A)=\left\{\sum_{j}\alpha_j(t)\ket{u_j}\Bigg\vert \int_{\R}\sum_{j}\abs{\alpha_j(t)}^2\diff t<\infty,\ \int_{\R}\sum_{j}\abs{\alpha_j'(t)-\lambda_j(t)\alpha_j(t)}^2\diff t<\infty\right\}.
+\end{equation*}
+Then we have the following result \begin{theorem}
+	Let $ D_A $ be as described above, and assume that $ A_t $ converges to invertible operators $ A_\pm $ as $ t\to\pm\infty $. Then $ D_A $ is Fredholm, and its index is given by the spectral flow of the family $ (A_t)_{t\in\R} $.
+\end{theorem}
+In order to show this theorem, we show first that to each element in the kernel of $ D_A $ or the kernel of $ D_A^* $, we may associate an eigenvalue of $A_t $, $ \lambda_j(t) $, crossing zero and odd number of times. More precisely we show that each element in $ \ker(D_A) $ can be associated to eigenvalues $ \lambda_j(t) $ with the properties $ \lim\limits_{t\to-\infty}\lambda_j(t)>0 $ and $ \lim\limits_{t\to\infty}\lambda_j(t)<0 $. Similarly each element in $ \ker(D_A^*) $ can be associated to eigenvalues $ \lambda_j(t) $ with the properties $ \lim\limits_{t\to-\infty}\lambda_j(t)<0 $ and $ \lim\limits_{t\to\infty}\lambda_j(t)>0 $.
+\begin{proposition}\label{Prop1}
+	Let $ D_A $ be as above, then $ \ker(D_A) $ is spanned by $ \{\beta_j(t)\ket{u_j}\}_{j\in M} $, where $ M=\{j\pipe \text{$ \lim\limits_{t\to-\infty}\lambda_j(t)>0 $ and $ \lim\limits_{t\to\infty}\lambda_j(t)<0 $} \} $ and $ \beta_j(t)=\euler{\int_{0}^{t}\lambda_j(s)\diff s} $.
+\end{proposition}
+\begin{proof}
+	It is clear that $ \beta_j(t)\ket{u_j} $ is in the kernel under the assumptions. On the contrary if $ \sum_{j}\alpha_j(t)\ket{u_j}\in\ker(D_A) $, then $ \alpha_j'(t)-\lambda_j(t)\alpha_j(t)=0 $ for all $ \alpha_j $. Therefore $ \alpha_j(t)=\alpha_j(0)\euler{\int_{0}^{t}\lambda_j(s)\diff s} $, for all $ j $. But then $ \sum_{j}\alpha_j(t)\ket{u_j}\in D(D_A) $, only if $ \lim\limits_{t\to-\infty}\lambda_j(t)>0 $ and $ \lim\limits_{t\to\infty}\lambda_j(t)<0 $. Furthermore, we show below that only finitely many eigenvalues cross zero, and therefore, we may conclude that $ \sum_{j}\alpha_j(t)\ket{u_j} $ is a finite sum, and hence $ \sum_{j}\alpha_j(t)\ket{u_j}\in D(D_A) $ if $ \lim\limits_{t\to-\infty}\lambda_j(t)>0 $ and $ \lim\limits_{t\to\infty}\lambda_j(t)<0 $.
+\end{proof}
+\begin{proposition}
+	Let $ D_A $ be as above, then $ \ker(D_A^*) $ is spanned by $ \{\beta_j(t)\ket{u_j}\}_{j\in M} $, where $ M=\{j\pipe \text{$ \lim\limits_{t\to-\infty}\lambda_j(t)<0 $ and $ \lim\limits_{t\to\infty}\lambda_j(t)>0 $} \} $ and $ \beta_j(t)=\euler{-\int_{0}^{t}\lambda_j(s)\diff s} $.
+\end{proposition}
+\begin{proof}
+	The proof is similar to the one for Proposition \ref{Prop1}
+\end{proof}
+We now show that the eigenvalues of $ A_t $, can cross zero only finitely many times. We first need to establish that all eigenvalues must cross zero within some compact interval. This is a consequence of the following lemma 
+\begin{lemma}\label{LemmaCrossingsBound}
+	Let $ (A_t)_{t\in\R} $ be a family of self-adjoint operators with $ t $-independent domain $ W$. Assume furthermore, $ (A_t)_{t\in\R}$ converge to invertible operators $A^\pm $ in the norm-topology on $ \mathcal{L}(W,H) $ and that $ t\mapsto A_t $ is countinuously differentiable in the WOT. Then there exist $ t_1,t_2\in\R $ and $ c>0 $ such that $ |A_t|>c>0 $ for $ t<t_1 $ or $ t>t_2 $.
+\end{lemma}
+\begin{proof}
+	It is direct consequence of invertibility of $ A^\pm $, that there exist $ d>0 $ such that $ \abs{A^\pm}>d $. Notice now that for invertible operators $ A $ and $ B $ we have $ \frac{1}{A}-\frac{1}{B}=\frac{1}{A}(A-B)\frac{1}{B} $. Since $ (A_t+i) $ and $ A\pm+i $ are invertible it follows that \begin{equation}
+	\norm{\frac{1}{A_t+i}-\frac{1}{A^\pm+i}}_{\mathcal{L}(H,H)}\leq\norm{\frac{1}{A_t+i}}_{\mathcal{L}(H,H)}\norm{A_t-A^\pm}_{\mathcal{L}(W,H)}\norm{\frac{1}{A^\pm+i}}_{\mathcal{L}(H,W)}\leq \norm{A_t-A}_{\mathcal{L}(W,H)}.
+	\end{equation}
+	Thus we conclude that $ A_t $ converges to $ A^\pm $ as $ t\to\pm \infty $ in the norm resolvent sense. Thus for any $ \epsilon>0 $ we have that there exist $ t_1 $ and $ t_2 $ such that  \begin{equation}
+	\norm{\frac{1}{A_t+i}}_{\mathcal{L}(H,H)}\leq \norm{A_t-A^\pm}_{\mathcal{L}(W,H)}+\norm{\frac{1}{A^\pm+i}}_{\mathcal{L}(H,H)}\leq \epsilon+\norm{\frac{1}{A^\pm+i}}_{\mathcal{L}(H,H)}
+	\end{equation}
+	for $ t<t_1 $ or $ t>t_2 $
+	from which it follows that \begin{equation}
+	\sup_{i}\frac{1}{\left(\abs{\lambda_i}^2+1\right)^{1/2}}\leq \epsilon + \sup_i\frac{1}{\left(\abs{\lambda^\pm_i}^2+1\right)^{1/2}}.
+	\end{equation}
+	Equivalently we have $ \inf_{i}\left(\abs{\lambda_i}^2+1\right)^{1/2}=\left(\inf_i\abs{\lambda_i}^2+1\right)^{1/2}\geq\left( \epsilon+\frac{1}{\left(\inf_i\abs{\lambda^\pm_i}^2+1\right)^{1/2}}\right)^{-1} $,
+	and we see that \begin{equation}
+	\left(\inf_i\abs{\lambda_i}^2+1\right)^{1/2}\geq \left( \epsilon+\frac{1}{\left(d^2+1\right)^{1/2}}\right)^{-1}
+	\end{equation}
+	$ \inf_i\abs{\lambda_i}\geq\left(\left( \epsilon+\frac{1}{\left(d^2+1\right)^{1/2}}\right)^{-2}-1\right)^{1/2}  $, and the result follows by choosing $ \epsilon<1-\frac{1}{\left(d^2+1\right)^{1/2}} $
+\end{proof}
+We are now ready to show the result
+\begin{proposition}
+	Let $ (A_t)_{t\in\R} $ be a family of self-adjoint operators with $ t $-independent domain $ W$. Assume furthermore, $ (A_t)_{t\in\R}$ converge to invertible operators $A^\pm $ in the norm-topology on $ \mathcal{L}(W,H) $ and that $ t\mapsto A_t $ is countinuously differentiable in the WOT. Then only finitely many eigenvalues of $ A_t $ cross zero.
+\end{proposition}
+\begin{proof}
+	It is known that $ A_t $ has discrete spectrum for all $ t\in\R $. Now assume that infinitely many eigenvalues cross zero. By lemma \ref{LemmaCrossingsBound}, there exist $ t_1,t_2 $ such that all crossing happen in the interval $ [t_1,t_2] $. Letting the crossing points define a sequence, it is clear by the Bolzano-Weierstrass theorem, that there exist a point, $ t^* $, such that any interval $ I $ with $ t^*\in \interior{I} $ contains infinitely many crossings. It is then clear that $ I_\epsilon=[t^*-\epsilon,t^*+\epsilon] $ contains infinitely many crossings for every $ \epsilon>0 $. Since $ \dot{A}_t=\frac{\diff A_t}{\diff t} $ is continuous in the WOT, it holds that $ f_x:\R\to H $ defines by $ f_x(t)=\dot{A}_tx $ is continuous, when $ H $ is equipped with the weak topology. Therefore, $ f_x([t^*-\epsilon,t^*+\epsilon]) $ is weakly compact and hence norm bounded. We conclude that $ \sup_{t\in I_\epsilon}\left\{\norm{\dot{A}_t x}_H\right\}<\infty $ for all $ x\in W $. By the uniform boundedness principle, it follows that $ \sup_{t\in I_\epsilon}\left\{\norm{\dot{A}_t}_{\mathcal{L}(W,H)}\right\}<\infty $. Thus we conclude that there exist $ C>0 $ such that $ \abs{\lambda_j'(t)}\leq C\left(\sqrt{\abs{\lambda_j(t)}^2+1}\right)\leq C(\abs{\lambda_j(t)}+1)  $ for all $ t\in I_\epsilon $. Letting $ M_j= \max_{t\in I_\epsilon}\abs{\lambda_j(t)} $, we see that by the mean value theorem, there exist a point $ t'\in I_\epsilon $ where $ \abs{\lambda_j'(t)}\geq \frac{M}{2\epsilon} $, and therefore $ \frac{M}{2\epsilon}\leq C(M+1) $ or equivalently $ M\leq \frac{2\epsilon C}{1-2\epsilon C}   $. This clearly contradicts the fact, that $ A_t^* $ has dicrete spectrum, as the eigenvalues of $ A_{t^*} $ accumulate at $ 0 $. Thereby, we conclude that the number of crossing eigenvalues must be finite.
+\end{proof}
+
+
+\end{document}

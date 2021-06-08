@@ -1,0 +1,99 @@
+\setcounter{section}{3}
+\begin{opg}\hfill\\
+	Vi ser på potensrækken $ \sum_{n=0}^{\infty}a_n x^n $, med $ a_0=0 $ og $ a_n=\sum_{k=1}^{n}\frac1k $ for $ n\geq1 $. Lad $ r $ betegne rækkens konvergensradius og $ s $ sumfunktionen $ s: (-r,r)\to \C $
+\begin{enumerate}
+    \item Vis at rækken divergerer for $ x=1 $, men at den konvergerer for $ x=\frac{1}{2} $. Slut, at $ \frac{1}{2}\leq r\leq1 $.
+    \ifanswers
+    \begin{proof}[Løsning]
+    	For $ x=1 $ har vi $ \sum_{n=0}^{\infty}a_n x^n=\sum_{n=1}^{\infty}\sum_{k=1}^{n}\frac{1}{k} $. Da $ \sum_{k=1}^{n}\frac{1}{k}\geq \frac1n $, og det vides at den harmoniske række er divergent, følger det af sammenligningstesten, at $ \sum_{n=0}^{\infty}a_n x^n $ er divergent for $ x=1 $. For $ x=1/2 $ bemærkes at rækken $ \sum_{n=0}^{\infty}a_n x^n=\sum_{n=1}^{\infty}a_n\left(\frac{1}{2}\right)^n $ er positiv. Da det gælder at $ 1<a_{n+1}/a_n\leq1+\frac{1}{n+1} $ følger det af klemmelemmaet, at $ \lim\limits_{n\to\infty}(a_{n+1}/a_n)=1 $. Derfor gælder det, at\\ $ \lim\limits_{n\to\infty}\left((a_{n+1}(1/2)^{n+1})/(a_n(1/2)^n)\right)=1/2 $, og det følger af kvotienttesten, at $ \sum_{n=0}^{\infty}a_n x^n=\sum_{n=1}^{\infty}a_n\left(\frac{1}{2}\right)^n $ er konvergent. Det følger du direkte af Sætning 4.3(1)  $ r\leq 1 $ og af Sætning 4.3(2) at $ \frac12\leq r $.
+    \end{proof}
+    \fi
+    \item Bestem en potensrække, hvis sum er $ (1-x)s(x) $, og redegør for, at den også har konvergensradius $ r $.
+    \ifanswers
+    \begin{proof}[Løsning]
+    	Betragt potensrækken $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n $. For $ \abs{x}<r $, er det klart ved Sætning 4.15(3) og Sætning 4.18(5) at $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n $ har konvergensradius mindst $ r $ og at $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n=\sum_{n=1}^{\infty}a_nx^n-x\sum_{n=0}^{\infty}a_nx^n=(1-x)\sum_{n=0}^{\infty}a_nx^n=(1-x)s(x) $ for $ \abs{x}< r $.
+    	På den anden side, hvis $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n $ konvergerer, da gælder at $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n=\sum_{n=1}^{\infty}(1-x)a_nx^n=(1-x)\sum_{n=1}^{\infty}a_nx^n $, og dermed er $\sum_{n=1}^{\infty}a_nx^n  $ konvergent og vi konkluderer at $ \abs{x}\leq r $. Altså gælder, at $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n $ også har konvergensradius $ r $.
+    \end{proof}
+    \fi 
+    \item Vis, at $ r=1 $ og bestem et lukket udtryk for $ s:(-1,1)\to \C $.
+    \ifanswers
+    \begin{proof}[Løsning]
+    	Bemærk, at $ a_n-a_{n-1}=\frac{1}{n} $ for $ n\geq 1 $. Derfor gælder at $ \sum_{n=1}^{\infty}(a_n-a_{n-1})x^n=\sum_{n=1}^{\infty}\frac{1}{n}x^n $. Det ses let, at alle antagelser for sætning 4.8 er opfyldt, og der gælder dermed, at $ r=\left(\lim\limits_{n\to\infty}\left(\frac{1}{n+1}\Big/\frac{1}{n}\right)\right)^{-1}=1 $. Ved ledvis integration (Sætning 4.22(8)) af den geometriske række opnåes $ \int_{0}^{x} \frac{1}{1-t}\diff t=\sum_{n=1}^{\infty}\frac{1}{n}x^n $, hvoraf det ses at $ (1-x)s(x)=-\log(1-x) $. Altså har vi $ s(x)=\frac{\log(1-x)}{x-1} $, for $ x\in(-1,1) $.
+    \end{proof}
+    \fi
+\end{enumerate}
+\end{opg}
+
+\begin{opg}\hfill \\
+	\begin{enumerate}
+		\item Find konvergensradius for potensrækken $ \sum_{n=1}^{\infty}\frac{n^n}{n!}x^n $.
+		\ifanswers
+		\begin{proof}[Løsning]
+			Bemærk at $ \frac{(n+1)^{n+1}}{(n+1)!}\Big/ \frac{n^n}{n!}=\frac{(n+1)^n}{n^n}=\left(1+\frac{1}{n}\right)^n $. Det fra Eksempel 1.45 at $ \lim\limits_{n\to\infty}\left(\frac{(n+1)^{n+1}}{(n+1)!}\Big/ \frac{n^n}{n!}\right)=e $.
+			Det ses nu let, at alle antagelser for sætning 4.8 er opfyldt, og det følger derfor, at konvergensradius er $ r=\left(\lim\limits_{n\to\infty}\left(\frac{(n+1)^{n+1}}{(n+1)!}\Big/ \frac{n^n}{n!}\right)\right)^{-1}=e^{-1}  $.
+		\end{proof}
+		\fi
+		\item Find konvergensradius og sumfunktion for potensrækken $ \sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n+2)!} $, $ x\in\R $. 
+		\ifanswers
+		\begin{proof}[Løsning]
+			Definer $ y=x^2 $. Da gælder $ \sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n+2)!} =\sum_{n=0}^{\infty}\frac{(-1)^ny^{n}}{(2n+2)!}  $. Der gælder ydermere, at\\ $ \frac{1}{(2(n+1)+2)!}\Big/ \frac{1}{(2n+2)!}=\frac{1}{(2n+3)(2n+4)} $. Det ses derfor, at $ \lim\limits_{n\to\infty}\left(\frac{1}{(2(n+1)+2)!}\Big/ \frac{1}{(2n+2)!}\right)=0 $. Det følger af Sætning 4.8 at konvergensradius for $ \sum_{n=0}^{\infty}\frac{(-1)^ny^{n}}{(2n+2)!} $ er $ \infty $. Altså konvergerer $ \sum_{n=0}^{\infty}\frac{(-1)^ny^{n}}{(2n+2)!} $ for alle $ y\in \R $, hvoraf det følger, at $ \sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n+2)!} $ konvergerer for alle $ x\in \R $. Det konkluderes at $ r=\infty $. Det vides fra eksempel 4.32, at $ \cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n)!} $ for alle $ x\in \R $. Betragt derfor $ s(x)=\begin{cases}
+			\frac{\cos(x)-1}{x^2}& x\neq 0,\\
+			-1/2& x=0,
+			\end{cases} $. Det er klart for $ x\neq 0 $ at $ s(x)=\sum_{n=2}^{\infty}\frac{(-1)^nx^{2n-2}}{(2n)!}=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n+2)!} $. Desuden, gælder det per Sætning 4.28, at $ \sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n+2)!} $ er kontinuert. Men, da $ s(x) $ også er kontinuert (Kontinuitet i $ x=0 $ følger ved brug af L'Hopital's regel, $ \lim\limits_{x\to 0}\frac{\cos(x)-1}{x^2}=\lim\limits_{x\to\infty}\frac{-\sin(x)}{2x}=-1/2 $) gælder det, at $ s(x)=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n+2)!} $ for alle $ x\in\R $.
+		\end{proof}
+		\fi
+					\item Find konvergensradius og sumfunktionen for potensrækken $ \sum_{n=0}^{\infty}(n+1/2)x^n $, $ x\in\R $.
+					\ifanswers
+					\begin{proof}[Løsning]
+						Konvergensradius findes ved Sætning 4.8 til at være $ r=\left(\lim\limits_{n\to\infty}\left(\frac{n+3/2}{n+1/2}\right)\right)^{-1}=1 $. Vi noterer, at rækken åbenlyst er divergent hvis $ \abs{x}=1 $ per divergenstesten, hvorfor vi finder sumfunktionen defineret på $ (-1,1) $. Bemærk at $ \sum_{n=0}^{\infty}(-1/2)x^n $ har konvergensradius $ 1 $, da det er den sædvanlige (generaliserede) geometriske række, og $ \sum_{n=0}^{\infty}(n+1)x^n $ har konvergensradius $ 1 $ per Sætning 4.22 (7). Dermed gælder ved Sætning 4.18 (5), at $ \sum_{n=0}^{\infty}(n+1/2)x^n=\sum_{n=0}^{\infty}(n+1-1/2)x^n= $ har sumfunktion $ \sum_{n=0}^{\infty}(n+1)x^n+\sum_{n=0}^{\infty}(-1/2)x^n  $. Der gælder yderligere per eksempel 4.17 og Sætning 4.15(1), at $ \sum_{n=0}^{\infty}(-1/2)x^n=-\frac{1}{2}\frac{1}{1-x} $ for $x\in (-1,1) $, og per sætning 4.22 (7) gælder det at $ \sum_{n=0}^{\infty}(n+1)x^{(n)}=\left(\frac{1}{1-x}\right)'=\frac{1}{(1-x)^2} $ for $ x\in(-1,1) $. Dermed findes sumfunktionen $ \sum_{n=0}^{\infty}(n+1/2)x^n =\frac{1}{(1-x)^2}-\frac{1}{2}\frac{1}{1-x}=\frac{1}{2}\frac{1+x}{(1-x)^2} $ for $ x\in(-1,1) $.	
+					\end{proof}
+					\fi
+	\end{enumerate}
+\end{opg}
+	
+	\begin{opg}\hfill \\
+		\begin{enumerate}
+			\item Find Taylorrækken for funktionen $$ f(x)=2^x,\qquad   x\in\R $$ 
+			og vis, at den konvergerer mod $ f(x) $ for alle $ x\in \R $.
+			\ifanswers
+			\begin{proof}[Løsning]
+				Det ses, at $ f(x)=e^{\log(2)x} $, og det følger, at $ f^{(n)}(x)=\left(\log(2)\right)^nf(x) $. Dermed ses at Taylorrækken for $ f $ er $ \sum_{n=0}^{\infty}\frac{\left(\log(2)\right)^nx^n}{n!} $. Ved brug af Sætning 4.15 (3) med $ c=\log(2) $ samt Eksempel 4.10, konkluderes at konvergensradius er $ r=\infty $, samt at $ \sum_{n=0}^{\infty}\frac{\left(\log(2)\right)^nx^n}{n!}=\exp(\log(2)x)=2^x $ som er det ønskede resultat.
+				
+				
+%				Det observeres at der gælder $ \norm{f^{(n)}}_{(-x,x)}=\left(\log(2)\right)^n2^x $, og dermed gælder at $ \left\{\frac{\norm{f^{(n)}}_{(-x,x)}}{n!}\abs{x}^n\right\}_{n\in\N}=\left\{\frac{\left(\log(2)\right)^n}{n!}2^x\abs{x}^n\right\}_{n\in\N} $ konvergerer mod nul for alle $ x\in\R $. Derfor gælder det per Lemma 4.31 at $ \sum_{n=0}^{\infty}\frac{\left(\log(2)\right)^nx^n}{n!}=f(x) $ for alle $ x\in\R $.
+			\end{proof}
+			\fi
+				\item Find Taylorrækken for funktionen $$ f(x)=\int_{0}^{x}e^{t^3}\diff t,\qquad   x\in\R. $$ 
+				\ifanswers
+				\begin{proof}[Løsning]
+				Det gælder at $ f'(x)=e^{x^3} $. Det vides derfor, at $ f'(x)=\sum_{n=0}^{\infty}\frac{1}{n!}x^{3n} $, for alle $ x\in\R $. Det følger af Sætning 4.22 (8) at $ \int_{0}^{x}e^{t^3}\diff t=\sum_{n=0}^{\infty}\frac{1}{(3n+1)n!}x^{3n+1} $ for alle $ x\in \R $, hvilket dermed per Sætning 4.28 udgør Taylorrækken.
+				\end{proof}
+				\fi
+		\end{enumerate}
+	\end{opg}
+	\begin{opg}\hfill \\
+		En funktion $ f:(-r,r)\to \R $ siges at være lige hvis $ f(x)=f(-x) $ og ulige hvis $ f(x)=-f(-x) $. Lad $ \sum_{n=0}^{\infty}a_nx^n $ være en potensrække med konvergensradius $ r>0 $ og sumfunktion $ s:(-r,r)\to \R $
+		\begin{enumerate}
+			\item Vis at hvis $ a_{2n+1}=0 $ for alle $ n\geq 0 $ så er $ s $ lige.
+			\ifanswers
+			\begin{proof}[Løsning]
+				Der gælder åbenlyst at $$ s(-x)=\sum_{n=0}^{\infty}a_n(-x)^n=\sum_{n=0}^{\infty}a_{2n}(-x)^{2n}=\sum_{n=0}^{\infty}a_{2n}x^{2n}=\sum_{n=0}^{\infty}a_nx^n=s(x), $$
+				hvoraf det følger, at $ s $ er lige.
+			\end{proof}
+			\fi
+			\item Vis at potensrækken $ \sum_{n=0}^{\infty}a_n(1-(-1)^n)x^n $ har sum $ s(x)-s(-x) $. Brug entydighedssætningen til at konkludere, at hvis $ s $ er lige, så er $ a_{2n+1}=0 $ for alle $ n\geq 0 $.
+			\ifanswers
+			\begin{proof}[Løsning]
+				Det ses ved Sætning 4.18(5) at $  \sum_{n=0}^{\infty}a_n(1-(-1)^n)x^n= \sum_{n=0}^{\infty}(a_nx^n-a_n(-x)^n)=s(x)-s(-x) $ for $ x\in(-r,r) $. Hvis $ s $ er lige ses dermed, at $ \sum_{n=0}^{\infty}a_n(1-(-1)^n)x^n=2\sum_{n=0}^{\infty}a_{2n+1}x^{2n+1}=0 $ for $ x\in(-r,r) $. Det følger entydighedssætningen (Sætning 4.35) at $ a_{2n+1}=0 $ for alle $ n\geq 0 $
+			\end{proof}
+			\fi
+%			\item Vis at $ s $ er ulige hvis og kun hvis $ a_{2n}=0 $ for alle $ n\geq 0 $.
+%			\ifanswers
+%			\begin{proof}[Løsning]
+%				Det er klart hvis $ a_{2n}=0 $, at $$ s(-x)=\sum_{n=0}^{\infty}a_n(-x)^n=\sum_{n=0}^{\infty}a_{2n+1}(-x)^{2n+1}=-\sum_{n=0}^{\infty}a_{2n+1}x^{2n+1}=-\sum_{n=0}^{\infty}a_nx^n=-s(x), $$
+%				og at $ s $ dermed er ulige. Modsat gælder der, hvis $ s $ er ulige, at $ \sum_{n=0}^{\infty}a_n(1+(-1)^n)x^n=\sum_{n=0}^{\infty}(a_nx^n+a_n(-x)^n)=s(x)+s(-x)=0 $. Heraf konkluderes, at $ \sum_{n=0}^{\infty}a_n(1+(-1)^n)x^n=2\sum_{n=0}^{\infty}a_{2n}x^{2n}=0 $, og det følger af entydighedssætningen (Sætning...), at $ a_{2n}=0 $ for alle $ n\geq 0 $
+%			\end{proof}
+%			\fi
+		\end{enumerate}
+		
+	\end{opg}
