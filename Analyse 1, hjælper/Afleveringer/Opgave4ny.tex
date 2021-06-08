@@ -6,8 +6,8 @@
 		\item Redegør for at $ f $ kan udvides til en lige og stykkevis $ C^1 $ funktion i $ \text{PCN}_{2\pi} $. Beregn $ c_{-1}(f) $,$ c_0(f) $ og $ c_1(f) $.
 		\ifanswers
 		\begin{proof}[Løsning]
-			Det observeres, at $ f(-x)=f(x) $ for alle $ x\in[-\pi,\pi] $, da $ x $ og $ \sin(x) $ hver især er ulige. Definér nu $ \tilde{f}:\R\to\R $ ved $ \tilde{f}(x)=f(x+2\pi k) $ hvis $ k\in\mathbb{Z} $ og $ x+2\pi k\in[-\pi,\pi) $. At $ \tilde{f} $ er veldefineret ses ved, at der for ethvert $ x\in\R $ eksisterer et unikt $ k\in\mathbb{Z} $, således at $ x+2\pi k\in [-\pi,\pi) $.
-			Det gælder trivielt, at $ \tilde{f}(x)=f(x) $ for alle $ x\in[-\pi,\pi) $. Desuden ses det, at $ f(-\pi)=f(\pi)=0 $, hvoraf det følger at $ \tilde{f}(\pi)=f(-\pi)=f(\pi) $. Derfor, er $ \tilde{f} $ en udvidelse af $ f $. Det ses desuden, at $ \tilde{f}(-x)=f(-x+2\pi k)=f(x-2\pi k)=\tilde{f}(x) $, hvor $ k\in\mathbb{Z} $ opfylder at $ -x+2\pi k\in[-\pi,\pi) $, således at $ x-2\pi k\in(-\pi,\pi] $ (hvis $ x-2\pi k=\pi $ så gælder $ f(x-2\pi k)=f(\pi)=f(-\pi)=f(x-2\pi(k+1))=\tilde{f(x)} $). Det gælder tydeligt, at $ \tilde{f(x)}=\tilde{f(x+2\pi)} $ for ethvert $ x\in\R $, så $ \tilde{f} $ er $ 2\pi $-periodisk. Det er derfor nok at tjekke kontinuitet af $ \tilde{f} $ på intervallet $ (-\pi,2\pi) $. Kontinuitet følger direkte af definitionen på $ (-\pi,\pi) $ samt $ (\pi,2\pi) $. Derudover gælder $ \lim\limits_{x\to\pi_-}\tilde{f}(x)=\lim\limits_{x\to\pi_-}f(x)=f(\pi)=0 $, og $ \lim\limits_{x\to\pi_+}\tilde{f}(x)=\lim\limits_{x\to\pi_+}f(x-2\pi)=f(-\pi)=0 $, hvoraf, det følger at $ \tilde{f} $ er kontinuert. Betragt nu $ d_0=-\pi $, $ d_1=\pi $. Da gælder, at restriktionen $ \tilde{f}:[-\pi,\pi]\to\R $ er $ C_1 $, da $ \tilde{f}(x)=f(x) $ for $ x\in[-\pi,\pi] $ samt at $ f'(x)=\sin(x)+x\cos(x) $ er kontinuert på $ (-\pi,\pi) $ samt at $ \lim\limits_{x\to-\pi_+}f'(x)=-\pi=f'(-\pi) $ og $ \lim\limits_{x\to\pi_-}f'(x)=\pi=f'(\pi) $. Dermed er det vist, at $ f $ kan udvides til en lige stykkevist $ C^1 $ funktion i $ \text{PCN}_{2\pi} $.
+			Det observeres, at $ f(-x)=f(x) $ for alle $ x\in[-\pi,\pi] $, da $ x $ og $ \sin(x) $ hver især er ulige. Definér nu $ \tilde{f}:\R\to\R $ ved $ \tilde{f}(x)=f(x+2\pi k) $ hvis $ k\in\mathbb{Z} $ og $ x+2\pi k\in[-\pi,\pi) $. At $ \tilde{f} $ er veldefineret ses ved, at der for ethvert $ x\in\R $ eksisterer et unikt $ k\in\mathbb{Z} $, således at $ x+2\pi k\in [-\pi,\pi) $. Alternativt, kan man skrive $ \tilde{f}(x)=f\left(x-2\pi\left(\floor{\frac{x-\pi}{2\pi}}+1\right)\right) $.
+			Det gælder trivielt, at $ \tilde{f}(x)=f(x) $ for alle $ x\in[-\pi,\pi) $. Desuden ses det, at $ f(-\pi)=f(\pi)=0 $, hvoraf det følger at $ \tilde{f}(\pi)=f(-\pi)=f(\pi) $. Derfor, er $ \tilde{f} $ en udvidelse af $ f $. Det ses desuden, at $ \tilde{f}(-x)=f(-x+2\pi k)=f(x-2\pi k)=\tilde{f}(x) $, hvor $ k\in\mathbb{Z} $ opfylder at $ -x+2\pi k\in[-\pi,\pi) $, således at $ x-2\pi k\in(-\pi,\pi] $ (hvis $ x-2\pi k=\pi $ så gælder $ f(x-2\pi k)=f(\pi)=f(-\pi)=f(x-2\pi(k+1))=\tilde{f(x)} $). Det gælder tydeligt, at $ \tilde{f(x)}=\tilde{f(x+2\pi)} $ for ethvert $ x\in\R $, så $ \tilde{f} $ er $ 2\pi $-periodisk. Det er derfor nok at tjekke kontinuitet af $ \tilde{f} $ på intervallet $ (-\pi,2\pi) $. Kontinuitet følger direkte af definitionen på $ (-\pi,\pi) $ samt $ (\pi,2\pi) $. Derudover gælder $ \lim\limits_{x\to\pi_-}\tilde{f}(x)=\lim\limits_{x\to\pi_-}f(x)=f(\pi)=0 $, og $ \lim\limits_{x\to\pi_+}\tilde{f}(x)=\lim\limits_{x\to\pi_+}f(x-2\pi)=f(-\pi)=0 $, hvoraf, det følger at $ \tilde{f} $ er kontinuert. Betragt nu $ d_0=-\pi $, $ d_1=\pi $. Da gælder, at restriktionen $ \tilde{f}:[-\pi,\pi]\to\R $ er $ C_1 $, da $ \tilde{f}(x)=f(x) $ for $ x\in[-\pi,\pi] $ samt at $ f'(x)=\sin(x)+x\cos(x) $ er kontinuert på $ (-\pi,\pi) $ og $ \lim\limits_{x\to-\pi_+}f'(x)=-\pi=f'(-\pi) $ og $ \lim\limits_{x\to\pi_-}f'(x)=\pi=f'(\pi) $. Dermed er det vist, at $ f $ kan udvides til en lige stykkevist $ C^1 $ funktion i $ \text{PCN}_{2\pi} $.
 			Koefficienterne $ c_{-1}(f) $,$ c_0(f) $ og $ c_1(f) $ beregnes nu ved \begin{equation*}
 			c_{\pm 1}(f)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(x)e^{\mp ix} \diff x=\frac{1}{2\pi}\int_{-\pi}^{\pi}x\sin(x)\cos(x) \diff x=\frac{1}{2\pi}\left[\frac{x}{2}\sin^2(x)\right]_{-\pi}^{\pi}-\frac{1}{4\pi}\int_{-\pi}^{\pi}\sin^2(x)\diff x=-\frac{1}{4},
 			\end{equation*}
@@ -51,4 +51,54 @@
 		\end{proof}
 		\fi
 	\end{enumerate}
+\end{opg}
+
+
+\begin{opg}
+	Betragt funktionen $ g:[-\pi,\pi]\to\C $ givet ved $$
+	g(x)=\begin{cases}
+	e^{ix/2},& \pi\leq x\leq 0,\\
+	ie^{ix/2},& 0<x\leq \pi.
+	\end{cases}
+	$$
+	\begin{enumerate}
+		\item Find en funktion $ h $ i $ \text{PCN}_{2\pi} $ der stemmer overens med $ g $ undtagen i $ -\pi $, $ 0 $ og $ \pi $.
+		\ifanswers
+		\begin{proof}[Løsning]
+			Betragt den periodiske udvidelse, $ h $, af $ \tilde{h}:[-\pi,\pi]\to\C $ givet ved $$ \tilde{h}(x)=\begin{cases}
+			\frac{e^{-i\pi/2}+ie^{i\pi/2}}{2},& x=-\pi\text{ eller } x=\pi,\\
+			\frac{1+i}{2},& x=0,\\
+			g(x),&x\in(-\pi,\pi)\setminus\{0\}.
+			\end{cases} $$
+			Da opfylder $ h $ betingelserne i opgaven.
+		\end{proof}
+		\fi
+		\item Vis at $ c_n(h)=\frac{1+i}{\pi(n-1/2)} $ for alle ulige $ n $, og at $ c_n(h)=0 $ for alle lige $ n $.
+		\ifanswers
+		\begin{proof}[Løsning]
+			Vi har $$
+			c_n(h)=\frac{1}{2\pi}\left(\int_{-\pi}^{0}e^{ix/2}e^{-inx} \diff x+i\int_{0}^{\pi}e^{ix/2}e^{-inx} \diff x\right)=\frac{1}{2\pi}\left(\frac{(1-e^{i\pi(n-1/2)})}{-i(n-1/2)}+i\frac{(e^{-i\pi(n-1/2)}-1)}{-i(n-1/2)}\right).
+			$$
+			Det følger ved brug af $ e^{i\pi}=-1 $ samt $ e^{\pm i\pi/2}=\pm i $ at$$
+			c_n(h)=-\frac{1}{i2\pi(n-1/2)}(1-i+(-1)^ni+i(-1^n)i)=\frac{1}{2\pi(n-1/2)}(1+i)(1-(-1)^n).
+			$$
+			Heraf ses let at $ c_n(h)=\frac{1+i}{\pi(n-1/2)} $ for $ n $ ulige, og $c_n(h)=0  $ for $ n $ lige.
+		\end{proof}
+		\fi
+		\item Vis, at $ \sum_{n\in\mathbb{Z}} \frac{1+i}{\pi(n-1/2)}e^{inx}=h(x) $ punktvist for alle $ x\in[-\pi,\pi] $. Afgør om konvergensen er uniform.
+		\ifanswers
+		\begin{proof}[Løsning]
+			Det følger af sætning ... at\\
+			Bemærk, at konvergensen ikke kan være uniform, da grænsen nøvendigvis da ville være kontinuert, men $ h $ er ikke kontinuert.
+		\end{proof}
+		\fi
+		\item Illustrer $ h $ sammen med afsnitssummerne $ s_3 $, $ s_5 $ og $ s_7 $ i den komplekse plan.
+	\end{enumerate}
+	\begin{opg}\hfill\\
+		Betragt funktionen $ f:[-\pi,\pi] $, givet ved $f(x)= \frac{1}{1-e^{ix}+\frac{1}{4}e^{2ix}} $. 
+		\begin{enumerate}
+			\item Find Fourierrækken for $ f $.
+			\item Afgør, om Fourierrækken konvergerer uniformt mod $ f $.
+		\end{enumerate}
+	\end{opg}
 \end{opg}
