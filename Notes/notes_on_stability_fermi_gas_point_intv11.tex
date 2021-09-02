@@ -154,7 +154,7 @@ Now using the unitary transformation $ U:L^2((0,\infty),r^2dr)\to L^2((0,\infty)
 L^2(\R^3,d^3x)=\bigoplus_{l=1}^{\infty}U^{-1}L^2((0,\infty),dr)\otimes \braket{Y_l^{-l},Y_l^{-l+1},...,Y_l^0,...,.Y_l^l},
 \end{equation}
 where $ \braket{...} $ denotes the span. Using the Laplacian in spherical coordinates \begin{equation}
-\Delta\phi=\frac{1}{\sqrt{g}}\partial_i(\sqrt{g}g^{ij}\partial_j(\phi))=\frac{1}{r}\frac{\partial^2}{\partial r^2}(r\phi)+\frac{1}{r^2\sin\varphi}\frac{\partial}{\partial\varphi}(\sin\varphi\frac{\partial\phi}{\partial\varphi})+\frac{1}{r^2\sin^2\varphi}\frac{\partial^2\phi}{\partial^2\theta},
+\Delta\phi=\frac{1}{\sqrt{g}}\partial_i(\sqrt{g}g^{ij}\partial_j(\phi))=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\phi\right)+\frac{1}{r^2\sin\varphi}\frac{\partial}{\partial\varphi}(\sin\varphi\frac{\partial\phi}{\partial\varphi})+\frac{1}{r^2\sin^2\varphi}\frac{\partial^2\phi}{\partial^2\theta},
 \end{equation} with the usual notation $ g_{ij} $ the metric, $ g^{ij} $ the inverse metric, $ g=\det(g_{ij}) $ and where $ \theta $ denotes the azimuthal angle and $ \varphi $ the zenith angle, it is straightforward to show that\begin{equation}
 \dot{H}_{\text{rel}}=\bigoplus_{l=0}^{\infty}U^{-1}h_lU\otimes\text{Id}_{l}
 \end{equation}
@@ -2367,15 +2367,80 @@ We now try doing the same computation as above but now splitting the wave functi
 Since $ \sum_{i}\epsilon_iN_i $ commutes with $ N_0 $ we see that $ \braket{\psi_1\vert (\sum_{i}\epsilon_iN_i)\psi_0 }=0 $. In fact, we see that only terms from $ \frac{1}{m+1}\sum_{m=1}^{3}\left(\sum_{i,j}a_{ij}^mc_i^\dagger c_j\right) $ containing exactly one $ c_0^\dagger $ can contribute in this term. Thus we conclude that \begin{equation}
 2\abs{\Real\left[\braket{\psi_1\vert H\psi_0}\right]}\geq\frac{2}{m+1}\abs{\braket{\psi_i\vert\sum_{m=1}^{3}\sum_{i,j,k}a_{ }}}
 \end{equation}
-NEW IDEA: We proceed by using bound \eqref{EqHBound1}, and the fact that \begin{equation}
+NEW IDEA: Utilize that the basis $ (\ket{i})_{i\geq0} $ can be chosen arbitrarily and collect all bounds on $ \sum_{m=1}^{3}\left(\sum_{i,j}a^m_{ij}c_i^\dagger c_k\right)^2 $. Recognize the resulting operator as second quantized version of some single particle operator. 
+use \begin{equation}
 \begin{aligned}
 \sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\sum_{m=1}^{3}\sum_{i,j>0}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)\\=\diff \Gamma\left(\sum_{m=1}^{3}P_0^\perp k^m P_0 k^m P_0^\perp+P_0^\perp k^2P_0+P_0k^2P_0^\perp\right)\\
 =\diff \Gamma\left(k^2-P_0^\perp kP_0^\perp k P_0^\perp-P_0k^2P_0\right)
 \end{aligned}
 \end{equation}
-Therefore, we find \begin{equation}
-H\geq \sum_{i}\tilde{\varepsilon}_iN_i-\frac{4}{m+1}\left(1-\frac{N_0}{2}\right)\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\frac{1}{m+1}\diff \Gamma\left(k^2-P_0^\perp kP_0^\perp k P_0^\perp-P_0k^2P_0\right)
-\end{equation}
+%We proceed by using bound \eqref{EqHBound1}, and the fact that \begin{equation}
+%\begin{aligned}
+%\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\sum_{m=1}^{3}\sum_{i,j>0}\left(a_{0j}^ma_{ji}^mc_0^\dagger c_i+a_{ij}^ma_{j0}^mc_i^\dagger c_0\right)\\=\diff \Gamma\left(\sum_{m=1}^{3}P_0^\perp k^m P_0 k^m P_0^\perp+P_0^\perp k^2P_0+P_0k^2P_0^\perp\right)\\
+%=\diff \Gamma\left(k^2-P_0^\perp kP_0^\perp k P_0^\perp-P_0k^2P_0\right)
+%\end{aligned}
+%\end{equation}
+%Therefore, we find \begin{equation}
+%H\geq \sum_{i}\tilde{\varepsilon}_iN_i-\frac{4}{m+1}\left(1-\frac{N_0}{2}\right)\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j+\frac{1}{m+1}\diff \Gamma\left(k^2-P_0^\perp kP_0^\perp k P_0^\perp-P_0k^2P_0\right)
+%\end{equation}
+\begin{theorem}
+	Let $ H $ be given as above, and let $ m\geq 1 $, then $ H\geq-\lambda $ for some $ \lambda>0 $ independent of $ R $.
+\end{theorem}
+\begin{proof}
+	Notice first that \begin{equation}
+	\begin{aligned}
+	H=&\diff \Gamma\left(\frac{m}{m+1}k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right)+\diff \Gamma\left(\frac{1}{m+1}P_0k^2P_0\right)\\
+	 & + \left(1-2N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)\\
+	 & +\frac{2}{m+1}\left[\sum_{\mu=1}^{3}\left(\sum_{i,j>0}a^\mu_{ij}c_i^\dagger\right)\left(\sum_{l>0}a_{0l}^\mu c_0^\dagger c_l\right)+\left(\sum_{l>0}a_{l0}^\mu c_l^\dagger c_0\right)\left(\sum_{i,j>0}a^\mu_{ij}c_i^\dagger\right)\right]\\
+	 &+\frac{1}{m+1}\sum_{\mu=1}^{3}\left(\sum_{i,j>0} a^\mu_{ij}a^\mu_{j0}c_i^\dagger c_0+\sum_{i,j>0} a^\mu_{0j}a^\mu_{ji}c_0^\dagger c_i\right)\\
+	 &+\frac{1}{m+1}\sum_{\mu=1}^{3}\left(\sum_{i,j>0}a_{ij}^\mu c^\dagger_i c_j\right)^2
+	\end{aligned}
+	\end{equation}
+	where the states $ (\ket{i})_{i\geq 0} $ form a basis in single particle Hilbert space and $ a^\mu_{ij}=\braket{i|k^\mu|j} $. By Cauchy-Schwarz in the form  $ A^\dagger B+B^\dagger A\geq -\left(\frac{1}{\epsilon}A^\dagger A+\epsilon B^\dagger B\right) $, with $ \epsilon=\frac{1}{2} $ used in the fourth term we have\begin{equation}
+		\begin{aligned}
+		H\geq &\diff \Gamma\left(\frac{m}{m+1}k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right)+\diff \Gamma\left(\frac{1}{m+1}P_0k^2P_0\right)\\
+		& + \left(1-2N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)\\
+		&-\frac{4}{m+1}(1-N_0)\sum_{\mu=1}^{3}\sum_{i,j>0}a^\mu_{i0}a^\mu_{0j}c_i^\dagger c_j\\
+		&+\frac{1}{m+1}\sum_{\mu=1}^{3}\left(\sum_{i,j>0} a^\mu_{ij}a^\mu_{j0}c_i^\dagger c_0+\sum_{i,j>0} a^\mu_{0j}a^\mu_{ji}c_0^\dagger c_i\right)\\
+		=&\diff \Gamma\left(\frac{m}{m+1}k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right)+\diff \Gamma\left(\frac{1}{m+1}P_0k^2P_0\right)\\
+		& - \left(3-\frac{2}{3}N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)\\
+		&+\frac{1}{m+1}\diff \Gamma\left(P_0^\perp k^2 P_0+P_0k^2P_0^\perp\right)\\
+		=&\diff \Gamma\left(k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right) - \left(3-2N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)-\frac{1}{m+1}\diff \Gamma\left(P_0^\perp k^2P_0^\perp\right).\\
+		\end{aligned}
+	\end{equation}  
+	Using that $ 0\leq \sum_{\mu=1}^{3}k^\mu P_0k^\mu\leq \frac{1}{3}P_0^\perp k^2P_0^\perp $, we find \begin{equation}
+	H\geq \diff \Gamma\left(k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right) -\diff\Gamma\left(\frac{1}{m+1}P_0^\perp k^2P_0^\perp\right)-\frac{1}{m+1}\diff \Gamma\left(P_0^\perp k^2P_0^\perp\right).
+	\end{equation}
+	Choosing $ \ket{0} $ to be the ground state of $ H_0=k^2-\gamma_R\ket{\phi_R}\bra{\phi_R} $ (if it exists), we see that \begin{equation}
+	H\geq \diff\Gamma\left(P_0 \left[k^2-\gamma_R\ket{\phi_R}\bra{\phi_R}\right] P_0 +  P_0^\perp \left[\frac{m-1}{m+1}k^2-\gamma_R\ket{\phi_R}\bra{\phi_R}\right] P_0^\perp\right)
+	\end{equation}
+	We therefore analyze the single particle operator \begin{equation}
+	H'_1=P_0\left[k^2-\gamma_R\ket{\phi_R}\bra{\phi_R}\right] P_0 +  P_0^\perp \left[\frac{m-1}{m+1}k^2-\gamma_R\ket{\phi_R}\bra{\phi_R}\right] P_0^\perp.
+	\end{equation} Clearly $ \ket{0} $ is an eigenstate of $ H'_1 $, with eigenvalue $ -\lambda'_1 $ for some $ \lambda'_1>0 $ which is known to be bounded from below by some negative constant $ -\lambda $ independent of $ R $. But then $ H'_1 $ can have no more negative eigenvalues, since there would necessarily be orthogonal to $ \ket{0} $. This can be seen since the one and only eigenstate of $ \frac{m-1}{m+1}k^2-\gamma_R\ket{\phi_R}\bra{\phi_R} $ is known when $ m\geq 1 $, and it is not orthogonal to $ \ket{0} $. Thus we conclude that the rest of the spectrum satisfies $ \sigma(H_1')\subset\{-\lambda_1'\}\cup [0,\infty) $. For the the many-body Hamiltonian $ H $ definined on the fermionic Fock-space, we thus conclude that $ H\geq-\lambda  $
+\end{proof}
+\textbf{Remark} It might be possible to improve the bound on $ m $ to $ m\geq 1/3 $, as this would be the bound for $ N_0=1 $.
+
+\begin{lemma}
+	If $ k^2-\gamma_R\ket{\phi_R}\bra{\phi_R} $ has a ground state, and $ P_0 $ is the orthogonal projection onto this groundstate, then for all $ \xi>0 $ $ A=P_0^\perp\xi k^2-\gamma_R\ket{\phi_R}\bra{\phi_R}P_o^\perp\geq0 $ 
+\end{lemma}
+\begin{proof}
+	Notice first that since $ A $ is a rank-one perturbation of a positive operator, it can have at most one negative eigenvalue. Assume that $ \psi $ is and eigenstate of $ A $ with eigenvalue $ -\lambda^2 $ with $ \lambda>0 $. Then $ P_0^\perp\psi=\psi $, and $ (\xi k^2-\gamma_R\ket{\phi_R}\bra{\phi_R})\psi=-\lambda^2\psi+\beta\psi_0 $. Equivalently, we have up to a normalization constant \begin{equation*}
+	\psi(k)=\frac{\gamma_R C \phi_R(k)+\beta \psi_0}{\xi k^2+\lambda^2},
+	\end{equation*}
+	where $ C $ and $ \beta $ are determined by the self-consistent conditions\begin{equation}
+	C=\braket{\phi_R|\psi},\qquad  \braket{\psi_0|\psi}=0.
+	\end{equation}
+	Since we know that $ \psi_0\sim\frac{1}{k^2+\lambda_0^2} $ we may absorb the nomalization in $ \beta $, and we get \begin{equation*}
+	C=\frac{4\pi}{1-4\pi\gamma_R\int_{0}^{R}\frac{1}{\xi k^2+\lambda^2}k^2\diff k}\beta\int_{0}^{R}\frac{1}{\xi k^2+\lambda^2}\frac{1}{k^2+\lambda_0^2}k^2\diff k
+	\end{equation*}
+	and \begin{equation}
+	0=\gamma_R 4\pi C\int_{0}^{R}\frac{1}{\xi k^2+\lambda^2}\frac{1}{ k^2+\lambda_0^2}k^2\diff k+4\pi\beta\int_{0}^{R}\frac{1}{\xi k^2+\lambda^2}\left(\frac{1}{k^2+\lambda_0^2}\right)^2k^2\diff k.
+	\end{equation}
+	Computing all integrals and using the relation $ \arctan\left(\frac{R}{\lambda_0}\right)=-\frac{\alpha}{4\pi \lambda_0} $ ($ \alpha<0 $), we find the equivalent equation\begin{equation}
+	...
+	\end{equation}
+	
+\end{proof}
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
