@@ -81,18 +81,189 @@
 	\end{equation} 
 	We assume that the interaction potential $ v $ has compact support, say in the ball of radius $ b $, $ B_b $.
 	\section{Upper bound}
-	We provide the upper bound for \eqref{EqGroundstateE}, by using the variational principle with a suitable trial state. Consider the trial state\begin{equation}
+	We provide the upper bound for \eqref{EqGroundstateE}, by using the variational principle with a suitable trial state. We assume for simplicity periodic boundary conditions to begin with.
+	 Consider the trial state\begin{equation}
 	\Psi(x)=\begin{cases}
-	\omega(\rr(x))\frac{\Psi_F(x)}{\sin\left(\frac{\pi}{L}\rr(x)\right)}& \text{if }\rr(x)<b,\\
-	\Psi_F(x)&\text{if }\rr(x)\geq b,
+	\omega(\rr(x))\frac{\tilde{\Psi}_F(x)}{\sin\left(\frac{\pi}{L}\rr(x)\right)}& \text{if }\rr(x)<b,\\
+	\tilde{\Psi}_F(x)&\text{if }\rr(x)\geq b,
 	\end{cases}
 	\end{equation}
-	where $ \omega $ is the suitably normalized solution to the two-body scattering equation, \ie $ \omega(x)=f(x)\frac{\sin\left(\frac{\pi}{L}b\right)}{f(b)} $ where $ f $ is any solution of the two-body scattering equation.  $ \Psi_F(x)=\mathcal{N}^{1/2}\prod_{i<j}^{N}\sin\left(\frac{\pi}{L}(x_i-x_j)\right) $ is the free fermionic ground state, and $ \rr(x)=\min_{i<j}(\abs{x_i-x_j}) $.\\
+	where $ \omega $ is the suitably normalized solution to the two-body scattering equation, \ie $ \omega(x)=f(x)\frac{\sin\left(\frac{\pi}{L}b\right)}{f(b)} $ where $ f $ is any solution of the two-body scattering equation.  $ \tilde{\Psi}_F(x)=\mathcal{N}^{1/2}\prod_{i<j}^{N}\sin\left(\frac{\pi}{L}\abs{x_i-x_j}\right) $ is the absolute value of the free fermionic ground state, and $ \rr(x)=\min_{i<j}(\abs{x_i-x_j}) $ is uniquely defined a.e.\\
 	The energy of this trial state is then\begin{equation}
 	\mathcal{E}(\Psi)=\int \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2,
 	\end{equation}
-	where $ v_{ij}(x)=v(x_i-x_j) $. Since $ v $ is supported in $ B_b $ and $ \Psi=\Psi_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this as \begin{equation}
-	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2,
+	where $ v_{ij}(x)=v(x_i-x_j) $. Since $ v $ is supported in $ B_b $ and $ \Psi=\tilde{\Psi}_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this as \begin{equation}
+	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2,
 	\end{equation}
-	where $ E_0=N\frac{\pi^2}{3}\rho^2 $ is the ground state energy of the free Fermi gas.
+	where $ E_0=N\frac{\pi^2}{3}\rho^2 $ is the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry of exchange of particles, and defining the set $ B_{12}=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}=\{x\in\R^N\vert \abs{x_1-x_2}<b\} $ which up to a set of measure zero is the intersection of $ B $ and $ \{\text{1 and 2 are closest}\} $, we find \begin{equation}
+	\begin{aligned}
+	\mathcal{E}(\Psi)&=E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\\&
+	=E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\\&
+	=E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\\&\qquad
+	-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\\&
+	\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2
+	\end{aligned}
+	\end{equation}
+	where we have defined \begin{equation*}
+		\tilde{\Psi}=\begin{cases}
+		\omega(x_1-x_2)\frac{\tilde{\Psi}_F(x)}{\sin\left(\frac{\pi}{L}\abs{x_1-x_2}\right)}& \text{if }\abs{x_1-x_2}<b,\\
+		\tilde{\Psi}_F(x)&\text{if }\abs{x_1-x_2}\geq b,
+		\end{cases}
+	\end{equation*} and $ E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $.\\
+	We may estimate \begin{equation}
+	\begin{aligned}
+	\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2&=\binom{N}{2}\left(2N\left[\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2-\int_{B_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\right]\right.\\
+	&\qquad\qquad\left.+\binom{N-2}{2}\left[\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2-\int_{B_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\right]\right)\\
+	&\leq \binom{N}{2}\left[2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2+\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\right]
+	\end{aligned}
+	\end{equation}
+	Thus we find \begin{equation}
+	\mathcal{E}(\Psi)\leq E_0+E_1+E_2^{(1)}+E_2^{(2)}
+	\end{equation}
+	with $ E_2^{(1)}=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $ and $ E_2^{(2)}=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $.\\
+	We notice that since $ \tilde{\Psi}_F=\abs{\Psi_F} $ so by the diamagnetic inequality we have $ \abs{\nabla_i\tilde{\Psi}_F}^2\leq \abs{\nabla_i\Psi_F}^2 $, which implies that $ \tilde{\Psi}_F $ is in $ H^{1}(\R^N) $. Furthermore, $ \Psi_F $ is $ C^{1}(\R^N) $ with a zero set $ \{\Psi_F=0\} $ of measure zero, $ \abs{\nabla_i\tilde{\Psi}_F}^2 $ and $ \abs{\nabla_i\Psi_F}^2 $ are equal a.e. But then $ \tilde{\Psi}_F=\Psi_F $ as $ H^{1}(\R^N) $ functions. Hence we may replace $ \tilde{\Psi}_F $ with $ \Psi_F $ in all integrals above.
+	
+	\subsection{Reduced density matrices}
+	We recall briefly the definition of the reduced density matrices, as we will use some fact about these frequently in the subsequent calculations.
+	For an $ N $-(identical )particle state $ \Psi $, the $ n $-particle reduced density matrix is defined by \begin{equation}
+	\gamma^{(n)}(x_1,...,x_n;y_1,...,y_n)=\frac{N!}{(N-n)!}\int \overline{\Psi(x_1,...,x_N)}\Psi(y_1,...,y_N)\diff x_{n+1}...\diff x_N.
+	\end{equation}
+	For a determinant state $ \Psi=\det\left(u_i(x_j)\right) $ with $ u_i $ orthonormal states, the one-particle reduced density matrix is given by \begin{equation}
+	\gamma^{(1)}(x,y)=\sum_{i=1}^{N} \overline{u_i(x)}u_i(y).
+	\end{equation} 
+	The $ n $-particle reduced density matrix may be expressed in terms of creation and annihilation operators as \begin{equation}
+	\gamma^{(n)}(x_1,...,x_n;y_1,...,y_n)=\braket{a^\dagger_{x_1}...a^\dagger_{x_n}a_{y_n}...a_{y_1}}.
+	\end{equation}
+	For the groundstate of a free Hamiltonian (or any quasi free state), Wick's theorem applies and $ n $-particle reduced density matrix of the Fermi groundstate may be computed recusively by \begin{equation}
+	\braket{c^\dagger_{x_1}...c^\dagger_{x_n}c_{y_n}...c_{y_1}}=\sum_{i=1}^{n}(-1)^{i-1}\braket{c^\dagger_{x_1}c_{y_i}}\braket{c^\dagger_{x_2}...c^\dagger_{x_n}c_{y_n}...c_{y_{i+1}}c_{y_{i-1}}...c_{y_1}}.
+	\end{equation}
+	For the Fermi ground state with periodic boundary conditions, we also have \begin{equation}
+	\begin{aligned}
+	\gamma^{(1)}(x,y)=\braket{c^\dagger_{x}c_{y}}=\frac{1}{L}\sum_{j=-(N-1)/2}^{(N-1)/2}\euler{i2\pi(x-y)j/L}=\frac{1}{L}\euler{-i\pi(x-y)(\rho-1/L)}\sum_{j=0}^{N-1}\left(\euler{i2\pi(x-y)/L}\right){j}\\=\frac{1}{L}\euler{-i\pi(x-y)(N-1)/L}\frac{1-\euler{2\pi(x-y)\rho}}{1-\euler{2\pi(x-y)/L}}=\frac{1}{L}\frac{\euler{-i\pi\rho(x-y)}-\euler{i\pi\rho(x-y)}}{\euler{-i\pi(x-y)/L}-\euler{i\pi(x-y)/L}}=\frac{1}{L}\frac{\sin(\pi\rho(x-y))}{\sin\left(\frac{\pi}{L}(x-y)\right)}.
+	\end{aligned}
+	\end{equation}
+	For $ x-y\ll\rho^{-1} $ we may use the relation \begin{equation}
+	\gamma^{(1)}(x,y)=\rho+\frac{\pi^2}{6}\left(\frac{\rho}{L^2}-\rho^3\right)(x-y)^2+\mathcal{O}((x-y)^3).
+	\end{equation}
+	\subsection{Calculating $ E_1 $}
+	Recall the definition \begin{equation}
+	E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2
+	\end{equation}
+	We estimate $ E_1 $ by splitting it in three terms. First we have \begin{equation}
+	\begin{aligned}
+	E_1^{(1)}&=2\binom{N}{2}\int_{A_{12}}\abs{\nabla_1\tilde{\Psi}}^2\\&
+	=2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\left( -\Delta_1 \tilde{\Psi} \right)+2\binom{N}{2}\int\left[\overline{\tilde{\Psi}}\nabla_1\tilde{\Psi}\right]_{x_1=x_2-b}^{x_1=x_2+b}.
+	\end{aligned}
+	\end{equation}
+	The boundary term can be explicitly calculated, and to lowest order in $ b $ we find \begin{equation}
+	\begin{aligned}
+	2\binom{N}{2}\int\left[\overline{\tilde{\Psi}}\nabla_1\tilde{\Psi}\right]_{x_1=x_2-b}^{x_1=x_2+b}=L\left[\frac{\omega(x)}{\sin(\pi x/L)}\partial_x\left(\frac{\omega(x)}{\sin(\pi x/L)}\right)\gamma^{(2)}(x,0)\right]_{-b}^{b}\\+L\left[\left(\frac{\omega(x)}{\sin(\pi x/L)}\right)^2\partial_x\left(\gamma^{(2)}(x,0;y,0)\right)\bigg\vert_{y=x}\right]_{-b}^{b}.
+	\end{aligned}
+	\end{equation}
+	Since the continuous function $ \frac{\omega(x)}{\sin(\pi x/L)}=\frac{x-a}{b-a}\frac{\sin(\pi b/L)}{\sin(\pi x/L)} $ for $ \abs{x}>b $, we see that \begin{equation}
+	\partial_x\left(\frac{\omega(x)}{\sin(\pi x/L)}\right)\bigg\vert_{x=\pm b}\approx\pm\pi b/L\frac{\frac{1}{b-a}-1}{(\pi b/L)}=\pm\frac{a}{b^2}
+	\end{equation}
+	and we know that $ \gamma^{(2)}(x,0)=\frac{\pi^2}{6}\rho^4 x^2 $. Furthermore, by Wick's theorem it is straightforward to show that \begin{equation}\label{EqGammaDeriv.}
+	\partial_x\left(\gamma^{(2)}(x,0;y,0)\right)\bigg\vert_{y=x}=\frac{\pi^2}{3}N\rho^3 x + \rho^2 o(\rho x)
+	\end{equation}
+	Thus we have \begin{equation}
+	E_1^{(1)}=\frac{\pi^2}{3}N\rho^3 (a+2b)+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(-\Delta_1\tilde{\Psi})
+	\end{equation}
+	Another contribution to $ E_1 $ is \begin{equation}
+	\begin{aligned}
+	E_1^{(2)}&=-\binom{N}{2}\int_{A_{12}}2\abs{\nabla_1\Psi_F}^2+\sum_{i=3}^{N}\abs{\nabla_i\Psi_F}^2=\\&-\binom{N}{2}\int_{A_{12}}\sum_{i=1}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)-2\binom{N}{2}\int\left[\overline{\Psi_F}\nabla_1\Psi_F\right]_{x_1=x_2-b}^{x_1=x_2+b}\\
+	&=-E_0\binom{N}{2}\int_{A_{12}}\abs{\Psi_F}^2-L\left[\partial_y\gamma^{(2)}(x,0;y,0)\vert_{y=x}\right]_{-b}^{b}
+	\end{aligned}
+	\end{equation}
+	Again using \eqref{EqGammaDeriv.} and $ \gamma^{(2)} $ we find \begin{equation}
+	E_1^{(2)}=-E_0\frac{1}{2}\frac{\pi^2}{9}N\rho^3b^3-\frac{\pi^2}{3}N\rho^3 (2b).
+	\end{equation}
+	The last contributions are $ E^{(3)}_1=\binom{N}{2}\int_{A_{12}} \sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2=\binom{N}{2}\int_{A_{12}}v_{12}\abs{\tilde{\Psi}}^2+\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2 $ and $ E_1^{(4)}=\int_{A_{12}}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2 $.
+	First we notice that \begin{equation}
+	\begin{aligned}
+	&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2\\&\quad\leq C'_1\int_{A_{12}\cap\supp(v_{34})}\gamma^{(4)}(x_1,x_2,x_3,x_4)+C_2'C\int_{A_{12}\cap\supp(v_{23})}\gamma^{(3)}(x_1,x_2,x_3).
+	\end{aligned}
+	\end{equation}
+	To leading order in $ L $, $ \abs{x_3-x_4} $ and $ \abs{x_1-x_2} $ we find that \begin{equation}
+	\gamma^{(4)}(x_1,x_2,x_3,x_4)=\frac{\pi^4}{9}\rho^8(x_1-x_2)^2(x_3-x_4)^2
+	\end{equation}
+	and to leading order in $ L $, $ \abs{x_1-x_2} $ and $ \abs{x_2-x_3} $ we find \begin{equation}
+	\gamma^{(3)}(x_1,x_2,x_3)=\frac{\pi^6}{135}\rho^9\underbrace{(x_1-x_3)^2}_{=[(x_1-x_2)+(x_2-x_3)]^2}(x_1-x_2)^2(x_2-x_3)^2.
+	\end{equation}
+	Therefore we have
+	\begin{equation}
+	\begin{aligned}
+	&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2\\&\quad\leq C' \left(N^2(\rho b)^3\rho^3\int x^2 v(x)\diff x+N(\rho b)^3 \rho^5 \int x^4 v(x)\diff x+N(\rho b)^4\rho^4 \int x^3 v(x)\diff x\right.\\
+	&\qquad \qquad \qquad \qquad\hspace{6cm}\left.+N(\rho b)^5 \rho^3 \int x^2 v(x)\diff x\right)\\
+	&\leq C' N^2(\rho b)^5\rho \int v=\text{konst. }E_0 N (\rho b)^3 \left(b\int v\right)
+	\end{aligned}
+	\end{equation}
+	 and then we find that \begin{equation}
+	\begin{aligned}
+	E_1&=E_1^{(1)}+E_1^{(2)}+E_1^{(3)}+E_1^{(4)}\\&\leq \frac{\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\left(\overline{\tilde{\Psi}}(-\Delta_1)\tilde{\Psi}+\frac{1}{2}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\frac{1}{2}v_{12}\abs{\tilde{\Psi}}^2\right)-E_0\frac{1}{2}\frac{\pi^2}{9}N\rho^3b^3+\frac{1}{2}\rho \int v
+	\end{aligned}
+	\end{equation}
+	Using the two body scattering equation this implies \begin{equation}
+	\begin{aligned}
+	E_1&\leq \frac{\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\omega(-\Delta_1)\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}\\&\quad+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}\\
+	&\quad +\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\tilde{\Psi}}\frac{\omega}{\sin(\pi(x_1-x_2)/L)}(-\Delta_i)\Psi_F
+	\\&\quad-E_0\frac{1}{2}\frac{\pi^2}{9}N\rho^3b^3+\frac{1}{2}\rho \int v
+	\end{aligned}
+	\end{equation}
+	Now using that \begin{equation}
+	\begin{aligned}
+	&\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\tilde{\Psi}}\frac{\omega}{\sin(\pi(x_1-x_2)/L)}(-\Delta_i)\Psi_F\\&\quad=E_0\binom{N}{2}\int_{A_{12}}\left\lvert\frac{\omega}{\sin(\pi(x_1-x_2)/L)}\tilde{\Psi}\right\rvert^2-2\binom{N}{2}\int_{A_{12}} \overline{\tilde{\Psi}}\frac{\omega}{\sin(\pi(x_1-x_2)/L)}(-\Delta_1)\Psi_F,
+	\end{aligned}
+	\end{equation}
+	 \begin{equation}
+	\binom{N}{2}\int_{A_{12}}\left\lvert\frac{\omega}{\sin(\pi(x_1-x_2)/L)}\tilde{\Psi}\right\rvert^2\leq C_1 \left(\frac{b}{L}\right)^2\pi^2\rho^4 \left(\frac{L}{\pi}^2\right) L b=C_1N\rho^3 b^3
+	\end{equation}
+	and that \begin{equation}
+	\begin{aligned}
+	2\binom{N}{2}\int_{A_{12}} \overline{\tilde{\Psi}}\frac{\omega}{\sin(\pi(x_1-x_2)/L)}(-\Delta_1)\Psi_F&\leq C_2E_02\binom{N}{2}\int_{A_{12}}\abs{\Psi_F}^2\\
+	&=C_2 E_0 \frac{\pi^2}{9}N\rho^3b^3
+	\end{aligned}
+	\end{equation}
+	we find that \begin{equation}
+	\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\tilde{\Psi}}\frac{\omega}{\sin(\pi(x_1-x_2)/L)}(-\Delta_i)\Psi_F\leq C E_0 N(\rho b)^3.
+	\end{equation}
+	Furhtermore we find to leading order in $ N $ and $ \rho b $ that \begin{equation}
+	\begin{aligned}
+	2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\omega(-\Delta_1)\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}=\frac{\pi^2}{15}N\rho^2 (\rho b)^3,
+	\end{aligned}
+	\end{equation}
+	and that \begin{equation}
+	2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}=\frac{\pi^2}{45}N\rho^2(\rho b)^3.
+	\end{equation}
+	Combining everything we find \begin{equation}
+	E_1\leq E_0 \left(\rho a+ \text{konst.}\ (\rho b)^3\right)+\frac{1}{2}\rho \int v
+	\end{equation}
+	\subsection{Calculating $ E_2 $}
+	Recall that $ E_2=E_2^{(1)}+E_2^{(2)} $ with \begin{equation}
+	\begin{aligned}
+	E_2^{(1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\ E_2^{(2)}&=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2
+	\end{aligned}
+	\end{equation}
+	To estimate these, we first split them in two terms each and use partial integration. Consider first $ E_2^{(1)} $:
+	\begin{equation}
+	\begin{aligned}
+	E_2^{(1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\
+	&=\binom{N}{2}8N\int_{A_{12}\cap A_{13}}\abs{\nabla_1\Psi_F}^2+\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=5}^{N}\abs{\nabla_i\Psi_F}^2\\
+	&=\binom{N}{2}2N\left(\left[bla\right]\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)\right)
+	\end{aligned}
+	\end{equation}
+	For the second term, we can perform partial integration directly, in order to obtain \begin{equation}
+	\begin{aligned}
+		E_{2}^{(1,1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=5}^{N}\abs{\nabla_i\Psi_F}^2=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=5}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)\\
+		&\leq E_0 N^3\int_{A_{12}\cap A_{23}}\abs{\Psi_F}^2\\&\leq 2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{x_2-b,x_2+b}\gamma^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2
+	\end{aligned}
+	\end{equation}
+	Changing variable $ y_1=x_1-x_2 $, $ y_3=x_3-x_2 $ and using translational invariance, we find \begin{equation}
+	\begin{aligned}
+	E_2^{(1,1)}&\leq 2E_0 L \int_{[-b,b]}\int_{[-b,b]}\gamma^{(3)}(y_1,0,y_3)\diff y_1\diff y_3
+	\\&\approx 2E_0 L\frac{\pi^6}{135}\rho^9  \int_{[-b,b]}\int_{[-b,b]}y_1^4y_3^2\diff y_1\diff y_3\\
+	&=E_0 N\frac{2\pi^6}{15\cdot 135}(b\rho)^8.
+	\end{aligned}
+	\end{equation}
+	
 \end{document}
