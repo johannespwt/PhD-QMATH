@@ -167,7 +167,7 @@
 	\partial_x\left(\gamma^{(2)}(x,0;y,0)\right)\bigg\vert_{y=x}=\frac{\pi^2}{3}N\rho^3 x + \rho^2 o(\rho x)
 	\end{equation}
 	Thus we have \begin{equation}
-	E_1^{(1)}=\frac{\pi^2}{3}N\rho^3 (a+2b)+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(-\Delta_1\tilde{\Psi})
+	E_1^{(1)}=\frac{\pi^2}{3}N\rho^3 (2a+2b)+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(-\Delta_1\tilde{\Psi})
 	\end{equation}
 	Another contribution to $ E_1 $ is \begin{equation}
 	\begin{aligned}
@@ -181,7 +181,7 @@
 	The last contributions are $ E^{(3)}_1=\binom{N}{2}\int_{A_{12}} \sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2=\binom{N}{2}\int_{A_{12}}v_{12}\abs{\tilde{\Psi}}^2+\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2 $ and $ E_1^{(4)}=\int_{A_{12}}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2 $.
 	First we notice that \begin{equation}
 	\begin{aligned}
-	&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2\\&\quad\leq C'_1\int_{A_{12}\cap\supp(v_{34})}\gamma^{(4)}(x_1,x_2,x_3,x_4)+C_2'C\int_{A_{12}\cap\supp(v_{23})}\gamma^{(3)}(x_1,x_2,x_3).
+	&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2\\&\quad\leq C'_1\int_{A_{12}\cap\supp(v_{34})}v(x_3-x_4)\gamma^{(4)}(x_1,x_2,x_3,x_4)+C_2'\int_{A_{12}\cap\supp(v_{23})}v(x_2-x_3)\gamma^{(3)}(x_1,x_2,x_3).
 	\end{aligned}
 	\end{equation}
 	To leading order in $ L $, $ \abs{x_3-x_4} $ and $ \abs{x_1-x_2} $ we find that \begin{equation}
@@ -195,19 +195,19 @@
 	\begin{aligned}
 	&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2\\&\quad\leq C' \left(N^2(\rho b)^3\rho^3\int x^2 v(x)\diff x+N(\rho b)^3 \rho^5 \int x^4 v(x)\diff x+N(\rho b)^4\rho^4 \int x^3 v(x)\diff x\right.\\
 	&\qquad \qquad \qquad \qquad\hspace{6cm}\left.+N(\rho b)^5 \rho^3 \int x^2 v(x)\diff x\right)\\
-	&\leq C' N^2(\rho b)^5\rho \int v=\text{konst. }E_0 N (\rho b)^3 \left(b\int v\right)
+	&\quad \leq C' N^2(\rho b)^5\rho \int v=\text{const. }E_0 N (\rho b)^3 \left(b\int v\right)
 	\end{aligned}
 	\end{equation}
 	 and then we find that \begin{equation}
 	\begin{aligned}
-	E_1&=E_1^{(1)}+E_1^{(2)}+E_1^{(3)}+E_1^{(4)}\\&\leq \frac{\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\left(\overline{\tilde{\Psi}}(-\Delta_1)\tilde{\Psi}+\frac{1}{2}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\frac{1}{2}v_{12}\abs{\tilde{\Psi}}^2\right)-E_0\frac{1}{2}\frac{\pi^2}{9}N\rho^3b^3+\frac{1}{2}\rho \int v
+	E_1&=E_1^{(1)}+E_1^{(2)}+E_1^{(3)}+E_1^{(4)}\\&\leq \frac{2\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\left(\overline{\tilde{\Psi}}(-\Delta_1)\tilde{\Psi}+\frac{1}{2}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\frac{1}{2}v_{12}\abs{\tilde{\Psi}}^2\right)+E_0N(\rho b)^3\left(-\frac{1}{2}\frac{\pi^2}{9}+\frac{1}{2}\rho \int v\right)
 	\end{aligned}
 	\end{equation}
 	Using the two body scattering equation this implies \begin{equation}
 	\begin{aligned}
-	E_1&\leq \frac{\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\omega(-\Delta_1)\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}\\&\quad+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}\\
+	E_1&\leq \frac{2\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\omega(-\Delta_1)\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}\\&\quad+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}\\
 	&\quad +\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\tilde{\Psi}}\frac{\omega}{\sin(\pi(x_1-x_2)/L)}(-\Delta_i)\Psi_F
-	\\&\quad-E_0\frac{1}{2}\frac{\pi^2}{9}N\rho^3b^3+\frac{1}{2}\rho \int v
+	\\&\quad-E_0\frac{1}{2}\frac{\pi^2}{9}N\rho^3b^3+\text{const. }E_0 N (\rho b)^3 \left(b\int v\right)
 	\end{aligned}
 	\end{equation}
 	Now using that \begin{equation}
@@ -236,7 +236,7 @@
 	2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{\sin(\pi(x_1-x_2)/L)}=\frac{\pi^2}{45}N\rho^2(\rho b)^3.
 	\end{equation}
 	Combining everything we find \begin{equation}
-	E_1\leq E_0 \left(\rho a+ \text{konst.}\ (\rho b)^3\right)+\frac{1}{2}\rho \int v
+	E_1\leq E_0 \left(2\rho a+ \text{const.}\ N(\rho b)^3\left[ 1+ b\int v\right]\right)
 	\end{equation}
 	\subsection{Calculating $ E_2 $}
 	Recall that $ E_2=E_2^{(1)}+E_2^{(2)} $ with \begin{equation}
@@ -244,26 +244,103 @@
 	E_2^{(1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\ E_2^{(2)}&=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2
 	\end{aligned}
 	\end{equation}
-	To estimate these, we first split them in two terms each and use partial integration. Consider first $ E_2^{(1)} $:
+	To estimate these, we first split them in two terms each and use partial integration. Consider first $ E_2^{(1)} $: 
 	\begin{equation}
 	\begin{aligned}
 	E_2^{(1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\
-	&=\binom{N}{2}8N\int_{A_{12}\cap A_{13}}\abs{\nabla_1\Psi_F}^2+\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=5}^{N}\abs{\nabla_i\Psi_F}^2\\
-	&=\binom{N}{2}2N\left(\left[bla\right]\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)\right)
+	&=\binom{N}{2}2N\left(\int_{A_{12}\cap A_{13}}\abs{\nabla_1\Psi_F}^2+2\int_{A_{12}\cap A_{13}}\abs{\nabla_2\Psi_F}^2\right)+\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=4}^{N}\abs{\nabla_i\Psi_F}^2
 	\end{aligned}
 	\end{equation}
 	For the second term, we can perform partial integration directly, in order to obtain \begin{equation}
 	\begin{aligned}
-		E_{2}^{(1,1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=5}^{N}\abs{\nabla_i\Psi_F}^2=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=5}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)\\
-		&\leq E_0 N^3\int_{A_{12}\cap A_{23}}\abs{\Psi_F}^2\\&\leq 2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{x_2-b,x_2+b}\gamma^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2
+		\binom{N}{2}&2N\int_{A_{12}\cap A_{13}}\sum_{i=3}^{N}\abs{\nabla_i\Psi_F}^2=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=3}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)\\
+		&\leq E_0 N^3\int_{A_{12}\cap A_{23}}\abs{\Psi_F}^2-N^3\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\overline{\Psi_F}(-\Delta_i\Psi_F)\\&\leq 2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{x_2-b,x_2+b}\gamma^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2-N^3\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\overline{\Psi_F}(-\Delta_i\Psi_F)
 	\end{aligned}
 	\end{equation}
 	Changing variable $ y_1=x_1-x_2 $, $ y_3=x_3-x_2 $ and using translational invariance, we find \begin{equation}
 	\begin{aligned}
-	E_2^{(1,1)}&\leq 2E_0 L \int_{[-b,b]}\int_{[-b,b]}\gamma^{(3)}(y_1,0,y_3)\diff y_1\diff y_3
-	\\&\approx 2E_0 L\frac{\pi^6}{135}\rho^9  \int_{[-b,b]}\int_{[-b,b]}y_1^4y_3^2\diff y_1\diff y_3\\
-	&=E_0 N\frac{2\pi^6}{15\cdot 135}(b\rho)^8.
+	2E_0 L \int_{[-b,b]}\int_{[-b,b]}\gamma^{(3)}(y_1,0,y_3)\diff y_1\diff y_3&\approx 8E_0 L\frac{\pi^6}{135}\rho^9  \int_{[-b,b]}\int_{[-b,b]}y_1^4y_3^2\diff y_1\diff y_3\\
+	&=E_0 N\frac{8\pi^6}{15\cdot 135}(b\rho)^8.
 	\end{aligned}
 	\end{equation}
-	
+	Using Wick's theorem, we find that to leading order in $ L\rho $, $ \abs{x_1-x_2} $, $ \rho\abs{x_2-x_3} $, and $ \rho\abs{x_1-x_3} $ we have \begin{equation}
+	\left(\partial_{x_1}\partial_{y_1}\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}=\frac{\pi^6}{135}\rho^9(x_2-x_3)^2\left((x_1-x_3)+(x_1-x_2)\right)^2
+	\end{equation}
+	and 
+	\begin{equation}
+	\left(\partial_{y_1}^2\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}=\frac{2\pi^6}{135}\rho^9(x_1-x_2)(x_1-x_3)(x_2-x_3)^2
+	\end{equation}
+	Thus we find \begin{equation}
+	\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{3}\left(\abs{\nabla_i\Psi_F}^2-\overline{\Psi_F}(-\Delta_i\Psi_F)\right)\leq \tilde{C}_1 \frac{\pi^2}{3}\rho^9 L b^6=\tilde{C}_1E_0 (b\rho)^6.
+	\end{equation}
+	Collecting everything we find \begin{equation}
+	E_2^{(1)}\leq \text{const. }E_0(\rho b)^6(1+N(\rho b)^2).
+	\end{equation}
+	To estimate $ E_2^{(2)} $ use integration by parts\begin{equation}
+	\begin{aligned}
+	E_2^{(2)}&=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}} \left(4\abs{\nabla_1\Psi_F}^2+\sum_{i=5}^{N}\abs{\nabla_i\Psi_F}^2\right)\\
+	&=\binom{N}{2}\binom{N-2}{2}\left(4\int_{\abs{x_3-x_4}<b}\left[\overline{\Psi_F}\nabla_1\Psi_F\right]_{x_1=x_2-b}^{x_1=x_2+b} +\int_{A_{12}\cap A_{34}} \sum_{i=1}^{N}\overline{\Psi_F}(-\Delta_i\Psi_F)\right)\\
+	&=4\int_{x_2\in[0,L]}\int_{\abs{x_3-x_4}<b}\left[\partial_{y_1}\gamma^{(4)}(x_1,x_2,x_3,x_4;y_1,y_2,y_3,y_4)\bigg\vert_{y_1=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}+E_0\int_{A_{12}\cap A_{34}}\gamma^{(4)}(x_1,..,x_4).
+	\end{aligned}
+	\end{equation}
+	Using translational invariance, we have \begin{equation}
+	\begin{aligned}
+		\left[\partial_{y_1}\gamma^{(4)}(x_1,x_2,x_3,x_4;y_1,y_2,y_3,y_4)\bigg\vert_{y_1=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}&=\left[\partial_{y}\gamma^{(4)}(x,0,x_3,x_4;y,0,x_3,x_4)\bigg\vert_{y=x}\right]_{x=-b}^{x=b} \\
+		&=2b\partial_x\left[\partial_{y}\gamma^{(4)}(x,0,x_3,x_4;y,0,x_3,x_4)\bigg\vert_{y=x}\right]_{x=0}+o(b)
+	\end{aligned}
+	\end{equation}
+	We find by straigthforward computation that to leading order in $ \rho L $ and $ \abs{x_3-x_4} $ we have \begin{equation}
+	\partial_x\left[\partial_{y}\gamma^{(4)}(x,0,x_3,x_4;y,0,x_3,x_4)\bigg\vert_{y=x}\right]_{x=0}=\frac{1}{9}\pi^4\rho^8(x_3-x_4)^2
+	\end{equation}
+	and we therefore get \begin{equation}
+	4\int_{x_2\in[0,L]}\int_{\abs{x_3-x_4}<b}\left[\partial_{y_1}\gamma^{(4)}(x_1,x_2,x_3,x_4;y_1,y_2,y_3,y_4)\bigg\vert_{y_1=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}=\frac{2}{9}\pi^2E_0 N (\rho b)^4
+	\end{equation}
+	Furthermore we find that to leading order in $ L $, $ \abs{x_1-x_2} $, and $ \abs{x_3-x_4} $ we have \begin{equation}
+	\gamma^{(4)}(x_1,x_2,x_3,x_4)\leq 9\hat{C}_2\rho^8 (x_1-x_2)^2(x_3-x_4)^2
+	\end{equation} from which it follows that \begin{equation}
+	E_0\int_{A_{12}\cap A_{34}}\gamma^{(4)}(x_1,..,x_4)\leq \hat{C}_2 E_0 N^2(\rho b)^6.
+	\end{equation}
+	Collecting all terms we find the upper bound \begin{equation}
+	E\leq E_0\left(1+2\rho a+ \text{const. }N(\rho b)^3\left(1+b\int v \right)\right)
+	\end{equation}
+	\subsection{Dirichlet boundary conditions}
+	We will now do the computation again, this time using Dirichlet boundary condtions instead of periodic. To begin with, we construct the free Fermi groundstate. The Dirichlet eigenstates of the Laplacian are $ \phi_j(x)=\sqrt{2/L}\sin(\pi j x/L) $. Thus the free Fermi groundstate is \begin{equation}
+	\Psi_F(x)=\det\left(\phi_j(x_i)\right)_{i,j=1}^{N}=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\begin{vmatrix}
+	\euler{iy_1}-\euler{-iy_1}&\euler{i2y_1}-\euler{-i2y_1}&\ldots&\euler{iNy_1}-\euler{-iNy_1}\\
+	\euler{iy_2}-\euler{-iy_2}&\euler{i2y_2}-\euler{-i2y_2}&\ldots&\euler{iNy_2}-\euler{-iNy_2}\\
+	\vdots&\vdots&\ddots&\vdots\\
+	\euler{iy_N}-\euler{-iy_N}&\euler{i2y_N}-\euler{-i2y_N}&\ldots&\euler{iNy_N}-\euler{-iNy_N}
+	\end{vmatrix},
+	\end{equation}
+	where we defined $ y_i=\frac{\pi}{L}x_i $. Defining $ z=\euler{iy} $ and using the relation $ (x^n-y^n)/(x-y)=\sum_{k=0}^{n-1}x^ky^{n-1-k} $ we find\begin{equation}
+	\Psi_f(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\begin{vmatrix}
+	1&z_1+z_1^{-1}&\ldots&\sum_{k=0}^{N-1}z_1^{2k-N+1}\\
+	1&z_2+z_2^{-1}&\ldots&\sum_{k=0}^{N-1}z_2^{2k-N+1}\\
+	\vdots&\vdots&\ddots&\vdots\\
+	1&z_N+z_N^{-1}&\ldots&\sum_{k=0}^{N-1}z_N^{2k-N+1}\\
+	\end{vmatrix}.
+	\end{equation}
+	Notice now that $ (z+z^{-1})^n=\sum_{k=0}^{n}\binom{n}{k}z^{2k-n} $.
+	Now for $ i $ from $ 1 $ to $ N-1 $ we add $ \left(\binom{N-1}{i}-\binom{N-1}{i-1}\right) $ times column $ N-i $ to column $ N $. This of course does not change the determinant, and we find \begin{equation}
+	\Psi_f(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\begin{vmatrix}
+	1&z_1+z_1^{-1}&\ldots&\sum_{k=0}^{N-2}z_1^{2k-N+1}&(z_1+z_1^{-1})^{N-1}\\
+	1&z_2+z_2^{-1}&\ldots&\sum_{k=0}^{N-2}z_2^{2k-N+1}&(z_2+z_2^{-1})^{N-1}\\
+	\vdots&\vdots&\ddots&\vdots&\vdots\\
+	1&z_N+z_N^{-1}&\ldots&\sum_{k=0}^{N-2}z_N^{2k-N+1}&(z_N+z_N^{-1})^{N-1}\\
+	\end{vmatrix}.
+	\end{equation}
+	Now for $ i=1 $ to $ N-2 $ we add $ \left(\binom{N-2}{i}-\binom{N-2}{i-1}\right) $ times column $ N-1-i $ to column $ N-1 $, continue this process, \ie for $ j=3 $ to $ N $: for $ i=1 $ to $ N-j $ add  $ \left(\binom{N-j}{i}-\binom{N-j}{i-1}\right) $ times column $ N-1-i $ to column $ N-j+1 $. Then we obtain \begin{equation}
+	\Psi_f(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\begin{vmatrix}
+	1&z_1+z_1^{-1}&(z_1+z_1^{-1})^2&\ldots&(z_1+z_1^{-1})^{N-1}\\
+	1&z_2+z_2^{-1}&(z_2+z_2^{-1})^2&\ldots&(z_2+z_2^{-1})^{N-1}\\
+	\vdots&\vdots&\vdots&\ddots&\vdots\\
+	1&z_N+z_N^{-1}&(z_N+z_N^{-1})^2&\ldots&(z_N+z_N^{-1})^{N-1}\\
+	\end{vmatrix}.
+	\end{equation}
+	The determinant is recognized as a Vandermonde determinant and thus we have \begin{equation}
+	\begin{aligned}
+	\Psi_f(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\prod_{i<j}^{N}\left((z_i+z_i^{-1})-(z_j+z_j^{-1})\right)\\
+	2^{\binom{N}{2}}\sqrt{\frac{2}{L}}^N\prod_{i=1}^{N}\sin\left(\frac{\pi}{L}x_i\right)\prod_{i<j}^{N}\left[\cos\left(\frac{\pi}{L}x_i\right)-\cos\left(\frac{\pi}{L}x_j\right)\right]
+	\end{aligned}
+	\end{equation}
 \end{document}

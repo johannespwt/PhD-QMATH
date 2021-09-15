@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.2.23)  13 SEP 2021 21:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.2.23)  15 SEP 2021 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1288,13 +1288,18 @@ cmr/m/n/10.95 = [] [][] [][] \OML/cmm/m/it/10.95 v[] [][] \OT1/cmr/m/n/10.95 =
  []
 
 
+Overfull \hbox (1.3269pt too wide) detected at line 186
+[][] []
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Overfull \hbox (7.66745pt too wide) detected at line 205
+Overfull \hbox (43.37163pt too wide) detected at line 205
 [][] []
  []
 
@@ -1323,8 +1328,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6] 
-AED: lastpage setting LastPage
+[6]
+Overfull \hbox (14.7172pt too wide) detected at line 259
+[][] []
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
@@ -1332,20 +1340,56 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
+Overfull \hbox (51.94002pt too wide) detected at line 285
+[][] []
+ []
+
+
+Overfull \hbox (40.97168pt too wide) detected at line 291
+[][] []
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Overfull \hbox (5.25269pt too wide) detected at line 314
+[]\OT1/cmr/m/n/10.95 	[](\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = [] [][] = 
+[][] [][] [] \OML/cmm/m/it/10.95 ;
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9] 
+AED: lastpage setting LastPage
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 346.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 346.
  (./one_d_bosons.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 346.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 346.
 Package rerunfilecheck Info: File `one_d_bosons.out' has not changed.
-(rerunfilecheck)             Checksum: 321AF3C127744E14AF062FC809F648E8;255.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 269.
+(rerunfilecheck)             Checksum: 9DAA296B71CA2EA6480FD5AD2158EACE;333.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 346.
  ) 
 Here is how much of TeX's memory you used:
- 28936 strings out of 493029
- 665891 string characters out of 6136234
- 837607 words of memory out of 5000000
- 31912 multiletter control sequences out of 15000+600000
+ 28957 strings out of 493029
+ 666148 string characters out of 6136234
+ 841611 words of memory out of 5000000
+ 31913 multiletter control sequences out of 15000+600000
  12049 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,77p,729b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1364,10 +1408,10 @@ s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on one_d_bosons.pdf (7 pages, 186024 bytes).
+Output written on one_d_bosons.pdf (10 pages, 197760 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
