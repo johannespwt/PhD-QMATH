@@ -2354,7 +2354,7 @@ where $ \tilde{\varepsilon}_0=\braket{0\left\lvert k^2-\gamma_R\braket{\hat{\phi
 Consider now a trial function of the form $ \psi=\psi_0+\psi_1 $, where $ N_0\psi_0=0 $ and $ N_0\psi_1=\psi_1 $. We then clearly have \begin{equation}
 \begin{aligned}
 \braket{\psi|H\psi}\geq&\sum_{i> 0}\tilde{\varepsilon}_i\braket{\psi_0|N_i\psi_0}-\frac{3}{m+1}\braket{\psi_0\Bigg\vert\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j\ \psi_0}\\&+\sum_{i\geq 0}\tilde{\varepsilon}_i\braket{\psi_1|N_i\psi_1}-\frac{1}{m+1}\braket{\psi_1\Bigg\vert\sum_{m=1}^{3}\sum_{i,j>0}a_{i0}^ma_{0j}^m c_i^\dagger c_j\ \psi_1}\\
-&+\frac{2}{m+1}\Real\left[\braket{\psi_0\Bigg\vert \sum_{m=1}^{3}\sum_{i,j>0}a_{0j}^ma_{ji}^mc_0^\dagger c_i\ \psi_1}\right]
+&+\frac{2}{m+1}\Real\left[\braket{\psi_1\Bigg\vert \sum_{m=1}^{3}\sum_{i,j>0}a_{0j}^ma_{ji}^mc_0^\dagger c_i\ \psi_0}\right]
 \end{aligned}
 \end{equation}
 Use \eqref{EqSecondQuant.form} for the $ \psi_0 $ part instead. Then $ \braket{\psi_0\vert H\psi_0}\geq 0 $. Therefore we have \begin{equation}
@@ -2391,7 +2391,7 @@ use \begin{equation}
 	\begin{aligned}
 	H=&\diff \Gamma\left(\frac{m}{m+1}k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right)+\diff \Gamma\left(\frac{1}{m+1}P_0k^2P_0\right)\\
 	 & + \left(1-2N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)\\
-	 & +\frac{2}{m+1}\left[\sum_{\mu=1}^{3}\left(\sum_{i,j>0}a^\mu_{ij}c_i^\dagger\right)\left(\sum_{l>0}a_{0l}^\mu c_0^\dagger c_l\right)+\left(\sum_{l>0}a_{l0}^\mu c_l^\dagger c_0\right)\left(\sum_{i,j>0}a^\mu_{ij}c_i^\dagger\right)\right]\\
+	 & +\frac{2}{m+1}\left[\sum_{\mu=1}^{3}\left(\sum_{i,j>0}a^\mu_{ij}c_i^\dagger c_j\right)\left(\sum_{l>0}a_{0l}^\mu c_0^\dagger c_l\right)+\left(\sum_{l>0}a_{l0}^\mu c_l^\dagger c_0\right)\left(\sum_{i,j>0}a^\mu_{ij}c_i^\dagger c_j\right)\right]\\
 	 &+\frac{1}{m+1}\sum_{\mu=1}^{3}\left(\sum_{i,j>0} a^\mu_{ij}a^\mu_{j0}c_i^\dagger c_0+\sum_{i,j>0} a^\mu_{0j}a^\mu_{ji}c_0^\dagger c_i\right)\\
 	 &+\frac{1}{m+1}\sum_{\mu=1}^{3}\left(\sum_{i,j>0}a_{ij}^\mu c^\dagger_i c_j\right)^2
 	\end{aligned}
@@ -2403,7 +2403,7 @@ use \begin{equation}
 		&-\frac{4}{m+1}(1-N_0)\sum_{\mu=1}^{3}\sum_{i,j>0}a^\mu_{i0}a^\mu_{0j}c_i^\dagger c_j\\
 		&+\frac{1}{m+1}\sum_{\mu=1}^{3}\left(\sum_{i,j>0} a^\mu_{ij}a^\mu_{j0}c_i^\dagger c_0+\sum_{i,j>0} a^\mu_{0j}a^\mu_{ji}c_0^\dagger c_i\right)\\
 		=&\diff \Gamma\left(\frac{m}{m+1}k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right)+\diff \Gamma\left(\frac{1}{m+1}P_0k^2P_0\right)\\
-		& - \left(3-\frac{2}{3}N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)\\
+		& - \left(3-2N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)\\
 		&+\frac{1}{m+1}\diff \Gamma\left(P_0^\perp k^2 P_0+P_0k^2P_0^\perp\right)\\
 		=&\diff \Gamma\left(k^2-\gamma_R \ket{\phi_R}\bra{\phi_R}\right) - \left(3-2N_0\right)\diff\Gamma\left(\frac{1}{m+1}\sum_{\mu=1}^{3}k^\mu P_0k^\mu\right)-\frac{1}{m+1}\diff \Gamma\left(P_0^\perp k^2P_0^\perp\right).\\
 		\end{aligned}
@@ -2441,6 +2441,9 @@ use \begin{equation}
 	\end{equation}
 	
 \end{proof}
+
+\section{Proof of $ \Gamma $-convergence in the case where lower bound in $ F_\alpha $ is knonwn (Moser and Seiringer)}
+Try generalizing proof of \cite{AIHPA_1994__60_3_253_0} Theorem 4.3 and remark 4.4
 	\appendix
 \section{$ \lambda $ relation in Krein formula \eqref{lambda relation}}
 \label{Lambda calculation}
