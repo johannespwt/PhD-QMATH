@@ -672,4 +672,77 @@
 	E_0\left(1+2\rho a + \mathcal{O}\left((R\rho)^{6/5}\left(1+R \int v_{\textnormal{reg}}\right)^{1/2}\right)\right)
 	\end{equation}
 	which is not quite as good, as the bound computed directly with Dirichlet b.c.
-\end{document}
+	\section{Lower bound}
+	We will in this section, prove a matching lower bound to the upper bound found above. To begin with, we prove the weaker result that the dilute Bose gas with respulsive two-body potentials, is lower bounded to leading order, by the free Fermi energy.
+	\begin{lemma}
+		For any state $ \psi\in \dom{\mathcal{E}} $ and any $ g\leq \int v $, we have \begin{equation}\label{Eqmaxbound}
+		\int_{[x_j-R,x_j+R]} \frac{1}{n-1}\abs{\partial_i\psi}^2+\frac12v_{ij}\abs{\psi}^2 \diff x_i\geq \frac12 g (1-[2(n-1)gR]^{1/2})\max_{\abs{x_j-x_i}<R}\abs{\psi}^2\chi_{[R,\ell-R]}(x_j)
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		Proof follows that of Lieb, Seiringer, and Yngvason. We use the bound, which is true for any $ H^{1}([0,\ell]) $ function \begin{equation}\label{EqH1bound1}
+		\abs{\phi(x)}^2-\max_{\abs{x'-x_0}<R}\abs{\phi(x')}\geq-\max_{\abs{x'-x_0}<R}\abs{\int_{x}^{x'}\partial\abs{\phi}^2}\geq -2R^{1/2}\max_{\abs{x'-x_0}<R}\abs{\phi(x')}\left(\int_{[x_0-R,x_0+R]} \abs{\partial\phi}^2\right)^{1/2},
+		\end{equation}
+		for $ \abs{x-x_0}<R $.\\
+		Assume that \eqref{Eqmaxbound} is false. Then $ \int \frac{1}{n-1}\abs{\partial_i\psi}^2\leq \frac{1}{2}g\max_{\abs{x_i-x_j}<R}\abs{\psi}^2 $. Now using \eqref{EqH1bound1} we see that $ \abs{\psi}^2\geq \left(1-(2(n-1)Rg)^{1/2}\right)\max_{\abs{x_i-x_j}<R}\abs{\psi}^2 $. Thus we find $ \int \frac{1}{n-1}\abs{\partial_i\psi}^2+\frac12v_{ij}\abs{\psi}^2 \diff x_i\geq\int\frac12v_{ij}\abs{\psi}^2 \diff x_i\geq \frac{1}{2}g\left(1-(2(n-1)Rg)^{1/2}\right)\max_{\abs{x_i-x_j}<R}\abs{\psi}^2\chi_{[R,\ell-R]}(x_j) $.
+	\end{proof}
+	Now we may optimize the right-hand side of \eqref{Eqmaxbound} in $ g $. Doing this, we find $ g=\frac29 \frac{1}{(n-1)R} $ with \begin{equation}\label{Eqmaxbound2}
+	\int_{[x_j-R,x_j+R]} \frac{1}{n-1}\abs{\partial_i\psi}^2+\frac12v_{ij}\abs{\psi}^2 \diff x_i\geq \underbrace{\frac{1}{9}\left(1-\frac{\sqrt{2}}{3}\right)\frac{1}{(n-1)R}}_{:=\tilde{g}}\max_{\abs{x_j-x_i}<R}\abs{\psi}^2\chi_{[R,\ell-R]}(x_j)
+	\end{equation}
+	Now let $ \Psi $ be the groundstate of $ \mathcal{E} $, with energy $ E $. Defining $ \varphi\in L^2([0,\ell-(n+1)R]^n) $ by $$ \psi(x_1,...,x_n)=\Psi(R+x_1,2R+x_2,...,nR+x_n), $$
+	for $ x_1\leq x_2\leq....\leq x_n $. We seek to estimate the norm of $ \psi $ knowing that $ \norm{\Psi}=1 $. It is clear that \begin{equation}
+	\begin{aligned}
+	\braket{\psi|\psi}&=\int \abs{\Psi}^2\prod_{k}\chi_{[R,\ell-R]}(x_k) \prod_{i< j}\theta(\abs{x_i-x_j}-R)\\&\geq 1-\int \abs{\Psi}^2\left( \sum_{k}(1-\chi_{[R,\ell-R]}(x_k))+\sum_{i<j}(1-\theta(\abs{x_i-x_j}-R))\chi_{[R,\ell-R]}(x_j)\right)\\
+	&=1-\int \abs{\Psi}^2\left( \sum_{k}(1-\chi_{[R,\ell-R]}(x_k))+\sum_{i<j}\theta(R-\abs{x_i-x_j})\chi_{[R,\ell-R]}(x_j)\right)
+	\end{aligned}
+	\end{equation}
+	where $ \theta $ is the Heaviside step-function.
+	Clearly we have \begin{equation}
+	\int \abs{\Psi}^2\sum_{i<j}\theta(R-\abs{x_i-x_j})\chi_{[R,\ell-R]}(x_j)\leq R\int  \sum_{i\neq j}\max_{\abs{x_i-x_j}<R}\abs{\Psi}^2\chi_{[R,\ell-R]}(x_j)\diff\bar{x}^i\leq \frac{R}{\tilde{g}} E\leq \text{const. }n^2R^2\rho^2,
+	\end{equation}
+	where the second inequality follows from \eqref{Eqmaxbound2} the last inequality follows by the upper bound from the previus section. Furhtermore, 
+	\begin{equation}
+	\int \abs{\Psi}^2 \sum_{k}(1-\chi_{[R,\ell-R]}(x_k))\leq 2n\frac{R}{\ell}+4nR\left(\frac1n \int \sum_{i}\abs{\partial_i \Psi}^2\right)^{1/2}\leq 2\rho R + 4R\sqrt{n E}\leq \text{const. }n \rho R.
+	\end{equation}
+	where the first inequality follows from Lieb, Seiringer, and Yngvason eq(3.62) and the last inequality follows by the already established upper bound. Hence if $ n\rho R\ll 1 $ we have $ \braket{\psi|\psi}\geq 1-\text{const. }n\rho R $.
+	The following lemma will also be useful \begin{lemma}[Dyson] Let $ R>R_0=\textnormal{range}(v) $, then
+		\begin{equation}
+			\int_{[0,R]} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \frac{2}{R-a}\varphi(R)
+		\end{equation}
+		where $ a $ is the s-wave scattering length.
+	\end{lemma}
+	\begin{proof}
+		This follows from the variational scattering problem, by comparing left-hand side to the minimizer of the scattering functional.
+	\end{proof}
+	This lemma will essentially allows us to replace the potential by a shell potential of range $ R $ and strength $ \frac{2}{R-a} $, where $  $
+	 This bring us to the result \begin{theorem}
+		Let $ n\rho R\ll 1 $. Then\begin{equation}
+		E\geq n\frac{\pi^2}{3}\rho^2\left(1+\textnormal{const. }\left(n\rho R+\frac{1}{n}\right)\right)
+		\end{equation}
+	\end{theorem}
+	\begin{proof}
+		We consider $ E=\mathcal{E}(\Psi)=\int\sum_{i}\abs{\partial_i\Psi}^2+\frac{1}{2}\sum_{i\neq j}v_{ij}\abs{\Psi}^2 $. By Dyson's lemma, we may estimate\begin{equation}
+		E=\mathcal{E}(\Psi)\geq \int\sum_{i}\abs{\partial_i\Psi}^2\chi_{\mathfrak{r}_i(x)>R}+\frac{1}{2}\sum_{i\neq j}\frac{2}{R-a}(\delta(\mathfrak{r}_i(x)+R)+\delta(\mathfrak{r}_i(x)-R))\abs{\Psi}^2,
+		\end{equation}
+		where $ \mathfrak{r}_i(x) $ denotes the distance from $ x_i $ to its nearest neighbor. Defining $ \varphi\in L^2([0,\ell-(n+1)R]^n) $ by $$ \psi(x_1,...,x_n)=\Psi(R+x_1,2R+x_2,...,nR+x_n), $$
+		for $ x_1\leq x_2\leq....\leq x_n $, we see that \begin{equation}
+		E=\mathcal{E}_{LL}^{\tilde{\rho},\tilde{\ell},c}(\psi)\geq E_{LL}^{\tilde{\rho},\tilde{\ell},c}\braket{\psi|\psi},
+		\end{equation}
+		where $ \mathcal{E}_{LL}^{\tilde{\rho},\tilde{\ell},c} $ is the Lieb-Liniger functional in volumen $ [0,\tilde{\ell}]^n $ with density $ \tilde{\rho} $ and coupling $ c $, and we have $ \tilde{\ell}=\ell-(n+1)R $, $ \tilde{\rho}=\frac{n}{\tilde{\ell}}\approx\rho (1+\rho R) $ and $ c=\frac{2}{R-a} $. Given that $ \tilde{\rho}/c\ll 1 $ we have for finite $ n $ \begin{equation}
+		E_{LL}^{\tilde{\rho},\tilde{\ell},c}=n\frac{\pi^2}{3}\tilde{\rho}^2\left(1-4\tilde{\rho}/c+\text{const. }\frac{1}{n}\right)\approx n\frac{\pi^2}{3}\rho^2\left(1-2\rho(R-a)+2\rho R+\text{const. }\frac{1}{n}\right)
+		\end{equation}
+		Using the result above on $ \braket{\psi|\psi} $, we find \begin{equation}
+		\begin{aligned}
+		E&\geq n\frac{\pi^2}{3}\rho^2\left(1-2\rho(R-a)+2\rho R+\text{const. }\frac{1}{n}\right)(1-\text{const. }n\rho R)\\&=n\frac{\pi^2}{3}\rho^2\left(1-2\rho(R-a)+2\rho R-\text{const. }\left(n\rho R+\frac{1}{n}\right)\right)\\
+		&\geq n\frac{\pi^2}{3}\rho^2\left(1+\textnormal{const. }\left(n\rho R+\frac{1}{n}\right)\right).
+		\end{aligned}
+		\end{equation}
+		
+		Choosing $ n=(\rho R)^{-1/2} $ we see that \begin{equation}
+		E\geq n\frac{\pi^2}{3}\rho^2(1+\text{const. }(\rho R)^{1/2})
+		\end{equation}
+	\end{proof}
+	
+	\subsection{Bootstrapping}
+	We have seen in the previous section that the free Fermi energi provides a lower bound to the ground state energy of the dilute Bose gas with a repulsive pair potential. Now this bound can be further improved, by noticing that the computation we did also reveals that most of the energy comes from the region where particles are distance at least $ R $ from each other. The energy contribution coming from the region where at least one pair is withing distance $ R $ can be bounded by a bootstrapping method. To do that we use \eqref{Eqmaxbound2} to reduce to a Lieb-Liniger type model, in the same way a above, but this time, we can bound the mass thrown away by comparing the already established upper bound, and the lower bound archived by this Lieb-Liniger reduction. 
+	\end{document}
