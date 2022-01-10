@@ -443,7 +443,7 @@
 	where $ v_{ij}(x)=v(x_i-x_j) $. Since $ v $ is supported in $ B_b $ and $ \Psi=\tilde{\Psi}_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this as \begin{equation}
 	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2,
 	\end{equation}
-	where $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N)) $ is the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry of exchange of particles, and defining the set $ B_{12}=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}=\{x\in\R^N\vert \abs{x_1-x_2}<b\} $ which up to a set of measure zero is the intersection of $ B $ and the set $ \{\text{"1 and 2 are closest"}\} $, we find \begin{equation}
+	where $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N))\norm{\Psi}^2 $ is the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry of exchange of particles, and defining the set $ B_{12}=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}=\{x\in\R^N\vert \abs{x_1-x_2}<b\} $ which up to a set of measure zero is the intersection of $ B $ and the set $ \{\text{"1 and 2 are closest"}\} $, we find \begin{equation}
 	\begin{aligned}
 	\mathcal{E}(\Psi)&=E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\\&
 	=E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2\\&
@@ -764,28 +764,32 @@
 	\end{proof}
 		
 	\subsection{Localization with Dirichlet b.c.}
-	We will in this section localize in smaller boxes, in order to have better control on the error. The localization is straigthforward with Dirichlet boundary conditions, as gluing the wavefunctions for each box together is simple, since the wavefunctions vanish at the boundaries. This we consider the state $ \Psi_{\text{full}}=\sum_{i=1}^{M}\Psi_{\ell}(x^i_1,...,x^i_{\tilde{N}}) $, where $ (x_1^i,...,x_{\tilde{N}}^i) $ are the particles in box $ i $ and $ \ell $ is the length of each box. Of course $ \cup_{i=1}^{M}\{x_1^i,...,x_{\tilde{N}}^i\}=\{x_1,...,x_N\} $ and $ \{x_1^i,...,x_{\tilde{N}}^i\}\cap\{x_1^j,...,x_{\tilde{N}}^j\}=\emptyset $ for $ i\neq j $, such that $ M\tilde{N}=N $. The boxes are of length $ \ell=L/M-b $, and are equally spaced through out $ [0,L] $ such that they are a distance of $ b $ from each other. This is to make sure that no particle interact between boxes. Combining lemmas \ref{LemmaE1Bound} and \ref{LemmaE2Bound}, the full energy is then bounded by \begin{equation}
-	E\leq M e_0\left(1+2\tilde{\rho} a + \text{const. } \tilde{N} (b\tilde{\rho})^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)
+	We will in this section localize in smaller boxes, in order to have better control on the error. The localization is straigthforward with Dirichlet boundary conditions, as gluing the wavefunctions for each box together is simple, since the wavefunctions vanish at the boundaries. Thus we consider the state $ \Psi_{\text{full}}=\prod_{i=1}^{M}\Psi_{\ell}(x^i_1,...,x^i_{\tilde{N}}) $, where $ (x_1^i,...,x_{\tilde{N}}^i) $ are the particles in box $ i $ and $ \ell $ is the length of each box. Of course $ \cup_{i=1}^{M}\{x_1^i,...,x_{\tilde{N}}^i\}=\{x_1,...,x_N\} $ and $ \{x_1^i,...,x_{\tilde{N}}^i\}\cap\{x_1^j,...,x_{\tilde{N}}^j\}=\emptyset $ for $ i\neq j $, such that $ M\tilde{N}=N $. The boxes are of length $ \ell=L/M-b $, and are equally spaced through out $ [0,L] $ such that they are a distance of $ b $ from each other. This is to make sure that no particle interact between boxes. Combining lemmas \ref{LemmaE1Bound} and \ref{LemmaE2Bound}, the full energy is then bounded by \begin{equation}
+	E\leq M e_0\left(1+2\tilde{\rho} a + \text{const. } \tilde{N} (b\tilde{\rho})^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)/\norm{\Psi}^2
 	\end{equation}
-	with $ e_0=\frac{\pi^2}{3}\tilde{N}\tilde{\rho}^2(1+\text{const. }\frac{1}{\tilde{N}}) $ and $ \tilde{\rho}=\tilde{N}/\ell=\rho/(1-\frac{bM}{L})\simeq\rho(1+bM/L) $.
+	with $ e_0=\frac{\pi^2}{3}\tilde{N}\tilde{\rho}^2(1+\text{const. }\frac{1}{\tilde{N}}) $ and $ \tilde{\rho}=\tilde{N}/\ell=\rho/(1-\frac{bM}{L})\simeq\rho(1+bM/L) $. Clearly we have $ \norm{\Psi}^2\geq 1-\int_B\abs{\Psi_F}^2\geq 1-\int_{\abs{x_1-x_2}<b}\rho^{(2)}(x_1,x_2)\geq 1-\text{const. }\tilde{N}(\rho b)^3 $, where the last inequality follows from lemma \ref{Lemma rho2 bound}.
 	Thus, choosing $ M $ such that $ bM/L\ll 1 $ we have \begin{equation}
-	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+\text{const. }\frac{M}{N}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right).
+	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a+\text{const. }\frac{M}{N}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
 	\end{equation}
 	Now in fact, we would choose $ \tilde{N}=N/M=\rho L/M\gg 1 $, \ie $ M/L\ll \rho $. It is clear that we minimize the error, by choosing $ b=R_0 $ the range of the potential. Furthermore, setting $ x=M/N $ we see that the error is \begin{equation}
-	\text{const. }\left[(1+2\rho^2 ab)x+x^{-1}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right]
+	\text{const. }\left[(1+2\rho^2 ab)x+x^{-1}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right],
 	\end{equation}
+	here we used that it will turn out to be the cases that $ \tilde{N}(\rho b)^3\leq 1/2 $ so that we have\\ $ 1/(1-\tilde{N}(\rho b)^3)\leq 1+2\tilde{N}(\rho b)^3 $.
 	Optmizing in $ x $ we find $ x=M/N=\frac{(b\rho)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2}}{1+2\rho^2 a b}\simeq(b\rho)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2} $, which gives the error \begin{equation}
 	\text{const. }(R_0\rho)^{3/2}\left(1+R_0 \int v_{\textnormal{reg}}\right)^{1/2}
 	\end{equation}
 	Thus we arrive at the following result
 	\begin{theorem}
 		Let the two-body potential $ v\in L^{1}([0,L])+\textnormal{h.c.p.} $ be fixed, with two-body s-wave scattering length $ a $. Then bosonic $ N $-body ground state energy satisfies the upper bound\begin{equation}
-		E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a + \mathcal{O}\left((R\rho)^{3/2}\left(1+\rho R^2 \int v_{\textnormal{reg}}\right)^{1/2}\right)\right)
+		E\leq E_0\left(1+2\rho a + \mathcal{O}\left((R\rho)^{3/2}\left(1+\rho R^2 \int v_{\textnormal{reg}}\right)^{1/2}\right)\right),
 		\end{equation}
 		where $ E_0 $ is the free fermionic ground state energy.
 	\end{theorem}
-	here $ \textnormal{h.c.p} $ denotes the space of hard core potentials
-	
+	here $ \textnormal{h.c.p} $ denotes the space of hard core potentials.\\
+	Notice that the result \begin{equation}
+	E\leq N\frac{\pi^2}{3}\left(1+2\rho a + \mathcal{O}\left((R\rho)^{3/2}\left(1+\rho R^2 \int v_{\textnormal{reg}}\right)^{1/2}\right)\right)
+	\end{equation}
+	holds only for $ N\geq (\rho b)^{-3/2} $, but since the free Fermi, $ E_0 $ energy also contains a correction of order $ \frac{1}{N} $, \ie $ E_0=N\frac{\pi^2}{3}\rho^2(1+\text{const. }1/N) $, the result remains true for $ N<(\rho b)^{-3/2} $
 	\subsection{Periodic boundary conditions}
 	Another approach, would be to prove the result with periodic boundary conditions, and thus preserve translational invariance in all calculations above. Then one may use the bound [\cite{2020JMP....61f1901M}, lemma 4 or \cite{robinson2014thermodynamic} lemma 2.1.12] \begin{equation}
 	\braket{\Psi_D\lvert H^D_L \rvert \Psi_D}\leq \braket{\Psi_P\lvert H^P_{L-2d}\rvert \Psi_P}+\frac{4N}{d^2}\norm{\Psi}^2.
