@@ -80,10 +80,10 @@
 
 \logo{\includegraphics[width=0.8cm]{kuscience-logo}}
 %\useoutertheme{infolines} 
-\title{QLunch: The ground state energy of dilute 1d many-body quantum systems}
+\title{The ground state energy of dilute 1d many-body quantum systems}
 \subtitle{}
 \author{Johannes Agerskov\\\vspace{0.2 cm}
-	\scriptsize{in collaboration with Robin Reuvers and Jan Philip Solovej}}
+	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej}}
 \institute{QMATH \\ University of Copenhagen}
 \date{January 12th 2022}
 
@@ -105,19 +105,19 @@
 \frametitle{Background}
 \begin{block}{The scattering length}
 	\begin{Theorem}
-		For $ B_R\subset \R^d $ with $ R>\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
+		For $ B_R\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 	 \begin{equation}
-		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R.
+		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
 		 \end{equation}
 		 with boundary condition $ \phi(x)=1 $ for $ \abs{x}=R$.
 		 Then $ \phi(x)=f(\abs{x}) $ for some $ f:(0,R]\to [0,\infty) $, and for $ \text{range}(v)<r<R $, we have \begin{equation}
 		 f(r)=\begin{cases}
 		 (r-a)/(R-a) &\text{for }d=1\\
 		 \ln(r/a)/\ln(R/a) &\text{for }d=2\\
-		 (1-ar^{2-d})/(1-aR^{2-d})&\text{for }d\geq 3
+		 (1-ar^{2-d})/(1-aR^{2-d})&\text{for }d\geq 3,
 		 \end{cases}
 		 \end{equation}
-		 with some constant $ a $ called the \textbf{scattering length}
+		 with some constant $ a $ called the (s-wave) \textbf{scattering length}.
 	\end{Theorem}
 \end{block}	
 \end{frame}
@@ -125,9 +125,8 @@
 \begin{frame}
 	\frametitle{Model}
 	We consider a many-body system of Bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $\begin{equation}
-	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right),
+	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\R^d)^{\otimes_{\text{sym}} N}.
 	\end{equation}
-	on $ L^2(\R^d)^{\otimes_{\text{sym}} N} $.\\
 	The ground state energy is defined by 
 	$$
 	E(N,L)\coloneqq\inf_{\psi\in\mathcal{D}(\mathcal{E}),\ \norm{\psi}^2=1}\mathcal{E}(\psi).
@@ -137,15 +136,16 @@
 \begin{frame}
 \frametitle{Previous results}
 \begin{block}{}
-	\begin{Theorem}[3d result]
+	For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
+	\begin{Theorem}[$ d=3 $ result, Lee-Huang-Yang]
 		\begin{equation}
-		e(\rho)=4\pi\rho a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{(\rho a)^3}+o(\sqrt{\rho a}^3)\right).
+		e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{(\rho a)^3}+o(\sqrt{\rho a}^3)\right).
 		\end{equation}
 	\end{Theorem}
 
-	\begin{theorem}[2d result]
+	\begin{theorem}[$ d=2 $ result]
 		\begin{equation}
-		e(\rho)=4\pi \rho\left(\abs{\ln(\rho a^2)}^{-1}+o(\abs{\ln(\rho a^2)}^{-1})\right) .
+		e(\rho)=4\pi \rho^2\left(\abs{\ln(\rho a^2)}^{-1}+o(\abs{\ln(\rho a^2)}^{-1})\right) .
 		\end{equation}
 	\end{theorem}
 \end{block}
@@ -157,8 +157,9 @@
 \begin{frame}
 	\frametitle{Main result}
 	\begin{block}{}
+		For the remaning of the talk, $ d=1 $.
 		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
-			Let $ v\in L^{1}+\text{h.c.p} $ with $ \text{range}(v)=R_0 $. Let $ R=\max(2\abs{a},R_0) $, then for $ \rho R\ll 1  $ and $ N^{-1}=\mathcal{O}(\rho R)^{6/5} $ we have \begin{equation}
+			Let $ v\in L^{1}+\text{h.c.p} $ with $ v\geq0 $ and $ \text{range}(v)=R_0 $. Let $ R=\max(2\abs{a},R_0) $, then for $ \rho R\ll 1  $ and $ N^{-1}=\mathcal{O}(\rho R)^{6/5} $ we have \begin{equation}
 			E(N,L)=E_0\left(1+2\rho a+ \mathcal{O}\left((\rho R)^{6/5}\right)\right),
 			\end{equation} 
 			where $ E_0 $ is the free Fermi ground state energy\begin{equation}
@@ -168,7 +169,23 @@
 	\end{block}	
 \end{frame}
 
-
+\section{Examples}
+\begin{frame}
+	\frametitle{Examples}
+	\begin{block}{The hard core gas}
+		Behaves like free fermi gas in volume $ L-NR $, \ie \begin{equation}
+		E_{\text{hard core}}(N,L)=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\approx E_0(1+2\rho R).
+		\end{equation}
+		Scattering length is $ a=R $.
+	\end{block}
+	\begin{block}{Lieb Liniger model}
+		Behaves asymptotically like
+		\begin{equation}
+		E_{LL}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho/c+\mathcal{O}\left((\rho/c)^2\right)\right),
+		\end{equation}
+		with scattering length $ a=-\frac{2}{c} $.
+	\end{block}
+\end{frame}
 
 \section{Upper bound}
 
@@ -196,6 +213,22 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{One-particle reduced density matrix}
+	\begin{block}{}
+		For the free Fermi gas we have
+	\begin{equation}
+	\begin{aligned}
+	\gamma^{(1)}(x,y)&=\frac{2}{L}\sum_{j=1}^{N}\sin\left(\frac{\pi}{L}jx\right)\sin\left(\frac{\pi}{L} jy\right)\\
+	&=\frac{\pi}{L}\left(D_{N}\left(\pi\frac{x-y}{L}\right)+D_{N}\left(\pi\frac{x+y}{L}\right)\right),
+	\end{aligned}
+	\end{equation}
+	where $ D_N(x)=\frac{1}{2\pi}\sum_{k=-N}^{N}\euler{ikx}=\frac{\sin((N+1/2)x)}{2\pi\sin(x/2)} $ is the Dirichlet kernel.\\
+	By Wick's theorem all derivatives of reduced density matrices are bounded by a constant times an appropriate power of $ \rho $.
+		\end{block}	
+	\end{frame}
+
+
+\begin{frame}
 	\frametitle{Some useful bounds}
 	\begin{block}{}
 		\vspace{-0.5cm}
@@ -208,7 +241,7 @@
 				\begin{aligned}
 				\rho^{(3)}(x_1,x_2,x_3)&\leq \textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2(x_1-x_3)^2,\\
 				\rho^{(4)}(x_1,x_2,x_3,x_4)&\leq \textnormal{const. }\rho^8(x_1-x_2)^2(x_3-x_4)^2,\\
-				\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\big\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2,\\[-3.2ex]
+				\abs{\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\big\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2,\\[-3.2ex]
 				&\ \ \vdots
 				\end{aligned}
 				\end{equation*}
@@ -220,15 +253,32 @@
 	\frametitle{Collecting everything}
 	\begin{block}{Upper bound}
 	\begin{equation}
-	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a +\text{const. } \left[\frac{1}{N}+ N (b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right]\right)}{\norm{\Psi}^2},
+	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a} +\text{const. } \left[\frac{1}{N}+ N (b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right]\right)}{\norm{\Psi}^2},
 	\end{equation}	
 	where $ v_{\text{reg}}\in L^{1} $ is $ v $ with any hard core removed.
-		By lemma \ref{Lemma rho2 bound} we know $ \norm{\Psi}^2\geq 1-\text{const. }N(\rho b)^3 $
+		By lemma \ref{Lemma rho2 bound} we know $ \norm{\Psi}^2\geq 1-\text{const. }N(\rho b)^3 $.
 	\end{block}	
 	\begin{block}{Localization}
-		Divide in $ M $ smaller boxes with $ \tilde{N}=N/M $ particles in each, and make distance $ b $ between boxes (no interaction between boxes), and choose $ M $ such that $ \tilde{N}=(\rho b)^{-3/2}\gg 1 $.
+		Divide into $ M $ smaller boxes with $ \tilde{N}=N/M $ particles in each, and make distance $ b $ between boxes (no interaction between boxes), and choose $ M $ such that $ \tilde{N}=(\rho b)^{-3/2}\gg 1 $.
 	\end{block}
 
+\end{frame}
+
+\begin{frame}
+	\frametitle{Upper Bound}
+	\begin{block}{After localization}
+\small\begin{equation}
+\hspace{-0.3cm}E(N,L)\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a}+\text{const. }\frac{M}{N}+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
+\end{equation}
+
+Optimizing in $ M $ and choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
+
+\begin{equation}
+E(N,L)\leq E_0\left(1+2\rho a+ \mathcal{O}\left(\left[(\rho \abs{a})^{6/5}+(\rho R_0)^{3/2}\right]\left(1+\rho b^2\int v_{\text{reg}}\right)\right)\right).
+\end{equation}
+
+	\end{block}
+	
 \end{frame}
 
 
@@ -237,11 +287,11 @@
 
 \begin{frame}
 	\frametitle{Lower bound}
-	Proof of lower bound consists of steps:
+	Proof of lower bound consists of the following steps:
 	\begin{enumerate}
 		\item Use Dyson's lemma to reduce to a nearest neighbor double delta-barrier potential.
-		\item Reduce to the Lieb Liniger model, by discarding \textbf{a small part} of the wave function.
-		\item Use known lower bound for the Lieb Liniger model.
+		\item Reduce to the Lieb Liniger model by discarding \textbf{a small part} of the wave function.
+		\item Use a known lower bound for the Lieb Liniger model.
 	\end{enumerate}	
 \end{frame}
 
@@ -251,7 +301,7 @@
 	\begin{equation}
 	H_{LL}=-\sum_{i=1}^{n}\Delta_i+2c\sum_{i<j}\delta(x_i-x_j).
 	\end{equation}
-	Behavior in thermodynamic limit: $ \lim\limits_{\substack{\ell\to\infty,\\ \rho\text{ fixed}}}E_{LL}(n,\ell,c)/L=\rho^3 e(\gamma) $ with $ \gamma=\rho/c $.
+	Behavior in thermodynamic limit: $ \lim\limits_{\substack{\ell\to\infty,\\ n/\ell\to \rho}}E_{LL}(n,\ell,c)/\ell=\rho^3 e(\gamma) $ with $ \gamma=c/\rho  $.
 		\begin{mlemma}[Lieb Liniger lower bound] \label{LemmaLL-LowerBound}
 			Let $ \gamma>0 $, then
 			\begin{equation}
@@ -267,11 +317,11 @@
 		\vspace{-0.5cm}
 	\begin{mlemma}[Dyson]\label{LemmaDyson} Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in H^1(\R) $, then for any interval $ \mathcal{I}\ni 0 $ 
 		\begin{equation}
-		\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{2}{R-a}\left(\delta_R+\delta_{-R}\right)\varphi,
+		\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{2}{R-a}\left(\delta_R+\delta_{-R}\right)\abs{\varphi}^2,
 		\end{equation}
 		where $ a $ is the s-wave scattering length.
 	\end{mlemma}
-	Hence we have \begin{equation}
+	Hence we have, denoting $ \mathfrak{r}_{i}(x)=\min_j(\abs{x_i-x_j}) $ \begin{equation}
 	\begin{aligned}
 	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\chi_{\mathfrak{r}_i(x)>R}+\sum_{i}\frac{2}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2.
 	\end{aligned}
@@ -286,10 +336,10 @@
 		\vspace{-0.5cm}
 		Define $ \psi\in L^2([0,\ell-(n-1)R]^n) $ by 
 			$$ \psi(x_1,x_2,...,x_n)=\Psi(x_1,R+x_2,...,(n-1)R+x_n), $$
-			 for $ x_1\leq x_2\leq...\leq x_n $ and symmetrically extended.\\
+			 for $ x_1\leq x_2\leq...\leq x_n $ and symmetrically extended.\\\vspace{0.2cm}
 			 Then \begin{equation}
 			 \begin{aligned}
-			 \mathcal{E}(\Psi)&\geq E^N_{LL}(n,\ell,2/(R-a))\braket{\psi|\psi}\\
+			 \mathcal{E}(\Psi)&\geq E^N_{LL}(n,\ell-(n-1)R,2/(R-a))\braket{\psi|\psi}\\
 			 &\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho(a-\cancel{R})+\cancel{2\rho R}-\text{const. }\frac{1}{N^{2/3}}\right)\braket{\psi|\psi}.
 			 \end{aligned}
 			 \end{equation}
@@ -305,7 +355,7 @@
 				\end{equation}
 			\end{mlemma}
 			\
-			Combining lemmas \ref{LemmaDyson} and \ref{LemmaNormLoss} we have 
+			Combining lemmas \ref{LemmaDyson} and \ref{LemmaNormLoss} we have the following lemma:
 			\begin{mlemma}\label{LemmaImprovedMassBound}
 				Let $ C $ denote the constant in lemma \ref{LemmaNormLoss}. For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}C $, $ \rho R\ll 1 $ and $ R>2\abs{a} $ we have
 				\begin{equation}\label{EqImprovedMassBound}
@@ -338,12 +388,12 @@
 \begin{frame}
 	\frametitle{Lower bound localization}
 	\begin{block}{}
-	\small	To prove the lower bound, we localize (as in the upper bound) to smaller boxes.
-		\begin{lemma}\label{LemmaLocalizationFbound}
-			Let $ \Xi\geq 4 $ be fixed and let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $ with $ n^{\ast}:=\rho\ell=\mathcal{O}(\rho R)^{-9/5} $. Furhermore, assume that $ \rho R\ll 1 $ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $, then \begin{equation}
+	\small	To prove the lower bound, we localize, as in the upper bound, to smaller boxes.
+		\begin{mlemma}\label{LemmaLocalizationFbound}
+			Let $ \Xi\geq 4 $ be fixed and let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $ with $ n^{\ast}:=\rho\ell=\mathcal{O}(\rho R)^{-9/5} $. Furthermore, assume that $ \rho R\ll 1 $ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $, then \begin{equation}
 			E^{N}(n,\ell)-\mu n \geq E^{N}(n_0,\ell)-\mu n_0.
 			\end{equation}
-		\end{lemma}
+		\end{mlemma}
 		\begin{theorem}[Lower bound] Let $ E^N(N,L) $ denote the ground state energy of $ \mathcal{E} $ with Neumann boundary conditions. Then for $ \rho R \ll 1 $
 			\begin{equation}
 			E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a-\mathcal{O}\left((\rho R)^{6/5}\right)\right).
@@ -353,7 +403,7 @@
 \end{frame}
 \begin{frame}
 	\frametitle{Fermions}
-	For fermions, $ a $ in Dyson's lemma is replaced by $ a_p $, \ie the p-wave scattering length. Hence we conclude
+	For fermions, $ \tilde{\Psi}_F=\Psi_F $, $ \omega $ is the p-wave scattering solution, and  $ a $ in Dyson's lemma is replaced by $ a_p $, \ie the p-wave scattering length. Hence we find the following theorem:
 	\begin{theorem}[Fermions]
 		Let $ v\in L^{1}+\text{h.c.p} $ with $ \text{range}(v)=R_0 $. Let $ R=\max(2 a_p,R_0) $, then for $ \rho R\ll 1  $ and $ N^{-1}=\mathcal{O}(\rho R)^{6/5} $ we have \begin{equation}
 		E_F(N,L)=E_0\left(1+2\rho a_p+ \mathcal{O}\left((\rho R)^{6/5}\right)\right),

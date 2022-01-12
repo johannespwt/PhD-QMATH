@@ -5,6 +5,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \DeclareMathOperator\arctanh{arctanh}
 \usepackage{amssymb}
 \usepackage{bbm}
@@ -577,11 +578,11 @@
 			\begin{lemma}\label{LemmaDensityBounds}
 				We have the following bounds\begin{equation}
 				\begin{aligned}
-				\rho^{(3)}(x_1,x_2,x_3)&\leq \textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2(x_1-x_3)^2,\quad &\textnormal{on }A_{12}\cap A_{23}.\\
-				\rho^{(4)}(x_1,x_2,x_3,x_4)&\leq \textnormal{const. }\rho^8(x_1-x_2)^2(x_3-x_4)^2,\quad &\textnormal{on }A_{12}\cap A_{34}.\\
-				\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2, &\textnormal{on }A_{12}.\\
-				\abs{\partial_{y_1}^2\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}\abs{x_1-x_2}, &\textnormal{on }A_{12}.\\
-				\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2, &\textnormal{on }A_{12}.
+				\rho^{(3)}(x_1,x_2,x_3)&\leq \textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2(x_1-x_3)^2,\\
+				\rho^{(4)}(x_1,x_2,x_3,x_4)&\leq \textnormal{const. }\rho^8(x_1-x_2)^2(x_3-x_4)^2\\
+				\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2,\\
+				\abs{\partial_{y_1}^2\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}\abs{x_1-x_2},\\
+				\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2.
 				\end{aligned}
 				\end{equation}
 			\end{lemma}
@@ -592,9 +593,9 @@
 				We have the following bounds
 				\begin{equation}
 				\begin{aligned}
-				\sum_{i=1}^{3}\left(\partial_{x_i}\partial_{y_i}\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}&\leq \textnormal{const. }\rho^9(x_2-x_3)^2(x_1-x_2)^2,\quad &\textnormal{on }A_{12}\cap A_{23}.\\
-				\abs{\sum_{i=1}^{3}\left(\partial_{y_i}^2\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}}&\leq\textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2,\quad &\textnormal{on }A_{12}\cap A_{23}.\\
-				\abs{\left[\partial_{y}\gamma^{(4)}(x_1,x_2,x_3,x_4;y,x_2,x_3,x_4)\bigg\vert_{y=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}}&\leq \textnormal{const. }\rho^8b(x_3-x_4)^2 ,\quad &\textnormal{on }A_{12}\cap A_{34}.
+				\sum_{i=1}^{3}\left(\partial_{x_i}\partial_{y_i}\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}&\leq \textnormal{const. }\rho^9(x_2-x_3)^2(x_1-x_2)^2,\\
+				\abs{\sum_{i=1}^{3}\left(\partial_{y_i}^2\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}}&\leq\textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2,\\
+				\abs{\left[\partial_{y}\gamma^{(4)}(x_1,x_2,x_3,x_4;y,x_2,x_3,x_4)\bigg\vert_{y=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}}&\leq \textnormal{const. }\rho^8b(x_3-x_4)^2.
 				\end{aligned}
 				\end{equation}
 			\end{lemma}
@@ -610,7 +611,7 @@
 		\end{equation}
 		We now prove the result \begin{lemma}\label{LemmaE1Bound}
 			\begin{equation}
-			E_1\leq E_0 \left(2\rho a+ \textnormal{const.}\ N(\rho b)^3\left[ 1+ \rho b^2\int v\right]\right)
+			E_1\leq E_0 \left(2\rho a\frac{b}{b-a}+ \textnormal{const.}\ N(\rho b)^3\left[ 1+ \rho b^2\int v\right]\right)
 			\end{equation}
 		\end{lemma}
 		\begin{proof}
@@ -622,24 +623,24 @@
 		\end{equation}
 		The boundary term can be explicitly calculated and we find \begin{equation}
 		\begin{aligned}
-		2\binom{N}{2}\int\left[\overline{\tilde{\Psi}}\nabla_1\tilde{\Psi}\right]_{x_1=x_2-b}^{x_1=x_2+b}\diff \bar{x}^1=\int\left[\frac{\omega(x_1-x_2)}{(x_1-x_2)}\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{(x_1-x_2)}\right)\rho^{(2)}(x_1,x_2)\right]_{x_2-b}^{x_2+b}\diff x_2\\+\int\left[\left(\frac{\omega(x_1-x_2)}{(x_1-x_2)}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2.
+		2\binom{N}{2}\int\left[\overline{\tilde{\Psi}}\nabla_1\tilde{\Psi}\right]_{x_1=x_2-b}^{x_1=x_2+b}\diff \bar{x}^1=\int\left[\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\partial_{x_1}\left(\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\right)\rho^{(2)}(x_1,x_2)\right]_{x_2-b}^{x_2+b}\diff x_2\\+\int\left[\left(\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2.
 		\end{aligned}
 		\end{equation}
-		Since the continuously differentiable function $ \frac{\omega(x)}{(x_1-x_2)}=\frac{\abs{x_1-x_2}-a}{b-a}\frac{b}{(x_1-x_2)} $ for $ \abs{x_1-x_2}>b $, we see that \begin{equation}
-		\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{(x_1-x_2)}\right)\bigg\vert_{x=x_2\pm b}=\pm b\frac{\frac{1}{b-a}-1}{ b}=\pm\frac{a}{b^2}
+		Since the continuously differentiable function $ \frac{\omega(x)}{\abs{x_1-x_2}}=\frac{\abs{x_1-x_2}-a}{b-a}\frac{b}{\abs{x_1-x_2}} $ for $ \abs{x_1-x_2}>b $, we see that \begin{equation}
+		\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)\bigg\vert_{x=x_2\pm b}=\pm \frac{\frac{b}{b-a}-1}{ b}=\pm\frac{a}{b(b-a)}
 		\end{equation}
 		Using lemma \ref{Lemma rho2 bound}, we see that \begin{equation}
-		\int\left[\frac{\omega(x_1-x_2)}{(x_1-x_2)}\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{(x_1-x_2)}\right)\gamma^{(2)}(x_1,x_2)\right]_{x_2-b}^{x_2+b}\diff x_2\leq 2a N\frac{\pi^2}{3}\rho^3\left(1+\text{const. }\frac{\log(N)}{N}\right)
+		\int\left[\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\partial_{x_1}\left(\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\right)\gamma^{(2)}(x_1,x_2)\right]_{x_2-b}^{x_2+b}\diff x_2\leq 2a\frac{b}{b-a} N\frac{\pi^2}{3}\rho^3\left(1+\text{const. }\frac{\log(N)}{N}\right)
 		\end{equation}
 		
 		Furthermore, we denote \begin{equation}\label{EqGammaDeriv2.}
 		\begin{aligned}
-		&\int\left[\left(\frac{\omega(x_1-x_2)}{(x_1-x_2)}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2\\
+		&\int\left[\left(\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2\\
 		&\quad=\int\left[\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2=:\kappa_1
 		\end{aligned}
 		\end{equation}
 		Thus we have \begin{equation}
-		E_1^{(1)}=\frac{\pi^2}{3}N\rho^3 (2a)+\kappa_1+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(-\Delta_1\tilde{\Psi})
+		E_1^{(1)}=\frac{\pi^2}{3}N\rho^3 (2a)\frac{b}{b-a}+\kappa_1+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(-\Delta_1\tilde{\Psi})
 		\end{equation}
 		Another contribution to $ E_1 $ is \begin{equation}
 		\begin{aligned}
@@ -650,7 +651,7 @@
 		Again using lemma \ref{Lemma rho2 bound} we find \begin{equation}
 		E_1^{(2)}=-\text{const. }E_0 N\rho^3b^3-\kappa_1.
 		\end{equation}
-		The last contributions are $ E^{(3)}_1=\binom{N}{2}\int_{A_{12}} \sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2=\binom{N}{2}\int_{A_{12}}v_{12}\abs{\tilde{\Psi}}^2+\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2 $ and $ E_1^{(4)}=\int_{A_{12}}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2 $.
+		The last contributions are $ E^{(3)}_1=\binom{N}{2}\int_{A_{12}} \sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2=\binom{N}{2}\int_{A_{12}}v_{12}\abs{\tilde{\Psi}}^2+2\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2 $ and $ E_1^{(4)}=\int_{A_{12}}\sum_{i=3}^{N}\abs{\nabla_i\tilde{\Psi}}^2 $.
 		First we notice that \begin{equation}
 		\begin{aligned}
 		&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2\\&\quad\leq \text{const. } \left(\int_{\{\abs{x_1-x_2}<b\}\cap\supp(v_{34})}v(x_3-x_4)\rho^{(4)}(x_1,x_2,x_3,x_4)\right.\\
@@ -672,7 +673,7 @@
 		\end{equation}
 		Using the two body scattering equation this implies \begin{equation}
 		\begin{aligned}
-		E_1&\leq \frac{2\pi^2}{3}N\rho^3 a+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\omega(-\Delta_1)\frac{\Psi_F}{(x_1-x_2)}\\&\quad+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{(x_1-x_2)}\\
+		E_1&\leq \frac{2\pi^2}{3}N\rho^3 a\frac{b}{b-a}+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}\omega(-\Delta_1)\frac{\Psi_F}{(x_1-x_2)}\\&\quad+2\binom{N}{2}\int_{A_{12}}\overline{\tilde{\Psi}}(\nabla_1\omega)\nabla_1\frac{\Psi_F}{(x_1-x_2)}\\
 		&\quad +\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\tilde{\Psi}}\frac{\omega}{(x_1-x_2)}(-\Delta_i)\Psi_F
 		\\&\quad+\text{const. }E_0 N (\rho b)^3 \left(1+\rho b^2\int v\right).
 		\end{aligned}
@@ -706,7 +707,7 @@
 		\end{aligned}
 		\end{equation}
 		Combining everything we get \begin{equation}
-		E_1\leq E_0 \left(2\rho a+ \text{const.}\ N(\rho b)^3\left[ 1+ \rho b^2\int v\right]\right)
+		E_1\leq E_0 \left(2\rho a\frac{b}{b-a}+ \text{const.}\ N(\rho b)^3\left[ 1+ \rho b^2\int v\right]\right)
 		\end{equation}
 	\end{proof}
 		\subsubsection{A remark about the hard core potential}
@@ -765,19 +766,20 @@
 		
 	\subsection{Localization with Dirichlet b.c.}
 	We will in this section localize in smaller boxes, in order to have better control on the error. The localization is straigthforward with Dirichlet boundary conditions, as gluing the wavefunctions for each box together is simple, since the wavefunctions vanish at the boundaries. Thus we consider the state $ \Psi_{\text{full}}=\prod_{i=1}^{M}\Psi_{\ell}(x^i_1,...,x^i_{\tilde{N}}) $, where $ (x_1^i,...,x_{\tilde{N}}^i) $ are the particles in box $ i $ and $ \ell $ is the length of each box. Of course $ \cup_{i=1}^{M}\{x_1^i,...,x_{\tilde{N}}^i\}=\{x_1,...,x_N\} $ and $ \{x_1^i,...,x_{\tilde{N}}^i\}\cap\{x_1^j,...,x_{\tilde{N}}^j\}=\emptyset $ for $ i\neq j $, such that $ M\tilde{N}=N $. The boxes are of length $ \ell=L/M-b $, and are equally spaced through out $ [0,L] $ such that they are a distance of $ b $ from each other. This is to make sure that no particle interact between boxes. Combining lemmas \ref{LemmaE1Bound} and \ref{LemmaE2Bound}, the full energy is then bounded by \begin{equation}
-	E\leq M e_0\left(1+2\tilde{\rho} a + \text{const. } \tilde{N} (b\tilde{\rho})^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)/\norm{\Psi}^2
+	E\leq M e_0\left(1+2\tilde{\rho} a\frac{b}{b-a} + \text{const. } \tilde{N} (b\tilde{\rho})^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)/\norm{\Psi}^2
 	\end{equation}
 	with $ e_0=\frac{\pi^2}{3}\tilde{N}\tilde{\rho}^2(1+\text{const. }\frac{1}{\tilde{N}}) $ and $ \tilde{\rho}=\tilde{N}/\ell=\rho/(1-\frac{bM}{L})\simeq\rho(1+bM/L) $. Clearly we have $ \norm{\Psi}^2\geq 1-\int_B\abs{\Psi_F}^2\geq 1-\int_{\abs{x_1-x_2}<b}\rho^{(2)}(x_1,x_2)\geq 1-\text{const. }\tilde{N}(\rho b)^3 $, where the last inequality follows from lemma \ref{Lemma rho2 bound}.
 	Thus, choosing $ M $ such that $ bM/L\ll 1 $ we have \begin{equation}
-	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a+\text{const. }\frac{M}{N}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
+	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+\frac{2\rho ab}{b-a}+\text{const. }\frac{M}{N}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
 	\end{equation}
-	Now in fact, we would choose $ \tilde{N}=N/M=\rho L/M\gg 1 $, \ie $ M/L\ll \rho $. It is clear that we minimize the error, by choosing $ b=R_0 $ the range of the potential. Furthermore, setting $ x=M/N $ we see that the error is \begin{equation}
-	\text{const. }\left[(1+2\rho^2 ab)x+x^{-1}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right],
+	Now in fact, we would choose $ \tilde{N}=N/M=\rho L/M\gg 1 $, \ie $ M/L\ll \rho $. Setting $ x=M/N $ we see that the error is \begin{equation}
+	\text{const. }\left[(1+2\rho^2 ab^2/(b-a))x+x^{-1}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right],
 	\end{equation}
 	here we used that it will turn out to be the cases that $ \tilde{N}(\rho b)^3\leq 1/2 $ so that we have\\ $ 1/(1-\tilde{N}(\rho b)^3)\leq 1+2\tilde{N}(\rho b)^3 $.
 	Optmizing in $ x $ we find $ x=M/N=\frac{(b\rho)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2}}{1+2\rho^2 a b}\simeq(b\rho)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2} $, which gives the error \begin{equation}
-	\text{const. }(R_0\rho)^{3/2}\left(1+R_0 \int v_{\textnormal{reg}}\right)^{1/2}
+	\text{const. }(b\rho)^{3/2}\left(1+\rho b^2 \int v_{\textnormal{reg}}\right)^{1/2}.
 	\end{equation}
+	At last we choose $ b=R\coloneqq\max(\rho^{-1/5}\abs{a}^{4/5},R_0) $. Then for $(\rho \abs{a})^{1/5}\leq 1/2$ $$ \frac{b}{b-a}\leq1+2a/b\leq  1+2(\rho\abs{a})^{1/5}. $$
 	Thus we arrive at the following result
 	\begin{theorem}
 		Let the two-body potential $ v\in L^{1}([0,L])+\textnormal{h.c.p.} $ be fixed, with two-body s-wave scattering length $ a $. Then bosonic $ N $-body ground state energy satisfies the upper bound\begin{equation}
@@ -785,22 +787,22 @@
 		\end{equation}
 		where $ E_0 $ is the free fermionic ground state energy.
 	\end{theorem}
-	here $ \textnormal{h.c.p} $ denotes the space of hard core potentials.\\
-	Notice that the result \begin{equation}
+	here $ \textnormal{h.c.p} $ denotes the space of hard core potentials. Notice that $$ (R\rho)^{3/2}= \max\left((\rho \abs{a})^{6/5},(\rho R_0)^{3/2}\right)\leq  (\rho \abs{a})^{6/5}+(\rho R_0)^{3/2}. $$\\
+	Notice also that the result \begin{equation}
 	E\leq N\frac{\pi^2}{3}\left(1+2\rho a + \mathcal{O}\left((R\rho)^{3/2}\left(1+\rho R^2 \int v_{\textnormal{reg}}\right)^{1/2}\right)\right)
 	\end{equation}
-	holds only for $ N\geq (\rho b)^{-3/2} $, but since the free Fermi, $ E_0 $ energy also contains a correction of order $ \frac{1}{N} $, \ie $ E_0=N\frac{\pi^2}{3}\rho^2(1+\text{const. }1/N) $, the result remains true for $ N<(\rho b)^{-3/2} $
-	\subsection{Periodic boundary conditions}
-	Another approach, would be to prove the result with periodic boundary conditions, and thus preserve translational invariance in all calculations above. Then one may use the bound [\cite{2020JMP....61f1901M}, lemma 4 or \cite{robinson2014thermodynamic} lemma 2.1.12] \begin{equation}
-	\braket{\Psi_D\lvert H^D_L \rvert \Psi_D}\leq \braket{\Psi_P\lvert H^P_{L-2d}\rvert \Psi_P}+\frac{4N}{d^2}\norm{\Psi}^2.
-	\end{equation}
-	In this case, we get errors from the periodic b.c. calculation plus errors $ 4N/d^2+E_0\frac{d}{L} $, where the last one comes from change in the density assuming that $ d/L\ll 1 $. Optimizing in $ d $ this gives an error of $ \text{const. }E_0 \frac{1}{N^{2/3}} $. Thus the total result after localization is \begin{equation}
-	E\leq E_0\left(1+2\rho a+\text{const. }\left(\frac{M}{N}\right)^{2/3}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right).
-	\end{equation}
-	And optimizing in $ M $ and setting $ b=R_0 $ we find\begin{equation}
-	E_0\left(1+2\rho a + \mathcal{O}\left((R\rho)^{6/5}\left(1+\rho R^2 \int v_{\textnormal{reg}}\right)^{1/2}\right)\right)
-	\end{equation}
-	which is not quite as good, as the bound computed directly with Dirichlet b.c.
+	holds only for $ N\geq (\rho b)^{-3/2} $, but since the free Fermi, $ E_0 $ energy also contains a correction of order $ \frac{1}{N} $, \ie $ E_0=N\frac{\pi^2}{3}\rho^2(1+\text{const. }1/N) $, the result remains true for $ N<(\rho b)^{-3/2}$.
+%	\subsection{Periodic boundary conditions}
+%	Another approach, would be to prove the result with periodic boundary conditions, and thus preserve translational invariance in all calculations above. Then one may use the bound [\cite{2020JMP....61f1901M}, lemma 4 or \cite{robinson2014thermodynamic} lemma 2.1.12] \begin{equation}
+%	\braket{\Psi_D\lvert H^D_L \rvert \Psi_D}\leq \braket{\Psi_P\lvert H^P_{L-2d}\rvert \Psi_P}+\frac{4N}{d^2}\norm{\Psi}^2.
+%	\end{equation}
+%	In this case, we get errors from the periodic b.c. calculation plus errors $ 4N/d^2+E_0\frac{d}{L} $, where the last one comes from change in the density assuming that $ d/L\ll 1 $. Optimizing in $ d $ this gives an error of $ \text{const. }E_0 \frac{1}{N^{2/3}} $. Thus the total result after localization is \begin{equation}
+%	E\leq E_0\left(1+2\rho a+\text{const. }\left(\frac{M}{N}\right)^{2/3}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right).
+%	\end{equation}
+%	And optimizing in $ M $ and setting $ b=R_0 $ we find\begin{equation}
+%	E_0\left(1+2\rho a + \mathcal{O}\left((R\rho)^{6/5}\left(1+\rho R^2 \int v_{\textnormal{reg}}\right)^{1/2}\right)\right)
+%	\end{equation}
+%	which is not quite as good, as the bound computed directly with Dirichlet b.c.
 
 	\section{Lower bound}
 	We will in this section provide a lower bound for the one dimensional dilute Bose gas. The proof is based on a reduction to a Lieb Liniger model, and thus we will first recall some known features about this model
@@ -1003,7 +1005,7 @@
 			\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-\text{const. }(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell
 			\end{equation}
 		\end{proof}
-	We are then ready to prove the lower bound for general particle numbers
+	We are then ready to prove the lower bound for general particle numbers.
 	
 	
 		\begin{theorem}[Lower bound] Let $ E^N(N,L) $ denote the ground state energy of $ \mathcal{E} $ with Neumann boundary conditions. Then for $ \rho R \ll 1 $
