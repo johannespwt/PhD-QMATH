@@ -78,27 +78,27 @@
 \begin{document}
 	\maketitle
 	\section{Upper bound}
-
+	
 	\subsection{The trial state}
 	We provide the upper bound for the ground state energy, by using the variational principle with a suitable trial state. Since we are interested in an upper bound, we consider Dirichlet boundary conditions.
-	 For $ b>R_0 $, consider the trial state	\begin{equation}
-	 \Psi(x)=\begin{cases}
-	 \omega(\rr(x))\frac{\tilde{\Psi}_F(x)}{\rr(x)}& \text{if }\rr(x)<b,\\
-	 \tilde{\Psi}_F(x)&\text{if }\rr(x)\geq b,
-	 \end{cases}
-	 \end{equation}
-	 where $ \omega $ is the suitably normalized solution to the two-body scattering equation, \ie $ \omega(x)=f(x)\frac{b}{f(b)} $ where $ f $ is any solution of the two-body scattering equation,  $ \tilde{\Psi}_F(x)=\abs{\Psi_F} $ is the absolute value of the free fermionic ground state, and $ \rr(x)=\min_{i<j}(\abs{x_i-x_j}) $ is uniquely defined a.e. Notice that defining $ B=\{x\in\R^N\ \vert\ \mathcal{R}(x)<b \} $ we have that $ \Psi=\tilde{\Psi}_F $ on $ B^\complement $.\\
+	For $ b>R_0 $, consider the trial state	\begin{equation}
+	\Psi(x)=\begin{cases}
+	\omega(\rr(x))\frac{\tilde{\Psi}_F(x)}{\rr(x)}& \text{if }\rr(x)<b,\\
+	\tilde{\Psi}_F(x)&\text{if }\rr(x)\geq b,
+	\end{cases}
+	\end{equation}
+	where $ \omega $ is the suitably normalized solution to the two-body scattering equation, \ie $ \omega(x)=f(x)\frac{b}{f(b)} $ where $ f $ is any solution of the two-body scattering equation,  $ \tilde{\Psi}_F(x)=\abs{\Psi_F} $ is the absolute value of the free fermionic ground state, and $ \rr(x)=\min_{i<j}(\abs{x_i-x_j}) $ is uniquely defined a.e. Notice that defining $ B=\{x\in\R^N\ \vert\ \mathcal{R}(x)<b \} $ we have that $ \Psi=\tilde{\Psi}_F $ on $ B^\complement $.\\
 	The energy of this trial state is then\begin{equation}
 	\mathcal{E}(\Psi)=\int \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2,
 	\end{equation}
 	where $ v_{ij}(x)=v(x_i-x_j) $. In the following we define some useful quantities:\\
 	We define the sets $ B_{12}\coloneqq\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}\coloneqq\{x\in\R^N\vert \abs{x_1-x_2}<b\} $. Up to a set of measure zero, $ B_{12} $ is the intersection of $ B $ with the set $ \{\text{"1 and 2 are closest"}\} $. Define also the quantities
 	
-	 \begin{equation}
-		\begin{aligned}
-		E_1&\coloneqq\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2, \\
-		E_2^{(1)}&\coloneqq\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2,\\ E_2^{(2)}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2.
-		\end{aligned}
+	\begin{equation}
+	\begin{aligned}
+	E_1&\coloneqq\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2, \\
+	E_2^{(1)}&\coloneqq\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2,\\ E_2^{(2)}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2.
+	\end{aligned}
 	\end{equation}
 	We then have \begin{lemma}
 		Let $ v\geq 0 $, then \begin{equation}\label{EqBound1}
@@ -106,24 +106,24 @@
 		\end{equation}
 	\end{lemma}
 	\begin{proof}
-	Since $ v $ is supported in $ B_b $ and $ \Psi=\tilde{\Psi}_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this, using the diamagnetic inequality, as \begin{equation}
-	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2,
-	\end{equation}
-	with $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N))\norm{\Psi}^2 $ the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry under exchange of particles, and using the diamagnetic inequality, we find \begin{equation}
-	\begin{aligned}
-	\mathcal{E}(\Psi)&\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
-	\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
-	=E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&\qquad
-	-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
-	\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2
-	\end{aligned}
-	\end{equation}
-	where we have defined \begin{equation*}
-	\tilde{\Psi}=\begin{cases}
-	\omega(x_1-x_2)\frac{\Psi_F(x)}{(x_1-x_2)}& \text{if }\abs{x_1-x_2}<b,\\
-	\text{sgn}(x_1-x_2)\Psi_F(x)&\text{if }\abs{x_1-x_2}\geq b,
-	\end{cases}
-	\end{equation*} and $ E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2 $.\\	
+		Since $ v $ is supported in $ B_b $ and $ \Psi=\tilde{\Psi}_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this, using the diamagnetic inequality, as \begin{equation}
+		\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2,
+		\end{equation}
+		with $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N))\norm{\Psi}^2 $ the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry under exchange of particles, and using the diamagnetic inequality, we find \begin{equation}
+		\begin{aligned}
+		\mathcal{E}(\Psi)&\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
+		\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
+		=E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&\qquad
+		-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
+		\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2
+		\end{aligned}
+		\end{equation}
+		where we have defined \begin{equation*}
+		\tilde{\Psi}=\begin{cases}
+		\omega(x_1-x_2)\frac{\Psi_F(x)}{(x_1-x_2)}& \text{if }\abs{x_1-x_2}<b,\\
+		\text{sgn}(x_1-x_2)\Psi_F(x)&\text{if }\abs{x_1-x_2}\geq b,
+		\end{cases}
+		\end{equation*} and $ E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2 $.\\	
 		We may, by an inclusion-exclusion argument, estimate\begin{equation}
 		\begin{aligned}
 		\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2&\leq \binom{N}{2}\left(2N\left[\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2-\int_{B_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]\right.\\
@@ -134,36 +134,36 @@
 		Thus we find $
 		\mathcal{E}(\Psi)\leq E_0+E_1+E_2^{(1)}+E_2^{(2)}$ as desired.
 	\end{proof}
-%	Since $ v $ is supported in $ B_b $ and $ \Psi=\tilde{\Psi}_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this, using the diamagnetic inequality, as \begin{equation}
-%	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2,
-%	\end{equation}
-%	with $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N))\norm{\Psi}^2 $ the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry under exchange of particles, and defining the set $ B_{12}=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}=\{x\in\R^N\vert \abs{x_1-x_2}<b\} $ which up to a set of measure zero is the intersection of $ B $ and the set $ \{\text{"1 and 2 are closest"}\} $, and using the diamagnetic inequality, we find \begin{equation}
-%	\begin{aligned}
-%	\mathcal{E}(\Psi)&\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
-%	\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
-%	=E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&\qquad
-%	-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
-%	\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2
-%	\end{aligned}
-%	\end{equation}
-%	where we have defined \begin{equation*}
-%		\tilde{\Psi}=\begin{cases}
-%		\omega(x_1-x_2)\frac{\Psi_F(x)}{(x_1-x_2)}& \text{if }\abs{x_1-x_2}<b,\\
-%		\text{sgn}(x_1-x_2)\Psi_F(x)&\text{if }\abs{x_1-x_2}\geq b,
-%		\end{cases}
-%	\end{equation*} and $ E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2 $.\\
-%	We may, by an inclusion-exclusion argument, estimate\begin{equation}
-%	\begin{aligned}
-%	\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2&=\binom{N}{2}\left(2N\left[\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2-\int_{B_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]\right.\\
-%	&\qquad\qquad\left.+\binom{N-2}{2}\left[\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2-\int_{B_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]\right)\\
-%	&\leq \binom{N}{2}\left[2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2+\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]
-%	\end{aligned}
-%	\end{equation}
-%	Thus we find \begin{equation}\label{EqBound1}
-%	\mathcal{E}(\Psi)\leq E_0+E_1+E_2^{(1)}+E_2^{(2)}
-%	\end{equation}
-%	with $ E_2^{(1)}=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $ and $ E_2^{(2)}=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $.\\
-%	We notice that since $ \tilde{\Psi}_F=\abs{\Psi_F} $ so by the diamagnetic inequality we have $ \abs{\nabla_i\tilde{\Psi}_F}^2\leq \abs{\nabla_i\Psi_F}^2 $, which implies that $ \tilde{\Psi}_F $ is in $ H^{1}(\Lambda_L) $. Furthermore, $ \Psi_F $ is $ C^{1}(\Lambda_L) $ with a zero set $ \{\Psi_F=0\} $ of measure zero, so $ \abs{\nabla_i\tilde{\Psi}_F}^2 $ and $ \abs{\nabla_i\Psi_F}^2 $ are equal a.e. But then $ \abs{\nabla_i\tilde{\Psi}_F}=\abs{\nabla_i\Psi_F} $ as $ L^{2}(\Lambda_L) $ functions. Hence we may replace $ \tilde{\Psi}_F $ with $ \Psi_F $ in all integrals above.
+	%	Since $ v $ is supported in $ B_b $ and $ \Psi=\tilde{\Psi}_F $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this, using the diamagnetic inequality, as \begin{equation}
+	%	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2,
+	%	\end{equation}
+	%	with $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N))\norm{\Psi}^2 $ the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry under exchange of particles, and defining the set $ B_{12}=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}=\{x\in\R^N\vert \abs{x_1-x_2}<b\} $ which up to a set of measure zero is the intersection of $ B $ and the set $ \{\text{"1 and 2 are closest"}\} $, and using the diamagnetic inequality, we find \begin{equation}
+	%	\begin{aligned}
+	%	\mathcal{E}(\Psi)&\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j}^{N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
+	%	\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
+	%	=E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&\qquad
+	%	-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\\&
+	%	\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2
+	%	\end{aligned}
+	%	\end{equation}
+	%	where we have defined \begin{equation*}
+	%		\tilde{\Psi}=\begin{cases}
+	%		\omega(x_1-x_2)\frac{\Psi_F(x)}{(x_1-x_2)}& \text{if }\abs{x_1-x_2}<b,\\
+	%		\text{sgn}(x_1-x_2)\Psi_F(x)&\text{if }\abs{x_1-x_2}\geq b,
+	%		\end{cases}
+	%	\end{equation*} and $ E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2 $.\\
+	%	We may, by an inclusion-exclusion argument, estimate\begin{equation}
+	%	\begin{aligned}
+	%	\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2&=\binom{N}{2}\left(2N\left[\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2-\int_{B_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]\right.\\
+	%	&\qquad\qquad\left.+\binom{N-2}{2}\left[\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2-\int_{B_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]\right)\\
+	%	&\leq \binom{N}{2}\left[2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2+\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\Psi_F}^2\right]
+	%	\end{aligned}
+	%	\end{equation}
+	%	Thus we find \begin{equation}\label{EqBound1}
+	%	\mathcal{E}(\Psi)\leq E_0+E_1+E_2^{(1)}+E_2^{(2)}
+	%	\end{equation}
+	%	with $ E_2^{(1)}=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $ and $ E_2^{(2)}=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2 $.\\
+	%	We notice that since $ \tilde{\Psi}_F=\abs{\Psi_F} $ so by the diamagnetic inequality we have $ \abs{\nabla_i\tilde{\Psi}_F}^2\leq \abs{\nabla_i\Psi_F}^2 $, which implies that $ \tilde{\Psi}_F $ is in $ H^{1}(\Lambda_L) $. Furthermore, $ \Psi_F $ is $ C^{1}(\Lambda_L) $ with a zero set $ \{\Psi_F=0\} $ of measure zero, so $ \abs{\nabla_i\tilde{\Psi}_F}^2 $ and $ \abs{\nabla_i\Psi_F}^2 $ are equal a.e. But then $ \abs{\nabla_i\tilde{\Psi}_F}=\abs{\nabla_i\Psi_F} $ as $ L^{2}(\Lambda_L) $ functions. Hence we may replace $ \tilde{\Psi}_F $ with $ \Psi_F $ in all integrals above.
 	\subsection{The free Fermi ground state}
 	We now construct the free Fermi ground state. The Dirichlet eigenstates of the Laplacian are $ \phi_j(x)=\sqrt{2/L}\sin(\pi j x/L) $. Thus the free Fermi ground state is \begin{equation}
 	\Psi_F(x)=\det\left(\phi_j(x_i)\right)_{i,j=1}^{N}=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\begin{vmatrix}
@@ -206,7 +206,7 @@
 	.
 	\end{aligned}
 	\end{equation}
-
+	
 	\subsubsection{Reduced density matrices}
 	We compute the one-particle reduced density matrix of the free Fermi ground state with Dirichlet b.c. in the usual way\begin{equation}
 	\begin{aligned}
@@ -219,90 +219,90 @@
 	\begin{aligned}
 	\gamma^{(1)}(x,y)&=\frac{\pi}{L}\left(D_{N}\left(\pi\frac{x-y}{L}\right)-D_{N}\left(\pi\frac{x+y}{L}\right)\right),\\
 	\tilde{\gamma}^{(1)}(x,y)&\coloneqq \frac{\pi}{L}D_{N}\left(\pi \frac{x-y}{L}\right)
-%	\tilde{\gamma}(x,y)&\coloneqq \begin{cases}
-%	\gamma^{(1)}_{\text{per}}(x,y)=\frac{2\pi}{L}D_{(N-1)/2}\left(2\pi\frac{x-y}{L}\right),\qquad &N\text{ odd}\\
-%	\gamma^{(1)}_{\text{anti-per}}(x,y)=\frac{2\pi}{L}\left(\euler{i\pi(x-y)}D_{N/2-1}\left(2\pi\frac{x-y}{L}\right)+\frac{1}{2\pi}\euler{-i\pi N(x-y)}\right),\qquad &N\text{ even}
-%	\end{cases}
+	%	\tilde{\gamma}(x,y)&\coloneqq \begin{cases}
+	%	\gamma^{(1)}_{\text{per}}(x,y)=\frac{2\pi}{L}D_{(N-1)/2}\left(2\pi\frac{x-y}{L}\right),\qquad &N\text{ odd}\\
+	%	\gamma^{(1)}_{\text{anti-per}}(x,y)=\frac{2\pi}{L}\left(\euler{i\pi(x-y)}D_{N/2-1}\left(2\pi\frac{x-y}{L}\right)+\frac{1}{2\pi}\euler{-i\pi N(x-y)}\right),\qquad &N\text{ even}
+	%	\end{cases}
 	\end{aligned}
 	\end{equation}
 	where $ D_n(x)=\frac{1}{2\pi}\sum_{k=-n}^{n}\euler{ikx}=\frac{\sin((n+1/2)x)}{2\pi\sin(x/2)} $ is the Dirichlet kernel. One obvious consequence is that $ \abs{\partial_{x}^{k_1}\partial_{y}^{k_2}\gamma^{(1)}(x,y)}\leq \frac{1}{\pi}(2N)^{k_1+k_2+1}\left(\frac{\pi}{L}\right)^{k_1+k_2+1}=\pi^{k_1+k_2}(2\rho)^{k_1+k_2+1} $. This bound will allow us to Taylor expand any $ \gamma^{(k)} $, as all derivatives are uniformly bounded by a constant times some power of $ \rho $. In fact the relevant power of $ \rho $ can be directly obtained from dimensional analysis. Alternatively Taylor expanding may be thought of a using the mean value theorem mulitple times.
 	\subsection{Some useful bounds}
 	\begin{lemma}\label{Lemma rho2 bound}
 		$ \rho^{(2)}(x_1,x_2)=\left(\frac{\pi^2}{3}\rho^4+f(x_2)\right)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4) $ with $ \int f(x_2)\diff x_2\leq \textnormal{ const. }\rho^3\log(N) $.
-		\end{lemma}
-		\begin{proof}
-			Notice that with periodic/anti-periodic b.c. we have by translation invariance $ \tilde{\gamma}^{(1)}(x,y)-(\rho+1/(2L))=\frac{\pi^2}{6}(\rho^4+\rho^3\mathcal{O}(1/L))(x_1-x_2)^2+\mathcal{O}(\rho^4(x_1-x_2)^4) $. Furhtermore, we have $ \gamma^{(1)}(x_1,x_2)-\rho^{(1)}\left((x_1+x_2)/2\right)=\tilde{\gamma}^{(1)}(x_1,x_2)-(\rho+1/(2L)) $. Now by Wick's theorem we find \begin{equation}
-			\rho^{(2)}(x_1,x_2)=\rho^{(1)}(x_1)\rho^{(1)}(x_2)-\gamma^{(1)}(x_1,x_2)\gamma^{(1)}(x_2,x_1).
-			\end{equation}
-			Using that $ \gamma^{(1)} $ is symmetric, and that \begin{equation}
-			\begin{aligned}
-			\rho^{(1)}(x_1)=\rho^{(1)}((x_1+x_2)/2)+\rho^{(1)\prime}((x_1+x_2)/2)\frac{x_1-x_2}{2}+\frac{1}{2}\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2\\+\mathcal{O}(\rho^4(x_1-x_2)^3),\\
-			\end{aligned}
-			\end{equation}
-			\begin{equation}
-			\begin{aligned}
-			\rho^{(1)}(x_2)=\rho^{(1)}((x_1+x_2)/2)+\rho^{(1)\prime}((x_1+x_2)/2)\frac{x_2-x_1}{2}+\frac{1}{2}\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2\\+\mathcal{O}(\rho^4(x_1-x_2)^3),
-			\end{aligned}
-			\end{equation}
-			where both expressions can be expanded further if needed, we see that \begin{equation}
-			\begin{aligned}
-			\rho^{(2)}(x_1,x_2)=\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2-\left[\rho^{(1)\prime}((x_1+x_2)/2)\right]^2\left(\frac{x_1-x_2}{2}\right)^2\\+\rho^{(1)}((x_1+x_2)/2)\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2+\mathcal{O}(\rho^6(x_1-x_2)^4)
-			\end{aligned}
-			\end{equation}
-			Notice that $ \mathcal{O}(\rho^5(x_1-x_2)^3) $ terms must cancel due to symmetry.\\
-			Now use the fact that $ 0\leq\rho^{(1)}\leq 2\rho $, and that $ \rho^{(1)\prime}:[0,L]\to \R $, and that $\int_{[0,L]}\abs{\rho^{(1)\prime\prime}}\leq \text{const. }\rho^2\log(N) $ and $\int_{[0,L]}\abs{\rho^{(1)\prime}}\leq \text{const. }\rho\log(N) $, which follows from the bound on Dirichlet's kernel $ \norm{D_N^{(k)}}_{L^1([0,2\pi])}\leq \text{const. }N^{k}\log(N) $, to conclude that
-			\begin{equation}
-			\begin{aligned}
-			\rho^{(2)}(x_1,x_2)=\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2+g_1(x_1+x_2)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4),
-			\end{aligned}
-			\end{equation}
-			for some function $ g_1 $ satisfying $ \int_{[0,L]}g_1\leq \text{const. }\rho^3\log(N)$.
-			Furthermore, notice that 
-			\begin{equation}
-			\begin{aligned}
-			\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2=(\rho^{(1)}((x_1+x_2)/2)-\gamma^{(1)}(x_1,x_2))(\rho^{(1)}((x_1+x_2)/2)+\gamma^{(1)}(x_1,x_2))\\
-			=\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]\left[-\rho-1/(2L)+\tilde{\gamma}^{(1)}(x_1,x_2)+2\rho^{(1)}((x_1+x_2)/2)\right]\\
-			=-\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]^2+2\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]\rho^{(1)}((x_1+x_2)/2)\\
-			= 2\left(\frac{\pi^2}{6}(\rho+1/(2L))^3(x_1-x_2)^2+\mathcal{O}(\rho^5(x_1-x_2)^4)\right)\left(\rho+\frac{1}{2L}-\frac{\pi}{L}D_{N}((x_1+x_2)/(2L))\right)\\
-			=\frac{\pi^2}{3}\rho^4(x_1-x_2)^2+g_2(x_1-x_2)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4),
-			\end{aligned}
-			\end{equation}
-			where we have choosen $ g_2(x)=\frac{\pi^2}{3}\rho^3\left(\frac{\text{const.}}{2L}+\abs{\frac{\pi}{L}D_N(x/(2L))} \right) $ which clearly satifies $  \int_{[0,L]} g_2\leq \text{const. } \rho^3 \log(N) $.
-			Thus we conclude that \begin{equation}
-			\rho^{(2)}(x_1,x_2)=\left(\frac{\pi^2}{3}\rho^4+f(x_2)\right)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4)
-			\end{equation}
-			with $ f=g_1+g_2 $, satifying $ \int_{[0,L]} f\leq \text{const. } \rho^3 \log(N) $
-			\end{proof}
-			\begin{lemma}\label{LemmaDensityBounds}
-				We have the following bounds\begin{equation}
-				\begin{aligned}
-				\rho^{(3)}(x_1,x_2,x_3)&\leq \textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2(x_1-x_3)^2,\\
-				\rho^{(4)}(x_1,x_2,x_3,x_4)&\leq \textnormal{const. }\rho^8(x_1-x_2)^2(x_3-x_4)^2\\
-				\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2,\\
-				\abs{\partial_{y_1}^2\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}\abs{x_1-x_2},\\
-				\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2.
-				\end{aligned}
-				\end{equation}
-			\end{lemma}
-			\begin{proof}
-				The bounds follows straightforwardly from Taylor's theorem and symmetries of the left-hand sides. As an example, consider $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x} $. Notice first that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2) $ is anti-symmetric in $ (x_1,x_2) $ and in $ (y_1,y_2) $. As we have previously argued that all derivatives of $ \gamma^{(n)} $ are bounded by a constant times $ \rho^k $ for some $ k\in\mathbb{N} $, we can clearly Taylor expand $ \gamma^{(2)} $. Taylor expanding $ x_1 $ around $ x_2 $ and similarly $ y_1 $ around $ y_2 $ we see by the anti-symmetry that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\leq \text{const. }\rho^6(x_1-x_2)(y_1-y_2) $, where the power of $ \rho $ can be found by simple dimensional analysis.
-			\end{proof}
-			\begin{lemma} \label{LemmaDensityBounds2}
-				We have the following bounds
-				\begin{equation}
-				\begin{aligned}
-				\sum_{i=1}^{3}\left(\partial_{x_i}\partial_{y_i}\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}&\leq \textnormal{const. }\rho^9(x_2-x_3)^2(x_1-x_2)^2,\\
-				\abs{\sum_{i=1}^{3}\left(\partial_{y_i}^2\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}}&\leq\textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2,\\
-				\abs{\left[\partial_{y}\gamma^{(4)}(x_1,x_2,x_3,x_4;y,x_2,x_3,x_4)\bigg\vert_{y=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}}&\leq \textnormal{const. }\rho^8b(x_3-x_4)^2.
-				\end{aligned}
-				\end{equation}
-			\end{lemma}
-			\begin{proof}
-				The proof follows straigthforwardly from Taylor's theorem and symmetries of the left-hand sides. 
-			\end{proof}
-			\begin{remark}
-				We do not claim that the lemmas \ref{LemmaDensityBounds} and \ref{LemmaDensityBounds2} are in any way optimal bounds, and many of them can indeed easily be improved by same proof technique using more symmetries. However, they are sufficient for our needs.
-			\end{remark}
+	\end{lemma}
+	\begin{proof}
+		Notice that with periodic/anti-periodic b.c. we have by translation invariance $ \tilde{\gamma}^{(1)}(x,y)-(\rho+1/(2L))=\frac{\pi^2}{6}(\rho^4+\rho^3\mathcal{O}(1/L))(x_1-x_2)^2+\mathcal{O}(\rho^4(x_1-x_2)^4) $. Furhtermore, we have $ \gamma^{(1)}(x_1,x_2)-\rho^{(1)}\left((x_1+x_2)/2\right)=\tilde{\gamma}^{(1)}(x_1,x_2)-(\rho+1/(2L)) $. Now by Wick's theorem we find \begin{equation}
+		\rho^{(2)}(x_1,x_2)=\rho^{(1)}(x_1)\rho^{(1)}(x_2)-\gamma^{(1)}(x_1,x_2)\gamma^{(1)}(x_2,x_1).
+		\end{equation}
+		Using that $ \gamma^{(1)} $ is symmetric, and that \begin{equation}
+		\begin{aligned}
+		\rho^{(1)}(x_1)=\rho^{(1)}((x_1+x_2)/2)+\rho^{(1)\prime}((x_1+x_2)/2)\frac{x_1-x_2}{2}+\frac{1}{2}\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2\\+\mathcal{O}(\rho^4(x_1-x_2)^3),\\
+		\end{aligned}
+		\end{equation}
+		\begin{equation}
+		\begin{aligned}
+		\rho^{(1)}(x_2)=\rho^{(1)}((x_1+x_2)/2)+\rho^{(1)\prime}((x_1+x_2)/2)\frac{x_2-x_1}{2}+\frac{1}{2}\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2\\+\mathcal{O}(\rho^4(x_1-x_2)^3),
+		\end{aligned}
+		\end{equation}
+		where both expressions can be expanded further if needed, we see that \begin{equation}
+		\begin{aligned}
+		\rho^{(2)}(x_1,x_2)=\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2-\left[\rho^{(1)\prime}((x_1+x_2)/2)\right]^2\left(\frac{x_1-x_2}{2}\right)^2\\+\rho^{(1)}((x_1+x_2)/2)\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2+\mathcal{O}(\rho^6(x_1-x_2)^4)
+		\end{aligned}
+		\end{equation}
+		Notice that $ \mathcal{O}(\rho^5(x_1-x_2)^3) $ terms must cancel due to symmetry.\\
+		Now use the fact that $ 0\leq\rho^{(1)}\leq 2\rho $, and that $ \rho^{(1)\prime}:[0,L]\to \R $, and that $\int_{[0,L]}\abs{\rho^{(1)\prime\prime}}\leq \text{const. }\rho^2\log(N) $ and $\int_{[0,L]}\abs{\rho^{(1)\prime}}\leq \text{const. }\rho\log(N) $, which follows from the bound on Dirichlet's kernel $ \norm{D_N^{(k)}}_{L^1([0,2\pi])}\leq \text{const. }N^{k}\log(N) $, to conclude that
+		\begin{equation}
+		\begin{aligned}
+		\rho^{(2)}(x_1,x_2)=\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2+g_1(x_1+x_2)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4),
+		\end{aligned}
+		\end{equation}
+		for some function $ g_1 $ satisfying $ \int_{[0,L]}g_1\leq \text{const. }\rho^3\log(N)$.
+		Furthermore, notice that 
+		\begin{equation}
+		\begin{aligned}
+		\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2=(\rho^{(1)}((x_1+x_2)/2)-\gamma^{(1)}(x_1,x_2))(\rho^{(1)}((x_1+x_2)/2)+\gamma^{(1)}(x_1,x_2))\\
+		=\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]\left[-\rho-1/(2L)+\tilde{\gamma}^{(1)}(x_1,x_2)+2\rho^{(1)}((x_1+x_2)/2)\right]\\
+		=-\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]^2+2\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]\rho^{(1)}((x_1+x_2)/2)\\
+		= 2\left(\frac{\pi^2}{6}(\rho+1/(2L))^3(x_1-x_2)^2+\mathcal{O}(\rho^5(x_1-x_2)^4)\right)\left(\rho+\frac{1}{2L}-\frac{\pi}{L}D_{N}((x_1+x_2)/(2L))\right)\\
+		=\frac{\pi^2}{3}\rho^4(x_1-x_2)^2+g_2(x_1-x_2)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4),
+		\end{aligned}
+		\end{equation}
+		where we have choosen $ g_2(x)=\frac{\pi^2}{3}\rho^3\left(\frac{\text{const.}}{2L}+\abs{\frac{\pi}{L}D_N(x/(2L))} \right) $ which clearly satifies $  \int_{[0,L]} g_2\leq \text{const. } \rho^3 \log(N) $.
+		Thus we conclude that \begin{equation}
+		\rho^{(2)}(x_1,x_2)=\left(\frac{\pi^2}{3}\rho^4+f(x_2)\right)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4)
+		\end{equation}
+		with $ f=g_1+g_2 $, satifying $ \int_{[0,L]} f\leq \text{const. } \rho^3 \log(N) $
+	\end{proof}
+	\begin{lemma}\label{LemmaDensityBounds}
+		We have the following bounds\begin{equation}
+		\begin{aligned}
+		\rho^{(3)}(x_1,x_2,x_3)&\leq \textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2(x_1-x_3)^2,\\
+		\rho^{(4)}(x_1,x_2,x_3,x_4)&\leq \textnormal{const. }\rho^8(x_1-x_2)^2(x_3-x_4)^2\\
+		\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2,\\
+		\abs{\partial_{y_1}^2\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}\abs{x_1-x_2},\\
+		\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2.
+		\end{aligned}
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		The bounds follows straightforwardly from Taylor's theorem and symmetries of the left-hand sides. As an example, consider $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x} $. Notice first that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2) $ is anti-symmetric in $ (x_1,x_2) $ and in $ (y_1,y_2) $. As we have previously argued that all derivatives of $ \gamma^{(n)} $ are bounded by a constant times $ \rho^k $ for some $ k\in\mathbb{N} $, we can clearly Taylor expand $ \gamma^{(2)} $. Taylor expanding $ x_1 $ around $ x_2 $ and similarly $ y_1 $ around $ y_2 $ we see by the anti-symmetry that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\leq \text{const. }\rho^6(x_1-x_2)(y_1-y_2) $, where the power of $ \rho $ can be found by simple dimensional analysis.
+	\end{proof}
+	\begin{lemma} \label{LemmaDensityBounds2}
+		We have the following bounds
+		\begin{equation}
+		\begin{aligned}
+		\sum_{i=1}^{3}\left(\partial_{x_i}\partial_{y_i}\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}&\leq \textnormal{const. }\rho^9(x_2-x_3)^2(x_1-x_2)^2,\\
+		\abs{\sum_{i=1}^{3}\left(\partial_{y_i}^2\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}}&\leq\textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2,\\
+		\abs{\left[\partial_{y}\gamma^{(4)}(x_1,x_2,x_3,x_4;y,x_2,x_3,x_4)\bigg\vert_{y=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}}&\leq \textnormal{const. }\rho^8b(x_3-x_4)^2.
+		\end{aligned}
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		The proof follows straigthforwardly from Taylor's theorem and symmetries of the left-hand sides. 
+	\end{proof}
+	\begin{remark}
+		We do not claim that the lemmas \ref{LemmaDensityBounds} and \ref{LemmaDensityBounds2} are in any way optimal bounds, and many of them can indeed easily be improved by same proof technique using more symmetries. However, they are sufficient for our needs.
+	\end{remark}
 	\subsection{Estimating $ E_1 $}
 		Recall the definition \begin{equation}
 		E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}}^2+\sum_{i<j}^{N}v_{ij}\abs{\tilde{\Psi}}^2-\sum_{i=1}^{N}\abs{\nabla_i\tilde{\Psi}_F}^2
@@ -333,7 +333,7 @@
 		
 		Furthermore, we denote \begin{equation}\label{EqGammaDeriv2.}
 		\begin{aligned}
-		&\int\left[\left(\frac{\omega\abs{x_1-x_2}}{\abs{x_1-x_2}}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2\\
+		&\int\left[\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2\\
 		&\quad=\int\left[\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2=:\kappa_1
 		\end{aligned}
 		\end{equation}
@@ -436,7 +436,7 @@
 		&\leq E_0 N^3\int_{A_{12}\cap A_{23}}\abs{\Psi_F}^2-N^3\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\overline{\Psi_F}(-\Delta_i\Psi_F)\\&\leq 2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{[x_2-b,x_2+b]}\rho^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2-N^3\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\overline{\Psi_F}(-\Delta_i\Psi_F)
 		\end{aligned}
 		\end{equation}
-		Using that lemma \ref{LemmaDensityBounds} we find \begin{equation}
+		Using lemma \ref{LemmaDensityBounds} we find \begin{equation}
 		\begin{aligned}
 		2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{[x_2-b,x_2+b]}\rho^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2\leq NE_0(\rho b)^6
 		\end{aligned}
