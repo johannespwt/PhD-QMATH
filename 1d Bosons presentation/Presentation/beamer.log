@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.2.23)  14 JAN 2022 09:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.2.23)  14 JUN 2022 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1164,29 +1164,33 @@ Package: beamerfontthemeserif 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 86.
+(hyperref)                removing `\\' on input line 87.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\new@ifnextchar' on input line 86.
+(hyperref)                removing `\new@ifnextchar' on input line 87.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\\' on input line 87.
 
 (./beamer.aux)
 \openout1 = `beamer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1252,7 +1256,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 92.
+Package hyperref Info: Link coloring OFF on input line 93.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1262,9 +1266,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count176
 )
-LaTeX Info: Redefining \ref on input line 92.
-LaTeX Info: Redefining \pageref on input line 92.
-LaTeX Info: Redefining \nameref on input line 92.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
 
 (./beamer.out) (./beamer.out)
 \@outlinefile=\write5
@@ -1295,26 +1299,26 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 92.
+LaTeX Info: Redefining \includegraphics on input line 93.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 92.
+(lastpage)             ! on input line 93.
  (./beamer.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 94.
+(Font)              size <5> substituted on input line 95.
 
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./kuscience-logo.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<kuscience-logo.pdf, id=33, 597.55246pt x 845.07724pt>
+<kuscience-logo.pdf, id=37, 597.55246pt x 845.07724pt>
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 94.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 95.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [1
 
@@ -1322,40 +1326,40 @@ Package pdftex.def Info: kuscience-logo.pdf used on input line 94.
 beamer.toc)
 File: kuscience-logo.pdf Graphic file (type pdf)
  <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 100.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 101.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [2
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 123.
+LaTeX Font Info:    Try loading font information for U+msa on input line 124.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 123.
+LaTeX Font Info:    Try loading font information for U+msb on input line 124.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 123.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 124.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 123.
+(Font)              using `OT1/cmss/bx/n' instead on input line 124.
 
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 123.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 124.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [3
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
  <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 134.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 135.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [4
 
@@ -1363,88 +1367,86 @@ Package pdftex.def Info: kuscience-logo.pdf used on input line 134.
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 152.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 153.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [5
 
 ]
+Overfull \hbox (9.70561pt too wide) detected at line 174
+[][][]\OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N; L\OT1/cmr
+/m/n/10.95 ) = \OML/cmm/m/it/10.95 N[]^^Z[] [] ;
+ []
+
 File: kuscience-logo.pdf Graphic file (type pdf)
- <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 170.
+<use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 174.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [6
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
-
-<use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 188.
+ <use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 192.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [7
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
- <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 200.
+
+<use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 204.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [8
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
-
-<use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 213.
+ <use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 217.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [9
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
- <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 228.
+
+<use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 232.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [10
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
-
-<use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 250.
+ <use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 254.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [11
 
 ]
-Overfull \hbox (8.5917pt too wide) detected at line 265
+Overfull \hbox (8.5917pt too wide) detected at line 269
 \OML/cmm/m/it/10.95 E \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 N[]^^Z[][];
  []
 
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 265.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 269.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [12
 
 ]
-Overfull \hbox (22.63608pt too wide) detected at line 282
+Overfull \hbox (22.63608pt too wide) detected at line 291
  \OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N; L\OT1/cmr/m/n/10 ) \OMS
 /cmsy/m/n/10 ^^T \OML/cmm/m/it/10 N[]^^Z[][]:
  []
 
-
-Overfull \hbox (16.9209pt too wide) detected at line 282
-\OML/cmm/m/it/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 N; L\OT1/cmr/m/n/10 ) \OMS/
-cmsy/m/n/10 ^^T \OML/cmm/m/it/10 E[] [] :
- []
-
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 282.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 291.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [13
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
  <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 296.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 305.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [14
 
@@ -1452,12 +1454,12 @@ Package pdftex.def Info: kuscience-logo.pdf used on input line 296.
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 312.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 321.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [15
 
 ]
-LaTeX Font Info:    Try loading font information for U+euf on input line 330.
+LaTeX Font Info:    Try loading font information for U+euf on input line 339.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1465,14 +1467,14 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 330.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 339.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [16
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
  <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 347.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 356.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [17
 
@@ -1480,26 +1482,26 @@ Package pdftex.def Info: kuscience-logo.pdf used on input line 347.
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 368.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 377.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [18
 
 ]
-Overfull \hbox (4.1806pt too wide) detected at line 386
+Overfull \hbox (4.1806pt too wide) detected at line 395
 \OML/cmm/m/it/10 E[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; `\OT1/cmr/m/n/10 ) \OM
 S/cmsy/m/n/10 ^^U \OML/cmm/m/it/10 n[]^^Z[] [] :
  []
 
 File: kuscience-logo.pdf Graphic file (type pdf)
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 386.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 395.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [19
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
  <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 403.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 415.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [20
 
@@ -1507,16 +1509,31 @@ Package pdftex.def Info: kuscience-logo.pdf used on input line 403.
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 413.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 428.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [21
 
 ]
 File: kuscience-logo.pdf Graphic file (type pdf)
  <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 417.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 448.
 (pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
  [22
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+
+<use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 456.
+(pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
+ [23
+
+]
+File: kuscience-logo.pdf Graphic file (type pdf)
+ <use kuscience-logo.pdf>
+Package pdftex.def Info: kuscience-logo.pdf used on input line 460.
+(pdftex.def)             Requested size: 22.76228pt x 32.18547pt.
+ [24
 
 ]
 \tf@nav=\write6
@@ -1531,13 +1548,13 @@ Package pdftex.def Info: kuscience-logo.pdf used on input line 417.
 
 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 463.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 463.
 (./beamer.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 463.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 463.
 Package rerunfilecheck Info: File `beamer.out' has not changed.
-(rerunfilecheck)             Checksum: FE5A6578A7786F543155E7713354B5F7;226.
+(rerunfilecheck)             Checksum: 881B3CD7633E60EF6A0ECB423D52703E;271.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1546,13 +1563,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 420.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 463.
  ) 
 Here is how much of TeX's memory you used:
- 19613 strings out of 493029
- 365981 string characters out of 6136234
- 453644 words of memory out of 5000000
- 22590 multiletter control sequences out of 15000+600000
+ 19640 strings out of 493029
+ 366285 string characters out of 6136234
+ 454135 words of memory out of 5000000
+ 22605 multiletter control sequences out of 15000+600000
  23255 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,55p,412b,805s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1577,17 +1594,18 @@ e1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on beamer.pdf (22 pages, 349756 bytes).
+mssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on beamer.pdf (24 pages, 366434 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
- 686 compressed objects within 7 object streams
- 60 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 826 PDF objects out of 1000 (max. 8388607)
+ 753 compressed objects within 8 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

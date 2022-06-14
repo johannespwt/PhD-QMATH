@@ -80,12 +80,13 @@
 
 \logo{\includegraphics[width=0.8cm]{kuscience-logo}}
 %\useoutertheme{infolines} 
-\title{The ground state energy of dilute 1d many-body quantum systems}
+\title{The ground state energy of 1D dilute many-body quantum systems}
 \subtitle{}
 \author{Johannes Agerskov\\\vspace{0.2 cm}
-	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej}}
+	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej\\
+		arXiv:2203.17183}}
 \institute{QMATH \\ University of Copenhagen}
-\date{January 12th 2022}
+\date{June 15th 2022}
 
 \setbeamercovered{invisible}
 
@@ -124,7 +125,7 @@
 
 \begin{frame}
 	\frametitle{Model}
-	We consider a many-body system of Bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $\begin{equation}
+	We consider a many-body system of bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $, with $ v=v_{\text{reg}}+v_{\text{h.c.}} $\begin{equation}
 	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\R^d)^{\otimes_{\text{sym}} N}.
 	\end{equation}
 	The ground state energy is defined by 
@@ -159,12 +160,15 @@
 	\begin{block}{}
 		For the remaning of the talk, $ d=1 $.
 		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
-			Let $ v\in L^{1}+\text{h.c.p} $ with $ v\geq0 $ and $ \text{range}(v)=R_0 $. Let $ R=\max(2\abs{a},R_0) $, then for $ \rho R\ll 1  $ and $ N^{-1}=\mathcal{O}(\rho R)^{6/5} $ we have \begin{equation}
-			E(N,L)=E_0\left(1+2\rho a+ \mathcal{O}\left((\rho R)^{6/5}\right)\right),
-			\end{equation} 
-			where $ E_0 $ is the free Fermi ground state energy\begin{equation}
-			E_0=N\frac{\pi^2}{3}\rho^2\left(1+\mathcal{O}(N^{-1})\right).
+			\label{TheoremMain}
+			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Write $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+			\begin{equation}
+			\label{result}
+			E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
+			\mathcal{O}
+			\left((\rho|a|)^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right),
 			\end{equation}
+			where $a$ is the scattering length of $v$.
 		\end{theorem}
 	\end{block}	
 \end{frame}
@@ -178,7 +182,7 @@
 		\end{equation}
 		Scattering length is $ a=R $.
 	\end{block}
-	\begin{block}{Lieb Liniger model}
+	\begin{block}{Lieb-Liniger model}
 		Behaves asymptotically like
 		\begin{equation}
 		E_{LL}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho/c+\mathcal{O}\left((\rho/c)^2\right)\right),
@@ -202,13 +206,13 @@
 \begin{frame}
 	\frametitle{Trial state}
 	\begin{block}{}
-		Trial state has to encapture free Fermi energy, as well as correction due to scattering processes. Hence we consider $$
+		Trial state has to encapture free Fermi energy, as well as corrections due to scattering processes. Hence we consider $$
 		\Psi(x)=\begin{cases}
-		\omega(\rr(x))\frac{\tilde{\Psi}_F(x)}{\rr(x)}& \text{if }\rr(x)<b\\
-		\tilde{\Psi}_F(x)&\text{if }\rr(x)\geq b,
+		\omega(\rr(x))\frac{\abs{\Psi_F(x)}}{\rr(x)}& \text{if }\rr(x)<b\\
+		\abs{\Psi_F(x)}&\text{if }\rr(x)\geq b,
 		\end{cases}
 		$$
-		where $ \omega $ is the suitably normalized solution to the two-body scattering equation,  $ \tilde{\Psi}_F\coloneqq \abs{\Psi_F} $, and $ \rr(x)\coloneqq \min_{i<j}(\abs{x_i-x_j}) $ is uniquely defined a.e.
+		where $ \omega $ is the suitably normalized solution to the two-body scattering equation,  $\Psi_F$ is the free Fermi ground state, and $ \rr(x)\coloneqq \min_{i<j}(\abs{x_i-x_j}) $ is uniquely defined a.e.
 	\end{block}	
 \end{frame}
 
@@ -255,7 +259,7 @@
 	\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a} +\text{const. } \left[\frac{1}{N}+ N (b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right]\right)}{\norm{\Psi}^2},
 	\end{equation}	
-	where $ v_{\text{reg}}\in L^{1} $ is $ v $ with any hard core removed.
+	where  the finite measure $ v_{\text{reg}} $ is $v$ with any hard core removed.
 		By lemma \ref{Lemma rho2 bound} we know $ \norm{\Psi}^2\geq 1-\text{const. }N(\rho b)^3 $.
 	\end{block}	
 	\begin{block}{Localization}
@@ -273,9 +277,14 @@
 
 Optimizing in $ M $ and choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 
-\begin{equation}
-E(N,L)\leq E_0\left(1+2\rho a+ \mathcal{O}\left(\left[(\rho \abs{a})^{6/5}+(\rho R_0)^{3/2}\right]\left(1+\rho b^2\int v_{\text{reg}}\right)\right)\right).
-\end{equation}
+\begin{mproposition}[Upper bound Theorem \ref{TheoremMain}]
+	\label{PropositionUpperBound}
+ There exists a constant $C_\text{U}>0$ such that for $\rho|a|$, $\rho R_0\leq C_U^{-1}$, the ground state energy $E^D(N,L)$ satisfies
+	\small{\begin{equation}
+	\label{equpper}
+	E^D(N,L)\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a + C_\text{U}\left((\rho\abs{a})^{6/5}+(\rho R_0)^{3/2}+N^{-1}\right)\right).
+	\end{equation}}
+\end{mproposition}
 
 	\end{block}
 	
@@ -317,13 +326,13 @@ E(N,L)\leq E_0\left(1+2\rho a+ \mathcal{O}\left(\left[(\rho \abs{a})^{6/5}+(\rho
 		\vspace{-0.5cm}
 	\begin{mlemma}[Dyson]\label{LemmaDyson} Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in H^1(\R) $, then for any interval $ \mathcal{I}\ni 0 $ 
 		\begin{equation}
-		\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{2}{R-a}\left(\delta_R+\delta_{-R}\right)\abs{\varphi}^2,
+		\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{1}{R-a}\left(\delta_R+\delta_{-R}\right)\abs{\varphi}^2,
 		\end{equation}
 		where $ a $ is the s-wave scattering length.
 	\end{mlemma}
 	Hence we have, denoting $ \mathfrak{r}_{i}(x)=\min_j(\abs{x_i-x_j}) $ \begin{equation}
 	\begin{aligned}
-	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\chi_{\mathfrak{r}_i(x)>R}+\sum_{i}\frac{2}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2.
+	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\chi_{\mathfrak{r}_i(x)>R}+\sum_{i}\frac{1}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2.
 	\end{aligned}
 	\end{equation}	
 	\end{block}	
@@ -394,22 +403,56 @@ E(N,L)\leq E_0\left(1+2\rho a+ \mathcal{O}\left(\left[(\rho \abs{a})^{6/5}+(\rho
 			E^{N}(n,\ell)-\mu n \geq E^{N}(n_0,\ell)-\mu n_0.
 			\end{equation}
 		\end{mlemma}
-		\begin{theorem}[Lower bound] Let $ E^N(N,L) $ denote the ground state energy of $ \mathcal{E} $ with Neumann boundary conditions. Then for $ \rho R \ll 1 $
+		\begin{mproposition}[Lower bound Theorem \ref{TheoremMain}]
+			\label{PropositionLowerBound}
+			There exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
 			\begin{equation}
-			E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a-\mathcal{O}\left((\rho R)^{6/5}\right)\right).
+			\label{eqlower}
+			E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a-C_\text{L}\left((\rho\abs{a})^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right).
 			\end{equation}
-		\end{theorem}
+		\end{mproposition}
 	\end{block}	
 \end{frame}
+\section{Extensions}
 \begin{frame}
-	\frametitle{Fermions}
-	For fermions, $ \tilde{\Psi}_F=\Psi_F $, $ \omega $ is the p-wave scattering solution, and  $ a $ in Dyson's lemma is replaced by $ a_p $, \ie the p-wave scattering length. Hence we find the following theorem:
-	\begin{theorem}[Fermions]
-		Let $ v\in L^{1}+\text{h.c.p} $ with $ \text{range}(v)=R_0 $. Let $ R=\max(2 a_p,R_0) $, then for $ \rho R\ll 1  $ and $ N^{-1}=\mathcal{O}(\rho R)^{6/5} $ we have \begin{equation}
-		E_F(N,L)=E_0\left(1+2\rho a_p+ \mathcal{O}\left((\rho R)^{6/5}\right)\right),
-		\end{equation} 
-	\end{theorem}
-	This is consistent with lower bound $ E_F(N,L)\geq E_0 $, since $ a_p\geq 0 $.
+	\frametitle{Spinless/spin-aligned fermions}
+	Spinless Fermions are unitarily equivalent to Bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
+	\begin{theorem}[spinless fermions]\label{TheoremFermion}
+		Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+		\begin{equation}
+		E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
+		\end{equation}
+		where $ a_o\geq0 $ is the odd wave scattering length of $v$. 
+	\end{theorem} 
+	This is consistent with lower bound $ E_F(N,L)\geq E_0 $, since $ a_o\geq 0 $.
+\end{frame}
+
+\begin{frame}
+	\frametitle{A conjecture for spin-1/2 fermions}
+	Two solvable model for spin-1/2 fermion:
+	\begin{block}{The hard core gas}
+		Ground state energy is independent of
+		so \begin{equation}
+		E_{\text{hard core}}(N,L)=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\approx E_0(1+2\rho R).
+		\end{equation}
+		Scattering length is $ a_e=a_o=R $.
+	\end{block}
+	\begin{block}{Yang-Gaudin model}
+		Is the spin-1/2 version of the LL model, \ie $ H_{YG}=H_{LL} $.
+		 Behaves asymptotically like
+		 \begin{equation}
+		 E_{YG}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho\ln(2)/c+\mathcal{O}\left((\rho/c)^2\right)\right),
+		 \end{equation}
+		 with scattering length $ a_e=-\frac{2}{c} $, $ a_o=0 $.
+		\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{A conjecture for spin-1/2 fermions}
+	Based on the two solvable cases, we expect \small\begin{equation}
+	\begin{aligned}
+	E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big)
+	\end{aligned}
+	\end{equation}
 \end{frame}
 
 \begin{frame}

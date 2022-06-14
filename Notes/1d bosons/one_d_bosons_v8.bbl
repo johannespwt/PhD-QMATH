@@ -8,6 +8,11 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{1}
 
+\bibitem{lieb2006mathematics}
+E.H. Lieb, R.~Seiringer, J.P. Solovej, and J.~Yngvason, \emph{The mathematics
+  of the bose gas and its condensation}, Oberwolfach Seminars, Birkh{\"a}user
+  Basel, 2006.
+
 \bibitem{PhysRev.130.1605}
 Elliott~H. Lieb and Werner Liniger, \emph{Exact analysis of an interacting bose
   gas. i. the general solution and the ground state}, Phys. Rev. \textbf{130}

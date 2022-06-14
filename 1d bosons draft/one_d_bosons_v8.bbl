@@ -1,0 +1,250 @@
+ \newcommand{\noop}[1]{}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{10}
+
+\bibitem{andersen2002ground}
+J~O Andersen, \emph{Ground state pressure and energy density of an interacting
+  homogeneous {B}ose gas in two dimensions}, The European Physical Journal
+  B-Condensed Matter and Complex Systems \textbf{28} (2002), no.~4, 389--396.
+
+\bibitem{astrakharchik2010low}
+GE~Astrakharchik, J~Boronat, IL~Kurbakov, Yu~E Lozovik, and F~Mazzanti,
+  \emph{Low-dimensional weakly interacting bose gases: Nonuniversal equations
+  of state}, Physical Review A \textbf{81} (2010), no.~1, 013612.
+
+\bibitem{basti2021new}
+Giulia Basti, Serena Cenatiempo, and Benjamin Schlein, \emph{A new second-order
+  upper bound for the ground state energy of dilute {B}ose gases}, Forum of
+  Mathematics, Sigma, vol.~9, Cambridge University Press, 2021.
+
+\bibitem{batchelor2006one}
+Murray~T Batchelor, X-W Guan, and Norman Oelkers, \emph{One-dimensional
+  interacting anyon gas: low-energy properties and {H}aldane exclusion
+  statistics}, Physical Review Letters \textbf{96} (2006), no.~21, 210402.
+
+\bibitem{bloch2008many}
+Immanuel Bloch, Jean Dalibard, and Wilhelm Zwerger, \emph{Many-body physics
+  with ultracold gases}, Reviews of modern physics \textbf{80} (2008), no.~3,
+  885.
+
+\bibitem{bogoliubov1947theory}
+N~N Bogoliubov, \emph{On the theory of superfluidity}, Proc. Inst. Math. Kiev
+  \textbf{9} (1947), 89--103, Rus. Trans Izv. Akad. Nauk Ser. Fiz. 11, 77
+  (1947), Eng. Trans. J. Phys. (USSR), 11, 23 (1947).
+
+\bibitem{bonkhoff2021bosonic}
+Martin Bonkhoff, Kevin J{\"a}gering, Sebastian Eggert, Axel Pelster, Michael
+  Thorwart, and Thore Posske, \emph{Bosonic continuum theory of one-dimensional
+  lattice anyons}, Physical Review Letters \textbf{126} (2021), no.~16, 163201.
+
+\bibitem{calabrese2007correlation}
+Pasquale Calabrese and Jean-S{\'e}bastien Caux, \emph{Correlation functions of
+  the one-dimensional attractive {B}ose gas}, Physical Review Letters
+  \textbf{98} (2007), no.~15, 150403.
+
+\bibitem{colcelli2018deviations}
+Andrea Colcelli, Giuseppe Mussardo, and Andrea Trombettoni, \emph{Deviations
+  from off-diagonal long-range order in one-dimensional quantum systems}, EPL
+  (Europhysics Letters) \textbf{122} (2018), no.~5, 50006.
+
+\bibitem{de2019beyond}
+Giulia De~Rosi, Pietro Massignan, Maciej Lewenstein, and Grigori~E
+  Astrakharchik, \emph{Beyond-luttinger-liquid thermodynamics of a
+  one-dimensional bose gas with repulsive contact interactions}, Physical
+  Review Research \textbf{1} (2019), no.~3, 033083.
+
+\bibitem{dyson1957ground}
+Freeman~John Dyson, \emph{Ground-state energy of a hard-sphere gas}, Physical
+  Review \textbf{106} (1957), no.~1, 20.
+
+\bibitem{fournais2019ground}
+S{\o}ren Fournais, Marcin Napi{\'o}rkowski, Robin Reuvers, and Jan~Philip
+  Solovej, \emph{Ground state energy of a dilute two-dimensional {B}ose gas
+  from the bogoliubov free energy functional}, Journal of Mathematical Physics
+  \textbf{60} (2019), no.~7, 071903.
+
+\bibitem{fournais2020energy}
+S{\o}ren Fournais and Jan~Philip Solovej, \emph{The energy of dilute {B}ose
+  gases}, Annals of Mathematics \textbf{192} (2020), no.~3, 893--976.
+
+\bibitem{fournais2021energy}
+\bysame, \emph{The energy of dilute {B}ose gases {II}: The general case}, arXiv
+  preprint arXiv:2108.12022 (2021).
+
+\bibitem{gaudin1967systeme}
+M~Gaudin, \emph{Un systeme a une dimension de fermions en interaction}, Physics
+  Letters A \textbf{24} (1967), no.~1, 55--56.
+
+\bibitem{girardeau1960relationship}
+Marvin Girardeau, \emph{Relationship between systems of impenetrable bosons and
+  fermions in one dimension}, Journal of Mathematical Physics \textbf{1}
+  (1960), no.~6, 516--523.
+
+\bibitem{girardeau2006ground}
+MD~Girardeau, \emph{Ground and excited states of spinor {F}ermi gases in tight
+  waveguides and the {L}ieb-{L}iniger-{H}eisenberg model}, Physical Review
+  Letters \textbf{97} (2006), no.~21, 210401.
+
+\bibitem{gorlitz2001realization}
+A~G{\"o}rlitz, JM~Vogels, AE~Leanhardt, C~Raman, TL~Gustavson, JR~Abo-Shaeer,
+  AP~Chikkatur, S~Gupta, S~Inouye, T~Rosenband, et~al., \emph{Realization of
+  {B}ose-{E}instein condensates in lower dimensions}, Physical Review Letters
+  \textbf{87} (2001), no.~13, 130402.
+
+\bibitem{greiner2001exploring}
+Markus Greiner, Immanuel Bloch, Olaf Mandel, Theodor~W H{\"a}nsch, and Tilman
+  Esslinger, \emph{Exploring phase coherence in a 2{D} lattice of
+  {B}ose-{E}instein condensates}, Physical Review Letters \textbf{87} (2001),
+  no.~16, 160405.
+
+\bibitem{guan2011polylogs}
+Xi-Wen Guan and Murray~T Batchelor, \emph{Polylogs, thermodynamics and scaling
+  functions of one-dimensional quantum many-body systems}, Journal of Physics
+  A: Mathematical and Theoretical \textbf{44} (2011), no.~10, 102001.
+
+\bibitem{guan2011analytical}
+Xi-Wen Guan and Zhong-Qi Ma, \emph{Analytical study of the fredholm equations
+  for 1{D} two-component {F}ermions with delta-function interaction}, arxiv:
+  1110.2821 (2011).
+
+\bibitem{guan2012one}
+Xi-Wen Guan, Zhong-Qi Ma, and Brendan Wilson, \emph{One-dimensional
+  multicomponent fermions with $\delta$-function interaction in strong-and
+  weak-coupling limits: $\kappa$-component fermi gas}, Physical Review A
+  \textbf{85} (2012), no.~3, 033633.
+
+\bibitem{hao2008ground}
+Yajiang Hao, Yunbo Zhang, and Shu Chen, \emph{Ground-state properties of
+  one-dimensional anyon gases}, Physical Review A \textbf{78} (2008), no.~2,
+  023631.
+
+\bibitem{jiang2015understanding}
+Yu-Zhu Jiang, Yang-Yang Chen, and Xi-Wen Guan, \emph{Understanding many-body
+  physics in one dimension from the {L}ieb--{L}iniger model}, Chinese Physics B
+  \textbf{24} (2015), no.~5, 050311.
+
+\bibitem{kundu1999exact}
+Anjan Kundu, \emph{Exact solution of double $\delta$ function bose gas through
+  an interacting anyon gas}, Physical Review Letters \textbf{83} (1999), no.~7,
+  1275.
+
+\bibitem{lee1957eigenvalues}
+Tsin~D Lee, Kerson Huang, and Chen~N Yang, \emph{Eigenvalues and eigenfunctions
+  of a {B}ose system of hard spheres and its low-temperature properties},
+  Physical Review \textbf{106} (1957), no.~6, 1135.
+
+\bibitem{leinaas1977theory}
+Jon~M Leinaas and Jan Myrheim, \emph{On the theory of identical particles}, Il
+  Nuovo Cimento B (1971-1996) \textbf{37} (1977), no.~1, 1--23.
+
+\bibitem{lenard1964momentum}
+Andrew Lenard, \emph{Momentum distribution in the ground state of the
+  one-dimensional system of impenetrable bosons}, Journal of Mathematical
+  Physics \textbf{5} (1964), no.~7, 930--943.
+
+\bibitem{lieb2006mathematics}
+E.H. Lieb, R.~Seiringer, J.P. Solovej, and J.~Yngvason, \emph{The {M}athematics
+  of the {B}ose {G}as and its {C}ondensation}, Oberwolfach Seminars,
+  Birkh{\"a}user Basel, 2006.
+
+\bibitem{lieb1998ground}
+Elliolt~H Lieb and Jakob Yngvason, \emph{Ground state energy of the low density
+  {B}ose gas}, The Stability of Matter: From Atoms to Stars, Springer, 1998,
+  pp.~755--758.
+
+\bibitem{lieb1962theory}
+Elliott Lieb and Daniel Mattis, \emph{Theory of ferromagnetism and the ordering
+  of electronic energy levels}, Physical Review \textbf{125} (1962), no.~1,
+  164--172.
+
+\bibitem{lieb1963exact}
+Elliott~H Lieb and Werner Liniger, \emph{Exact analysis of an interacting bose
+  gas. i. the general solution and the ground state}, Physical Review
+  \textbf{130} (1963), no.~4, 1605.
+
+\bibitem{lieb2003one}
+Elliott~H Lieb, Robert Seiringer, and Jakob Yngvason, \emph{One-dimensional
+  bosons in three-dimensional traps}, Physical Review Letters \textbf{91}
+  (2003), no.~15, 150401.
+
+\bibitem{lieb2004one}
+\bysame, \emph{One-dimensional behavior of dilute, trapped {B}ose gases},
+  Communications in mathematical physics \textbf{244} (2004), no.~2, 347--393.
+
+\bibitem{lieb2001ground}
+Elliott~H Lieb and Jakob Yngvason, \emph{The ground state energy of a dilute
+  two-dimensional {B}ose gas}, Journal of Statistical Physics \textbf{103}
+  (2001), no.~3, 509--526.
+
+\bibitem{mcguire1964study}
+James~B McGuire, \emph{Study of exactly soluble one-dimensional {$N$}-body
+  problems}, Journal of Mathematical Physics \textbf{5} (1964), no.~5,
+  622--636.
+
+\bibitem{mora2009ground}
+Christophe Mora and Yvan Castin, \emph{Ground state energy of the
+  two-dimensional weakly interacting {B}ose gas: first correction beyond
+  {B}ogoliubov theory}, Physical Review Letters \textbf{102} (2009), no.~18,
+  180404.
+
+\bibitem{moritz2003exciting}
+Henning Moritz, Thilo St{\"o}ferle, Michael K{\"o}hl, and Tilman Esslinger,
+  \emph{Exciting collective oscillations in a trapped 1{D} gas}, Physical
+  Review Letters \textbf{91} (2003), no.~25, 250402.
+
+\bibitem{olshanii1998atomic}
+Maxim Olshanii, \emph{Atomic scattering in the presence of an external
+  confinement and a gas of impenetrable bosons}, Physical Review Letters
+  \textbf{81} (1998), no.~5, 938.
+
+\bibitem{posske2017second}
+Thore Posske, Bj{\"o}rn Trauzettel, and Michael Thorwart, \emph{Second
+  quantization of {L}einaas-{M}yrheim anyons in one dimension and their
+  relation to the lieb-liniger model}, Physical Review B \textbf{96} (2017),
+  no.~19, 195422.
+
+\bibitem{robinson2014thermodynamic}
+D.W. Robinson, \emph{The {T}hermodynamic {P}ressure in {Q}uantum {S}tatistical
+  {M}echanics}, Lecture Notes in Physics, Springer Berlin Heidelberg, 1971.
+
+\bibitem{schick1971two}
+M~Schick, \emph{Two-dimensional system of hard-core bosons}, Physical Review A
+  \textbf{3} (1971), no.~3, 1067.
+
+\bibitem{schreck2001quasipure}
+F~Schreck, Lev Khaykovich, KL~Corwin, G~Ferrari, Thomas Bourdel, Julien
+  Cubizolles, and Christophe Salomon, \emph{Quasipure bose-einstein condensate
+  immersed in a {F}ermi sea}, Physical Review Letters \textbf{87} (2001),
+  no.~8, 080403.
+
+\bibitem{seiringer2008lieb}
+Robert Seiringer and Jun Yin, \emph{The {L}ieb-{L}iniger model as a limit of
+  dilute bosons in three dimensions}, Communications in mathematical physics
+  \textbf{284} (2008), no.~2, 459--479.
+
+\bibitem{sutherland1968further}
+Bill Sutherland, \emph{Further results for the many-body problem in one
+  dimension}, Physical Review Letters \textbf{20} (1968), no.~3, 98.
+
+\bibitem{vaidya1979one}
+Hemant~G Vaidya and CA~Tracy, \emph{One particle reduced density matrix of
+  impenetrable bosons in one dimension at zero temperature}, Journal of
+  Mathematical Physics \textbf{20} (1979), no.~11, 2291--2312.
+
+\bibitem{yang1967some}
+Chen-Ning Yang, \emph{Some exact results for the many-body problem in one
+  dimension with repulsive delta-function interaction}, Physical Review Letters
+  \textbf{19} (1967), no.~23, 1312.
+
+\bibitem{yau2009second}
+Horng-Tzer Yau and Jun Yin, \emph{The second order upper bound for the ground
+  energy of a {B}ose gas}, Journal of Statistical Physics \textbf{136} (2009),
+  no.~3, 453--503.
+
+\end{thebibliography}

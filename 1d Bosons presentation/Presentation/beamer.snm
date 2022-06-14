@@ -1,5 +1,9 @@
+\beamer@slide {TheoremMain}{6}
+\beamer@slide {result}{6}
 \beamer@slide {Lemma rho2 bound}{11}
 \beamer@slide {LemmaDensityBounds}{11}
+\beamer@slide {PropositionUpperBound}{13}
+\beamer@slide {equpper}{13}
 \beamer@slide {LemmaLL-LowerBound}{15}
 \beamer@slide {LemmaDyson}{16}
 \beamer@slide {LemmaNormLoss}{18}
@@ -8,3 +12,6 @@
 \beamer@slide {PropositionLowerBoundSpecN}{19}
 \beamer@slide {CorollaryLowerBoundSpecN}{19}
 \beamer@slide {LemmaLocalizationFbound}{20}
+\beamer@slide {PropositionLowerBound}{20}
+\beamer@slide {eqlower}{20}
+\beamer@slide {TheoremFermion}{21}

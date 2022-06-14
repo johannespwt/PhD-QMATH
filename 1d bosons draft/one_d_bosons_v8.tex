@@ -1,0 +1,1200 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage[english]{babel} 
+\usepackage{dsfont}
+
+
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\usepackage{fancyhdr}
+
+
+%Orcid ID
+\usepackage{orcidlink}
+
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathcal D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\renewcommand{\braket}[1]{\left\langle#1\right\rangle}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+\newcommand{\rr}{\mathcal{R}}
+
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+\linespread{1.3}
+
+
+\author{Johannes Agerskov\textsuperscript{1}\orcidlink{0000-0002-0533-3221}, Robin Reuvers\textsuperscript{2}\orcidlink{0000-0003-2949-3614}, and Jan Philip Solovej\textsuperscript{1}\orcidlink{0000-0002-0244-1497}}
+
+\date{
+1. Department of Mathematics, University of Copenhagen, Universitetsparken 5, DK-2100 Copenhagen \O, Denmark
+	\\
+2. Universit\`{a} degli Studi Roma Tre, Dipartimento di Matematica e Fisica, L.go S. L. Murialdo 1, 00146 Roma, Italy\\
+	\today}
+\title{Ground state energy of dilute Bose gases in 1D}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the ground state energy of a gas of 1D bosons with density $\rho$, interacting through a general, repulsive 2-body potential with scattering length $a$, in the dilute limit $\rho |a|\ll1$. The first terms in the expansion of the thermodynamic energy density are $\pi^2\rho^3/3(1+2\rho a)$, where the leading order is the 1D free Fermi gas. This result covers the Tonks--Girardeau limit of the Lieb--Liniger model as a special case, but given the possibility that $a>0$, it also applies to potentials that differ significantly from a delta function. We include extensions to spinless fermions and 1D anyonic symmetries, and discuss an application to confined 3D gases.
+\end{abstract}
+
+
+\section{Introduction}
+The ground state energy of interacting, dilute Bose gases in 2 and 3 dimensions has long been a topic of study. Usually, a Hamiltonian of the form 
+\begin{equation}
+\label{Hgeneral}
+-\sum^N_{i=1}\Delta_{x_i}+\sum_{1\leq i<j\leq N}v(x_i-x_j)
+\end{equation}
+is considered ($\hbar=2m=1$), in a box $[0,L]^d$ of dimension $d=2,3$, and with a repulsive 2-body interaction $v\geq0$ between the bosons. Diluteness is defined by saying the density $\rho=N/L^d$ of the gas is low compared to the scale set by the scattering length $a$ of the potential (see Appendix C in \cite{lieb2006mathematics} for a discussion, and also Section \ref{SecProofidea} for $d=1$ below). That is, $\rho a^2\ll1$ in 2D, and $\rho a^3\ll1$ in 3D.
+
+In the thermodynamic limit, the diluteness assumption allows for surprisingly general expressions for the ground state energy. Take, for example, the famous energy expansion to second order in $\rho a^3\ll1$ by Lee--Huang--Yang \cite{lee1957eigenvalues} derived for 3D bosons with a hard core of diameter $a$,
+\begin{equation}
+\label{result3D}
+4\pi N\rho^{2/3} (\rho a^3)^{1/3}\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o\left(\sqrt{\rho a^3}\right)\right).
+\end{equation}
+After early rigorous work by Dyson \cite{dyson1957ground}, Lieb and Yngvason \cite{lieb1998ground} proved that the leading term in this expansion holds for a very general class of potentials $v$, and the same generality was proved for the second-order term \cite{yau2009second,fournais2020energy,basti2021new,fournais2021energy}.
+
+The situation is similar in 2D. The leading order in the energy expansion for $\rho a^2\ll1$ derived by Schick \cite{schick1971two} was proved rigorously by Lieb and Yngvason \cite{lieb2001ground}. A second-order term has also been derived and is equally predicted to be general \cite{andersen2002ground,mora2009ground,fournais2019ground}, resulting in the expansion
+\begin{equation}
+\label{result2D}
+\frac{4\pi N\rho}{\abs{\ln(\rho a^2)}}\left(1-\frac{\ln{\abs{\ln(\rho a^2)}}}{\abs{\ln(\rho a^2)}}+\frac{C}{\abs{\ln(\rho a^2)}}+o\left(\abs{\ln(\rho a^2)}^{-1}\right)\right),
+\end{equation}
+for some constant $C$.
+
+Remarkably, it seems the existence of a similar, general expansion in 1D was never studied in similar depth. It was, however, suggested in \cite{astrakharchik2010low} by considering two exactly-known special cases, as we will do as well now.
+
+The first is the famous Lieb--Liniger model \cite{lieb1963exact}. Many of its features can be calculated explicitly with Bethe ansatz wave functions, but for our purpose we return to something basic: the ground state energy.
+Consider Lieb and Liniger's Hamiltonian for a gas of $N$ one-dimensional bosons on an interval of length $L$ (periodic b.c.), with a repulsive point interaction of strength $2c>0$, 
+\begin{equation}
+\label{LLmodel}
+-\sum^N_{i=1}\partial^2_{x_i}+2c\sum_{1\leq i<j\leq N}\delta(x_i-x_j).
+\end{equation}
+The ground state can be found explicitly \cite{lieb1963exact}, and in the thermodynamic limit $L\to\infty$ with density $\rho=N/L$ fixed, its energy is
+\begin{equation}
+\label{LLtherm}
+E_{\text{LL}}=N\rho^2 e(c/\rho),
+\end{equation}
+where $e(c/\rho)$ is described by integral equations.
+Since $c/\rho$ is the only relevant parameter, diluteness, or low density $\rho$, should imply $c/\rho\gg1$. In this case, the ground state energy can be expanded as (\cite{lieb1963exact}; see, for example, \cite{guan2011polylogs,jiang2015understanding}),
+\begin{equation}
+\label{LLenergy}
+E_{\text{LL}}=N\rho^2 e(c/\rho)=N\frac{\pi^2}{3}\rho^2\left(\left(1+2\frac{\rho}{c}\right)^{-2}+\mathcal{O}\left(\frac{\rho}{c}\right)^3\right).
+\end{equation}
+% E_{\text{LL}}=N\rho^2 e(c/\rho)=N\frac{\pi^2}{3}\rho^2\left(1-4\frac{\rho}{c}+\mathcal{O}(\rho/c)^2\right).
+Recall that the dilute limit is $\rho a^2\ll1$ in 2D and $\rho a^3\ll1$ in 3D. This seems easy to generalize to 1D, but it turns out the Lieb--Liniger potential $2c\delta$ has scattering length $a=-2/c$. That is, in 1D the scattering length can be negative even if the potential is positive, and we should be careful to define the dilute limit as $\rho|a|\ll1$. This then matches the limit $c/\rho\gg1$ mentioned above, and we can write $\eqref{LLenergy}$ as
+\begin{equation}
+\label{LLenergyina}
+\begin{aligned}
+E_{\text{LL}}&=N\frac{\pi^2}{3}\rho^2\left(\left(1-\rho a\right)^{-2}+\mathcal{O}(\rho a)^3\right)\\
+&=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+3(\rho a)^2+\mathcal{O}(\rho a)^3\right).
+\end{aligned}
+\end{equation}
+This expansion should now be a good candidate for the 1D equivalent of \eqref{result3D} and \eqref{result2D}. This is supported by the fact that 1D bosons with a hard core of diameter $a$ have an exact thermodynamic ground state energy of \cite{girardeau1960relationship,astrakharchik2010low}
+\begin{equation}
+\label{eqhardcore}
+N\frac{\pi^2}{3}\left(\frac{N}{L-Na}\right)^2=N\frac{\pi^2}{3}\rho^2\left(1-\rho a\right)^{-2}.
+\end{equation}
+This is the 1D free Fermi energy on an interval shortened by the space taken up by the hard cores (the ground state is of Girardeau type; see Remark \ref{remfermi} and the discussion of the Girardeau wave function in Section \ref{SecProofidea}).
+
+With two explicit examples satisfying \eqref{LLenergyina} to second order, it seems likely we can expect this expansion to be general \cite{astrakharchik2010low}, just like \eqref{result3D} and \eqref{result2D} in three and two dimensions. Indeed, our main result confirms the validity of \eqref{LLenergyina} to first order, for a wide class of interaction potentials.
+
+\subsection{Main theorem}
+\label{secMain}
+Throughout the paper, we will assume that the 2-body potential $v$ is a symmetric and translation-invariant measure with a finite range, $\supp(v)\subset[-R_0,R_0]$. Furthermore, we assume $ v=v_{\text{reg}}+v_{\text{h.c.}}$, where $ v_{\text{reg}}$ is a finite measure, and $ v_{\text{h.c.}} $ is a positive linear combination of `hard-core' potentials of the form 
+\begin{equation}
+v_{[x_1,x_2]}(x):=\begin{cases*}
+\ \infty& \phantom{when} $|x|\in [x_1,x_2]$\\
+\ 0 & \phantom{when} \text{otherwise}
+\end{cases*},
+\end{equation}
+for $0\leq x_1\leq x_2\leq R_0$.\footnote{Note we allow $0\leq x_1=x_2\leq R_0$, by which we mean that impenetrable delta potentials of the form $h(\delta_{-x_1}+\delta_{x_1})$ with $h\to\infty$ can freely be included. This amounts to a zero boundary condition at $|x|=x_1$.}
+We will consider the $N$-body Hamiltonian 
+\begin{equation}
+\label{H_N}
+H_N=-\sum^N_{i=1}\partial^2_{x_i}+\sum_{1\leq i<j\leq N}v(x_i-x_j)
+\end{equation}
+on the interval $[0,L]$ with any choice of (local, self-adjoint) boundary conditions. Let $\dom{H_N}$ be the appropriate bosonic domain of symmetric wave functions with these boundary conditions. The ground state energy is then
+\begin{equation}
+\label{vari}
+E(N,L):=\inf_{\substack{\Psi\in\dom{H_N}\\\|\Psi\|=1}}\bra{\Psi}H_N\ket{\Psi}=\inf_{\substack{\Psi\in\dom{H_N}\\\|\Psi\|=1}}\mathcal{E}(\Psi),
+\end{equation}
+with energy functional
+\begin{equation}
+\mathcal{E}(\Psi)=\int_{[0,L]^N}\sum_{i=1}^{N}\abs{\partial_i\Psi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi}^2.
+\end{equation}
+
+\begin{theorem}[bosons]
+\label{TheoremMain}
+Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Write $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+\begin{equation}
+\label{result}
+E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
+\mathcal{O}
+\left((\rho|a|)^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right),
+\end{equation}
+where $a$ is the scattering length of $v$ (see Lemma \ref{lemscatlength} below). A precise expression for the error is given in the upper and lower bounds \eqref{equpper} and \eqref{eqlower}.
+\end{theorem}
+To obtain this result, we prove an upper bound in the form of Proposition \ref{PropositionUpperBound} in Section \ref{SecUpperbound}, and a matching lower bound in the form of Proposition \ref{PropositionLowerBound} in Section \ref{SecLowerbound}. We use Dirichlet boundary conditions for the upper bound and Neumann boundary conditions for the lower bound, as these produce the highest and lowest ground state energy respectively. This way, Theorem \ref{TheoremMain} holds for a wide range of boundary conditions. 
+
+\begin{remark}
+\label{remfermi}
+As a special case, Theorem \ref{TheoremMain} covers the ground state energy expansion \eqref{LLenergy} of the Lieb--Liniger model \eqref{LLmodel} in the limit $c/\rho\gg1$, as discussed in the introduction. This is known as the Tonks--Girardeau limit. Crucially, in this limit, the leading order term is the energy of the 1D free Fermi gas $N\pi^2/3\rho^2$, as first understood by Girardeau \cite{girardeau1960relationship} (see also the discussion around \eqref{fermisolution} and \eqref{girardeausolution} below).\footnote{Note that Girardeau studied the $c/\rho\to\infty$ case before Lieb and Liniger, who then generalized his work to obtain and solve the complete Lieb-Liniger model \eqref{LLmodel}.} Theorem \ref{TheoremMain} shows this holds for general potentials as well. That means that the dilute limit in 1D is very different from that in two and three dimensions, where the zeroth-order term in the energy is that of a perfect condensate at zero momentum and the first-order term can be extracted using Bogoliubov theory \cite{bogoliubov1947theory}. In particular, the free Bose gas ($v=0$) in 1D cannot be considered dilute, because it has infinite $|a|$.  
+\end{remark}
+
+\begin{remark}
+An interesting feature of Theorem \ref{TheoremMain} is that the scattering length $a$ can be both positive and negative. In this sense, our result covers cases that do not necessarily resemble the Lieb--Liniger model, which always has a negative scattering length. We discuss this further in Section \ref{SecConfinement}. 
+
+Note that zero scattering length is also possible, which means the error in \eqref{result} cannot just be written in terms of $(\rho|a|)^s$ for some $s>1$, but that $(\rho R_0)^s$ also appears.
+\end{remark}
+
+
+
+
+\subsection{Proof strategy}
+\label{SecProofidea}
+The most important ingredient in our proof is the following lemma, which follows from straightforward variational calculus. It is based on work by Dyson on the 3D Bose gas \cite{dyson1957ground} and is present in Appendix C in \cite{lieb2006mathematics}.
+\begin{lemma}[The 2-body scattering solution and scattering length]
+\label{lemscatlength}
+Suppose $v$ is a repulsive interaction  $v=v_{\textnormal{h.c.}}+v_{\textnormal{reg}}$ as defined in the previous section (in particular $v$ is symmetric and $\supp(v)\subset[-R_0,R_0]$). Let $R>R_0$. For all $f\in H^1[-R,R]$ subject to $f(R)=f(-R)=1$,
+\begin{equation}
+\label{dyson1}
+\int^R_{-R}2|\partial_xf|^2+v(x)|f(x)|^2\diff x\geq \frac{4}{R-a}.
+\end{equation}
+There is a unique $f_0$ attaining the minimum energy: the scattering solution. It satisfies the scattering equation $\partial_x^2f_0=\frac12vf_0$ in the sense of distributions, and $f_0(x)=(x-a)/(R-a)$ for $x\in[R_0,R]$. The parameter $a$ is called the scattering length (this need not be positive in 1D). 
+\end{lemma}
+Similar lemmas play an important role in the understanding of the ground state energy expansions \eqref{result3D} and \eqref{result2D} in higher dimensions \cite{dyson1957ground,lieb1998ground,lieb2001ground}, but there are a number of things we need to do differently. These relate to the fermionic behaviour of the bosons in the limit $\rho|a|\ll1$ (see Remark \ref{remfermi} above). 
+
+What does this mean in practice? For the upper bound in Section \ref{SecUpperbound}, it suffices to find a suitable trial state by the variational principle \eqref{vari}. Successful trial states for dilute bosons in 2D and 3D are close to a pure condensate, but in 1D the state will have to be close to the free Fermi ground state obtained in the limit $\rho|a|\to0$. Here, we can rely on Girardeau's solution \cite{girardeau1960relationship} of the $c/\rho\to\infty$ case of the Lieb--Liniger model. In this limit, the bosons are impenetrable, since the delta function in \eqref{LLmodel} enforces a zero boundary condition whenever two bosons meet. The wave function is then found by minimizing the kinetic energy subject to this boundary condition. If we only consider the sector $0\leq x_1\leq\dots\leq x_N\leq L$ (which suffices by symmetry), this is exactly the free Fermi problem. For periodic boundary conditions on the interval $[0,L]$, the (unnormalized) free Fermi ground state is\footnote{This expression can be found by creating a Slater determinant of momentum eigenstates, and noting this is a Vandermonde determinant. See Section \ref{secfreefermi} for the calculation for Dirichlet boundary conditions.}
+\begin{equation}
+\label{fermisolution}
+\Psi^{\text{per}}_F(x_1,\dots,x_N)=\prod_{1\leq i<j\leq N}\sin\left(\pi\frac{x_i-x_j}{L}\right).
+\end{equation}
+Of course, the ground state for impenetrable bosons should be symmetric rather than antisymmetric, and to correctly extend it beyond $0\leq x_1\leq\dots\leq x_N\leq L$ we need to remove the signs,
+\begin{equation}
+\label{girardeausolution}
+\abs{\Psi^{\text{per}}_F}(x_1,\dots,x_N)=\prod_{1\leq i<j\leq N}\abs{\sin\left(\pi\frac{x_i-x_j}{L}\right)}.
+\end{equation}
+This is Girardeau's ground state for impenetrable bosons, and it still produces the free Fermi kinetic energy $N\pi^2/3\rho^2$ in the thermodynamic limit.\footnote{The wave functions $\Psi^{\text{per}}_F$ and $|\Psi^{\text{per}}_F|$ have the same energy and that is all we will need in this paper. However, their momentum distributions are very different. This is discussed further in Section \ref{SecOpenproblems}.\label{momremark}} 
+
+Returning to the problem of finding a good trial state, \eqref{girardeausolution} should be a good departure point. To account for the effect of the interaction potential, we should modify the $\sin(\pi(x_i-x_j)/L)$ terms in \eqref{girardeausolution} on the (small) scale set by $a$. Lemma \ref{lemscatlength}, and the scattering solution $f_0$, are designed to provide the right 2-body wave function in the presence of the potential, so it seems natural to replace the sine by
+\begin{equation}
+\label{trialidea}
+\begin{cases*}
+f_0(x)\sin(\pi b/L)& \phantom{when} $|x|\leq b$\\
+\sin(\pi(x_i-x_j)/L)& \phantom{when} $|x|> b$
+\end{cases*}
+\end{equation}
+on some suitable scale $\abs{a}\ll b\ll L$. This is the idea we rely upon for the upper bound proved in Section \ref{SecUpperbound}. 
+
+For the lower bound in Section \ref{SecLowerbound}, we also need a way to extract the leading order free Fermi term in the energy, and use Lemma \ref{lemscatlength} in combination with the known expansion \eqref{LLenergy} for the Lieb--Liniger model. Choosing a suitable $R>R_0$, the idea is that \eqref{dyson1} can be written as 
+\begin{equation}
+\label{eqidea}
+\int^{R}_{-R}2|\partial_x f|^2+v(x)|f(x)|^2\diff x\geq \frac{2}{R-a}\int (\delta_{R}(x)+\delta_{-{R}}(x))|f(x)|^2\diff x,
+\end{equation}
+thus lower bounding the kinetic and potential energy on $[-R,R]$ by a symmetric delta potential at radius $R$. Heuristically, we proceed by repeatedly applying \eqref{eqidea} to an $N$-body wave function $\Psi$, and to obtain the symmetric delta potential for any neighbouring pairs of bosons. Then---crucially---we throw away the regions where $|x_{i+1}-x_i|\leq R$ (this is inspired by a similar step in \cite{lieb2004one}). That should produce a lower bound since $v$ is repulsive. With these regions removed, the two delta functions at radius $|x_{i+1}-x_i|= R$ collapse into a single delta at $|x_{i+1}-x_i|= 0$, with value $4/(R-a)$. This gives the Lieb--Liniger model on a reduced interval, evaluated on some wave function, which can then be lower bounded using the Lieb--Liniger ground state energy  \eqref{LLenergy} (appropriately corrected for finite $N$, and the loss of norm of $\Psi$ from the thrown-out regions). 
+
+All this may seem rather radical, but the heuristics work out: starting with an interval of length $L$, we cut it back to length $L-(N-1)R$, so that the Lieb--Liniger expansion \eqref{LLenergy} with $c=2/(R-a)$ and new density $N/(L-(N-1)R)=\rho(1+\rho R+\dots)$ produce
+\begin{equation}
+\label{heurist}
+N\frac{\pi^2}{3}\rho^2(1+2\rho R+\dots)(1-2\rho(R-a)+\dots)=N\frac{\pi^2}{3}\rho^2(1+2\rho a+\dots).
+\end{equation}
+Crucially, we can show a priori that the ground state wave function has little weight in the regions that get thrown out, so that \eqref{heurist} is accurate. The rigorous procedure used to obtain the Lieb--Liniger model and the expansion \eqref{heurist} are outlined in Section \ref{SecLowerbound}. 
+
+
+
+
+\subsection{Spinless fermions and anyons}
+\label{SecOthersymmetries}
+The expansion in Theorem \ref{TheoremMain} generalizes to spinless fermions in 1D. Given the antisymmetry of the fermionic wave function, the result involves the odd-wave scattering length of $v$, obtained from Lemma \ref{lemscatlength} by imposing the antisymmetric boundary condition $f(R)=-f(-R)=1$.
+\begin{theorem}[spinless fermions]\label{TheoremFermion}
+Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before Theorem \ref{TheoremMain}. Define $\mathcal{D}_F(H_N)$ to be the appropriate domain of antisymmetric wave functions, and let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+\begin{equation}
+E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
+\end{equation}
+where $ a_o\geq0 $ is the odd wave scattering length of $v$. 
+\end{theorem}
+
+This theorem follows from Theorem \ref{TheoremMain} by using Girardeau's insight \cite{girardeau1960relationship} that fermions and impenetrable bosons in 1D are unitarily equivalent (and hence have the same energy). It suffices to know the wave function on a single sector $0\leq x_1\leq \dots\leq x_N\leq L$, after which we can extend to any other sector by adding the correct sign for either bosons or fermions (note any acceptable wave function is zero whenever $x_i=x_j$). Flipping these signs is exactly the nature of the unitary operator; see for example the equivalence between \eqref{fermisolution} and \eqref{girardeausolution} discussed above. Given that Theorem \ref{TheoremMain} holds for impenetrable bosons, we can apply it as long as we use a zero boundary condition at $x=0$ in Lemma \ref{lemscatlength}. By similar reasoning, this produces the same scattering length as using the fermionic boundary condition $f(R)=-f(-R)=1$ in Lemma \ref{lemscatlength}. Theorem \ref{TheoremFermion} is therefore a corollary of Theorem \ref{TheoremMain}.
+
+\begin{remark}[spin-$1/2$ fermions]
+ Consider the case of spin-$1/2$ fermions. If we study the usual, spin-independent Lieb--Liniger Hamiltonian \eqref{LLmodel}, the ground state will have a fixed total spin $S$. In fact, it is possible to study the ground state energy in each spin sector, and it will be monotone increasing in $S$ according to work by Lieb and Mattis \cite{lieb1962theory}. For each of these sectors, an explicit solution in terms of the Bethe ansatz exists \cite{yang1967some,gaudin1967systeme}. In certain cases, these can be expanded in the limit $c/\rho$ \cite{guan2011analytical}, and the analogue to \eqref{LLenergy} and \eqref{LLenergyina} can be obtained. The ground state energy for spin-$1/2$ fermions ($S=0$ by Lieb--Mattis) gives \cite{girardeau2006ground,guan2011analytical}
+\begin{equation}
+\label{spinexp}
+N\frac{\pi^2}{3}\rho^2\left(1-4\frac{\rho}{c}\ln(2)+\mathcal{O}(\rho/c)^2\right)=N\frac{\pi^2}{3}\rho^2\left(1+2\ln(2)\rho a+\mathcal{O}(\rho a)^2\right).
+\end{equation}
+Both the Lieb--Liniger exact solution and the expansions can be generalized to higher spins (or Young diagrams) \cite{sutherland1968further,guan2012one}. Note the leading order will be the free Fermi $N\pi^2\rho^2/3$ in all cases, since the delta potential does not influence the energy for impenetrable particles.
+
+For general potentials, the zeroth-order Fermi term is still expected to be correct, but the first-order term in \eqref{spinexp} has to be more complicated. Given that two spin-$1/2$ fermions can form symmetric and antisymmetric combinations, both the even-wave scattering length $a_e=a$ and the odd-wave scattering length $a_o$ of the potential will play a role. In the Lieb--Liniger example \eqref{spinexp}, $a_o=0$, since the delta interaction does not affect antisymmetric wave functions. However, for hard-core fermions of diameter $a$, $a_o=a_e=a$, and the energy should be \eqref{eqhardcore} since the spin symmetry plays no role. These two examples suggest that the correct formula is
+\begin{equation}
+N\frac{\pi^2}{3}\rho^2\big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o+\mathcal{O}(\rho \max(|a_e|,a_o))^2\big).  
+\end{equation}
+We will discuss this expansion in a future publication.
+\end{remark}
+
+This approach followed to obtain Theorem \ref{TheoremFermion} can actually be taken further. What if, starting from some wave function on a sector $0\leq x_1<\dots<x_N\leq L$, we want to add anyonic phases $e^{i\kappa}$ with $0\leq \kappa\leq\pi$ whenever two particles are interchanged? It turns out this can be made to work, going back to, amongst others,  \cite{leinaas1977theory,kundu1999exact} (see \cite{posske2017second,bonkhoff2021bosonic} for a historical overview of this approach, comparisons with other versions of 1D anyonic statistics, and a discussion of experimental relevance). Just like fermions are unitarily equivalent to impenetrable bosons, these 1D anyons are equivalent to bosons with a certain choice of boundary conditions whenever two bosons meet. This can be related to the Lieb--Liniger model with certain $c$ \cite{posske2017second}, since the delta function potential in \eqref{LLmodel} also imposes boundary conditions whenever two bosons meet. Hence, the (bosonic) Lieb--Liniger model can be viewed as a description of a non-interacting gas of anyons, with the $c/\rho\to\infty$ case being equivalent to fermions ($\kappa=\pi$) as understood by Girardeau. 
+
+Somewhat confusingly, this does not complete the picture, because many authors study gases of 1D anyons themselves interacting through a Lieb--Liniger potential, see for example \cite{batchelor2006one,hao2008ground}. In this case, there are two parameters: the statistical parameter $\kappa$ describing the phase $e^{i\kappa}$ upon particle exchange, and the Lieb--Liniger parameter $c$. Not surprisingly, this set-up is again unitarily equivalent to the bosonic Lieb--Liniger model, with an interaction potential of $2c\delta_0/\cos(\kappa/2)$.\footnote{From the viewpoint of the energy, the combination $2c/\cos(\kappa/2)$ is the only relevant parameter. This is different for the momentum distribution, see Section \ref{SecOpenproblems}.} This means Theorem \ref{TheoremMain} can be applied. We provide more details about the set-up, and prove the following theorem as a corollary of Theorem \ref{TheoremMain} in Section \ref{SectionOtherSymmetries}.
+
+
+
+\begin{theorem}[anyons]
+\label{TheoremAnyon}
+Let $c\geq0$ and consider 1D anyons with statistical parameter $\kappa\in[0,\pi]$ with repulsive interaction $v=v_{\textnormal{reg}}+v_{\textnormal{h.c.}}+2c\delta_0$, where $v_{\textnormal{h.c.}}$ is defined before Theorem \ref{TheoremMain}, and $v_{\textnormal{reg}}$ is a finite measure with $v_{\textnormal{reg}}(\{0\})=0$.
+Define $a_\kappa$ to be the scattering length associated with potential $ v_\kappa=v_{\text{h.c.}}+v_{\text{reg}}+\frac{2c}{\cos(\kappa/2)}\delta_0 $.
+Write $\rho=N/L$. For $\rho|a_\kappa|$ and $\rho R_0$ sufficiently small, the ground state energy $E_{(\kappa,c)}(N,L)$ of the anyon gas can be expanded as
+\begin{equation}
+E_{(\kappa,c)}(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_{\kappa}+\mathcal{O}
+\left((\rho|a_\kappa|)^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right).
+\end{equation}
+\end{theorem}
+
+
+
+
+\subsection{Physical applications and confinement from 3D to 1D}
+\label{SecConfinement}
+Given the general expansions \eqref{result3D} and \eqref{result2D} for the energy of dilute Bose gases in three and two dimensions, it is perhaps surprising that a 1D equivalent was seemingly never studied. On the other hand, given the existence of the Lieb--Liniger model, this is perhaps not surprising at all. Not only can we calculate everything explicitly in that case, Lieb--Liniger physics also naturally shows up in experimental settings in which 3D particles are confined to a 1D environment \cite{olshanii1998atomic,lieb2003one,lieb2004one,seiringer2008lieb}. Nevertheless, we would like to argue that our result adds something that goes beyond the Lieb--Liniger model: it allows for positive scattering lengths $a$.
+
+Mathematically, this seems clear. The scattering length of the Lieb--Liniger model with $c>0$ is $a=-2/c<0$, but Theorem \ref{TheoremMain} is also valid for potentials with a positive scattering length. There are plenty of interesting potentials with this property, and the energy shift has the opposite sign compared to the Lieb--Liniger case. (Note the Lieb--Liniger model with $c<0$ can be solved explicitly \cite{calabrese2007correlation}, but that it has a clustered ground state of energy $-\mathcal{O}(N^2)$ \cite{lieb1963exact,mcguire1964study}, so scattering is irrelevant.)
+
+Physically, the issue can seem more subtle. In the lab, 1D physics can be obtained by confining 3D particles with 3D potentials to a one-dimensional setting \cite{schreck2001quasipure,gorlitz2001realization,greiner2001exploring,moritz2003exciting}. As mentioned, the Lieb--Liniger model is very relevant to such set-ups \cite{olshanii1998atomic,lieb2003one,lieb2004one,seiringer2008lieb}, but only in certain parameter regimes. In these references, the confinement length $l_\perp$ in the trapping direction (a length that is necessarily small on some scale to create 1D physics) is much bigger than the range of atomic forces (or 3D scattering length). This allows excited states in the trapping direction to play a role in the problem, making the mathematical analysis complicated. The assumption that $l_\perp\gg a$ is sometimes referred to as weak confinement \cite{bloch2008many}. 
+
+There should also be a `strong confinement' regime $l_\perp\ll a$, in which the excited states in the trapping direction play no role at all (presumably simplifying the mathematical steps needed to go from 3D to 1D). The problem would then essentially be 1D, and take on the form considered in Theorem \ref{TheoremMain}, thus allowing for positive 1D scattering lengths. We do not know whether the strong confinement regime is currently experimentally accessible. 
+
+
+
+\subsection{Open problems}
+\label{SecOpenproblems}
+\begin{enumerate}
+\item \textbf{The second-order term.}
+The second-order expansions \eqref{result3D} and \eqref{result2D} of the ground state energy of the dilute Bose gas hold (3D), and are expected to hold (2D), for a wide class of potentials. As motivated in the introduction, the same might be true in the 1D expansion \eqref{LLenergyina}. 
+
+\item \textbf{Momentum distribution.}
+As mentioned in Footnote \ref{momremark}, even though the 1D free Fermi ground state \eqref{fermisolution} and Girardeau's bosonic equivalent \eqref{girardeausolution} have the same energy, their momentum distributions are very different. In the thermodynamic limit, the free Fermi ground state has a uniform momentum distribution up to the Fermi momentum $|k|\leq k_F=\pi\rho$. Girardeau's state has the same quasi-momentum distribution, but the momentum distribution diverges like $1/\sqrt{k}$ for small $k$ \cite{lenard1964momentum,vaidya1979one}. At finite $N$, the $k=0$ occupation is $O(1)$ for fermions, while it is $O(\sqrt{N})$ for bosons.\\
+It is also possible to study the Lieb--Liniger ground state in this way \cite{colcelli2018deviations}. The bosonic zero-momentum occupation $\lambda_0$ in the limit $c/\rho\gg1$ is predicted to be 
+\begin{equation}
+\lambda_0\sim N^{\frac12+\frac{2\rho}{c}+\mathcal{O}(\rho/c)^2}=N^{\frac12-\rho a+\mathcal{O}(\rho a)^2}, 
+\end{equation}
+and one can ask if this holds for general potentials as well. The same question can be posed in the context of anyons \cite{colcelli2018deviations}, as the full prediction seems to be \cite{colcelli2018deviations,batchelor2006one}
+\begin{equation}
+\lambda_0\sim N^{\left(\frac12+\frac{2\rho}{c}\cos\left(\frac{\kappa}{2}\right)\right)\left(1-\left(\frac{\kappa}{\pi}\right)^2\right)+\mathcal{O}(\rho \cos(\kappa/2)/c)^2}=N^{\left(\frac12-\rho a_\kappa\right)\left(1-\left(\frac{\kappa}{\pi}\right)^2\right)+\mathcal{O}(\rho a_\kappa)^2}.
+\end{equation}
+\item \textbf{Positive temperature.} For $T>0$, one can again ask if quantities like the chemical potential and free energy only depend on $\rho a$ to lowest orders. Starting from the ideal Fermi gas and excluding volume as in the case of hard-core bosons (the equivalent of \eqref{eqhardcore}), it is possible to generate appropriate expressions that might be universal \cite{de2019beyond}. Proving these for a wide class of potentials is an open problem. 
+\end{enumerate}
+	
+
+
+% 	In this paper, we analyze the ground state energy of the quadratic form\begin{equation}
+% 	\mathcal{E}(\Psi)=\int \sum_{i=1}^{N}\abs{\partial_i\Psi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi}^2.
+% 	\end{equation}
+% 	We assume that $ v_{ij}:=v(\abs{x_i-x_j}) $ is a symmetric and translation invariant measure with a finite range, $ R_0 $. Furthermore, we assume that $ v $ is of the form $ v=v_{\text{h.c.}}+v_{\text{reg}} $, where $ v_{\text{reg}} $ is a finite measure, and $ v_{\text{h.c.}} $ is a sum of hard-core potentials.
+\section{Upper bound Theorem \ref{TheoremMain}}	
+\label{SecUpperbound} 
+	\begin{proposition}[Upper bound Theorem \ref{TheoremMain}]
+		\label{PropositionUpperBound}
+		Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above Theorem \ref{TheoremMain}, with Dirichlet boundary conditions. Write $\rho=N/L$. There exists a constant $C_\text{U}>0$ such that for $\rho|a|$, $\rho R_0\leq C_U^{-1}$, the ground state energy $E^D(N,L)$ satisfies
+		\begin{equation}
+		\label{equpper}
+		E^D(N,L)\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a + C_\text{U}\left(\left((\rho\abs{a})^{6/5}+(\rho R_0)^{3/2}\right)\left(1+\rho R_0^2 \int v_{\textnormal{reg}}\right)^{1/2}+N^{-1}\right)\right).
+		\end{equation}
+	\end{proposition}
+
+As explained in Section \ref{SecProofidea}, the proof relies on a trial state constructed from the free Fermi ground state. With Dirichlet boundary conditions, we cannot use $\abs{\Psi^{\text{per}}_F}$ from \eqref{girardeausolution}, and shall instead have to construct its Dirichlet equivalent, denoted by $\abs{\Psi_F}$ in this section. This will be done in Section \ref{secfreefermi}. Given a suitable scale $ b>R_0 $ to be fixed later on, the trial state will be	
+\begin{equation}
+\label{psiomega}
+\Psi_\omega(x)=\begin{cases}
+	\omega(\rr(x))\frac{\abs{\Psi_F(x)}}{\rr(x)}& \text{if }\rr(x)<b\\
+	\abs{\Psi_F(x)}&\text{if }\rr(x)\geq b,
+	\end{cases}
+	\end{equation}  
+	where $ \omega(x)=f_0(x)b$ is constructed from the scattering solution $f_0$ from Lemma \ref{lemscatlength} ($R=b$),  and $\rr(x):=\min_{i<j}(\abs{x_i-x_j}) $ is the distance between the closest pair of particles (uniquely defined almost everywhere). In other words, we only modify $|\Psi_F|$ with the scattering solution for the closest pair. This is convenient for technical reasons, and will turn out to suffice if the number of particles $N$ is not too big.
+
+For this and other reasons, we will need another technical step: an argument that produces a trial state for arbitrary $N$ (and $L$) using the $\Psi_\omega$ defined in \eqref{psiomega}. This is done in Section \ref{secarbN} by dividing $[0,L]$ into small intervals, and patching copies of $\Psi_\omega$. 
+
+First, we focus on the small-$N$ trial state $\Psi_\omega$. Our goal will be the following lemma. 
+	\begin{lemma}
+	\label{LemmaUpperBoundFewParticles}
+	Let $E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N)) $ the ground state energy of the (Dirichlet) free Fermi gas. The energy of the trial state $\Psi_\omega$ defined in \eqref{psiomega} can be estimated as 
+	    \begin{equation}
+	    \begin{aligned}
+	        \mathcal{E}(\Psi_\omega)&:=\int_{[0,L]^N} \sum_{i=1}^{N}\abs{\partial_i\Psi_\omega}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_\omega}^2\\
+	        &\leq E_0\left(1+2\rho a\frac{b}{b-a}+\textnormal{const. } N(\rho b)^3\left(1+\rho b^2\int v_\textnormal{reg}\right)\right).
+	    \end{aligned}
+	    \end{equation}
+	\end{lemma}
+To prove this lemma, it is useful divide the configuration space into various sets. For $i<j$, define 
+\begin{equation}
+\begin{aligned}
+B&:=\{x\in\R^N\ \vert\ \mathcal{R}(x)<b \}\\
+A_{ij}&:=\{x\in\R^N\vert \abs{x_i-x_j}<b\}\\
+B_{ij}&:=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_i-x_j} \}\subset A_{ij}.
+\end{aligned}
+\end{equation}
+Note that $ \Psi_\omega$ equals $\abs{\Psi_F} $ on the complement of $B$, and that $ B_{ij} $ equals $ B $ intersected with the set $ \{\text{``particles $i$ and $j$ are closer than any other pair"}\} $. On the set $A_{12}$, we will use the shorthand $\Psi_{12}:=\omega(x_1-x_2)\frac{\Psi_F(x)}{(x_1-x_2)}$, and define the energies
+	\begin{equation}
+	\begin{aligned}
+	E_1&\coloneqq\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2, \\
+	E_2^{(1)}&\coloneqq\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,\\ E_2^{(2)}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2.
+	\end{aligned}
+	\end{equation}
+Recall $E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N)) $ is the ground state energy of the (Dirichlet) free Fermi gas. The following estimate then holds.
+\begin{lemma}\label{LemmaEnergyFunctionalBound}
+\begin{equation}\label{EqBound1}
+\mathcal{E}(\Psi_\omega)\leq E_0+ E_1+E_2^{(1)}+E_2^{(2)}.
+\end{equation}
+\end{lemma}
+The plan to prove the upper bound for Theorem \ref{TheoremMain} (Proposition \ref{PropositionUpperBound}) is as follows. We first prove Lemma \ref{LemmaEnergyFunctionalBound} below. We then study the Dirichlet free Fermi ground state $\Psi_F$ in Section \ref{secfreefermi}, laying the ground work for the estimates of $E_1$, $E_2^{(1)}$ and $E_2^{(2)}$. We estimate $E_1$ in Section \ref{secE1} and $E^{(1)}_2$ and $E^{(2)}_2$ in Section \ref{secE2}. Altogether, these prove Lemma \ref{LemmaUpperBoundFewParticles}, which will then be used to construct a successful trial state for large in $N$ in Section \ref{secarbN}.
+	\begin{proof}[Proof of Lemma \ref{LemmaEnergyFunctionalBound}]
+		Since $ v $ is supported in $ B_b(0) $ and $ \Psi_\omega=\abs{\Psi_F} $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this, using the diamagnetic inequality, as \begin{equation}
+		\mathcal{E}(\Psi_\omega)\leq E_0+\int_B \sum_{i=1}^{N}\abs{\partial_i\Psi_\omega}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_\omega}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,
+		\end{equation}
+		with $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N)) $ the ground state energy of the free Fermi gas. Using symmetry under exchange of particles, and the diamagnetic inequality, we find \begin{equation}
+		\begin{aligned}
+		\mathcal{E_\omega}(\Psi)&\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_\omega}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_\omega}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&
+		\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2.
+		\end{aligned}
+		\end{equation}
+		where we have used that $ \Psi_\omega=0 $ on the support of $ (v_{\text{h.c.}})_{ij} $ for all $ i,j $. Since we have $ v_{\text{reg}}\geq0 $, it follows that
+		\begin{equation}
+		\begin{aligned}
+		\mathcal{E}(\Psi)&\leq E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&\qquad
+		-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&
+		\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2.
+		\end{aligned}
+		\end{equation}	
+		We may, by an inclusion-exclusion argument, estimate\begin{equation}
+		\begin{aligned}
+		\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2&\leq \binom{N}{2}\left(2N\left[\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2-\int_{B_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\right]\right.\\
+		&\qquad\qquad\left.+\binom{N-2}{2}\left[\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2-\int_{B_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\right]\right)\\
+		&\leq \binom{N}{2}\left[2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2+\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\right].
+		\end{aligned}
+		\end{equation}
+		Thus we find $
+		\mathcal{E}(\Psi_\omega)\leq E_0+E_1+E_2^{(1)}+E_2^{(2)}$ as desired.
+	\end{proof}
+	%	Since $ v $ is supported in $ B_b $ and $ \Psi=\abs{\Psi_F} $ except in the region $ B=\{x\in\R^N \vert \rr(x)<b \} $, we may rewrite this, using the diamagnetic inequality, as \begin{equation}
+	%	\mathcal{E}(\Psi)=E_0+\int_B \sum_{i=1}^{N}\abs{\partial_i\Psi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,
+	%	\end{equation}
+	%	with $ E_0=N\frac{\pi^2}{3}\rho^2(1+\mathcal{O}(1/N))\norm{\Psi}^2 $ the ground state energy of the free Fermi gas. Using that $ v\geq0 $, symmetry under exchange of particles, and defining the set $ B_{12}=\{x\in\R^N \vert \rr(x)<b,\ \rr(x)=\abs{x_1-x_2} \}\subset A_{12}=\{x\in\R^N\vert \abs{x_1-x_2}<b\} $ which up to a set of measure zero is the intersection of $ B $ and the set $ \{\text{"1 and 2 are closest"}\} $, and using the diamagnetic inequality, we find \begin{equation}
+	%	\begin{aligned}
+	%	\mathcal{E}(\Psi)&\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&
+	%	\leq E_0+\binom{N}{2}\int_{B_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&
+	%	=E_0+\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&\qquad
+	%	-\binom{N}{2}\int_{A_{12}\setminus B_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\&
+	%	\leq E_0+E_1+\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2
+	%	\end{aligned}
+	%	\end{equation}
+	%	where we have defined \begin{equation*}
+	%		\Psi_{12}=\begin{cases}
+	%		\omega(x_1-x_2)\frac{\Psi_F(x)}{(x_1-x_2)}& \text{if }\abs{x_1-x_2}<b,\\
+	%		\text{sgn}(x_1-x_2)\Psi_F(x)&\text{if }\abs{x_1-x_2}\geq b,
+	%		\end{cases}
+	%	\end{equation*} and $ E_1=\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2 $.\\
+	%	We may, by an inclusion-exclusion argument, estimate\begin{equation}
+	%	\begin{aligned}
+	%	\binom{N}{2}\int_{A_{12}\setminus B_{12}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2&=\binom{N}{2}\left(2N\left[\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2-\int_{B_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\right]\right.\\
+	%	&\qquad\qquad\left.+\binom{N-2}{2}\left[\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2-\int_{B_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\right]\right)\\
+	%	&\leq \binom{N}{2}\left[2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2+\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\right]
+	%	\end{aligned}
+	%	\end{equation}
+	%	Thus we find \begin{equation}\label{EqBound1}
+	%	\mathcal{E}(\Psi)\leq E_0+E_1+E_2^{(1)}+E_2^{(2)}
+	%	\end{equation}
+	%	with $ E_2^{(1)}=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\abs{\Psi_F}}^2 $ and $ E_2^{(2)}=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\abs{\Psi_F}}^2 $.\\
+	%	We notice that since $ \abs{\Psi_F}=\abs{\Psi_F} $ so by the diamagnetic inequality we have $ \abs{\partial_i\abs{\Psi_F}}^2\leq \abs{\partial_i\Psi_F}^2 $, which implies that $ \abs{\Psi_F} $ is in $ H^{1}(\Lambda_L) $. Furthermore, $ \Psi_F $ is $ C^{1}(\Lambda_L) $ with a zero set $ \{\Psi_F=0\} $ of measure zero, so $ \abs{\partial_i\abs{\Psi_F}}^2 $ and $ \abs{\partial_i\Psi_F}^2 $ are equal a.e. But then $ \abs{\partial_i\abs{\Psi_F}}=\abs{\partial_i\Psi_F} $ as $ L^{2}(\Lambda_L) $ functions. Hence we may replace $ \abs{\Psi_F} $ with $ \Psi_F $ in all integrals above.
+	\subsection{The free Fermi ground state with Dirichlet b.c.}
+	\label{secfreefermi}
+	The Dirichlet eigenstates of the Laplacian are $ \phi_j(x)=\sqrt{2/L}\sin(\pi j x/L) $. Thus, the Dirichlet free Fermi ground state is \begin{equation}
+	\Psi_F(x)=\det\left(\phi_j(x_i)\right)_{i,j=1}^{N}=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\begin{vmatrix}
+	\euler{iy_1}-\euler{-iy_1}&\euler{i2y_1}-\euler{-i2y_1}&\ldots&\euler{iNy_1}-\euler{-iNy_1}\\
+	\euler{iy_2}-\euler{-iy_2}&\euler{i2y_2}-\euler{-i2y_2}&\ldots&\euler{iNy_2}-\euler{-iNy_2}\\
+	\vdots&\vdots&\ddots&\vdots\\
+	\euler{iy_N}-\euler{-iy_N}&\euler{i2y_N}-\euler{-i2y_N}&\ldots&\euler{iNy_N}-\euler{-iNy_N}
+	\end{vmatrix},
+	\end{equation}
+	where we defined $ y_i=\frac{\pi}{L}x_i$. Defining $ z=\euler{iy} $ and using the relation $ (x^n-y^n)/(x-y)=\sum_{k=0}^{n-1}x^ky^{n-1-k} $, we find\begin{equation}
+	\Psi_F(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\begin{vmatrix}
+	1&z_1+z_1^{-1}&\ldots&\sum_{k=0}^{N-1}z_1^{2k-N+1}\\
+	1&z_2+z_2^{-1}&\ldots&\sum_{k=0}^{N-1}z_2^{2k-N+1}\\
+	\vdots&\vdots&\ddots&\vdots\\
+	1&z_N+z_N^{-1}&\ldots&\sum_{k=0}^{N-1}z_N^{2k-N+1}\\
+	\end{vmatrix}.
+	\end{equation}
+	Notice that $ (z+z^{-1})^n=\sum_{k=0}^{n}\binom{n}{k}z^{2k-n} $.
+	For $1\leq i\leq N-1$, we add $ \left(\binom{N-1}{i}-\binom{N-1}{i-1}\right) $ times column $ N-i $ to column $ N $. This does not change the determinant, so \begin{equation}
+	\Psi_F(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\begin{vmatrix}
+	1&z_1+z_1^{-1}&\ldots&\sum_{k=0}^{N-2}z_1^{2k-N+1}&(z_1+z_1^{-1})^{N-1}\\
+	1&z_2+z_2^{-1}&\ldots&\sum_{k=0}^{N-2}z_2^{2k-N+1}&(z_2+z_2^{-1})^{N-1}\\
+	\vdots&\vdots&\ddots&\vdots&\vdots\\
+	1&z_N+z_N^{-1}&\ldots&\sum_{k=0}^{N-2}z_N^{2k-N+1}&(z_N+z_N^{-1})^{N-1}\\
+	\end{vmatrix}.
+	\end{equation}
+	For $1\leq i\leq N-2 $, we add $ \left(\binom{N-2}{i}-\binom{N-2}{i-1}\right) $ times column $ N-1-i $ to column $ N-1 $, and continue this process. That is, for $3\leq j\leq N$ and $1\leq i\leq N-j $, we add  $ \left(\binom{N-j}{i}-\binom{N-j}{i-1}\right) $ times column $ N-1-i $ to column $ N-j+1 $. This gives \begin{equation}
+	\Psi_F(x)=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{i=1}^{N}(z_i-z_i^{-1})\begin{vmatrix}
+	1&z_1+z_1^{-1}&(z_1+z_1^{-1})^2&\ldots&(z_1+z_1^{-1})^{N-1}\\
+	1&z_2+z_2^{-1}&(z_2+z_2^{-1})^2&\ldots&(z_2+z_2^{-1})^{N-1}\\
+	\vdots&\vdots&\vdots&\ddots&\vdots\\
+	1&z_N+z_N^{-1}&(z_N+z_N^{-1})^2&\ldots&(z_N+z_N^{-1})^{N-1}\\
+	\end{vmatrix}.
+	\end{equation}
+	This is a Vandermonde determinant and we conclude \begin{equation}
+	\begin{aligned}
+	\Psi_F(x)&=\sqrt{\frac{2}{L}}^N\left(\frac{1}{2i}\right)^N\prod_{k=1}^{N}(z_k-z_k^{-1})\prod_{i<j}^{N}\left((z_i+z_i^{-1})-(z_j+z_j^{-1})\right)\\
+	&=2^{\binom{N}{2}}\sqrt{\frac{2}{L}}^N\prod_{k=1}^{N}\sin\left(\frac{\pi}{L}x_k\right)\prod_{i<j}^{N}\left[\cos\left(\frac{\pi}{L}x_i\right)-\cos\left(\frac{\pi}{L}x_j\right)\right]\\
+	&=-2^{\binom{N}{2}+1}\sqrt{\frac{2}{L}}^N\prod_{k=1}^{N}\sin\left(\frac{\pi}{L}x_k\right)\prod_{i<j}^{N}\sin\left(\frac{\pi(x_i-x_j)}{2L}\right)\sin\left(\frac{\pi(x_i+x_j)}{2L}\right)
+	.
+	\end{aligned}
+	\end{equation}
+	
+	\subsubsection{1-body reduced density matrix}
+	The 1-particle reduced density matrix of the Dirichlet free Fermi ground state is
+	\begin{equation}
+	\begin{aligned}
+	&\gamma^{(1)}(x,y)=\frac{2}{L}\sum_{j=1}^{N}\sin\left(\frac{\pi}{L}jx\right)\sin\left(\frac{\pi}{L} jy\right)=\frac{\sin\left(\pi\left(\rho+\frac{1}{2L}\right)(x-y)\right)}{2L\sin\left(\frac{\pi}{2L}(x-y)\right)}-\frac{\sin\left(\pi\left(\rho+\frac{1}{2L}\right)(x+y)\right)}{2L\sin\left(\frac{\pi}{2L}(x+y)\right)}.
+	\end{aligned}
+	\end{equation}
+	Of course, Wick's theorem can be used to compute any $n$-body reduced density matrix.
+	\subsubsection{Taylor's theorem}
+	For later use, we define the one particle reduced density matrix $ \gamma^{(1)}(x,y) $, as well as the translation invariant part $ \tilde{\gamma}^{(1)}(x,y) $ \begin{equation}
+	\begin{aligned}
+	\gamma^{(1)}(x,y)&=\frac{\pi}{L}\left(D_{N}\left(\pi\frac{x-y}{L}\right)-D_{N}\left(\pi\frac{x+y}{L}\right)\right),\\
+	\tilde{\gamma}^{(1)}(x,y)&\coloneqq \frac{\pi}{L}D_{N}\left(\pi \frac{x-y}{L}\right),
+	%	\tilde{\gamma}(x,y)&\coloneqq \begin{cases}
+	%	\gamma^{(1)}_{\text{per}}(x,y)=\frac{2\pi}{L}D_{(N-1)/2}\left(2\pi\frac{x-y}{L}\right),\qquad &N\text{ odd}\\
+	%	\gamma^{(1)}_{\text{anti-per}}(x,y)=\frac{2\pi}{L}\left(\euler{i\pi(x-y)}D_{N/2-1}\left(2\pi\frac{x-y}{L}\right)+\frac{1}{2\pi}\euler{-i\pi N(x-y)}\right),\qquad &N\text{ even}
+	%	\end{cases}
+	\end{aligned}
+	\end{equation}
+	where $ D_n(x)=\frac{1}{2\pi}\sum_{k=-n}^{n}\euler{ikx}=\frac{\sin((n+1/2)x)}{2\pi\sin(x/2)} $ is the Dirichlet kernel. One obvious consequence is that $ \abs{\partial_{x}^{k_1}\partial_{y}^{k_2}\gamma^{(1)}(x,y)}\leq \frac{1}{\pi}(2N)^{k_1+k_2+1}\left(\frac{\pi}{L}\right)^{k_1+k_2+1}=\pi^{k_1+k_2}(2\rho)^{k_1+k_2+1} $. This bound will allow us to Taylor expand any $ \gamma^{(k)} $, as all derivatives are uniformly bounded by a constant times some power of $ \rho $. In fact the relevant power of $ \rho $ can be directly obtained from dimensional analysis.
+	\subsubsection{Useful bounds on various reduced density matrices of $\Psi_F$}
+	\begin{lemma}\label{Lemma rho2 bound}
+	Let $\rho^{(2)}$ denote the 2-body reduced density of the free Fermi ground state, then it holds that
+		\begin{equation}
+		    \rho^{(2)}(x_1,x_2)=\left(\frac{\pi^2}{3}\rho^4+f(x_2)\right)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4), 
+		\end{equation} with $ \int \abs{f(x_2)}\diff x_2\leq \textnormal{ const. }\rho^3\ln(N) $.
+	\end{lemma}
+	\begin{proof}
+		Note that by translation invariance it holds that $$ \tilde{\gamma}^{(1)}(x,y)-(\rho+1/(2L))=\frac{\pi^2}{6}(\rho^4+\rho^3\mathcal{O}(1/L))(x_1-x_2)^2+\mathcal{O}(\rho^4(x_1-x_2)^4). $$ Furthermore, we have $ \gamma^{(1)}(x_1,x_2)-\rho^{(1)}\left((x_1+x_2)/2\right)=\tilde{\gamma}^{(1)}(x_1,x_2)-(\rho+1/(2L)) $. Now, by Wick's theorem,  \begin{equation}
+		\rho^{(2)}(x_1,x_2)=\rho^{(1)}(x_1)\rho^{(1)}(x_2)-\gamma^{(1)}(x_1,x_2)\gamma^{(1)}(x_2,x_1).
+		\end{equation}
+		Using that $ \gamma^{(1)} $ is symmetric, and that \begin{equation}
+		\begin{aligned}
+		\rho^{(1)}(x_1)=\rho^{(1)}((x_1+x_2)/2)&+\rho^{(1)\prime}((x_1+x_2)/2)\frac{x_1-x_2}{2}\\&+\frac{1}{2}\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2+\mathcal{O}(\rho^4(x_1-x_2)^3),
+		\end{aligned}
+		\end{equation}
+		\begin{equation}
+		\begin{aligned}
+		\rho^{(1)}(x_2)=\rho^{(1)}((x_1+x_2)/2)&+\rho^{(1)\prime}((x_1+x_2)/2)\frac{x_2-x_1}{2}\\&+\frac{1}{2}\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2+\mathcal{O}(\rho^4(x_1-x_2)^3),
+		\end{aligned}
+		\end{equation}
+		where both expressions can be expanded further if needed, we see that \begin{equation}
+		\begin{aligned}
+		\rho^{(2)}(x_1,x_2)=\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2-\left[\rho^{(1)\prime}((x_1+x_2)/2)\right]^2\left(\frac{x_1-x_2}{2}\right)^2\\+\rho^{(1)}((x_1+x_2)/2)\rho^{(1)\prime\prime}((x_1+x_2)/2)\left(\frac{x_1-x_2}{2}\right)^2+\mathcal{O}(\rho^6(x_1-x_2)^4).
+		\end{aligned}
+		\end{equation}
+		Notice that terms of order $ \mathcal{O}(\rho^5(x_1-x_2)^3) $ must cancel due to symmetry.\\
+		Now use the fact that $ 0\leq\rho^{(1)}\leq 2\rho $, and $ \rho^{(1)\prime}:[0,L]\to \R $, and $\int_{[0,L]}\abs{\rho^{(1)\prime\prime}}\leq \text{const. }\rho^2\ln(N) $, and finally that  $\int_{[0,L]}\abs{\rho^{(1)\prime}}\leq \text{const. }\rho\ln(N) $, which follows from the bound on Dirichlet's kernel $ \norm{D_N^{(k)}}_{L^1([0,2\pi])}\leq \text{const. }N^{k}\ln(N) $, to conclude that
+		\begin{equation}
+		\begin{aligned}
+		\rho^{(2)}(x_1,x_2)=\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2+g_1(x_1+x_2)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4),
+		\end{aligned}
+		\end{equation}
+		for some function $ g_1 $ satisfying $ \int_{[0,L]}\abs{g_1}\leq \text{const. }\rho^3\ln(N)$.
+		Furthermore, notice that 
+		\begin{equation}
+		\begin{aligned}
+		&\rho^{(1)}((x_1+x_2)/2)^2-\gamma^{(1)}(x_1,x_2)^2\\
+		&\hspace{1cm}=(\rho^{(1)}((x_1+x_2)/2)-\gamma^{(1)}(x_1,x_2))(\rho^{(1)}((x_1+x_2)/2)+\gamma^{(1)}(x_1,x_2))\\&\hspace{1cm}
+		=\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]\left[-\rho-1/(2L)+\tilde{\gamma}^{(1)}(x_1,x_2)+2\rho^{(1)}((x_1+x_2)/2)\right]\\&\hspace{1cm}
+		=-\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]^2+2\left[\rho+1/(2L)-\tilde{\gamma}^{(1)}(x_1,x_2)\right]\rho^{(1)}((x_1+x_2)/2)\\&\hspace{1cm}
+		= 2\left(\frac{\pi^2}{6}(\rho+1/(2L))^3(x_1-x_2)^2+\mathcal{O}(\rho^5(x_1-x_2)^4)\right)\left(\rho+\frac{1}{2L}-\frac{\pi}{L}D_{N}((x_1+x_2)/(2L))\right)\\&\hspace{1cm}
+		=\frac{\pi^2}{3}\rho^4(x_1-x_2)^2+g_2(x_1-x_2)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4),
+		\end{aligned}
+		\end{equation}
+		where we have chosen $ g_2(x)=\frac{\pi^2}{3}\rho^3\left(\frac{\text{const.}}{2L}+\abs{\frac{\pi}{L}D_N(x/(2L))} \right) $ which clearly satisfies $  \int_{[0,L]} g_2\leq \text{const. } \rho^3 \ln(N) $.
+		Thus, we conclude that \begin{equation}
+		\rho^{(2)}(x_1,x_2)=\left(\frac{\pi^2}{3}\rho^4+f(x_2)\right)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4), 
+		\end{equation}
+		with $ f=g_1+g_2 $ satisfying $ \int_{[0,L]} \abs{f}\leq \text{const. } \rho^3 \ln(N) $.
+	\end{proof}
+	\begin{lemma}\label{LemmaDensityBounds}
+		We have the following bounds.\begin{equation}
+		\begin{aligned}
+		\rho^{(3)}(x_1,x_2,x_3)&\leq \textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2(x_1-x_3)^2\\
+		\rho^{(4)}(x_1,x_2,x_3,x_4)&\leq \textnormal{const. }\rho^8(x_1-x_2)^2(x_3-x_4)^2\\
+		\abs{\sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2\\
+		\abs{\partial_{y_1}^2\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}\abs{x_1-x_2}\\
+		\abs{\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}&\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2
+		\end{aligned}
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		The bounds follows straightforwardly from Taylor's theorem and the symmetries of the left-hand sides. As an example, consider $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\rvert_{y=x} $. Notice first that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2) $ is antisymmetric in $ (x_1,x_2) $ and in $ (y_1,y_2) $. Since we previously argued that all derivatives of $ \gamma^{(n)} $ are bounded by a constant times $ \rho^k $ for some $ k\in\mathbb{N} $, we can clearly Taylor-expand $ \gamma^{(2)} $. Taylor-expanding $ x_1 $ around $ x_2 $ and similarly $ y_1 $ around $ y_2 $, we see by the anti-symmetry that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2,y_1,y_2)\leq \text{const. }\rho^6(x_1-x_2)(y_1-y_2) $, where the power of $ \rho $ can be found by simple dimensional analysis.
+	\end{proof}
+	\begin{lemma} \label{LemmaDensityBounds2}
+		We have the following bounds.
+		\begin{equation}
+		\begin{aligned}
+		\sum_{i=1}^{3}\left(\partial_{x_i}\partial_{y_i}\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}&\leq \textnormal{const. }\rho^9(x_2-x_3)^2(x_1-x_2)^2,\\
+		\abs{\sum_{i=1}^{3}\left(\partial_{y_i}^2\gamma^{(3)}(x_1,x_2,x_3;y_1,y_2,y_3)\right)\Bigg\vert_{y=x}}&\leq\textnormal{const. }\rho^9(x_1-x_2)^2(x_2-x_3)^2,\\
+		\abs{\left[\partial_{y}\gamma^{(4)}(x_1,x_2,x_3,x_4;y,x_2,x_3,x_4)\bigg\vert_{y=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}}&\leq \textnormal{const. }\rho^8b(x_3-x_4)^2
+		\end{aligned}
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		The proof follows straightforwardly from Taylor's theorem and the symmetries of the left-hand sides. 
+	\end{proof}
+
+	\subsection{Estimating $ E_1 $}
+	\label{secE1}
+		Recall the definition \begin{equation}
+		E_1\coloneqq\binom{N}{2}\int_{A_{12}} \sum_{i=1}^{N}\abs{\partial_i\Psi_{12}}^2+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2.
+		\end{equation}
+		We prove the following bound. \begin{lemma}\label{LemmaE1Bound}
+			\begin{equation}
+			E_1\leq E_0 \left(2\rho a\frac{b}{b-a}+ \textnormal{const.}\ N(\rho b)^3\left[ 1+ \rho b^2\int v_{\textnormal{reg}}\right]\right).
+			\end{equation}
+		\end{lemma}
+		\begin{proof}
+		We estimate $ E_1 $ by splitting it into four terms $ E_1=E_1^{(1)}+E_1^{(2)}+E_1^{(3)}+E_1^{(4)} $. First, we have \begin{equation}
+		\begin{aligned}
+		E_1^{(1)}&=2\binom{N}{2}\int_{A_{12}}\abs{\partial_1\Psi_{12}}^2\\&
+		=2\binom{N}{2}\int_{A_{12}}\overline{\Psi_{12}}\left( -\partial^2_1 \Psi_{12} \right)+2\binom{N}{2}\int\left[\overline{\Psi_{12}}\partial_1\Psi_{12}\right]_{x_1=x_2-b}^{x_1=x_2+b}\diff x_2\dots\diff x_N,
+		\end{aligned}
+		\end{equation}
+		The boundary term can be calculated explicitly, and we find \begin{equation}
+		\begin{aligned}
+		2\binom{N}{2}\int\left[\overline{\Psi_{12}}\partial_1\Psi_{12}\right]_{x_1=x_2-b}^{x_1=x_2+b}\diff x_2\dots\diff x_N=\int\left[\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)\rho^{(2)}(x_1,x_2)\right]_{x_2-b}^{x_2+b}\diff x_2\\+\int\left[\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2.
+		\end{aligned}
+		\end{equation}
+		Since the function $ \frac{\omega(x_1-x_2)}{\abs{x_1-x_2}} $ is continuously differentiable and satisfies $ \frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}=\frac{\abs{x_1-x_2}-a}{b-a}\frac{b}{\abs{x_1-x_2}} $ for $ \abs{x_1-x_2}>b $, we see that \begin{equation}
+		\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)\bigg\vert_{x=x_2\pm b}=\pm \frac{\frac{b}{b-a}-1}{ b}=\pm\frac{a}{b(b-a)}.
+		\end{equation}
+		Using Lemma \ref{Lemma rho2 bound}, we find \begin{equation}
+		\int\left[\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\partial_{x_1}\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)\rho^{(2)}(x_1,x_2)\right]_{x_2-b}^{x_2+b}\diff x_2\leq 2a\frac{b}{b-a} N\frac{\pi^2}{3}\rho^3\left(1+\text{const. }\frac{\ln(N)}{N}\right).
+		\end{equation}
+		Furthermore, we denote \begin{equation}\label{EqGammaDeriv2.}
+		\begin{aligned}
+		&\int\left[\left(\frac{\omega(x_1-x_2)}{\abs{x_1-x_2}}\right)^2\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2\\
+		&\quad=\int\left[\partial_{x_1}\left(\gamma^{(2)}(x_1,x_2;y,x_2)\right)\bigg\vert_{y=x_1}\right]_{x_2-b}^{x_2+b}\diff x_2=:\kappa_1.
+		\end{aligned}
+		\end{equation}
+		Thus, we have \begin{equation}
+		E_1^{(1)}=\frac{\pi^2}{3}N\rho^3 (2a)\frac{b}{b-a}+\kappa_1+2\binom{N}{2}\int_{A_{12}}\overline{\Psi_{12}}(-\partial^2_1\Psi_{12}).
+		\end{equation}
+		Another contribution to $ E_1 $ is \begin{equation}
+		\begin{aligned}
+		E_1^{(2)}&=-\binom{N}{2}\int_{A_{12}}\left(2\abs{\partial_1\Psi_F}^2+\sum_{i=3}^{N}\abs{\partial_i\Psi_F}^2\right)\\&=-\binom{N}{2}\int_{A_{12}}\sum_{i=1}^{N}\overline{\Psi_F}(-\partial^2_i\Psi_F)-2\binom{N}{2}\int\left[\overline{\Psi_F}\partial_1\Psi_F\right]_{x_1=x_2-b}^{x_1=x_2+b}\\
+		&=-E_0\binom{N}{2}\int_{A_{12}}\abs{\Psi_F}^2-\underbrace{\int\left[\partial_y\gamma^{(2)}(x_1,x_2;y,x_2)\vert_{y=x_1}\right]_{x_2-b}^{x_2+b} \diff x_2}_{\kappa_1},
+		\end{aligned}
+		\end{equation}
+		and using Lemma \ref{Lemma rho2 bound}, we find \begin{equation}
+		E_1^{(2)}=-\text{const. }E_0 N\rho^3b^3-\kappa_1.
+		\end{equation}
+		The last contributions are\\ $ E^{(3)}_1=\binom{N}{2}\int_{A_{12}} \sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2=\binom{N}{2}\int_{A_{12}}v_{12}\abs{\Psi_{12}}^2+2\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2 $ and\\ $ E_1^{(4)}=\int_{A_{12}}\sum_{i=3}^{N}\abs{\partial_i\Psi_{12}}^2 $.
+		First, notice that \begin{equation}
+		\begin{aligned}
+		&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2\\&\quad\leq \text{const. }b^2 \left(\int_{\{\abs{x_1-x_2}<b\}\cap\supp((v_{\text{reg}})_{34})}v_{\text{reg}}(\abs{x_3-x_4})\frac{1}{(x_1-x_2)^2}\rho^{(4)}(x_1,x_2,x_3,x_4)\right.\\
+		&\qquad\qquad\qquad\left.+\int_{\{\abs{x_1-x_2}<b\}\cap\supp((v_{\text{reg}})_{23})}v_{\text{reg}}(\abs{x_2-x_3})\frac{1}{(x_1-x_2)^2}\rho^{(3)}(x_1,x_2,x_3)\right).
+		\end{aligned}
+		\end{equation}
+		By Lemma \ref{LemmaDensityBounds}, 
+		\begin{equation}
+		\begin{aligned}
+		&\binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}(v_{\text{reg}})_{ij}\abs{\Psi_{12}}^2\\&\quad\leq \text{const. } \left(N^2(\rho b)^3\rho^3\int x^2 v_{\text{reg}}(x)\diff x+N(\rho b)^3 \rho^5 \int x^4 v_{\text{reg}}(x)\diff x+N(\rho b)^4\rho^4 \int x^3 v_{\text{reg}}(x)\diff x\right.\\
+		&\qquad \qquad \qquad \qquad\hspace{6cm}\left.+N(\rho b)^5 \rho^3 \int x^2 v_{\text{reg}}(x)\diff x\right)\\
+		&\quad \leq \text{const. } N^2(\rho b)^5\rho \int v_{\text{reg}}=\text{const. }E_0 N (\rho b)^3 \left(\rho b^2\int v_{\text{reg}}\right),
+		\end{aligned}
+		\end{equation}
+		and so \begin{equation}
+		\begin{aligned}
+		E_1&=E_1^{(1)}+E_1^{(2)}+E_1^{(3)}+E_1^{(4)}\\&\leq \frac{2\pi^2}{3}N\rho^3 a\frac{b}{b-a}+2\binom{N}{2}\int_{A_{12}}\left(\overline{\Psi_{12}}(-\partial^2_1)\Psi_{12}+\frac{1}{2}\sum_{i=3}^{N}\abs{\partial_i\Psi_{12}}^2+\frac{1}{2}v_{12}\abs{\Psi_{12}}^2\right)\\&\qquad \qquad +E_0N(\rho b)^3\text{const. }\left(1+\rho b^2 \int v_{\text{reg}}\right).
+		\end{aligned}
+		\end{equation}
+		Using the two-body scattering equation from Lemma \ref{lemscatlength}, this implies \begin{equation}
+		\begin{aligned}
+		E_1&\leq \frac{2\pi^2}{3}N\rho^3 a\frac{b}{b-a}+2\binom{N}{2}\int_{A_{12}}\frac{\overline{\Psi_F}}{(x_1-x_2)}\omega^2(-\partial^2_1)\frac{\Psi_F}{(x_1-x_2)}\\&\quad+2\binom{N}{2}\int_{A_{12}}\frac{\overline{\Psi_F}}{(x_1-x_2)}\omega(\partial_1\omega)\partial_1\frac{\Psi_F}{(x_1-x_2)}\\
+		&\quad +\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \frac{\overline{\Psi_F}}{(x_1-x_2)}\frac{\omega^2}{(x_1-x_2)}(-\partial^2_i)\Psi_F
+		\\&\quad+\text{const. }E_0 N (\rho b)^3 \left(1+\rho b^2\int v_{\text{reg}}\right).
+		\end{aligned}
+		\end{equation}
+		Furthermore, we have \begin{equation}
+		\begin{aligned}
+		&\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\Psi_{12}}\frac{\omega}{(x_1-x_2)}(-\partial^2_i)\Psi_F\\&\quad=E_0\binom{N}{2}\int_{A_{12}}\left\lvert\frac{\omega}{(x_1-x_2)}\Psi_F\right\rvert^2-2\binom{N}{2}\int_{A_{12}} \overline{\Psi_{12}}\frac{\omega}{(x_1-x_2)}(-\partial^2_1)\Psi_F.
+		\end{aligned}
+		\end{equation}
+		By Lemma \ref{Lemma rho2 bound}, it follows that
+		\begin{equation}
+		\binom{N}{2}\int_{A_{12}}\left\lvert\frac{\omega}{(x_1-x_2)}\Psi_F\right\rvert^2\leq b^2\int_{\{\abs{x_1-x_2}<b\}} \frac{\rho^{(2)}(x_1,x_2)}{\abs{x_1-x_2}^2}\diff x_1\diff x_2\leq  \text{const. } b^2\rho^4  L b=\text{const. }N\rho^3 b^3,
+		\end{equation}
+		and by Lemma \ref{LemmaDensityBounds}, it follows that \begin{equation}
+		\begin{aligned}
+		2\binom{N}{2}\int_{A_{12}} \overline{\Psi_{12}}\frac{\omega}{(x_1-x_2)}(-\partial^2_1)\Psi_F&=\frac12\sum_{i=1}^{2}\int_{A_{12}}\abs{\frac{\omega}{x_1-x_2}}^2\left[\partial^2_{y_i}\gamma^{(2)}(x_1,x_2,y_1,y_2)\right]\Big\rvert_{y=x}\\&\leq \text{const. } N\rho^2(\rho b)^3,
+		\end{aligned}
+		\end{equation}
+		so that we find \begin{equation}
+		\binom{N}{2}\int_{A_{12}}\sum_{i=3}^{N} \overline{\Psi_{12}}\frac{\omega}{(x_1-x_2)}(-\partial^2_i)\Psi_F\leq \text{const. } E_0 N(\rho b)^3.
+		\end{equation}
+		Finally, again by Lemma \ref{LemmaDensityBounds}, we have \begin{equation}
+		\begin{aligned}
+		2\binom{N}{2}\int_{A_{12}}\overline{\Psi_{12}}\omega(-\partial^2_1)\frac{\Psi_F}{(x_1-x_2)}&=\int_{A_{12}}\abs{\frac{\omega^2}{x_1-x_2}}\left[\partial^2_{y_1}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{(y_1-y_2)}\right)\right]\Big\rvert_{y=x}\\&\leq\text{const. }N\rho^2 (\rho b)^3,
+		\end{aligned}
+		\end{equation}
+		and by using $ \partial^2\omega=\frac{1}{2}v\omega\geq0 $ which implies $ 0\leq\omega'(x)\leq \omega'(b)=\frac{b}{b-a} $ for $ \abs{x}<b $, we find that \begin{equation}
+		\begin{aligned}
+		2\binom{N}{2}\int_{A_{12}}\overline{\Psi_{12}}(\partial_1\omega)\partial_1\left(\frac{\Psi_F}{(x_1-x_2)}\right)&\leq\frac12\sum_{i=1}^{2}\int_{A_{12}}\abs{\frac{\omega}{x_1-x_2}}(-1)^{i-1}\omega'(x_1-x_2)\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2,y_1,y_2)}{y_1-y_2}\right)\\
+		&\leq \text{const. }\frac{b}{b-a}N\rho^2(\rho b)^3.
+		\end{aligned}
+		\end{equation}
+		Combining everything, we get the desired result.
+
+	\end{proof}
+%		\subsubsection{A remark about the hard-core potential}
+%		Notice that it appears that we cannot deal with the hard-core case. However, in the above calculation we threw away the term $ \int_{A_{12}\setminus B_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\Psi}^2 $. Adding this back in, we get the error $ \binom{N}{2}\int_{B_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\Psi_{12}}^2 $ instead of $ \binom{N}{2}\int_{A_{12}} \sum_{2\leq i<j}^{N}v_{ij}\abs{\Psi_{12}}^2 $. In doing so, we immediately see that in the presence of a hard-core potential wall, $ \Psi_{12} $ is zero, whenever two coordinates are within the hard core. Thus we may replace $ v_{ij} $ by $ \tilde{v}_{ij} $ which is zero whenever $ \abs{x_i-x_j} $ is within the range of the hard core. Thus our result, generalizes to the case of a hard core, plus an integrable potential.
+		\subsection{Estimating $E_2^{(1)}+E_2^{(2)}$}
+		\label{secE2}
+		Recall that \begin{equation}
+		\begin{aligned}
+		E_2^{(1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,\\ E_2^{(2)}&=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2.
+		\end{aligned}
+		\end{equation}
+		We now prove the following bound. 
+		\begin{lemma}\label{LemmaE2Bound}
+			\begin{equation}
+			E_2^{(1)}+E_2^{(2)}\leq E_0\left(N(\rho b)^4+N^2(\rho b)^6\right).
+			\end{equation}
+		\end{lemma}
+		\begin{proof}
+		We start by splitting $ E_2^{(1)} $ and $ E_2^{(2)} $ in two terms each and using partial integration. Consider first $ E_2^{(1)} $,  
+		\begin{equation}
+		\begin{aligned}
+		E_2^{(1)}&=\binom{N}{2}2N\int_{A_{12}\cap A_{23}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2\\
+		&=\binom{N}{2}2N\left(2\int_{A_{12}\cap A_{23}}\abs{\partial_1\Psi_F}^2+\int_{A_{12}\cap A_{23}}\abs{\partial_2\Psi_F}^2\right)+\binom{N}{2}2N\int_{A_{12}\cap A_{23}}\sum_{i=4}^{N}\abs{\partial_i\Psi_F}^2.
+		\end{aligned}
+		\end{equation}
+		For the second term, we can perform partial integration directly to obtain \begin{equation}
+		\begin{aligned}
+		\binom{N}{2}&2N\int_{A_{12}\cap A_{23}}\sum_{i=4}^{N}\abs{\partial_i\Psi_F}^2=\binom{N}{2}2N\int_{A_{12}\cap A_{23}}\sum_{i=4}^{N}\overline{\Psi_F}(-\partial^2_i\Psi_F)\\
+		&\leq E_0 N^3\int_{A_{12}\cap A_{23}}\abs{\Psi_F}^2-N^3\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\overline{\Psi_F}(-\partial^2_i\Psi_F)\\&\leq 2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{[x_2-b,x_2+b]}\rho^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2-N^3\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\overline{\Psi_F}(-\partial^2_i\Psi_F).
+		\end{aligned}
+		\end{equation}
+		Using Lemma \ref{LemmaDensityBounds}, we find \begin{equation}
+		\begin{aligned}
+		2E_0\int_{[0,L]}\int_{[x_2-b,x_2+b]}\int_{[x_2-b,x_2+b]}\rho^{(3)}(x_1,x_2,x_3)\diff x_3\diff x_1\diff x_2\leq NE_0(\rho b)^6.
+		\end{aligned}
+		\end{equation}
+		Furthermore, we find by Lemma \ref{LemmaDensityBounds2} that \begin{equation}
+		\binom{N}{2}2N\int_{A_{12}\cap A_{23}}\sum_{i=1}^{3}\left(\abs{\partial_i\Psi_F}^2-\overline{\Psi_F}(-\partial^2_i\Psi_F)\right)\leq \text{const. }\rho^9 L b^6=\text{const. }E_0 (b\rho)^6.
+		\end{equation}
+		Collecting everything, we find \begin{equation}
+		E_2^{(1)}\leq \text{const. }NE_0(\rho b)^6.
+		\end{equation}
+		To estimate $ E_2^{(2)} $, we use integration by parts to obtain \begin{equation}
+		\begin{aligned}
+		E_2^{(2)}&=\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}} \left(4\abs{\partial_1\Psi_F}^2+\sum_{i=5}^{N}\abs{\partial_i\Psi_F}^2\right)\\
+		&=\binom{N}{2}\binom{N-2}{2}\left(4\int_{\abs{x_3-x_4}<b}\left[\overline{\Psi_F}\partial_1\Psi_F\right]_{x_1=x_2-b}^{x_1=x_2+b} +\int_{A_{12}\cap A_{34}} \sum_{i=1}^{N}\overline{\Psi_F}(-\partial^2_i\Psi_F)\right)\\
+		&=4\int_{x_2\in[0,L]}\int_{\abs{x_3-x_4}<b}\left[\partial_{y_1}\gamma^{(4)}(x_1,x_2,x_3,x_4;y_1,x_2,x_3,x_4)\bigg\vert_{y_1=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}\\&\hspace{1cm}+E_0\int_{A_{12}\cap A_{34}}\rho^{(4)}(x_1,\dots,x_4).
+		\end{aligned}
+		\end{equation}
+		By Lemma \ref{LemmaDensityBounds2}, we get \begin{equation}
+		4\int_{x_2\in[0,L]}\int_{\abs{x_3-x_4}<b}\left[\partial_{y_1}\gamma^{(4)}(x_1,x_2,x_3,x_4;y_1,x_2,x_3,x_4)\bigg\vert_{y_1=x_1}\right]_{x_1=x_2-b}^{x_1=x_2+b}=\text{const. }E_0 N (\rho b)^4.
+		\end{equation}
+		Furthermore, by Lemma \ref{LemmaDensityBounds2} again, it follows that \begin{equation}
+		E_0\int_{A_{12}\cap A_{34}}\rho^{(4)}(x_1,\dots,x_4)\leq \text{const. } E_0 N^2(\rho b)^6.
+		\end{equation}
+	\end{proof}
+	
+\subsection{Constructing the trial state for arbitrary $N$}
+\label{secarbN}
+Together, Lemmas \ref{LemmaEnergyFunctionalBound}, \ref{LemmaE1Bound} and \ref{LemmaE2Bound} provide a proof of Lemma \ref{LemmaUpperBoundFewParticles}, which is the upper bound for small $N$ obtained from the trial state $\Psi_\omega$ \eqref{psiomega}. To construct a trial state for arbitrary $N$, we glue together copies of $\Psi_\omega$ on small intervals. This is straightforward with Dirichlet boundary conditions since the wave functions vanish at the boundaries. We therefore consider the state $ \Psi_{\text{full}}=\prod_{i=1}^{M}\Psi_{\omega,\ell}(x^i_1,\dots,x^i_{\tilde{N}}) $, where $ (x_1^i,\dots,x_{\tilde{N}}^i) $ are the particles in box $ i $ and $ \ell $ is the length of each box. Of course, $ \cup_{i=1}^{M}\{x_1^i,\dots,x_{\tilde{N}}^i\}=\{x_1,\dots,x_N\} $ and $ \{x_1^i,\dots,x_{\tilde{N}}^i\}\cap\{x_1^j,\dots,x_{\tilde{N}}^j\}=\emptyset $ for $ i\neq j $, such that $ M\tilde{N}=N $. The boxes are of length $ \ell=L/M-b $, and are equally spaced throughout $ [0,L] $, leaving a distance of $ b $ between each box. This is to prevent particles in different boxes from interacting. We can now prove the upper bound needed for Theorem \ref{TheoremMain}. 
+	\begin{proof}[Proof of Proposition \ref{PropositionUpperBound}]
+	From Lemma \ref{LemmaUpperBoundFewParticles}, the energy of the full trial state described above is bounded by \begin{equation}\label{EqUpperBoundSmallN}
+	E\leq M e_0\left(1+2\tilde{\rho} a\frac{b}{b-a} + \text{const. } \tilde{N} (b\tilde{\rho})^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)/\norm{\Psi_\omega}^2,
+	\end{equation}
+	with $ e_0=\frac{\pi^2}{3}\tilde{N}\tilde{\rho}^2(1+\text{const. }\frac{1}{\tilde{N}}) $ and $ \tilde{\rho}=\tilde{N}/\ell=\rho/(1-\frac{bM}{L})\leq \rho(1+2bM/L) $ for $ bM/L\leq 1/2 $. Clearly, we have $ \norm{\Psi_\omega}^2\geq 1-\int_B\abs{\Psi_F}^2\geq 1-\int_{\abs{x_1-x_2}<b}\rho^{(2)}(x_1,x_2)\geq 1-\text{const. }\tilde{N}(\rho b)^3 $, where the last inequality follows from Lemma \ref{Lemma rho2 bound}.
+	Thus, choosing $ M $ such that $ bM/L\ll 1 $, we have \begin{equation}
+	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+\frac{2\rho ab}{b-a}+\text{const. }\frac{M}{N}+\text{const. }2\rho abM/L+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
+	\end{equation}
+	First assume that $ N\geq (\rho b)^{-3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2} $. Now, we would choose $ \tilde{N}=N/M=\rho L/M\gg 1 $, or equivalently $ M/L\ll \rho $. Setting $ x=M/N $, we see that the error is \begin{equation}
+	\text{const. }\left[(1+2\rho^2 ab^2/(b-a))x+x^{-1}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right],
+	\end{equation}
+	Here, we used the fact that $ \tilde{N}(\rho b)^3\leq 1/2 $, so that we have\\ $ 1/(1-\tilde{N}(\rho b)^3)\leq 1+2\tilde{N}(\rho b)^3 $.
+	Optimizing in $ x $, we find $ x=M/N=\frac{(b\rho)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2}}{1+2\rho^2 a b}\simeq(b\rho)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2} $, which gives the error \begin{equation}
+	\text{const. }(b\rho)^{3/2}\left(1+\rho b^2 \int v_{\textnormal{reg}}\right)^{1/2}.
+	\end{equation}
+	Now, choose $ b=\max(\rho^{-1/5}\abs{a}^{4/5},R_0) $. Then, for $(\rho \abs{a})^{1/5}\leq 1/2$, 
+	\begin{equation}
+	\frac{b}{b-a}\leq1+2a/b\leq  1+2(\rho\abs{a})^{1/5}.
+	\end{equation}
+	Notice that
+	\begin{equation}(\rho b)^{3/2}= \max\left((\rho \abs{a})^{6/5},(\rho R_0)^{3/2}\right)\leq  (\rho \abs{a})^{6/5}+(\rho R_0)^{3/2}. 
+	\end{equation}
+	Now, for $ N<(\rho b)^{-3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2} $, the result follows from \eqref{EqUpperBoundSmallN}.
+\end{proof}
+
+\section{Lower bound Theorem \ref{TheoremMain}}	
+\label{SecLowerbound}
+	\begin{proposition}[Lower bound Theorem \ref{TheoremMain}]
+		\label{PropositionLowerBound}
+		Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above Theorem \ref{TheoremMain}, with Neumann boundary conditions. Write $\rho=N/L$. There exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
+		\begin{equation}
+		\label{eqlower}
+		E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a-C_\text{L}\left((\rho\abs{a})^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right).
+		\end{equation}
+	\end{proposition}
+As mentioned in Section \ref{SecProofidea}, the proof is based on a reduction to the Lieb-Liniger model combined with Lemma \ref{lemscatlength}. Similar to the upper bound, this idea only provides a useful lower bound for small $N$, which we obtain in Proposition \ref{PropositionLowerBoundSpecN} and Corollary \ref{CorollaryLowerBoundSpecN} at the end Section \ref{seclowsmalln}, after preparatory estimates on the Lieb--Liniger model in Section \ref{secprep}. Then, in Section \ref{seclowboundarbn}, this lower bound will be generalized to arbitrary $N$, proving Proposition \ref{PropositionLowerBound}.
+
+
+
+
+% 	We will use following lemma, which was originally proved in \cite{dyson1957ground} for the 3D hard sphere gas. \begin{lemma}[Dyson's lemma]\label{LemmaDyson} Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in H^1(\R) $, then for any interval $ \mathcal{I}\ni 0 $ 
+% 		\begin{equation}
+% 		\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{2}{R-a}\left(\delta_R+\delta_{-R}\right)\abs{\varphi}^2,
+% 		\end{equation}
+% 		where $ a $ is the s-wave scattering length.
+% 	\end{lemma}
+% 	\begin{proof}
+% 		This follows from the variational scattering problem, by comparing left-hand side to the minimizer of the scattering functional, see \cite{lieb2006mathematics}.
+% 	\end{proof}
+% 	This lemma will essentially allows us to replace the potential by a shell (double delta) potential of range $ R $ and strength $ \frac{2}{R-a} $.\\ 
+% 	Let us by some heuristics sketch the main idea of the proof of Proposition \ref{PropositionLowerBound}: By the use of Dyson's lemma, we replace the potential by a nearest neighbor shell potential.
+% % 	we see that \begin{equation}
+% % 	    \mathcal{E}(\Psi)\geq \int\sum_{i}\abs{\partial_i\Psi}^2\chi_{\mathfrak{r}_i(x)>R}+\sum_{i}\frac{2}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2
+% % 	\end{equation}
+% % 	 where $\mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j})$ is the distance to the nearest neighbor of particle $i$.
+% 	 Now discarding the part of the state, where two particles are closer that $R$, \ie defining the state $\psi(x_1,x_2,\dots,x_n)=\Psi(x_1,R+x_2,\dots,(n-1)R+x_n)$ for $x_1\leq x_2\leq\dots\leq x_n$ and symmetrically extended, we find that \begin{equation}
+% 	     \mathcal{E}(\Psi)\geq E_{LL}\left(n,\ell-(n-1)R,\frac{2}{R-a}\right) \norm{\psi}^2
+% 	 \end{equation}
+% 	 where $E_{LL}\left(n,\ell,c\right)$ denotes the Lieb-Liniger ground state energy with $n$ particles in volume $\ell$. As the ground state energy of the Lieb-Liniger model is well known, we find \begin{equation}
+% 	     \mathcal{E}(\Psi)\geq n\frac{\pi^2}{3}\rho^2(1-2\rho(R-a)+2\rho R)\norm{\psi}^2,
+% 	 \end{equation}
+% 	 and the problem is reduced to showing that $\norm{\psi}\approx\norm{\Psi}$. This turns out to be the case, when there are few particles in the problem, however, a localization argument is needed in the case of many particles.
+	\subsection{Lieb-Liniger model: preparatory facts}
+	\label{secprep}
+	The thermodynamic ground state energy of the Lieb-Liniger model is determined by the system of equations \cite{lieb1963exact}
+	\begin{align}
+	e(\gamma)&=\frac{\gamma^3}{\lambda^3}\int_{-1}^{1}g(x)x^2\diff x,\\
+	2\pi g(y)&=1+2\lambda\int_{-1}^{1}\frac{g(x)}{\lambda^2+(x-y)^2}\diff x\label{Eq3},\\
+	\lambda&=\gamma\int_{-1}^{1}g(x)\diff x.\label{Eq4}
+	\end{align}
+	This allows for a rigorous lower bound.
+	\begin{lemma}[Lieb-Liniger lower bound] \label{LemmaLL-LowerBound}
+		For $\gamma>0$,
+		\begin{equation}
+		\label{somresult}
+		e(\gamma)\geq \frac{\pi^2}{3}\left(\frac{\gamma}{\gamma+2}\right)^2\geq \frac{\pi^2}{3}\left(1-\frac{4}{\gamma}\right).
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		Neglecting $ (x-y)^2 $ in the denominator of \eqref{Eq3}, we see that $ g\leq \frac{1}{2\pi}+2\frac{1}{\lambda}\int_{-1}^{1}g(x)\diff x $. On the other hand, $ \eqref{Eq4} $ shows that $ e(\gamma)=\frac{\int_{-1}^{1}g(x)x^2\diff x}{\left(\int_{-1}^{1}g(x)\diff x\right)^3} $. We denote $ \int_{-1}^{1}g(x)\diff x=M $, notice that $ g\leq \frac{1}{2\pi}\left(1+\frac{2M}{\lambda}\right)=\frac{1}{2\pi}\left(1+\frac{2}{\gamma}\right)$, and minimize the expression for $e(\gamma)$ in $g$ subject to this bound. This gives $ g=K\mathds{1}_{[-\frac{M}{2K},\frac{M}{2K}]} $ with $ K=\frac{1}{2\pi}\left(1+\frac{2}{\gamma}\right) $, resulting in $ \int_{-1}^{1}g(x)x^2\diff x=\frac{1}{3}\frac{M^3}{4 K^2}$. Now, $e(\gamma)\geq \frac{1}{3}\frac{1}{4K^2}$ for $\gamma>0$, and \eqref{somresult} follows.
+	\end{proof}
+The thermodynamic Lieb--Liniger energy behaves like $n\rho^2 e(c/\rho)$, and the next results corrects the lower bound from \eqref{somresult} to obtain an estimate for finite particle numbers $n$.
+	\begin{lemma}[Lieb-Liniger lower bound for finite $n$]\label{LemmaLiebLinigerNeumannLowerBound}
+	The Lieb--Liniger ground state energy with Neumann boundary conditions can be estimated by
+		\begin{equation}
+		E_{LL}^{N}(n,\ell,c)\geq \frac{\pi^2}{3}n\rho^2\left(1-4\rho/c-\textnormal{const. }\frac{1}{n^{2/3}}\right).
+		\end{equation}
+	\end{lemma}
+This will be proved after the following lemma due to Robinson. Note we use the superscripts $N$ and $D$ to denote Neumann and Dirichlet boundary conditions, respectively. 
+	\begin{lemma}[Robinson \cite{robinson2014thermodynamic}]\label{LemmaRobinson}
+	For simplicity, we will consider the Lieb-Liniger model on $[-L/2,L/2]$ in this subsection, and use the notation $\Lambda_s:=[-s/2,s/2]$.
+		Let $ v$ be symmetric and decreasing (that is, $ v\circ \mathfrak{c}\geq v $ for any contraction $ \mathfrak{c} $). For any $ b>0 $,  \begin{equation}\label{EqRobinsonBound}
+		E^D_{\Lambda_{L+2b}}\leq E^N_{\Lambda_L}+\frac{2n}{b^2}.
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		The idea of the proof is given on page 66 of \cite{robinson2014thermodynamic}, but we shall give a more explicit proof here. In order to compare energies with different boundary conditions, consider a cut-off function $ h $ with the property that
+		\begin{enumerate}
+		\item $ h $ is real, symmetric, and continuously differentiable on $ \Lambda_{3L} $,
+		\item $ h(x)=0 $ for $ \abs{x}>L/2+b $,
+		\item $ h(x)=1 $ for $ \abs{x}<L/2-b $,
+		\item $ h(L/2-x)^2+h(L/2+x)^2=1 $ for $ 0<x<b $,
+		\item $ \abs{\frac{\diff h}{\diff x}}^2\leq \frac{1}{b^2} $, and $ h^2\leq 1 $.
+	    \end{enumerate}
+		
+		
+		Let $ f\in \mathcal{D}(\mathcal{E}^N_{\Lambda_L}) $. Define $ \tilde{f} $ by extending $ f $ to $ \Lambda_{3L} $ by reflecting $ f $ across each face of its domain in $ \Lambda_{3L} $. Define then $ V:L^2(\Lambda_L)\to L^2(\Lambda_{L+2b})  $ by $ Vf(x):=\tilde{f}(x)\prod_{i=1}^{n}h(x_i) $. It is not hard to show that $ V $ is an isometry, this is shown in Lemma 2.1.12 of \cite{robinson2014thermodynamic}. Also, we clearly have $ Vf\in \mathcal{D}(\mathcal{E}^D_{\Lambda_{L+2b}})  $.  Let $ \psi $ be the ground state for $ \mathcal{E}^N_{\Lambda_L} $, and define the trial state $ \psi_{\text{trial}}=V\psi $. Without the potential, the bound \eqref{EqRobinsonBound} is obtained in Lemma 2.1.13 of \cite{robinson2014thermodynamic}. Hence, we need only prove that no energy is gained by the potential in the trial state. To see this, define $ \tilde{\psi} $ to be $ \psi $ extended by reflection as above and notice that for $ \abs{x_2}<L/2-b $, we have \begin{equation}
+		\begin{aligned}
+		&\int_{-L/2-b}^{L/2+b}v(\abs{x_1-x_2})\abs{\tilde{\psi}(x)}^2h(x_1)^2h(x_2)^2\diff x_1\leq\\&\quad  \int_{-L/2+b}^{L/2-b}v(\abs{x_1-x_2})\abs{\tilde{\psi}}^2\diff x_1+\sum_{s\in\{-1,1\}}s\int_{s(L/2-b)}^{s(L/2)}v(\abs{x_1-x_2})\abs{\tilde{\psi}}^2(h(x)^2+h(L-x)^2)\diff x_1\\
+		&\quad =\int_{-L/2}^{L/2}v(\abs{x_1-x_2})\abs{\tilde{\psi}}^2\diff x_1,
+		\end{aligned}
+		\end{equation}
+		where we used that $ v $ is symmetric decreasing in the first inequality, as well as the fact that $ h(x)^2+h(L-x)^2=1 $ for $ L/2-b\leq x\leq L/2 $, which is just property 4 of $h$.
+		\begin{equation}
+		\begin{aligned}
+		&\sum_{(s_1,s_2)\in\{-1,1\}^2}s_1s_2\int_{L/2-s_1b}^{L/2}\int_{L/2-s_2b}^{L/2}v(\abs{x_1-x_2})\abs{\tilde{\psi}(x)}^2h(x_1)^2h(x_2)^2\diff x_2\diff x_1\\
+		&\quad\quad =\sum_{(s_1,s_2)\in\{-1,1\}^2}\int_{0}^{b}\int_{0}^{b}v(\abs{s_1y_1-s_2y_2})\abs{\tilde{\psi}(L/2-s_1 y_1,L/2-s_2 y_2,\bar{x}^{1,2})}^2\\&\hspace{5cm}\times h(L/2-s_1 y_1)^2h(L/2-s_2 y_2)^2\diff y_2\diff y_1\\
+		&\quad\quad\leq \int_{0}^{b}\int_{0}^{b}v(\abs{y_1-y_2})\abs{\tilde{\psi}(L/2-y_1,L/2- y_2,\bar{x}^{1,2})}^2\\&\hspace{5cm}\times\sum_{(s_1,s_2)\in\{-1,1\}^2}h(L/2-s_1 y_1)^2h(L/2-s_2 y_2)^2\diff y_2\diff y_1\\
+		&\quad\quad=\int_{0}^{b}\int_{0}^{b}v(\abs{y_1-y_2})\abs{\tilde{\psi}(L/2-y_1,L/2- y_2,\bar{x}^{1,2})}^2\diff y_2\diff y_1,
+		\end{aligned}
+		\end{equation}
+		where we write $\bar{x}^{1,2}$ as shorthand for $ (x_3,\dots, x_N)$.
+		In the third line, we use the definition of $ \tilde{\psi} $, as well as the fact that $ \abs{s_1y_1-s_2y_2}\geq \abs{y_1-y_2} $ for $ y_1,y_2\geq 0 $. In the last, line we used property 4 of $ h $.
+		By combining the two bounds above, we clearly have 
+		\begin{equation}
+		\begin{aligned}
+		&\int_{-L/2-b}^{L/2+b}\int_{-L/2-b}^{L/2+b}v(\abs{x_1-x_2})\abs{\tilde{\psi}(x)}^2h(x_1)^2h(x_2)^2\diff x_1\diff x_2\\&\qquad\qquad\qquad\qquad \leq \int_{-L/2}^{L/2}\int_{-L/2}^{L/2}v(\abs{x_1-x_2})\abs{\tilde{\psi}(x)}^2\diff x_1\diff x_2.
+		\end{aligned}
+		\end{equation}
+		 The result now follows from the fact that $ V $ is an isometry.
+	\end{proof}
+	\begin{proof}[Proof of Lemma \ref{LemmaLiebLinigerNeumannLowerBound}]
+		Lemma \ref{LemmaRobinson} implies that for any $ b>0 $ \begin{equation}
+		E_{LL}^{N}(n,\ell,c)\geq E_{LL}^D(n,\ell+b,c)-\text{const. }\frac{n}{b^2}.
+		\end{equation}
+		Since the range of the interaction in the Lieb-Liniger model is zero, we see that $ e^D_{LL}(2^mn,2^m\ell,c):=\frac{1}{2^m\ell}E_{LL}^{D}(2^mn,2^m\ell,c) $ is a decreasing sequence. To see this, simply split the box of size $ 2^m\ell $ in two boxes of size $ 2^{m-1}\ell $. Now, there are no interactions between the boxes so by using the product state of the two $ 2^{m-1}n $-particle ground states in each box as a trial state, we see that $ E^D_{LL}(2^{m}n,2^m\ell)\leq 2E^D_{LL}(2^{m-1}n,2^{m-1}\ell)  $. Since we also have $ e^D_{LL}(2^mn,2^m\ell,c)\geq e_{LL}(2^mn,2^m\ell,c)\to e_{LL}(n/\ell,c) $ as $ m\to\infty $ \cite{lieb1963exact}, we see that \begin{equation}
+		\begin{aligned}
+		E_{LL}^{N}(n,\ell,c)\geq e_{LL}(n/(\ell+b),c)(\ell+b)-\text{const. }\frac{n}{b^2}\\\geq \frac{\pi^2}{3}n\rho^2\left(1-4\rho/c-\text{const. }\left(3b/\ell-\frac{1}{\rho^2b^2}\right)\right).
+		\end{aligned}
+		\end{equation}
+		Here, $ \rho=n/\ell $, and the second inequality follows from Lemma \ref{LemmaLL-LowerBound}. Optimizing in $ b $, we find \begin{equation}
+		E_{LL}^{N}(n,\ell,c)\geq \frac{\pi^2}{3}n\rho^2\left(1-4\rho/c-\text{const. }\frac{1}{n^{2/3}}\right).
+		\end{equation}
+	\end{proof}
+	\subsection{Lower bound for small particle numbers $n$}
+	\label{seclowsmalln}
+	In this subsection, we work our way towards Proposition \ref{PropositionLowerBoundSpecN} and Corollary \ref{CorollaryLowerBoundSpecN}, which provide lower bounds on the Neumann ground state energy. The proof strategy followed is that in Section \ref{SecProofidea}.
+	
+	We start by removing the relevant regions of the wave function. Throughout this section, let $ \Psi $ be the Neumann ground state of $\mathcal{E}$ and let $R>\max\left(R_0,2\abs{a}\right)$ be a length, to be fixed later. Define the continuous function $ \psi\in L^2([0,\ell-(n-1)R]^n) $ by
+	\begin{equation}
+	\label{defpsi}
+	  \psi(x_1,x_2,\dots,x_n):=\Psi(x_1,R+x_2,\dots,(n-1)R+x_n)\hspace{0.4cm}\text{ for }\hspace{0.4cm}0\leq x_1\leq\dots\leq x_n\leq \ell-(n-1)R, 
+	\end{equation}
+	extended symmetrically to other orderings of the particles. 
+	Our first goal is to prove that almost no weight is lost in going from $\Psi$ to $\psi$, so that the heuristic calculation \eqref{heurist} has a chance of success. The following lemma will be useful.
+	\begin{lemma}
+		For any function $ \phi\in H^1(\R) $ such that $ \phi(0)=0 $, \begin{equation}\label{EqSobolevIneq}
+		\int_{[0,R]}\abs{\partial\phi}^2\geq \max_{[0,R]}\abs{\phi}^2/R.
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		Write $ \phi(x)=\int_{0}^{x}\phi'(t)\diff t $, and find that \begin{equation}
+		\abs{\phi(x)}\leq \int_{0}^{x}\abs{\phi'(t)}\diff t.
+		\end{equation}
+		Hence $ \max_{x\in[0,R]}\abs{\phi(x)}\leq \int_{0}^{R}\abs{\phi'(t)}\diff t\leq \sqrt{R}\left(\int\abs{\phi'(t)}^2\diff t\right)^{1/2}. $
+	\end{proof}
+	We can estimate the norm loss in the following way
+	\begin{equation}\label{EqNormBoundBij}
+	\begin{aligned}
+	\braket{\psi|\psi}=1-\int_{B}\abs{\Psi}^2\geq 1-\sum_{i<j}\int_{D_{ij}}\abs{\Psi}^2,
+	\end{aligned}
+	\end{equation}
+	where $ B:=\{x\in\R^n\vert \min_{i,j}\abs{x_i-x_j}<R \} $ and $ D_{ij}:=\{x\in\R^n \vert \mathfrak{r}_i(x)=\abs{x_i-x_j}<R \} $ with $ \mathfrak{r}_i(x):=\min_{j\neq i}(\abs{x_i-x_j}) $. Note $ D_{ij} $ is not symmetric in $ i$ and $j $, and that for $j\neq j'$, $ D_{ij}\cap D_{ij'}=\emptyset$ up to sets of measure zero. Also note $ B=\cup_{i<j}D_{ij} $.  To give a good bound on the right-hand side of \eqref{EqNormBoundBij}, we need the following lemma, upper bounding the norm loss to an energy. 
+	\begin{lemma}\label{LemmaNormLoss}
+		For $ \psi $ be defined in \eqref{defpsi}, \begin{equation}
+		\label{eqlemmanormloss}
+		1-\braket{\psi|\psi}\leq8 \left(R^2\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+R(R-a)\sum_{i<j}\int v_{ij} \abs{\Psi}^2\right).
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		Note that \eqref{EqSobolevIneq} implies that for any $ \phi\in H^1 $, \begin{equation}
+		\abs{\abs{\phi(x)}-\abs{\phi(x')}}^2\leq\abs{\phi(x)-\phi(x')}^2\leq R\left(\int_{[0,R]}\abs{\partial \phi}^2\right),
+		\end{equation}
+		for $ x,x'\in[0,R] $. Furthermore, 
+		\begin{equation}
+		\abs{\phi(x)}^2-\abs{\phi(x')}^2=\left(\abs{\phi(x)}-\abs{\phi(x')}\right)^2+2\left(\abs{\phi(x)}-\abs{\phi(x')}\right)\abs{\phi(x')}\leq 2\left(\abs{\phi(x)}-\abs{\phi(x')}\right)^2+\abs{\phi(x')}^2.
+		\end{equation}
+		It follows that \begin{equation}
+		\max_{x\in[0,R]}\abs{\phi(x)}^2\leq 2R\int_{[0,R]}\abs{\partial \phi}^2+2\min_{x'\in[0,R]}\abs{\phi(x')}^2.
+		\end{equation}
+		Viewing $ \Psi $ as a function of $ x_i $, we have \begin{equation}
+		2\min_{\mathfrak{r}_i(x)=\abs{x_i-x_j}<R}\abs{\Psi}^2\geq \max_{\mathfrak{r}_i(x)=\abs{x_i-x_j}<R}\abs{\Psi}^2-4R\left(\int_{{\mathfrak{r}_i(x)=\abs{x_i-x_j}<R}}\abs{\partial_i \Psi}^2\right).
+		\end{equation}
+		Hence, \begin{equation}
+		\begin{aligned}
+		&2\sum_{i<j}\int v_{ij} \abs{\Psi}^2\geq 2\sum_{i<j} \int_{D_{ij}} v_{ij} \abs{\Psi}^2 \\&\geq \left(\int v\right)\sum_{i< j}\int\left(\max_{D'_{ij}}\abs{\Psi}^2-4R\left(\int_{D'_{ij}}\abs{\partial_i\Psi}^2\diff x_i\right)\right)\diff \bar{x}^i\\
+		&\geq \frac{4}{R-a}\sum_{i< j}\left(\frac{1}{2R}\int_{D_{ij}}\abs{\Psi}^2-4R\int_{D_{ij}}\abs{\partial_i\Psi}^2\right),
+		\end{aligned}
+		\end{equation}
+		where $ D'_{ij}:=\{x_i\in \R \vert \mathfrak{r}_i(x)=\abs{x_i-x_j}<R \} $ and $\diff \bar{x}^i$ is shorthand for integration with respect to all variables except $x_i$. Now, rewriting and \eqref{EqNormBoundBij} give the result.
+	\end{proof}
+	
+	To make \eqref{heurist} in the proof outlined in Section \ref{SecProofidea} precise, we relate the Neumann ground state energy to the Lieb--Liniger energy in Lemma \ref{LemmaNormBoundEpsilon}. First, we state a direct adaptation of Lemma \ref{lemscatlength}, more suited to our purpose here. 
+	
+	\begin{lemma}[Dyson's lemma]\label{LemmaDyson} Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in H^1(\R) $, then for any interval $ \mathcal{I}\ni 0 $ 
+		\begin{equation}
+		\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{1}{R-a}\left(\delta_R+\delta_{-R}\right)\abs{\varphi}^2,
+		\end{equation}
+		where $ a $ is the s-wave scattering length.
+	\end{lemma}
+	
+	
+	
+
+	\begin{lemma}\label{LemmaNormBoundEpsilon}
+		 Let $R>\max\left(R_0,2\abs{a}\right) $ and $ \epsilon\in[0,1] $. For $ \psi $ defined in \eqref{defpsi},
+		\begin{equation}
+		\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LL}^N \left(n,\tilde{\ell},\frac{2\epsilon}{R-a}\right)\braket{\psi|\psi}+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}).
+		\end{equation}
+		where $ \tilde{\ell}:=\ell-(n-1)R $.
+	\end{lemma}
+	\begin{proof}
+		Splitting the energy functional in two parts, and using Lemma \ref{LemmaNormLoss} on one term and Lemma \ref{LemmaDyson} on the other (see also \eqref{eqidea}), we find 
+		\begin{equation}
+		\begin{aligned}
+		&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\epsilon\sum_{i}\frac{1}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
+		\end{aligned}
+		\end{equation}
+		where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $ and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDyson} by dividing the integration domain into Voronoi cells, and restricting to the cell around particle $ i $.\\
+		With use of Lemma \ref{LemmaNormLoss} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger model (since the two delta functions collapse to a single delta of twice the strength when volume $R$ is removed between particles), we obtain\begin{equation}
+		\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LL}^N \left(n,\tilde{\ell},\frac{2\epsilon}{R-a}\right)\braket{\psi|\psi}+ \frac{(1-\epsilon)}{R^2}\text{const. }(1-\braket{\psi|\psi}).
+		\end{equation}
+	\end{proof}
+	
+	
+	The next lemma will continue the process of bounding the norm loss in going from $ \Psi $ of norm $ 1 $ to $ \psi $ in \eqref{defpsi}. 
+	\begin{lemma}\label{LemmaImprovedMassBound}
+	For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\abs{a} $ we have
+		\begin{equation}\label{EqImprovedMassBound}
+		\begin{aligned}
+		\braket{\psi|\psi} \geq 1-\textnormal{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
+		\end{aligned}
+		\end{equation}
+	\end{lemma}
+	\begin{proof}
+		From the known upper bound, \ie Proposition \ref{PropositionUpperBound}, and by Lemma \ref{LemmaNormBoundEpsilon} with $ \epsilon=1/2 $, it follows that 
+		\begin{equation}
+		n\frac{\pi^2}{3}\rho^2\left(1+2\rho a+\text{const. }(\rho R)^{3/2}\right)\geq E_{LL}^N \left(n,\tilde{\ell},\frac{1}{R-a}\right)\braket{\psi|\psi}+ \frac{1}{16R^2}(1-\braket{\psi|\psi}).
+		\end{equation}
+		Subtracting $ E_{LL}^N \left(n,\tilde{\ell},\frac{1}{R-a}\right) $ on both sides, and using Lemma \ref{LemmaLiebLinigerNeumannLowerBound} on the left-hand side, we find\begin{equation}
+		\begin{aligned}
+		&n\frac{\pi^2}{3}\rho^2\left(1+2\rho a+\text{const. }(\rho R)^{3/2}\right)-n\frac{\pi^2}{3}\tilde{\rho}^2\left(1-4\tilde{\rho} (R-a)-\text{const. }n^{-2/3}\right)\\
+		&\geq  \left(\frac{1}{16R^2}-E_{LL}^N \left(n,\tilde{\ell},\frac{1}{R-a}\right)\right)(1-\braket{\psi|\psi}),
+		\end{aligned}
+		\end{equation}
+		with $ \tilde{\rho}=n/\tilde{\ell}=\rho/(1-(\rho-1/\ell)R)$.
+		Using the upper bound $ E^N_{LL}\left(n,\tilde{\ell},\frac{1}{R-a}\right)\leq n\frac{\pi^2}{3}\tilde{\rho}^2 $ on the left-hand side, as well as $ 2\rho \geq\tilde{\rho}\geq \rho(1+\rho R)$, we find
+		\begin{equation}
+		\begin{aligned}
+		\text{const. }n\rho^2R^2\left(\rho R+(\rho R)^{3/2}+n^{-2/3}\right)&\geq \left(\frac{1}{16}-R^2n\frac{4\pi^2}{3}\rho^2\right)\left(1-\braket{\psi|\psi}\right).
+		\end{aligned}
+		\end{equation}
+		It follows that we have \begin{equation}
+		\braket{\psi|\psi}\geq 1-\text{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
+		\end{equation}
+	\end{proof}
+		For $ n\leq \kappa (\rho R)^{-9/5} $ with $ \kappa=\frac{3}{16\pi^2}\frac{1}{8} $ and $ \rho R\leq \frac{1}{2} $, we find \begin{equation}
+		\braket{\psi|\psi}\geq 1-\textnormal{const. }n(\rho R)^3=1-\textnormal{const. }(\rho R)^{6/5}.
+		\end{equation}
+    It is now straightforward to show the following two results, finishing the bounds for small $n$.
+	
+	\begin{proposition}
+	\label{PropositionLowerBoundSpecN}
+		For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\abs{a} $ we have \begin{equation}
+		E^N(n,\ell)\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho a+\textnormal{const. }\left(\frac{1}{n^{2/3}}+n(\rho R)^3+n^{1/3}(\rho R)^2\right)\right).
+		\end{equation}
+	\end{proposition}
+	\begin{proof}
+		By Lemma \ref{LemmaNormBoundEpsilon} with $ \epsilon=1 $, we reduce to a Lieb-Liniger model with volume $ \tilde{\ell} $, density $ \tilde{\rho} $, and coupling $ c $, and we have $ \tilde{\ell}=\ell-(n-1)R $, $ \tilde{\rho}=\frac{n}{\tilde{\ell}} $ and $ c=\frac{2}{R-a} $. Notice that $\rho(1+\rho R)\leq \tilde{\rho}\leq \rho(1+2\rho R)$. Hence, by Lemmas \ref{LemmaLiebLinigerNeumannLowerBound} and \ref{LemmaImprovedMassBound}, \begin{equation}
+		\begin{aligned}
+		E^N(n,\ell)&\geq E_{LL}^N(n,\tilde{\ell},c)\braket{\psi|\psi}\\&\geq
+		n\frac{\pi^2}{3}\rho^2\left(1+2\rho a-\text{const. }\frac{1}{n^{2/3}}\right)\left(1-\text{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right)\right).
+		\end{aligned}
+		\end{equation}
+	\end{proof}
+	\begin{corollary} \label{CorollaryLowerBoundSpecN}
+		For $ \frac{\tau}{2} (\rho R)^{-9/5}\leq n\leq \tau (\rho R)^{-9/5} $ with $ \tau=\frac{3}{16\pi^2}\frac{1}{8} $ and $ \rho R\leq \frac{1}{2} $, 
+		\begin{equation}
+		E^N(n,\ell)\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho a-\textnormal{const. }\left((\rho R)^{6/5}+(\rho R)^{7/5}\right)\right).
+		\end{equation}
+	\end{corollary}
+	\subsection{Lower bound for arbitrary $N$}
+	\label{seclowboundarbn}
+	
+% 		 We are now ready to prove a bound for arbitrary particle numbers $N$by dividing the box into many smaller boxes and showing that, to some extend, particles do not accumulate in these smaller boxes. Instead we may view the particles as being distributed evenly among the boxes, allowing us to use the previously established bound for few particles.\\
+		 
+	The lower bound in Corollary \ref{CorollaryLowerBoundSpecN} only applies to particle numbers of order $ (\rho R)^{-9/5} $. In this subsection, we generalize to any number of particles by performing a Legendre transformation in the particle number and going to the grand canonical ensemble. First, we justify that only particle numbers of order less than or equal to $ (\rho R)^{-9/5} $ are relevant for a certain choice of $ \mu $.
+		\begin{lemma}\label{LemmaLocalizationFbound}
+			Let $ \Xi\geq 4 $ be fixed. Also let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $, with $\frac{\tau}{2\Xi} (\rho R)^{-9/5} \leq \rho\ell\eqqcolon n^{\ast}\leq \frac{\tau}{\Xi} (\rho R)^{-9/5} $ and $ \tau=\frac{3}{16\pi^2}\frac{1}{8} $. Furthermore, assume that $ \rho R\leq  1 $ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $. Then,  \begin{equation}
+			E^{N}(n,\ell)-\mu n \geq E^{N}(n_0,\ell)-\mu n_0.
+			\end{equation}
+		\end{lemma}
+		\begin{proof}
+			By Corollary \ref{CorollaryLowerBoundSpecN}, we have \begin{equation}
+			E^{N}(\Xi\rho\ell,\ell)\geq\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-\text{const. }(\rho R)^{6/5}\right).
+			\end{equation}
+			Superadditivity caused by the positive potential implies \begin{equation}
+			E^N(n,\ell)-\mu n\geq m\left(E^N(\Xi\rho\ell,\ell)-\mu\Xi\rho\ell \right)+E^N(n_0,\ell)-\mu n_0.
+			\end{equation}
+			The result therefore follows from the fact that \begin{equation}
+			\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-\text{const. }(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell.
+			\end{equation}
+		\end{proof}
+	We are ready to prove the lower bound for general particle numbers.
+		\begin{proof}[Proof of Proposition \ref{PropositionLowerBound}]
+			For the case $ N<\tau (\rho R)^{-9/5} $, the result follows from Proposition \ref{PropositionLowerBoundSpecN}.\\
+			For $ N\geq \tau (\rho R)^{-9/5} $, notice that \begin{equation}
+			E^N(N,L)\geq F^N(\mu,L)+\mu N,
+			\end{equation}
+			where $ F^N(\mu,L)=\inf_{N'}\left(E^N(N',L)-\mu N'\right) $. Clearly, \begin{equation}
+			F^N(\mu,L)\geq M F^N(\mu,\ell)\label{EqLocalizationF},
+			\end{equation}
+			with $ \ell=L/M $ and $ M\in \mathbb{N}_+ $. 
+%			This can be seen by the following argument. Split the box of volume $ L $ in $ M $ boxes of volume $ \ell $. Ignoring the interactions between boxes and using the ground state of the full Hamiltonian as a trial state of the box-divided Hamiltonian we find\begin{equation}
+%			E^N(N,L)-\mu N\geq \min_{\{c_n\}}\left\{M\sum_{n=0}^{N}c_n E^N(n,\ell)\right\}-\mu N
+%			\end{equation}
+%			with $ \{c_n\} $ denoting a distribution of the particles in the boxes, where $ c_n $ is the fraction of the $ M $ boxes that contain exactly $ n $ particles, such that $ \sum_{n=0}^{N}c_n=1 $. Hence we have \begin{equation}
+%			\begin{aligned}
+%			E^N(N,L)-\mu N\geq\min_{\{c_n\}}\left\{M\sum_{n=0}^{N}c_n \left(E^N(n,\ell)-\mu n\right)\right\}\\
+%			\geq MF^{N}(\mu,\ell),
+%			\end{aligned}
+%			\end{equation}
+%			from which \eqref{EqLocalizationF} follows. 
+			Now, let $\Xi= 4 $ and choose $ M $ such that $ \frac{\tau}{2\Xi}\left(\rho R\right)^{-9/5}\leq n^*:=\rho\ell\leq \frac{\tau}{\Xi}\left(\rho R\right)^{-9/5} $ and $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $ (notice that $ \mu=\frac{\diff}{\diff \rho}(\frac{\pi^2}{3}\rho^3(1+2\rho a))$). By Lemma \ref{LemmaLocalizationFbound},  \begin{equation}
+			F^N(\mu,\ell):=\inf_{n}\left(E^N(n,\ell)-\mu n\right)=\inf_{n<\Xi n^*}\left(E^N(n,\ell)-\mu n\right).
+			\end{equation}
+			It is known from Proposition \ref{PropositionLowerBoundSpecN} that for $ n<\Xi n^* $,  \begin{equation}
+			\begin{aligned}
+			E^{N}(n,\ell)&\geq n\frac{\pi^2}{3}\bar{\rho}^2\left(1+2\bar{\rho} a-\textnormal{const. }\left(\frac{1}{n^{2/3}}+n(\bar{\rho} R)^3+n^{1/3}(\bar{\rho} R)^2\right)\right)\\
+			&\geq \frac{\pi^2}{3}n\bar{\rho}^2\left(1+2\bar{\rho}a\right)-n^*\rho^2\mathcal{O}\left((\rho R)^{6/5}\right),
+			\end{aligned}
+			\end{equation}
+			where $ \bar{\rho}=n/\ell $ (notice that now $ \rho=N/L=n^\ast/\ell\neq n/\ell $) and where we used $ \bar{\rho}<\Xi\rho$.
+			Thus, we have \begin{equation}
+			F^{N}(\mu,\ell)\geq \inf_{\bar{\rho}<\Xi\rho}(g(\bar{\rho})-\mu\bar{\rho})\ell-n^\ast \rho^2 \mathcal{O}\left((\rho R)^{6/5}\right),
+			\end{equation}
+			where $
+			g(\bar{\rho})=
+			\frac{\pi^2}{3}\bar{\rho}^3\left(1+2\bar{\rho}a\right)
+			$ for $ \bar{\rho}<\Xi\rho $. Note that $ g $ is a convex $ C^{1} $-function with invertible derivative for $ \Xi\rho a\geq -\frac{1}{4}  $ (the case of $ \Xi\rho a<-\frac{1}{4} $ is trivial, by choosing a sufficiently large constant in the error term). Hence, \begin{equation}
+			\begin{aligned}
+			E^{N}(N,L)\geq M(F^{N}(\mu,\ell)+\mu n^*)\geq Mn^\ast\frac{\pi^2}{3} \rho^2 \left(1+2\rho a-\mathcal{O}\left((\rho R)^{6/5}\right)\right)\\
+			=\frac{\pi^2}{3} N\rho^2 \left(1+2\rho a-\mathcal{O}\left((\rho R)^{6/5}\right)\right),
+			\end{aligned}
+			\end{equation}
+			where the equality follows from the specific choice of $ \mu=g'(\rho) $.
+		\end{proof}
+		
+\section{Anyons and proof of Theorem \ref{TheoremAnyon}}
+\label{SectionOtherSymmetries}
+
+% 		\begin{proof}[Proof of Theorem \ref{TheoremFermion}]
+% 			Consider the bosonic energy functional $ \mathcal{E}_\infty $ with potential $ v_{\infty}=v+\infty\delta_0 $, where $ \infty\delta_0 $ simply denotes a zero-range hard core potential, \ie $ \infty\delta_0 $ imposes a Dirichlet boundary condition on all planes of intersection of particles. Consider then the unitary operator given by $ U:  f\mapsto (-1)^{\prod_{i<j}(x_i-x_j)}f $. Because of the Dirichlet condition in $ \dom{\mathcal{E}_\infty} $, we clearly have $ U\dom{\mathcal{E}_\infty}=\dom{\mathcal{E}_F} $ with $ \mathcal{E}_F(Uf)=\mathcal{E}_\infty(f) $, where $ \mathcal{E}_F $ is the Fermi energy functional with potential $ v $. The ground state energy is then given by Theorem \ref{TheoremMain} and the result follows.
+% 		\end{proof}
+% 		It is easily verified that $ a_o\geq 0 $ for any repulsive $v$, and hence we see that the first order correction to the Fermi ground state energy is positive as expected.
+
+In Theorem \ref{TheoremFermion} and below, we discussed the fact that the fermionic ground state energy can be found from Theorem \ref{TheoremMain} by means of a unitary transformation. It was also mentioned that this concept can be generalized to a version of 1D anyonic symmetry \cite{leinaas1977theory,bonkhoff2021bosonic,posske2017second}. We will now define our interpretation of such anyons, depending on a statistical parameter $\kappa\in[0,\pi]$ that defines the phase $e^{i\kappa}$ accumulated upon particle exchange. We also include a Lieb--Liniger interaction of strength $2c>0$, such as in \cite{kundu1999exact,hao2008ground,batchelor2006one}.
+
+To start, divide the configuration space into sectors $ \Sigma_\sigma:=\{x_{\sigma_1}<x_{\sigma_2}<\dots<x_{\sigma_N}\}\subset \R^N $ indexed by permutations $ \sigma=(\sigma_1,\dots,\sigma_N) $, and the diagonal 
+$\Delta_N:=\bigcup_{1\leq i<j\leq N}\{x_i=x_j\}$. Consider the kinetic energy operator on $\R^N\setminus\Delta_N$,
+\begin{equation}
+H_N=-\sum_{i=1}^{N}\partial_{x_i}^2,
+\end{equation}
+with domain \begin{equation}
+\label{eqdom}
+\begin{aligned}
+\mathcal{D}(H_N)=\bigg\{\varphi=\euler{-i\frac{\kappa}{2}\Lambda(x)}f(x)&\ \bigg\vert\ f \text{ is continuous, symmetric in $x_1,\dots,x_N$, smooth on each $\Sigma_\sigma$,}\\&\quad \ \text{and } (\partial_i-\partial_j)\varphi\rvert^{ij}_+-(\partial_i-\partial_j)\varphi\rvert^{ij}_-=2c\ \euler{-i\frac{\kappa}{2}\Lambda(x)} f\rvert^{ij}_0 \text{ for all }i\neq j \bigg\}.
+\end{aligned}
+\end{equation}
+Here, $ \vert^{ij}_{\pm,0} $ means the function should be evaluated at $ x_i=x_j\vert_{ \pm,0}$. Also, 
+\begin{equation}
+\Lambda(x):= \sum_{i<j}\epsilon(x_i-x_j)\hspace{1cm}\text{with}\hspace{1cm} \epsilon(x)=\begin{cases}
+			1&\text{for }x>0\\
+			-1&\text{for }x<0\\
+			0&\text{for }x=0
+			\end{cases}.
+\end{equation} The idea is that the (perhaps rather artificial) boundary condition in \eqref{eqdom} encodes the presence of a delta potential of strength $2c$, just like it would for bosons. 
+The following proposition holds.  \begin{proposition}\label{PropositionAnyonQuadraticForm}
+				Let $0<k<\pi$. $ H_N $ is symmetric with corresponding quadratic form \begin{equation}
+				\mathcal{E}_{\kappa,c}(\varphi)=\sum_{i=1}^{N}\int_{{\R^N\setminus\Delta_N}} \abs{\partial_{x_i}\varphi(x)}^2+\frac{2c}{\cos(\kappa/2)}\sum_{i<j} \delta(x_i-x_j)\abs{\varphi(x)}^2\diff^{N}x.
+				\end{equation}
+			\end{proposition}
+			\begin{proof}
+				Let $ \varphi,\vartheta\in \mathcal{D}(H_N) $, then by partial integration, \begin{equation}
+				\begin{aligned}
+				\braket{\vartheta\vert H_N \varphi}&=-\sum_{i=1}^{N}\int_{\R^N\setminus\Delta_N}\overline{\vartheta} \partial_{x_i}^2\varphi\\&=\sum_{i=1}^{N}\int_{\R^N\setminus\Delta_N}\overline{\partial_{x_i}\vartheta}\partial_{x_i}\varphi-\int_{\R^{N-1}\setminus\Delta_{N-1}}\sum_{i\neq j}\left(\overline{\vartheta}\partial_{x_i}\varphi\vert^{ij}_--\overline{\vartheta}\partial_{x_i}\varphi\vert^{ij}_+\right)\\
+				&=\sum_{i=1}^{N}\int_{\R^N\setminus\Delta_N}\overline{\partial_{x_i}\vartheta}\partial_{x_i}\varphi+\int_{\R^{N-1}\setminus\Delta_{N-1}}\sum_{i< j}\left(\overline{\vartheta}(\partial_{x_i}-\partial_{x_j})\varphi\vert^{ij}_+-\overline{\vartheta}(\partial_{x_i}-\partial_{x_j})\varphi\vert^{ij}_-\right).
+				\end{aligned}
+				\end{equation}
+				Let $ f,g\in C^\infty_0(\R^N) $ be the functions such that $ \varphi=\euler{-i\frac{\kappa}{2}\Lambda}f $ and $ \vartheta=\euler{-i\frac{\kappa}{2}\Lambda}g $. Then,
+				
+				\begin{equation}
+				\begin{aligned}
+				\braket{\vartheta\vert H_N \varphi}&=\sum_{i=1}^{N}\int_{\R^N\setminus\Delta_N}\overline{\partial_{x_i}\vartheta}\partial_{x_i}\varphi+\int_{\R^{N-1}\setminus\Delta_{N-1}}\sum_{i< j}\left(\overline{g}(\partial_{x_i}-\partial_{x_j})f\vert^{ij}_+-\overline{g}(\partial_{x_i}-\partial_{x_j})f\vert^{ij}_-\right)\\
+				&=\sum_{i=1}^{N}\int_{\R^N\setminus\Delta_N}\overline{\partial_{x_i}\vartheta}\partial_{x_i}\varphi+\int_{\R^{N-1}\setminus\Delta_{N-1}}2\sum_{i< j}\left(\overline{g}(\partial_{x_i}-\partial_{x_j})f\vert^{ij}_+\right),
+				\end{aligned}
+				\end{equation}
+				where the last equality follows from the symmetry of $f$. Note that the boundary condition on $ \mathcal{D}(H_N) $ imply \begin{equation}
+				(\partial_i-\partial_j)\varphi\rvert^{ij}_+-(\partial_i-\partial_j)\varphi\rvert^{ij}_-=\euler{-i\frac{\kappa}{2}\left(-1+S\right)}(\partial_i-\partial_j)f\rvert^{ij}_+-\euler{-i\frac{\kappa}{2}\left(1+S\right)}(\partial_i-\partial_j)f\rvert^{ij}_-=2c \varphi\rvert^{ij}_0=\euler{-i\frac{\kappa}{2}S}2c f\rvert^{ij}_0,
+				\end{equation}
+				where $ S:=\Lambda-\epsilon(x_i-x_j) $. By symmetry of $ f $, it follows that \begin{equation}
+				\begin{aligned}
+				\euler{-i\frac{\kappa}{2}\left(-1+S\right)}(\partial_i-\partial_j)f\rvert^{ij}_+-\euler{-i\frac{\kappa}{2}\left(1+S\right)}(\partial_i-\partial_j)f\rvert^{ij}_-
+				&=\euler{-i\frac{\kappa}{2}\left(-1+S\right)}(\partial_i-\partial_j)f\rvert^{ij}_++\euler{-i\frac{\kappa}{2}\left(1+S\right)}(\partial_i-\partial_j)f\rvert^{ij}_+\\
+				&=\euler{-i\frac{\kappa}{2}S}2\cos(\kappa/2)(\partial_i-\partial_j)f\rvert^{ij}_+\\
+				&=\euler{-i\frac{\kappa}{2}S}2c f\rvert^{ij}_0,
+				\end{aligned}
+				\end{equation}
+				so that \begin{equation}
+				2(\partial_i-\partial_j)f\rvert^{ij}_+=\frac{2c}{\cos(\kappa/2)}f\rvert^{ij}_0. 
+				\end{equation}
+				Hence, it follows that \begin{equation}\label{EqQuadraticFormDerivation}
+				\braket{\vartheta\vert H_N \varphi}=\sum_{i=1}^{N}\int_{{\R^N\setminus\Delta_N}}\overline{\partial_{x_i}\vartheta} \partial_{x_i}\varphi(x)+\frac{2c}{\cos(\kappa/2)}\sum_{i<j} \delta(x_i-x_j)\overline{\vartheta(x)}\varphi(x)\diff^{N}x.
+				\end{equation}
+				Starting from $ \braket{H_N\vartheta\vert \phi} $, we can arrive at \eqref{EqQuadraticFormDerivation} by the same steps, proving that $ H_N $ is symmetric. 	
+			\end{proof}
+			\begin{remark}\label{RemarkAnyons}
+				Since $ \mathcal{E}_{\kappa,c}\geq0 $, it follows that $ H_N $ has a self-adjoint Friedrichs extension, $ \tilde{H}_N $. This is what we regard as the Hamiltonian of the 1D anyon gas with statistical parameter $ \kappa $ and Lieb--Liniger interaction of strength $2c\delta_0 $ that is relevant for Theorem \ref{TheoremAnyon}.
+			\end{remark}
+
+				We are now ready to provide a proof of Theorem \ref{TheoremAnyon} along the lines outlined in Section \ref{SecOthersymmetries}.
+
+			\begin{proof}[Proof of Theorem \ref{TheoremAnyon}]
+				Let $ \mathcal{E}_c $ denote the bosonic quadratic form with potential $ v_c=v+2c\delta_0 $. By Proposition \ref{PropositionAnyonQuadraticForm} and the observation that the quadratic form is independent of the phase factors, we see that the unitary operator $ U_\kappa: f\mapsto \euler{-i\frac{\kappa}{2}\Lambda}f $ provides a unitary equivalence of the bosonic and anyonic set-ups. That is, $ U_\kappa\dom{\mathcal{E}_{c/\cos(\kappa/2)}}=\dom{\mathcal{E}_{\kappa,c}} $ with $ \mathcal{E}_{\kappa,c}(U_\kappa f)=\mathcal{E}_{c/\cos(\kappa/2)}(f) $. Hence, the result follows from Theorem \ref{TheoremMain}.
+			\end{proof}
+% 			In this setting, the results for bosons and fermions follows respectively as special cases of Theorem \ref{TheoremAnyon} with $ \kappa=0 $ and $ \kappa=\pi $, $ c>0 $. Notice that the case $ \kappa=\pi,\ c=0 $ does not reduce the usual fermions, as the kinetic energy at planes of intersection is unaccounted for in this model.
+			\section{Acknowledgements}
+			JA and JPS were partially supported by the Villum Centre of Excellence for the Mathematics of Quantum Theory (QMATH). RR was supported by the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (ERC CoG UniCoSM, Grant Agreement No. 724939). JA is grateful to IST Austria for hospitality during a visit  and to Robert Seiringer for interesting discussions. RR thanks the University of Copenhagen for the hospitality during a visit.
+	\bibliographystyle{amsplain}
+	\bibliography{bibliography}
+	\end{document}

@@ -1,0 +1,176 @@
+\documentclass[final]{beamer}
+%% Possible paper sizes: a0, a0b, a1, a2, a3, a4.
+%% Possible orientations: portrait, landscape
+%% Font sizes can be changed using the scale option.
+\usepackage[size=a0,orientation=portrait,scale=1.1]{beamerposter}
+
+\usetheme{gemini}
+\usecolortheme{default}
+\useinnertheme{rectangles}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{srcltx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{braket}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{booktabs}
+\usepackage{tcolorbox}
+
+
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\renewcommand{\braket}[1]{\left\langle#1\right\rangle}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+\newcommand{\rr}{\mathcal{R}}
+
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{mtheorem}{Theorem}
+\newtheorem{mdefinition}{Definition}
+\newtheorem{mproposition}{Proposition}
+\newtheorem{mlemma}{Lemma}
+\newtheorem{mcorollary}{Corollary}
+\newtheorem{mremark}{Remark}
+
+
+\definecolor{kugreen}{RGB}{50,93,61}
+\definecolor{kugreenlys}{RGB}{132,158,139}
+\definecolor{kugreenlyslys}{RGB}{173,190,177}
+\definecolor{kugreenlyslyslys}{RGB}{239,249,240}
+\setbeamercovered{transparent}
+\mode<presentation>
+%\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
+%\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{theorems}[numbered]
+
+\usecolortheme[named=kugreen]{structure}
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block body}{bg=kugreenlyslyslys,fg=black}
+\setbeamercolor{block title}{bg=kugreenlyslyslys,fg=black}
+
+
+
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.03\paperwidth}
+\setlength{\colwidth}{0.45\paperwidth}
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+%\useoutertheme{infolines} 
+%\input{custom-defs.tex}
+
+\logoleft{\hspace*{2cm}\includegraphics[width=10cm]{qmath.jpg}}
+\logoright{\hspace*{-5cm}\includegraphics[width=5cm]{kuscience-logo}}
+
+\title{The ground state energy of 1D dilute many-body quantum systems}
+
+\author{Johannes Agerskov}
+\institute{QMATH \\ University of Copenhagen}
+\date{June 15th 2022}
+
+\setbeamercovered{invisible}
+
+\begin{document}
+	\begin{frame}[t]
+		\begin{columns}[t]
+			
+			\begin{column}{2\colwidth+\sepwidth}
+				\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=\centering Abstract]
+					We study the ground state energy of a gas of 1D bosons with density $\rho$, interacting through a general, repulsive 2-body potential with scattering length $a$, in the dilute limit $\rho |a|\ll1$. The first terms in the expansion of the thermodynamic energy density are $\pi^2\rho^3/3(1+2\rho a)$, where the leading order is the 1D free Fermi gas. This result covers the Tonks--Girardeau limit of the Lieb--Liniger model as a special case, but given the possibility that $a>0$, it also applies to potentials that differ significantly from a delta function.
+				\end{tcolorbox}
+			\end{column}
+			
+		\end{columns}
+		
+	\begin{columns}[t]
+		\separatorcolumn
+		
+		\begin{column}{\colwidth}
+		\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=Set up and previous results]
+			
+		\end{tcolorbox}
+		
+		\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=The scattering length]
+			\begin{theorem}[ref needed]
+				For $ B_R\coloneqq\{0<\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
+				\begin{equation}
+				-\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
+				\end{equation}
+				with boundary condition $ \phi(x)=1 $ for $ \abs{x}=R$.
+				Then $ \phi(x)=f(\abs{x}) $ for some $ f:(0,R]\to [0,\infty) $, and for $ \text{range}(v)<r<R $, we have \begin{equation}
+				f(r)=\begin{cases}
+				(r-a)/(R-a) &\text{for }d=1\\
+				\ln(r/a)/\ln(R/a) &\text{for }d=2\\
+				(1-ar^{2-d})/(1-aR^{2-d})&\text{for }d\geq 3,
+				\end{cases}
+				\end{equation}
+				with some constant $ a $ called the (s-wave) \textbf{scattering length}.
+			\end{theorem}
+			
+		\end{tcolorbox}
+			
+		\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=Main result]
+			\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
+				\label{TheoremMain}
+				Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Write $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+				\begin{equation}
+				\label{result}
+				E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
+				\mathcal{O}
+				\left((\rho|a|)^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right),
+				\end{equation}
+				where $a$ is the scattering length of $v$.
+			\end{theorem}
+		\end{tcolorbox}	
+			
+		\end{column}
+		
+		\separatorcolumn
+		
+		
+		\separatorcolumn
+	\end{columns}
+	\end{frame}
+\end{document}

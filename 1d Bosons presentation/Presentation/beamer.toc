@@ -5,3 +5,4 @@
 \beamer@sectionintoc {3}{Examples}{7}{0}{3}
 \beamer@sectionintoc {4}{Upper bound}{8}{0}{4}
 \beamer@sectionintoc {5}{Lower bound}{14}{0}{5}
+\beamer@sectionintoc {6}{Extensions}{21}{0}{6}

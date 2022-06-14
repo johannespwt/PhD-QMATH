@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: one_d_bosons_v8.aux
+The style file: amsplain.bst
+Database file #1: bibliography.bib
+Warning--missing pages in fournais2021energy
+Warning--missing pages in guan2011analytical
+You've used 48 entries,
+            2213 wiz_defined-function locations,
+            790 strings with 11824 characters,
+and the built_in function-call counts, 15349 in all, are:
+= -- 1358
+> -- 738
+< -- 1
++ -- 301
+- -- 245
+* -- 1463
+:= -- 2533
+add.period$ -- 48
+call.type$ -- 48
+change.case$ -- 268
+chr.to.int$ -- 0
+cite$ -- 50
+duplicate$ -- 546
+empty$ -- 1276
+format.name$ -- 245
+if$ -- 3113
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 98
+newline$ -- 155
+num.names$ -- 94
+pop$ -- 285
+preamble$ -- 2
+purify$ -- 220
+quote$ -- 0
+skip$ -- 274
+stack$ -- 0
+substring$ -- 1047
+swap$ -- 59
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 188
+warning$ -- 2
+while$ -- 153
+width$ -- 50
+write$ -- 440
+(There were 2 warnings)
