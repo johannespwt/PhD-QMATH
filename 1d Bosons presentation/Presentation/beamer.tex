@@ -80,7 +80,7 @@
 
 \logo{\includegraphics[width=0.8cm]{kuscience-logo}}
 %\useoutertheme{infolines} 
-\title{The ground state energy of 1D dilute many-body quantum systems}
+\title{The ground state energy of dilute 1d many-body quantum systems}
 \subtitle{}
 \author{Johannes Agerskov\\\vspace{0.2 cm}
 	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej\\
@@ -105,8 +105,8 @@
 \begin{frame}
 \frametitle{Background}
 \begin{block}{The scattering length}
-	\begin{Theorem}
-		For $ B_R\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
+	\small\begin{theorem}
+		For $ B_R=\{0<\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 	 \begin{equation}
 		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
 		 \end{equation}
@@ -119,14 +119,14 @@
 		 \end{cases}
 		 \end{equation}
 		 with some constant $ a $ called the (s-wave) \textbf{scattering length}.
-	\end{Theorem}
+	\end{theorem}
 \end{block}	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Model}
 	We consider a many-body system of bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $, with $ v=v_{\text{reg}}+v_{\text{h.c.}} $\begin{equation}
-	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\R^d)^{\otimes_{\text{sym}} N}.
+	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\Lambda_L)^{\otimes_{\text{sym}} N}.
 	\end{equation}
 	The ground state energy is defined by 
 	$$
@@ -138,11 +138,11 @@
 \frametitle{Previous results}
 \begin{block}{}
 	For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
-	\begin{Theorem}[$ d=3 $ result, Lee-Huang-Yang]
+	\begin{theorem}[$ d=3 $ result, Lee-Huang-Yang]
 		\begin{equation}
-		e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{(\rho a)^3}+o(\sqrt{\rho a}^3)\right).
+		e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})\right).
 		\end{equation}
-	\end{Theorem}
+	\end{theorem}
 
 	\begin{theorem}[$ d=2 $ result]
 		\begin{equation}
@@ -178,7 +178,9 @@
 	\frametitle{Examples}
 	\begin{block}{The hard core gas}
 		Behaves like free fermi gas in volume $ L-NR $, \ie \begin{equation}
-		E_{\text{hard core}}(N,L)=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\approx E_0(1+2\rho R).
+		\begin{aligned}
+		E_{\text{hard core}}(N,L)&=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\\&= E_0\left(1+2\rho R+\mathcal{O}\left((\rho R)^2\right)\right).
+		\end{aligned}
 		\end{equation}
 		Scattering length is $ a=R $.
 	\end{block}
@@ -275,7 +277,7 @@
 \hspace{-0.3cm}E(N,L)\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a}+\text{const. }\frac{M}{N}+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
 \end{equation}
 
-Optimizing in $ M $ and choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
+Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 
 \begin{mproposition}[Upper bound Theorem \ref{TheoremMain}]
 	\label{PropositionUpperBound}
@@ -308,10 +310,10 @@ Optimizing in $ M $ and choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we fi
 	\frametitle{The Lieb-Liniger (LL) model}
 	\begin{block}{}
 	\begin{equation}
-	H_{LL}=-\sum_{i=1}^{n}\Delta_i+2c\sum_{i<j}\delta(x_i-x_j).
+	H_{LL}=-\sum_{i=1}^{n}\partial_i^2+2c\sum_{i<j}\delta(x_i-x_j).
 	\end{equation}
 	Behavior in thermodynamic limit: $ \lim\limits_{\substack{\ell\to\infty,\\ n/\ell\to \rho}}E_{LL}(n,\ell,c)/\ell=\rho^3 e(\gamma) $ with $ \gamma=c/\rho  $.
-		\begin{mlemma}[Lieb Liniger lower bound] \label{LemmaLL-LowerBound}
+		\begin{mlemma}[Lieb-Liniger lower bound] \label{LemmaLL-LowerBound}
 			Let $ \gamma>0 $, then
 			\begin{equation}
 			e(\gamma)\geq \frac{\pi^2}{3}\left(\frac{\gamma}{\gamma+2}\right)^2\geq \frac{\pi^2}{3}\left(1-\frac{4}{\gamma}\right).

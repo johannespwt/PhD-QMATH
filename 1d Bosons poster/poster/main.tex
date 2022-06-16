@@ -2,7 +2,7 @@
 %% Possible paper sizes: a0, a0b, a1, a2, a3, a4.
 %% Possible orientations: portrait, landscape
 %% Font sizes can be changed using the scale option.
-\usepackage[size=a0,orientation=portrait,scale=1.1]{beamerposter}
+\usepackage[size=a1,orientation=portrait,scale=1.1]{beamerposter}
 
 \usetheme{gemini}
 \usecolortheme{default}
@@ -32,7 +32,13 @@
 \usepackage{cancel}
 \usepackage{booktabs}
 \usepackage{tcolorbox}
+\usepackage[normalem]{ulem}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
 
+\usepackage[square,sort,comma,numbers]{natbib}
+
+\renewcommand{\ULdepth}{1pt}
 
 \newcommand{\euler}[1]{\text{e}^{#1}}
 \newcommand{\Real}{\text{Re}}
@@ -71,33 +77,42 @@
 \newtheorem{mlemma}{Lemma}
 \newtheorem{mcorollary}{Corollary}
 \newtheorem{mremark}{Remark}
+\newtheorem{mconjecture}{Conjecture}
 
 
-\definecolor{kugreen}{RGB}{50,93,61}
+\definecolor{qmathblue}{RGB}{61,131,131}
+\definecolor{kugreen1}{RGB}{50,93,61}
+\definecolor{kugreen}{RGB}{70,116,60}
 \definecolor{kugreenlys}{RGB}{132,158,139}
 \definecolor{kugreenlyslys}{RGB}{173,190,177}
 \definecolor{kugreenlyslyslys}{RGB}{239,249,240}
+\definecolor{qmathbluelyslyslys}{RGB}{236,243,243}
 \setbeamercovered{transparent}
 \mode<presentation>
 %\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
 %\setbeamertemplate{footline}[frame number]
 \setbeamertemplate{theorems}[numbered]
 
-\usecolortheme[named=kugreen]{structure}
+\usecolortheme[named=qmathblue]{structure}
 \useinnertheme{circles}
 \usefonttheme[onlymath]{serif}
 \setbeamercovered{transparent}
 \setbeamertemplate{blocks}[rounded][shadow=false]
-\setbeamercolor{block body}{bg=kugreenlyslyslys,fg=black}
-\setbeamercolor{block title}{bg=kugreenlyslyslys,fg=black}
+\setbeamercolor{block body}{bg=qmathbluelyslyslys,fg=black}
+\setbeamercolor{block title}{bg=qmathbluelyslyslys,fg=black}
 
 
 
 \newlength{\sepwidth}
 \newlength{\colwidth}
 \setlength{\sepwidth}{0.03\paperwidth}
-\setlength{\colwidth}{0.45\paperwidth}
+\setlength{\colwidth}{0.467\paperwidth}
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+\newlength{\sepwidthh}
+\newlength{\colwidthh}
+\setlength{\sepwidthh}{0.006\paperwidth}
+\newcommand{\separatorcolumnn}{\begin{column}{\sepwidthh}\end{column}}
 %\useoutertheme{infolines} 
 %\input{custom-defs.tex}
 
@@ -106,18 +121,20 @@
 
 \title{The ground state energy of 1D dilute many-body quantum systems}
 
-\author{Johannes Agerskov}
-\institute{QMATH \\ University of Copenhagen}
+\author{\underline{Johannes Agerskov}\textsuperscript{1}, Robin Reuvers\textsuperscript{2}, and Jan Philip Solovej\textsuperscript{1}}
+\institute{1. Department of Mathematics, University of Copenhagen, Universitetsparken 5, DK-2100 Copenhagen \O, Denmark
+	\\
+	2. Universit\`{a} degli Studi Roma Tre, Dipartimento di Matematica e Fisica, L.go S. L. Murialdo 1, 00146 Roma, Italy}
 \date{June 15th 2022}
 
 \setbeamercovered{invisible}
 
 \begin{document}
 	\begin{frame}[t]
+		\vspace*{-1.5cm}
 		\begin{columns}[t]
-			
-			\begin{column}{2\colwidth+\sepwidth}
-				\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=\centering Abstract]
+			\begin{column}{2\colwidth+\sepwidthh}
+				\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=\centering Abstract]
 					We study the ground state energy of a gas of 1D bosons with density $\rho$, interacting through a general, repulsive 2-body potential with scattering length $a$, in the dilute limit $\rho |a|\ll1$. The first terms in the expansion of the thermodynamic energy density are $\pi^2\rho^3/3(1+2\rho a)$, where the leading order is the 1D free Fermi gas. This result covers the Tonks--Girardeau limit of the Lieb--Liniger model as a special case, but given the possibility that $a>0$, it also applies to potentials that differ significantly from a delta function.
 				\end{tcolorbox}
 			\end{column}
@@ -128,12 +145,37 @@
 		\separatorcolumn
 		
 		\begin{column}{\colwidth}
-		\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=Set up and previous results]
-			
+		\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=Set up and previous results]
+		We consider the model \begin{equation}
+			H=-\sum^N_{i=1}\Delta_{x_i}+\sum_{1\leq i<j\leq N}v(x_i-x_j),
+		\end{equation}	
+		where $ \Delta_{x_i} $ is the $ d $-dimension Laplacian w.r.t $ x_i\in\R^d $, and $ v $ is a repulsive, spherically symmetry potential.\\
+		The corresponding bosonic energy functional is 
+		\begin{equation}
+		\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\Lambda_L)^{\otimes_{\text{sym}} N},
+		\end{equation}
+		with $ v_{ij}=v\left(\abs{x_i-x_j}\right) $, and the ground state energy is defined by 
+		\begin{equation}
+			E(N,L)\coloneqq\inf_{\psi\in\mathcal{D}(\mathcal{E}),\ \norm{\psi}^2=1}\mathcal{E}(\psi).
+		\end{equation}
+		Let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $, then previously known result in $ d=2,3 $ are 
+		\begin{theorem}[$ d=3 $ result, Lee-Huang-Yang \cite{lee1957eigenvalues}, \cite{yau2009second,fournais2020energy,basti2021new,fournais2021energy}]
+			\begin{equation}
+			e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})\right).
+			\end{equation}
+		\end{theorem}
+		
+		\begin{theorem}[$ d=2 $ result, \cite{lieb2001ground}]
+			\begin{equation}
+			e(\rho)=4\pi \rho^2\left(\abs{\ln(\rho a^2)}^{-1}+o(\abs{\ln(\rho a^2)}^{-1})\right) .
+			\end{equation}
+		\end{theorem}
+		
+		
 		\end{tcolorbox}
 		
-		\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=The scattering length]
-			\begin{theorem}[ref needed]
+		\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=The scattering length]
+			\begin{theorem}[\cite{lieb2001ground}]
 				For $ B_R\coloneqq\{0<\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 				\begin{equation}
 				-\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
@@ -146,15 +188,23 @@
 				(1-ar^{2-d})/(1-aR^{2-d})&\text{for }d\geq 3,
 				\end{cases}
 				\end{equation}
-				with some constant $ a $ called the (s-wave) \textbf{scattering length}.
+				with some constant $ a $ called the (s-wave, or even-wave in $ d=1 $) \textbf{scattering length}.
 			\end{theorem}
-			
+			Similarly, one can define the p-wave, or odd-wave in $ d=1 $, scattering length by having a p-wave boundary condition at $ \abs{x}=1 $.
 		\end{tcolorbox}
 			
-		\begin{tcolorbox}[colframe=kugreen,colback=kugreenlyslyslys,title=Main result]
-			\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
+		\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=Main result]
+			Let $ v=v_{\text{reg}}+v_{\text{h.c.}} $, with $ v_{\text{reg}} $ a finite measure, and $ v_{\text{h.c.}} $ a positive linear combination of hard core potentials of the form 
+			\begin{equation*}
+			v_{[x_1,x_2]}(x):=\begin{cases*}
+			\ \infty& \phantom{when} $|x|\in [x_1,x_2]$\\
+			\ 0 & \phantom{when} \text{otherwise}
+			\end{cases*}.
+			\end{equation*}
+			Then we have the result
+			\begin{theorem}[Bosons {[A., R. Reuvers, J. P. Solovej, 2022]}]
 				\label{TheoremMain}
-				Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Write $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+				Consider a one dimensional ($ d=1 $) Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Write $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 				\begin{equation}
 				\label{result}
 				E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
@@ -163,14 +213,124 @@
 				\end{equation}
 				where $a$ is the scattering length of $v$.
 			\end{theorem}
+			Since spinless (or spin-aligned) fermions are unitarily equivalent to impenetrable bosons, we have the following theorem as a corolarry 
+			\begin{theorem}[Spinless fermions {[A., R. Reuvers, J. P. Solovej, 2022]}]\label{TheoremFermion}
+				Consider a spinless Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+				\begin{equation}
+				E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
+				\end{equation}
+				where $ a_o\geq0 $ is the odd wave scattering length of $v$. 
+			\end{theorem} 
 		\end{tcolorbox}	
-			
+		
+		\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=Upper bound proof sketch]
+			Use Variational principle
+			$$
+			E(N,L)\leq \frac{\mathcal{E}(\Psi)}{\norm{\Psi}^2},\quad \text{for any }  \Psi\in \mathcal{D}(\mathcal{E}) .
+			$$
+			Let $ M=N(\rho b)^{3/2} $ and choose the trial state $ \Psi=\prod_{i=1}^{M}\Psi_i $, where \begin{equation}
+				\Psi_i(x)=\begin{cases}
+				\omega(\rr(x))\frac{\abs{\Psi^i_F(x)}}{\rr(x)}& \text{if }\rr(x)<b\\
+				\abs{\Psi^i_F(x)}&\text{if }\rr(x)\geq b,
+				\end{cases}
+			\end{equation}
+			and $ \omega $ is the (suitably normalized) solution to the two-body scattering equation,  $\Psi^i_F$ is the free Fermi ground state with $ N/M $ particles in the box $ [(i-1)L/M,iL/M] $, and $ \rr(x)\coloneqq \min_{i<j}(\abs{x_i-x_j}) $ is uniquely defined a.e. Trial state energy computation amounts, after some manipulations and integration by parts, to computing integrals involving reduced densities and reduced density matrices of the free Fermi gas.
+		\end{tcolorbox}
 		\end{column}
+	\separatorcolumnn
+
+	\begin{column}{\colwidth}
+		\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=Upper bound proof sketch]
+			For the free Fermi gas, then one-particle reduced density matrix is known
+			\begin{equation}
+			\begin{aligned}
+			\gamma^{(1)}(x,y)&=\frac{2}{l}\sum_{j=1}^{N}\sin\left(\frac{\pi}{l}jx\right)\sin\left(\frac{\pi}{l} jy\right)\\
+			&=\frac{\pi}{l}\left(D_{N}\left(\pi\frac{x-y}{l}\right)+D_{N}\left(\pi\frac{x+y}{l}\right)\right),
+			\end{aligned}
+			\end{equation}
+			where $ l=L/M $ and $ D_N(x)=\frac{1}{2\pi}\sum_{k=-N}^{N}\euler{ikx}=\frac{\sin((N+1/2)x)}{2\pi\sin(x/2)} $ is the Dirichlet kernel.
+			Bounds on $ k $-particle reduced density matrices are provided by Wick's theorem, \eg:
+			\begin{mlemma}\label{Lemma rho2 bound}
+				$$ \rho^{(2)}(x_1,x_2)\leq\left(\frac{\pi^2}{3}\rho^4+f(x_2)\right)(x_1-x_2)^2+\mathcal{O}(\rho^6(x_1-x_2)^4), $$ 
+				with $ \int f(x_2)\diff x_2\leq \textnormal{ const. }\rho^3\log(N). $
+			\end{mlemma}
+			Collecting everything and choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
+			
+			\begin{mproposition}[Upper bound Theorem \ref{TheoremMain}]
+				\label{PropositionUpperBound}
+				There exists a constant $C_\text{U}>0$ such that for $\rho|a|$, $\rho R_0\leq C_U^{-1}$, the ground state energy $E^D(N,L)$ satisfies
+				\small{\begin{equation}
+					\label{equpper}
+					E^D(N,L)\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a + C_\text{U}\left((\rho\abs{a})^{6/5}+(\rho R_0)^{3/2}+N^{-1}\right)\right).
+					\end{equation}}
+			\end{mproposition}
+		\end{tcolorbox}
 		
-		\separatorcolumn
-		
-		
-		\separatorcolumn
+	\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=Lower bound proof sketch]
+		Proof of lower bound consists of the following steps:
+		\begin{itemize}
+			\item Use Dyson's lemma to reduce to a nearest neighbor double delta-barrier potential.
+			\item Reduce to the Lieb Liniger model by discarding \textbf{a small part} of the wave function.
+			\item Use a known lower bound for the Lieb Liniger model.
+		\end{itemize}	
+		\begin{mlemma}[Dyson]\label{LemmaDyson} Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in H^1(\R) $, then for any interval $ \mathcal{I}\ni 0 $ 
+			\begin{equation}
+			\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\frac{1}{R-a}\left(\delta_R+\delta_{-R}\right)\abs{\varphi}^2,
+			\end{equation}
+			where $ a $ is the s-wave scattering length.
+		\end{mlemma}
+		Define $ \psi\in L^2([0,\ell-(n-1)R]^n) $ by 
+				$$ \psi(x_1,x_2,...,x_n)=\Psi(x_1,R+x_2,...,(n-1)R+x_n), $$
+				for $ x_1\leq x_2\leq...\leq x_n $ and symmetrically extended.\\\vspace{0.2cm}
+				Then by Lemma \ref{LemmaDyson} \begin{equation}
+				\begin{aligned}
+				\mathcal{E}(\Psi)&\geq E^N_{LL}(n,\ell-(n-1)R,2/(R-a))\braket{\psi|\psi}\\
+				&\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho(a-\cancel{R})+\cancel{2\rho R}-\text{const. }\frac{1}{N^{2/3}}\right)\braket{\psi|\psi}.
+				\end{aligned}
+				\end{equation}
+		Mass of $ \psi $ can be bounded by 
+		\begin{mlemma}\label{LemmaImprovedMassBound}
+			For some constant $C>0$ and for $ n(\rho R)^2\leq  \frac{3}{16\pi^2}C $, $ \rho R\ll 1 $ and $ R>2\abs{a} $ we have
+			\begin{equation}\label{EqImprovedMassBound}
+			\begin{aligned}
+			\braket{\psi|\psi} \geq 1-\textnormal{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
+			\end{aligned}
+			\end{equation}
+		\end{mlemma}
+		and we find \begin{mproposition}\label{PropositionLowerBoundSpecN}
+			For assumptions as in lemma \ref{LemmaImprovedMassBound} we have \begin{equation}
+			E^N(n,\ell)\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho a+\textnormal{const. }\left(\frac{1}{n^{2/3}}+n(\rho R)^3+n^{1/3}(\rho R)^2\right)\right).
+			\end{equation}
+		\end{mproposition}
+		Error grows with $n$, so localization is needed. Localization is justified by going to the grand canonical ensemble. We localize to boxes with $n=(\rho R)^{-9/5}$ giving
+		\begin{mproposition}[Lower bound Theorem \ref{TheoremMain}]
+			\label{PropositionLowerBound}
+			There exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
+			\begin{equation}
+			\label{eqlower}
+			E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a-C_\text{L}\left((\rho\abs{a})^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right).
+			\end{equation}
+		\end{mproposition}
+	\end{tcolorbox}
+	\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=Spin-1/2 conjecture]
+		For the spin-1/2 case, there are two solvable models. The Yang-Gaudin model, and the hard core model. Based on the ground state energies of these, one migth conjecture
+		\begin{mconjecture}
+		For assumptions as in Theorem \ref{TheoremMain}, the spin-1/2 Fermi ground state energy can be expanded as
+			\begin{equation}
+			\begin{aligned}
+			E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big).
+			\end{aligned}
+			\end{equation}
+		\end{mconjecture}
+	\end{tcolorbox}
+	\begin{tcolorbox}[colframe=qmathblue,colback=qmathbluelyslyslys,title=References]
+		\vspace*{0.06 cm}
+		\bibliographystyle{amsplain}
+		{\fontsize{12}{14.1}\selectfont\bibliography{bibliography}}
+		\vspace*{0.06 cm}
+	\end{tcolorbox}
+	\end{column}	
+	\separatorcolumn
 	\end{columns}
 	\end{frame}
 \end{document}

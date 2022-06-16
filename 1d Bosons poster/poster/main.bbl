@@ -1,0 +1,39 @@
+ \newcommand{\noop}[1]{}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{basti2021new}
+Giulia Basti, Serena Cenatiempo, and Benjamin Schlein, \emph{A new second-order
+  upper bound for the ground state energy of dilute {B}ose gases}, Forum of
+  Mathematics, Sigma, vol.~9, Cambridge University Press, 2021.
+
+\bibitem{fournais2020energy}
+S{\o}ren Fournais and Jan~Philip Solovej, \emph{The energy of dilute {B}ose
+  gases}, Annals of Mathematics \textbf{192} (2020), no.~3, 893--976.
+
+\bibitem{fournais2021energy}
+\bysame, \emph{The energy of dilute {B}ose gases {II}: The general case}, arXiv
+  preprint arXiv:2108.12022 (2021).
+
+\bibitem{lee1957eigenvalues}
+Tsin~D Lee, Kerson Huang, and Chen~N Yang, \emph{Eigenvalues and eigenfunctions
+  of a {B}ose system of hard spheres and its low-temperature properties},
+  Physical Review \textbf{106} (1957), no.~6, 1135.
+
+\bibitem{lieb2001ground}
+Elliott~H Lieb and Jakob Yngvason, \emph{The ground state energy of a dilute
+  two-dimensional {B}ose gas}, Journal of Statistical Physics \textbf{103}
+  (2001), no.~3, 509--526.
+
+\bibitem{yau2009second}
+Horng-Tzer Yau and Jun Yin, \emph{The second order upper bound for the ground
+  energy of a {B}ose gas}, Journal of Statistical Physics \textbf{136} (2009),
+  no.~3, 453--503.
+
+\end{thebibliography}
