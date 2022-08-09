@@ -8,6 +8,10 @@
 \providecommand{\href}[2]{#2}
 \begin{thebibliography}{1}
 
+\bibitem{agerskov2022ground}
+Johannes Agerskov, Robin Reuvers, and Jan~Philip Solovej, \emph{Ground state
+  energy of dilute bose gases in 1d}, arXiv preprint arXiv:2203.17183 (2022).
+
 \bibitem{basti2021new}
 Giulia Basti, Serena Cenatiempo, and Benjamin Schlein, \emph{A new second-order
   upper bound for the ground state energy of dilute {B}ose gases}, Forum of

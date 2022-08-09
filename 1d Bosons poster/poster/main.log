@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.2.23)  16 JUN 2022 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2021.2.23)  17 JUN 2022 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -777,7 +777,7 @@ Package beamerposter Info: finished size input check. on input line 128.
 Package beamerposter Info: myfontscale=1.0 on input line 128.
 Package beamerposter Info: checking size input, please wait. on input line 129.
 
-Package beamerposter Info: the input a1\ 2\ was correct, we proceed. on input l
+Package beamerposter Info: the input a0\ 1\ was correct, we proceed. on input l
 ine 129.
 Package beamerposter Info: finished size input check. on input line 129.
 Package beamerposter Info: checking orientation input, please wait. on input li
@@ -789,12 +789,11 @@ Package beamerposter Info: myfontscale=1.1 on input line 129.
  ( FP-UPN ( FP-MUL )
 ( FP-ROUND ) )
 \tmp=\dimen188
-Package beamerposter Info: paperwidth=1690.09352pt, paperheight=2388.89357pt on
+Package beamerposter Info: paperwidth=2388.89357pt, paperheight=3380.75665pt on
  input line 172.
-Package beamerposter Info: textwidth=1661.64076pt, textwidth=2360.44081pt on in
-put line 173.
-Package beamerposter Info: fontscale=0.70710678, myfontscale=0.78 on input line
- 174.
+Package beamerposter Info: textwidth=2360.44081pt, textwidth=3352.3039pt on inp
+ut line 173.
+Package beamerposter Info: fontscale=1.0, myfontscale=1.10 on input line 174.
  ( FP-UPN ( FP-MUL ) ( FP-ROUND ) ) ( FP-UPN ( FP-MUL )
 ( FP-ROUND ) ) ( FP-UPN ( FP-MUL ) ( FP-ROUND ) ) ( FP-UPN ( FP-MUL )
 ( FP-ROUND ) ) ( FP-UPN ( FP-MUL ) ( FP-ROUND ) ) ( FP-UPN ( FP-MUL )
@@ -1475,7 +1474,7 @@ Package: beamerfontthemeserif 2010/06/17  (rcs-revision d02a7cf4d8ae)
  <qmath.jpg, id=10, 235.88126pt x 80.3pt>
 File: qmath.jpg Graphic file (type jpg)
  <use qmath.jpg>
-Package pdftex.def Info: qmath.jpg used on input line 119.
+Package pdftex.def Info: qmath.jpg used on input line 120.
 (pdftex.def)             Requested size: 284.52756pt x 96.86186pt.
 
 
@@ -1485,86 +1484,86 @@ ound PDF version <1.7>, but at most version <1.5> allowed
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 120.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 121.
 (pdftex.def)             Requested size: 142.26378pt x 201.18503pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 124.
+(hyperref)                removing `math shift' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@@underline' on input line 124.
+(hyperref)                removing `\@@underline' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\hbox' on input line 124.
+(hyperref)                removing `\hbox' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 124.
+(hyperref)                removing `\mathsurround' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 124.
+(hyperref)                removing `\z@' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 124.
+(hyperref)                removing `math shift' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 124.
+(hyperref)                removing `\mathsurround' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 124.
+(hyperref)                removing `\z@' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 124.
+(hyperref)                removing `superscript' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 124.
+(hyperref)                removing `\mathsurround' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 124.
+(hyperref)                removing `\z@' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 124.
+(hyperref)                removing `superscript' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mathsurround' on input line 124.
+(hyperref)                removing `\mathsurround' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\z@' on input line 124.
+(hyperref)                removing `\z@' on input line 125.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 124.
+(hyperref)                removing `superscript' on input line 125.
 
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1574,12 +1573,12 @@ LaTeX Font Info:    ... okay on input line 132.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(28.45274pt, 1633.18803pt, 28.45274pt)
-* v-part:(T,H,B)=(0.0pt, 2388.89357pt, 0.0pt)
-* \paperwidth=1690.09352pt
-* \paperheight=2388.89357pt
-* \textwidth=1633.18803pt
-* \textheight=2360.44084pt
+* h-part:(L,W,R)=(28.45274pt, 2331.98808pt, 28.45274pt)
+* v-part:(T,H,B)=(0.0pt, 3380.75665pt, 0.0pt)
+* \paperwidth=2388.89357pt
+* \paperheight=3380.75665pt
+* \textwidth=2331.98808pt
+* \textheight=3352.30392pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-72.26999pt
@@ -1630,7 +1629,7 @@ e
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box70
-Package hyperref Info: Link coloring OFF on input line 132.
+Package hyperref Info: Link coloring OFF on input line 133.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1640,9 +1639,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count276
 )
-LaTeX Info: Redefining \ref on input line 132.
-LaTeX Info: Redefining \pageref on input line 132.
-LaTeX Info: Redefining \nameref on input line 132.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 
 (./main.out) (./main.out)
 \@outlinefile=\write7
@@ -1673,39 +1672,37 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 132.
+LaTeX Info: Redefining \includegraphics on input line 133.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 132.
+LaTeX Info: Redefining \selectfont on input line 133.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 132.
+(lastpage)             ! on input line 133.
  (./main.nav)
 File: qmath.jpg Graphic file (type jpg)
  <use qmath.jpg>
-Package pdftex.def Info: qmath.jpg used on input line 132.
+Package pdftex.def Info: qmath.jpg used on input line 133.
 (pdftex.def)             Requested size: 284.52756pt x 96.86186pt.
-LaTeX Font Info:    Calculating math sizes for size <9.36> on input line 132.
+LaTeX Font Info:    Calculating math sizes for size <13.2> on input line 133.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <6.55197> on input line 132.
-LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <4.68> on input line 132.
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 132.
+(Font)              <6.59999> on input line 133.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 133.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Calculating math sizes for size <27.95> on input line 132.
+LaTeX Font Info:    Calculating math sizes for size <39.41> on input line 133.
 File: kuscience-logo.pdf Graphic file (type pdf)
 
 <use kuscience-logo.pdf>
-Package pdftex.def Info: kuscience-logo.pdf used on input line 132.
+Package pdftex.def Info: kuscience-logo.pdf used on input line 133.
 (pdftex.def)             Requested size: 142.26378pt x 201.18503pt.
-LaTeX Font Info:    Calculating math sizes for size <19.41> on input line 335.
-LaTeX Font Info:    Calculating math sizes for size <23.29> on input line 335.
-LaTeX Font Info:    Calculating math sizes for size <16.18> on input line 335.
+LaTeX Font Info:    Calculating math sizes for size <27.37> on input line 335.
+LaTeX Font Info:    Calculating math sizes for size <32.85> on input line 335.
+LaTeX Font Info:    Calculating math sizes for size <22.81> on input line 335.
 LaTeX Font Info:    Try loading font information for OMS+cmss on input line 335
 .
 LaTeX Font Info:    No file OMScmss.fd. on input line 335.
@@ -1755,39 +1752,35 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 336.
  ) 
 Here is how much of TeX's memory you used:
- 25972 strings out of 493029
- 499191 string characters out of 6136234
- 729243 words of memory out of 5000000
- 28814 multiletter control sequences out of 15000+600000
- 48730 words of font info for 145 fonts, out of 8000000 for 9000
+ 25962 strings out of 493029
+ 499178 string characters out of 6136234
+ 732927 words of memory out of 5000000
+ 28813 multiletter control sequences out of 15000+600000
+ 48977 words of font info for 146 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,24n,96p,950b,1200s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,24n,96p,950b,1198s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc} </home/johannes/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx5159.562pk></usr/share/texlive/texmf-
+texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx5159.792pk></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfsi1095.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfsi1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-si1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi2074.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfso2074.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfs
-s1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfss2986.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx
-1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx2074.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfsx2488.pfb>
-Output written on main.pdf (1 page, 310359 bytes).
+onts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/latxfont/line10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsi1440.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfsi1728.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfsi2074.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfsi2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfso2488.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfss2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss2986.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfss3583.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfsx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx3583.pfb>
+Output written on main.pdf (1 page, 279831 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
+ 157 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  16 named destinations out of 1000 (max. 500000)
  59 words of extra memory for PDF output out of 10000 (max. 10000000)
 
