@@ -1,0 +1,262 @@
+\documentclass{beamer}[10]
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{beamerthemesplit}
+\usepackage{graphics,epsfig, subfigure}
+\usepackage{url}
+\usepackage{srcltx}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{braket}
+\usepackage{lastpage}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{cancel}
+
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
+
+
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\renewcommand{\braket}[1]{\left\langle#1\right\rangle}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+\newcommand{\rr}{\mathcal{R}}
+
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{mtheorem}{Theorem}
+\newtheorem{mdefinition}{Definition}
+\newtheorem{mproposition}{Proposition}
+\newtheorem{mlemma}{Lemma}
+\newtheorem{mcorollary}{Corollary}
+\newtheorem{mremark}{Remark}
+
+
+\definecolor{qmathblue}{RGB}{61,131,131}
+\definecolor{kugreen1}{RGB}{50,93,61}
+\definecolor{kugreen}{RGB}{70,116,60}
+\definecolor{qmathbluelys}{RGB}{119,168,168}
+\definecolor{kugreenlyslys}{RGB}{173,190,177}
+\definecolor{kugreenlyslyslys}{RGB}{239,249,240}
+\definecolor{qmathbluelyslyslys}{RGB}{236,243,243}
+\setbeamercovered{transparent}
+\mode<presentation>
+%\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{theorems}[numbered]
+
+\usecolortheme[named=qmathblue]{structure}
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block body}{bg=qmathbluelyslyslys,fg=black}
+\setbeamercolor{block title}{bg=qmathbluelyslyslys,fg=black}
+
+
+\logo{\includegraphics[width=1.2cm]{qmath.jpg}}
+%\useoutertheme{infolines} 
+\title{The ground state energy of dilute 1d many-body quantum systems}
+\subtitle{}
+\author{Johannes Agerskov\\\vspace{0.2 cm}
+	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej\\
+		arXiv:2203.17183}}
+\institute{QMATH \\ University of Copenhagen}
+\date{September 14th 2022}
+
+\setbeamercovered{invisible}
+
+\begin{document}
+\frame{\titlepage \vspace{-0.5cm}
+}
+
+\frame
+{
+\frametitle{Overview}
+\tableofcontents%[pausesection]
+}
+
+\section{The scattering length}
+
+\begin{frame}
+\frametitle{Background}
+\vspace*{-0.2cm}
+\begin{block}{The scattering length}
+	\vspace*{-0.4cm}
+	\small\begin{theorem}
+		For $ B_R=\{0\leq\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
+	 \begin{equation}
+		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
+		 \end{equation}
+		 with boundary condition $ \phi(x)=1 $ for $ \abs{x}=R$.
+		 Then $ \phi(x)=f(\abs{x}) $ for some $ f:(0,R]\to [0,\infty) $, and for $ \text{range}(v)<r<R $, we have \begin{equation}
+		 f(r)=\begin{cases}
+		 (r-a)/(R-a) &\text{for }d=1\\
+		 \ln(r/a)/\ln(R/a) &\text{for }d=2\\
+		 (1-ar^{2-d})/(1-aR^{2-d})&\text{for }d\geq 3,
+		 \end{cases}
+		 \end{equation}
+		 with some constant $ a $ called the (s-wave) \textbf{scattering length}.
+	\end{theorem}
+\end{block}	
+\end{frame}
+\section{The model}
+\begin{frame}
+	\frametitle{Model}
+	We consider a many-body system of bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $, with $ v=v_{\text{reg}}+v_{\text{h.c.}} $\begin{equation}
+	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\Lambda_L)^{\otimes_{\text{sym}} N}.
+	\end{equation}
+	The ground state energy is defined by 
+	$$
+	E(N,L)\coloneqq\inf_{\psi\in\mathcal{D}(\mathcal{E}),\ \norm{\psi}^2=1}\mathcal{E}(\psi).
+	$$
+\end{frame}
+\section{2d and 3d}
+\begin{frame}
+\frametitle{2d and 3d}
+\small For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
+\vspace*{-0.3cm}
+\begin{block}{}
+	\small
+	\vspace*{-0.2cm}
+	\begin{theorem}[\small $ d=3 $ result, Lee-Huang-Yang\footnotemark]
+		\begin{equation}
+		e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})\right).
+		\end{equation}
+	\end{theorem}
+\vspace*{-0.3cm}
+	\begin{theorem}[\small $ d=2 $ result\footnotemark]
+		\begin{equation}
+		e(\rho)=4 \pi \rho^2 Y\left(1-Y|\log Y|+\left(2 \Gamma+\frac{1}{2}+\ln (\pi)\right) Y\right)+o\left(\rho^2 Y^2\right),
+		\end{equation}
+		$Y=\abs{\ln(\rho a^2)}^{-1}$.
+	\end{theorem}
+\footnotetext[1]{\tiny Upper bound: Yau-Yin 2009, Basti-Cenatiempo-Schlein 2021. Lower bound: Fournais-Solovej 2021}
+\footnotetext[2]{\tiny Fournais-Girardot-Junge-Morin-Olivieri 2022}
+\end{block}
+\end{frame}
+
+
+\section{Main result}
+
+\begin{frame}
+	\frametitle{Main result}
+	For the remainder of the talk, $ d=1 $.
+	\begin{block}{}
+		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
+			\label{TheoremMain}
+			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Define the denisty $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+			\begin{equation}
+			\label{result}
+			E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
+			\mathcal{O}
+			\left((\rho|a|)^{6/5}+(\rho R_0)^{6/5}+N^{-2/3}\right)\right),
+			\end{equation}
+			where $a$ is the scattering length of $v$.
+		\end{theorem}
+	\end{block}	
+\end{frame}
+
+\section{Examples}
+\begin{frame}
+	\frametitle{Examples}
+	\begin{block}{The hard core gas}
+		Energy behaves like free Fermi energy in volume $ L-NR $, \ie \begin{equation}
+		\begin{aligned}
+		E_{\text{hard core}}(N,L)&=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\\&= E_0\left(1+2\rho R+\mathcal{O}\left((\rho R)^2\right)\right).
+		\end{aligned}
+		\end{equation}
+		Scattering length is $ a=R $.
+	\end{block}
+	\begin{block}{Lieb-Liniger model}
+		Energy behaves asymptotically like
+		\begin{equation}
+		E_{LL}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho/c+\mathcal{O}\left((\rho/c)^2\right)\right),
+		\end{equation}
+		with scattering length $ a=-\frac{2}{c} $.
+	\end{block}
+\end{frame}
+
+
+\section{Fermions}
+\begin{frame}
+	\frametitle{Spinless/spin-polarized fermions}
+	Spinless Fermions are unitarily equivalent to Bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
+	\begin{theorem}[spinless fermions]\label{TheoremFermion}
+		Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+		\begin{equation}
+		E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
+		\end{equation}
+		where $ a_o\geq0 $ is the odd wave scattering length of $v$. 
+	\end{theorem} 
+	This is consistent with lower bound $ E_F(N,L)\geq E_0 $, since $ a_o\geq 0 $.
+\end{frame}
+
+\begin{frame}
+	\frametitle{A conjecture for spin-1/2 fermions}
+	Two solvable model for spin-1/2 fermion:
+	\begin{block}{The hard core gas}
+		Ground state energy is independent of spin
+		so \begin{equation}
+		E_{\text{hard core}}(N,L)=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\approx E_0(1+2\rho R).
+		\end{equation}
+		Scattering length is $ a_e=a_o=R $.
+	\end{block}
+	\begin{block}{Yang-Gaudin model}
+		Is the spin-1/2 version of the LL model, \ie $ H_{YG}=H_{LL} $.
+		 Behaves asymptotically like
+		 \begin{equation}
+		 E_{YG}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho\ln(2)/c+\mathcal{O}\left((\rho/c)^2\right)\right),
+		 \end{equation}
+		 with scattering length $ a_e=-\frac{2}{c} $, $ a_o=0 $.
+		\end{block}
+\end{frame}
+\begin{frame}
+	\frametitle{A conjecture for spin-1/2 fermions}
+	Based on the two solvable cases, we expect \begin{block}
+		\small\begin{equation}
+		\begin{aligned}
+		E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big)
+		\end{aligned}
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\centering{Thanks for your attention!}
+\end{frame}
+
+
+\end{document}

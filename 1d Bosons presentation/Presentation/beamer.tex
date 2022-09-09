@@ -62,23 +62,29 @@
 \newtheorem{mremark}{Remark}
 
 
-\definecolor{kugreen}{RGB}{50,93,61}
-\definecolor{kugreenlys}{RGB}{132,158,139}
+\definecolor{qmathblue}{RGB}{61,131,131}
+\definecolor{kugreen1}{RGB}{50,93,61}
+\definecolor{kugreen}{RGB}{70,116,60}
+\definecolor{qmathbluelys}{RGB}{119,168,168}
 \definecolor{kugreenlyslys}{RGB}{173,190,177}
-\definecolor{kugreenlyslyslys}{RGB}{214,223,216}
+\definecolor{kugreenlyslyslys}{RGB}{239,249,240}
+\definecolor{qmathbluelyslyslys}{RGB}{236,243,243}
 \setbeamercovered{transparent}
 \mode<presentation>
 %\usetheme[numbers,totalnumber,compress,sidebarshades]{PaloAlto}
 \setbeamertemplate{footline}[frame number]
 \setbeamertemplate{theorems}[numbered]
 
-  \usecolortheme[named=kugreen]{structure}
-  \useinnertheme{circles}
-  \usefonttheme[onlymath]{serif}
-  \setbeamercovered{transparent}
-  \setbeamertemplate{blocks}[rounded][shadow=false]
+\usecolortheme[named=qmathblue]{structure}
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamercolor{block body}{bg=qmathbluelyslyslys,fg=black}
+\setbeamercolor{block title}{bg=qmathbluelyslyslys,fg=black}
 
-\logo{\includegraphics[width=0.8cm]{kuscience-logo}}
+
+\logo{\includegraphics[width=1.2cm]{qmath.jpg}}
 %\useoutertheme{infolines} 
 \title{The ground state energy of dilute 1d many-body quantum systems}
 \subtitle{}
@@ -86,7 +92,7 @@
 	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej\\
 		arXiv:2203.17183}}
 \institute{QMATH \\ University of Copenhagen}
-\date{June 15th 2022}
+\date{September 7th 2022}
 
 \setbeamercovered{invisible}
 
@@ -106,7 +112,7 @@
 \frametitle{Background}
 \begin{block}{The scattering length}
 	\small\begin{theorem}
-		For $ B_R=\{0<\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
+		For $ B_R=\{0\leq\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 	 \begin{equation}
 		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
 		 \end{equation}
@@ -135,7 +141,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Previous results}
+\frametitle{2d and 3d}
 \begin{block}{}
 	For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
 	\begin{theorem}[$ d=3 $ result, Lee-Huang-Yang]
@@ -144,10 +150,11 @@
 		\end{equation}
 	\end{theorem}
 
-	\begin{theorem}[$ d=2 $ result]
+	\begin{theorem}[$ d=2 $ result, Fournais et al. 2022]
 		\begin{equation}
-		e(\rho)=4\pi \rho^2\left(\abs{\ln(\rho a^2)}^{-1}+o(\abs{\ln(\rho a^2)}^{-1})\right) .
+		e(\rho)=4 \pi \rho^2 Y\left(1-Y|\log Y|+\left(2 \Gamma+\frac{1}{2}+\ln (\pi)\right) Y\right)+o\left(\rho^2 Y^2\right),
 		\end{equation}
+		$Y=\abs{\ln(\rho a^2)}^{-1}$.
 	\end{theorem}
 \end{block}
 \end{frame}
@@ -158,10 +165,10 @@
 \begin{frame}
 	\frametitle{Main result}
 	\begin{block}{}
-		For the remaning of the talk, $ d=1 $.
+		For the remainder of the talk, $ d=1 $.
 		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
 			\label{TheoremMain}
-			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Write $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Define the denisty $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 			\begin{equation}
 			\label{result}
 			E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
@@ -177,7 +184,7 @@
 \begin{frame}
 	\frametitle{Examples}
 	\begin{block}{The hard core gas}
-		Behaves like free fermi gas in volume $ L-NR $, \ie \begin{equation}
+		Energy behaves like free Fermi energy in volume $ L-NR $, \ie \begin{equation}
 		\begin{aligned}
 		E_{\text{hard core}}(N,L)&=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\\&= E_0\left(1+2\rho R+\mathcal{O}\left((\rho R)^2\right)\right).
 		\end{aligned}
@@ -185,7 +192,7 @@
 		Scattering length is $ a=R $.
 	\end{block}
 	\begin{block}{Lieb-Liniger model}
-		Behaves asymptotically like
+		Energy behaves asymptotically like
 		\begin{equation}
 		E_{LL}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho/c+\mathcal{O}\left((\rho/c)^2\right)\right),
 		\end{equation}
@@ -258,7 +265,7 @@
 \begin{frame}
 	\frametitle{Collecting everything}
 	\begin{block}{Upper bound}
-	\begin{equation}
+	\small\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a} +\text{const. } \left[\frac{1}{N}+ N (b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right]\right)}{\norm{\Psi}^2},
 	\end{equation}	
 	where  the finite measure $ v_{\text{reg}} $ is $v$ with any hard core removed.
@@ -273,8 +280,10 @@
 \begin{frame}
 	\frametitle{Upper Bound}
 	\begin{block}{After localization}
-\small\begin{equation}
-\hspace{-0.3cm}E(N,L)\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a}+\text{const. }\frac{M}{N}+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}.
+\footnotesize\begin{equation}
+\begin{aligned}
+E(N,L)\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a}+\text{const. }\frac{M}{N}+\text{const. }\tilde{N}(b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right)}{1-\tilde{N}(\tilde{\rho} b)^3}
+\end{aligned}
 \end{equation}
 
 Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
@@ -344,14 +353,13 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \begin{frame}
 	\frametitle{Reducing to the LL model}
 	\begin{block}{}
-		\vspace{-0.5cm}
 		Define $ \psi\in L^2([0,\ell-(n-1)R]^n) $ by 
 			$$ \psi(x_1,x_2,...,x_n)=\Psi(x_1,R+x_2,...,(n-1)R+x_n), $$
 			 for $ x_1\leq x_2\leq...\leq x_n $ and symmetrically extended.\\\vspace{0.2cm}
 			 Then \begin{equation}
 			 \begin{aligned}
 			 \mathcal{E}(\Psi)&\geq E^N_{LL}(n,\ell-(n-1)R,2/(R-a))\braket{\psi|\psi}\\
-			 &\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho(a-\cancel{R})+\cancel{2\rho R}-\text{const. }\frac{1}{N^{2/3}}\right)\braket{\psi|\psi}.
+			 &\geq n\frac{\pi^2}{3}\rho^2\left(1+2\rho(a-\cancel{R})+\cancel{2\rho R}-\text{const. }\frac{1}{n^{2/3}}\right)\braket{\psi|\psi}.
 			 \end{aligned}
 			 \end{equation}
 	\end{block}	
@@ -362,13 +370,13 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 	\begin{block}{}\vspace{-0.5cm}
 			\small\begin{mlemma}\label{LemmaNormLoss}
 				Let $ \psi $ be defined as above, then \begin{equation}
-				1-\braket{\psi|\psi}\leq\textnormal{const. } \left(R^2\sum_{i<j}\int_{B_{ij}}\abs{\partial_i \Psi}^2+R(R-a)\sum_{i<j}\int v_{ij} \abs{\Psi}^2\right).
+				1-\braket{\psi|\psi}\leq 8 \left(R^2\sum_{i<j}\int_{B_{ij}}\abs{\partial_i \Psi}^2+R(R-a)\sum_{i<j}\int v_{ij} \abs{\Psi}^2\right),
 				\end{equation}
 			\end{mlemma}
 			\
 			Combining lemmas \ref{LemmaDyson} and \ref{LemmaNormLoss} we have the following lemma:
 			\begin{mlemma}\label{LemmaImprovedMassBound}
-				Let $ C $ denote the constant in lemma \ref{LemmaNormLoss}. For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}C $, $ \rho R\ll 1 $ and $ R>2\abs{a} $ we have
+			 For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\ll 1 $ and $ R>2\abs{a} $ we have
 				\begin{equation}\label{EqImprovedMassBound}
 				\begin{aligned}
 				\braket{\psi|\psi} \geq 1-\textnormal{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
@@ -415,9 +423,9 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 		\end{mproposition}
 	\end{block}	
 \end{frame}
-\section{Extensions}
+\section{Fermions}
 \begin{frame}
-	\frametitle{Spinless/spin-aligned fermions}
+	\frametitle{Spinless/spin-polarized fermions}
 	Spinless Fermions are unitarily equivalent to Bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
 	\begin{theorem}[spinless fermions]\label{TheoremFermion}
 		Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
@@ -433,7 +441,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 	\frametitle{A conjecture for spin-1/2 fermions}
 	Two solvable model for spin-1/2 fermion:
 	\begin{block}{The hard core gas}
-		Ground state energy is independent of
+		Ground state energy is independent of spin
 		so \begin{equation}
 		E_{\text{hard core}}(N,L)=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\approx E_0(1+2\rho R).
 		\end{equation}

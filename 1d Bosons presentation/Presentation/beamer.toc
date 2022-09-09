@@ -1,8 +1,7 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {english}
+\babel@toc {english}{}
 \beamer@sectionintoc {1}{Background}{3}{0}{1}
 \beamer@sectionintoc {2}{Main result}{6}{0}{2}
 \beamer@sectionintoc {3}{Examples}{7}{0}{3}
 \beamer@sectionintoc {4}{Upper bound}{8}{0}{4}
 \beamer@sectionintoc {5}{Lower bound}{14}{0}{5}
-\beamer@sectionintoc {6}{Extensions}{21}{0}{6}
+\beamer@sectionintoc {6}{Fermions}{21}{0}{6}
