@@ -88,7 +88,7 @@
 
 \logo{\includegraphics[width=1.2cm]{qmath.jpg}}
 %\useoutertheme{infolines} 
-\title{The ground state energy of dilute 1d many-body quantum systems}
+\title{The ground state energy of dilute 1D many-body quantum systems}
 \subtitle{}
 \author{Johannes Agerskov\\\vspace{0.2 cm}
 	\scriptsize{Based on joint work with Robin Reuvers and Jan Philip Solovej\\
@@ -115,7 +115,7 @@
 \vspace*{-0.2cm}
 \begin{block}{The scattering length}
 	\vspace*{-0.4cm}
-	\small\begin{theorem}
+	\small\begin{theorem}[Lieb-Yngvason 2001]
 		For $ B_R=\{0\leq\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 	 \begin{equation}
 		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
@@ -143,15 +143,15 @@
 	E(N,L)\coloneqq\inf_{\psi\in\mathcal{D}(\mathcal{E}),\ \norm{\psi}^2=1}\mathcal{E}(\psi).
 	$$
 \end{frame}
-\section{2d and 3d}
+\section{2D and 3D}
 \begin{frame}
-\frametitle{2d and 3d}
+\frametitle{2D and 3D}
 \small For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
 \vspace*{-0.3cm}
 \begin{block}{}
 	\small
 	\vspace*{-0.2cm}
-	\begin{theorem}[\small $ d=3 $ result, Lee-Huang-Yang\footnotemark]
+	\begin{theorem}[\small $ d=3 $ result, Lee-Huang-Yang 1957\footnotemark]
 		\begin{equation}
 		e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})\right).
 		\end{equation}
@@ -168,16 +168,14 @@
 \end{block}
 \end{frame}
 
-
 \section{Main result}
 
 \begin{frame}
 	\frametitle{Main result}
-	For the remainder of the talk, $ d=1 $.
 	\begin{block}{}
-		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
+		\begin{theorem}[A.-Reuvers-Solovej, 2022]
 			\label{TheoremMain}
-			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Define the denisty $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+			Consider a 1D Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Define the denisty $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 			\begin{equation}
 			\label{result}
 			E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
@@ -189,9 +187,10 @@
 	\end{block}	
 \end{frame}
 
-\section{Examples}
+
+\section{Examples in 1D}
 \begin{frame}
-	\frametitle{Examples}
+	\frametitle{Examples in 1D}
 	\begin{block}{The hard core gas}
 		Energy behaves like free Fermi energy in volume $ L-NR $, \ie \begin{equation}
 		\begin{aligned}
@@ -200,22 +199,23 @@
 		\end{equation}
 		Scattering length is $ a=R $.
 	\end{block}
-	\begin{block}{Lieb-Liniger model}
+	\begin{block}{Lieb-Liniger model ($v(\cdot)=2c\delta(\cdot)$)}
 		Energy behaves asymptotically like
 		\begin{equation}
-		E_{LL}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho/c+\mathcal{O}\left((\rho/c)^2\right)\right),
+		E_{\text{LL}}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho/c+\mathcal{O}\left((\rho/c)^2\right)\right),
 		\end{equation}
 		with scattering length $ a=-\frac{2}{c} $.
 	\end{block}
 \end{frame}
 
 
+
 \section{Fermions}
 \begin{frame}
 	\frametitle{Spinless/spin-polarized fermions}
 	Spinless Fermions are unitarily equivalent to Bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
-	\begin{theorem}[spinless fermions]\label{TheoremFermion}
-		Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+	\begin{theorem}[A.-Reuvers-Solovej 2022]\label{TheoremFermion}
+		Consider a 1D Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 		\begin{equation}
 		E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
 		\end{equation}
@@ -226,26 +226,29 @@
 
 \begin{frame}
 	\frametitle{A conjecture for spin-1/2 fermions}
+	\vspace*{-0.2cm}
 	Two solvable model for spin-1/2 fermion:
-	\begin{block}{The hard core gas}
-		Ground state energy is independent of spin
+	\vspace*{-0.1cm}
+	\begin{block}{\normalsize The hard core gas}
+		\small Ground state energy is independent of spin
 		so \begin{equation}
 		E_{\text{hard core}}(N,L)=N\frac{\pi^2}{3}\rho^2 (1-NR/L)^{-2}\approx E_0(1+2\rho R).
 		\end{equation}
 		Scattering length is $ a_e=a_o=R $.
 	\end{block}
-	\begin{block}{Yang-Gaudin model}
-		Is the spin-1/2 version of the LL model, \ie $ H_{YG}=H_{LL} $.
+\vspace*{-0.2cm}
+	\begin{block}{\normalsize Yang-Gaudin model}
+		\small Is the spin-1/2 version of the LL model, \ie $ H_{\text{YG}}=H_{\text{LL}} $.
 		 Behaves asymptotically like
 		 \begin{equation}
-		 E_{YG}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho\ln(2)/c+\mathcal{O}\left((\rho/c)^2\right)\right),
+		 E_{\text{YG}}(N,L,c)=N\frac{\pi^2}{3}\rho^2\left(1-4\rho\ln(2)/c+\mathcal{O}\left((\rho/c)^2\right)\right),
 		 \end{equation}
 		 with scattering length $ a_e=-\frac{2}{c} $, $ a_o=0 $.
 		\end{block}
 \end{frame}
 \begin{frame}
 	\frametitle{A conjecture for spin-1/2 fermions}
-	Based on the two solvable cases, we expect \begin{block}
+	Based on the two solvable cases: \begin{block}{Conjecture}
 		\small\begin{equation}
 		\begin{aligned}
 		E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big)

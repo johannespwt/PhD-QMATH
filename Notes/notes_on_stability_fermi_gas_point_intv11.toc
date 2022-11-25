@@ -1,22 +1,22 @@
-\select@language {english}
-\contentsline {section}{\numberline {1}Formal Hamiltonian for the $ N+1 $ case}{2}{section.1}
-\contentsline {section}{\numberline {2}The $ 1+1 $ case}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Self-adjoint extension}{4}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Quadratic form}{11}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Hamiltonian from quadratic form}{13}{subsection.2.3}
-\contentsline {section}{\numberline {3}$ \Gamma $-convergence}{17}{section.3}
-\contentsline {subsection}{\numberline {3.1}Introducing $ \Gamma $-convergence}{17}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}$ \Gamma $-convergence of $ F_\alpha ^R $}{21}{subsection.3.2}
-\contentsline {section}{\numberline {4}The $ N+1 $ case}{27}{section.4}
-\contentsline {subsection}{\numberline {4.1}Quadratic form}{27}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Uniform lower bound in the $ 2+1 $ case}{55}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Uniform lower bound in the $ N+1 $ case}{61}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Rank-one perturbation}{66}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Many-body rank-one pair interactions}{70}{subsubsection.4.4.1}
-\contentsline {subsection}{\numberline {4.5}Second quantization}{73}{subsection.4.5}
-\contentsline {subsection}{\numberline {4.6}Collecting all terms part 2}{79}{subsection.4.6}
-\contentsline {subsubsection}{\numberline {4.6.1}Collecting all terms part 3}{79}{subsubsection.4.6.1}
-\contentsline {section}{\numberline {5}Proof of $ \Gamma $-convergence in the case where lower bound in $ F_\alpha $ is knonwn (Moser and Seiringer)}{82}{section.5}
-\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{82}{appendix.A}
-\contentsline {section}{\numberline {B}Schur test}{84}{appendix.B}
-\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{85}{appendix.C}
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Formal Hamiltonian for the $ N+1 $ case}{2}{section.1}%
+\contentsline {section}{\numberline {2}The $ 1+1 $ case}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Self-adjoint extension}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Quadratic form}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Hamiltonian from quadratic form}{13}{subsection.2.3}%
+\contentsline {section}{\numberline {3}$ \Gamma $-convergence}{17}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introducing $ \Gamma $-convergence}{17}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}$ \Gamma $-convergence of $ F_\alpha ^R $}{21}{subsection.3.2}%
+\contentsline {section}{\numberline {4}The $ N+1 $ case}{27}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Quadratic form}{27}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Uniform lower bound in the $ 2+1 $ case}{55}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Uniform lower bound in the $ N+1 $ case}{61}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Rank-one perturbation}{66}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Many-body rank-one pair interactions}{70}{subsubsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.5}Second quantization}{73}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Collecting all terms part 2}{79}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Collecting all terms part 3}{79}{subsubsection.4.6.1}%
+\contentsline {section}{\numberline {5}Proof of $ \Gamma $-convergence in the case where lower bound in $ F_\alpha $ is knonwn (Moser and Seiringer)}{82}{section.5}%
+\contentsline {section}{\numberline {A}$ \lambda $ relation in Krein formula \textup {\hbox {\mathsurround \z@ \normalfont (\ignorespaces \ref {lambda relation}\unskip \@@italiccorr )}}}{82}{appendix.A}%
+\contentsline {section}{\numberline {B}Schur test}{84}{appendix.B}%
+\contentsline {section}{\numberline {C}Monotonicity of $ L^R(k)/L(k)$ in the $ 2+1 $ case }{85}{appendix.C}%

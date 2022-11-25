@@ -1,7 +1,7 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{The scattering length}{3}{0}{1}
 \beamer@sectionintoc {2}{The model}{4}{0}{2}
-\beamer@sectionintoc {3}{2d and 3d}{5}{0}{3}
+\beamer@sectionintoc {3}{2D and 3D}{5}{0}{3}
 \beamer@sectionintoc {4}{Main result}{6}{0}{4}
-\beamer@sectionintoc {5}{Examples}{7}{0}{5}
+\beamer@sectionintoc {5}{Examples in 1D}{7}{0}{5}
 \beamer@sectionintoc {6}{Fermions}{8}{0}{6}
