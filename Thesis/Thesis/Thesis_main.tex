@@ -2,27 +2,96 @@
 \usepackage[english, science, dropcaps, hyperref, submissionstatement]{ku-frontpage}
 \usepackage[utf8]{inputenc}
 
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{amssymb}
+\usepackage{bbm}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{centernot}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{braket}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage[english]{babel} 
+\usepackage{dsfont}
+
+
+\usepackage[square,sort,comma,numbers]{natbib}
+%\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\usepackage{fancyhdr}
+
+\newcommand{\euler}[1]{\text{e}^{#1}}
+\newcommand{\Real}{\text{Re}}
+\newcommand{\Imag}{\text{Im}}
+\newcommand{\supp}{\text{supp}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\Span}[1]{\text{span}\left(#1\right)}
+\newcommand{\dom}[1]{\mathcal D\left(#1\right)}
+\newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
+\newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
+\newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
+\newcommand{\vertin}{\rotatebox[origin=c]{-90}{$\in$}}
+\newcommand{\interior}[1]{%
+	{\kern0pt#1}^{\mathrm{o}}%
+}
+\renewcommand{\braket}[1]{\left\langle#1\right\rangle}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand{\ie}{\emph{i.e.} }
+\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\dd}{\partial }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\w}{\mathsf{w}}
+\newcommand{\rr}{\mathcal{R}}
+
+
+\newcommand{\Gliminf}{\Gamma\text{-}\liminf}
+\newcommand{\Glimsup}{\Gamma\text{-}\limsup}
+\newcommand{\Glim}{\Gamma\text{-}\lim}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+
 \setlength\arraycolsep{2 pt}
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{0}
 
 \assignment{PhD thesis}
-\author{Alex Author}
+\author{Johannes Agerskov}
 
 % The following are only needed if the \author, \title, \subtitle, and \date
 % commands are not patchable. See the readme for more information.
 \frontpageauthor{Johannes Agerskov}
-\frontpagetitle{One dimensional quantum gases and their ground state energies}
+\frontpagetitle{One Dimensional Dilute Quantum Gases and Their Ground State Energies}
 %\frontpagesubtitle{An intruiging subtitle}
-\frontpagedate{Submitted: March 30, 2023´}
+\frontpagedate{Submitted: March 30, 2023}
 
-\title{One dimensional quantum gases and their ground state energies}
+\title{One Dimensional Dilute Quantum Gases and Their Ground State Energies}
 \subtitle{}
 \date{Submitted: March 30, 2023}
 \advisor{Advisor: Jan Philip Solovej}
-\frontpageimage{example.png}
+%\frontpageimage{example.png}
 
-\kupdfsetup{One dimensional quantum gases and their ground state energies}{}{Johannes Agerskov}
+\kupdfsetup{One Dimensional Dilute Quantum Gases and Their Ground State Energies}{}{Johannes Agerskov}
 
 \begin{document}
 \begingroup
@@ -33,6 +102,7 @@
 \tableofcontents
 
 \include{Chapters/Introduction}
+\include{Chapters/Many-Body_Quantum_Mechanics}
 
 
 \end{document}
