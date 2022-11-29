@@ -2,10 +2,39 @@
 	In this chapter we give a brief introduction to many-body quantum mechanics. The chapter will serve to define relevant quantities, to set up the mathematical framework, and to state some preliminary results.
 
 \section{Many-body Wave Functions}
-	We consider a system of $N$ particles confined to some region $ \Omega\subseteq \R^d $. Here we refer to $ d $ as the \emph{dimension} of the system. In quantum mechanics such a system is described by a \emph{state} or \emph{wave function} in an underlying Hilbert space. In the present general scenario, we describe these particles by a wave function $ \Psi\in L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right) $, where $ S_i $ is \emph{spin} of the $ i $th particle. Here the underlying Hilbert space is taken to be $ \otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right) $.
+	We consider a system of $N$ particles confined to some region $ \Omega\subseteq \R^d $. Here we refer to $ d $ as the \emph{dimension} of the system. In quantum mechanics such a system is described by a \emph{state} or \emph{wave function} in an underlying Hilbert space. 
+	\begin{definition}
+		An $ N $-particle quantum system of dimension $d$ at fixed time is a pair \begin{equation*}
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H},
+		\end{equation*}
+		where $ \mathcal{H} $ is a Hilbert space. Here $ \Psi $ is called the state or wave function of the system.
+	\end{definition}
+	In this thesis, we are most interested in quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. Such a system is described by having $$ \mathcal{H}= L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specificically interested in identical particles we will furhther restrict the structure of the underlying Hilbert space below.
+
 	\subsection{Identical Particles: Bosons and Fermions}
-		For the moment, let us ignore spin. In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistiguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,...,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. We then require the underlying Hilbert space of the system to form an irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
+		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistiguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
 		\begin{remark}
-			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$.
+			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics on this space. In section ... we will see examples different particle statistics in one dimension. 
 		\end{remark}
-		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the antisymmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. Hence for bosons we restrict to wave-functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,\ldots,S_i\}\right) \right)=\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions we restrict to wave-functions in the antisymmetric (or fermionic) subspace $ L^2_{a}\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,\ldots,S_i\}\right) \right)=\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.
+		\begin{remark}
+			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and the fundamental group is isomorphic to the fundamental group in the spinless case independt of $ \sigma $.\\
+			Alternatively one can view the wave function as a $ (2S+1)^N $-dimensional vector bundle over the physical (spinless) configuration space.
+		\end{remark}
+		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the antisymmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. Hence for bosons we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions we restrict to wave-functions in the antisymmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
+		To recap we list the following important definitions
+		\begin{definition}
+			A bosonic quantum system of $N$ spin $ S $ particles in $ \Omega\subseteq\R^d $ at fixed time is a pair
+			\begin{equation*}
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H},
+			\end{equation*}
+			where $ \mathcal{H}=L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
+		\end{definition}
+		\begin{definition}
+			A fermionic quantum system of $N$ spin $ S $ particles in $ \Omega\subseteq\R^d $ at fixed time is a pair
+			\begin{equation*}
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H},
+			\end{equation*}
+			where $ \mathcal{H}=L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
+		\end{definition}
+	
+\section{Energy, Dynamics}
