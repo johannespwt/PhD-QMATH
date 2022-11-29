@@ -2,14 +2,14 @@
 	In this chapter we give a brief introduction to many-body quantum mechanics. The chapter will serve to define relevant quantities, to set up the mathematical framework, and to state some preliminary results.
 
 \section{Many-body Wave Functions}
-	We consider a system of $N$ particles confined to some region $ \Omega\subseteq \R^d $. Here we refer to $ d $ as the \emph{dimension} of the system. In quantum mechanics such a system is described by a \emph{state} or \emph{wave function} in an underlying Hilbert space. 
+	In quantum mechanics a system is described by a \emph{state} or \emph{wave function} in an underlying Hilbert space. 
 	\begin{definition}
-		An $ N $-particle quantum system of dimension $d$ at fixed time is a pair \begin{equation*}
-			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H},
+		A quantum system at fixed time is a pair \begin{equation*}
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H} \text{ and } \norm{\Psi}=1,
 		\end{equation*}
 		where $ \mathcal{H} $ is a Hilbert space. Here $ \Psi $ is called the state or wave function of the system.
 	\end{definition}
-	In this thesis, we are most interested in quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. Such a system is described by having $$ \mathcal{H}= L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specificically interested in identical particles we will furhther restrict the structure of the underlying Hilbert space below.
+	In this thesis, we are mostly interested in quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}= L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specificically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
 
 	\subsection{Identical Particles: Bosons and Fermions}
 		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistiguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
@@ -17,24 +17,53 @@
 			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics on this space. In section ... we will see examples different particle statistics in one dimension. 
 		\end{remark}
 		\begin{remark}
-			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and the fundamental group is isomorphic to the fundamental group in the spinless case independt of $ \sigma $.\\
-			Alternatively one can view the wave function as a $ (2S+1)^N $-dimensional vector bundle over the physical (spinless) configuration space.
+			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and their fundamental groups are isomorphic to the fundamental group in the spinless case indepent of $ \sigma $.\\
+			Alternatively, one can view the wave function as a $ (2S+1)^N $-dimensional vector bundle over the physical (spinless) configuration space.
 		\end{remark}
-		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the antisymmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. Hence for bosons we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions we restrict to wave-functions in the antisymmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
+		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the antisymmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. It is an empiracal fact that bosons and fermions are the only types of elementary particles that are encountered in nature. Hence for bosons we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions we restrict to wave-functions in the antisymmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
 		To recap we list the following important definitions
 		\begin{definition}
-			A bosonic quantum system of $N$ spin $ S $ particles in $ \Omega\subseteq\R^d $ at fixed time is a pair
+			A quantum system of $N$ spin--$ S $ bosons in $ \Omega\subseteq\R^d $ at fixed time is a pair
 			\begin{equation*}
-			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H},
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
 			\end{equation*}
 			where $ \mathcal{H}=L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
 		\end{definition}
 		\begin{definition}
-			A fermionic quantum system of $N$ spin $ S $ particles in $ \Omega\subseteq\R^d $ at fixed time is a pair
+			A quantum system of $N$ spin--$ S $ fermions in $ \Omega\subseteq\R^d $ at fixed time is a pair
 			\begin{equation*}
-			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H},
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
 			\end{equation*}
 			where $ \mathcal{H}=L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
 		\end{definition}
 	
-\section{Energy, Dynamics}
+\section{Observables, Dynamics, and Energy}
+In general we call any self-adjoint operator on $ \mathcal{H} $ an \emph{observable}. Physically, observables represent quanteties that, in principle, can be measured in an experiment. It is a postulate of quantum mechanics that given an observable $ \mathcal{O}=\int_{\sigma(\mathcal{O})}\lambda \diff P_\lambda $, where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem (ref Reed and Simon.), the probabilty of a measurement of $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ having outcome $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\rightarrow\lambda\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $. 
+Furhtermore we defined the expected value of an observable.
+\begin{definition}
+	The expectation value of an observable $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ is 
+	$$ \braket{\mathcal{O}}_\Psi:=\int_{\lambda\in\sigma(\mathcal{O})}\lambda\braket{\Psi,P_\lambda\Psi} $$
+	where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem.
+\end{definition}
+
+
+I the previous section we defined a quantum system at a fixed time. However, we are often interested in dynamics of the system. In quantum mechanics, time evolution is modelled by the infinitesimal generator of time evolution, $ H $, also known as the \emph{Hamiltonian}. We will in this thesis take $ H $ to be a (time-independent) lower bounded self-adjoint operator on $ \mathcal{H} $. A state evolves in time according to the Schrödinger equation\begin{equation*}
+\Psi(t)=\exp\left(-iH(t-t_0)\right)\Psi(t_0),
+\end{equation*}
+where have set $ \hbar=1 $.
+\begin{remark}
+	By Stone's theorem (ref Reed and Simon), the existance of a self-adjoint Hamiltonian, $ H $, is guaranteed for any time evolutions described by $ \Psi(t)=U(t-t_0)\Psi(t_0) $, when $ U(t) $ is a strongly continous one-parameter unitary group.
+\end{remark}
+Since the Hamiltonian, $ H $, is self-adjoint, it represents an obersvable which we call \emph{energy}. Since $ H $ is lower bounded, there is a natural notion of lowest energy of $ H $.
+\begin{definition}
+	The ground state energy of $ H $ is defined by 
+	$$
+	E_0(H):=\inf(\sigma(H))
+	$$
+\end{definition}
+Furthermore, we define the notion of a \emph{ground state} of $ H $ as
+\begin{definition}
+	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a ground state of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
+\end{definition}
+We further define the energy quadratic form in the following way...
+
