@@ -14,7 +14,7 @@
 	\subsection{Identical Particles: Bosons and Fermions}
 		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistiguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
 		\begin{remark}
-			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics on this space. In section ... we will see examples different particle statistics in one dimension. 
+			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics (see section below) on this space. In section ... we will see examples of different particle statistics in one dimension. 
 		\end{remark}
 		\begin{remark}
 			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and their fundamental groups are isomorphic to the fundamental group in the spinless case indepent of $ \sigma $.\\
@@ -65,5 +65,38 @@ Furthermore, we define the notion of a \emph{ground state} of $ H $ as
 \begin{definition}
 	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a ground state of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
 \end{definition}
-We further define the energy quadratic form in the following way...
-
+When studying ground states and ground state energies it is useful to have the following variational characterization.
+\begin{remark}\label{RemarkVariationalPrinciple1}
+	It follows from the spectral theorem (ref Reed and Simon) that the ground state energy is given by \begin{equation}\label{EqVariationalGroundStateEnergyOperator}
+		E_0(H)=\inf_{\Psi\in \dom{\mathcal{H}}}\frac{\braket{\Psi,H\Psi}}{\norm{\Psi}^2}.
+	\end{equation}
+\end{remark}
+\begin{remark}
+	It is straightforward to show that the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $ is lower bounded and closable, since $ H $ is lower bounded and self-adjoint.
+\end{remark}
+\begin{definition}
+	Given a Hamitonian, $ H $, we define the associated energy quadratic form, $ \mathcal{E}_H:\mathcal{\dom{\mathcal{E}_H}}\to \R $, as the closure of the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $. When $ H $ is given from the context, we will often write $ \mathcal{E} $ as short for $ \mathcal{E}_H $.
+\end{definition}
+\begin{remark}\label{RemarkVariationalPrinciple2}
+	From the definition of $\mathcal{E_H}$ and from Remark \ref{RemarkVariationalPrinciple1} it follows straigthforwardly that we have \begin{equation}\label{EqVariationalGroundStateEnergyForm}
+		E_0(H)=\inf_{\Psi\in \dom{\mathcal{E_H}}}\frac{\mathcal{E_H}(\Psi)}{\abs{\Psi}^2}=\inf_{\substack{\Psi\in \dom{\mathcal{E_H}},\\\norm{\Psi}=1}}\mathcal{E_H}(\Psi), 
+	\end{equation}
+	as $ \dom{H} $ is form core for $\mathcal{E_H}$.
+\end{remark}
+We refer to both \eqref{EqVariationalGroundStateEnergyOperator} and \eqref{EqVariationalGroundStateEnergyForm} as \emph{the variational principle}.
+We will often in the remaining take \eqref{EqVariationalGroundStateEnergyForm} as the vary definition of the ground state energy. Furthermore, one can also define the dynamics of a quantum system by specifying an energy quadratic form in the following sense
+\begin{remark}[Ref!!]
+	Given a closable, lower bounded, quadratic for $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exist a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
+\end{remark}
+Thus we will frequently change between the two equivalent formulations of the dynamics of a quantum system that are the operator, $ H $, formulation and the quadratic form, $ \mathcal{E} $, formulation
+\subsection{Many-Body Hamiltonians}
+Until this point, we have not specified the class of Hamiltonians that we will be interested in. We have seen, that we will care mainly about Hamiltonians defined on the bosonic or fermionic subspaces, however no specification has been made about the dynamics on these subspaces. We are interested in modeling $ N $ particles in some region $ \Omega\subseteq\R^d $ that interact locally with each other. In practice, this means that the Hamiltonian \emph{formally} takes the form \begin{equation}
+H=\sum_{i=1}^{N}T_i+U(x_1,\ldots,x_N)
+\end{equation}
+where $ T_i $ is the \emph{kinetic energy operator} for particle $ i $ and the \emph{potential} $ U $ is a multiplication operator which models the local interaction among the particles. The kinetic energy operator is taken to be\footnote{This is usually justified by going through a canonical quanitzation procedure for the classical Hamiltonian function of the system, we are interedsted in modelling} \begin{equation}
+T_i=-\frac{1}{2m_i}\Delta_i\qquad (\hbar=1)
+\end{equation} 
+since we interested in identical particles, we will from this point onwards choose $ m_i=1/2 $. As for the potential, $ V $, we of course immediately restrict to permutation-invariant function, $ U $, for identical particles. However, in the following we will further restrict to a combination of having a trapping potential and radial pair potentials, which model pairwise interactions that only depend on the distances between particles. Such potentials take the form \begin{equation}
+U(x_1,\ldots,x_N)=\sum_{i<j} v(x_i-x_j) + \sum_{i=1}^{N}V(x_i)
+\end{equation}
+where we take $ v $ to be a radial function and, $ V $, is called the \emph{trapping potential}. We will generally take $ v $ to be repulsive, meaning $ v\geq 0 $, with compact support This includes the case where $ v $ is a measure of compact support. The trapping potential we will disregard \ie $ V=0 $.
