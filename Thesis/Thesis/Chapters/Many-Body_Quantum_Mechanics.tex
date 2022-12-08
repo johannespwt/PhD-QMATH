@@ -1,3 +1,4 @@
+% !TeX spellcheck = en_US
 \chapter{Many-Body Quantum Mechanics}
 	In this chapter we give a brief introduction to many-body quantum mechanics. The chapter will serve to define relevant quantities, to set up the mathematical framework, and to state some preliminary results.
 
@@ -9,18 +10,18 @@
 		\end{equation*}
 		where $ \mathcal{H} $ is a Hilbert space. Here $ \Psi $ is called the state or wave function of the system.
 	\end{definition}
-	In this thesis, we are mostly interested in quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}= L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specificically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
+	In this thesis, we are mostly interested in quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}= L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specifically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
 
 	\subsection{Identical Particles: Bosons and Fermions}
-		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistiguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
+		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistinguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
 		\begin{remark}
 			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics (see section below) on this space. In section ... we will see examples of different particle statistics in one dimension. 
 		\end{remark}
 		\begin{remark}
-			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and their fundamental groups are isomorphic to the fundamental group in the spinless case indepent of $ \sigma $.\\
+			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and their fundamental groups are isomorphic to the fundamental group in the spinless case independent of $ \sigma $.\\
 			Alternatively, one can view the wave function as a $ (2S+1)^N $-dimensional vector bundle over the physical (spinless) configuration space.
 		\end{remark}
-		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the antisymmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. It is an empiracal fact that bosons and fermions are the only types of elementary particles that are encountered in nature. Hence for bosons we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions we restrict to wave-functions in the antisymmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
+		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the anti-symmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. It is an empirical fact that bosons and fermions are the only types of elementary particles that are encountered in nature. Hence for bosons we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions we restrict to wave-functions in the anti-symmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
 		To recap we list the following important definitions
 		\begin{definition}
 			A quantum system of $N$ spin--$ S $ bosons in $ \Omega\subseteq\R^d $ at fixed time is a pair
@@ -38,32 +39,32 @@
 		\end{definition}
 	
 \section{Observables, Dynamics, and Energy}
-In general we call any self-adjoint operator on $ \mathcal{H} $ an \emph{observable}. Physically, observables represent quanteties that, in principle, can be measured in an experiment. It is a postulate of quantum mechanics that given an observable $ \mathcal{O}=\int_{\sigma(\mathcal{O})}\lambda \diff P_\lambda $, where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem (ref Reed and Simon.), the probabilty of a measurement of $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ having outcome $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\rightarrow\lambda\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $. 
+In general we call any self-adjoint operator on $ \mathcal{H} $ an \emph{observable}. Physically, observables represent quantities that, in principle, can be measured in an experiment. It is a postulate of quantum mechanics that given an observable $ \mathcal{O}=\int_{\sigma(\mathcal{O})}\lambda \diff P_\lambda $, where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem (ref Reed and Simon.), the probability of a measurement of $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ having outcome $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\rightarrow\lambda\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $. 
 Furhtermore we defined the expected value of an observable.
 \begin{definition}
-	The expectation value of an observable $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ is 
+	The \textbf{expectation value} of an observable $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ is 
 	$$ \braket{\mathcal{O}}_\Psi:=\int_{\lambda\in\sigma(\mathcal{O})}\lambda\braket{\Psi,P_\lambda\Psi} $$
 	where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem.
 \end{definition}
 
 
-I the previous section we defined a quantum system at a fixed time. However, we are often interested in dynamics of the system. In quantum mechanics, time evolution is modelled by the infinitesimal generator of time evolution, $ H $, also known as the \emph{Hamiltonian}. We will in this thesis take $ H $ to be a (time-independent) lower bounded self-adjoint operator on $ \mathcal{H} $. A state evolves in time according to the Schrödinger equation\begin{equation*}
+I the previous section we defined a quantum system at a fixed time. However, we are often interested in dynamics of the system. In quantum mechanics, time evolution is modeled by the infinitesimal generator of time evolution, $ H $, also known as the \emph{Hamiltonian}. We will in this thesis take $ H $ to be a (time-independent) lower bounded self-adjoint operator on $ \mathcal{H} $. A state evolves in time according to the Schr\"odinger equation\begin{equation*}
 \Psi(t)=\exp\left(-iH(t-t_0)\right)\Psi(t_0),
 \end{equation*}
 where have set $ \hbar=1 $.
 \begin{remark}
-	By Stone's theorem (ref Reed and Simon), the existance of a self-adjoint Hamiltonian, $ H $, is guaranteed for any time evolutions described by $ \Psi(t)=U(t-t_0)\Psi(t_0) $, when $ U(t) $ is a strongly continous one-parameter unitary group.
+	By Stone's theorem (ref Reed and Simon), the existance of a self-adjoint Hamiltonian, $ H $, is guaranteed for any time evolution described by $ \Psi(t)=U(t-t_0)\Psi(t_0) $, when $ U(t) $ is a strongly continuous one-parameter unitary group.
 \end{remark}
-Since the Hamiltonian, $ H $, is self-adjoint, it represents an obersvable which we call \emph{energy}. Since $ H $ is lower bounded, there is a natural notion of lowest energy of $ H $.
+Since the Hamiltonian, $ H $, is self-adjoint, it represents an observable which we call \emph{energy}. Since $ H $ is lower bounded, there is a natural notion of lowest energy of $ H $.
 \begin{definition}
-	The ground state energy of $ H $ is defined by 
+	The \textbf{ground state energy} of $ H $ is defined by 
 	$$
 	E_0(H):=\inf(\sigma(H))
 	$$
 \end{definition}
 Furthermore, we define the notion of a \emph{ground state} of $ H $ as
 \begin{definition}
-	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a ground state of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
+	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a \textbf{ground state} of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
 \end{definition}
 When studying ground states and ground state energies it is useful to have the following variational characterization.
 \begin{remark}\label{RemarkVariationalPrinciple1}
@@ -75,41 +76,79 @@ When studying ground states and ground state energies it is useful to have the f
 	It is straightforward to show that the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $ is lower bounded and closable, since $ H $ is lower bounded and self-adjoint.
 \end{remark}
 \begin{definition}
-	Given a Hamitonian, $ H $, we define the associated energy quadratic form, $ \mathcal{E}_H:\mathcal{\dom{\mathcal{E}_H}}\to \R $, as the closure of the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $. When $ H $ is given from the context, we will often write $ \mathcal{E} $ as short for $ \mathcal{E}_H $.
+	Given a Hamiltonian, $ H $, we define the \textbf{associated energy quadratic form}, $ \mathcal{E}_H:\mathcal{\dom{\mathcal{E}_H}}\to \R $, as the closure of the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $. When $ H $ is given from the context, we will often write $ \mathcal{E} $ as short for $ \mathcal{E}_H $.
 \end{definition}
 \begin{remark}\label{RemarkVariationalPrinciple2}
-	From the definition of $\mathcal{E_H}$ and from Remark \ref{RemarkVariationalPrinciple1} it follows straigthforwardly that we have \begin{equation}\label{EqVariationalGroundStateEnergyForm}
+	From the definition of $\mathcal{E_H}$ and from Remark \ref{RemarkVariationalPrinciple1} it follows straightforwardly that we have \begin{equation}\label{EqVariationalGroundStateEnergyForm}
 		E_0(H)=\inf_{\Psi\in \dom{\mathcal{E_H}}}\frac{\mathcal{E_H}(\Psi)}{\abs{\Psi}^2}=\inf_{\substack{\Psi\in \dom{\mathcal{E_H}},\\\norm{\Psi}=1}}\mathcal{E_H}(\Psi), 
 	\end{equation}
 	as $ \dom{H} $ is form core for $\mathcal{E_H}$.
 \end{remark}
 We refer to both \eqref{EqVariationalGroundStateEnergyOperator} and \eqref{EqVariationalGroundStateEnergyForm} as \emph{the variational principle}.
 We will often in the remaining take \eqref{EqVariationalGroundStateEnergyForm} as the vary definition of the ground state energy. Furthermore, one can also define the dynamics of a quantum system by specifying an energy quadratic form in the following sense
-\begin{remark}[Ref!!]
-	Given a densely defined, lower bounded, closable, quadratic for $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exist a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
+\begin{remark}[Ref!!]\label{RemarkOperatorFromQuadraticForm}
+	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exist a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
 \end{remark}
 Thus we will frequently change between the two equivalent formulations of the dynamics of a quantum system that are the operator, $ H $, formulation and the quadratic form, $ \mathcal{E} $, formulation
 \subsection{Many-Body Hamiltonians}
-Until this point, we have not specified the class of Hamiltonians that we will be interested in. We have seen, that we will care mainly about Hamiltonians defined on the bosonic or fermionic subspaces, however no specification has been made about the dynamics on these subspaces. We are interested in modeling $ N $ particles in some region $ \Omega\subseteq\R^d $ that interact locally with each other. For the remaning of this subsection we will ignore spin, knowing that including spin degrees of freedom is completely analogous. In practice, and for suitably mild interactions, this means that the Hamiltonian \emph{formally} (meaning restricted to the fermionic or bosonic subspace of $ C^\infty_0(\Omega^N) $) takes the form \begin{equation}
+Until this point, we have not specified the class of Hamiltonians that we will be interested in. We have seen, that we will care mainly about Hamiltonians defined on the bosonic or fermionic subspace, however no specification has been made about the dynamics on these subspaces. We are interested in modeling $ N $ particles in some region $ \Omega\subseteq\R^d $ that interact locally with each other. For the remaining of this subsection we will ignore spin, knowing that including spin degrees of freedom is completely analogous. In practice, and for suitably mild interactions, this means that the Hamiltonian \emph{formally} (meaning restricted to the fermionic or bosonic subspace of $ C^\infty_0(\Omega^N) $) takes the form \begin{equation}
 H=\sum_{i=1}^{N}T_i+U(x_1,\ldots,x_N)
 \end{equation}
-where $ T_i $ is the \emph{kinetic energy operator} for particle $ i $ and the \emph{potential} $ U $ is a multiplication operator which models the local interaction among the particles. The kinetic energy operator is taken to be\footnote{This is usually justified by going through a canonical quanitzation procedure for the classical Hamiltonian function of the system we are interested in modelling} \begin{equation}
+where $ T_i $ is the \emph{kinetic energy operator} for particle $ i $ and the \emph{potential} $ U $ is a multiplication operator which models the local interaction among the particles. The kinetic energy operator is taken to be\footnote{This is usually justified by going through a canonical quantization procedure for the classical Hamiltonian function of the system we are interested in modeling} \begin{equation}
 T_i=-\frac{1}{2m_i}\Delta_i\qquad (\hbar=1)
 \end{equation} 
-since we interested in identical particles, we will from this point onwards choose $ m_i=1/2 $. As for the potential, $ V $, we of course immediately restrict to permutation-invariant function, $ U $, for identical particles. However, in the following we will further restrict to a combination of having a trapping potential and radial pair potentials, which model pairwise interactions that only depend on the distances between particles. Such potentials take the form \begin{equation}
+since we interested in identical particles, we will from this point onward choose $ m_i=1/2 $. As for the potential, $ V $, we of course immediately restrict to permutation-invariant function, $ U $, for identical particles. However, in the following we will further restrict to a combination of having a trapping potential and radial pair potentials, which model pairwise interactions that only depend on the distances between particles. Such potentials take the form \begin{equation}
 U(x_1,\ldots,x_N)=\sum_{i<j} v(x_i-x_j) + \sum_{i=1}^{N}V(x_i)
 \end{equation}
-where we take $ v $ to be a radial function and, $ V $, is called the \emph{trapping potential}. We will generally take $ v $ to be repulsive, meaning $ v\geq 0 $, with compact support. The trapping potential we will disregard \ie $ V=0 $. We will then in general take the true Hamiltonian to be a self-adjoint extensions of the symmetric \emph{formal} Hamitonian. Now some models of stronger interactions, \eg the hard core interaction, requires a more delicate construction with respect to the initial definition of the formal Hamiltonian. However, the construction of the Hamiltonian can be done in a more unified manner when constructing the energy quadratic form. 
+where we take $ v $ to be a radial function and, $ V $, is called the \emph{trapping potential}. We will generally take $ v $ to be repulsive, meaning $ v\geq 0 $, with compact support. The trapping potential we will disregard \ie $ V=0 $. We will then in general take the true Hamiltonian to be a self-adjoint extensions of the symmetric \emph{formal} Hamiltonian. Now some models of stronger interactions, \eg the hard core interaction, requires a more delicate construction with respect to the initial definition of the formal Hamiltonian. However, the construction of the Hamiltonian can be done in a more unified manner when constructing the energy quadratic form. 
 \begin{definition}
-	For a system of $ N $ bosons/fermions in region $ \Omega\in\R^d $, we define for $ \sigma\in[0,\infty] $ the energy quadratic forms
+	For a system of $ N $ bosons/fermions in region $ \Omega\in\R^d $, we define for $ \sigma\in[0,\infty] $ \textbf{the energy quadratic forms}
 \begin{equation}\label{key}
 \mathcal{E}_{(v,\sigma)}(\Psi)=\int_{\Omega^N} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j} v(x_i-x_j)\abs{\Psi}^2+\sigma\int_{\dd (\Omega^N)}\abs{\Psi}^2,
 \end{equation}
 with domain $ \dom{\mathcal{E}_{(v,\sigma)}}=\{\Psi\in (C^\infty_0(\Omega^N))_{\text{b/f}}\vert \mathcal{E}_{(v,\sigma)}(\Psi)<\infty\} $. with $ (C^\infty_0(\Omega^N))_{\text{b/f}} $ meaning the bosonic/fermionic subspace of $ C^\infty_0(\Omega^N) $. $ \sigma=\infty $ is taken to mean Dirichlet boundary conditions.
 \end{definition}
-Of course $ \mathcal{E}_{(v,\sigma)}\geq 0 $ for any $ \sigma\in[0,\infty] $ and $ v\geq 0 $. However, the closability of $ \mathcal{E}_{(v,\sigma)} $ is not evident. In fact we will have to...
+Of course $ \mathcal{E}_{(v,\sigma)}\geq 0 $ for any $ \sigma\in[0,\infty] $ and $ v\geq 0 $. However, the closability of $ \mathcal{E}_{(v,\sigma)} $ is not evident. In fact for general $ v $, $ \mathcal{E}_{(v,\sigma)} $ will not be neither densely defined nor closable on $ L^2_{s/a}(\Omega^N) $. However, it will both densely defined on a closed subspace $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ of $ L^2_{s/a}(\Omega^N) $, hence we take $ \mathcal{H}_{(v,\sigma)} $ to be the Hilbert space of the system, when this is the case. Closability of $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $ is not necessarily satisfied. Thus we make the following definition
+\begin{definition}
+	We say a potential $ v\geq 0 $ is \textbf{allowed} in dimension $ d $, if $ \mathcal{E}_{(v,\sigma)} $ is closable on $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2}\subset L^2_{s/a}(\Omega^N)$ for any $ \sigma\in[0,\infty] $.
+\end{definition}
 \begin{remark}
-	For example, any radial $ v\geq 0 $ (possibly a measure) with compact support is  $\mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a self-adjoint operator on some Hilbert space $ \mathcal{H}_{(v,\sigma)}\subset L^2_{s/a}(\Omega^N) $. To see this notice that $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2}\in L^2_{s/a}(\Omega^N)$ is a closed subspace, and thus itself a Hilbert space. Furthermore, it is well known that $\mathcal{E}_{(0,\sigma)}$ is closable on $  \mathcal{H}_{(v,\sigma)} $. Thus closability of $ \mathcal{E}_{(v,\sigma)} $ amount to showing that $ \psi_n \xrightarrow{\norm{\cdot}_2}0 $ as $ n\to\infty $ and $ ((\sum_{i<j}v(x_i-x_j))^{1/2}\psi_n)_{n\in\mathbb{N}}\subset L^2(\Omega^N) $ Cauchy, implies $ (\sum_{i<j}v(x_i-x_j))^{1/2}\psi_n\xrightarrow{\norm{\cdot}_2}0  $. This is evident from the fact $ (\sum_{i<j}v(x_i-x_j))^{1/2}\psi_n $ that $\psi_n\xrightarrow{\norm{\cdot}_2}f$ for some $ f\in L^2(\Omega^N) $ by completeness. Now $ \psi_n $ has a subsequence that converges almost everywhere to $ 0 $, and this subsequence further has a subsequence that converges almost everywhere to $ f $. Hence $ f=0 $ almost everywhere. \\
-	Thus there is a corresponding self-adjoint operator $ H_{(v,\sigma)} $ to $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $, which we shall refere to as the Hamiltonian.
+	There are plenty of allowed potentials, but the notion does depend on the dimension, $ d $. For example is $ v=\delta_0 $, \ie the delta function potential, allowed in dimension $ d=1 $, but not in dimension $ d\geq 2 $. This can be seen from the fact that for $ d=1 $ the incidence planes are co-dimension $ 1 $, and hence the trace theorem gives closability, but for $ d\geq 2 $ where the incidence planes are of co-dimension $ \geq 2 $ it is known that the trace of $ H^1 $ is not contained in $ L^2 $. (Ref!!)
 \end{remark}
+
+
+\begin{remark} \label{RemarkdDimPotentialAllowed}
+	For any radial $ v\geq 0 $ that is measurable  $\mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a self-adjoint operator on some Hilbert space $ \mathcal{H}_{(v,\sigma)}\subset L^2_{s/a}(\Omega^N) $. It is well known that $\mathcal{E}_{(0,\sigma)}$ is closable on $ \mathcal{H}_{(0,\sigma)}\supseteq \mathcal{H}_{(v,\sigma)}    $, hence on $  \mathcal{H}_{(v,\sigma)} $. Thus closability of $ \mathcal{E}_{(v,\sigma)} $ amount to showing that $ \psi_n \xrightarrow{\norm{\cdot}_2}0 $ as $ n\to\infty $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\underbrace{\sum_{i<j}v(x_i-x_j)\diff\lambda^{N}}_{\coloneqq \diff\mu_v}\right) $ Cauchy, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. This is evident from the fact that $\psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}f$ for some $ f\in L^2(\Omega^N,\diff\mu_v) $ by completeness. Now $ \psi_n $ has a subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $, and this subsequence further has a subsequence that converges $ \mu_v $--almost everywhere to $ f $. Hence $ f=0 $ $ \mu_v $--almost everywhere, as $ \mu_v\ll v $. \\
+	Thus there is a corresponding self-adjoint operator $ H_{(v,\sigma)} $ to $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $, which we shall formally write as $ H_{(v,\sigma)}=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N}v(x_i-x_j) $.
+\end{remark}
+The argument from the previous may be generalized slightly in the case of $ d=1 $, in order to show that any $ \sigma $--finite measure $ v\diff\lambda^{N} $ is allowed as potential. Notice that we slightly abuse notation and write $ v(x_i-x_j)\diff\lambda^N $ even when $ v $ is a singular continuous measure and thus has no density. However, we do think of $ v $ a being a one-dimensional measure in the sense that 
+$$ v(x_i-x_j)\diff\lambda^N:=\diff\mu_{v_{ij}}\times \diff \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}},  $$ 
+where we defined $ \diff \mu_{v_{ij}}:=v(x_i-x_j)\diff (x_i-x_j) $ and $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $ to be the measure such that $ \diff\lambda^{N}=\diff(x_i-x_j)\times \diff\lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $. Uniqueness of the product measure is guaranteed by $ \sigma $-finiteness of $ v $.
+\begin{lemma}\label{Lemma1dPotentialAllowed}
+	Let $ d=1 $, then for any $ \sigma $-finite measure, $ v $, we have that $ \mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a self adjoint operator $ H_{(v,\sigma)} $ on some Hilbert space $ \mathcal{H}_{(v,\sigma)} $.
+\end{lemma}
+\begin{proof}
+	As previously, we define $\mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ and $ \diff\mu_v=\sum_{1\leq i<j\leq N}v(x_i-x_j)\diff\lambda^N $. Clearly $ \mathcal{E}_{(v,\sigma)} $ is lower bounded and densely defined in $ \mathcal{H}_{(v,\sigma)} $. Closability amounts to showing that $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\lambda^{N})}}0 $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\diff\mu_v\right) $ Cauchy w.r.t the norm $ \norm{\cdot}_{\mathcal{E}_{(v,\sigma)}}=\sqrt{\mathcal{E}_{(v,\sigma)}(\cdot)+\norm{\cdot}_2^2} $, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. Now since $ (\psi_n)_{n\in\mathbb{N}}$ is a Cauchy sequence in $ L^2\left(\Omega^N,\diff\mu_v\right) $, it has a subsequence that converges $ \mu_v $--almost everywhere to some function $ f\in L^2\left(\Omega^N,\diff\mu_v\right)  $. Furthermore, this subsequence has a further subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $. However, since $ (\psi_n)_{n\in\mathbb{N}}$ converges in $ H^1(\Omega^N,\diff \lambda^N) $, the limit is continuous on $ \lambda^{N-1} $--almost all lines in $ \Omega^N $. Hence $ \left(\psi_n\right)_{n\in\mathbb{N}} $ converges pointwise to $ 0 $ on $ \lambda^{N-1} $--almost all lines. Now notice that $ \diff \mu_v=\sum_{1\leq i<j\leq N} \diff \mu_{v_{ij}}\times \diff\lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $. Thus for $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all lines in $ \Omega^N $ with $ x_i+x_j $ and $ x_k $ fixed for all $ k\neq i,j $, by passing to a subsequence $ \psi_n $ converges pointwise to $ 0 $, by continuity. But also on $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all these lines $ \psi_n $ converges $ \mu_{v_{ij}} $--almost everywhere to $ f $, and hence $ f=0 $ $ \mu_{v_{ij}} $--almost everywhere. Thus we conclude that $ f=0 $ $ \mu_v $--almost everywhere. The lemma now follows from Remark \ref{RemarkOperatorFromQuadraticForm}.
+\end{proof}
+\begin{remark}
+	Combining Lemma \ref{Lemma1dPotentialAllowed} and Remark \ref{RemarkdDimPotentialAllowed} we conclude that potentials of the form $ v=v_{\sigma\text{--finite}}+v_{\text{abs.cont.}} $, where $ v_{\sigma\text{--finite}} $ is a $ \sigma $--finite measure and $ v_{\text{abs.cont.}} $ is an absolutely continuous measure (w.r.t. Lebesgue measure) are allowed in one dimension, $ d=1 $. We will in Chapter.... obtain result about the ground state energy of such systems.
+\end{remark}
+\begin{remark}
+	We emphasize that one can construct dynamics of a quantum system that are not given by a pair potential in the sense of the discussion above. It is, for example, possible to study point interactions in $ d\geq 2 $, however, they cannot be seen as arising from a potential (\eg a $ \delta $-function potential). Instead, one studies in this case the self-adjoint extensions of the Laplacian on functions supported away from the incidence planes of the particles. [Ref Alberverio, Gesztesy, H\o egh-Krohn, Holden] OR TMS Hamiltonians.
+\end{remark}
+
+
+\section{The Scattering Length}
+When analyzing dynamics of a quantum system, it is natural to define certain length scales, on which different processes happen. These length scales often play important roles in understanding the physics of the system, and thus often appear naturally in expressions for the energies of the system. One such length scale that will be of particular importance throughout this thesis is the \emph{scattering length}. The intuition behind the name is that scattering occurs on this length scale. This intuition will be of important throughout the thesis, and especially when  constructing low energy trial states in order to estimate ground state energies by applying the variational principle. The scattering length has multiple equivalent definitions in the literature, but we shall here define it conveniently from a variational principle.
+
+\section{The Ground state Energy of Dilute Bose Gases}
+To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases.
+
+
+\section{The Lieb-Liniger Model: A Solvable Model in One Dimension}
+
+\section{The Yang-Gaudin Model}
+
+
+
 
