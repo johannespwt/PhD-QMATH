@@ -1,0 +1,25 @@
+ \newcommand{\noop}[1]{}
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{bethe1931theorie}
+Hans Bethe, \emph{Zur theorie der metalle}, Zeitschrift f{\"u}r Physik
+  \textbf{71} (1931), no.~3, 205--226.
+
+\bibitem{girardeau1960relationship}
+Marvin Girardeau, \emph{Relationship between systems of impenetrable bosons and
+  fermions in one dimension}, Journal of Mathematical Physics \textbf{1}
+  (1960), no.~6, 516--523.
+
+\bibitem{lieb1963exact}
+Elliott~H Lieb and Werner Liniger, \emph{Exact analysis of an interacting bose
+  gas. i. the general solution and the ground state}, Physical Review
+  \textbf{130} (1963), no.~4, 1605.
+
+\end{thebibliography}
