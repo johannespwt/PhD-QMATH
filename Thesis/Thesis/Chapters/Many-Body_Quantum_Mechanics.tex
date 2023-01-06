@@ -160,10 +160,15 @@ The Bethe ansatz then prescribes that we, on a sector $ \{1,2,\ldots,N\} $, seek
 where $ a(P)\in\C $ suitably chosen coefficients. The boundary conditions $$
 (\partial_{j+1}-\partial_j)\psi\rvert_{x_{j+1}=x_j}=c\psi\rvert_{x_i=x_j},
 $$
-are satisfied if for $ P=(p_1,p_2,\ldots,p_j=q,p_{j+1}=p,\ldots,p_N) $ and $ Q=(p_1,p_2,\ldots,q_j=p,q_{j+1}=q,\ldots,p_N) $, we have $ i(p-q)(a(P)-a(Q))=c (a(P)+a(Q)) $ implying $ a(Q)=-\frac{c-i(p-q)}{c+i(p-q)}a(P):=-\exp(i\theta_{j,j+1}) $.....
+are satisfied if for $ P=(p_1,p_2,\ldots,p_j=\alpha,p_{j+1}=\beta,\ldots,p_N) $ and $ Q=(p_1,p_2,\ldots,q_j=\beta,q_{j+1}=\alpha,\ldots,p_N) $, we have $ i(k_\beta-k_\alpha)(a(P)-a(Q))=c (a(P)+a(Q)) $ implying\begin{equation}\label{EqCoefficientsLL}
+	a(Q)=-\frac{c-i(k_\beta-k_\alpha)}{c+i(k_\beta-k_\alpha)}a(P):=-\exp(i\theta_{\beta,\alpha})a(P)
+\end{equation} where we have defined\begin{equation}
+\theta_{i,j}=-2 \arctan\left(\frac{k_i-k_j}{c}\right).
+\end{equation}
+Defining $ a(I)=1 $, it is simple to see that by the relations \eqref{EqCoefficientsLL}, all $ a(P) $ are fixed. In fact that $ a(P) $ is uniquely determined by \eqref{EqCoefficientsLL} follows from the fact that in going from identity $ I $ to some permutation $ P $, the same elements are eventually transposed, by any path of transpositions. 
 
 \section{The Yang-Gaudin Model}
-
+Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.
 
 
 
