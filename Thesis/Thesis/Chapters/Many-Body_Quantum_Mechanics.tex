@@ -165,7 +165,27 @@ are satisfied if for $ P=(p_1,p_2,\ldots,p_j=\alpha,p_{j+1}=\beta,\ldots,p_N) $ 
 \end{equation} where we have defined\begin{equation}
 \theta_{i,j}=-2 \arctan\left(\frac{k_i-k_j}{c}\right).
 \end{equation}
-Defining $ a(I)=1 $, it is simple to see that by the relations \eqref{EqCoefficientsLL}, all $ a(P) $ are fixed. In fact that $ a(P) $ is uniquely determined by \eqref{EqCoefficientsLL} follows from the fact that in going from identity $ I $ to some permutation $ P $, the same elements are eventually transposed, by any path of transpositions. 
+We note that we will require $ k_i\neq k_j $ for $ i\neq j $ in order for $ \psi $ to be non-vanishing. Defining $ a(I)=1 $, it is simple to see that by the relations \eqref{EqCoefficientsLL}, all $ a(P) $ are fixed. In fact that $ a(P) $ is uniquely determined by \eqref{EqCoefficientsLL} follows from the fact that in going from the identity $ I $ to some permutation $ P $, the same elements are eventually transposed, by any path of transpositions.\\
+The values of the pseudo momenta $ k_i $ are now determined by the periodic boundary conditions, which on the sector $ \{1,2,$\ldots$,N\} $ take the form \begin{equation}\begin{aligned}
+\psi(0,x_2,x_3,\ldots,x_N)&=\psi(x_2,x_3,\ldots,x_N,L),\\
+\left(\partial_x \psi(x,x_2,x_3,\ldots,x_N) \right)\big\rvert_{x=0}&=\left(\partial_x \psi(x_2,x_3,\ldots,x_N,x) \right)\big\rvert_{x=L}.
+\end{aligned}
+\end{equation}
+With the ansatz state above, these equations correspond to the $ N $ equation\begin{equation}\label{EqLLPseudoMomenta}
+	(-1)^{N-1}\exp(-i k_j L)=\exp\left(i\sum_{i=1}^{N}\theta_{i,j}\right),
+\end{equation}
+with the definition $ \theta_{i,i}:=0 $. Although the ``pseudo" momenta $ k_i $ cannot be regarded as being true momenta, one can construct the total momentum of a state. We notice that $ P\coloneqq\sum_{i=1}^{N}k_i $ is constant across different sectors, and hence it may be regarded as the true total momentum. Furthermore, we see that if the set $ (k_i)_{i\in\{1,\ldots,N\}} $ solves the equations \eqref{EqLLPseudoMomenta} then set $ (k_i'=k_i+2\pi n_0 /L)_{i\in\{1,\ldots,N\}} $ solves it as well. This corresponds to changing the total momentum by $ P'=P+ 2\pi n_0 \rho $, with $ \rho\coloneqq N/L $. Thus we may restrict to finding all solutions with $ -\pi \rho <P\leq \pi \rho $, then all other solutions are related by a constant change in ``pseudo" momenta. Ordering the ``pseudo" momenta such that $ k_1<k_2<\ldots<k_N $, another consequence of \eqref{EqLLPseudoMomenta} is that $ \sum_{i=1}^{N}k_i=2\pi n/L $ for some integer $ -N/2<n\leq N/2 $, since $ \theta_{i,j}=-\theta_{j,i} $.\\
+Now we define \begin{equation}\label{EqDeltaDef}
+\delta_i=(k_{i+1}-k_i)L=\sum_{s=1}^{N}(\theta_{s,i}-\theta_{s,i+1})+2\pi n_i,
+\end{equation} where $ n_i $ are integers and the second equality follows from \eqref{EqLLPseudoMomenta}. Since $ \theta_{s,i} $ is strictly increasing in $ i $, we see that $ n_i\geq 1 $. Notice that $ k_j-k_i=\frac{1}{L}\sum_{s=i}^{j-1}\delta_i $ for $ j>i $, hence \eqref{EqDeltaDef} is a set of equations determining $ (\delta_i)_{i\in\{1,\ldots,N-1\}} $. Given a set of $ (n_i)_{i\in\{1,\ldots,N-1\}} $ and a solution of \eqref{EqDeltaDef}, $ (\delta_i)_{i\in\{1,\ldots,N-1\}} $, we merely choose $ k_1 $ to satisfy \eqref{EqLLPseudoMomenta} by having \begin{equation}\label{Eqk1}
+	k_1=-\frac{1}{L}\sum_{i=1}^{N}\theta_{i,1}-\frac{2\pi m}{L}+\frac{\epsilon(N)}{L},
+	\end{equation}
+	where $ m $ is some integer determined by $ -\pi\rho <P\leq \pi\rho $ and\\ $ \epsilon(N)=\begin{cases}
+	0&\text{ if } N\text{ is odd},\\
+	\pi&\text{ if } N\text{ is even}
+	\end{cases} $. The left-hand side of \eqref{Eqk1} depends only on the $ \delta $s.\\
+	\subsection{The ground state}
+	It is clear that within the set of ansatz states, variational ground state must have $ n_i=1 $ for all $ i=1,\ldots, N-1 $. In this case we have by symmetry and uniqueness of the ground state that $ k_i=-k_{N-i} $ and since $ P=\sum_{i=1}^{N}k_i=Nk_1+\frac{1}{L}\sum_{j=1}^{N-1}(N-j)\delta_j=0 $ we find $ k_1=-\frac{1}{NL}\sum_{j=1}^{N-1}(N-j)\delta_j=-k_N $.
 
 \section{The Yang-Gaudin Model}
 Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.
