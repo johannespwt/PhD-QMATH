@@ -183,10 +183,56 @@ Now we define \begin{equation}\label{EqDeltaDef}
 	where $ m $ is some integer determined by $ -\pi\rho <P\leq \pi\rho $ and\\ $ \epsilon(N)=\begin{cases}
 	0&\text{ if } N\text{ is odd},\\
 	\pi&\text{ if } N\text{ is even}
-	\end{cases} $. The left-hand side of \eqref{Eqk1} depends only on the $ \delta $s.\\
+	\end{cases} $. The right-hand side of \eqref{Eqk1} depends only on the $ \delta $s.\\
 	\subsection{The ground state}
-	It is clear that within the set of ansatz states, variational ground state must have $ n_i=1 $ for all $ i=1,\ldots, N-1 $. In this case we have by symmetry and uniqueness of the ground state that $ k_i=-k_{N-i} $ and since $ P=\sum_{i=1}^{N}k_i=Nk_1+\frac{1}{L}\sum_{j=1}^{N-1}(N-j)\delta_j=0 $ we find $ k_1=-\frac{1}{NL}\sum_{j=1}^{N-1}(N-j)\delta_j=-k_N $.
-
+	It is clear that within the set of ansatz states, variational ground state must have $ n_i=1 $ for all $ i=1,\ldots, N-1 $. In this case we have by symmetry and uniqueness of the ground state that $ k_i=-k_{N-i} $ and since $ P=\sum_{i=1}^{N}k_i=Nk_1+\frac{1}{L}\sum_{j=1}^{N-1}(N-j)\delta_j=0 $ we find $ k_1=-\frac{1}{NL}\sum_{j=1}^{N-1}(N-j)\delta_j=-k_N$.\\
+	
+	We may also ask whether the true ground state is attained among these ansatz states. This turn out to be the case, which may be seen by the following result.
+	\begin{lemma}\label{LemmaLLGroundState}
+		Let $ \Psi_V $ and $ \Psi_T $ be the variational (in the Bethe ansatz class) and true ground state of $ H_{LL} $, respectively, then $ \Psi_V(x)=\euler{i\phi}\Psi_T(x) $, for a constant $ \phi\in[0,2\pi) $.
+	\end{lemma} 
+\begin{proof}
+	Consider first the limit $ c\to \infty $. Here it is easily verified that $\Psi_V=\abs{\Psi_F}=\Psi_T$, where $ \Psi_F $ is the free Fermi ground state, \ie a Slater determinant state and that $ E_V=E_T=E_F $, where $ E_F $ is the free Fermi energy. Now by uniqueness of the bosonic ground state and continuity of the (variational) ground state energy in $ 1/c $,, as well as the fact that $ \Psi_V $ is an eigenstate, we conclude that the variational ground state must remain the true ground state, as $ 1/c $ varies.
+\end{proof}
+We note that while Lemma \ref{LemmaLLGroundState} holds for the ground state, its proof cannot be generalized to exited states, since there is no unique $ n $th exited state in the Bose gas. In this case we refer to the more involved proof of completeness of the Bethe ansatz states by Dorlas \cite{cmp/1104252974}.\\
+Interestingly, it is possible to study the thermodynamic limit ($ N,L\to\infty $ with $ N/L=\rho $) of system by the use of the Bethe ansatz solution. To do this, we define $ K(\gamma):=\lim_{\substack{N,L\to\infty\\
+		N/L=\rho}}k_N $ where $ \gamma=c/\rho $. Of course the energy will grow with the particle number, so we are, in this case, interested in the energy per volume (length)
+\begin{equation}\label{}
+\rho^3 e(\gamma):=\lim_{\substack{N,L\to\infty\\
+N/L=\rho}} \frac{1}{L}E_N.
+\end{equation}
+Since we have $ k_{i+1}-k_i<2\pi/L $, we conclude\begin{equation}
+\theta_{s,i}-\theta_{s,i+1}=-\frac{2c(k_{i+1}-k_i)}{c^2+(k_s-k_i)^2}+\mathcal{O}(1/(cL)^2).
+\end{equation}
+So by \eqref{EqDeltaDef} we see for the ground state ($ n_i=1 $) that \begin{equation}
+k_{i+1}-k_i=\frac{2\pi}{L}-\frac{1}{L}\sum_{s=1}^{N}\frac{2c(k_{i+1}-k_i)}{c^2+(k_s-k_i)^2}+\rho O(1/(cL)^2).
+\end{equation}
+Now let $ f $ be such that $ k_{i+1}-k_i=1/(Lf(k_i)) $. Then by Poisson's summation formula we have \begin{equation}
+2\pi f(k)-1=2\int_{-K}^{K}\frac{f(p)}{c^2+(p-k)^2}\diff p+\mathcal{O}(1/(cL).
+\end{equation}
+The very definition of $ f $ implies $ \int_{-K}^{K}f(p)\diff p=\rho $, with ground state energy\begin{equation}
+E=\sum_{i}k_i^2=\int_{-K}^{K}k^2f(k)\diff k,
+\end{equation} 
+and it follows from the definition of $ f $ and $ k_i<k_{i+1} $ that $ f\geq 0 $.\\
+It is now a matter of a simple coordinate transformation\begin{equation}
+g(x)\coloneqq f(Kx),\quad  c\coloneqq K\lambda
+\end{equation}
+to find the equations for the ground state energy in the thermodynamic limit:
+\begin{align}
+2\pi g(x)-1&=2\lambda\int_{-1}^{1}\frac{g(y)}{\lambda^2+(y-x)^2}\diff y\label{EqLLEq1},\\
+e(\gamma)&=\frac{\gamma^3}{\lambda^3}\int_{-1}^{1}x^2 g(x)\diff x\label{EqLLEq2},\\
+1&=\frac{\gamma}{\lambda}\int_{-1}^{1}g(x)\diff x.\label{EqLLEq3}
+\end{align}
+The first equation is an inhomogeneous Fredholm equation of the second kind which is solved by the Liouville-Neumann series. 
+\begin{proposition}
+	Let $ E_c $ denote the ground state energy of $ H_{LL} $ with coupling $ c>0 $. Then $ \lim\limits_{c\to\infty}E_c=E_F $, where $ E_F $ is the free Fermi ground state energy.
+\end{proposition}
+\begin{proof}
+	By going to the quadratic form representation of $ H_{LL} $ is clear by a trial state argument that $ E_c\leq E_F $ for any $ c<\infty $. Now assume that $ E_c<\mathcal{E}<E_F $ for all $ c<\infty $ where $ \mathcal{E} $ is independent of $ c $. Then the ground state at coupling $ \Psi_c $ of $ H_{LL} $, is uniformly (in $ c $) bounded in $ H^1 $. Hence $ \Psi_{c_n} $ is, by possibly passing to a subsequence, weakly convergent in $ H^1 $. By the Rellich--Kondrachov theorem $ \Psi_{c_n} $ converges in $ L^2 $ norm to the same limit. Now assuming $ c_n\to\infty $ as $ n\to\infty $ we have $ \Psi_{c_n}(x_i=x_j)\to 0 $ as $ n\to\infty $ for any $ i,j $ in order for the potential energy to stay finite. But then the limit $ \Psi $ also satisfies $ \Psi(x_i=x_j)=0 $ for any $ i,j $. Now we clearly have $ E_\Psi<\mathcal{E}<E_F $ by weak lower semi--continuity of the $ H^1 $--norm, which contradicts $ E_F $ being the ground state energy of the impenetrable boson model.
+\end{proof}
+\begin{proof}[Proof in the thermodynamic limit by Bethe ansatz]
+	It follows from \eqref{EqLLEq3} that $ \lambda\to\infty $ as $ c\to\infty} $. Then from \eqref{EqLLEq1} we see that $ g=\frac{1}{2\pi} $ so again by \eqref{EqLLEq3} $ \lambda=\frac{1}{\pi}\gamma $. Thus by $ \eqref{EqLLEq2} $ we have $ e(\gamma)=\frac{\pi^2}{3} $, which agrees with the free Fermi ground state energy 
+\end{proof}
 \section{The Yang-Gaudin Model}
 Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.
 
