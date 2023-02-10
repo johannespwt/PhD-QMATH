@@ -1,35 +1,55 @@
  \newcommand{\noop}[1]{}
-\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
-\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
-% \MRhref is called by the amsart/book/proc definition of \MR.
-\providecommand{\MRhref}[2]{%
-  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
-}
-\providecommand{\href}[2]{#2}
-\begin{thebibliography}{1}
+\begin{thebibliography}{Yan67}
 
-\bibitem{bethe1931theorie}
-Hans Bethe, \emph{Zur theorie der metalle}, Zeitschrift f{\"u}r Physik
-  \textbf{71} (1931), no.~3, 205--226.
+\bibitem[Ada75]{adams1975sobolev}
+R.A. Adams.
+\newblock {\em Sobolev Spaces}.
+\newblock Academic press, New York, 1975.
 
-\bibitem{cmp/1104252974}
-T.~C. Dorlas, \emph{{Orthogonality and completeness of the Bethe ansatz
-  eigenstates of the nonlinear Schroedinger model}}, Communications in
-  Mathematical Physics \textbf{154} (1993), no.~2, 347 -- 376.
+\bibitem[Bet31]{bethe1931theorie}
+Hans Bethe.
+\newblock Zur theorie der metalle.
+\newblock {\em Zeitschrift f{\"u}r Physik}, 71(3):205--226, 1931.
 
-\bibitem{girardeau1960relationship}
-Marvin Girardeau, \emph{Relationship between systems of impenetrable bosons and
-  fermions in one dimension}, Journal of Mathematical Physics \textbf{1}
-  (1960), no.~6, 516--523.
+\bibitem[Dor93]{cmp/1104252974}
+T.~C. Dorlas.
+\newblock {Orthogonality and completeness of the Bethe ansatz eigenstates of
+  the nonlinear Schroedinger model}.
+\newblock {\em Communications in Mathematical Physics}, 154(2):347 -- 376,
+  1993.
 
-\bibitem{lieb1963exact}
-Elliott~H Lieb and Werner Liniger, \emph{Exact analysis of an interacting bose
-  gas. i. the general solution and the ground state}, Physical Review
-  \textbf{130} (1963), no.~4, 1605.
+\bibitem[EG91]{evans1991measure}
+L.C. Evans and R.F. Gariepy.
+\newblock {\em Measure Theory and Fine Properties of Functions}.
+\newblock Studies in Advanced Mathematics. Taylor \& Francis, 1991.
 
-\bibitem{yang1967some}
-Chen-Ning Yang, \emph{Some exact results for the many-body problem in one
-  dimension with repulsive delta-function interaction}, Physical Review Letters
-  \textbf{19} (1967), no.~23, 1312.
+\bibitem[Gir60]{girardeau1960relationship}
+Marvin Girardeau.
+\newblock Relationship between systems of impenetrable bosons and fermions in
+  one dimension.
+\newblock {\em Journal of Mathematical Physics}, 1(6):516--523, 1960.
+
+\bibitem[Gri11]{grisvard2011elliptic}
+P.~Grisvard.
+\newblock {\em Elliptic Problems in Nonsmooth Domains}.
+\newblock Classics in Applied Mathematics. Society for Industrial and Applied
+  Mathematics, 2011.
+
+\bibitem[LL63]{lieb1963exact}
+Elliott~H Lieb and Werner Liniger.
+\newblock Exact analysis of an interacting bose gas. i. the general solution
+  and the ground state.
+\newblock {\em Physical Review}, 130(4):1605, 1963.
+
+\bibitem[RS81]{reed1981functional}
+M.~Reed and B.~Simon.
+\newblock {\em I: Functional Analysis}.
+\newblock Methods of Modern Mathematical Physics. Elsevier Science, 1981.
+
+\bibitem[Yan67]{yang1967some}
+Chen-Ning Yang.
+\newblock Some exact results for the many-body problem in one dimension with
+  repulsive delta-function interaction.
+\newblock {\em Physical Review Letters}, 19(23):1312, 1967.
 
 \end{thebibliography}

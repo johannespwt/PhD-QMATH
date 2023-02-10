@@ -3,46 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Thesis_main.aux
 A level-1 auxiliary file: Chapters/Introduction.aux
 A level-1 auxiliary file: Chapters/Many-Body_Quantum_Mechanics.aux
-The style file: amsplain.bst
+A level-1 auxiliary file: Chapters/The-Ground-State-Energy-Bose-Gas.aux
+The style file: alpha.bst
 Database file #1: bibliography.bib
-You've used 5 entries,
-            2213 wiz_defined-function locations,
-            541 strings with 4819 characters,
-and the built_in function-call counts, 1465 in all, are:
-= -- 136
-> -- 41
-< -- 0
-+ -- 17
-- -- 12
-* -- 135
-:= -- 239
-add.period$ -- 5
-call.type$ -- 5
-change.case$ -- 21
-chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 55
-empty$ -- 137
-format.name$ -- 12
-if$ -- 296
-int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 10
-newline$ -- 26
-num.names$ -- 10
-pop$ -- 21
+You've used 9 entries,
+            2543 wiz_defined-function locations,
+            624 strings with 5876 characters,
+and the built_in function-call counts, 3028 in all, are:
+= -- 300
+> -- 105
+< -- 6
++ -- 30
+- -- 30
+* -- 204
+:= -- 511
+add.period$ -- 30
+call.type$ -- 9
+change.case$ -- 44
+chr.to.int$ -- 9
+cite$ -- 9
+duplicate$ -- 136
+empty$ -- 247
+format.name$ -- 45
+if$ -- 615
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 13
+newline$ -- 49
+num.names$ -- 27
+pop$ -- 45
 preamble$ -- 2
-purify$ -- 16
+purify$ -- 57
 quote$ -- 0
-skip$ -- 25
+skip$ -- 101
 stack$ -- 0
-substring$ -- 130
-swap$ -- 5
-text.length$ -- 0
-text.prefix$ -- 0
+substring$ -- 168
+swap$ -- 9
+text.length$ -- 6
+text.prefix$ -- 6
 top$ -- 0
-type$ -- 20
+type$ -- 56
 warning$ -- 0
-while$ -- 18
-width$ -- 6
-write$ -- 55
+while$ -- 29
+width$ -- 10
+write$ -- 119

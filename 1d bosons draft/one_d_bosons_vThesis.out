@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Main theorem}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Proof strategy}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Spinless fermions and anyons}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{Physical applications and confinement from 3D to 1D}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{Open problems}{section.1}% 6
+\BOOKMARK [1][-]{section.2}{Upper bound Theorem 1}{}% 7
+\BOOKMARK [2][-]{subsection.2.1}{The free Fermi ground state with Dirichlet b.c.}{section.2}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.1}{1-body reduced density matrix}{subsection.2.1}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Taylor's theorem}{subsection.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Useful bounds on various reduced density matrices of F}{subsection.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.2}{Estimating \040E1 }{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.3}{Estimating E2\(1\)+E2\(2\)}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.4}{Constructing the trial state for arbitrary N}{section.2}% 14
+\BOOKMARK [1][-]{section.3}{Lower bound Theorem 1}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Lieb-Liniger model: preparatory facts}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.2}{Lower bound for small particle numbers n}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Lower bound for arbitrary N}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{Anyons and proof of Theorem 7}{}% 19
+\BOOKMARK [1][-]{section.5}{Acknowledgements}{}% 20

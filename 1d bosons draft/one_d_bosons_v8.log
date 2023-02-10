@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.9)  6 OCT 2022 09:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.9)  10 FEB 2023 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -780,15 +780,15 @@ LaTeX Font Info:    ... okay on input line 85.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* h-part:(L,W,R)=(108.405pt, 380.69788pt, 108.405pt)
+* v-part:(T,H,B)=(108.405pt, 628.23685pt, 108.405pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=452.9679pt
-* \textheight=700.50687pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-37.0pt
+* \textwidth=380.69788pt
+* \textheight=628.23685pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-0.86499pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -885,25 +885,54 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (2.35246pt too wide) in paragraph at lines 153--154
-\OT1/cmr/m/n/10.95 Throughout the pa-per, we will as-sume that the 2-body po-te
-n-tial $\OML/cmm/m/it/10.95 v$ \OT1/cmr/m/n/10.95 is a sym-met-ric and translat
-ion-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8
+] [9] [10]
+[11]
+Overfull \hbox (65.21732pt too wide) detected at line 349
+[][]\OML/cmm/m/it/10.95 E[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N; L\OT1/cmr
+/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 N[]^^Z[] [] :
  []
 
-[3] [4] [5] [6] [7] [8] [9] [10] [11]
-Overfull \hbox (5.25269pt too wide) detected at line 464
+[12] [13] [14]
+Overfull \hbox (70.71967pt too wide) detected at line 421
+[][][][]
+ []
+
+
+Overfull \hbox (77.5227pt too wide) detected at line 464
 [][]\OT1/cmr/m/n/10.95 	[](\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = [] [][] 
 = [][] [][] [] \OML/cmm/m/it/10.95 ;
  []
 
-[12]
-Overfull \hbox (2.3824pt too wide) detected at line 505
+[15]
+Overfull \hbox (18.59566pt too wide) in paragraph at lines 472--474
+\OT1/cmr/m/n/10.95 Notice that $(\OML/cmm/m/it/10.95 z \OT1/cmr/m/n/10.95 + \OM
+L/cmm/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )[] = [][] []\OML/cmm/m/it/10.95 z[]$\OT
+1/cmr/m/n/10.95 . For $1 \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 i \OMS/cms
+y/m/n/10.95 ^^T \OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.9
+5 1$, we add $[]$
+ []
+
+
+Overfull \hbox (48.23193pt too wide) detected at line 481
+[][]\OT1/cmr/m/n/10.95 	[](\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = [][] [][
+] [](\OML/cmm/m/it/10.95 z[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]\OT
+1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.95 :
+ []
+
+
+Overfull \hbox (32.63074pt too wide) detected at line 489
+[][]\OT1/cmr/m/n/10.95 	[](\OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ) = [][] [][
+] [](\OML/cmm/m/it/10.95 z[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 z[]\OT
+1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.95 :
+ []
+
+
+Overfull \hbox (74.65242pt too wide) detected at line 505
 [][][][]
  []
 
-[13]
+[16]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 519.
@@ -920,12 +949,48 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 519.
 
-[14]
-Overfull \hbox (2.73088pt too wide) detected at line 563
+[17]
+Overfull \hbox (10.66759pt too wide) detected at line 534
 [][][][]
  []
 
-[15]
+
+Overfull \hbox (10.66759pt too wide) detected at line 539
+[][][][]
+ []
+
+
+Overfull \hbox (14.33453pt too wide) detected at line 544
+[][][][]
+ []
+
+
+Overfull \hbox (51.63284pt too wide) detected at line 551
+[][][][]
+ []
+
+
+Overfull \hbox (75.0009pt too wide) detected at line 563
+[][][][]
+ []
+
+[18]
+Overfull \hbox (23.22392pt too wide) detected at line 579
+[][][][]
+ []
+
+
+Overfull \hbox (23.02586pt too wide) in paragraph at lines 582--583
+\OT1/cmr/m/n/10.95 me-tries of the left-hand sides. As an ex-am-ple, con-sider 
+$[][] \OML/cmm/m/it/10.95 @[]^^M[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; 
+x[]; y[]; y[]\OT1/cmr/m/n/10.95 )\OMS/cmsy/m/n/10.95 j[]$\OT1/cmr/m/n/10.95 .
+ []
+
+[19]
+Overfull \hbox (10.97977pt too wide) detected at line 592
+[][][][]
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 598.
@@ -938,125 +1003,262 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 598.
 
-[16]
-Overfull \hbox (11.04222pt too wide) detected at line 619
+
+Overfull \hbox (83.31224pt too wide) detected at line 619
 [][][][]
  []
 
-[17] [18]
-Overfull \hbox (6.37137pt too wide) detected at line 679
+[20]
+Overfull \hbox (69.5212pt too wide) detected at line 625
+[][] [] [][] []  \OT1/cmr/m/n/10.95 d\OML/cmm/m/it/10.95 x[] \OMS/cmsy/m/n/10.9
+5 ^^T \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 a[]N[]^^Z[] [] :
+ []
+
+[21]
+Overfull \hbox (63.6451pt too wide) in paragraph at lines 643--645
+\OML/cmm/m/it/10.95 E[] \OT1/cmr/m/n/10.95 = [] [][] [][](\OML/cmm/m/it/10.95 v
+[]\OT1/cmr/m/n/10.95 )[] [][] = [] [][] \OML/cmm/m/it/10.95 v[] [][] \OT1/cmr/m
+/n/10.95 + 2[] [][] [][](\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 )[] [][]$
+ []
+
+
+Overfull \hbox (16.39937pt too wide) detected at line 650
+[][][][]
+ []
+
+
+Overfull \hbox (67.55048pt too wide) detected at line 658
+[][][][]
+ []
+
+
+Overfull \hbox (12.4614pt too wide) detected at line 663
+[][][][]
+ []
+
+[22]
+Overfull \hbox (78.64139pt too wide) detected at line 679
 [][][] [][] [][] \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 b[] [][] [] []  \O
 T1/cmr/m/n/10.95 d\OML/cmm/m/it/10.95 x[] []  \OT1/cmr/m/n/10.95 d\OML/cmm/m/it
 /10.95 x[] \OMS/cmsy/m/n/10.95 ^^T []\OML/cmm/m/it/10.95 b[]^^Z[]Lb \OT1/cmr/m/
 n/10.95 = []\OML/cmm/m/it/10.95 N^^Z[]b[];
  []
 
-[19]
-Overfull \hbox (42.11383pt too wide) detected at line 698
+
+Overfull \hbox (28.06155pt too wide) detected at line 684
 [][][][]
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 704.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 704.
-
-
-Overfull \hbox (18.69284pt too wide) detected at line 730
+Overfull \hbox (12.59094pt too wide) detected at line 692
 [][][][]
  []
 
-[20]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 757.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 757.
-
-[21] [22]
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 8
-39.
- (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
 [23]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 851
-.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Overfull \hbox (13.74516pt too wide) in paragraph at lines 850--851
-[][]\OT1/cmr/bx/n/10.95 Lemma 19 \OT1/cmr/m/n/10.95 (Robin-son [[]])\OT1/cmr/bx
-/n/10.95 . []\OT1/cmr/m/it/10.95 For sim-plic-ity, we will con-sider the Lieb-L
-iniger model on $\OT1/cmr/m/n/10.95 [\OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95
- L=\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; L=\OT1/cmr/m/n/10.95 2]$
+Overfull \hbox (114.38385pt too wide) detected at line 698
+[][][][]
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 704.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 704.
+
+
+Overfull \hbox (50.47147pt too wide) detected at line 724
+[][][][]
+ []
+
+
+Overfull \hbox (90.96286pt too wide) detected at line 730
+[][][][]
  []
 
 [24]
-Overfull \hbox (6.30255pt too wide) in paragraph at lines 894--895
-\OT1/cmr/m/n/10.95 Since the range of the in-ter-ac-tion in the Lieb-Liniger mo
-del is zero, we see that $\OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 (2[]\OML/cm
-m/m/it/10.95 n; \OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 `; c\OT1/cmr/m/n/10.9
-5 ) :=
+Overfull \hbox (6.09805pt too wide) detected at line 738
+[][][]\OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 N [][] [] [] \OMS/cmsy/m/n/10.95 
+^^T []\OML/cmm/m/it/10.95 ^^Z[]Lb[] \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 
+E[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 b^^Z\OT1/cmr/m/n/10.95 )[]\OML/cmm/m
+/it/10.95 :
+ []
+
+
+Overfull \hbox (18.37677pt too wide) detected at line 748
+[][][][]
+ []
+
+
+Overfull \hbox (49.83665pt too wide) detected at line 751
+[][]\OT1/cmr/m/n/10.95 4 [][] [][] [][] = []\OML/cmm/m/it/10.95 E[]N\OT1/cmr/m/
+n/10.95 (\OML/cmm/m/it/10.95 ^^Zb\OT1/cmr/m/n/10.95 )[]\OML/cmm/m/it/10.95 :
  []
 
 [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 757.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 757.
+
+
+Overfull \hbox (8.88173pt too wide) in paragraph at lines 759--760
+\OT1/cmr/m/n/10.95 length of each box. Of course, $\OMS/cmsy/m/n/10.95 [[]f\OML
+/cmm/m/it/10.95 x[]; [] ; x[]\OMS/cmsy/m/n/10.95 g \OT1/cmr/m/n/10.95 = \OMS/cm
+sy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]; [] ; x[]\OMS/cmsy/m/n/10.95 g$ \OT1/cmr/
+m/n/10.95 and $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]; [] ; x[]\OMS/cmsy/
+m/n/10.95 g \
+ []
+
+
+Overfull \hbox (3.94914pt too wide) in paragraph at lines 763--765
+\OML/cmm/m/it/10.95 bM=L \OMS/cmsy/m/n/10.95 ^^T \OT1/cmr/m/n/10.95 1\OML/cmm/m
+/it/10.95 =\OT1/cmr/m/n/10.95 2$. Clearly, we have $[][] \OMS/cmsy/m/n/10.95 ^^
+U \OT1/cmr/m/n/10.95 1 \OMS/cmsy/m/n/10.95 ^^@ [][] [][] ^^U \OT1/cmr/m/n/10.95
+ 1 \OMS/cmsy/m/n/10.95 ^^@ [][] \OML/cmm/m/it/10.95 ^^Z[]\OT1/cmr/m/n/10.95 (\O
+ML/cmm/m/it/10.95 x[]; x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U
+ []
+
+
+Overfull \hbox (36.94347pt too wide) detected at line 767
+[][]\OML/cmm/m/it/10.95 E \OMS/cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 N[]^^Z[][
+]:
+ []
+
+[26]
+Overfull \hbox (44.58023pt too wide) in paragraph at lines 770--772
+\OT1/cmr/m/n/10.95 1\OML/cmm/m/it/10.95 =\OT1/cmr/m/n/10.95 (1 \OMS/cmsy/m/n/10
+.95 ^^@ []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^Zb\OT1/cmr/m/n/10.95 )[]) \
+OMS/cmsy/m/n/10.95 ^^T \OT1/cmr/m/n/10.95 1 + 2[](\OML/cmm/m/it/10.95 ^^Zb\OT1/
+cmr/m/n/10.95 )[]$. Op-ti-miz-ing in $\OML/cmm/m/it/10.95 x$\OT1/cmr/m/n/10.95 
+, we find $\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 M=N \
+OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 '
+ []
+
+[27]
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 8
+39.
+ (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
+)
+LaTeX Font Info:    Trying to load font information for U+euf on input line 851
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [28]
+Overfull \hbox (61.10245pt too wide) detected at line 871
+[][][][]
+ []
+
+
+Overfull \hbox (16.52586pt too wide) detected at line 880
+[][][][]
+ []
+
+[29] [30]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 904.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 904.
 
-[26]
-Overfull \hbox (16.87091pt too wide) detected at line 946
+
+Overfull \hbox (55.54123pt too wide) detected at line 912
+[][]\OML/cmm/m/it/10.95  \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; x[]; [] ;
+ x[]\OT1/cmr/m/n/10.95 ) := 	(\OML/cmm/m/it/10.95 x[]; R \OT1/cmr/m/n/10.95 + \
+OML/cmm/m/it/10.95 x[]; [] ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 n \OMS/cms
+y/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1)\OML/cmm/m/it/10.95 R \OT1/cmr/m/n/10.95 +
+ \OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) [] 0 \OMS/cmsy/m/n/10.95 ^^T \OML/
+cmm/m/it/10.95 x[] \OMS/cmsy/m/n/10.95 ^^T [] ^^T \OML/cmm/m/it/10.95 x[] \OMS/
+cmsy/m/n/10.95 ^^T \OML/cmm/m/it/10.95 ` \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/1
+0.95 (\OML/cmm/m/it/10.95 n \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1)\OML/c
+mm/m/it/10.95 R;
+ []
+
+[31]
+Overfull \hbox (89.14093pt too wide) detected at line 946
 [][] [][] \OMS/cmsy/m/n/10.95 ^^@ [][] \OT1/cmr/m/n/10.95 = [][] + 2 [] [] \OMS
 /cmsy/m/n/10.95 ^^T \OT1/cmr/m/n/10.95 2 [][] + [][] \OML/cmm/m/it/10.95 :
  []
 
-[27]
+[32]
+Overfull \hbox (7.67996pt too wide) detected at line 978
+[][] [] [] [][] \OT1/cmr/m/n/10.95 + [] []\OML/cmm/m/it/10.95 v[] [][] \OMS/cms
+y/m/n/10.95 ^^U \OML/cmm/m/it/10.95 E[] [] [] \OT1/cmr/m/n/10.95 + [][](1 \OMS/
+cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 :
+ []
+
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 988
 .
- (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [28]
+) [33]
+Overfull \hbox (7.67996pt too wide) detected at line 991
+[][] [] [] [][] \OT1/cmr/m/n/10.95 + [] []\OML/cmm/m/it/10.95 v[] [][] \OMS/cms
+y/m/n/10.95 ^^U \OML/cmm/m/it/10.95 E[] [] [] \OT1/cmr/m/n/10.95 + [][](1 \OMS/
+cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 :
+ []
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1051.
 
+Overfull \hbox (2.01724pt too wide) detected at line 1008
+[][]\OML/cmm/m/it/10.95 n[]^^Z[] [] \OMS/cmsy/m/n/10.95 ^^U \OML/cmm/m/it/10.95
+ E[] [] [] \OT1/cmr/m/n/10.95 + [](1 \OMS/cmsy/m/n/10.95 ^^@ []\OT1/cmr/m/n/10.
+95 )\OML/cmm/m/it/10.95 :
+ []
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1051.
-
-[29] [30]
-Overfull \hbox (7.84969pt too wide) detected at line 1138
+[34]
+Overfull \hbox (9.12401pt too wide) detected at line 1043
 [][][][]
  []
 
-[31]
-Overfull \hbox (3.5428pt too wide) detected at line 1169
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1051.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 1051.
+
+[35] [36]
+Overfull \hbox (80.1197pt too wide) detected at line 1138
+[][][][]
+ []
+
+[37]
+Overfull \hbox (46.52884pt too wide) detected at line 1158
+[][][][]
+ []
+
+
+Overfull \hbox (38.694pt too wide) detected at line 1166
+[][][][]
+ []
+
+[38]
+Overfull \hbox (75.81282pt too wide) detected at line 1169
 [][]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 @[] \OMS/cmsy/m/n/10.95 ^^@ \OML/cm
 m/m/it/10.95 @[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 '\OMS/cmsy/m/n/10.95 j[
 ] ^^@ \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 @[] \OMS/cmsy/m/n/10.95 ^^@ \OML/
@@ -1071,19 +1273,19 @@ cmm/m/it/10.95 ;
  []
 
 
-Overfull \hbox (13.25409pt too wide) detected at line 1177
+Overfull \hbox (85.52411pt too wide) detected at line 1177
 [][][][]
  []
 
-[32] (./one_d_bosons_v8.bbl [33]
-Underfull \hbox (badness 2469) in paragraph at lines 77--79
-[][]\OT1/cmr/m/n/10.95 , \OT1/cmr/m/it/10.95 The en-ergy of di-lute Bose gases 
-II: The gen-eral case\OT1/cmr/m/n/10.95 , arXiv preprint
+[39] (./one_d_bosons_v8.bbl [40] [41]
+Underfull \hbox (badness 1221) in paragraph at lines 147--150
+\OT1/cmr/m/it/10.95 dimensional sys-tem of im-pen-e-tra-ble bosons\OT1/cmr/m/n/
+10.95 , Jour-nal of Math-e-mat-i-cal
  []
 
-[34] [35] [36]) 
+[42] [43]) 
 AED: lastpage setting LastPage
-[37]
+[44]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1200.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1200.
  (./one_d_bosons_v8.aux)
@@ -1095,9 +1297,9 @@ Package rerunfilecheck Info: File `one_d_bosons_v8.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1200.
  ) 
 Here is how much of TeX's memory you used:
- 21971 strings out of 481239
- 404168 string characters out of 5920378
- 671545 words of memory out of 5000000
+ 21978 strings out of 481239
+ 404217 string characters out of 5920378
+ 671591 words of memory out of 5000000
  36462 multiletter control sequences out of 15000+600000
  548286 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1128,10 +1330,10 @@ m/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on one_d_bosons_v8.pdf (37 pages, 459248 bytes).
+Output written on one_d_bosons_v8.pdf (44 pages, 465123 bytes).
 PDF statistics:
- 948 PDF objects out of 1000 (max. 8388607)
- 866 compressed objects within 9 object streams
- 293 named destinations out of 1000 (max. 500000)
+ 978 PDF objects out of 1000 (max. 8388607)
+ 889 compressed objects within 9 object streams
+ 300 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
