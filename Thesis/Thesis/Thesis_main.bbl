@@ -1,10 +1,16 @@
  \newcommand{\noop}[1]{}
-\begin{thebibliography}{Yan67}
+\begin{thebibliography}{AGHKH12}
 
 \bibitem[Ada75]{adams1975sobolev}
 R.A. Adams.
 \newblock {\em Sobolev Spaces}.
 \newblock Academic press, New York, 1975.
+
+\bibitem[AGHKH12]{albeverio2012solvable}
+S.~Albeverio, F.~Gesztesy, R.~Hoegh-Krohn, and H.~Holden.
+\newblock {\em Solvable Models in Quantum Mechanics}.
+\newblock Theoretical and Mathematical Physics. Springer Berlin Heidelberg,
+  2012.
 
 \bibitem[Bet31]{bethe1931theorie}
 Hans Bethe.
@@ -40,6 +46,12 @@ Elliott~H Lieb and Werner Liniger.
 \newblock Exact analysis of an interacting bose gas. i. the general solution
   and the ground state.
 \newblock {\em Physical Review}, 130(4):1605, 1963.
+
+\bibitem[LM62]{lieb1962theory}
+Elliott Lieb and Daniel Mattis.
+\newblock Theory of ferromagnetism and the ordering of electronic energy
+  levels.
+\newblock {\em Physical Review}, 125(1):164--172, 1962.
 
 \bibitem[RS81]{reed1981functional}
 M.~Reed and B.~Simon.

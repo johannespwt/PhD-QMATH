@@ -1,0 +1,19 @@
+\chapter{The ground state energy of the one dimensional dilute spin--$ \frac{1}{2} $ Fermi gas}
+In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter we seek to analyse instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Thus we will focus on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
+\section{The model}
+We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
+H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N} v(x_i-x_j),
+\end{equation}
+and with a domain contained in the Hilbert space $ L^2_{\text{as}}\left(\left([0,L]\times \{0,1\}\right)^N\right)\cong \left(L^2([0,L])\otimes \C^2\right)^{\wedge N} $.
+\section{Upper bound}
+In this section, we prove an upper bound for the ground state energy of the model \eqref{EqFermi1/2Hamiltonian}. The upper bound match, to next to leading order, the conjecture from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, which we recap here for convienience \begin{conjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
+	Let $ v $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqConjectureEqCSpin1/2FermiGroundStateEnergy}
+	E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right)\right).
+	\end{equation}
+\end{conjecture}
+In order to prove the desired upper bound, some prerequisites are needed. We have already covered the definition of the scattering length and scattering wave function in Chapter...., and the free Fermi ground state was found in Chapter \eqref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. For the spin--$ 1/2 $ gas, we furthermore need knowledge about how to handle the spin degrees of freedom. For this purpose we give some heuristics based on physical intuition, and utilize this intuition in constructing a trial state giving the correct upper bound. 
+\subsection{Antiferromagnetic Heisenberg chain}
+In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the full trial state is given by anti-symmetrically extending to other sectors. Of course this means that certain boundary conditions needs to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ in order for this extension to be in the relevant domain. This boundary condition is exactly that $ P_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $, where $ P_t^{i,i+1} $ denotes the spin projection to the triplet of particles $ i $ and $ i+1 $.
+
+
+

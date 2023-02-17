@@ -4,46 +4,47 @@ The top-level auxiliary file: Thesis_main.aux
 A level-1 auxiliary file: Chapters/Introduction.aux
 A level-1 auxiliary file: Chapters/Many-Body_Quantum_Mechanics.aux
 A level-1 auxiliary file: Chapters/The-Ground-State-Energy-Bose-Gas.aux
+A level-1 auxiliary file: Chapters/The-Ground-State-Energy-Fermi-Gas.aux
 The style file: alpha.bst
 Database file #1: bibliography.bib
-You've used 9 entries,
+You've used 11 entries,
             2543 wiz_defined-function locations,
-            624 strings with 5876 characters,
-and the built_in function-call counts, 3028 in all, are:
-= -- 300
-> -- 105
+            638 strings with 6283 characters,
+and the built_in function-call counts, 3862 in all, are:
+= -- 383
+> -- 155
 < -- 6
-+ -- 30
-- -- 30
-* -- 204
-:= -- 511
-add.period$ -- 30
-call.type$ -- 9
-change.case$ -- 44
-chr.to.int$ -- 9
-cite$ -- 9
-duplicate$ -- 136
-empty$ -- 247
-format.name$ -- 45
-if$ -- 615
++ -- 48
+- -- 48
+* -- 268
+:= -- 657
+add.period$ -- 37
+call.type$ -- 11
+change.case$ -- 57
+chr.to.int$ -- 11
+cite$ -- 11
+duplicate$ -- 165
+empty$ -- 302
+format.name$ -- 65
+if$ -- 780
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 49
-num.names$ -- 27
-pop$ -- 45
+missing$ -- 16
+newline$ -- 59
+num.names$ -- 33
+pop$ -- 57
 preamble$ -- 2
-purify$ -- 57
+purify$ -- 73
 quote$ -- 0
-skip$ -- 101
+skip$ -- 124
 stack$ -- 0
-substring$ -- 168
-swap$ -- 9
+substring$ -- 207
+swap$ -- 11
 text.length$ -- 6
 text.prefix$ -- 6
 top$ -- 0
-type$ -- 56
+type$ -- 68
 warning$ -- 0
-while$ -- 29
-width$ -- 10
-write$ -- 119
+while$ -- 37
+width$ -- 13
+write$ -- 145
