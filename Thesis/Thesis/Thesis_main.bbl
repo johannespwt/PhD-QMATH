@@ -41,6 +41,11 @@ P.~Grisvard.
 \newblock Classics in Applied Mathematics. Society for Industrial and Applied
   Mathematics, 2011.
 
+\bibitem[Hul38]{hult1938}
+L.~Hulthén.
+\newblock {\"Uber das Austauschproblem eines Kristalles}.
+\newblock {\em Ark. Met. Astron. Fysik}, 26A(Na. 11), 1938.
+
 \bibitem[LL63]{lieb1963exact}
 Elliott~H Lieb and Werner Liniger.
 \newblock Exact analysis of an interacting bose gas. i. the general solution
@@ -52,6 +57,12 @@ Elliott Lieb and Daniel Mattis.
 \newblock Theory of ferromagnetism and the ordering of electronic energy
   levels.
 \newblock {\em Physical Review}, 125(1):164--172, 1962.
+
+\bibitem[Mat12]{mattis2012theory}
+D.C. Mattis.
+\newblock {\em The Theory of Magnetism I: Statics and Dynamics}.
+\newblock Springer Series in Solid-State Sciences. Springer Berlin Heidelberg,
+  2012.
 
 \bibitem[RS81]{reed1981functional}
 M.~Reed and B.~Simon.

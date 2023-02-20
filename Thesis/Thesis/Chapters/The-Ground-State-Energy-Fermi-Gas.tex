@@ -1,19 +1,73 @@
 \chapter{The ground state energy of the one dimensional dilute spin--$ \frac{1}{2} $ Fermi gas}
 In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter we seek to analyse instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Thus we will focus on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
 \section{The model}
-We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
+We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, say in the ball $ B_{R_0} $, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N} v(x_i-x_j),
 \end{equation}
 and with a domain contained in the Hilbert space $ L^2_{\text{as}}\left(\left([0,L]\times \{0,1\}\right)^N\right)\cong \left(L^2([0,L])\otimes \C^2\right)^{\wedge N} $.
-\section{Upper bound}
-In this section, we prove an upper bound for the ground state energy of the model \eqref{EqFermi1/2Hamiltonian}. The upper bound match, to next to leading order, the conjecture from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, which we recap here for convienience \begin{conjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
-	Let $ v $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqConjectureEqCSpin1/2FermiGroundStateEnergy}
-	E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right)\right).
+We recap here the conjecture, from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, about the ground state energy for such a system. \begin{conjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
+	Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqConjectureEqCSpin1/2FermiGroundStateEnergy}
+	E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right).
 	\end{equation}
 \end{conjecture}
+\section{Upper bound}
+In this section, we prove an upper bound for the ground state energy of the model \eqref{EqFermi1/2Hamiltonian}. The upper bound match, to next to leading order, Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 In order to prove the desired upper bound, some prerequisites are needed. We have already covered the definition of the scattering length and scattering wave function in Chapter...., and the free Fermi ground state was found in Chapter \eqref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. For the spin--$ 1/2 $ gas, we furthermore need knowledge about how to handle the spin degrees of freedom. For this purpose we give some heuristics based on physical intuition, and utilize this intuition in constructing a trial state giving the correct upper bound. 
-\subsection{Antiferromagnetic Heisenberg chain}
-In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the full trial state is given by anti-symmetrically extending to other sectors. Of course this means that certain boundary conditions needs to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ in order for this extension to be in the relevant domain. This boundary condition is exactly that $ P_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $, where $ P_t^{i,i+1} $ denotes the spin projection to the triplet of particles $ i $ and $ i+1 $.
+The main result of this section is the following theorem.
+\begin{theorem}\label{TheoremUpperBoundSpin1/2Fermi}
+	Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqUpperBoundSpin1/2Fermi}
+	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
+	\end{equation}
+	with $ R=\max(\abs{a_e}, a_o, R_0) $.
+\end{theorem}
+\subsection{Constructing a trial state}
+In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the full trial state is given by anti-symmetrically extending to other sectors. Of course this means that certain boundary conditions needs to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ in order for this extension to be in the relevant domain. This boundary condition is exactly that $ P_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $. Here $ P_t^{i,j} $ denotes the spin projection onto the triplet of particles $ i $ and $ j $, and equivalently we will denote the spin projection onto the singlet of particles $ i $ and $ j $ by $ P_s^{ij} $. We recall from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the ground state energy (of the Bose gas or spin polarized Fermi gas) may be well approximated in the dilute limit, by a state that resembles a free Fermi state when particles are far apart, and resembles the two-particle scattering solution when a pair is close. With this in mind, we may construct a variational state trial state on a sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}\label{EqTrial StateSpin1/2Fermi}
+\Psi_\chi=\begin{cases}
+\Psi=\frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)P_s^{\mathcal{R}}+\omega_o^{\mathcal{R}}P_t^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
+\Psi_F,&\mathcal{R}(x)\geq b
+\end{cases},
+\end{equation}
+where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and $ P_{s/t}^{\mathcal{R}(x)}:=P_{s/t}^{ij} $ when $ \mathcal{R}(x)=\abs{x_i-x_j} $, and $ \eta $ is a continuously differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
+\begin{equation}\label{key}
+\eta(x)\coloneqq\begin{cases}
+0,&\text{ if } \mathcal{R}_2(x)\leq b\\
+\left(\frac{\mathcal{R}_2(x)}{b}-1\right), &\text{ if } b<\mathcal{R}_2(x)<2b\\
+1, &\text{ if } \mathcal{R}_2(x)\geq 2b.
+\end{cases}
+\end{equation}
+In this case, we see that $ P_t^{ij}\Psi\rvert_{x_i=x_j}=0 $ due to the boundary condition satisfied by $ \omega_o $. We notice that a potential discontinuity could arise from $ P_{s/t}^{\mathcal{R}(x)} $, since these projection are discontinuous at points where $ \mathcal{R}_2(x)=\mathcal{R}(x) $. However, since $ P_{s}^{\mathcal{R}(x)}+P_{t}^{\mathcal{R}(x)}=1 $, we see that $ \Psi $ is continuous due to the inclusion of $ \eta $. The extension of $ \Psi $ to other sectors $ \{\sigma\} $ is then defined by anti-symmetry in the space-spin variables. In this case, due to symmetry of the Hamiltonian/energy form, the energy is determined completely by the energy on the sector $ \{1,2,\ldots,N\} $.\\
+We saw in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the scattering solution, when particles are close, leads to correction to the free Fermi energy that are of order $ 2\rho a_{e/o} E_F $. Since $ P_s^{ij}=1/4-S_i\cdot S_j $ and $ P_t^{ij}=3/4+S_i\cdot S_j $, we expect (ignoring the effect of $ \eta $) that the correction we obtain from the variational state $ \Psi_\chi $ is of the order $$
+2\rho\left( (a_o-a_e) \braket{\chi \left\vert \sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
+$$ 
+The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\geq a_e $, it is given by the ground state of the antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground is known, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the Heisenberg antiferromagnetic chain is known to be \cite{hult1938,mattis2012theory} \begin{equation}\label{key}
+\braket{\text{GS}_{\text{HAF}} \left \lvert \sum_{i}S_i\cdot S_{i+1} \right\rvert \text{GS}_{\text{HAF}}}=\frac{1}{4}-\ln(2)+\mathcal{O}(1/N).
+\end{equation}
+Hence we find the correction $ 2\rho \left(\ln(2)a_e+(1-\ln(2))a_o\right)E_F $ as desired.
+\subsection{Upper bound proof}
+In this section, we give the formal proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. The idea was already sketched in the previous section, and the goal is thus to make the statements in the previous section rigorous. An important, though completely trivial fact is the following lemma. \begin{lemma}
+	Let $ \eta $ be defined as above, then we have \begin{equation}
+	\abs{\nabla\eta}\leq \frac{\sqrt{2}}{b}.
+	\end{equation}
+\end{lemma}
+The quantity of interest in the following, will be the energy of the trial state\begin{equation}
+\mathcal{E}(\Psi_\chi)=\int_{[0,L]^N}\sum_{i=1}^{N} \abs{\partial_i\Psi_\chi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_\chi}^2.
+\end{equation}
+As was done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we rewrite this by use of the diamagnetic inequality\begin{equation}
+\begin{aligned}
+\mathcal{E}(\Psi_\chi)&\leq E_F + \int_{B}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\abs{\partial_i \Psi_F}^2\\
+&=E_F+\binom{N}{2}\int_{B_{12}}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\abs{\partial_i \Psi_F}^2,
+\end{aligned}
+\end{equation}
+with $ B=\{x\in [0,L]^N \vert \mathcal{R}(x)<b\} $ and $ B_{12}=\{x\in [0,L]^N\vert \mathcal{R}(x)=\abs{x_1-x_2}<b\} $. Now due to the presence of $ \eta $ in the trial state, we need to further divide the integration domain. We list here different domains of integration that will be relevant in this section \begin{equation}
+\begin{aligned}
+B^{\geq}_{12}&=B_{12}\cap \{\mathcal{R}_2(x)\geq 2b\},\\
+B^{13}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_1-x_3}<2b\},\\
+B^{34}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_3-x_4}<2b\},\\
+A_{12}&=\{x\in [0,L]^N\in \abs{x_1-x_2}<b\},\\
+A_{12}^{13}&=A_{12}\cap \{\abs{x_1-x_3}<2b\},\\
+A_{12}^{34}&=A_{12}\cap \{\abs{x_3-x_4}<2b\}.
+\end{aligned}
+\end{equation} 
 
 
 
