@@ -21,13 +21,13 @@ The main result of this section is the following theorem.
 	with $ R=\max(\abs{a_e}, a_o, R_0) $.
 \end{theorem}
 \subsection{Constructing a trial state}
-In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the full trial state is given by anti-symmetrically extending to other sectors. Of course this means that certain boundary conditions needs to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ in order for this extension to be in the relevant domain. This boundary condition is exactly that $ P_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $. Here $ P_t^{i,j} $ denotes the spin projection onto the triplet of particles $ i $ and $ j $, and equivalently we will denote the spin projection onto the singlet of particles $ i $ and $ j $ by $ P_s^{ij} $. We recall from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the ground state energy (of the Bose gas or spin polarized Fermi gas) may be well approximated in the dilute limit, by a state that resembles a free Fermi state when particles are far apart, and resembles the two-particle scattering solution when a pair is close. With this in mind, we may construct a variational state trial state on a sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}\label{EqTrial StateSpin1/2Fermi}
+In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the full trial state is given by anti-symmetrically extending to other sectors. Of course this means that certain boundary conditions needs to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ in order for this extension to be in the relevant domain. This boundary condition is exactly that $ P_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $. Here $ P_t^{i,j} $ denotes the spin projection onto the triplet of particles $ i $ and $ j $, and equivalently we will denote the spin projection onto the singlet of particles $ i $ and $ j $ by $ P_s^{i,j} $. We recall from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the ground state energy (of the Bose gas or spin polarized Fermi gas) may be well approximated in the dilute limit, by a state that resembles a free Fermi state when particles are far apart, and resembles the two-particle scattering solution when a pair is close. With this in mind, we may construct a variational state trial state on a sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}\label{EqTrial StateSpin1/2Fermi}
 \Psi_\chi=\begin{cases}
-\Psi=\frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)P_s^{\mathcal{R}}+\omega_o^{\mathcal{R}}P_t^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
+\frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)P_s^{\mathcal{R}}+\omega_o^{\mathcal{R}}P_t^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
 \Psi_F,&\mathcal{R}(x)\geq b
 \end{cases},
 \end{equation}
-where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and $ P_{s/t}^{\mathcal{R}(x)}:=P_{s/t}^{ij} $ when $ \mathcal{R}(x)=\abs{x_i-x_j} $, and $ \eta $ is a continuously differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
+where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and $ P_{s/t}^{\mathcal{R}(x)}:=P_{s/t}^{i,j} $ when $ \mathcal{R}(x)=\abs{x_i-x_j} $, and $ \eta $ is a continuously differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
 \begin{equation}\label{key}
 \eta(x)\coloneqq\begin{cases}
 0,&\text{ if } \mathcal{R}_2(x)\leq b\\
@@ -35,12 +35,12 @@ where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\colo
 1, &\text{ if } \mathcal{R}_2(x)\geq 2b.
 \end{cases}
 \end{equation}
-In this case, we see that $ P_t^{ij}\Psi\rvert_{x_i=x_j}=0 $ due to the boundary condition satisfied by $ \omega_o $. We notice that a potential discontinuity could arise from $ P_{s/t}^{\mathcal{R}(x)} $, since these projection are discontinuous at points where $ \mathcal{R}_2(x)=\mathcal{R}(x) $. However, since $ P_{s}^{\mathcal{R}(x)}+P_{t}^{\mathcal{R}(x)}=1 $, we see that $ \Psi $ is continuous due to the inclusion of $ \eta $. The extension of $ \Psi $ to other sectors $ \{\sigma\} $ is then defined by anti-symmetry in the space-spin variables. In this case, due to symmetry of the Hamiltonian/energy form, the energy is determined completely by the energy on the sector $ \{1,2,\ldots,N\} $.\\
-We saw in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the scattering solution, when particles are close, leads to correction to the free Fermi energy that are of order $ 2\rho a_{e/o} E_F $. Since $ P_s^{ij}=1/4-S_i\cdot S_j $ and $ P_t^{ij}=3/4+S_i\cdot S_j $, we expect (ignoring the effect of $ \eta $) that the correction we obtain from the variational state $ \Psi_\chi $ is of the order $$
-2\rho\left( (a_o-a_e) \braket{\chi \left\vert \sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
+In this case, we see that $ P_t^{i,j}\Psi\rvert_{x_i=x_j}=0 $ due to the boundary condition satisfied by $ \omega_o $. We notice that a potential discontinuity could arise from $ P_{s/t}^{\mathcal{R}(x)} $, since these projection are discontinuous at points where $ \mathcal{R}_2(x)=\mathcal{R}(x) $. However, since $ P_{s}^{\mathcal{R}(x)}+P_{t}^{\mathcal{R}(x)}=1 $, we see that $ \Psi $ is continuous due to the inclusion of $ \eta $. The extension of $ \Psi $ to other sectors $ \{\sigma\} $ is then defined by anti-symmetry in the space-spin variables. In this case, due to symmetry of the Hamiltonian/energy form, the energy is determined completely by the energy on the sector $ \{1,2,\ldots,N\} $.\\
+We saw in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the scattering solution, when particles are close, leads to correction to the free Fermi energy that are of order $ 2\rho a_{e/o} E_F $. Since $ P_s^{i,j}=1/4-S_i\cdot S_j $ and $ P_t^{i,j}=3/4+S_i\cdot S_j $, we expect (ignoring the effect of $ \eta $) that the correction we obtain from the variational state $ \Psi_\chi $ is of the order $$
+2\rho\left( (a_o-a_e) \braket{\chi \left\vert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
 $$ 
-The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\geq a_e $, it is given by the ground state of the antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground is known, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the Heisenberg antiferromagnetic chain is known to be \cite{hult1938,mattis2012theory} \begin{equation}\label{key}
-\braket{\text{GS}_{\text{HAF}} \left \lvert \sum_{i}S_i\cdot S_{i+1} \right\rvert \text{GS}_{\text{HAF}}}=\frac{1}{4}-\ln(2)+\mathcal{O}(1/N).
+The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\geq a_e $, it is given by the ground state of the periodic antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground is known, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the antiferromagnetic Heisenberg chain is known to be \cite{hult1938,mattis2012theory} \begin{equation}
+\braket{\text{GS}_{\text{HAF}} \left \lvert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\rvert \text{GS}_{\text{HAF}}}=\frac{1}{4}-\ln(2)+\mathcal{O}(1/N).
 \end{equation}
 Hence we find the correction $ 2\rho \left(\ln(2)a_e+(1-\ln(2))a_o\right)E_F $ as desired.
 \subsection{Upper bound proof}
@@ -52,22 +52,59 @@ In this section, we give the formal proof of Theorem \ref{TheoremUpperBoundSpin1
 The quantity of interest in the following, will be the energy of the trial state\begin{equation}
 \mathcal{E}(\Psi_\chi)=\int_{[0,L]^N}\sum_{i=1}^{N} \abs{\partial_i\Psi_\chi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_\chi}^2.
 \end{equation}
-As was done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we rewrite this by use of the diamagnetic inequality\begin{equation}
+We will henceforth assume $ \chi=\ket{\text{GS}_{\text{HAF}}} $, \ie the ground state of the \emph{periodic} Heisenberg antiferromagnet.
+As was done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we rewrite this by use of the diamagnetic inequality\begin{equation}\label{EqEnergy1Spin1/2}
 \begin{aligned}
 \mathcal{E}(\Psi_\chi)&\leq E_F + \int_{B}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\abs{\partial_i \Psi_F}^2\\
 &=E_F+\binom{N}{2}\int_{B_{12}}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\abs{\partial_i \Psi_F}^2,
 \end{aligned}
 \end{equation}
-with $ B=\{x\in [0,L]^N \vert \mathcal{R}(x)<b\} $ and $ B_{12}=\{x\in [0,L]^N\vert \mathcal{R}(x)=\abs{x_1-x_2}<b\} $. Now due to the presence of $ \eta $ in the trial state, we need to further divide the integration domain. We list here different domains of integration that will be relevant in this section \begin{equation}
+where $ B=\{x\in [0,L]^N \vert \mathcal{R}(x)<b\} $, and $ B_{12}=\{x\in [0,L]^N\vert \mathcal{R}(x)=\abs{x_1-x_2}<b\} $. Now due to the presence of $ \eta $ in the trial state, we need to further divide the integration domain. We list here different domains of integration that will be relevant in this section \begin{equation}
 \begin{aligned}
 B^{\geq}_{12}&=B_{12}\cap \{\mathcal{R}_2(x)\geq 2b\},\\
 B^{13}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_1-x_3}<2b\},\\
 B^{34}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_3-x_4}<2b\},\\
-A_{12}&=\{x\in [0,L]^N\in \abs{x_1-x_2}<b\},\\
+A_{12}&=\left\{x\in [0,L]^N\ \big\vert \abs{x_1-x_2}<b\right\},\\
 A_{12}^{13}&=A_{12}\cap \{\abs{x_1-x_3}<2b\},\\
 A_{12}^{34}&=A_{12}\cap \{\abs{x_3-x_4}<2b\}.
 \end{aligned}
 \end{equation} 
+Now in \eqref{EqEnergy1Spin1/2} the last term is dealt with in the same way as in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. It is also obvious that we may replace $ v $ by $ v_{\text{reg}} $, as the trial state vanishes whenever a pair is inside the outermost hard core. Now due to the anti-symmetry, we conclude from \eqref{EqEnergy1Spin1/2}
+\begin{equation}
+\begin{aligned}
+\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2+(N-2)\binom{N}{2}\int_{B_{12}^{13}}\abs{\partial_i\Psi_{\chi}}^2\\
+&+\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\abs{\partial_i\Psi_{\chi}}^2\\
+&+\binom{N}{2}\int_{B_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{\chi}}^2-\binom{N}{2}\int_{B_{12}}\abs{\partial_i \Psi_F}^2.
+\end{aligned}
+\end{equation}
+We now define on $ \{1,2,\ldots,N\}\cap \{\abs{x_1-x_2}<b\} $ \begin{equation}\label{EqTrialState12}
+(\tilde{\Psi}_\chi)_{12}\coloneqq \frac{\Psi_F}{x_2-x_1}\left(\omega^{12}_e P_s^{1,2}+\omega_o^{12}P_t^{1,2}\right)\chi,
+\end{equation}
+and extend $ (\tilde{\Psi}_\chi)_{12} $ to all of $ A_{12} $ by anti-symmetry. We may then notice that $ \Psi_{\chi}=(\tilde{\Psi}_\chi)_{12} $ on $ B_{12}^{\geq}\subset A_{12} $. 
+Defining \begin{equation}
+\begin{aligned}
+(\Psi_e)_{12}\coloneqq\frac{\Psi_F}{\abs{x_2-x_1}}\omega_e\text{ and } (\Psi_o)_{12}\coloneqq\frac{\Psi_F}{\abs{x_2-x_1}}\omega_o,
+\end{aligned}
+\end{equation}
+we find, by the translation invariance of $ \chi $, \begin{equation}
+\begin{aligned}
+\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\frac{1}{N}\sum_k\braket{\chi \left\lvert P^{k,k+1}_s  \right\rvert \chi}\\
+&+\int_{A_{12}}\abs{\partial_i(\Psi_o)_{12}}^2\frac{1}{N}\sum_k\braket{\chi \left\lvert P^{k,k+1}_t  \right\rvert \chi}.
+\end{aligned}
+\end{equation}
 
 
-
+\appendix
+\section{Periodic boundary conditions}
+If we consider the case with periodic boundary conditions in the box, one may actually show that the antiferromagnetic Heisenberg ground state, is the optimal spin state in the trial state. Starting from \eqref{EqTrialState12}, where did not yet use any properties of $ \chi $, we have \begin{equation}\label{EqPeriodicUpperBound1}
+\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq \int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\frac{1}{N}\sum_k\braket{\chi \left\lvert P^{k,k+1}_s  \right\rvert \chi}+\abs{\partial_i(\Psi_o)_{12}}^2\frac{1}{N}\sum_k\braket{\chi \left\lvert P^{k,k+1}_t  \right\rvert \chi}
+\end{equation}
+where we defined\begin{equation}
+\begin{aligned}
+(\Psi_e)_{12}\coloneqq\frac{\Psi_F}{\abs{x_2-x_1}}\omega_e\text{ and } (\Psi_o)_{12}\coloneqq\frac{\Psi_F}{\abs{x_2-x_1}}\omega_o,
+\end{aligned}
+\end{equation}
+and we used that \begin{equation}
+\int_{A_{12}\cap \{\ldots,1,2,\ldots\}}\abs{\partial_i(\Psi_{e/o})_{12}}^2=\frac{1}{N}\int_{A_{12}}\abs{\partial_i(\Psi_{e/o})_{12}}^2.
+\end{equation}
+But from \eqref{EqPeriodicUpperBound1} it is clear that the antiferromagnetic Heisenberg ground state is optimal.
