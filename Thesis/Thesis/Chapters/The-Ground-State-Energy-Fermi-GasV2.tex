@@ -27,7 +27,7 @@ In constructing a trial state for the dilute Fermi gas, we may restrict to a sec
 \Psi_F,&\mathcal{R}(x)\geq b
 \end{cases},
 \end{equation}
-where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and $ \operatorname{P}_{s/t}^{\mathcal{R}(x)}:=\operatorname{P}_{s/t}^{i,j} $ when $ \mathcal{R}(x)=\abs{x_i-x_j} $, and $ \eta $ is a continuous and almost everywhere differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
+where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and $ \operatorname{P}_{s/t}^{\mathcal{R}(x)}:=\operatorname{P}_{s/t}^{i,j} $ when $ \mathcal{R}(x)=\abs{x_i-x_j} $, and $ \eta $ is a continuously differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
 \begin{equation}\label{key}
 \eta(x)\coloneqq\begin{cases}
 0,&\text{ if } \mathcal{R}_2(x)\leq b\\
@@ -44,9 +44,9 @@ The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\
 \end{equation}
 Hence we find the correction $ 2\rho \left(\ln(2)a_e+(1-\ln(2))a_o\right)E_F $ as desired.
 \subsection{Upper bound proof}
-In this section, we give the formal proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. The idea was already sketched in the previous section, and the goal is thus to make the statements in the previous section rigorous. An important, though completely trivial fact is the following lemma. \begin{lemma}\label{LemmaEtaDerivative}
+In this section, we give the formal proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. The idea was already sketched in the previous section, and the goal is thus to make the statements in the previous section rigorous. An important, though completely trivial fact is the following lemma. \begin{lemma}
 	Let $ \eta $ be defined as above, then we have \begin{equation}
-	\abs{\nabla\eta}\leq \frac{\sqrt{2}}{b}, \textnormal{ a.e}.
+	\abs{\nabla\eta}\leq \frac{\sqrt{2}}{b}.
 	\end{equation}
 \end{lemma}
 The quantity of interest in the following, will be the energy of the trial state\begin{equation}
@@ -55,26 +55,26 @@ The quantity of interest in the following, will be the energy of the trial state
 We will henceforth assume $ \chi $ to be translation invariant. In fact, this assumption is not needed, when we have periodic boundary conditions, see Appendix \ref{AppendixPeriodicBCSpin1/2}.
 As was done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we rewrite this by use of the diamagnetic inequality\begin{equation}\label{EqEnergy1Spin1/2}
 \begin{aligned}
-\mathcal{E}(\Psi_\chi)&\leq E_F + \int_{B}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\\
-&=E_F+\binom{N}{2}\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2,
+\mathcal{E}(\Psi_\chi)&\leq E_F + \int_{B}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\abs{\partial_i \Psi_F}^2\\
+&=E_F+\binom{N}{2}\int_{B_{12}}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\abs{\partial_i \Psi_F}^2,
 \end{aligned}
 \end{equation}
 where $ B=\{x\in [0,L]^N \vert \mathcal{R}(x)<b\} $, and $ B_{12}=\{x\in [0,L]^N\vert \mathcal{R}(x)=\abs{x_1-x_2}<b\} $. Now due to the presence of $ \eta $ in the trial state, we need to further divide the integration domain. We list here different domains of integration that will be relevant in this section \begin{equation}
 \begin{aligned}
 B^{\geq}_{12}&=B_{12}\cap \{\mathcal{R}_2(x)\geq 2b\},\\
-B^{23}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_2-x_3}<2b\},\\
+B^{13}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_1-x_3}<2b\},\\
 B^{34}_{12}&=B_{12}\cap\{\mathcal{R}_2(x)=\abs{x_3-x_4}<2b\},\\
 A_{12}&=\left\{x\in [0,L]^N\ \big\vert \abs{x_1-x_2}<b\right\},\\
-A_{12}^{23}&=A_{12}\cap \{\abs{x_2-x_3}<2b\},\\
+A_{12}^{13}&=A_{12}\cap \{\abs{x_1-x_3}<2b\},\\
 A_{12}^{34}&=A_{12}\cap \{\abs{x_3-x_4}<2b\}.
 \end{aligned}
 \end{equation} 
 In \eqref{EqEnergy1Spin1/2} the last term is dealt with in the same way as in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. It is also obvious that we may replace $ v $ by $ v_{\text{reg}} $, as the trial state vanishes whenever a pair is inside the outermost hard core. Now due to the anti-symmetry, we conclude from \eqref{EqEnergy1Spin1/2}
 \begin{equation}\label{EqEnergy2Spin1/2}
 \begin{aligned}
-\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\int_{B_{12}^{\geq}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2+2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\abs{\partial_i\Psi_{\chi}}^2\\
-&+\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2\\
-&+\binom{N}{2}\int_{B_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{\chi}}^2-\binom{N}{2}\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2.
+\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2+2(N-2)\binom{N}{2}\int_{B_{12}^{13}}\abs{\partial_i\Psi_{\chi}}^2\\
+&+\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\abs{\partial_i\Psi_{\chi}}^2\\
+&+\binom{N}{2}\int_{B_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{\chi}}^2-\binom{N}{2}\int_{B_{12}}\abs{\partial_i \Psi_F}^2.
 \end{aligned}
 \end{equation}
 We now define on $ \{1,2,\ldots,N\}\cap \{\abs{x_1-x_2}<b\} $ \begin{equation}\label{EqTrialState12}
@@ -98,91 +98,15 @@ Considering \eqref{EqEnergy2Spin1/2} again, we see from the trivial relation $$
 $$
 and from the fact that $ B_{12}\subset A_{12} $ and the observation that $ \abs{\Psi_{\chi}}^2\leq \abs{\left(\tilde{\Psi}_{\chi}\right)_{12}}^2 $ on $ B_{12} $ that we have the following upper bound for the energy\begin{equation}
 	\begin{aligned}
-	\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2\\
-	&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg)\\
-	&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_o)_{12}}^2\\
-	&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_o)_{12}}^2-\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg)\\
-	&+\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2\\
-	&+2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2.
+	\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\Bigg(\int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\\
+	&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\int_{B_{12}}\abs{\partial_i \Psi_F}^2\Bigg)\\
+	&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}\Bigg(\int_{A_{12}}\abs{\partial_i(\Psi_o)_{12}}^2\\
+	&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_o)_{12}}^2-\int_{B_{12}}\abs{\partial_i \Psi_F}^2\Bigg)\\
+	&+\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\abs{\partial_i\Psi_{\chi}}^2\\
+	&+2(N-2)\binom{N}{2}\int_{B_{12}^{13}}\abs{\partial_i\Psi_{\chi}}^2.
 	\end{aligned}
 \end{equation}
-We see that this reduces proving an upper bound to a case we have already analyzed in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, expect for the last two term, which we then need to estimate. Let us denote the two quantities by \begin{equation}
-\begin{aligned}
-E_{12}^{34}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2,\\
-E_{12}^{23}&\coloneqq 2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2.
-\end{aligned}
-\end{equation} 
-\subsubsection{Estimating $ E_{12}^{34} $}
-Estimating $ E_{12}^{34} $ is a straightforward computation that goes as follows:\\ 
-Defining $ \xi_{12}^{34}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi $ on $ B_{12}^{34}\cap \{1,2,\ldots\} $ and (space-spin)-symmetrically extended to $ B_{12}^{34} $, we see that $\Psi_{\chi}=\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{34} $: Hence we find 
-\begin{equation}
-\begin{aligned}
-E_{12}^{34}=&\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\left(\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2\\
-\leq& \binom{N}{2}\binom{N-2}{2}\Bigg[\int_{A_{12}^{34}}\sum_{i=1}^{4}\abs{\partial_i\left(\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad+\int_{A_{12}^{34}}\sum_{i=5}^{N}\overline{\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\xi_{12}^{34} \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\Bigg]\\
-=& \binom{N}{2}\binom{N-2}{2}\Bigg[\int_{A_{12}^{34}}\sum_{i=1}^{4}\abs{\partial_i\left(\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad-\int_{A_{12}^{34}}\sum_{i=1}^{4}\overline{\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\xi_{12}^{34} \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\\
-&\qquad + E_F\int_{A_{12}^{34}} \abs{\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}}\Bigg],
-\end{aligned}
-\end{equation}
-where we used $ B_{12}^{34}\subset A_{12}^{34} $, integration by parts, and the fact that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $.\\ Thus, using $ \abs{\xi_{12}^{34}}^2\leq b^2 $ and restricting to $ b\geq 2a $, we find \begin{equation}
-\begin{aligned}
-E_{12}^{34}\leq& 4\! \int_{A_{12}^{34}}\Bigg(\! \sum_{i=1}^{4}\partial_{y_i}\partial_{x_i}\overline{\frac{\xi_{12}^{34}(y)}{\abs{y_2-y_1}}}\frac{\xi_{12}^{34}(x)}{\abs{x_2-x_1}}\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)\Bigg\rvert_{y=x}\\
-&\qquad\quad+\abs{\frac{\xi_{12}^{34}(x)}{\abs{x_2-x_1}}}^2\abs{\sum_{i=1}^{4}  \partial_{y_i}^2\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)\Bigg\rvert_{y=x}}\\
-&\qquad\quad+E_F\abs{\frac{\xi_{12}^{34}(x)}{\abs{x_2-x_1}}}^2\rho^{(4)}(x_1,x_2,x_3,x_4)\Bigg)\\
-\leq& \text{ const. } E_F\left(N\left(\rho b\right)^4+N^2\left(\rho b\right)^6 \right)
-\end{aligned}
-\end{equation}
-where we used the following bounds \begin{equation}
-\begin{aligned}
-\partial_{y_i}\partial_{x_i}\frac{\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)}{\abs{x_2-x_1}\abs{y_2-y_1}}\Bigg \lvert_{y=x}&\leq \text{const.} \rho^{8},\\
-\partial_{y_i}\frac{\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)}{\abs{x_2-x_1}\abs{y_2-y_1}}\Bigg \lvert_{y=x}&\leq \text{const.} \rho^{8}\abs{x_3-x_4},\\
-\frac{\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)}{\abs{x_2-x_1}\abs{y_2-y_1}}\Bigg \lvert_{y=x}&\leq \text{const.} \rho^{8}\abs{x_3-x_4}^2,\\
-\abs{\sum_{i=1}^{4}\partial_{y_i}^2\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4) \Bigg \lvert_{y=x}}&\leq \text{const.} \rho^{10} \abs{x_1-x_2}^2\abs{x_3-x_4}^2,
-\end{aligned}
-\end{equation}
-and \begin{equation}
-\rho^{(4)}(x_1,x_2,x_3,x_4)\leq\text{const.} \rho^8 \abs{x_1-x_2}^2\abs{x_3-x_4}^2,
-\end{equation}
-which all follows from Taylor expansion of the free Fermi reduced density (matrices). Furthermore, we used the bounds \begin{equation}
-\sqrt{\abs{\partial_i\xi_{12}^{34}}^2}\leq \frac{b}{b-a}\leq 2,\qquad \sqrt{\abs{\xi_{12}^{34}}^2}\leq b
-\end{equation}
-which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
-\subsubsection{Estimating $ E_{12}^{23} $}
-Estimating $ E_{12}^{23} $ is, similarly to the estimation of $ E_{12}^{34} $, a straightforward computation. We retrace the steps of the previous calculation, suitably modified for $ E_{12}^{23} $, in the following:\\
-Defining $ \xi_{12}^{23}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi $ on $ B_{12}^{23}\cap \{1,2,\ldots\} $ and (space-spin)-symmetrically extended to $ B_{12}^{23} $, we see that $\Psi_{\chi}=\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{23} $: Hence we find 
-\begin{equation}
-\begin{aligned}
-E_{12}^{23}=&\binom{N}{2}2(N-2)\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\left(\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2\\
-\leq& \binom{N}{2}2(N-1)\Bigg[\int_{A_{12}^{23}}\sum_{i=1}^{3}\abs{\partial_i\left(\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad+\int_{A_{12}^{23}}\sum_{i=4}^{N}\overline{\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\xi_{12}^{23} \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\Bigg]\\
-=& \binom{N}{2}2(N-2)\Bigg[\int_{A_{12}^{23}}\sum_{i=1}^{3}\abs{\partial_i\left(\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad-\int_{A_{12}^{23}}\sum_{i=1}^{3}\overline{\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\xi_{12}^{23} \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\\
-&\qquad + E_F\int_{A_{12}^{23}} \abs{\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}}\Bigg],
-\end{aligned}
-\end{equation}
-where we used $ B_{12}^{23}\subset A_{12}^{23} $, integration by parts, and the fact that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $.\\ Thus, using $ \abs{\xi_{12}^{23}}^2\leq b^2 $ and restricting to $ b\geq 2a $, we find \begin{equation}
-\begin{aligned}
-E_{12}^{23}\leq& 4\! \int_{A_{12}^{23}}\Bigg(\! \sum_{i=1}^{3}\partial_{y_i}\partial_{x_i}\overline{\frac{\xi_{12}^{23}(y)}{\abs{y_2-y_1}}}\frac{\xi_{12}^{23}(x)}{\abs{x_2-x_1}}\gamma^{(3)}(y_1,y_2,y_3;x_1,x_2,x_3)\Bigg\rvert_{y=x}\\
-&\qquad\quad+\abs{\frac{\xi_{12}^{23}(x)}{\abs{x_2-x_1}}}^2\abs{\sum_{i=1}^{3}  \partial_{y_i}^2\gamma^{(4)}(y_1,y_2,y_3;x_1,x_2,x_3)\Bigg\rvert_{y=x}}\\
-&\qquad\quad+E_F\abs{\frac{\xi_{12}^{23}(x)}{\abs{x_2-x_1}}}^2\rho^{(3)}(x_1,x_2,x_3)\Bigg)\\
-\leq& \text{ const. } E_F\left(\left(\rho b\right)^4+N\left(\rho b\right)^6 \right)
-\end{aligned}
-\end{equation}
-where we used the following bounds \begin{equation}
-\begin{aligned}
-\partial_{y_i}\partial_{x_i}\frac{\gamma^{(3)}(y_1,y_2,y_3;x_1,x_2,x_3)}{\abs{x_2-x_1}\abs{y_2-y_1}}\Bigg \lvert_{y=x}&\leq \text{const.} \rho^{7},\\
-\partial_{y_i}\frac{\gamma^{(3)}(y_1,y_2,y_3;x_1,x_2,x_3)}{\abs{x_2-x_1}\abs{y_2-y_1}}\Bigg \lvert_{y=x}&\leq \text{const.} \rho^{7}\abs{x_3-x_4},\\
-\frac{\gamma^{(3)}(y_1,y_2,y_3;x_1,x_2,x_3)}{\abs{x_2-x_1}\abs{y_2-y_1}}\Bigg \lvert_{y=x}&\leq \text{const.} \rho^{7}\abs{x_3-x_4}^2,\\
-\abs{\sum_{i=1}^{3}\partial_{y_i}^2\gamma^{(3)}(y_1,y_2,y_3;x_1,x_2,x_3) \Bigg \lvert_{y=x}}&\leq \text{const.} \rho^{11} \abs{x_1-x_2}^2\abs{x_2-x_3}^2\abs{x_1-x_3}^2,
-\end{aligned}
-\end{equation}
-and \begin{equation}
-\rho^{(3)}(x_1,x_2,x_3)\leq\text{const.} \rho^9 \abs{x_1-x_2}^2\abs{x_2-x_3}^2\abs{x_1-x_3}^2,
-\end{equation}
-which all follows from Taylor expansion of the free Fermi reduced density (matrices). Furthermore, we used the bounds \begin{equation}
-\sqrt{\abs{\partial_i\xi_{12}^{23}}^2}\leq \frac{b}{b-a}\leq 2,\qquad \sqrt{\abs{\xi_{12}^{23}}^2}\leq b
-\end{equation}
-which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
-
-
-
+We see that this reduces proving an upper bound to a case we have already analyzed in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, expect for the last two term, which we then need to estimate. 
 
 \appendix
 \chapter{Periodic boundary conditions}
