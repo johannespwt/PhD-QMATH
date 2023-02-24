@@ -46,17 +46,22 @@ L.~Hulthén.
 \newblock {\"Uber das Austauschproblem eines Kristalles}.
 \newblock {\em Ark. Met. Astron. Fysik}, 26A(Na. 11), 1938.
 
-\bibitem[LL63]{lieb1963exact}
-Elliott~H Lieb and Werner Liniger.
-\newblock Exact analysis of an interacting bose gas. i. the general solution
-  and the ground state.
-\newblock {\em Physical Review}, 130(4):1605, 1963.
+\bibitem[LM62a]{lieb1962ordering}
+Elliott Lieb and Daniel Mattis.
+\newblock Ordering energy levels of interacting spin systems.
+\newblock {\em Journal of Mathematical Physics}, 3(4):749--751, 1962.
 
-\bibitem[LM62]{lieb1962theory}
+\bibitem[LM62b]{lieb1962theory}
 Elliott Lieb and Daniel Mattis.
 \newblock Theory of ferromagnetism and the ordering of electronic energy
   levels.
 \newblock {\em Physical Review}, 125(1):164--172, 1962.
+
+\bibitem[Mar55]{marshall1955antiferromagnetism}
+W~Marshall.
+\newblock Antiferromagnetism.
+\newblock {\em Proceedings of the Royal Society of London. Series A.
+  Mathematical and Physical Sciences}, 232(1188):48--68, 1955.
 
 \bibitem[Mat12]{mattis2012theory}
 D.C. Mattis.

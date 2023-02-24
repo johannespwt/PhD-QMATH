@@ -43,7 +43,7 @@ The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\
 \braket{\text{GS}_{\text{HAF}} \left \lvert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\rvert \text{GS}_{\text{HAF}}}=\frac{1}{4}-\ln(2)+\mathcal{O}(1/N).
 \end{equation}
 Hence we find the correction $ 2\rho \left(\ln(2)a_e+(1-\ln(2))a_o\right)E_F $ as desired.
-\subsection{Upper bound proof}
+\subsection{Proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}}
 In this section, we give the formal proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. The idea was already sketched in the previous section, and the goal is thus to make the statements in the previous section rigorous. An important, though completely trivial fact is the following lemma. \begin{lemma}\label{LemmaEtaDerivative}
 	Let $ \eta $ be defined as above, then we have \begin{equation}
 	\abs{\nabla\eta}\leq \frac{\sqrt{2}}{b}, \textnormal{ a.e}.
@@ -96,7 +96,7 @@ where $ \operatorname{P}_{s/t}^{N,N+1}\coloneqq \operatorname{P}_{s/t}^{N,1} $.
 Considering \eqref{EqEnergy2Spin1/2} again, we see from the trivial relation $$
 \frac{1}{N}\left(\sum_{k=1}^{N} \braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}+\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}\right)=1,
 $$
-and from the fact that $ B_{12}\subset A_{12} $ and the observation that $ \abs{\Psi_{\chi}}^2\leq \abs{\left(\tilde{\Psi}_{\chi}\right)_{12}}^2 $ on $ B_{12} $ that we have the following upper bound for the energy\begin{equation}
+and from the fact that $ B_{12}\subset A_{12} $ and the observation that $ \abs{\Psi_{\chi}}^2\leq \abs{\left(\tilde{\Psi}_{\chi}\right)_{12}}^2 $ on $ B_{12} $ that we have the following upper bound for the energy\begin{equation}\label{EqTrialStateEnergyUpperBound1}
 	\begin{aligned}
 	\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2\\
 	&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg)\\
@@ -112,7 +112,73 @@ E_{12}^{34}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\
 E_{12}^{23}&\coloneqq 2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2.
 \end{aligned}
 \end{equation} 
-\subsubsection{Estimating $ E_{12}^{34} $}
+The following lemmas, which we prove below, provide estimates of these quantities.
+\begin{lemma}\label{LemmaSpin1/2EtaContribution1}
+	Let $ E_{12}^{34} $ and $ \Psi_{\chi} $ be defined as above, then we have the following bound:\begin{equation}
+	E_{12}^{34}\leq \text{ const. } E_F\left(N\left(\rho b\right)^4+N^2\left(\rho b\right)^6 \right).
+	\end{equation}
+	where $ E_F $ denotes the free spin polarized (spinless) Fermi energy.
+\end{lemma}
+
+\begin{lemma}\label{LemmaSpin1/2EtaContribution2}
+	Let $ E_{12}^{23} $ and $ \Psi_{\chi} $ be defined as above, then we have the following bound:\begin{equation}
+	E_{12}^{23}\leq \text{ const. } E_F\left(\left(\rho b\right)^4+N\left(\rho b\right)^6 \right).
+	\end{equation}
+	where $ E_F $ denotes the free spin polarized (spinless) Fermi energy.
+\end{lemma}
+Using Lemmas \ref{LemmaSpin1/2EtaContribution1} and \ref{LemmaSpin1/2EtaContribution2}, we deduce, from \eqref{EqTrialStateEnergyUpperBound1} the following bound upper bound on the trial state energy
+\begin{equation}
+\begin{aligned}
+\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2\\
+&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg)\\
+&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_o)_{12}}^2\\
+&+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_o)_{12}}^2-\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg)\\
+&+E_F\left(N(\rho b)^4+ N^2 (\rho b)^6\right).
+\end{aligned}
+\end{equation}
+Defining the quantities \begin{equation}
+\begin{aligned}
+E_{1,e}\coloneqq\binom{N}{2}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2
+&+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg),\\
+E_{1,o}\coloneqq\binom{N}{2}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_o)_{12}}^2
+&+\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_o)_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg),
+\end{aligned}
+\end{equation}
+and the quantities from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}:\begin{equation}
+\begin{aligned}
+E_2^{(1)}&\coloneqq\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,\\ E_2^{(2)}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,
+\end{aligned}
+\end{equation}
+we see from an inclusion/exclusion argument identical to the one in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that \begin{equation}
+\begin{aligned}
+\mathcal{E}(\Psi_{\chi})\leq E_F &+\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi} \left(E_{1,e}+E_2^{(1)}+E_2^{(2)}\right)\\
+&+\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi} \left(E_{1,o}+E_2^{(1)}+E_2^{(2)}\right)\\
+&+E_F\left(N(\rho b)^4+ N^2 (\rho b)^6\right)
+\end{aligned}
+\end{equation}
+We see that $ E_{1,e/o} $ corresponds to the quantity $ E_1 $ in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with the even/odd wave scattering solution in the trial state. The proving equivalent bound for the $ E_{1,e/o} $ amounts to following the same proof strategy and we have the equivalent lemma:
+\begin{lemma}[Lemma 14 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}]\label{LemmaE1BoundSpin1/2}
+	Let $ E_{1,e/o} $ be defined as above. For $ N(\rho b)^3\leq 1 $ we have \begin{equation}
+	E_{1,e/o}\leq E_F \left(2\rho a_{e/o}\frac{b}{b-a_{e/o}}+ \textnormal{const.}\ N(\rho b)^3\left[ 1+ \rho b^2\int v_{\textnormal{reg}}\right]\right).
+	\end{equation}
+\end{lemma}
+We also recall the lemma\begin{lemma}[Lemma 15 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}]\label{LemmaE2BoundSpin1/2}
+	\begin{equation}
+	E_2^{(1)}+E_2^{(2)}\leq E_F\left(N (\rho b)^4+ N^2(\rho b)^6\right).
+	\end{equation}
+\end{lemma}
+Using Lemmas \ref{LemmaE1BoundSpin1/2} and $ \ref{LemmaE2BoundSpin1/2} $ we find the result 
+\begin{lemma}
+	For $ N(\rho b)^3\leq  1 $ and $ b>2 a_o $ we have \begin{equation}\label{EqTrialStateEnergyBound1}
+	\begin{aligned}
+	\mathcal{E}(\Psi_{\chi})\leq E_F\Bigg( 1&+2\rho\left[\frac{1}{4}a_e+\frac{3}{4}a_o+(a_o-a_e)\frac{1}{N}\braket{\chi \left\vert \sum_{k=1}^N S_k\cdot S_{k+1}\right\vert \chi}\right]\\ &+\textnormal{ const. } N (\rho b)^3\left(1+\rho b^2\int v_{\textnormal{reg}}\right) \Bigg).
+	\end{aligned}
+	\end{equation}
+\end{lemma}
+It is then immediately clear that on the righthand side of \eqref{EqTrialStateEnergyBound1}, given that $ a_o>a_e $, the optimal choice for $ \chi $ is the ground state of the periodic antiferromagnetic Heisenberg chain, which due to the Marshall-Lieb-Mattis \cite{lieb1962ordering,marshall1955antiferromagnetism} theorem is translation invariant. Of course, if $ a_o=a_e $, the choice of $ \chi $ is irrelevant for the righthand side of \eqref{EqTrialStateEnergyBound1}. 
+
+\subsubsection{Estimating $ E_{12}^{34} $ (proof of lemma \ref{LemmaSpin1/2EtaContribution1})}
+\begin{proof}[Proof of Lemma \ref{LemmaSpin1/2EtaContribution1}]
 Estimating $ E_{12}^{34} $ is a straightforward computation that goes as follows:\\ 
 Defining $ \xi_{12}^{34}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi $ on $ B_{12}^{34}\cap \{1,2,\ldots\} $ and (space-spin)-symmetrically extended to $ B_{12}^{34} $, we see that $\Psi_{\chi}=\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{34} $: Hence we find 
 \begin{equation}
@@ -123,7 +189,7 @@ E_{12}^{34}=&\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\par
 &\qquad + E_F\int_{A_{12}^{34}} \abs{\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}}\Bigg],
 \end{aligned}
 \end{equation}
-where we used $ B_{12}^{34}\subset A_{12}^{34} $, integration by parts, and the fact that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $.\\ Thus, using $ \abs{\xi_{12}^{34}}^2\leq b^2 $ and restricting to $ b\geq 2a $, we find \begin{equation}
+where we used $ B_{12}^{34}\subset A_{12}^{34} $, integration by parts, and the fact that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $.\\ Thus, using $ \abs{\xi_{12}^{34}}^2\leq b^2 $ and restricting to $ b\geq 2a_0\geq 2a_e $, we find \begin{equation}
 \begin{aligned}
 E_{12}^{34}\leq& 4\! \int_{A_{12}^{34}}\Bigg(\! \sum_{i=1}^{4}\partial_{y_i}\partial_{x_i}\overline{\frac{\xi_{12}^{34}(y)}{\abs{y_2-y_1}}}\frac{\xi_{12}^{34}(x)}{\abs{x_2-x_1}}\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)\Bigg\rvert_{y=x}\\
 &\qquad\quad+\abs{\frac{\xi_{12}^{34}(x)}{\abs{x_2-x_1}}}^2\abs{\sum_{i=1}^{4}  \partial_{y_i}^2\gamma^{(4)}(y_1,y_2,y_3,y_4;x_1,x_2,x_3,x_4)\Bigg\rvert_{y=x}}\\
@@ -143,10 +209,12 @@ and \begin{equation}
 \rho^{(4)}(x_1,x_2,x_3,x_4)\leq\text{const.} \rho^8 \abs{x_1-x_2}^2\abs{x_3-x_4}^2,
 \end{equation}
 which all follows from Taylor expansion of the free Fermi reduced density (matrices). Furthermore, we used the bounds \begin{equation}
-\sqrt{\abs{\partial_i\xi_{12}^{34}}^2}\leq \frac{b}{b-a}\leq 2,\qquad \sqrt{\abs{\xi_{12}^{34}}^2}\leq b
+\sqrt{\abs{\partial_i\xi_{12}^{34}}^2}\leq b \max\left(\frac{\sqrt{2}}{b},\frac{1}{b-a_o}\right)\leq 2,\qquad \sqrt{\abs{\xi_{12}^{34}}^2}\leq b
 \end{equation}
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
-\subsubsection{Estimating $ E_{12}^{23} $}
+\end{proof}
+\subsubsection{Estimating $ E_{12}^{23} $ (proof of Lemma \ref{LemmaSpin1/2EtaContribution2})}
+\begin{proof}[Proof of Lemma \ref{LemmaSpin1/2EtaContribution2}]
 Estimating $ E_{12}^{23} $ is, similarly to the estimation of $ E_{12}^{34} $, a straightforward computation. We retrace the steps of the previous calculation, suitably modified for $ E_{12}^{23} $, in the following:\\
 Defining $ \xi_{12}^{23}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi $ on $ B_{12}^{23}\cap \{1,2,\ldots\} $ and (space-spin)-symmetrically extended to $ B_{12}^{23} $, we see that $\Psi_{\chi}=\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{23} $: Hence we find 
 \begin{equation}
@@ -157,7 +225,7 @@ E_{12}^{23}=&\binom{N}{2}2(N-2)\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\l
 &\qquad + E_F\int_{A_{12}^{23}} \abs{\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}}\Bigg],
 \end{aligned}
 \end{equation}
-where we used $ B_{12}^{23}\subset A_{12}^{23} $, integration by parts, and the fact that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $.\\ Thus, using $ \abs{\xi_{12}^{23}}^2\leq b^2 $ and restricting to $ b\geq 2a $, we find \begin{equation}
+where we used $ B_{12}^{23}\subset A_{12}^{23} $, integration by parts, and the fact that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $.\\ Thus, using $ \abs{\xi_{12}^{23}}^2\leq b^2 $ and restricting to $ b\geq 2a_o\geq2a_e $, we find \begin{equation}
 \begin{aligned}
 E_{12}^{23}\leq& 4\! \int_{A_{12}^{23}}\Bigg(\! \sum_{i=1}^{3}\partial_{y_i}\partial_{x_i}\overline{\frac{\xi_{12}^{23}(y)}{\abs{y_2-y_1}}}\frac{\xi_{12}^{23}(x)}{\abs{x_2-x_1}}\gamma^{(3)}(y_1,y_2,y_3;x_1,x_2,x_3)\Bigg\rvert_{y=x}\\
 &\qquad\quad+\abs{\frac{\xi_{12}^{23}(x)}{\abs{x_2-x_1}}}^2\abs{\sum_{i=1}^{3}  \partial_{y_i}^2\gamma^{(4)}(y_1,y_2,y_3;x_1,x_2,x_3)\Bigg\rvert_{y=x}}\\
@@ -177,17 +245,17 @@ and \begin{equation}
 \rho^{(3)}(x_1,x_2,x_3)\leq\text{const.} \rho^9 \abs{x_1-x_2}^2\abs{x_2-x_3}^2\abs{x_1-x_3}^2,
 \end{equation}
 which all follows from Taylor expansion of the free Fermi reduced density (matrices). Furthermore, we used the bounds \begin{equation}
-\sqrt{\abs{\partial_i\xi_{12}^{23}}^2}\leq \frac{b}{b-a}\leq 2,\qquad \sqrt{\abs{\xi_{12}^{23}}^2}\leq b
+\sqrt{\abs{\partial_i\xi_{12}^{23}}^2}\leq b \max\left(\frac{\sqrt{2}}{b},\frac{1}{b-a_o}\right)\leq 2,\qquad \sqrt{\abs{\xi_{12}^{23}}^2}\leq b
 \end{equation}
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
-
+\end{proof}
 
 
 
 \appendix
 \chapter{Periodic boundary conditions}
 \label{AppendixPeriodicBCSpin1/2}
-If we consider the case with periodic boundary conditions in the box, one may actually show that the antiferromagnetic Heisenberg ground state, is the optimal spin state in the trial state. Starting from \eqref{EqTrialState12}, where did not yet use any properties of $ \chi $, we have \begin{equation}\label{EqPeriodicUpperBound1}
+If we consider the case with periodic boundary conditions in the box, one may actually show that the antiferromagnetic Heisenberg ground state, is the optimal spin state in the trial state. Starting from \eqref{EqTrialState12}, where no properties of $ \chi $ have been used, we find \begin{equation}\label{EqPeriodicUpperBound1}
 \int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq \int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\frac{1}{N}\sum_k\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}+\abs{\partial_i(\Psi_o)_{12}}^2\frac{1}{N}\sum_k\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}
 \end{equation}
 where we defined\begin{equation}
