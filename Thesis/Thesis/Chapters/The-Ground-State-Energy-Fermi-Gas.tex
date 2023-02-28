@@ -36,6 +36,10 @@ where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\colo
 \end{cases}
 \end{equation}
 In this case, we see that $ \operatorname{P}_t^{i,j}\Psi\rvert_{x_i=x_j}=0 $ due to the boundary condition satisfied by $ \omega_o $. We notice that a potential discontinuity could arise from $ \operatorname{P}_{s/t}^{\mathcal{R}(x)} $, since these projection are discontinuous at points where $ \mathcal{R}_2(x)=\mathcal{R}(x) $. However, since $ \operatorname{P}_{s}^{\mathcal{R}(x)}+\operatorname{P}_{t}^{\mathcal{R}(x)}=1 $, we see that $ \Psi $ is continuous due to the inclusion of $ \eta $. The extension of $ \Psi $ to other sectors $ \{\sigma\} $ is then defined by anti-symmetry in the space-spin variables. In this case, due to symmetry of the Hamiltonian/energy form, the energy is determined completely by the energy on the sector $ \{1,2,\ldots,N\} $.\\
+As was the case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, the trial state given in \eqref{EqTrial StateSpin1/2Fermi} produces error that grow with the particle number. This is undesirable for proving Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. However, as before, we may construct the full trial state by localizing to smaller intervals. This is done by splitting the interval $ [0,L] $ into smaller intervals $ I_m\coloneqq[m(\ell+b),(m+1)\ell+mb] $ $ m=0,1,2,\ldots M-1 $, where $ \ell=L/M-b $. We then consider the trial state given by a product \begin{equation}\label{EqFullTrialStateSpin1/2}
+\Psi_{\chi,\text{full}}(x_1,\ldots,x_N)=\prod_{m=0}^{M-1}\Psi^{I_m}_{\chi}(x_1^m,\ldots,x_{\tilde{N}}^m),
+\end{equation}
+where $ \tilde{N}=N/M $ and $ x_i^m\coloneqq x_{m\tilde{N}+i} $ and the superscribt $ I_m $ in $ \Psi^{I_m}_{\chi} $ means that we take the state $ \Psi_{\chi} $ constructed on $ I_m $ instead of $ [0,L] $. Notice that there are no interactions between boxes since $ b>R_0 $.\\
 We saw in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the scattering solution, when particles are close, leads to correction to the free Fermi energy that are of order $ 2\rho a_{e/o} E_F $. Since $ \operatorname{P}_s^{i,j}=1/4-S_i\cdot S_j $ and $ \operatorname{P}_t^{i,j}=3/4+S_i\cdot S_j $, we expect (ignoring the effect of $ \eta $) that the correction we obtain from the variational state $ \Psi_\chi $ is of the order $$
 2\rho\left( (a_o-a_e) \braket{\chi \left\vert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
 $$ 
@@ -149,7 +153,7 @@ and the quantities from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensio
 E_2^{(1)}&\coloneqq\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,\\ E_2^{(2)}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,
 \end{aligned}
 \end{equation}
-we see from an inclusion/exclusion argument identical to the one in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that \begin{equation}
+we see from an inclusion/exclusion argument identical to the one in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that \begin{equation}\label{EqTrialStateEnergyUpperBound2}
 \begin{aligned}
 \mathcal{E}(\Psi_{\chi})\leq E_F &+\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi} \left(E_{1,e}+E_2^{(1)}+E_2^{(2)}\right)\\
 &+\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi} \left(E_{1,o}+E_2^{(1)}+E_2^{(2)}\right)\\
@@ -168,14 +172,73 @@ We also recall the lemma\begin{lemma}[Lemma 15 of Chapter \ref{ChapterTheGroundS
 	\end{equation}
 \end{lemma}
 Using Lemmas \ref{LemmaE1BoundSpin1/2} and $ \ref{LemmaE2BoundSpin1/2} $ we find the result 
-\begin{lemma}
+\begin{lemma}\label{LemmaTrialStateEnergySpin1/2}
 	For $ N(\rho b)^3\leq  1 $ and $ b>2 a_o $ we have \begin{equation}\label{EqTrialStateEnergyBound1}
 	\begin{aligned}
-	\mathcal{E}(\Psi_{\chi})\leq E_F\Bigg( 1&+2\rho\left[\frac{1}{4}a_e+\frac{3}{4}a_o+(a_o-a_e)\frac{1}{N}\braket{\chi \left\vert \sum_{k=1}^N S_k\cdot S_{k+1}\right\vert \chi}\right]\\ &+\textnormal{ const. } N (\rho b)^3\left(1+\rho b^2\int v_{\textnormal{reg}}\right) \Bigg).
+	\mathcal{E}(\Psi_{\chi})\leq E_F\Bigg( 1&+2\rho\left[\frac{1}{4}\tilde{a}_e+\frac{3}{4}\tilde{a}_o+(\tilde{a}_o-\tilde{a}_e)\frac{1}{N}\braket{\chi \left\vert \sum_{k=1}^N S_k\cdot S_{k+1}\right\vert \chi}\right]\\ &+\textnormal{ const. } N (\rho b)^3\left(1+\rho b^2\int v_{\textnormal{reg}}\right) \Bigg),
 	\end{aligned}
 	\end{equation}
+	where $ \tilde{a}_{e/o}\coloneqq a_{e/o}\frac{b}{b-a_{e/o}} $.
 \end{lemma}
-It is then immediately clear that on the righthand side of \eqref{EqTrialStateEnergyBound1}, given that $ a_o>a_e $, the optimal choice for $ \chi $ is the ground state of the periodic antiferromagnetic Heisenberg chain, which due to the Marshall-Lieb-Mattis \cite{lieb1962ordering,marshall1955antiferromagnetism} theorem is translation invariant. Of course, if $ a_o=a_e $, the choice of $ \chi $ is irrelevant for the righthand side of \eqref{EqTrialStateEnergyBound1}. 
+\begin{proof}
+	This lemma follows directly by combining \eqref{EqTrialStateEnergyUpperBound2} with Lemmas \ref{LemmaE1BoundSpin1/2} and \ref{LemmaE2BoundSpin1/2}.
+\end{proof}
+It is then immediately clear that on the right-hand side of \eqref{EqTrialStateEnergyBound1}, given that $ a_o>a_e $, the optimal choice for $ \chi $ is the ground state of the periodic antiferromagnetic Heisenberg chain, which due to the Marshall-Lieb-Mattis theorem, \cite{lieb1962ordering,marshall1955antiferromagnetism}, is translation invariant. Of course, if $ a_o=a_e $, the choice of $ \chi $ is irrelevant for the right-hand side of \eqref{EqTrialStateEnergyBound1}. \\
+We thus conclude that the ground state energy of the antiferromagnetic Heisenberg chain is of importance. Fortunately, this model is exactly solvable, as shown by Bethe \cite{bethe1931theorie}, and the ground state energy can be found in the thermodynamic limit, as shown by Hulthén \cite{hult1938}: \begin{lemma}[\cite{mattis2012theory}, Eq. (5.171)]\label{LemmaHeisenbergChainThermodynamicGSEnergy}
+Let $ \ket{\textnormal{GS}_{\textnormal{HAF}}} $ denote the ground state of the periodic antiferromagnetic Heisenberg chain. Then\begin{equation}
+\lim\limits_{N\to\infty}\braket{\textnormal{GS}_{\textnormal{HAF}}\Bigg\vert\frac{1}{N}\sum_{k=1}^N S_k\cdot S_{k+1} \Bigg\vert \textnormal{GS}_{\textnormal{HAF}}}=\frac{1}{4}-\ln(2) 
+\end{equation}
+\end{lemma}
+This lemma, gives the ground state energy of the Heisenberg chain in the thermodynamic limit, however, we need an estimate for the finite chain. This is given by the following lemma:
+\begin{lemma}\label{LemmaHeisenbergChainFiniteNEstimate}
+	Let $ \ket{\textnormal{GS}_{\textnormal{HAF}}} $ denote the ground state of the periodic antiferromagnetic Heisenberg chain. Then\begin{equation}
+	\braket{\textnormal{GS}_{\textnormal{HAF}}\Bigg\vert\frac{1}{N}\sum_{k=1}^N S_k\cdot S_{k+1} \Bigg\vert \textnormal{GS}_{\textnormal{HAF}}}=\frac{1}{4}-\ln(2) +\mathcal{O}(N^{-1})
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Denoting the Dirichlet (edge spin down) energy of the spin chain $ E_D^N $ with $ N $ sites and the periodic energy $ E_P^N $, we have $ E_P^N\leq E_D^N $. 
+	This follows directly from the variational principle.
+%	To see this notice that the Dirichlet ground state is given as the ground state of the Hamiltoninan $ H_D=\sum_{k=1}^{N} S_{k}\cdot S_{k+1}+ B_e(1+S_1^z+S_N^z) $ for large enough $ B_e>0 $. Since $ H_D\geq H_{\text{HAF}} $ and since $ B_e(1+S_1^z+S_N^z) $ vanishes in the Dirichlet ground state, we see that \begin{equation}
+%	E_D^N=\braket{\sum_{k=1}^{N} S_{k}\cdot S_{k+1}}_D\geq \braket{\sum_{k=1}^{N} S_{k}\cdot S_{k+1}}_P=E_P^N ,
+%	\end{equation}
+%	where the subscribts refer to Dirichlet and periodic ground state expectations.
+On the other hand we have the following bound \begin{equation}\label{EqDirichletPeriodicSpinChainBound}
+E_D^{N+2}\leq E_P^N+1.
+\end{equation}
+To see this, consider a periodic chain of length $ N $ in its ground state. Add a spin-down at each edge, making the chain of length $ N+2 $. The resulting state, is  now a trial state for the Dirichlet chain of energy at most $ E_P^N+1 $ and \eqref{EqDirichletPeriodicSpinChainBound} follows. Furthermore, it is not hard to see that $ E_D^{mN}\leq m(E_D^N+\frac{1}{4}) $, by constructing a trial state for the Dirichlet chain of length $ mN $ by gluing $ m $ ground states of the Dirichlet chain of length $ N $. Collecting everything we have \begin{equation}
+\frac{1}{mN}E_P^{mN}\leq \frac{1}{mN}E_D^{mN}\leq \frac{1}{N}(E_D^N+1/4)\leq \frac{1}{N}\left(E_P^{N-2}+5/4\right).
+\end{equation}
+It is clear by a trial state argument, and by translation invariance that $ E_P^N\leq \frac{N}{M}E_P^M+\frac{1}{4} $ for $ M>N $, simply take the ground state of chain length $ M $ and truncate it at length $ N $. Hence we get \begin{equation}
+\frac{1}{mN}E_P^{mN}\leq\frac{N-2}{N}\frac{1}{N-2}\left(E_P^{N-2}+5/4\right)\leq \frac{N-2}{N} \left(\frac{1}{M}E^{M}_P +\frac{3}{2}\frac{1}{N-2}\right)
+\end{equation}
+taking the limits $ m\to \infty $ and $ M\to\infty $ we have \begin{equation}
+\frac{N}{N-2}e_P-\frac{5}{4N}\leq\frac{1}{N-2}E_P^{N-2}\leq e_P+\frac{1}{4}\frac{1}{N-2},
+\end{equation}
+where $ e_P=\lim\limits_{N\to\infty}\frac{1}{N}E_P^N $. The desired result the follows from Lemma \ref{LemmaHeisenbergChainThermodynamicGSEnergy}.
+\end{proof}
+We are now ready to give the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}:
+\begin{proof}[Proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]
+	Consider now the full trial state as given in \eqref{EqFullTrialStateSpin1/2}. Because of the spacing between intervals, $ I_m $, there no interacting between particles in different intervals. Hence the energy of such a state \begin{equation}\label{key}
+	\mathcal{E}(\Psi_{\chi,\text{full}})/\norm{\Psi_{\chi,\text{full}}}=M\mathcal{E}(\Psi_{\chi}^{I_0})/\norm{\Psi^{I_0}_{\chi}}.
+	\end{equation}
+	Combining lemmas \ref{LemmaTrialStateEnergySpin1/2} and \ref{LemmaHeisenbergChainFiniteNEstimate}, we find \begin{equation}
+	\begin{aligned}
+	\mathcal{E}(\Psi_{\chi,\text{full}})\leq N\frac{\pi^2}{3}\tilde{\rho}^2\Bigg(1&+2\tilde{\rho}\left[\ln(2)\tilde{a}_e+(1-\ln(2))\tilde{a}_o\right]+\frac{M}{N}\\&+\text{ const. }\frac{N}{M}(\tilde{\rho} b)^3 \left(1+\tilde{\rho} b^2\int v_{\text{reg}}\right)\Bigg),
+	\end{aligned}
+	\end{equation}
+	with $ \rho\leq \tilde{\rho}=\frac{N}{L-Mb}\leq\rho\left(1+2\frac{M}{N}\rho b\right) $ for $ \frac{M}{N}\rho b\leq 1/2 $. Choosing $ M/N=(\rho b)^{3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2} $ we find \begin{equation}
+	\begin{aligned}
+	\mathcal{E}(\Psi_{\chi,\text{full}})\leq N\frac{\pi^2}{3}&\rho^2\Bigg(1+2\rho\left[\ln(2)\tilde{a}_e+(1-\ln(2))\tilde{a}_o\right]+\\&+\text{ const. }(\rho b)^{3/2} \left(1+\rho b^2\int v_{\text{reg}}\right)^{1/2}\Bigg),
+	\end{aligned}
+	\end{equation}
+	Furthermore choosing $ b=\max(\rho^{-1/5}\abs{a_e}^{4/5},\rho^{-1/5}a_o^{4/5},R_0) $ we see that $ a_{e/o}\leq \tilde{a}_{e/o}=a_{e/o}\frac{b}{b-a_{e/o}}\leq a_{e/o}\left(1+2(\rho R)^{1/5}\right) $ for $ (\rho R)^{1/5}\leq 1/2 $ and the desired result follows from the simple estimate on the norm\begin{equation}
+	\begin{aligned}
+	\norm{\Psi^{I_0}_{\chi}}&\geq 1-\int_{A_{12}} \rho^{(2))}(x_1,x_2)\geq 1-\text{ const. }\tilde{N}(\tilde{\rho}b)^3\\&\geq 1-\text{ const. }(\rho b)^{3/2}\geq 1-\text{ const. }(\rho R)^{6/5}.
+	\end{aligned}
+	\end{equation}
+\end{proof}
+
+
 
 \subsubsection{Estimating $ E_{12}^{34} $ (proof of lemma \ref{LemmaSpin1/2EtaContribution1})}
 \begin{proof}[Proof of Lemma \ref{LemmaSpin1/2EtaContribution1}]
@@ -250,6 +313,44 @@ which all follows from Taylor expansion of the free Fermi reduced density (matri
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
 \end{proof}
 
+\subsection{Spin dependent potentials}
+Interestingly, the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} we gave in the last section, allows for a slight generalization to potentials that are of the form \begin{equation}
+v(x_i-x_j)=v_e(x_i-x_j) \operatorname{P}^{i,j}_s+v_o(x_i-x_j)\operatorname{P}^{i,j}_t
+\end{equation} 
+with $  v_{e/o}=v_{e/o,\text{h.c.}}+v_{e/o,\text{reg}} $ each satisfying the assumptions on $ v $. In this case the $ E_{1,e/o} $ becomes
+\begin{equation}
+\begin{aligned}
+E_{1,e}\coloneqq\binom{N}{2}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2
+&+\sum_{1\leq i<j\leq N}(v_{e,\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg),\\
+E_{1,o}\coloneqq\binom{N}{2}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_o)_{12}}^2
+&+\sum_{1\leq i<j\leq N}(v_{o,\text{reg}})_{ij}\abs{(\Psi_o)_{12}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg),
+\end{aligned}
+\end{equation}
+Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_e $ the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $. We summarize this observation in the following corollary
+\begin{corollary}[Spin dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2FermiSpinDependent}
+	Let $ v=v_e\operatorname{P}_s+v_o\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}
+	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
+	\end{equation}
+	if $ a_o\geq a_e $ and 
+	\begin{equation}
+	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
+	\end{equation}
+	if $ a_o\leq a_e $.\\
+	Here $ R=\max(\abs{a_e}, a_o, R_0) $. Furthermore, $ a_e $ denotes the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $.
+\end{corollary}
+An interesting application of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In this paper, an upper bound is given by a trial state argument in the case $ c>c' $ \begin{equation}\label{EqGirardeauUpperBoundLLH}
+E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
+\end{equation}
+where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}
+H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}_s+c\operatorname{P}_t\right)\delta(x_i-x_j).
+\end{equation}
+We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} (up to a small error in the dilute limit) is \begin{equation}
+E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\right),
+\end{equation}
+when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $, however, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy to leading order in this limit.
+
+
+\section{Lower bound}
 
 
 \appendix

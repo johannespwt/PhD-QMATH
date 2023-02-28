@@ -8,45 +8,45 @@ A level-1 auxiliary file: Chapters/The-Ground-State-Energy-Fermi-Gas.aux
 The style file: alpha.bst
 Database file #1: bibliography.bib
 Warning--I didn't find a database entry for "lieb1963exact"
-You've used 14 entries,
+You've used 15 entries,
             2543 wiz_defined-function locations,
-            656 strings with 6628 characters,
-and the built_in function-call counts, 4798 in all, are:
-= -- 480
-> -- 179
-< -- 9
-+ -- 56
-- -- 54
-* -- 328
-:= -- 814
-add.period$ -- 47
-call.type$ -- 14
-change.case$ -- 71
-chr.to.int$ -- 13
-cite$ -- 14
-duplicate$ -- 210
-empty$ -- 379
-format.name$ -- 77
-if$ -- 969
+            663 strings with 6787 characters,
+and the built_in function-call counts, 5132 in all, are:
+= -- 513
+> -- 187
+< -- 10
++ -- 58
+- -- 56
+* -- 353
+:= -- 868
+add.period$ -- 50
+call.type$ -- 15
+change.case$ -- 76
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 225
+empty$ -- 408
+format.name$ -- 81
+if$ -- 1037
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 74
-num.names$ -- 42
-pop$ -- 70
+missing$ -- 21
+newline$ -- 79
+num.names$ -- 45
+pop$ -- 73
 preamble$ -- 2
-purify$ -- 91
+purify$ -- 97
 quote$ -- 0
-skip$ -- 154
+skip$ -- 165
 stack$ -- 0
-substring$ -- 261
-swap$ -- 14
-text.length$ -- 9
-text.prefix$ -- 9
+substring$ -- 286
+swap$ -- 15
+text.length$ -- 10
+text.prefix$ -- 10
 top$ -- 0
-type$ -- 88
+type$ -- 96
 warning$ -- 0
-while$ -- 46
-width$ -- 18
-write$ -- 184
+while$ -- 49
+width$ -- 19
+write$ -- 197
 (There was 1 warning)
