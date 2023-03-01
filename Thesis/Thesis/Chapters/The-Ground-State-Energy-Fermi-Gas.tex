@@ -81,22 +81,39 @@ In \eqref{EqEnergy1Spin1/2} the last term is dealt with in the same way as in Ch
 &+\binom{N}{2}\int_{B_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{\Psi_{\chi}}^2-\binom{N}{2}\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2.
 \end{aligned}
 \end{equation}
-We now define on $ \{1,2,\ldots,N\}\cap \{\abs{x_1-x_2}<b\} $ \begin{equation}\label{EqTrialState12}
-(\tilde{\Psi}_\chi)_{12}\coloneqq \frac{\Psi_F}{x_2-x_1}\left(\omega^{12}_e \operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi,
-\end{equation}
-and extend $ (\tilde{\Psi}_\chi)_{12} $ to all of $ A_{12} $ by anti-symmetry. We may then notice that $ \Psi_{\chi}=(\tilde{\Psi}_\chi)_{12} $ on $ B_{12}^{\geq}\subset A_{12} $. 
+%Now we define 
+%\begin{equation}\label{EqTrialState12}
+%(\tilde{\Psi}_\chi)_{12}\coloneqq \Psi_{\chi}\big\rvert_{B_{12}^\geq},
+%\end{equation}
+%\begin{equation}\label{EqTrialState12}
+%(\tilde{\Psi}_\chi)_{12}\coloneqq \frac{\Psi_F}{x_2-x_1}\left(\omega^{12}_e \operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi,
+%\end{equation}
+%and extend $ (\tilde{\Psi}_\chi)_{12} $ to all of $ A_{12} $ by anti-symmetry. By definition we have $ \Psi_{\chi}=(\tilde{\Psi}_\chi)_{12} $ on $ B_{12}^{\geq}\subset A_{12} $, and on $ \{1,2,\ldots,N\}\cap A_{12} $ we have 
+%\begin{equation}
+%(\tilde{\Psi}_\chi)_{12}\coloneqq \frac{\Psi_F}{x_2-x_1}\left(\omega^{12}_e \operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi,
+%\end{equation}
 Defining \begin{equation}
 \begin{aligned}
 (\Psi_e)_{12}\coloneqq\frac{\Psi_F}{\abs{x_2-x_1}}\omega_e^{12}\text{ and } (\Psi_o)_{12}\coloneqq\frac{\Psi_F}{\abs{x_2-x_1}}\omega_o^{12},
 \end{aligned}
 \end{equation}
-we find, by the translation invariance of $ \chi $, \begin{equation}
+we find by the fact that $ B_{12}^\geq\subset A_{12} $, \begin{equation}\label{EqEnergy3Spin1/2}
 \begin{aligned}
-\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\\
-&+\int_{A_{12}}\abs{\partial_i(\Psi_o)_{12}}^2\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi},
+\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap\{\sigma\}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_s  \right\rvert \chi_\sigma}\\
+&+\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap \{\sigma\}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi_\sigma},
 \end{aligned}
 \end{equation}
-where $ \operatorname{P}_{s/t}^{N,N+1}\coloneqq \operatorname{P}_{s/t}^{N,1} $.
+where $ \operatorname{P}_{s/t}^{N,N+1}\coloneqq \operatorname{P}_{s/t}^{N,1} $ and $ \chi_{\sigma} $ is the spin state $ \chi $ with spins relabeled by $ (1,\ldots,N)\mapsto(\sigma_1,\ldots,\sigma_N) $ and 
+$$ S_{12}=\{\text{sectors } \{\sigma\}\ \vert\ (\sigma_k,\sigma_{k+1})=(1,2)\text{ or }(\sigma_k,\sigma_{k+1})=(2,1)\text{ for some }k\}. $$
+Using that $ \braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi_\sigma} $ is independent of $ \sigma\in S_{12} $ and the translation invariance of $ \chi $, we see that
+\begin{equation}
+\begin{aligned}
+\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\left(\int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\\
+&+\left(\int_{A_{12}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\frac{1}{N}\sum_{k=1}^{N}\braket{\chi\left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi},
+\end{aligned}
+\end{equation}
+
+
 Considering \eqref{EqEnergy2Spin1/2} again, we see from the trivial relation $$
 \frac{1}{N}\left(\sum_{k=1}^{N} \braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}+\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}\right)=1,
 $$
@@ -321,7 +338,7 @@ Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (and the 
 \Psi_F,&\mathcal{R}(x)\geq b
 \end{cases}.
 \end{equation}
-The proof is unchanged except for the choice of $ \chi $. In this case, since $ a_o\geq a_e $ and the roles of $ a_o $ and $ a_e $ are exchanged, the optimal choice for $ \chi $ is a spin polarized state. Hence we get
+The proof is unchanged except for the choice of $ \chi $. In this case, since $ a_o\geq a_e $ and the roles of $ a_o $ and $ a_e $ are exchanged, the optimal choice for $ \chi $ is a spin polarized state. Hence we get the following corollary:
 \begin{corollary}[Bosonic version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2Bose}
 	Let $ v $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Bose gas satisfies\begin{equation}
 		E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_e+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right)
@@ -378,7 +395,14 @@ However the domain is taken to be spin wave functions that are \emph{symmetric i
 \end{corollary}
 \begin{proof}
 	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
-	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spacial symmetry.
+	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spacial symmetry, however, this is not completely obvious. It is easily seen that \eqref{EqEnergy2Spin1/2} can be derived by use of only spatial symmetry. However, in \eqref{EqEnergy3Spin1/2} we get instead
+	\begin{equation}
+	\begin{aligned}
+	\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap\{\sigma\}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{1,2}_s  \right\rvert \chi}\\
+	&+\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap \{\sigma\}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi},
+	\end{aligned}
+	\end{equation}
+	since the spins are not permuted when using spatial symmetry (CHECK THIS).
 \end{proof}
 We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} (up to a small error in the dilute limit) is \begin{equation}
 E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\right),
