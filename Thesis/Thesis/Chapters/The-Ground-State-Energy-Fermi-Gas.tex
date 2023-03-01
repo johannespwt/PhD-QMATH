@@ -203,16 +203,16 @@ This lemma, gives the ground state energy of the Heisenberg chain in the thermod
 %	\end{equation}
 %	where the subscribts refer to Dirichlet and periodic ground state expectations.
 On the other hand we have the following bound \begin{equation}\label{EqDirichletPeriodicSpinChainBound}
-E_D^{N+2}\leq E_P^N+1.
+E_D^{N+2}\leq E_P^N+\frac{3}{4}.
 \end{equation}
-To see this, consider a periodic chain of length $ N $ in its ground state. Add a spin-down at each edge, making the chain of length $ N+2 $. The resulting state, is  now a trial state for the Dirichlet chain of energy at most $ E_P^N+1 $ and \eqref{EqDirichletPeriodicSpinChainBound} follows. Furthermore, it is not hard to see that $ E_D^{mN}\leq m(E_D^N+\frac{1}{4}) $, by constructing a trial state for the Dirichlet chain of length $ mN $ by gluing $ m $ ground states of the Dirichlet chain of length $ N $. Collecting everything we have \begin{equation}
-\frac{1}{mN}E_P^{mN}\leq \frac{1}{mN}E_D^{mN}\leq \frac{1}{N}(E_D^N+1/4)\leq \frac{1}{N}\left(E_P^{N-2}+5/4\right).
+To see this, consider a periodic chain of length $ N $ in its ground state. Add a spin-down at each edge, making the chain of length $ N+2 $. The resulting state, is  now a trial state for the Dirichlet chain of energy at most $ E_P^N+\frac{3}{4} $ and \eqref{EqDirichletPeriodicSpinChainBound} follows. Furthermore, it is not hard to see that for any integer $ m\geq 1 $ we have $ E_D^{mN}\leq E_D^{mN-m+1}\leq mE_D^N $. The first inequality follows simply from the fact that extending a Dirichlet state by Néel ordering (alternating spin) to a larger chain, lowers the energy, hence ground state energy in the larger chain must also be lower. The second inequality follows by constructing a trial state for the Dirichlet chain of length $ mN-m+1 $ by gluing $ m $ ground states of the Dirichlet chain of length $ N $, such that they share a spin down at the gluing points. Collecting everything we have \begin{equation}
+\frac{1}{mN}E_P^{mN}\leq \frac{1}{mN}E_D^{mN}\leq \frac{1}{N}E_D^N\leq \frac{1}{N}\left(E_P^{N-2}+3/4\right).
 \end{equation}
-It is clear by a trial state argument, and by translation invariance that $ E_P^N\leq \frac{N}{M}E_P^M+\frac{1}{4} $ for $ M>N $, simply take the ground state of chain length $ M $ and truncate it at length $ N $. Hence we get \begin{equation}
-\frac{1}{mN}E_P^{mN}\leq\frac{N-2}{N}\frac{1}{N-2}\left(E_P^{N-2}+5/4\right)\leq \frac{N-2}{N} \left(\frac{1}{M}E^{M}_P +\frac{3}{2}\frac{1}{N-2}\right)
+It is clear that by a trial state argument and by translation invariance, which follows from the Marshall-Lieb-Mattis theorem (uniqueness of the ground state), we have $ E_P^N\leq \frac{N}{M+1}E_P^M+\frac{1}{4} $ for $ M>N $, simply take the ground state of chain length $ M $ and truncate it at length $ N $. Hence we get \begin{equation}
+\frac{1}{mN}E_P^{mN}\leq\frac{N-2}{N}\frac{1}{N-2}\left(E_P^{N-2}+3/4\right)\leq \frac{N-2}{N} \left(\frac{1}{M}E^{M}_P +\frac{3}{2}\frac{1}{N-2}\right)
 \end{equation}
 taking the limits $ m\to \infty $ and $ M\to\infty $ we have \begin{equation}
-\frac{N}{N-2}e_P-\frac{5}{4N}\leq\frac{1}{N-2}E_P^{N-2}\leq e_P+\frac{1}{4}\frac{1}{N-2},
+\frac{N}{N-2}e_P-\frac{3}{4N}\leq\frac{1}{N-2}E_P^{N-2}\leq e_P+\frac{1}{4}\frac{1}{N-2},
 \end{equation}
 where $ e_P=\lim\limits_{N\to\infty}\frac{1}{N}E_P^N $. The desired result the follows from Lemma \ref{LemmaHeisenbergChainThermodynamicGSEnergy}.
 \end{proof}
@@ -312,6 +312,23 @@ which all follows from Taylor expansion of the free Fermi reduced density (matri
 \end{equation}
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
 \end{proof}
+\section{Extensions to other symmetries and spin denpendt potentials}
+We present here corollaries that follows directly, \emph{mutatis mutandis}, from the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. We also give an application of one the results, to a model where the new upper bound improves best up to now best known result.
+\subsection{Spin-1/2 bosons}
+Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (and the lemmas used), we obtain an immediate corollary. Changing spin-space anti-symmetry to spin-space symmetry, we obtain the equivalent result for bosons. The change of symmetry interchanges the even and odd condition in the singlet and triplet, hence constructing the trial state \eqref{EqTrial StateSpin1/2Fermi}, we must interchange $ \operatorname{P}_s $ and $ \operatorname{P}_t $. Thus we get \begin{equation}\label{EqTrial StateSpin1/2Bose}
+\Psi_\chi=\begin{cases}
+\frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)\operatorname{P}_t^{\mathcal{R}}+\omega_o^{\mathcal{R}}\operatorname{P}_s^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
+\Psi_F,&\mathcal{R}(x)\geq b
+\end{cases}.
+\end{equation}
+The proof is unchanged except for the choice of $ \chi $. In this case, since $ a_o\geq a_e $ and the roles of $ a_o $ and $ a_e $ are exchanged, the optimal choice for $ \chi $ is a spin polarized state. Hence we get
+\begin{corollary}[Bosonic version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2Bose}
+	Let $ v $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Bose gas satisfies\begin{equation}
+		E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_e+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right)
+	\end{equation}
+	Here $ R=\max(\abs{a_e}, R_0) $.
+\end{corollary}
+
 
 \subsection{Spin dependent potentials}
 Interestingly, the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} we gave in the last section, allows for a slight generalization to potentials that are of the form \begin{equation}
@@ -338,16 +355,35 @@ Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_
 	if $ a_o\leq a_e $.\\
 	Here $ R=\max(\abs{a_e}, a_o, R_0) $. Furthermore, $ a_e $ denotes the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $.
 \end{corollary}
-An interesting application of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In this paper, an upper bound is given by a trial state argument in the case $ c>c' $ \begin{equation}\label{EqGirardeauUpperBoundLLH}
+\begin{proof}
+	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} but change $ \omega_{e/o} $ to even/odd wave scattering solutions of $ v_{e/o} $. Notice that it is no longer clear that $ a_o>a_e $ and hence the choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_o\geq a_e $ and a spin polarized state when $ a_e>a_o $.
+\end{proof}
+An interesting application of a version of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} given below in Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In this paper, an upper bound is given by a trial state argument in the case $ c>c' $ \begin{equation}\label{EqGirardeauUpperBoundLLH}
 E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
 \end{equation}
 where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}
-H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}_s+c\operatorname{P}_t\right)\delta(x_i-x_j).
+H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}_s+c\operatorname{P}_t\right)\delta(x_i-x_j),
 \end{equation}
-We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} (up to a small error in the dilute limit) is \begin{equation}
+However the domain is taken to be spin wave functions that are \emph{symmetric in the spacial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
+\begin{corollary}[Spatially symmetric, spin dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}
+	Let $ v=v_s\operatorname{P}_s+v_t\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ spacially symmetric gas satisfies\begin{equation}
+	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_s+(1-\ln(2))a_t\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
+	\end{equation}
+	if $ a_t\geq a_s $ and 
+	\begin{equation}
+	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_t+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
+	\end{equation}
+	if $ a_t \leq a_s $.\\
+	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $. Furthermore, $ a_s $ denotes the even-wave scattering length of $ v_s $ and $ a_t $ the even wave scattering length of $ v_t $.
+\end{corollary}
+\begin{proof}
+	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
+	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spacial symmetry.
+\end{proof}
+We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} (up to a small error in the dilute limit) is \begin{equation}
 E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\right),
 \end{equation}
-when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $, however, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy to leading order in this limit.
+when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $. However, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy to leading order in this limit.
 
 
 \section{Lower bound}
