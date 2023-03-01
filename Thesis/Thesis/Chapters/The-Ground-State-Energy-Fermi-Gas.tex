@@ -103,9 +103,11 @@ we find by the fact that $ B_{12}^\geq\subset A_{12} $, \begin{equation}\label{E
 &+\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap \{\sigma\}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi_\sigma},
 \end{aligned}
 \end{equation}
-where $ \operatorname{P}_{s/t}^{N,N+1}\coloneqq \operatorname{P}_{s/t}^{N,1} $ and $ \chi_{\sigma} $ is the spin state $ \chi $ with spins relabeled by $ (1,\ldots,N)\mapsto(\sigma_1,\ldots,\sigma_N) $ and 
+where $ \operatorname{P}_{s/t}^{N,N+1}\coloneqq \operatorname{P}_{s/t}^{N,1} $ and $ \chi_{\sigma} $ is the spin state $ \chi $ with spins permuted by $ (1,\ldots,N)\mapsto(\sigma_1,\ldots,\sigma_N) $ and 
 $$ S_{12}=\{\text{sectors } \{\sigma\}\ \vert\ (\sigma_k,\sigma_{k+1})=(1,2)\text{ or }(\sigma_k,\sigma_{k+1})=(2,1)\text{ for some }k\}. $$
-Using that $ \braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi_\sigma} $ is independent of $ \sigma\in S_{12} $ and the translation invariance of $ \chi $, we see that
+Using translation invariance of $ \chi $ we see that 
+$$ \braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_{s/t}  \right\rvert \chi_\sigma}=\frac{1}{N}\sum_{k=1}^{N}\braket{\chi_\sigma\left\lvert \operatorname{P}^{\sigma_k,\sigma_{k+1}}_{s/t}  \right\rvert \chi_\sigma}=\frac{1}{N}\sum_{k=1}^{N}\braket{\chi\left\lvert \operatorname{P}^{k,k+1}_{s/t}  \right\rvert \chi} $$
+is independent of $ \sigma\in S_{12} $ and that
 \begin{equation}
 \begin{aligned}
 \int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\left(\int_{A_{12}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\\
@@ -136,14 +138,14 @@ E_{12}^{23}&\coloneqq 2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\pa
 The following lemmas, which we prove below, provide estimates of these quantities.
 \begin{lemma}\label{LemmaSpin1/2EtaContribution1}
 	Let $ E_{12}^{34} $ and $ \Psi_{\chi} $ be defined as above, then we have the following bound:\begin{equation}
-	E_{12}^{34}\leq \text{ const. } E_F\left(N\left(\rho b\right)^4+N^2\left(\rho b\right)^6 \right).
+	E_{12}^{34}\leq \textnormal{ const. } E_F\left(N\left(\rho b\right)^4+N^2\left(\rho b\right)^6 \right).
 	\end{equation}
 	where $ E_F $ denotes the free spin polarized (spinless) Fermi energy.
 \end{lemma}
 
 \begin{lemma}\label{LemmaSpin1/2EtaContribution2}
 	Let $ E_{12}^{23} $ and $ \Psi_{\chi} $ be defined as above, then we have the following bound:\begin{equation}
-	E_{12}^{23}\leq \text{ const. } E_F\left(\left(\rho b\right)^4+N\left(\rho b\right)^6 \right).
+	E_{12}^{23}\leq \textnormal{ const. } E_F\left(\left(\rho b\right)^4+N\left(\rho b\right)^6 \right).
 	\end{equation}
 	where $ E_F $ denotes the free spin polarized (spinless) Fermi energy.
 \end{lemma}
@@ -260,7 +262,13 @@ We are now ready to give the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi
 \subsubsection{Estimating $ E_{12}^{34} $ (proof of lemma \ref{LemmaSpin1/2EtaContribution1})}
 \begin{proof}[Proof of Lemma \ref{LemmaSpin1/2EtaContribution1}]
 Estimating $ E_{12}^{34} $ is a straightforward computation that goes as follows:\\ 
-Defining $ \xi_{12}^{34}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi $ on $ B_{12}^{34}\cap \{1,2,\ldots\} $ and (space-spin)-symmetrically extended to $ B_{12}^{34} $, we see that $\Psi_{\chi}=\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{34} $: Hence we find 
+Defining $ \xi_{12}^{34}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi_\sigma $ on $ B_{12}^{34}\cap \{\sigma\} $ for all sectors $ \{\sigma\}\in S_{12}^{34} $, with \begin{equation}
+\begin{aligned}
+S_{12}^{34}\coloneqq\big\{\text{sectors } \{\sigma\}\ \vert \ (1,2)=(\sigma_k,\sigma_{k+1}) \text{ or }\\ (2,1)=(\sigma_k,\sigma_{k+1})\text{ for some } k\\
+\text{ and } (3,4)=(\sigma_l,\sigma_{l+1}) \text{ or }\\ (4,3)=(\sigma_l,\sigma_{l+1})\text{ for some } l\big\}.
+\end{aligned}
+\end{equation}
+ We then see that $\Psi_{\chi}=\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{34} $: Hence we find 
 \begin{equation}
 \begin{aligned}
 E_{12}^{34}=&\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\left(\xi_{12}^{34} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2\\
@@ -296,7 +304,11 @@ which follows from properties of the scattering solution, monotonicity of its de
 \subsubsection{Estimating $ E_{12}^{23} $ (proof of Lemma \ref{LemmaSpin1/2EtaContribution2})}
 \begin{proof}[Proof of Lemma \ref{LemmaSpin1/2EtaContribution2}]
 Estimating $ E_{12}^{23} $ is, similarly to the estimation of $ E_{12}^{34} $, a straightforward computation. We retrace the steps of the previous calculation, suitably modified for $ E_{12}^{23} $, in the following:\\
-Defining $ \xi_{12}^{23}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi $ on $ B_{12}^{23}\cap \{1,2,\ldots\} $ and (space-spin)-symmetrically extended to $ B_{12}^{23} $, we see that $\Psi_{\chi}=\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{23} $: Hence we find 
+Defining $ \xi_{12}^{23}\coloneqq \left(\left(\eta\omega^{12}_e+(1-\eta)\omega^{12}_o\right)\operatorname{P}_s^{1,2}+\omega_o^{12}\operatorname{P}_t^{1,2}\right)\chi_\sigma $ on $ B_{12}^{23}\cap \{\sigma\} $ for all sectors $ \{\sigma\}\in S_{12}^{23} $, with \begin{equation}
+	\begin{aligned}
+	S_{12}^{23}\coloneqq\big\{\text{sectors } \{\sigma\}\ \vert \ (1,2,3)=(\sigma_k,\sigma_{k+1},\sigma_{k+2}) \text{ or }\\ (3,2,1)=(\sigma_k,\sigma_{k+1},\sigma_{k+2}) \text{ for some } k\big\}
+	\end{aligned}
+\end{equation}. We then see that $\Psi_{\chi}=\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}$ on $ B_{12}^{23} $: Hence we find 
 \begin{equation}
 \begin{aligned}
 E_{12}^{23}=&\binom{N}{2}2(N-2)\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\left(\xi_{12}^{23} \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2\\
@@ -394,15 +406,17 @@ However the domain is taken to be spin wave functions that are \emph{symmetric i
 	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $. Furthermore, $ a_s $ denotes the even-wave scattering length of $ v_s $ and $ a_t $ the even wave scattering length of $ v_t $.
 \end{corollary}
 \begin{proof}
-	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
-	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spacial symmetry, however, this is not completely obvious. It is easily seen that \eqref{EqEnergy2Spin1/2} can be derived by use of only spatial symmetry. However, in \eqref{EqEnergy3Spin1/2} we get instead
+	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $ and extend the trial state to all sectors, $ \{\sigma\} $, by spatial symmetry instead of spin-space anti-symmetry. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
+	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spacial symmetry. To see this, we note that \eqref{EqEnergy2Spin1/2} can be derived by use of only spatial symmetry. However, in \eqref{EqEnergy3Spin1/2} we find instead
 	\begin{equation}
 	\begin{aligned}
-	\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap\{\sigma\}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{1,2}_s  \right\rvert \chi}\\
-	&+\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap \{\sigma\}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{1,2}_t  \right\rvert \chi},
+	\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap\{\sigma\}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{\sigma^{-1}(1),\sigma^{-1}(2)}_s  \right\rvert \chi}\\
+	&+\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap \{\sigma\}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{\sigma^{-1}(1),\sigma^{-1}(2)}_t  \right\rvert \chi},
 	\end{aligned}
 	\end{equation}
-	since the spins are not permuted when using spatial symmetry (CHECK THIS).
+	where $ \sigma^{-1}(i) $ is defined such that $ \sigma_{\sigma^{-1}(i)}=i $. This is a consequence of the fact that the spins are not permuted when defining the trial state using the spatial symmetry. From this point, the proof proceeds as before by noticing that 
+	$$ \braket{\chi \left\lvert \operatorname{P}^{\sigma^{-1}(1),\sigma^{-1}(2)}_{s/t}  \right\rvert \chi}=\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_{s/t}  \right\rvert \chi} $$
+	is independent of $ \sigma\in S_{12} $ because of translation invariance of $ \chi $.
 \end{proof}
 We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} (up to a small error in the dilute limit) is \begin{equation}
 E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\right),
