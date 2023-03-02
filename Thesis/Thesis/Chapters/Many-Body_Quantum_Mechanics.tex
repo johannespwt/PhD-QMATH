@@ -13,7 +13,7 @@
 	In this thesis, we are mostly interested in quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}= L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specifically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
 
 	\subsection{Identical Particles: Bosons and Fermions}
-		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistinguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected.
+		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistinguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected in order for $ \pi_1(C_{p,N},x) $ to be independent of $ x\in C_{p,N} $.
 		\begin{remark}
 			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics (see section below) on this space. In section ... we will see examples of different particle statistics in one dimension. 
 		\end{remark}
@@ -158,7 +158,77 @@ Using this lemma, we may prove the following Proposition
 
 
 \section{The Scattering Length}
-When analyzing dynamics of a quantum system, it is natural to define certain length scales, on which different processes take place. These length scales often play important roles in understanding the physics of the system, and thus often appear naturally in expressions for the energies of the system. One such length scale that will be of particular importance throughout this thesis is the \emph{scattering length}. The intuition behind the name is that scattering occurs on this length scale. This intuition will be of important throughout the thesis, and especially when  constructing low energy trial states in order to estimate ground state energies by applying the variational principle. The scattering length has multiple equivalent definitions in the literature, but we shall here define it conveniently from a variational principle.
+When analyzing dynamics of a quantum system, it is natural to define certain length scales, on which different processes take place. These length scales often play important roles in understanding the physics of the system, and thus often appear naturally in expressions for the energies of the system. One such length scale that will be of particular importance throughout this thesis is the \emph{scattering length}. The intuition behind the name is that scattering occurs on this length scale. This intuition will be of important throughout the thesis, and especially when  constructing low energy trial states in order to estimate ground state energies by applying the variational principle. The scattering length has multiple equivalent definitions in the literature, but we shall here define it conveniently from a variational principle.\\
+Consider the two-body problem in $ \Omega=\R^d $ with a spherically symmetric positive potential of compact support $ v\geq 0 $. We allow for the potential, $ v $, to be a measure, when makes sense, \ie when it is \emph{allowed}. Let $ R_0>0 $ be such that $ \supp(v)\subset B_{R_0} $. Many assumptions on $ v $ can be weakened, but these conditions are sufficient for the scope of this thesis. The Hamiltonian can be written \begin{equation}
+H_2=-\frac{1}{2m_1}\Delta_1-\frac{1}{2m_2}\Delta_2+v(x_1-x_2),
+\end{equation}
+For now we keep the masses, but we will be mostly interested in the case $ m_1=m_2=1/2 $. Defining the center of mass coordinate $ X=(m_1x_1+m_2x_2)/(m_1+m_2) $ and the relative coordinate $ y=x_1-x_2 $, we see that the kinetic energy may be rewritten \begin{equation}
+\begin{aligned}
+-\frac{1}{2m_1}\Delta_1-\frac{1}{2m_2}\Delta_2&=-\sum_{i=1}^{d}\frac{1}{2m_1}\left(\frac{\partial y_i}{\partial (x_1)_i}\partial_{y_i}+\frac{\partial X_i}{\partial (x_1)_i}\partial_{X_i}\right)^2\\&\qquad\qquad+\frac{1}{2m_2}\left(\frac{\partial y_i}{\partial (x_2)_i}\partial_{y_i}+\frac{\partial X_i}{\partial (x_2)_i}\partial_{X_i}\right)^2\\
+&=-\sum_{i=1}^{d}\frac{1}{2m_1}\left(\partial_{y_i}+\frac{m_1}{m_1+m_2}\partial_{X_i}\right)^2\\&\qquad\qquad+\frac{1}{2m_2}\left(-\partial_{y_i}+\frac{m_2}{m_1+m_2}\partial_{X_i}\right)^2\\
+&=-\frac{1}{2\mu}\Delta_y-\frac{1}{2(m_1+m_2)}\Delta_X,
+\end{aligned}
+\end{equation}
+where $ \mu\coloneqq \frac{m_1m_2}{m_1+m_2} $. Thus we have separated the center of mass motion and the Hamiltonian may be decomposed \begin{equation}
+H=H_{\text{CM}}+H_{\text{rel}},
+\end{equation}
+with $ H_{\text{CM}}=-\frac{1}{2(m_1+m_2)}\Delta_X $ and $ H_{\text{rel}}=-\frac{1}{2\mu}\Delta_y+v(y) $. In scattering theory, we will generally be interested in the relative motion of particles. A natural question is whether we can locally minimize the relative energy of the two particles when they are nearby? The answer is yes which can be seen by the following:\\
+Consider the ($ R $-local, relative) energy functional \begin{equation}
+\mathcal{E}_R(\psi)=\int_{B_R} \frac{1}{2\mu}\abs{\nabla\psi}^2+v\abs{\psi}^2,
+\end{equation}
+with $ R>R_0 $. Then we have 
+\begin{theorem}[Theorem A.1 in \cite{lieb2001ground}]
+	Let $ R>R_0 $ then in class of functions 
+	$$ \{\phi\in H^1(B_R)\ \vert\ \phi(x)=1,\text{ for }x\in S_R\}, $$ with $ S_R $ the sphere of radius $ R $,
+	there is a unique $ \phi_0 $ that minimizes $ \mathcal{E}_R $. This function is non-negative and spherically symmetric, $ \phi_0(x)=f_0(\abs{x}) $, and it satisfies the equation\begin{equation}
+	-\frac{1}{2\mu}\Delta\phi_0+v\phi_0=0,
+	\end{equation}
+	in the sense of distributions on $ B_R $.
+	
+	For $ R_0<r<R $ we have \begin{equation}
+	f_0(r)=\begin{cases}
+	(r-a)/(R-a)&\text{ for }d=1\\
+	\ln(r/a)/\ln(R/a)& \text{ for }d=2\\
+	(1-ar^{2-n})/(1-aR^{2-n})& \text{ for }d=3
+	\end{cases}
+	\end{equation}
+	for some length, $ a $, which we call \textbf{the (s-wave) scattering length}.
+	
+	The minimum value of $ \mathcal{E}_R $ is 
+	\begin{equation}
+	f_0(r)=\begin{cases}
+	2/\mu(R-a)&\text{ for }d=1\\
+	2\pi/[\mu\ln(R/a)]& \text{ for }d=2\\
+	2\pi^{n/2}a/[\mu\Gamma(n/2)(1-aR^{2-n})]& \text{ for }d=3.
+	\end{cases}
+	\end{equation}
+\end{theorem}
+We note that in $ d>3 $, the scattering length is not actually a length in the sense of units. This is purely an artifact the conventions used in the definition.\\
+The definition above defined only the s-wave scattering length. One can proceed to define different kinds of scattering lengths depending on which asymptotic behavior (boundary condition) we demand of the minimizer of $ \mathcal{E}_R $. We will be mostly interested in a different kind of scattering length in dimension $ d=1 $. Thus we define
+\begin{definition}
+	Let $ f_e\in H^1(\R) $ be the unique solutions of the equation\begin{equation}
+	-f_e''(x)+v(x)f_e=0,
+	\end{equation}
+	in the sense of distributions on $ B_R $, with boundary conditions $ f_e(R)=1 $ and $ f_e(-R)=1 $. Then we have \begin{equation}
+	\int_{B_R} 2\abs{f_e'}^2+v \abs{f_e}^2=\frac{4}{R-a_e},
+	\end{equation} 
+	for some length, $ a_e $, called the \textbf{even wave scattering length}.
+\end{definition}
+\begin{definition}
+	Let $ f_o\in H^1(\R) $ be the unique solutions of the equation\begin{equation}\label{EqOddScatteringEquation}
+	-f_o''(x)+v(x)f_o=0,
+	\end{equation}
+	in the sense of distributions on $ B_R $, with boundary conditions $ f_o(R)=1 $ and $ f_o(-R)=-1 $. Then we have \begin{equation}
+	\int_{B_R} 2\abs{f_o'}^2+v \abs{f_o}^2=\frac{4}{R-a_o},
+	\end{equation} 
+	for some length, $ a_o $, called the \textbf{odd wave scattering length}.
+\end{definition}
+We may note that $ a_e $ need not non-negative as is the case for $ d\geq 2 $. However, we do have $ a_o\geq 0 $. This is easily seen by noticing that the minimizer of \begin{equation}
+\int_{B_R} 2\abs{f_o'}^2,
+\end{equation}
+with boundary condition $ f(R)=-f(-R)=1 $, is $ f(x)=(1/R) x $ on $ B_R $, which has energy $ \frac{4}{R} $. Thus adding a positive potential must increase the energy. Furthermore, we clearly have $ a_o\geq a_e $ by the fact that $ \abs{f_o} $ is a trial state for $ \mathcal{E}_R $ with even boundary conditions, but energy $ 4/(R-a_o) $.\\
+We may also note that the odd wave scattering length is equivalent to the s-wave scattering length in $ d=3 $ with potential $ v(\abs{\cdot}) $ since 
+\eqref{EqOddScatteringEquation} is exactly the radial scattering equation in $ d=3 $.
 
 \section{The Ground state Energy of Dilute Bose Gases}
 To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. 
@@ -211,7 +281,7 @@ Now we define \begin{equation}\label{EqDeltaDef}
 		Let $ \Psi_V $ and $ \Psi_T $ be the variational (in the Bethe ansatz class) and true ground state of $ H_{LL} $, respectively, then $ \Psi_V(x)=\euler{i\phi}\Psi_T(x) $, for a constant $ \phi\in[0,2\pi) $.
 	\end{lemma} 
 \begin{proof}
-	Consider first the limit $ c\to \infty $. Here it is easily verified that $\Psi_V=\abs{\Psi_F}=\Psi_T$, where $ \Psi_F $ is the free Fermi ground state, \ie a Slater determinant state and that $ E_V=E_T=E_F $, where $ E_F $ is the free Fermi energy. Now by uniqueness of the bosonic ground state and continuity of the (variational) ground state energy in $ 1/c $,, as well as the fact that $ \Psi_V $ is an eigenstate, we conclude that the variational ground state must remain the true ground state, as $ 1/c $ varies.
+	Consider first the limit $ c\to \infty $. Here it is easily verified that $\Psi_V=\abs{\Psi_F}=\Psi_T$, where $ \Psi_F $ is the free Fermi ground state, \ie a Slater determinant state and that $ E_V=E_T=E_F $, where $ E_F $ is the free Fermi energy. Now by uniqueness of the bosonic ground state and continuity of the (variational) ground state energy in $ 1/c $, as well as the fact that $ \Psi_V $ is an eigenstate, we conclude that the variational ground state must remain the true ground state, as $ 1/c $ varies. Were this not the case, would the true ground state $ \Psi_T $ at finite $ c>0 $ be orthogonal to $ \Psi_V $, and hence they would converge to orthogonal states, contradiction uniqueness in the limit.
 \end{proof}
 We note that while Lemma \ref{LemmaLLGroundState} holds for the ground state, its proof cannot be generalized to exited states, since there is no unique $ n $th exited state in the Bose gas. In this case we refer to the more involved proof of completeness of the Bethe ansatz states by Dorlas \cite{cmp/1104252974}.\\
 Interestingly, it is possible to study the thermodynamic limit ($ N,L\to\infty $ with $ N/L=\rho $) of system by the use of the Bethe ansatz solution. To do this, we define $ K(\gamma):=\lim_{\substack{N,L\to\infty\\
