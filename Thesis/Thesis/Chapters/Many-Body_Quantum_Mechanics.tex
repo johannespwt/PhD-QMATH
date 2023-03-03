@@ -159,7 +159,7 @@ Using this lemma, we may prove the following Proposition
 
 \section{The Scattering Length}
 When analyzing dynamics of a quantum system, it is natural to define certain length scales, on which different processes take place. These length scales often play important roles in understanding the physics of the system, and thus often appear naturally in expressions for the energies of the system. One such length scale that will be of particular importance throughout this thesis is the \emph{scattering length}. The intuition behind the name is that scattering occurs on this length scale. This intuition will be of important throughout the thesis, and especially when  constructing low energy trial states in order to estimate ground state energies by applying the variational principle. The scattering length has multiple equivalent definitions in the literature, but we shall here define it conveniently from a variational principle.\\
-Consider the two-body problem in $ \Omega=\R^d $ with a spherically symmetric positive potential of compact support $ v\geq 0 $. We allow for the potential, $ v $, to be a measure, when makes sense, \ie when it is \emph{allowed}. Let $ R_0>0 $ be such that $ \supp(v)\subset B_{R_0} $. Many assumptions on $ v $ can be weakened, but these conditions are sufficient for the scope of this thesis. The Hamiltonian can be written \begin{equation}
+Consider the two-body problem in $ \Omega=\R^d $ with a spherically symmetric positive potential of compact support $ v\geq 0 $. We allow for the potential, $ v $, to be a measure, when makes sense, \ie when it is \emph{allowed}. Let $ R_0>0 $ be such that $ \supp(v)\subset B_{R_0} $. Many assumptions on $ v $ can be weakened, but these conditions are sufficient for the scope of this thesis. The formal Hamiltonian can be written \begin{equation}
 H_2=-\frac{1}{2m_1}\Delta_1-\frac{1}{2m_2}\Delta_2+v(x_1-x_2),
 \end{equation}
 For now we keep the masses, but we will be mostly interested in the case $ m_1=m_2=1/2 $. Defining the center of mass coordinate $ X=(m_1x_1+m_2x_2)/(m_1+m_2) $ and the relative coordinate $ y=x_1-x_2 $, we see that the kinetic energy may be rewritten \begin{equation}
@@ -172,15 +172,15 @@ For now we keep the masses, but we will be mostly interested in the case $ m_1=m
 where $ \mu\coloneqq \frac{m_1m_2}{m_1+m_2} $. Thus we have separated the center of mass motion and the Hamiltonian may be decomposed \begin{equation}
 H=H_{\text{CM}}+H_{\text{rel}},
 \end{equation}
-with $ H_{\text{CM}}=-\frac{1}{2(m_1+m_2)}\Delta_X $ and $ H_{\text{rel}}=-\frac{1}{2\mu}\Delta_y+v(y) $. In scattering theory, we will generally be interested in the relative motion of particles. A natural question is whether we can locally minimize the relative energy of the two particles when they are nearby? The answer is yes which can be seen by the following:\\
+with $ H_{\text{CM}}=-\frac{1}{2(m_1+m_2)}\Delta_X $ and $ H_{\text{rel}}=-\frac{1}{2\mu}\Delta_y+v(y) $. In scattering theory, we will generally be interested in the relative motion of particles. A natural question is whether we can locally minimize the relative energy of the two particles when they are nearby? The answer is affirmative, which can be seen by the following:\\
 Consider the ($ R $-local, relative) energy functional \begin{equation}
 \mathcal{E}_R(\psi)=\int_{B_R} \frac{1}{2\mu}\abs{\nabla\psi}^2+v\abs{\psi}^2,
 \end{equation}
 with $ R>R_0 $. Then we have 
-\begin{theorem}[Theorem A.1 in \cite{lieb2001ground}]
-	Let $ R>R_0 $ then in class of functions 
+\begin{theorem}[Theorem A.1 in \cite{lieb2001ground}]\label{TheoremScatteringLength}
+	Let $ R>R_0 $ then in the class of functions 
 	$$ \{\phi\in H^1(B_R)\ \vert\ \phi(x)=1,\text{ for }x\in S_R\}, $$ with $ S_R $ the sphere of radius $ R $,
-	there is a unique $ \phi_0 $ that minimizes $ \mathcal{E}_R $. This function is non-negative and spherically symmetric, $ \phi_0(x)=f_0(\abs{x}) $, and it satisfies the equation\begin{equation}
+	there is a unique $ \phi_0 $ that minimizes $ \mathcal{E}_R $. This function is non-negative and spherically symmetric, $ \phi_0(x)=f_0(\abs{x}) $ for some $ f\geq 0 $, and it satisfies the equation\begin{equation}
 	-\frac{1}{2\mu}\Delta\phi_0+v\phi_0=0,
 	\end{equation}
 	in the sense of distributions on $ B_R $.
@@ -197,16 +197,16 @@ with $ R>R_0 $. Then we have
 	The minimum value of $ \mathcal{E}_R $ is 
 	\begin{equation}
 	f_0(r)=\begin{cases}
-	2/\mu(R-a)&\text{ for }d=1\\
-	2\pi/[\mu\ln(R/a)]& \text{ for }d=2\\
-	2\pi^{n/2}a/[\mu\Gamma(n/2)(1-aR^{2-n})]& \text{ for }d=3.
+	1/\mu(R-a)&\text{ for }d=1\\
+	\pi/[\mu\ln(R/a)]& \text{ for }d=2\\
+	\pi^{n/2}a/[\mu\Gamma(n/2)(1-aR^{2-n})]& \text{ for }d=3.
 	\end{cases}
 	\end{equation}
 \end{theorem}
-We note that in $ d>3 $, the scattering length is not actually a length in the sense of units. This is purely an artifact the conventions used in the definition.\\
+We note that in $ d>3 $, the scattering length is not actually a length in the sense of units. This is purely an artifact of the conventions used in the definition.\\
 The definition above defined only the s-wave scattering length. One can proceed to define different kinds of scattering lengths depending on which asymptotic behavior (boundary condition) we demand of the minimizer of $ \mathcal{E}_R $. We will be mostly interested in a different kind of scattering length in dimension $ d=1 $. Thus we define
-\begin{definition}
-	Let $ f_e\in H^1(\R) $ be the unique solutions of the equation\begin{equation}
+\begin{definition}\label{DefinitionEvenScatteringLength}
+	Let $ f_e\in H^1(\R) $ be the unique solutions of the equation\begin{equation}\label{EqEvenScatteringEquation}
 	-f_e''(x)+v(x)f_e=0,
 	\end{equation}
 	in the sense of distributions on $ B_R $, with boundary conditions $ f_e(R)=1 $ and $ f_e(-R)=1 $. Then we have \begin{equation}
@@ -214,7 +214,7 @@ The definition above defined only the s-wave scattering length. One can proceed 
 	\end{equation} 
 	for some length, $ a_e $, called the \textbf{even wave scattering length}.
 \end{definition}
-\begin{definition}
+\begin{definition}\label{DefinitionOddScatteringLenght}
 	Let $ f_o\in H^1(\R) $ be the unique solutions of the equation\begin{equation}\label{EqOddScatteringEquation}
 	-f_o''(x)+v(x)f_o=0,
 	\end{equation}
@@ -223,12 +223,20 @@ The definition above defined only the s-wave scattering length. One can proceed 
 	\end{equation} 
 	for some length, $ a_o $, called the \textbf{odd wave scattering length}.
 \end{definition}
-We may note that $ a_e $ need not non-negative as is the case for $ d\geq 2 $. However, we do have $ a_o\geq 0 $. This is easily seen by noticing that the minimizer of \begin{equation}
-\int_{B_R} 2\abs{f_o'}^2,
-\end{equation}
-with boundary condition $ f(R)=-f(-R)=1 $, is $ f(x)=(1/R) x $ on $ B_R $, which has energy $ \frac{4}{R} $. Thus adding a positive potential must increase the energy. Furthermore, we clearly have $ a_o\geq a_e $ by the fact that $ \abs{f_o} $ is a trial state for $ \mathcal{E}_R $ with even boundary conditions, but energy $ 4/(R-a_o) $.\\
-We may also note that the odd wave scattering length is equivalent to the s-wave scattering length in $ d=3 $ with potential $ v(\abs{\cdot}) $ since 
-\eqref{EqOddScatteringEquation} is exactly the radial scattering equation in $ d=3 $.
+\begin{remark}
+	We did not prove uniqueness of the solutions above. In Definition \ref{DefinitionEvenScatteringLength}, it follows from Theorem \ref{TheoremScatteringLength} by noting that any solution of \eqref{EqEvenScatteringEquation} is a minimizer of $ \mathcal{E}_R $. In Definition \ref{DefinitionOddScatteringLenght} it follows from the fact that by Theorem \ref{TheoremScatteringLength} there is a unique solution that vanishes at the origin (simply consider the solution of \eqref{EqEvenScatteringEquation} with potential $ v'=v+\infty \delta_0 $ and multiply by $ \text{sign}(x) $). Thus the odd part of $ f_o $ is unique. The even part of $ f_o $ vanishes at $ x=R $, and since \eqref{EqOddScatteringEquation} is the Euler-Lagrange equation for $ \mathcal{E}_R $, we see that $ (f_o)_{\text{even}}=0 $, since this is the only local extremum of $ \mathcal{E}_R $ with zero boundary conditions.
+\end{remark}
+\begin{remark}
+	The even wave scattering length, $ a_e $, need not be non-negative as is the case for $ d\geq 2 $. However, we do have $ a_o\geq 0 $. This is easily seen by noticing that the minimizer of \begin{equation}
+	\int_{B_R} 2\abs{f_o'}^2,
+	\end{equation}
+	with boundary condition $ f(R)=-f(-R)=1 $, is $ f(x)=(1/R) x $ on $ B_R $, which has energy $ \frac{4}{R} $. Thus adding a positive potential must increase the energy. \\
+	Alternatively, we may see this by noting that the odd wave scattering length is equivalent to the s-wave scattering length in $ d=3 $ with potential $ v(\abs{\cdot}) $ since 
+	\eqref{EqOddScatteringEquation} is exactly the radial scattering equation in $ d=3 $ when restricted to $ [0,R] $.
+\end{remark}
+\begin{remark}
+	We also have $ a_o\geq a_e $ by the fact that $ \abs{f_o} $ is a trial state for $ \mathcal{E}_R $ with even boundary conditions, but energy $ 4/(R-a_o) $.
+\end{remark}
 
 \section{The Ground state Energy of Dilute Bose Gases}
 To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. 
@@ -337,8 +345,31 @@ Now to give a lower bound, we notice that the extension can be approximated by T
 \tilde{\Psi}_c(y_1=y_2,y_{i+1}>y_i+R \text{ for all } i\geq 2)=\tilde{\Psi}_c(x_0)-R\nabla_n \tilde{\Psi}_c(x_0)+\frac{1}{2}R^2\nabla_n^2\tilde{\Psi}_c(x_0)+\ldots
 \end{equation}
 \section{The Yang-Gaudin Model}
-Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.
+Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.\\
+The model of interest describes $ N $ spin--$ 1/2 $ fermions and is given using the same formal Hamiltonian as for the Lieb-Liniger model\begin{equation}
+H_{YG}=-\sum_{i=1}^{N}\partial_i^2+2c\sum_{1\leq i<j\leq N}\delta(x_i-x_j),
+\end{equation}
+however the domain is taken to some spin sector. To analyze the problem, Yang considers the possible spacial symmetries that may appear problem. Having combined spin-space anti-symmetry, requires that any irreducible representation of $ S_N$ labeling the spacial symmetry, must have a corresponding conjugate irreducible representation labeling the spin symmetry. As an example consider the two particle case where the wave function is either symmetric and the spin state is the singlet, \emph{or} the wave function is anti-symmetric and the spin state is in the triplet. If you have more particles, the picture is a bit more complicated. Notice that one can not have $ 3 $ spin--$ 1/2 $ particles that are mutually in the singlet state with each other. It turns out, that the smart way to label the symmetry of a spin state is by Young tableaux. A tableau label first which particles are in a symmetric state by having their particle labels in the same row and then which particles are in the in singlet state with each other by having the two particles labels in the same column. Thus \begin{equation}
+	\begin{ytableau}
+	1 & 2 \\
+	 3 &  \none 
+	\end{ytableau}=\operatorname{P}_{\ket{\uparrow \uparrow \downarrow }-\ket{\downarrow \downarrow \uparrow}}
+\end{equation}
+
+\begin{equation}
+\begin{ytableau}
+1 & 3 \\
+2 &  \none 
+\end{ytableau}=\operatorname{P}_{\ket{\uparrow \downarrow \uparrow }-\ket{\downarrow \uparrow \downarrow}}
+\end{equation}
 
 
+\begin{equation}
+\begin{ytableau}
+1 & 2& 3 
+\end{ytableau}=\operatorname{P}_{\ket{\uparrow \uparrow \uparrow },\ket{\downarrow\downarrow\downarrow},\ket{\uparrow\downarrow\uparrow}+\ket{\downarrow\uparrow\uparrow}+\ket{\uparrow\uparrow\downarrow},\ket{\uparrow\downarrow\downarrow}+\ket{\downarrow\downarrow\uparrow}+\ket{\downarrow\uparrow\downarrow}}
+\end{equation}
+
+Does not add up
 
 
