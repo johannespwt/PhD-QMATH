@@ -305,7 +305,7 @@ So by \eqref{EqDeltaDef} we see for the ground state ($ n_i=1 $) that \begin{equ
 k_{i+1}-k_i=\frac{2\pi}{L}-\frac{1}{L}\sum_{s=1}^{N}\frac{2c(k_{i+1}-k_i)}{c^2+(k_s-k_i)^2}+\rho O(1/(cL)^2).
 \end{equation}
 Now let $ f $ be such that $ k_{i+1}-k_i=1/(Lf(k_i)) $. Then by Poisson's summation formula we have \begin{equation}
-2\pi f(k)-1=2c\int_{-K}^{K}\frac{f(p)}{c^2+(p-k)^2}\diff p+\mathcal{O}(1/(cL).
+2\pi f(k)-1=2c\int_{-K}^{K}\frac{f(p)}{c^2+(p-k)^2}\diff p+o(1/(cL).
 \end{equation}
 The very definition of $ f $ implies $ \int_{-K}^{K}f(p)\diff p=\rho $, with ground state energy\begin{equation}
 E=\sum_{i}k_i^2=\int_{-K}^{K}k^2f(k)\diff k,
@@ -345,31 +345,58 @@ Now to give a lower bound, we notice that the extension can be approximated by T
 \tilde{\Psi}_c(y_1=y_2,y_{i+1}>y_i+R \text{ for all } i\geq 2)=\tilde{\Psi}_c(x_0)-R\nabla_n \tilde{\Psi}_c(x_0)+\frac{1}{2}R^2\nabla_n^2\tilde{\Psi}_c(x_0)+\ldots
 \end{equation}
 \section{The Yang-Gaudin Model}
-Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.\\
-The model of interest describes $ N $ spin--$ 1/2 $ fermions and is given using the same formal Hamiltonian as for the Lieb-Liniger model\begin{equation}
+Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section. We should note that Gaudin originally solved the impenetrable case, \ie $c\to\infty$.\\
+The model of interest describes $ N $ spin--$ 1/2 $ fermions and is given using the same formal Hamiltonian as for the Lieb-Liniger model\begin{equation}\label{EqYGHamiltonian}
 H_{YG}=-\sum_{i=1}^{N}\partial_i^2+2c\sum_{1\leq i<j\leq N}\delta(x_i-x_j),
 \end{equation}
-however the domain is taken to some spin sector. To analyze the problem, Yang considers the possible spacial symmetries that may appear problem. Having combined spin-space anti-symmetry, requires that any irreducible representation of $ S_N$ labeling the spacial symmetry, must have a corresponding conjugate irreducible representation labeling the spin symmetry. As an example consider the two particle case where the wave function is either symmetric and the spin state is the singlet, \emph{or} the wave function is anti-symmetric and the spin state is in the triplet. If you have more particles, the picture is a bit more complicated. Notice that one can not have $ 3 $ spin--$ 1/2 $ particles that are mutually in the singlet state with each other. It turns out, that the smart way to label the symmetry of a spin state is by Young tableaux. A tableau label first which particles are in a symmetric state by having their particle labels in the same row and then which particles are in the in singlet state with each other by having the two particles labels in the same column. Thus \begin{equation}
-	\begin{ytableau}
-	1 & 2 \\
-	 3 &  \none 
-	\end{ytableau}=\operatorname{P}_{\ket{\uparrow \uparrow \downarrow }-\ket{\downarrow \downarrow \uparrow}}
+however the domain is not taken to have any given spatial symmetry. 
+\subsection{Labeling the symmetries}
+To analyze the problem, Yang considers the possible spatial symmetries that may appear problem. Having combined spin-space anti-symmetry, requires that any irreducible representation of $ S_N$ determining the spacial symmetry, must have a corresponding conjugate spin symmetry. As an example consider the two particle case where the wave function is either symmetric and the spin state is the singlet, \emph{or} the wave function is anti-symmetric and the spin state is in the triplet. If you have more particles, the picture is more complicated, although similar. Notice that one cannot have $ 3 $ spin--$ 1/2 $ particles that are mutually in the singlet state with each other. It turns out, that one way to label the symmetry of a spin state is by Young tableaux, \ie a diagram of boxes with numbers obeying the rule that numbers are increasing along all rows and columns. A tableau labels a subspace of spin states. To construct the subspace one first consider all states that are symmetrized in particle labels are in the same row, and next one anti-symmetrize, in these states, all particle labels that are in the same column. For example: \begin{equation}
+\begin{ytableau}
+1 & 2 \\
+3 &  \none 
+\end{ytableau}=\Span{\ket{\uparrow \uparrow \downarrow }-\ket{\downarrow \uparrow \uparrow},\ket{\downarrow\downarrow\uparrow}-\ket{\uparrow\downarrow\downarrow}},
 \end{equation}
 
 \begin{equation}
 \begin{ytableau}
 1 & 3 \\
 2 &  \none 
-\end{ytableau}=\operatorname{P}_{\ket{\uparrow \downarrow \uparrow }-\ket{\downarrow \uparrow \downarrow}}
+\end{ytableau}=\Span{\ket{\uparrow \downarrow \uparrow }-\ket{\downarrow \uparrow \uparrow},\ket{\downarrow \uparrow \downarrow }-\ket{\uparrow \downarrow \downarrow}},
 \end{equation}
 
 
 \begin{equation}
 \begin{ytableau}
 1 & 2& 3 
-\end{ytableau}=\operatorname{P}_{\ket{\uparrow \uparrow \uparrow },\ket{\downarrow\downarrow\downarrow},\ket{\uparrow\downarrow\uparrow}+\ket{\downarrow\uparrow\uparrow}+\ket{\uparrow\uparrow\downarrow},\ket{\uparrow\downarrow\downarrow}+\ket{\downarrow\downarrow\uparrow}+\ket{\downarrow\uparrow\downarrow}}
+\end{ytableau}=\Span{\ket{\uparrow \uparrow \uparrow },\ket{\downarrow\downarrow\downarrow},\ket{\uparrow\downarrow\uparrow}+\ket{\downarrow\uparrow\uparrow}+\ket{\uparrow\uparrow\downarrow},\ket{\uparrow\downarrow\downarrow}+\ket{\downarrow\downarrow\uparrow}+\ket{\downarrow\uparrow\downarrow}}.
 \end{equation}
+By the before mentioned fact that one cannot anti-symmetrize three spin--$ 1/2 $, Young tableaux of spin--1/2 states have at most two rows. An interesting fact with this labeling of spin states is that the structure of a given tableau is related to the total spin of the state. To see this, notice that all columns of lengths two carry vanishing total spin, because they form a singlet state. On the other hand, all columns of length one are symmetrized with each other. Hence it is well known that they carry maximal total spin. In the subspace labeled by a tableau with $ M $ columns of length $ 2 $ and $ N-2M $ columns of length $ 1 $, all states are of the form $ \ket{S_0}\otimes \ket{S_{(N-2M)/2}} $, where $ \ket{S_0} $ is some spin state of total spin $ 0 $ and $ \ket{S_{(N-2M)/2}} $ is some spin state of total spin $ (N-2M)/2 $. Remembering that irreducible representations of $ SU(2) $ are labeled by the total spin, we conclude that a Young diagram, which is just a Young tableau with blank entries, labels the irreducible $ SU(2) $ representations.\\
+Remember that we may label the irreducible representation of $ S_N $ determining the spatial symmetry also by Young tableaux, \cite{william1991representation}. In this case we have the opposite convention for ordering of symmetrization and anti-symmetrization, \ie labels in the same column are \emph{first anti-symmetrized and then labels in the same rows are symmetrized}. Thus we see that a wave function, which is anti-symmetric under (spin-space) permutations, and which transforms in the spacial irreducible representation
+\begin{equation*}
+\begin{ytableau}
+\phantom{1} & \phantom{1} \\
+\phantom{1} & \phantom{1} \\
+\phantom{1} & \phantom{1} \\
+\phantom{1} &  \none \\
+\phantom{1} &  \none\\
+\phantom{1} &  \none
+\end{ytableau}_{\text{space}}
+\end{equation*}
+must be defined in the spin subspace 
+\begin{equation*}
+\begin{ytableau}
+ \phantom{1}& \phantom{1}& \phantom{1} &\phantom{1}& \phantom{1} &\phantom{1} \\
+\phantom{1} &\phantom{1} &\phantom{1} &\none & \none & \none 
+\end{ytableau}_{\text{spin}}.
+\end{equation*}
+We notice that this restrict the spacial symmetries that spin--$ 1/2 $ fermions can posses, since the spin diagrams have at most two rows. In the following, we will denote the diagram consisting of a row with $ N-M $ boxes and a row with $ M $ boxes by $ [N-M,M] $, and diagrams consisting of a column of $ N-M $ boxes and a column of $ M $ boxes by $ [2^{N-M},1^{M}] $. 
+\subsection{Solution by generalized Bethe ansatz}
+The solution found by Yang in \cite{yang1967some}, relies on a generalization of the Bethe ansatz, which we saw in the previous section solved the Lieb-Liniger model. We retrace in this section the steps of Yang in order to solve, and eventually give estimates on the ground state energy of, the Yang-Gaudin model. We consider 
 
-Does not add up
+
+
+
+
 
 

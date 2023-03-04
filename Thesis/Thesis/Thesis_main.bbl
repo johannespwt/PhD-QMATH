@@ -52,6 +52,12 @@ L.~Hulthén.
 \newblock {\"Uber das Austauschproblem eines Kristalles}.
 \newblock {\em Ark. Met. Astron. Fysik}, 26A(Na. 11), 1938.
 
+\bibitem[LL63]{lieb1963exact}
+Elliott~H Lieb and Werner Liniger.
+\newblock Exact analysis of an interacting bose gas. i. the general solution
+  and the ground state.
+\newblock {\em Physical Review}, 130(4):1605, 1963.
+
 \bibitem[LM62a]{lieb1962ordering}
 Elliott Lieb and Daniel Mattis.
 \newblock Ordering energy levels of interacting spin systems.
@@ -84,6 +90,12 @@ D.C. Mattis.
 M.~Reed and B.~Simon.
 \newblock {\em I: Functional Analysis}.
 \newblock Methods of Modern Mathematical Physics. Elsevier Science, 1981.
+
+\bibitem[WJ91]{william1991representation}
+Fulton William and Harris Joe.
+\newblock Representation theory: a first course.
+\newblock {\em Graduate Texts in Mathematics, Readings in Mathematics.
+  Springer-Verlag}, 129, 1991.
 
 \bibitem[Yan67]{yang1967some}
 Chen-Ning Yang.
