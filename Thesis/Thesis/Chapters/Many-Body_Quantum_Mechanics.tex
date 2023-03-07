@@ -118,7 +118,7 @@ Of course $ \mathcal{E}_{(v,\sigma)}\geq 0 $ for any $ \sigma\in[0,\infty] $ and
 
 
 \begin{remark} \label{RemarkdDimPotentialAllowed}
-	For any radial $ v\geq 0 $ that is measurable  $\mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a self-adjoint operator on some Hilbert space $ \mathcal{H}_{(v,\sigma)}\subset L^2_{s/a}(\Omega^N) $. It is well known that $\mathcal{E}_{(0,\sigma)}$ is closable on $ \mathcal{H}_{(0,\sigma)}\supseteq \mathcal{H}_{(v,\sigma)}    $, hence on $  \mathcal{H}_{(v,\sigma)} $. Thus closability of $ \mathcal{E}_{(v,\sigma)} $ amount to showing that $ \psi_n \xrightarrow{\norm{\cdot}_2}0 $ as $ n\to\infty $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\underbrace{\sum_{i<j}v(x_i-x_j)\diff\lambda^{N}}_{\coloneqq \diff\mu_v}\right) $ Cauchy, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. This is evident from the fact that $\psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}f$ for some $ f\in L^2(\Omega^N,\diff\mu_v) $ by completeness. Now $ \psi_n $ has a subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $, and this subsequence further has a subsequence that converges $ \mu_v $--almost everywhere to $ f $. Hence $ f=0 $ $ \mu_v $--almost everywhere, as $ \mu_v\ll v $. \\
+	For any radial $ v\geq 0 $ that is measurable  $\mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a self-adjoint operator on some Hilbert space $ \mathcal{H}_{(v,\sigma)}\subset L^2_{s/a}(\Omega^N) $. It is well known that $\mathcal{E}_{(0,\sigma)}$ is closable on $ \mathcal{H}_{(0,\sigma)}\supseteq \mathcal{H}_{(v,\sigma)}    $, hence on $  \mathcal{H}_{(v,\sigma)} $. Thus closability of $ \mathcal{E}_{(v,\sigma)} $ amount to showing that $ \psi_n \xrightarrow{\norm{\cdot}_2}0 $ as $ n\to\infty $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\underbrace{\sum_{i<j}v(x_i-x_j)\diff\lambda^{N}}_{\coloneqq \diff\mu_v}\right) $ Cauchy, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. This is evident from the fact that $\psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}f$ for some $ f\in L^2(\Omega^N,\diff\mu_v) $ by completeness. Now $ \psi_n $ has a subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $, and this subsequence further has a subsequence that converges $ \mu_v $--almost everywhere to $ f $. Hence $ f=0 $ $ \mu_v $--almost everywhere, as $ \mu_v\ll \lambda^N $. \\
 	Thus there is a corresponding self-adjoint operator $ H_{(v,\sigma)} $ to $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $, which we shall formally write as $ H_{(v,\sigma)}=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N}v(x_i-x_j) $.
 \end{remark}
 The argument from the previous may be generalized slightly in the case of $ d=1 $, in order to show that any $ \sigma $--finite measure $ v\diff\lambda^{N} $ is allowed as potential. Notice that we slightly abuse notation and write $ v(x_i-x_j)\diff\lambda^N $ even when $ v $ is a singular continuous measure and thus has no density. However, we do think of $ v $ a being a one-dimensional measure in the sense that 
@@ -140,14 +140,14 @@ We will need the following essential lemma, where we use the notation  $ \lambda
 	We pass first to a subsequence, which we also denote $ f_n$, such that $ f_n $ converges pointwise $ \lambda^N $--a.e. to $ 0 $. 
 	Since $ f_n\in H^1(\Omega^N) $, we know for any $ k=1,\ldots,N $ that $ f^k_n(t,\overline{x}^k) $ are in $ H^1(\Omega) $ (as functions of t) $ \lambda_k^{N-1} $--a.e.
 	[\cite{evans1991measure} Theorem 2 p. 164].
-	Now consider the $ H^1(\Omega) $ norms of $ g_n^k(\overline{x}^k)\coloneqq \norm{f^k_n(\cdot,\overline{x}^k)}_{H^1(\Omega)} $. Clearly $ g_n^k $ constitute $ L^2 $ functions, with norms converging to $ 0 $. Hence there exist a subsequence that converges pointwise $ \lambda_k^{N-1} $--almost everywhere to $ 0 $. There there is a subsequence $ f_{n_i}^k $ such that for $ \lambda_k^{N-1} $--a.e. $ \overline{x}^k $, $ f_{n_i}^k(\cdot,\overline{x}^k) $ converges to $ 0 $ in $ H^1(\Omega) $. But then $  f_{n_i}^k(\cdot,\overline{x}^k) $ converges, by Morrey's inequality, pointwise to $ 0 $.
+	Now consider the $ H^1(\Omega) $ norms of $ g_n^k(\overline{x}^k)\coloneqq \norm{f^k_n(\cdot,\overline{x}^k)}_{H^1(\Omega)} $. Clearly $ g_n^k $ constitute $ L^2 $ functions, with norms converging to $ 0 $. Hence there exist a subsequence that converges pointwise $ \lambda_k^{N-1} $--almost everywhere to $ 0 $. Then there is a subsequence $ f_{n_i}^k $ such that for $ \lambda_k^{N-1} $--a.e. $ \overline{x}^k $, $ f_{n_i}^k(\cdot,\overline{x}^k) $ converges to $ 0 $ in $ H^1(\Omega) $. But then $  f_{n_i}^k(\cdot,\overline{x}^k) $ converges, by Morrey's inequality, pointwise to $ 0 $.
 \end{proof}
 Using this lemma, we may prove the following Proposition
 \begin{proposition}\label{Lemma1dPotentialAllowed}
 	Let $ d=1 $, then for any $ \sigma $-finite measure, $ v $, we have that $ \mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a self adjoint operator $ H_{(v,\sigma)} $ on some Hilbert space $ \mathcal{H}_{(v,\sigma)} $.
 \end{proposition}
 \begin{proof}
-	As previously, we define $\mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ and $ \diff\mu_v=\sum_{1\leq i<j\leq N}v(x_i-x_j)\diff\lambda^N $. Clearly $ \mathcal{E}_{(v,\sigma)} $ is lower bounded and densely defined in $ \mathcal{H}_{(v,\sigma)} $. Closability amounts to showing that $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\lambda^{N})}}0 $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\diff\mu_v\right) $ Cauchy w.r.t the norm $ \norm{\cdot}_{\mathcal{E}_{(v,\sigma)}}=\sqrt{\mathcal{E}_{(v,\sigma)}(\cdot)+\norm{\cdot}_2^2} $, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. Now since $ (\psi_n)_{n\in\mathbb{N}}$ is a Cauchy sequence in $ L^2\left(\Omega^N,\diff\mu_v\right) $, it has a subsequence that converges $ \mu_v $--almost everywhere to some function $ f\in L^2\left(\Omega^N,\diff\mu_v\right)  $. Furthermore, this subsequence has a further subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $. However, since $ (\psi_n)_{n\in\mathbb{N}}$ converges in $ H^1(\Omega^N,\diff \lambda^N) $, Lemma \ref{LemmaH1PointwiseConvergence} implies that for $ (x_i-x_j) $ fixed $ (\psi_n)_{n\in\mathbb{N}} $ converges $ \lambda^{N-1} $--a.e. to $ 0 $. Hence $ \left(\psi_n\right)_{n\in\mathbb{N}} $ converges pointwise to $ 0 $ on $ \lambda^{N-1} $--almost all lines. Now notice that $ \diff \mu_v=\sum_{1\leq i<j\leq N} \diff \mu_{v_{ij}}\times \diff\lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $. Thus for $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all lines in $ \Omega^N $ with $ x_i+x_j $ and $ x_k $ fixed for all $ k\neq i,j $, by passing to a subsequence $ \psi_n $ converges pointwise to $ 0 $, by Lemma \ref{LemmaH1PointwiseConvergence}. But also on $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all these lines $ \psi_n $ converges $ \mu_{v_{ij}} $--almost everywhere to $ f $, and hence $ f=0 $ $ \mu_{v_{ij}} $--almost everywhere. Thus we conclude that $ f=0 $ $ \mu_v $--almost everywhere. The lemma now follows from Remark \ref{RemarkOperatorFromQuadraticForm}.
+	As previously, we define $\mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ and $ \diff\mu_v=\sum_{1\leq i<j\leq N}v(x_i-x_j)\diff\lambda^N $. Clearly $ \mathcal{E}_{(v,\sigma)} $ is lower bounded and densely defined in $ \mathcal{H}_{(v,\sigma)} $. Closability amounts to showing that $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\lambda^{N})}}0 $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\diff\mu_v\right) $ Cauchy w.r.t the norm $ \norm{\cdot}_{\mathcal{E}_{(v,\sigma)}}=\sqrt{\mathcal{E}_{(v,\sigma)}(\cdot)+\norm{\cdot}_2^2} $, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. Now since $ (\psi_n)_{n\in\mathbb{N}}$ is a Cauchy sequence in $ L^2\left(\Omega^N,\diff\mu_v\right) $, it has a subsequence that converges $ \mu_v $--almost everywhere to some function $ f\in L^2\left(\Omega^N,\diff\mu_v\right)  $. Furthermore, this subsequence has a further subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $. However, since $ (\psi_n)_{n\in\mathbb{N}}$ converges to $ 0 $ in $ H^1(\Omega^N,\diff \lambda^N) $, Lemma \ref{LemmaH1PointwiseConvergence} implies that for $ (x_i-x_j) $ fixed $ (\psi_n)_{n\in\mathbb{N}} $ converges $ \lambda^{N-1} $--a.e. to $ 0 $. Hence $ \left(\psi_n\right)_{n\in\mathbb{N}} $ converges pointwise to $ 0 $ on $ \lambda^{N-1} $--almost all lines. Now notice that $ \diff \mu_v=\sum_{1\leq i<j\leq N} \diff \mu_{v_{ij}}\times \diff\lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $. Thus for $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all lines in $ \Omega^N $ with $ x_i+x_j $ and $ x_k $ fixed for all $ k\neq i,j $, by passing to a subsequence $ \psi_n $ converges pointwise to $ 0 $, by Lemma \ref{LemmaH1PointwiseConvergence}. But also on $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all these lines $ \psi_n $ converges $ \mu_{v_{ij}} $--almost everywhere to $ f $, and hence $ f=0 $ $ \mu_{v_{ij}} $--almost everywhere. Thus we conclude that $ f=0 $ $ \mu_v $--almost everywhere. The lemma now follows from Remark \ref{RemarkOperatorFromQuadraticForm}.
 \end{proof}
 \begin{remark}
 	Combining Lemma \ref{Lemma1dPotentialAllowed} and Remark \ref{RemarkdDimPotentialAllowed} we conclude that potentials of the form $ v=v_{\sigma\text{--finite}}+v_{\text{abs.cont.}} $, where $ v_{\sigma\text{--finite}} $ is a $ \sigma $--finite measure and $ v_{\text{abs.cont.}} $ is an absolutely continuous measure (w.r.t. Lebesgue measure) are allowed in one dimension, $ d=1 $. We will in Chapter.... obtain result about the ground state energy of such systems.
@@ -242,7 +242,8 @@ The definition above defined only the s-wave scattering length. One can proceed 
 To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. 
 
 
-\section{The Lieb-Liniger Model: A Solvable Model in One Dimension} In the 1960 a one dimensional model of impenetrable bosons was solved by Girardeau \cite{girardeau1960relationship}. This initialized the study of solvable models of particles in the continuum in one dimension. The next major breakthrough was in this context made in 1963 by Lieb and Liniger, who posed and solved a model of one dimensional point interacting bosons \cite{lieb1963exact}. Their solution generalized the solution of the impenetrable bosons by Girardeau. The technique that was used in known as \emph{Bethe ansatz} or \emph{Bethe's hypothesis} after it was invented by Bethe to solve the one dimensional antiferromagnetic Heisenberg chain \cite{bethe1931theorie}. We will in this section, for self containment, go through the solution of the Lieb-Liniger model, as the solution and more generally the ground state energy is of importance later in the thesis when studying the ground state energy of the dilute one dimensional Bose gas. We follow the steps given in \cite{lieb1963exact} and present a few more general results.\\
+\section{The Lieb-Liniger Model: A Solvable Model in One Dimension} \label{SectionLiebLinigerModel}
+In the 1960 a one dimensional model of impenetrable bosons was solved by Girardeau \cite{girardeau1960relationship}. This initialized the study of solvable models of particles in the continuum in one dimension. The next major breakthrough was in this context made in 1963 by Lieb and Liniger, who posed and solved a model of one dimensional point interacting bosons \cite{lieb1963exact}. Their solution generalized the solution of the impenetrable bosons by Girardeau. The technique that was used in known as \emph{Bethe ansatz} or \emph{Bethe's hypothesis} after it was invented by Bethe to solve the one dimensional antiferromagnetic Heisenberg chain \cite{bethe1931theorie}. We will in this section, for self containment, go through the solution of the Lieb-Liniger model, as the solution and more generally the ground state energy is of importance later in the thesis when studying the ground state energy of the dilute one dimensional Bose gas. We follow the steps given in \cite{lieb1963exact} and present a few more general results.\\
 The Lieb-Liniger model is a model of bosons with dynamics given by the Hamiltonian \begin{equation}
 H_{LL}=-\sum_{i=1}^{N}\Delta_i+2c \sum_{1\leq i<j\leq N}\delta(x_i-x_j),
 \end{equation}
@@ -345,13 +346,13 @@ Now to give a lower bound, we notice that the extension can be approximated by T
 \tilde{\Psi}_c(y_1=y_2,y_{i+1}>y_i+R \text{ for all } i\geq 2)=\tilde{\Psi}_c(x_0)-R\nabla_n \tilde{\Psi}_c(x_0)+\frac{1}{2}R^2\nabla_n^2\tilde{\Psi}_c(x_0)+\ldots
 \end{equation}
 \section{The Yang-Gaudin Model}
-Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section. We should note that Gaudin originally solved the impenetrable case, \ie $c\to\infty$.\\
+Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.
 The model of interest describes $ N $ spin--$ 1/2 $ fermions and is given using the same formal Hamiltonian as for the Lieb-Liniger model\begin{equation}\label{EqYGHamiltonian}
 H_{YG}=-\sum_{i=1}^{N}\partial_i^2+2c\sum_{1\leq i<j\leq N}\delta(x_i-x_j),
 \end{equation}
 however the domain is not taken to have any given spatial symmetry. 
 \subsection{Labeling the symmetries}
-To analyze the problem, Yang considers the possible spatial symmetries that may appear problem. Having combined spin-space anti-symmetry, requires that any irreducible representation of $ S_N$ determining the spacial symmetry, must have a corresponding conjugate spin symmetry. As an example consider the two particle case where the wave function is either symmetric and the spin state is the singlet, \emph{or} the wave function is anti-symmetric and the spin state is in the triplet. If you have more particles, the picture is more complicated, although similar. Notice that one cannot have $ 3 $ spin--$ 1/2 $ particles that are mutually in the singlet state with each other. It turns out, that one way to label the symmetry of a spin state is by Young tableaux, \ie a diagram of boxes with numbers obeying the rule that numbers are increasing along all rows and columns. A tableau labels a subspace of spin states. To construct the subspace one first consider all states that are symmetrized in particle labels are in the same row, and next one anti-symmetrize, in these states, all particle labels that are in the same column. For example: \begin{equation}
+To analyze the problem, Yang considers the possible spatial symmetries that may appear problem. Having combined spin-space anti-symmetry, requires that any irreducible representation of $ S_N$ determining the spacial symmetry, must have a corresponding conjugate spin symmetry. As an example consider the two particle case where the wave function is either symmetric and the spin state is the singlet, \emph{or} the wave function is anti-symmetric and the spin state is in the triplet. If you have more particles, the picture is more complicated, although similar. Notice that one cannot have $ 3 $ spin--$ 1/2 $ particles that are mutually in the singlet state with each other. It turns out, that one way to label the symmetry of a spin state is by Young tableaux, \ie a diagram of boxes with numbers obeying the rule that numbers are increasing along all rows and columns. A tableau labels a subspace of spin states. To construct the subspace consider all states that are symmetrized in particle labels are in the same row. Next anti-symmetrize, in these states, all particle labels that are in the same column. For example: \begin{equation}
 \begin{ytableau}
 1 & 2 \\
 3 &  \none 
@@ -390,9 +391,77 @@ must be defined in the spin subspace
 \phantom{1} &\phantom{1} &\phantom{1} &\none & \none & \none 
 \end{ytableau}_{\text{spin}}.
 \end{equation*}
-We notice that this restrict the spacial symmetries that spin--$ 1/2 $ fermions can posses, since the spin diagrams have at most two rows. In the following, we will denote the diagram consisting of a row with $ N-M $ boxes and a row with $ M $ boxes by $ [N-M,M] $, and diagrams consisting of a column of $ N-M $ boxes and a column of $ M $ boxes by $ [2^{N-M},1^{M}] $. 
-\subsection{Solution by generalized Bethe ansatz}
-The solution found by Yang in \cite{yang1967some}, relies on a generalization of the Bethe ansatz, which we saw in the previous section solved the Lieb-Liniger model. We retrace in this section the steps of Yang in order to solve, and eventually give estimates on the ground state energy of, the Yang-Gaudin model. We consider 
+We notice that this restrict the spacial symmetries that spin--$ 1/2 $ fermions can posses, since the spin diagrams have at most two rows. In the following, we will denote the diagram consisting of a row with $ N-M $ boxes and a row with $ M $ boxes by $ [N-M,M] $, and diagrams consisting of a column of $ N-M $ boxes and a column of $ M $ boxes by $ [2^{M},1^{N-2M}] $. 
+\subsection{Solution by Yang-Bethe ansatz}
+The solution found by Yang in \cite{yang1967some}, relies on a generalization of the Bethe ansatz, which we saw in the previous section solved the Lieb-Liniger model. The generalized Bethe ansatz is also known as the Yang-Bethe hypothesis. We recap here, without proof, the findings of Yang. For references on these results we point to \cite{gaudin1967systeme,yang1967some,sutherland1968further,fung1981validity,gaudin2014bethe}. \\
+The model is solved by applying a standard Bethe ansatz state: One the sector $ \{\sigma\} $ define \begin{equation}
+\psi=\sum_{P\in S_N} \xi_{P,\sigma} \exp\left(k_{P_1} x_{\sigma_1}+\ldots+k_{P_N}x_{\sigma_N}\right),
+\end{equation}
+with energy $ E=\sum_{i=1}^{N}k_i^2 $.
+Similarly to in the Lieb-Liniger case, in order to satisfy the right boundary condition, we have\begin{equation}\label{EqYGCoeffecientsRelation}
+	\xi_{P,\sigma}=Y^{1,2}_{ij}\xi_{Q,\sigma},
+\end{equation} when $ Q=(P_1,\ldots,\underbrace{2}_{i},\ldots,\underbrace{1}_{j},\ldots,P_N) $ and\\ $ P=(P_1,\ldots,\underbrace{1}_{i},\ldots,\underbrace{2}_{j},\ldots,P_N) $, where we defined \begin{equation}
+Y_{ij}^{12}=\frac{(k_i-k_j)(12)-ic}{(k_i-k_j)+ic},
+\end{equation}
+with $ (12) $ acting by interchanging $ \sigma_1 $ and $ \sigma_2 $. We see that we recover the Lieb Liniger result is $ \psi $ is symmetric and we recover a Slater determinant if $ \psi $ is anti-symmetric.\\
+A crucial observation by Yang is that we have the identities \begin{equation}
+\begin{aligned}
+Y_{ij}^{ab}Y_{ji}^{ab}&=1\\
+Y_{jk}^{ab}Y_{ik}^{bc}Y_{ij}^{ab}&=Y_{ij}^{bc}Y_{ik}^{ab}Y_{jk}^{bc},
+\end{aligned}
+\end{equation}
+making the equations \eqref{EqYGCoeffecientsRelation} mutually consistent.\\
+The condition of periodic boundary conditions may now be written \begin{equation}\label{EqYGPeriodicBoundaryCondition}
+\lambda_j\xi_{I,\sigma}=X_{(j+1)j}X_{(j+2)j}\ldots X_{Nj}X_{1j},\ldots X_{(j-1)j}\xi_{I,\sigma},
+\end{equation}
+with $ \lambda_j=\exp(ik_j L) $ and $ X_{ij}=P_{ij}Y_{ij}^{ij} $.\\
+Now, restricting to $ \psi $ in some irreducible representation $ R=[2^{M},1^{N-2M}] $, one easily sees, using that $ X_{ij}=(1-P_{ij}x_{ij})/(1+x_{ij}) $,  we may consider a spin state, $ \Phi $, of total spin $ N-2M $, satisfying the equation \begin{equation}
+\mu_j\Phi=X'_{(j+1)j}X'_{(j+2)j}\ldots X'_{Nj}X'_{1j},\ldots X'_{(j-1)j} \Phi,
+\end{equation}
+with $ X_{ij}'=(1+P^{\tilde{R}}_{ij}x_{ij})/(1+x_{ij}) $, where $ \tilde{R} $ denotes the conjugate representation, so $ P^{\tilde{R}}_{ij} $ is acting on the spins \ie $ P^{\tilde{R}}_{ij}=-P_{ij} $.\\
+Now considering instead a spin chain of total $ z $--spin $ N-2M $, we know that this chain can have components with total spin $ N,\ N-1,\ldots N-2M $. Notice that $ P_{ij}=1+2S_i\cdot S_j $ for spin--$ 1/2 $ particles which commute with the total spin operator. Hence we may find eigenvalues $ \mu_j $ in each total spin sector separately. However, since these eigenvalues corresponds to eigenvalues of \eqref{EqYGHamiltonian}, the theorem of Lieb and Mattis \cite{lieb1962theory} tells us that the eigenvalue $ \mu_j $ yielding the smallest eigenvalue of \eqref{EqYGHamiltonian} must come from the total spin sector $ N-2M $, \ie minimal total spin.\\
+The Bethe-Yang hypothesis states that \begin{equation}\label{EqBetheYangHypothesis}
+\Phi(y_1,\ldots,y_M)=\sum_{P\in S_{N}}A_P \prod_{i=1}^{M}F(\Lambda_{P_i},y_i),
+\end{equation}
+where $ y_i $ denotes the positions of the spin downs, and with \begin{equation}
+F(\Lambda,y)=\prod_{j=1}^{y-1}\frac{ik_j-i\Lambda-c/2}{ik_{j+1}-i\Lambda+c/2},
+\end{equation}
+and \begin{equation}\label{EqYGSpinRapidityRelation}
+-\prod_{j=1}^{N}\frac{ik_j-i\Lambda_\alpha-c/2}{ik_{j}-i\Lambda_\alpha+c/2}=\prod_{\beta=1}^{M}\frac{-i\Lambda_\beta+i\Lambda_\alpha-c}{-i\Lambda_\beta+i\Lambda_\alpha+c}.
+\end{equation}
+One may verify that $ \Phi $ has total spin $ N-2M $.
+Yang then find \begin{equation}
+\mu_j(k,c,[N-M,M])=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta+-c/2}{ik_j-i\Lambda_\beta+c/2}.
+\end{equation}
+Thus the energy is determined by the equation\begin{equation}\label{EqYGPeriodicSpectrumCondition}
+\exp(ik_jL)=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta+-c/2}{ik_j-i\Lambda_\beta+c/2}.
+\end{equation}
+Taking the logarithm of \eqref{EqYGSpinRapidityRelation} and \eqref{EqYGPeriodicSpectrumCondition} adding certain intergers to get a well defined $ c\to\infty $ limit as we did in Section \ref{SectionLiebLinigerModel}, one finds \begin{equation}
+\begin{aligned}
+-\sum_{k\in\{k_j\}_j}\theta(2\Lambda-2k)&=2\pi J_\Lambda-\sum_{\Lambda'\in(\Lambda_\alpha)_\alpha}\theta(\Lambda-\Lambda')\\
+kL&=2\pi I_k-\sum_{\Lambda'\in\{\Lambda_\alpha\}_\alpha}\theta(2k-2\Lambda')
+\end{aligned}
+\end{equation}
+with the usual $ \theta(x)\coloneqq-2\arctan(x/c) $, and where for $ N $ even and $ M $ odd we have\begin{equation}
+\begin{aligned}
+J_\Lambda&\in\{-(M-1)/2,\ldots,(M-1)/2\},\\
+I_k&\in \{1-N/2,\ldots,N/2\}.
+\end{aligned}
+\end{equation}
+Going to the thermodynamic limit, \ie $ N,M,L\to\infty $ proportionally, on then find the equations for the energy \begin{equation}
+\begin{aligned}
+2\pi\sigma(\Lambda)&=-\int_{-B}^{B}\frac{2c\sigma(\Lambda')\diff \Lambda'}{c^2+(\Lambda-\Lambda')^2}+\int_{-Q}^{Q}\frac{4c\rho\diff \rho}{c^2+4(k-\Lambda)^2}\\
+2\pi\rho(k) &= 1+\int_{-B}^{B}\frac{4c\sigma(\Lambda')\diff \Lambda'}{c^2+4(k-\Lambda')^2}\\
+N/L=\int_{-Q}^{Q}\rho(k) \diff k,\quad&\quad M/L=\int_{-B}^{B}\sigma(\Lambda)\diff\Lambda,\\
+E/L&=\int_{-Q}^{Q}k^2\rho(k)\diff k.
+\end{aligned}
+\end{equation}
+
+
+
+
+
+
 
 
 

@@ -29,6 +29,22 @@ L.C. Evans and R.F. Gariepy.
 \newblock {\em Measure Theory and Fine Properties of Functions}.
 \newblock Studies in Advanced Mathematics. Taylor \& Francis, 1991.
 
+\bibitem[Fun81]{fung1981validity}
+Ming-Kong Fung.
+\newblock Validity of the bethe--yang hypothesis in the delta-function
+  interaction problem.
+\newblock {\em Journal of Mathematical Physics}, 22(9):2017--2019, 1981.
+
+\bibitem[Gau67]{gaudin1967systeme}
+M~Gaudin.
+\newblock Un systeme a une dimension de fermions en interaction.
+\newblock {\em Physics Letters A}, 24(1):55--56, 1967.
+
+\bibitem[Gau14]{gaudin2014bethe}
+Michel Gaudin.
+\newblock {\em The Bethe Wavefunction The Bethe Wavefunction}.
+\newblock Cambridge University Press, 2014.
+
 \bibitem[Gir60]{girardeau1960relationship}
 Marvin Girardeau.
 \newblock Relationship between systems of impenetrable bosons and fermions in
@@ -90,6 +106,11 @@ D.C. Mattis.
 M.~Reed and B.~Simon.
 \newblock {\em I: Functional Analysis}.
 \newblock Methods of Modern Mathematical Physics. Elsevier Science, 1981.
+
+\bibitem[Sut68]{sutherland1968further}
+Bill Sutherland.
+\newblock Further results for the many-body problem in one dimension.
+\newblock {\em Physical Review Letters}, 20(3):98, 1968.
 
 \bibitem[WJ91]{william1991representation}
 Fulton William and Harris Joe.
