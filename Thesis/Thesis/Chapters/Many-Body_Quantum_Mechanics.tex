@@ -472,13 +472,13 @@ I_k&\in \{1-N/2,\ldots,N/2\}.
 \end{aligned}
 \end{equation}
 Going to the thermodynamic limit, \ie $ N,M,L\to\infty $ proportionally, on then find the equations for the energy \begin{align}
-2\pi\sigma(\Lambda)&=-\int_{-B}^{B}\frac{2c\sigma(\Lambda')\diff \Lambda'}{c^2+(\Lambda-\Lambda')^2}+\int_{-Q}^{Q}\frac{4c\rho(k)\diff k}{c^2+4(k-\Lambda)^2}\label{EqYG1}\\
-2\pi\rho(k) &= 1+\int_{-B}^{B}\frac{4c\sigma(\Lambda')\diff \Lambda'}{c^2+4(k-\Lambda')^2}\label{EqYG2}\\
-N/L=\int_{-Q}^{Q}\rho(k) \diff k,\quad&\quad M/L=\int_{-B}^{B}\sigma(\Lambda)\diff\Lambda,\label{EqYG3}\\
-E/L&=\int_{-Q}^{Q}k^2\rho(k)\diff k \label{EqYG4},
+2\pi\sigma(\Lambda)&=-\int_{-B}^{B}\frac{2c\sigma(\Lambda')\diff \Lambda'}{c^2+(\Lambda-\Lambda')^2}+\int_{-Q}^{Q}\frac{4c f(k)\diff k}{c^2+4(k-\Lambda)^2}\label{EqYG1}\\
+2\pi f(k) &= 1+\int_{-B}^{B}\frac{4c\sigma(\Lambda')\diff \Lambda'}{c^2+4(k-\Lambda')^2}\label{EqYG2}\\
+\rho=N/L&=\int_{-Q}^{Q} f(k) \diff k,\quad M/L=\int_{-B}^{B}\sigma(\Lambda)\diff\Lambda,\label{EqYG3}\\
+e=E/L&=\int_{-Q}^{Q}k^2 f(k)\diff k \label{EqYG4},
 \end{align}
-with $ \rho,\sigma\geq 0 $. We see that taking $ B=\infty $, and integrating over \eqref{EqYG1}, one finds by interchanging the order of integration \begin{equation}
-2\pi M/L=-\int_{-\infty}^{\infty} 2\pi \sigma(\Lambda')\diff \Lambda'+ 2\pi \int_{-Q}^{Q}\rho(k)\diff k,
+with $  f,\sigma\geq 0 $. We see that taking $ B=\infty $, and integrating over \eqref{EqYG1}, one finds by interchanging the order of integration \begin{equation}
+2\pi M/L=-\int_{-\infty}^{\infty} 2\pi \sigma(\Lambda')\diff \Lambda'+ 2\pi \int_{-Q}^{Q} f(k)\diff k,
 \end{equation}
 where we used $ \int_{-\infty}^{\infty}\frac{\diff x}{1+x^2}=\pi $. So using $ \eqref{EqYG3} $ we find $ 2M=N $, and thus the total spin is $ S_{\text{tot.}}=0 $. By a theorem of Lieb and Mattis \cite{lieb1962theory}, this is then the total ground state.
 \subsection{Lower bound of the Yang-Gaudin model}
@@ -486,8 +486,8 @@ Now the following lemma will prove useful in obtaining a lower bound for the the
 \begin{lemma}\label{LemmaYGrho}
 	For any $ m\in \mathbb{N}_+ $, the equations \eqref{EqYG1}--\eqref{EqYG4} imply that \begin{equation}\label{EqYG5}
 	\begin{aligned}
-	2\pi \rho(k)=1+(-1)^{m+1}4\int_{-\infty}^{\infty}\frac{ (2m-1)c\sigma(\Lambda'')}{((2m-1)^2 c^2+4(k-\Lambda'')^2)}\diff\Lambda''\\
-	+2\sum_{n=0}^{m-1}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n)\rho(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
+	2\pi  f(k)=1+(-1)^{m+1}4\int_{-\infty}^{\infty}\frac{ (2m-1)c\sigma(\Lambda'')}{((2m-1)^2 c^2+4(k-\Lambda'')^2)}\diff\Lambda''\\
+	+2\sum_{n=0}^{m-1}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
 	\end{aligned}
 	\end{equation},
 \end{lemma}
@@ -495,10 +495,10 @@ Now the following lemma will prove useful in obtaining a lower bound for the the
 \begin{proof}
 	We give an induction proof: For the induction start, we notice that the $ m=1 $ statement is simply \eqref{EqYG2}. For the induction step, assume that \eqref{EqYG5} hold for $ m=m_0 $, we may plug the right-hand side of \eqref{EqYG1} into \eqref{EqYG5}. By Tonelli's theorem, we may interchange order of integration and we find\begin{equation}
 	\begin{aligned}
-	&2\pi \rho(k)-1=\\
+	&2\pi  f(k)-1=\\
 	&\frac{(-1)^{m_0+2}}{2\pi}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\frac{8c^2(2m_0-1)\sigma(\Lambda'')}{(c^2+(\Lambda'-\Lambda'')^2)((2m_0-1)^2c^2+4(k-\Lambda')^2)}\diff\Lambda'\diff\Lambda''\\
-	&+\frac{(-1)^{m_0+1}}{2\pi}\int_{-Q}^{Q}\int_{-\infty}^{\infty}\frac{4^2c^2(2m_0-1)\rho(k')}{(c^2+4(k'-\Lambda')^2)((2m_0-1)^2c^2+4(k-\Lambda')^2)}\diff\Lambda'\diff k'\\
-	&+2\sum_{n=0}^{m_0-1}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n)\rho(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
+	&+\frac{(-1)^{m_0+1}}{2\pi}\int_{-Q}^{Q}\int_{-\infty}^{\infty}\frac{4^2c^2(2m_0-1) f(k')}{(c^2+4(k'-\Lambda')^2)((2m_0-1)^2c^2+4(k-\Lambda')^2)}\diff\Lambda'\diff k'\\
+	&+2\sum_{n=0}^{m_0-1}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
 	\end{aligned}
 	\end{equation}
 	
@@ -512,48 +512,79 @@ Now the following lemma will prove useful in obtaining a lower bound for the the
 	
 	\begin{equation}
 	\begin{aligned}
-	2\pi \rho(k)=1+(-1)^{m_0+2}4\int_{-\infty}^{\infty}\frac{ (2(m_0+1)-1)c\sigma(\Lambda'')}{((2(m_0+1)-1)^2 c^2+4(k-\Lambda'')^2)}\diff\Lambda''\\
-	+2\sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n)\rho(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
+	2\pi  f(k)=1+(-1)^{m_0+2}4\int_{-\infty}^{\infty}\frac{ (2(m_0+1)-1)c\sigma(\Lambda'')}{((2(m_0+1)-1)^2 c^2+4(k-\Lambda'')^2)}\diff\Lambda''\\
+	+2\sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
 	\end{aligned}
 	\end{equation}
 	which proves the required result.
 \end{proof}
-We will aim at proving a lower bound by similar methods to those used in Section \ref{SectionLiebLinigerModel}. To this, notice that in Lemma \ref{LemmaYGrho}, the second term in \eqref{EqYG5} vanish in the limit $ m\to\infty $ by the estimate \begin{equation}
+We will aim at proving a lower bound. To do this, notice that in Lemma \ref{LemmaYGrho}, the second term in \eqref{EqYG5} vanish in the limit $ m\to\infty $ by the estimate \begin{equation}\label{EqYGLemma1bound}
 	\begin{aligned}
 	\int_{-\infty}^{\infty}\frac{ (2m-1)c\sigma(\Lambda'')}{((2m-1)^2 c^2+4(k-\Lambda'')^2)}\diff\Lambda''\leq \frac{1}{(2m-1)c}\int_{-\infty}^{\infty}\sigma(\Lambda'')\diff \Lambda''\\=\frac{M/L}{(2m-1)c}.
 	\end{aligned}
 	\end{equation}
-For the third term in \eqref{EqYG5}, we want to estimate the difference
+For the third term in \eqref{EqYG5}, we need the estimate of the following lemma:
+\begin{lemma} \label{LemmaYGbound:f}
+	For any $ m_0\in\mathbb{N}_+ $ we have 
+	\begin{equation}\label{EqYGLemma2bound}
+		\sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\leq \sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+Essentially we want to through away the $ (k-k')^2 $ in the denominator on the left-hand side of \eqref{EqYGLemma2bound} to get an upper bound. For all terms with positive coefficient, this can be done by the inequality
+\begin{equation}\label{EqYGLemma2bound2}
+\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'\geq \int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'.
+\end{equation}
+However, for the terms with a negative sign, this estimate cannot be used. Thus we use the following strategy instead:
+ In order to deal with the signs we estimate the differences
 \begin{equation}
 	\begin{aligned}
-	\Delta_n=&\left(\int_{-Q}^{Q}\frac{2\rho(k')}{2nc}\diff k'-\int_{-Q}^{Q}\frac{2c(2n)\rho(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\right)\\
-	&\quad-\left(\int_{-Q}^{Q}\frac{2\rho(k')}{2(n+1)c}\diff k'-\int_{-Q}^{Q}\frac{2c(2(n+1))\rho(k')}{((2(n+1))^2c^2+4(k-k')^2)}\diff k'\right).
+	\Delta_n=&\left(\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'-\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\right)\\
+	&\quad-\left(\int_{-Q}^{Q}\frac{2 f(k')}{2(n+1)c}\diff k'-\int_{-Q}^{Q}\frac{2c(2(n+1)) f(k')}{((2(n+1))^2c^2+4(k-k')^2)}\diff k'\right).
 	\end{aligned}
 \end{equation}
 A straightforward computation shows\begin{equation}
 \begin{aligned}
 &\Delta_n=\\
-&\int_{-Q}^{Q} \frac{2\rho(k')}{2n(n+1)c}\\&-\Bigg(\frac{2c(2n)\left[(2(n+1))^2c^2+4(k-k')^2\right]}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]}\\
-&\qquad \frac{-2c(2(n+1))\left[(2n)^2c^2+4(k-k')^2\right]}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]}\Bigg)\rho(k')\diff k'\\
-&=\int_{-Q}^{Q}\frac{2\rho(k')}{2n(n+1)c}\\&\quad -\frac{2c\cdot  8n (n+1)c^2-4c\cdot 4(k-k')^2}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]}\rho(k')\diff k'\\
-&\geq \int_{-Q}^{Q}\frac{4c\cdot 4(k-k')^2}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]}\rho(k')\diff k'\\
+&\int_{-Q}^{Q} \frac{2 f(k')}{2n(n+1)c}\\&-\Bigg(\frac{2c(2n)\left[(2(n+1))^2c^2+4(k-k')^2\right]}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]}\\
+&\qquad \frac{-2c(2(n+1))\left[(2n)^2c^2+4(k-k')^2\right]}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]}\Bigg) f(k')\diff k'\\
+&=\int_{-Q}^{Q}\frac{2 f(k')}{2n(n+1)c}\\&\quad -\frac{2c\cdot  8n (n+1)c^2-4c\cdot 4(k-k')^2}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]} f(k')\diff k'\\
+&\geq \int_{-Q}^{Q}\frac{4c\cdot 4(k-k')^2}{\left[(2n)^2c^2+4(k-k')^2\right]\left[(2(n+1))^2c^2+4(k-k')^2\right]} f(k')\diff k'\\
 &\geq 0
 \end{aligned}
 \end{equation}
 It follows for any $ m_0 $ that \begin{equation}
 \begin{aligned}
-\sum_{n=0}^{m_0}(-1)^{n+1}&\int_{-Q}^{Q}\frac{2c(2n)\rho(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\\
-&\leq\sum_{n=1}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2\rho(k')}{2nc}\diff k'-\sum_{l=1}^{\floor{m_0/2}}\Delta_{(2l-1)}
+\sum_{n=0}^{m_0}(-1)^{n+1}&\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\\
+&\leq\sum_{n=1}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'-\sum_{l=1}^{\floor{m_0/2}}\Delta_{(2l-1)}
 \\
-&\leq \sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2\rho(k')}{2nc}\diff k'.
+&\leq \sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'.
 \end{aligned}
 \end{equation}
-Here the first inequality is equality if $ m_0 $ is even, and the inequality when $ m_0 $ is odd follows from the simple estimate\begin{equation}
-\int_{-Q}^{Q}\frac{2\rho(k')}{2nc}\diff k'-\int_{-Q}^{Q}\frac{2c(2n)\rho(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\geq 0
-\end{equation}
-with $ n=m_0 $. Thus we find by Lemma \ref{LemmaYGrho} with $ m\to\infty $ \begin{equation}
-2\pi \rho(k) \leq 1+2\sum_{n=1}^{\infty}\frac{(1)^{n+1}}{n}\int_{-Q}^{Q}\frac{\rho(k')}{c}\diff k'=1+\frac{2\ln(2)}{c} \int_{-Q}^{Q}\rho(k')\diff k'.
-\end{equation}
+Here the first inequality is an \emph{equality} if $ m_0 $ is even, and the inequality when $ m_0 $ is odd follows from \eqref{EqYGLemma2bound2} with $ n=m_0 $.
+\end{proof}
+ We notice that we may upper bound $ f $:
+ \begin{lemma}\label{LemmaYG:fUpperBound}
+ 	Let $ f $ be the solution of \eqref{EqYG1}--\eqref{EqYG3}, then
+ 	\begin{equation}
+ 	\begin{aligned}
+ 	2\pi  f(k) \leq 1+2\sum_{n=1}^{\infty}\frac{(1)^{n+1}}{n}\int_{-Q}^{Q}\frac{ f(k')}{c}\diff k'=1+\frac{2\ln(2)}{c} \rho.
+ 	\end{aligned}
+ 	\end{equation}
+ \end{lemma}
+\begin{proof}
+	By Lemma \ref{LemmaYGrho} with $ m\to\infty $ using \eqref{EqYGLemma1bound} and Lemma \ref{LemmaYGbound:f} the result follows. 
+\end{proof}
+We are ready to give a lower bound for ground state energy of Yang-Gaudin model. 
+\begin{proposition}
+	Let $ e $ be the solution of \eqref{EqYG1}--\eqref{EqYG4}, then\begin{equation}
+	e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2.
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	We notice that the expression for $ e=\int_{-Q}^{Q}f(k)k^2\diff k $, given $ \int_{-Q}^{Q}f(k)\diff k=\rho $ \emph{and} $ f\leq K $, is minimized by having $ f=K\mathbbm{1}_{[-\rho/(2K),\rho /(2K)]} $, in which case $ \int_{-Q}^{Q}f(k)k^2\diff k=\frac{2}{3}K\left(\frac{\rho}{2K}\right)^3 $.
+	By Lemma \ref{LemmaYG:fUpperBound}, we find that we do have $ f\leq \frac{1}{2\pi}\left(1+\frac{2\ln(2)}{c}\rho\right) $, so it follows that $ e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2 $.
+\end{proof}
 
 
 
