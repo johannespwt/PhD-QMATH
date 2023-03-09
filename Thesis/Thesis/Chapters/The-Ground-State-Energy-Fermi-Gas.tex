@@ -1,4 +1,5 @@
 \chapter{The ground state energy of the one dimensional dilute spin--$ \frac{1}{2} $ Fermi gas}
+\label{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}
 In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter we seek to analyse instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Thus we will focus on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
 \section{The model}
 We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, say in the ball $ B_{R_0} $, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
@@ -43,7 +44,7 @@ where $ \tilde{N}=N/M $ and $ x_i^m\coloneqq x_{m\tilde{N}+i} $ and the superscr
 We saw in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the scattering solution, when particles are close, leads to correction to the free Fermi energy that are of order $ 2\rho a_{e/o} E_F $. Since $ \operatorname{P}_s^{i,j}=1/4-S_i\cdot S_j $ and $ \operatorname{P}_t^{i,j}=3/4+S_i\cdot S_j $, we expect (ignoring the effect of $ \eta $) that the correction we obtain from the variational state $ \Psi_\chi $ is of the order $$
 2\rho\left( (a_o-a_e) \braket{\chi \left\vert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
 $$ 
-The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\geq a_e $, it is given by the ground state of the periodic antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground is known, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the antiferromagnetic Heisenberg chain is known to be \cite{hult1938,mattis2012theory} \begin{equation}
+The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\geq a_e $, it is given by the ground state of the periodic antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground is known, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the antiferromagnetic Heisenberg chain is known to be \cite{hult1938,mattis2012theory} (See lemma \ref{LemmaHeisenbergChainFiniteNEstimate} below) \begin{equation}
 \braket{\text{GS}_{\text{HAF}} \left \lvert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\rvert \text{GS}_{\text{HAF}}}=\frac{1}{4}-\ln(2)+\mathcal{O}(1/N).
 \end{equation}
 Hence we find the correction $ 2\rho \left(\ln(2)a_e+(1-\ln(2))a_o\right)E_F $ as desired.
@@ -515,6 +516,25 @@ when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear t
 
 
 \section{Lower bound}
+In this section, we will further motivate the Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}, however a complete proof of a lower bound matching the upper bound in Theorem \ref{TheoremUpperBoundSpin1/2Fermi} is still missing. One may try to apply the same technique as was used in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, however, we will see that there are obstacles in this strategy.\\
+\subsection{Solvable cases}
+To begin with, we may analyze the solvable models at hand. We will see that these are in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
+
+\textbf{The hard core model}: The first solvable case is the hard core model, with $ v=\infty \mathbbm{1}_{[-a,a]} $, with $ a_e=a_o=a $ by Example \ref{ExampleScatteringLengthHardCore}. In this case we have \begin{equation}
+E=E_F\left(L\to \frac{1}{1-\rho a}L\right)=N\frac{\pi^2}{3}\rho^2\left(1-\rho a\right)^{-2}+\rho^2\mathcal{O}(1),
+\end{equation} 
+with $ E_F\left(L\to \frac{1}{1-\rho a}L\right) $ denoting the spin polarized free Fermi energy in a box of length $ \frac{1}{1-\rho a}L $. Of course since since $ a_e=a_o=a $ in this case we have \begin{equation}
+E=N\frac{\pi^2}{3}\rho^2\left(1-\ln(2)\rho a_e-(1-\ln(2))\rho a_o\right)^{-2}+\rho^2\mathcal{O}(1),
+\end{equation}
+which match Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
+
+\textbf{The Yang-Gaudin model}:
+This model was studied in Section \ref{SectionYG}. In this case we have $ a_e=-2/c $ and $ a_o=0 $ by Example \ref{ExampleScatteringLengthDelta} Of course the upper bound from Theorem \ref{TheoremUpperBoundSpin1/2Fermi} applies. Furthermore, we found in Proposition \ref{PropositionYGLowerBound} the bound\begin{equation}
+e=\lim\limits_{\substack{N,L\to\infty\\
+N/L=\rho}}E/L\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}\right].
+\end{equation}
+Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho R)^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
+
 
 
 \appendix

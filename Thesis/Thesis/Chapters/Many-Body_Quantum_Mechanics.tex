@@ -204,10 +204,10 @@ with $ R>R_0 $. Then we have
 	\end{equation}
 \end{theorem}
 We note that in $ d>3 $, the scattering length is not actually a length in the sense of units. This is purely an artifact of the conventions used in the definition.\\
-The definition above defined only the s-wave scattering length. One can proceed to define different kinds of scattering lengths depending on which asymptotic behavior (boundary condition) we demand of the minimizer of $ \mathcal{E}_R $. We will be mostly interested in a different kind of scattering length in dimension $ d=1 $. Thus we define
+The definition above defined only the s-wave scattering length. One can proceed to define different kinds of scattering lengths depending on which asymptotic behavior (boundary condition) we demand of the minimizer of $ \mathcal{E}_R $. We will be mostly interested in different kinds of scattering lengths in dimension $ d=1 $, where the masses $ m_1=m_2=1/2 $. Thus we define the scattering lengths of interest:
 \begin{definition}\label{DefinitionEvenScatteringLength}
 	Let $ f_e\in H^1(\R) $ be the unique solutions of the equation\begin{equation}\label{EqEvenScatteringEquation}
-	-f_e''(x)+v(x)f_e=0,
+	-f_e''(x)+\frac{1}{2}v(x)f_e=0,
 	\end{equation}
 	in the sense of distributions on $ B_R $, with boundary conditions $ f_e(R)=1 $ and $ f_e(-R)=1 $. Then we have \begin{equation}
 	\int_{B_R} 2\abs{f_e'}^2+v \abs{f_e}^2=\frac{4}{R-a_e},
@@ -216,7 +216,7 @@ The definition above defined only the s-wave scattering length. One can proceed 
 \end{definition}
 \begin{definition}\label{DefinitionOddScatteringLenght}
 	Let $ f_o\in H^1(\R) $ be the unique solutions of the equation\begin{equation}\label{EqOddScatteringEquation}
-	-f_o''(x)+v(x)f_o=0,
+	-f_o''(x)+\frac{1}{2}v(x)f_o=0,
 	\end{equation}
 	in the sense of distributions on $ B_R $, with boundary conditions $ f_o(R)=1 $ and $ f_o(-R)=-1 $. Then we have \begin{equation}
 	\int_{B_R} 2\abs{f_o'}^2+v \abs{f_o}^2=\frac{4}{R-a_o},
@@ -227,7 +227,7 @@ The definition above defined only the s-wave scattering length. One can proceed 
 	We did not prove uniqueness of the solutions above. In Definition \ref{DefinitionEvenScatteringLength}, it follows from Theorem \ref{TheoremScatteringLength} by noting that any solution of \eqref{EqEvenScatteringEquation} is a minimizer of $ \mathcal{E}_R $. In Definition \ref{DefinitionOddScatteringLenght} it follows from the fact that by Theorem \ref{TheoremScatteringLength} there is a unique solution that vanishes at the origin (simply consider the solution of \eqref{EqEvenScatteringEquation} with potential $ v'=v+\infty \delta_0 $ and multiply by $ \text{sign}(x) $). Thus the odd part of $ f_o $ is unique. The even part of $ f_o $ vanishes at $ x=R $, and since \eqref{EqOddScatteringEquation} is the Euler-Lagrange equation for $ \mathcal{E}_R $, we see that $ (f_o)_{\text{even}}=0 $, since this is the only local extremum of $ \mathcal{E}_R $ with zero boundary conditions.
 \end{remark}
 \begin{remark}
-	The even wave scattering length, $ a_e $, need not be non-negative as is the case for $ d\geq 2 $. However, we do have $ a_o\geq 0 $. This is easily seen by noticing that the minimizer of \begin{equation}
+	The even wave scattering length, $ a_e $, need not be non-negative as is the case for the $ s $-wave scattering length in $ d\geq 2 $. However, we do have $ a_o\geq 0 $. This is easily seen by noticing that the minimizer of \begin{equation}
 	\int_{B_R} 2\abs{f_o'}^2,
 	\end{equation}
 	with boundary condition $ f(R)=-f(-R)=1 $, is $ f(x)=(1/R) x $ on $ B_R $, which has energy $ \frac{4}{R} $. Thus adding a positive potential must increase the energy. \\
@@ -235,11 +235,44 @@ The definition above defined only the s-wave scattering length. One can proceed 
 	\eqref{EqOddScatteringEquation} is exactly the radial scattering equation in $ d=3 $ when restricted to $ [0,R] $.
 \end{remark}
 \begin{remark}
-	We also have $ a_o\geq a_e $ by the fact that $ \abs{f_o} $ is a trial state for $ \mathcal{E}_R $ with even boundary conditions, but energy $ 4/(R-a_o) $.
+	We also have $ a_o\geq a_e $ by the fact that $ \abs{f_o} $ is a trial state for $ \mathcal{E}_R $ with even boundary conditions, and its energy is $ 4/(R-a_o)\geq 4/(R-a_e) $.
 \end{remark}
+We give two examples of the scattering length in the following:
+\begin{example}\label{ExampleScatteringLengthDelta}
+	Consider $ v=c\delta $. For the even wave scattering length, we solve, in this case, the equation \begin{equation}
+	f_e''(x)=0,
+	\end{equation}
+	on the interval $ [0,R] $, with the boundary condition $ f'(0_+)=\frac{c}{2}f(0) $ and $ f(R)=1 $.
+	The solution is $ f_e(x)=\frac{x+2/c}{R+2/c} $, for $ x\in[0,R] $. We conclude that $ a_e=-2/c $.\\
+	For the odd wave scattering length, we notice that the $ v $, does not change the scattering solution from the $ v=0 $ case, and we have $ f_o(x)=\frac{x}{R} $ and we conclude $ a_o=0 $.
+\end{example}
+\begin{example}\label{ExampleScatteringLengthHardCore}
+	Consider $ v=\infty\mathbbm{1}_{[-R_0,R_0]} $, \ie \emph{the hard core}. In this case \begin{equation}
+	f_{e/o}''(x)=0,\text{ for } x\in(R_0,R]
+	\end{equation}
+	and $ f_{e/o}(x)=0 $ for $ x\in [0,R_0] $ constitutes scattering equation on $ [0,R] $. Thus find that \begin{equation}\label{key}
+	f_{e/o}(x)=\begin{cases}
+	0& x\in[0,R_0]\\
+	\frac{x-R_0}{R-R_0}& x\in(R_0,R]
+	\end{cases}
+	\end{equation}
+	solves the scattering equation. We conclude that $ a_e=a_o=R_0 $.
+\end{example}
 
 \section{The Ground state Energy of Dilute Bose Gases}
-To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. 
+To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. To begin with we define what is meant by "dilute":
+\begin{definition}
+	For the $ d $-dimenional ($ d=1,2,3 $) system of bosons, with the formal Hamiltonian \begin{equation}
+	H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N}v(x_i-x_j),
+	\end{equation}
+	we say that the system is in \textbf{ the dilute limit} or that the Bose gas is \textbf{dilute} if $ \rho^{1/d} \abs{a}\ll 1 $. Notice that the absolute value on $ a $ is only important when $ d=1 $, since only then can the $ s $-wave scattering length be negative.
+\end{definition}
+\begin{definition}
+	For the one dimensional system of fermions with the formal Hamiltonian \begin{equation}
+	H=-\sum_{i=1}^{N}\partial^2_i+\sum_{1\leq i<j\leq N}v(x_i-x_j),
+	\end{equation}
+	we say that the system is in \textbf{ the dilute limit} or that the Fermi gas is \textbf{dilute} if $ \rho \max(\abs{\abs{a_e},a_o})\ll 1 $.
+\end{definition}
 
 
 \section{The Lieb-Liniger Model: A Solvable Model in One Dimension} \label{SectionLiebLinigerModel}
@@ -346,6 +379,7 @@ Now to give a lower bound, we notice that the extension can be approximated by T
 \tilde{\Psi}_c(y_1=y_2,y_{i+1}>y_i+R \text{ for all } i\geq 2)=\tilde{\Psi}_c(x_0)-R\nabla_n \tilde{\Psi}_c(x_0)+\frac{1}{2}R^2\nabla_n^2\tilde{\Psi}_c(x_0)+\ldots
 \end{equation}
 \section{The Yang-Gaudin Model}
+\label{SectionYG}
 Similarly to the Lieb-Liniger model, the Yang-Gaudin model is exactly solvable, in the sense a generalized Bethe ansatz. This was originally done in \cite{yang1967some}, and we shall briefly review the methods in this section.
 The model of interest describes $ N $ spin--$ 1/2 $ fermions and is given using the same formal Hamiltonian as for the Lieb-Liniger model\begin{equation}\label{EqYGHamiltonian}
 H_{YG}=-\sum_{i=1}^{N}\partial_i^2+2c\sum_{1\leq i<j\leq N}\delta(x_i-x_j),
@@ -415,7 +449,7 @@ must be defined in the spin subspace
 \end{ytableau}_{\text{spin}}.
 \end{equation*}
 We notice that this restrict the spacial symmetries that spin--$ 1/2 $ fermions can posses, since the spin diagrams have at most two rows. In the following, we will denote the diagram consisting of a row with $ N-M $ boxes and a row with $ M $ boxes by $ [N-M,M] $, and diagrams consisting of a column of $ N-M $ boxes and a column of $ M $ boxes by $ [2^{M},1^{N-2M}] $. 
-\subsection{Solution by Yang-Bethe ansatz}
+\subsection{Recap of the findings of Yang: Solution by Bethe-Yang ansatz}
 The solution found by Yang in \cite{yang1967some}, relies on a generalization of the Bethe ansatz, which we saw in the previous section solved the Lieb-Liniger model. The generalized Bethe ansatz is also known as the Yang-Bethe hypothesis. We recap here, without proof, the findings of Yang. For references on these results we point to \cite{gaudin1967systeme,yang1967some,sutherland1968further,fung1981validity,gaudin2014bethe}. \\
 The model is solved by applying a standard Bethe ansatz state: One the sector $ \{\sigma\} $ define \begin{equation}
 \psi=\sum_{P\in S_N} \xi_{P,\sigma} \exp\left(k_{P_1} x_{\sigma_1}+\ldots+k_{P_N}x_{\sigma_N}\right),
@@ -576,16 +610,16 @@ Here the first inequality is an \emph{equality} if $ m_0 $ is even, and the ineq
 	By Lemma \ref{LemmaYGrho} with $ m\to\infty $ using \eqref{EqYGLemma1bound} and Lemma \ref{LemmaYGbound:f} the result follows. 
 \end{proof}
 We are ready to give a lower bound for ground state energy of Yang-Gaudin model. 
-\begin{proposition}
+\begin{proposition}\label{PropositionYGLowerBound}
 	Let $ e $ be the solution of \eqref{EqYG1}--\eqref{EqYG4}, then\begin{equation}
 	e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2.
 	\end{equation}
 \end{proposition}
 \begin{proof}
-	We notice that the expression for $ e=\int_{-Q}^{Q}f(k)k^2\diff k $, given $ \int_{-Q}^{Q}f(k)\diff k=\rho $ \emph{and} $ f\leq K $, is minimized by having $ f=K\mathbbm{1}_{[-\rho/(2K),\rho /(2K)]} $, in which case $ \int_{-Q}^{Q}f(k)k^2\diff k=\frac{2}{3}K\left(\frac{\rho}{2K}\right)^3 $.
-	By Lemma \ref{LemmaYG:fUpperBound}, we find that we do have $ f\leq \frac{1}{2\pi}\left(1+\frac{2\ln(2)}{c}\rho\right) $, so it follows that $ e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2 $.
+	We notice that the expression for $ e=\int_{-Q}^{Q}f(k)k^2\diff k $, given $ \int_{-Q}^{Q}f(k)\diff k=\rho $ \emph{and} $ f\leq K $, is minimized by having $ f=K\mathbbm{1}_{[-\rho/(2K),\rho /(2K)]} $, in which case $ \int_{-Q}^{Q}f(k)k^2\diff k=\frac{2}{3}K\left(\frac{\rho}{2K}\right)^3 $. That $ \rho/(2K)\leq Q $ follows straight away from $ \rho =\int_{-Q}^{Q}f(k)\diff k \leq 2KQ $.
+	By Lemma \ref{LemmaYG:fUpperBound}, we find $ f\leq \frac{1}{2\pi}\left(1+\frac{2\ln(2)}{c}\rho\right) $, so it follows that $ e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2 $.
 \end{proof}
-
+We will, in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}, find a matching upper bound for the Yang-Gaudin energy in the dilute limit.
 
 
 
