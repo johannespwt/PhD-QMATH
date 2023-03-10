@@ -484,7 +484,7 @@ E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
 where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}
 H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}_s+c\operatorname{P}_t\right)\delta(x_i-x_j),
 \end{equation}
-However the domain is taken to be spin wave functions that are \emph{symmetric in the spacial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
+However the domain is taken to be wave functions that are \emph{symmetric in the spacial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
 \begin{corollary}[Spatially symmetric, spin dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}
 	Let $ v=v_s\operatorname{P}_s+v_t\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ spacially symmetric gas satisfies\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_s+(1-\ln(2))a_t\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
@@ -512,7 +512,7 @@ However the domain is taken to be spin wave functions that are \emph{symmetric i
 We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} (up to a small error in the dilute limit) is \begin{equation}
 E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\right),
 \end{equation}
-when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $. However, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy to leading order in this limit.
+when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $. However, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy, to leading order, in this limit.
 
 
 \section{Lower bound}
@@ -534,6 +534,49 @@ e=\lim\limits_{\substack{N,L\to\infty\\
 N/L=\rho}}E/L\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}\right].
 \end{equation}
 Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho R)^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
+
+\subsection{The general case}
+In the case of a general potential, $ v $, where the resulting model is not solvable, we migth attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that \textbf{Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}} does not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modifed slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
+\begin{lemma}[Dyson's lemma spin--$ 1/2 $ fermions]
+	Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\C^2\right)^2\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\C^2\right)^2 \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
+	\begin{equation}
+	\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\overline{\varphi}\left(\frac{1}{R-a_e}\operatorname{P}_s+\frac{1}{R-a_o}\operatorname{P}_t\right)\left(\delta_R+\delta_{-R}\right)\varphi,
+	\end{equation}
+	where $ a $ is the s-wave scattering length.
+\end{lemma}
+\begin{proof}
+	The lemma follows straigthforwardly from the Definitions \ref{DefinitionEvenScatteringLength} and \ref{DefinitionOddScatteringLenght}.
+\end{proof}
+Thus we may prove the equivalent of Lemma 23 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: In the following $ \Psi $ denotes the spin--$ 1/2 $ fermionic (Neumann) ground state of \begin{equation}
+H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N}v(x_i-x_j).
+\end{equation}	
+We shall also define the contionuous function $ \psi\in \left(L^2([0,L-(n-1)R])\otimes\C^2\right)^{\otimes N} $, with $ R\geq \max\left(R_0,2\abs{a_e},2a_o\right)  $, such that for $ 0\leq x_1\leq\dots\leq x_n\leq \ell-(n-1)R $
+\begin{equation}
+\label{Definition:psi}
+\psi(x_1,x_2,\dots,x_n):=\Psi(x_1,R+x_2,\dots,(n-1)R+x_n), 
+\end{equation}
+ and extended by spacial symmtry.
+	\begin{lemma}\label{LemmaNormBoundEpsilon}
+	Let $R>\max\left(R_0,2\abs{a}\right) $ and $ \epsilon\in[0,1] $. For $ \psi $ defined in \eqref{defpsi},
+	\begin{equation}
+	\begin{aligned}
+	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(n,\tilde{\ell},\frac{2\epsilon}{R-a}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}).
+	\end{aligned}
+	\end{equation}
+	where $ \tilde{\ell}:=\ell-(n-1)R $ and the superscirpt ``$ N $" denotes Neumann boundary condition.
+\end{lemma}
+\begin{proof}
+	Splitting the energy functional in two parts, and using Lemma \ref{LemmaNormLoss} on one term and Lemma \ref{LemmaDyson} on the other (see also \eqref{eqidea}), we find 
+	\begin{equation}
+	\begin{aligned}
+	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\epsilon\sum_{i}\frac{1}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
+	\end{aligned}
+	\end{equation}
+	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $ and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDyson} by dividing the integration domain into Voronoi cells, and restricting to the cell around particle $ i $.\\
+	With use of Lemma \ref{LemmaNormLoss} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger model (since the two delta functions collapse to a single delta of twice the strength when volume $R$ is removed between particles), we obtain\begin{equation}
+	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LL}^N \left(n,\tilde{\ell},\frac{2\epsilon}{R-a}\right)\braket{\psi|\psi}+ \frac{(1-\epsilon)}{R^2}\text{const. }(1-\braket{\psi|\psi}).
+	\end{equation}
+\end{proof}
 
 
 
