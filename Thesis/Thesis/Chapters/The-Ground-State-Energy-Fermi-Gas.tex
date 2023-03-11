@@ -481,8 +481,8 @@ Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_
 An interesting application of a version of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} given below in Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In his paper, an upper bound is given by a trial state argument in the case $ c>c' $ \begin{equation}\label{EqGirardeauUpperBoundLLH}
 E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
 \end{equation}
-where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}
-H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}_s+c\operatorname{P}_t\right)\delta(x_i-x_j),
+where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}\label{EqHamiltonianLLH}
+H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}^{i,j}_s+c\operatorname{P}^{i,j}_t\right)\delta(x_i-x_j),
 \end{equation}
 However the domain is taken to be wave functions that are \emph{symmetric in the spacial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
 \begin{corollary}[Spatially symmetric, spin dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}
@@ -536,8 +536,9 @@ N/L=\rho}}E/L\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}\
 Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho R)^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 
 \subsection{The general case}
-In the case of a general potential, $ v $, where the resulting model is not solvable, we migth attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that \textbf{Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}} does not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modifed slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
+In the case of a general potential, $ v $, where the resulting model is not solvable, we migth attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} does not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modifed slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
 \begin{lemma}[Dyson's lemma spin--$ 1/2 $ fermions]
+	\label{LemmaDysonSpin1/2Fermi}
 	Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\C^2\right)^2\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\C^2\right)^2 \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
 	\begin{equation}
 	\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\overline{\varphi}\left(\frac{1}{R-a_e}\operatorname{P}_s+\frac{1}{R-a_o}\operatorname{P}_t\right)\left(\delta_R+\delta_{-R}\right)\varphi,
@@ -550,33 +551,69 @@ In the case of a general potential, $ v $, where the resulting model is not solv
 Thus we may prove the equivalent of Lemma 23 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: In the following $ \Psi $ denotes the spin--$ 1/2 $ fermionic (Neumann) ground state of \begin{equation}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N}v(x_i-x_j).
 \end{equation}	
-We shall also define the contionuous function $ \psi\in \left(L^2([0,L-(n-1)R])\otimes\C^2\right)^{\otimes N} $, with $ R\geq \max\left(R_0,2\abs{a_e},2a_o\right)  $, such that for $ 0\leq x_1\leq\dots\leq x_n\leq \ell-(n-1)R $
+We shall also define the contionuous function $ \psi\in \left(L^2([0,L-(n-1)R])\otimes\C^2\right)^{\otimes N} $, with $ R\geq \max\left(R_0,2\abs{a_e},2a_o\right)  $, such that for $ 0\leq x_1\leq\dots\leq x_n\leq L-(n-1)R $
 \begin{equation}
 \label{Definition:psi}
 \psi(x_1,x_2,\dots,x_n):=\Psi(x_1,R+x_2,\dots,(n-1)R+x_n), 
 \end{equation}
  and extended by spacial symmtry.
-	\begin{lemma}\label{LemmaNormBoundEpsilon}
-	Let $R>\max\left(R_0,2\abs{a}\right) $ and $ \epsilon\in[0,1] $. For $ \psi $ defined in \eqref{defpsi},
+	\begin{lemma}\label{LemmaNormBoundEpsilonSpin1/2Fermi}
+	Let $R>\max\left(R_0,2\abs{a}\right) $ and $ \epsilon\in[0,1] $. For $ \psi $ defined in \eqref{Definition:psi},
 	\begin{equation}
 	\begin{aligned}
-	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(n,\tilde{\ell},\frac{2\epsilon}{R-a}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}).
+	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}).
 	\end{aligned}
 	\end{equation}
-	where $ \tilde{\ell}:=\ell-(n-1)R $ and the superscirpt ``$ N $" denotes Neumann boundary condition.
+	where $ \tilde{L}:=L-(n-1)R $, the superscirpt ``$ N $" denotes Neumann boundary condition, and $ E_{LLH}(N,L,c',c) $ is the ground state energy of the Lieb-Liniger-Heisenberg model in \eqref{EqHamiltonianLLH}.
 \end{lemma}
 \begin{proof}
-	Splitting the energy functional in two parts, and using Lemma \ref{LemmaNormLoss} on one term and Lemma \ref{LemmaDyson} on the other (see also \eqref{eqidea}), we find 
+	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: Splitting the energy functional in two parts, and using Lemma 21 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
 	\begin{equation}
 	\begin{aligned}
-	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\epsilon\sum_{i}\frac{1}{R-a}\delta(\mathfrak{r}_i(x)-R)\abs{\Psi}^2\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
+	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\overline{\Psi}\epsilon\sum_{i}\delta(\mathfrak{r}_i(x)-R)\left(\frac{1}{R-a_e}\operatorname{P}_s^{i,j_i}+\frac{1}{R-a_o}\operatorname{P}_t^{i,j_i}\right)\Psi\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
 	\end{aligned}
 	\end{equation}
-	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $ and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDyson} by dividing the integration domain into Voronoi cells, and restricting to the cell around particle $ i $.\\
-	With use of Lemma \ref{LemmaNormLoss} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger model (since the two delta functions collapse to a single delta of twice the strength when volume $R$ is removed between particles), we obtain\begin{equation}
-	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LL}^N \left(n,\tilde{\ell},\frac{2\epsilon}{R-a}\right)\braket{\psi|\psi}+ \frac{(1-\epsilon)}{R^2}\text{const. }(1-\braket{\psi|\psi}).
-	\end{equation}
+	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $, $ j_i\coloneqq j $ with $ \mathfrak{r}_i(x)=\abs{x_i-x_j} $ is unique a.e., and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDysonSpin1/2Fermi} in the following manner: For each term in the sum $ \sum_{i} $, fix all particles $ x_j\neq x_i $, then divide the integration domain in $ x_i $ into Voronoi cells around all remaining particles, and integrate over all Voronoi cells individually.\\
+	With use of Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model (since the two delta functions collapse to a single delta of twice the strength when volume $R$ is removed between particles), we obtain\begin{equation*}
+	\begin{aligned}
+	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}),
+	\end{aligned}
+	\end{equation*}
+	which is the desired result.
 \end{proof}
+We may also prove the equivalent of Lemma 24 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, by using that $ E_{LLH}(N,\tilde{L},c',c)\geq E_{LL}(N.\tilde{L},c') $ when $ c>c' $.
+	\begin{lemma}\label{LemmaImprovedMassBoundSpin1/2Fermi}
+	For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\max(\abs{a_e},a_o,R_0) $ we have
+	\begin{equation}\label{EqImprovedMassBoundSpin1/2Fermi}
+	\begin{aligned}
+	\braket{\psi|\psi} \geq 1-\textnormal{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
+	\end{aligned}
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	We mimic the proof of Lemma 24 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: From the known upper bound, \ie Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, and by Lemma \ref{LemmaNormBoundEpsilonSpin1/2Fermi} with $ \epsilon=1/2 $, it follows that 
+    \begin{equation}
+    \begin{aligned}
+    N\frac{\pi^2}{3}\rho^2\left(1+2\rho\left( \ln(2)a_e+(1-\ln(2)a_o) \right)+\text{const. }(\rho R)^{6/5}\right)\\\geq E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right)\braket{\psi|\psi}+ \frac{1}{16R^2}(1-\braket{\psi|\psi}).
+    \end{aligned}
+    \end{equation}
+	Subtracting $ E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right) $ on both sides, and using $$ E_{LLH}(N,\tilde{L},c',c)\geq E_{LL}(N.\tilde{L},c'), $$ and Lemma 18 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on the left-hand side, we find\begin{equation}
+	\begin{aligned}
+	&n\frac{\pi^2}{3}\Bigg(\rho^2\left(1+2\rho\left( \ln(2)a_e+(1-\ln(2)a_o) \right)+\text{const. }(\rho R)^{6/5}\right)\\&\qquad \qquad\qquad\qquad\qquad-\tilde{\rho}^2\left(1-4\tilde{\rho} (R-a_e)-\text{const. }n^{-2/3}\right)\Bigg)\\
+	&\geq  \left(\frac{1}{16R^2}-E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right)\right)(1-\braket{\psi|\psi}),
+	\end{aligned}
+	\end{equation}
+	with $ \tilde{\rho}=n/\tilde{\ell}=\rho/(1-(\rho-1/\ell)R)$.\\
+	Using the upper bound $ E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right)\leq n\frac{\pi^2}{3}\tilde{\rho}^2 $ on the right-hand side, as well as $ 2\rho \geq\tilde{\rho}\geq \rho(1+\rho R)$, we find
+	\begin{equation}
+	\begin{aligned}
+	\text{const. }n\rho^2R^2\left(\rho R+(\rho R)^{6/5}+n^{-2/3}\right)&\geq \left(\frac{1}{16}-R^2n\frac{4\pi^2}{3}\rho^2\right)\left(1-\braket{\psi|\psi}\right).
+	\end{aligned}
+	\end{equation}
+	It follows that we have \begin{equation}
+	\braket{\psi|\psi}\geq 1-\text{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
+	\end{equation}
+\end{proof}.
 
 
 
