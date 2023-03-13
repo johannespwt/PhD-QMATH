@@ -564,17 +564,17 @@ We shall also define the contionuous function $ \psi\in \left(L^2([0,L-(n-1)R])\
 	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}).
 	\end{aligned}
 	\end{equation}
-	where $ \tilde{L}:=L-(n-1)R $, the superscirpt ``$ N $" denotes Neumann boundary condition, and $ E_{LLH}(N,L,c',c) $ is the ground state energy of the Lieb-Liniger-Heisenberg model in \eqref{EqHamiltonianLLH}.
+	where $ \tilde{L}:=L-(n-1)R $, the superscript ``$ N $" denotes Neumann boundary condition, and $ E_{LLH}(N,L,c',c) $ is the ground state energy of the Lieb-Liniger-Heisenberg model in \eqref{EqHamiltonianLLH}.
 \end{lemma}
 \begin{proof}
-	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: Splitting the energy functional in two parts, and using Lemma 21 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
+	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): Splitting the energy functional in two parts, and using Lemma 21 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
 	\begin{equation}
 	\begin{aligned}
 	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\overline{\Psi}\epsilon\sum_{i}\delta(\mathfrak{r}_i(x)-R)\left(\frac{1}{R-a_e}\operatorname{P}_s^{i,j_i}+\frac{1}{R-a_o}\operatorname{P}_t^{i,j_i}\right)\Psi\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
 	\end{aligned}
 	\end{equation}
-	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $, $ j_i\coloneqq j $ with $ \mathfrak{r}_i(x)=\abs{x_i-x_j} $ is unique a.e., and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDysonSpin1/2Fermi} in the following manner: For each term in the sum $ \sum_{i} $, fix all particles $ x_j\neq x_i $, then divide the integration domain in $ x_i $ into Voronoi cells around all remaining particles, and integrate over all Voronoi cells individually.\\
-	With use of Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model (since the two delta functions collapse to a single delta of twice the strength when volume $R$ is removed between particles), we obtain\begin{equation*}
+	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $, $ j_i\coloneqq j $, with $ \mathfrak{r}_i(x)=\abs{x_i-x_j} $, is unique a.e., and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDysonSpin1/2Fermi} in the following manner: For each term in the sum $ \sum_{i} $, fix all particles $ x_j\neq x_i $, then divide the integration domain in $ x_i $ into Voronoi cells around all remaining particles, and integrate over all Voronoi cells individually.\\
+	With use of Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model, we obtain\begin{equation*}
 	\begin{aligned}
 	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}),
 	\end{aligned}
@@ -591,7 +591,7 @@ We may also prove the equivalent of Lemma 24 of Chapter \ref{ChapterTheGroundSta
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	We mimic the proof of Lemma 24 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: From the known upper bound, \ie Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, and by Lemma \ref{LemmaNormBoundEpsilonSpin1/2Fermi} with $ \epsilon=1/2 $, it follows that 
+	We mimic the proof of Lemma 24 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): From the known upper bound, \ie Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, and by Lemma \ref{LemmaNormBoundEpsilonSpin1/2Fermi} with $ \epsilon=1/2 $, it follows that 
     \begin{equation}
     \begin{aligned}
     N\frac{\pi^2}{3}\rho^2\left(1+2\rho\left( \ln(2)a_e+(1-\ln(2)a_o) \right)+\text{const. }(\rho R)^{6/5}\right)\\\geq E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right)\braket{\psi|\psi}+ \frac{1}{16R^2}(1-\braket{\psi|\psi}).
@@ -613,7 +613,79 @@ We may also prove the equivalent of Lemma 24 of Chapter \ref{ChapterTheGroundSta
 	It follows that we have \begin{equation}
 	\braket{\psi|\psi}\geq 1-\text{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
 	\end{equation}
-\end{proof}.
+\end{proof}
+We continue the generalizations from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and prove the following equivalent of Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}:
+\begin{proposition}
+	\label{PropositionLowerBoundSpecNSpin1/2Fermi}
+	For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\max(\abs{a_e},a_o,R_0) $ we have \begin{equation}
+	\begin{aligned}
+	E^N(N,L)\geq E_{LLH}^N&\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\\&\times\left(1-\textnormal{const.}\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right)\right).
+	\end{aligned}
+	\end{equation}
+\end{proposition}
+\begin{proof}
+	This follow by using Lemma \ref{LemmaNormBoundEpsilonSpin1/2Fermi} with $ \epsilon=1 $ and \ref{LemmaImprovedMassBoundSpin1/2Fermi}.
+\end{proof}
+We now see that this is where the strategy of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} is obstructed. The obstruction lies with the Lieb-Liniger-Heisenberg model not being Yang-Baxter solvable, meaning that the Bethe ansatz approach no longer gives exact solutions for the eigenvalue problem, as the Yang-Baxter equation is no longer satisfied. This being said, there is still hope that one might obtain a tight lower bound for the ground state energy of the Lieb-Linger-Heisenberg model in the dilute limit. We may even conjecture such a lower bound:
+\begin{conjecture}\label{ConjectureLLHGroundStateEnergy}
+	Let $ E_{LLH} $ denote the ground state energy of the Lieb-Liniger-Heisenberg model \eqref{EqHamiltonianLLH}. Then we have \begin{equation}
+	E_{LLH}\geq N\frac{\pi^2}{3}\rho^2\left(1-4\rho\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right) \right).
+	\end{equation}
+\end{conjecture}
+We that this conjecture is in line with both the Lieb-Liniger scenario, $ c=c' $, and the Yang-Gaudin scenario, $ c=\infty $. The validity of Conjecture \ref{ConjectureLLHGroundStateEnergy}, would give us the desired lower bound in Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi}.
+In the following subsection we will give some heuristics for such a lower bound.
+\subsection{The Lieb-Liniger-Heisenberg ground state energy: Heuristics}
+In this subsection, we give only heuristic arguments for a lower bound of the Lieb-Liniger-Heisenberg (LLH) ground state energy, $ E_{LLH} $. We do not claim the arguments given to be rigorous. For simplicity we restrict to having periodic boundary conditions. 
+
+\textbf{Degenerate perturbation theory}\\
+The first natural approach to estimating $ E_{LLH} $, is to do first order perturbation theory. To do this let is rewrite the LLH Hamiltonian \eqref{EqHamiltonianLLH} on the sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}
+H=-\sum_{i=1}^{N}\partial_i^2+2\sum_{1\leq i\leq N} \left(\frac{c'+3c}{4}+(c-c')S_i\cdot S_{i+1}\right)\delta(x_i-x_{i+1}),
+\end{equation}
+with $ c>c' $. We restrict to the regime $ c,c'\gg \rho $, $ \frac{c-c'}{c'}\ll 1 $, \ie the perturbative dilute regime.
+We consider $ H_0=-\sum_{i=1}^{N}\partial_i^2+2\sum_{1\leq i\leq N} \frac{c'+3c}{4}\delta(x_i-x_{i+1}) $ the ``unperturbed" Hamiltonian, which is a Lieb-Liniger (LL) model with coupling $ \tilde{c}=\frac{c'+3c}{4} $. This model is of course, due to the presence of spin, degenerate (with finite multiplicity). The Perturbation is then 
+$$ H'=2\sum_{1\leq i\leq N} \left((c-c')S_i\cdot S_{i+1}\right)\delta(x_i-x_{i+1}). $$
+We restrict to analyzing the problem on the sector $ \{1,2,\ldots,N\} $, since all other sectors are related by symmetry.
+In this case first order (finitely degenerate) perturbations theory, \cite{reed1978iv}, dictates that the perturbed eigenvalue is approximated by \begin{equation}
+E_{LLH}\approx E_{LL}(\tilde{c})+\inf_{\chi\in\text{spin states}}\braket{\Psi^{\tilde{c}}_{LL}\chi\left\vert H'\right\vert \Psi^{\tilde{c}}_{LL}\chi},
+\end{equation}
+with $ \Psi_{LL}^{\tilde{c}} $ begin the LL ground state at coupling $ \tilde{c} $. For the Lieb-Liniger model, we have by the Feynman-Hellmann theorem and translation invariance \begin{equation}
+\braket{\Psi^{\tilde{c}}_{LL}\left\vert\delta(x_i-x_{i+1})\right\vert \Psi^{\tilde{c}}_{LL}}=\frac{1}{N}\frac{\partial}{\partial \tilde{c}}E_{LL}(\tilde{c}).
+\end{equation}
+Therefore, it follows that we have \begin{equation}
+E_{LLH}\approx E_{LL}(\tilde{c})+\frac{c-c'}{N}\frac{\partial}{\partial \tilde{c}}E_{LL}(\tilde{c})\inf_{\chi\in\text{spin states}}\braket{\chi\left\vert \sum_{i=1}^{N}S_i\cdot S_{i+1}\right\vert \chi}
+\end{equation}
+and by Lemma \ref{LemmaHeisenbergChainFiniteNEstimate}, we find \begin{equation}
+\begin{aligned}
+E_{LLH}&\approx E_{LL}(\tilde{c})+(c-c')\frac{\partial}{\partial \tilde{c}}E_{LL}(\tilde{c})\left(\frac{1}{4}-\ln(2)\right)\\
+&\approx N\frac{\pi^2}{3}\rho^2\left(1-\frac{4\rho}{\tilde{c}}\left[1-\left(\frac{1}{4}-\ln(2)\right)\frac{c-c'}{\tilde{c}}\right]\right)\\
+&\approx N\frac{\pi^2}{3}\rho^2\left(1-\frac{4\rho}{\tilde{c}^2}\left[\frac{1}{4}c'+\frac{3}{4}c-\left(\frac{1}{4}-\ln(2)\right)(c-c')\right]\right)\\
+&\approx N\frac{\pi^2}{3}\rho^2\left(1-\frac{4\rho}{\tilde{c}^2}\left[\left(\frac{1}{2}-\ln(2)\right)c'+\left(\frac{1}{2}+\ln(2)\right)c\right]\right)
+\end{aligned}
+\end{equation}
+Now by Taylor expanding in $ c' $ around $ c $ we find 
+\begin{equation}
+	E_{LLH}\approx N\frac{\pi^2}{3}\rho^2\left(1-4\rho\left(\frac{\ln(2)c'}{c^2}+\frac{1-\ln(2)}{c}\right)\right)
+\end{equation}
+which agrees with Conjecture \ref{ConjectureLLHGroundStateEnergy}.
+
+\textbf{Lower bound by adding space}
+Consider the two particle case. By translation invariance we expect the ground state to depend only on the distance between the two particle, $ x_1-x_2 $, and by spacial symmetry we may further restrict to $ \abs{x_1-x_2} $. Now we may define new coordinates on the sector $ \{1,2\} $ given by $ y_1=x_1 $, $ y_2=x_2+\mathfrak{r} $. Let $ \Psi(\abs{x_1-x_2}) $ denote the LLH ground state, then we may define the extended state $ \tilde{\Psi}(\abs{y_1-y_2})=\Psi(\abs{y_1-y_2+\mathfrak{r}}) $, when $ y_2>y_1+\mathfrak{r} $, and extended to the whole $ [0,L+\mathfrak{r}] $ by $ \operatorname{P}_t\tilde{\Psi}(r)=\operatorname{P}_t\Psi(0)\left(1-\frac{c}{2}r\right) $ and $ \operatorname{P}_s\tilde{\Psi}(r)=\operatorname{P}_s\Psi(0)\left(1-\frac{c'}{2}r\right) $ for $ r<\mathfrak{r} $. With this definition we see that \begin{equation}
+2\int_{0}^{L+\mathfrak{r}}\abs{\operatorname{P}_{t}\tilde{\Psi}'(r)}^2\diff r+\tilde{c}\abs{\operatorname{P}_{t}\tilde{\Psi}(0)}^2=2\int_{0}^{L}\abs{\operatorname{P}_{t}\Psi'(r)}^2\diff r+c\abs{\operatorname{P}_{t}\Psi(0)}^2
+\end{equation} 
+If $  \frac{1}{2}c^2\mathfrak{r}\abs{\Psi(0)}^2+\tilde{c}\abs{\Psi(0)}^2\left(1-\frac{c}{2}\mathfrak{r}\right)^2=c\abs{\Psi(0)}^2 $, that is $ \tilde{c}=\frac{c}{1-\frac{c}{2}\mathfrak{r}} $. And similarly, we find \begin{equation}
+2\int_{0}^{L+\mathfrak{r}}\abs{\operatorname{P}_{s}\tilde{\Psi}'(r)}^2\diff r+\tilde{c}'\abs{\operatorname{P}_{s}\tilde{\Psi}(0)}^2=2\int_{0}^{L}\abs{\operatorname{P}_{s}\Psi'(r)}^2\diff r+c'\abs{\operatorname{P}_{s}\Psi(0)}^2
+\end{equation}
+if $ \tilde{c}'=\frac{c'}{1-\frac{c'}{2}\mathfrak{r}} $.
+ Now of course we have $ \norm{\tilde{\Psi}}>\norm{\Psi} $, so by using $ \tilde{\Psi} $ as a trial state for $ H^{\tilde{c}',\tilde{c}}_{LLH} $, \ie the LLH model with couplings $ \tilde{c}' $ and $\tilde{c}$, we find $ E_{LLH}(2,L,c',c)\geq E_{LLH}(2,L+\mathfrak{r},\tilde{c}',\tilde{c})=E_{LLH}\left(2,L+\mathfrak{r},\frac{2}{\frac{2}{c'}-\mathfrak{r}},\frac{2}{\frac{2}{c}-\mathfrak{r}}\right) $. In this case we may choose $ \mathfrak{r}=\frac{2}{c} $, in which case we find \begin{equation}
+ \begin{aligned}
+ E_{LLH}(2,L,c',c)&\geq E_{LLH}\left(2,L+\frac{2}{c},\left(\frac{1}{c'}-\frac{1}{c}\right)^{-1},\infty\right)\\&=E_{YG}\left(2,L+\frac{2}{c},\left(\frac{1}{c'}-\frac{1}{c}\right)^{-1}\right)\\&\geq2\frac{\pi^2}{3}\rho^2\left(1-2\rho \left[\ln(2)\left(\frac{1}{c'}-\frac{1}{c}\right)+\frac{1}{c}\right]\right)
+ \end{aligned}
+ \end{equation}
+ where we used Proposition \ref{PropositionYGLowerBound}.
+
+
+
+
 
 
 
@@ -634,5 +706,6 @@ Using now that \begin{equation}
 \end{equation}
 equation \eqref{EqEnergy4Spin1/2} follows.
 But from \eqref{EqEnergy4Spin1/2} it is clear that the antiferromagnetic Heisenberg ground state is optimal. Thus we circumvented the use of translation invariance of $ \chi $.
+
 
 
