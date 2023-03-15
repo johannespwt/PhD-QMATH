@@ -320,10 +320,10 @@ Now we define \begin{equation}\label{EqDeltaDef}
 	
 	We may also ask whether the true ground state is attained among these ansatz states. This turn out to be the case, which may be seen by the following result.
 	\begin{lemma}\label{LemmaLLGroundState}
-		Let $ \Psi_V $ and $ \Psi_T $ be the variational (in the Bethe ansatz class) and true ground state of $ H_{LL} $, respectively, then $ \Psi_V(x)=\euler{i\phi}\Psi_T(x) $, for a constant $ \phi\in[0,2\pi) $.
+		Let $ \Psi_V(c) $ be the variational (in the Bethe ansatz class) of $ H_{LL} $, then $ \Psi_V(c) $ is the true ground state.
 	\end{lemma} 
 \begin{proof}
-	Consider first the limit $ c\to \infty $. Here it is easily verified that $\Psi_V=\abs{\Psi_F}=\Psi_T$, where $ \Psi_F $ is the free Fermi ground state, \ie a Slater determinant state and that $ E_V=E_T=E_F $, where $ E_F $ is the free Fermi energy. Now by uniqueness of the bosonic ground state and continuity of the (variational) ground state energy in $ 1/c $, as well as the fact that $ \Psi_V $ is an eigenstate, we conclude that the variational ground state must remain the true ground state, as $ 1/c $ varies. Were this not the case, would the true ground state $ \Psi_T $ at finite $ c>0 $ be orthogonal to $ \Psi_V $, and hence they would converge to orthogonal states, contradiction uniqueness in the limit.
+	Consider first the limit $ c\to \infty $. Here it is easily verified that $\Psi_V=\abs{\Psi_F}$, where $ \Psi_F $ is the free Fermi ground state, \ie a Slater determinant state and that $ E_V=E_F $, where $ E_F $ is the free Fermi energy. Now by uniqueness of the bosonic ground state and continuity of the (variational) ground state energy in $ 1/c $, as well as the fact that $ \Psi_V $ is an eigenstate, we conclude that the variational ground state must remain the true ground state, as $ 1/c $ varies. If this was not the case, there would be an orthogonal true ground state, implying a degeneracy either at $ c=\infty $ or at some $ c>0 $. 
 \end{proof}
 We note that while Lemma \ref{LemmaLLGroundState} holds for the ground state, its proof cannot be generalized to exited states, since there is no unique $ n $th exited state in the Bose gas. In this case we refer to the more involved proof of completeness of the Bethe ansatz states by Dorlas \cite{cmp/1104252974}.\\
 Interestingly, it is possible to study the thermodynamic limit ($ N,L\to\infty $ with $ N/L=\rho $) of system by the use of the Bethe ansatz solution. To do this, we define $ K(\gamma):=\lim_{\substack{N,L\to\infty\\
@@ -476,7 +476,15 @@ Now, restricting to $ \psi $ in some irreducible representation $ R=[2^{M},1^{N-
 \mu_j\Phi=X'_{(j+1)j}X'_{(j+2)j}\ldots X'_{Nj}X'_{1j},\ldots X'_{(j-1)j} \Phi,
 \end{equation}
 with $ X_{ij}'=(1+P^{\tilde{R}}_{ij}x_{ij})/(1+x_{ij}) $, where $ \tilde{R} $ denotes the conjugate representation, so $ P^{\tilde{R}}_{ij} $ is acting on the spins \ie $ P^{\tilde{R}}_{ij}=-P_{ij} $.\\
-Now considering instead a spin chain of total $ z $--spin $ N-2M $, we know that this chain can have components with total spin $ N,\ N-1,\ldots N-2M $. Notice that $ P_{ij}=1+2S_i\cdot S_j $ for spin--$ 1/2 $ particles which commute with the total spin operator. Hence we may find eigenvalues $ \mu_j $ in each total spin sector separately. However, since these eigenvalues corresponds to eigenvalues of \eqref{EqYGHamiltonian}, the theorem of Lieb and Mattis \cite{lieb1962theory} tells us that the eigenvalue $ \mu_j $ yielding the smallest eigenvalue of \eqref{EqYGHamiltonian} must come from the total spin sector $ N-2M $, \ie minimal total spin.\\
+Now considering instead a spin chain of total $ z $--spin $ (N-2M)/2 $, we know that this chain can have components with total spin $ N/2,\ (N-1)/2,\ldots (N-2M)/2 $. Notice that $ P_{ij}=1+2S_i\cdot S_j $ for spin--$ 1/2 $ particles which commute with the total spin operator. Hence we may find eigenvalues $ \mu_j $ in each total spin sector separately. However, since these eigenvalues corresponds to eigenvalues of \eqref{EqYGHamiltonian}, the theorem of Lieb and Mattis \cite{lieb1962theory}\footnote{\textbf{A detail often left out in the literature:} This theorem is only proved in the paper \cite{lieb1962theory} for Dirichlet or Neumann boundary conditions. One may prove that the absolute ground state is in the total spin $ S=0 $ subspace even with periodic boundary conditions when $ N/2 $ is an odd integer. The proof requires $ N/2 $ to be an odd integer in order to have a positive periodic ground state on an ordered sector $$ \{x_1<x_2<\ldots<x_{N/2}\text{ and } x_{N/2+1}<x_{N/2+2}<\ldots<x_N\}. $$
+Furthermore, in this case the ground state is unique.\\
+The exact statement of the theorem is then: Denote by $ E(S) $ the lowest energy of any state with total spin $ S $. Then the following theorem holds:
+\begin{theorem}[Lieb and Mattis, \cite{lieb1962theory}, for periodic boundary conditions, $ d=1 $]
+	If $ N/2 $ is an odd integer and $ S>2n $ for some integer $ n $ then $ E(S)> E(2n) $, unless the potential, $ V $, is pathological, in which $ E(S)\geq E(2n) $. Furthermore, when $ V $ is not pathological, the ground state with energy $ E(0) $ is unique.
+\end{theorem}\label{TheoremLiebMattis}
+\begin{proof}
+	The proof follows the proof of Theorem I in \cite{lieb1962theory} with $ M=2n $ and $ N/2 $ odd, in order for $ \abs{\varphi_0(x_1,\ldots,x_{N/2-2n}\vert x_{N/2-2n+1},\ldots,x_N)} $ to be a \emph{continuous} anti-symmetric periodic wave function on the above mentioned sector.
+\end{proof}} tells us that the eigenvalue $ \mu_j $ yielding the smallest eigenvalue of \eqref{EqYGHamiltonian} must come from the total spin sector $ N-2M $, \ie minimal total spin in the case when $ N/2 $ is an odd integer.\\
 The Bethe-Yang hypothesis states that \begin{equation}\label{EqBetheYangHypothesis}
 \Phi(y_1,\ldots,y_M)=\sum_{P\in S_{N}}A_P \prod_{i=1}^{M}F(\Lambda_{P_i},y_i),
 \end{equation}
@@ -505,7 +513,7 @@ J_\Lambda&\in\{-(M-1)/2,\ldots,(M-1)/2\},\\
 I_k&\in \{1-N/2,\ldots,N/2\}.
 \end{aligned}
 \end{equation}
-Going to the thermodynamic limit, \ie $ N,M,L\to\infty $ proportionally, on then find the equations for the energy \begin{align}
+Going to the thermodynamic limit, \ie $ N,M,L\to\infty $ proportionally, one then find the equations for the energy \begin{align}
 2\pi\sigma(\Lambda)&=-\int_{-B}^{B}\frac{2c\sigma(\Lambda')\diff \Lambda'}{c^2+(\Lambda-\Lambda')^2}+\int_{-Q}^{Q}\frac{4c f(k)\diff k}{c^2+4(k-\Lambda)^2}\label{EqYG1}\\
 2\pi f(k) &= 1+\int_{-B}^{B}\frac{4c\sigma(\Lambda')\diff \Lambda'}{c^2+4(k-\Lambda')^2}\label{EqYG2}\\
 \rho=N/L&=\int_{-Q}^{Q} f(k) \diff k,\quad M/L=\int_{-B}^{B}\sigma(\Lambda)\diff\Lambda,\label{EqYG3}\\
@@ -516,6 +524,15 @@ with $  f,\sigma\geq 0 $. We see that taking $ B=\infty $, and integrating over 
 \end{equation}
 where we used $ \int_{-\infty}^{\infty}\frac{\diff x}{1+x^2}=\pi $. So using $ \eqref{EqYG3} $ we find $ 2M=N $, and thus the total spin is $ S_{\text{tot.}}=0 $. By a theorem of Lieb and Mattis \cite{lieb1962theory}, this is then the total ground state.
 \subsection{Lower bound of the Yang-Gaudin model}
+In order to lower bound the ground state energy of Yang-Gaudin model, we do need to justify that the ground state is reached by the Yang-Bethe ansatz states. This is justified the following result 
+\begin{proposition}
+	Let $ N=4n+2 $ for some integer $ n $ and let $ \Psi_V(c) $ denote the variational ground state among the Yang-Bethe ansatz states then $ \Psi_V(c) $ is the true ground state of the Yang-Gaudin model \ref{EqYGHamiltonian}.
+\end{proposition}
+\begin{proof}
+	By the theorem of Lieb and Mattis \cite{lieb1962theory} (see Theorem \ref{TheoremLiebMattis}), we have that the ground state at any finite $ c\geq 0 $ is unique. 
+%	On the other hand, letting $ \Psi_V^M(c) $ denote the Bethe-Yang ansatz ground state with total $ S_{\text{tot.}}^z=\frac{1}{2}(N-2M) $ we may verify that $ \lim\limits_{c\to0}\Psi^M_V(c)=\Psi_F $ for any $ M $. For each of these, we may find a total $ S^z_{\text{tot.}}=0 $ state, with the same energy, by applying $ S_{\text{tot.}}^- $ $ N-2M $ times, \ie $(S_{\text{tot.}}^-)^{N-2M}\Psi_V^{M}  $.
+	On the other hand, one may verified that $ \lim\limits_{c\to0}\Psi_V(c)=\Psi^{1/2}_F $ in $ L^2 $, with $ \Psi^{1/2}_F $ denoting the free spin--$ 1/2 $ Fermi ground state, \ie a spin-space Slater determinant (for this, one needs an approach by Gaudin \cite{gaudin1967systeme,gaudin2014bethe} to study the $ c\to 0 $ limit of Bethe-Yang ansatz solution). However, then $ \Psi_V(c) $ must be the true ground state, since having an orthogonal true ground state, would imply a degenerate ground state at $ c=0 $, which is a contradiction. 
+\end{proof}
 Now the following lemma will prove useful in obtaining a lower bound for the thermodynamic ground state energy of the Yang-Gaudin model.
 \begin{lemma}\label{LemmaYGrho}
 	For any $ m\in \mathbb{N}_+ $, the equations \eqref{EqYG1}--\eqref{EqYG4} imply that \begin{equation}\label{EqYG5}
