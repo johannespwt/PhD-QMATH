@@ -1,3 +1,4 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
  \newcommand{\noop}[1]{}
 \begin{thebibliography}{AGHKH12}
 
@@ -17,6 +18,13 @@ Johannes Agerskov, Robin Reuvers, and Jan~Philip Solovej.
 \newblock Ground state energy of dilute bose gases in 1d.
 \newblock {\em arXiv preprint arXiv:2203.17183}, 2022.
 
+\bibitem[BCS21]{basti2021new}
+Giulia Basti, Serena Cenatiempo, and Benjamin Schlein.
+\newblock A new second-order upper bound for the ground state energy of dilute
+  {B}ose gases.
+\newblock In {\em Forum of Mathematics, Sigma}, volume~9. Cambridge University
+  Press, 2021.
+
 \bibitem[Bet31]{bethe1931theorie}
 Hans Bethe.
 \newblock Zur theorie der metalle.
@@ -29,10 +37,30 @@ T.~C. Dorlas.
 \newblock {\em Communications in Mathematical Physics}, 154(2):347 -- 376,
   1993.
 
+\bibitem[Dys57]{dyson1957ground}
+Freeman~John Dyson.
+\newblock Ground-state energy of a hard-sphere gas.
+\newblock {\em Physical Review}, 106(1):20, 1957.
+
 \bibitem[EG91]{evans1991measure}
 L.C. Evans and R.F. Gariepy.
 \newblock {\em Measure Theory and Fine Properties of Functions}.
 \newblock Studies in Advanced Mathematics. Taylor \& Francis, 1991.
+
+\bibitem[FGJ{\etalchar{+}}22]{fournais2022ground}
+S~Fournais, T~Girardot, L~Junge, L~Morin, and M~Olivieri.
+\newblock The ground state energy of a two-dimensional bose gas.
+\newblock {\em arXiv preprint arXiv:2206.11100}, 2022.
+
+\bibitem[FS20]{fournais2020energy}
+S{\o}ren Fournais and Jan~Philip Solovej.
+\newblock The energy of dilute {B}ose gases.
+\newblock {\em Annals of Mathematics}, 192(3):893--976, 2020.
+
+\bibitem[FS21]{fournais2021energy}
+S{\o}ren Fournais and Jan~Philip Solovej.
+\newblock The energy of dilute {B}ose gases {II}: The general case.
+\newblock {\em arXiv preprint arXiv:2108.12022}, 2021.
 
 \bibitem[Fun81]{fung1981validity}
 Ming-Kong Fung.
@@ -68,10 +96,21 @@ P.~Grisvard.
 \newblock Classics in Applied Mathematics. Society for Industrial and Applied
   Mathematics, 2011.
 
+\bibitem[HFM78]{hines1978hard}
+DF~Hines, NE~Frankel, and DJ~Mitchell.
+\newblock Hard-disc bose gas.
+\newblock {\em Physics Letters A}, 68(1):12--14, 1978.
+
 \bibitem[Hul38]{hult1938}
 L.~Hulthén.
 \newblock {\"Uber das Austauschproblem eines Kristalles}.
 \newblock {\em Ark. Met. Astron. Fysik}, 26A(Na. 11), 1938.
+
+\bibitem[LHY57]{lee1957eigenvalues}
+Tsin~D Lee, Kerson Huang, and Chen~N Yang.
+\newblock Eigenvalues and eigenfunctions of a {B}ose system of hard spheres and
+  its low-temperature properties.
+\newblock {\em Physical Review}, 106(6):1135, 1957.
 
 \bibitem[LL63]{lieb1963exact}
 Elliott~H Lieb and Werner Liniger.
@@ -89,6 +128,18 @@ Elliott Lieb and Daniel Mattis.
 \newblock Theory of ferromagnetism and the ordering of electronic energy
   levels.
 \newblock {\em Physical Review}, 125(1):164--172, 1962.
+
+\bibitem[LY98]{lieb1998ground}
+Elliolt~H Lieb and Jakob Yngvason.
+\newblock Ground state energy of the low density {B}ose gas.
+\newblock In {\em The Stability of Matter: From Atoms to Stars}, pages
+  755--758. Springer, 1998.
+
+\bibitem[LY99]{lieb1999ground}
+Elliott~H Lieb and Jakob Yngvason.
+\newblock The ground state energy of a dilute bose gas.
+\newblock {\em Differential Equations and Mathematical Physics, University of
+  Alabama, Birmingham}, 1999.
 
 \bibitem[LY01]{lieb2001ground}
 Elliott~H Lieb and Jakob Yngvason.
@@ -117,6 +168,11 @@ M.~Reed and B.~Simon.
 \newblock {\em I: Functional Analysis}.
 \newblock Methods of Modern Mathematical Physics. Elsevier Science, 1981.
 
+\bibitem[Sch71]{schick1971two}
+M~Schick.
+\newblock Two-dimensional system of hard-core bosons.
+\newblock {\em Physical Review A}, 3(3):1067, 1971.
+
 \bibitem[Sut68]{sutherland1968further}
 Bill Sutherland.
 \newblock Further results for the many-body problem in one dimension.
@@ -133,5 +189,15 @@ Chen-Ning Yang.
 \newblock Some exact results for the many-body problem in one dimension with
   repulsive delta-function interaction.
 \newblock {\em Physical Review Letters}, 19(23):1312, 1967.
+
+\bibitem[Yin10]{yin2010free}
+Jun Yin.
+\newblock Free energies of dilute bose gases: upper bound.
+\newblock {\em Journal of Statistical Physics}, 141(4):683--726, 2010.
+
+\bibitem[YY09]{yau2009second}
+Horng-Tzer Yau and Jun Yin.
+\newblock The second order upper bound for the ground energy of a {B}ose gas.
+\newblock {\em Journal of Statistical Physics}, 136(3):453--503, 2009.
 
 \end{thebibliography}

@@ -259,7 +259,7 @@ We give two examples of the scattering length in the following:
 	solves the scattering equation. We conclude that $ a_e=a_o=R_0 $.
 \end{example}
 
-\section{The Ground state Energy of Dilute Bose Gases}
+\section{The Ground state Energy of Dilute Gases}
 To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. To begin with we define what is meant by "dilute":
 \begin{definition}
 	For the $ d $-dimenional ($ d=1,2,3 $) system of bosons, with the formal Hamiltonian \begin{equation}
@@ -273,6 +273,23 @@ To put the results of this thesis into context, we here summarize the current kn
 	\end{equation}
 	we say that the system is in \textbf{ the dilute limit} or that the Fermi gas is \textbf{dilute} if $ \rho \max(\abs{\abs{a_e},a_o})\ll 1 $.
 \end{definition}
+In the following we will list some of the known results about dilute gases in dimensions $ d=2,3 $. We will then in the remaining of this thesis shed light on the corresponding results in one dimension.
+\subsubsection{The dilute Bose gas in three dimensions}
+The three dimensional dilute Bose gas is probably the most well studied example of dilute quantum gas. Historically the most famous result about the three dimensional dilute Bose gas is due to Lee, Huang, and Yang \cite{lee1957eigenvalues}. Interestingly, the energy was found, to second order, to depend of the potential only through the scattering length.
+The mathematical literature is quite rich, and we refer to the papers \cite{dyson1957ground,lieb1998ground,lieb1999ground,lieb2001ground,yin2010free,yau2009second,basti2021new,fournais2020energy,fournais2021energy} for more details. The latest results are very recent, and it was only in 2020 that the the Lee-Huang-Yang formula was rigorously established to second order, when Fournais and Solovej proved a second order lower bound. With giving details about assumptions needed on the potential, the Lee-Huang-Yang formula takes the form with \begin{equation}
+e^{3D}(\rho)=4\pi \rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o\left(\sqrt{\rho a^3}\right)\right),
+\end{equation}
+where $ e^{3D}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^3=\rho}}\frac{E^{3D}(N,L)}{L^3} $, and $ E^{3D}(N,L) $ is the ground state of the Bose gas with $ N $ bosons in $ \Omega=[0,L]^3 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.
+
+\subsubsection{The dilute Bose gas in two dimensions}
+In the two dimensional scenario the ground state energy of the dilute Bose gas again possesses an expansion that, to second order, only depends on the potential through the scattering length, analogous to the Lee-Huang-Yang result in three dimensions. The first derivation of this expansion to leading order was given for the hard sphere case in \cite{schick1971two} and higher order terms were first given in \cite{hines1978hard}. To leading order a rigorous understanding was first reached in 2001 by Lieb and Yngvason in \cite{lieb2001ground}, and first very recently was the full proof given to next to leading order by Fournais \emph{et al.} in \cite{fournais2022ground}. Without giving details on assumptions on the potential, the formula takes the form
+\begin{equation}
+e^{2D}(\rho)=4\pi \rho^2 Y\left(1-Y\abs{\ln(Y)}+\left(2\gamma+\frac{1}{2}+\ln(\pi)\right)Y+o(Y)\right),
+\end{equation}
+with $ \gamma $ being the Euler-Mascheroni constant and $ Y\coloneqq\abs{\ln(\rho a^2)}^{-1} $. Above $ e^{2D}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^2=\rho}}\frac{E^{2D}(N,L)}{L^2} $, and $ E^{2D}(N,L) $ is the ground state of the Bose gas with $ N $ bosons in $ \Omega=[0,L]^2 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.
+\subsubsection{The dilute spin--$ 1/2 $ Fermi gas in three dimensions}
+
+\subsubsection{The dilute spin--$ 1/2 $ Fermi gas in two dimensions}
 
 
 \section{The Lieb-Liniger Model: A Solvable Model in One Dimension} \label{SectionLiebLinigerModel}
@@ -479,12 +496,13 @@ with $ X_{ij}'=(1+P^{\tilde{R}}_{ij}x_{ij})/(1+x_{ij}) $, where $ \tilde{R} $ de
 Now considering instead a spin chain of total $ z $--spin $ (N-2M)/2 $, we know that this chain can have components with total spin $ N/2,\ (N-1)/2,\ldots (N-2M)/2 $. Notice that $ P_{ij}=1+2S_i\cdot S_j $ for spin--$ 1/2 $ particles which commute with the total spin operator. Hence we may find eigenvalues $ \mu_j $ in each total spin sector separately. However, since these eigenvalues corresponds to eigenvalues of \eqref{EqYGHamiltonian}, the theorem of Lieb and Mattis \cite{lieb1962theory}\footnote{\textbf{A detail often left out in the literature:} This theorem is only proved in the paper \cite{lieb1962theory} for Dirichlet or Neumann boundary conditions. One may prove that the absolute ground state is in the total spin $ S=0 $ subspace even with periodic boundary conditions when $ N/2 $ is an odd integer. The proof requires $ N/2 $ to be an odd integer in order to have a positive periodic ground state on an ordered sector $$ \{x_1<x_2<\ldots<x_{N/2}\text{ and } x_{N/2+1}<x_{N/2+2}<\ldots<x_N\}. $$
 Furthermore, in this case the ground state is unique.\\
 The exact statement of the theorem is then: Denote by $ E(S) $ the lowest energy of any state with total spin $ S $. Then the following theorem holds:
-\begin{theorem}[Lieb and Mattis, \cite{lieb1962theory}, for periodic boundary conditions, $ d=1 $]
+\begin{theorem}[Lieb and Mattis, \cite{lieb1962theory}, for periodic boundary conditions, $ d=1 $]\label{TheoremLiebMattis}
 	If $ N/2 $ is an odd integer and $ S>2n $ for some integer $ n $ then $ E(S)> E(2n) $, unless the potential, $ V $, is pathological, in which $ E(S)\geq E(2n) $. Furthermore, when $ V $ is not pathological, the ground state with energy $ E(0) $ is unique.
-\end{theorem}\label{TheoremLiebMattis}
+\end{theorem}
 \begin{proof}
 	The proof follows the proof of Theorem I in \cite{lieb1962theory} with $ M=2n $ and $ N/2 $ odd, in order for $ \abs{\varphi_0(x_1,\ldots,x_{N/2-2n}\vert x_{N/2-2n+1},\ldots,x_N)} $ to be a \emph{continuous} anti-symmetric periodic wave function on the above mentioned sector.
-\end{proof}} tells us that the eigenvalue $ \mu_j $ yielding the smallest eigenvalue of \eqref{EqYGHamiltonian} must come from the total spin sector $ N-2M $, \ie minimal total spin in the case when $ N/2 $ is an odd integer.\\
+\end{proof}
+For more details on the notion of ``pathological" and the proof, we refer to the original paper by Lieb and Mattis.} tells us that the eigenvalue $ \mu_j $ yielding the smallest eigenvalue of \eqref{EqYGHamiltonian} must come from the total spin sector $ N-2M $, \ie minimal total spin in the case when $ N/2 $ is an odd integer.\\
 The Bethe-Yang hypothesis states that \begin{equation}\label{EqBetheYangHypothesis}
 \Phi(y_1,\ldots,y_M)=\sum_{P\in S_{N}}A_P \prod_{i=1}^{M}F(\Lambda_{P_i},y_i),
 \end{equation}
@@ -501,13 +519,13 @@ Yang then find \begin{equation}
 Thus the energy is determined by the equation\begin{equation}\label{EqYGPeriodicSpectrumCondition}
 \exp(ik_jL)=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta+-c/2}{ik_j-i\Lambda_\beta+c/2}.
 \end{equation}
-Taking the logarithm of \eqref{EqYGSpinRapidityRelation} and \eqref{EqYGPeriodicSpectrumCondition} adding certain integers to get a well defined $ c\to\infty $ limit, as we did in Section \ref{SectionLiebLinigerModel}, one finds \begin{equation}
+Taking the logarithm of \eqref{EqYGSpinRapidityRelation} and \eqref{EqYGPeriodicSpectrumCondition} adding certain integers to get a well defined $ c\to\infty $ limit, as we did in Section \ref{SectionLiebLinigerModel}, one finds \begin{equation}\label{EqYGintegers}
 \begin{aligned}
 -\sum_{k\in\{k_j\}_j}\theta(2\Lambda-2k)&=2\pi J_\Lambda-\sum_{\Lambda'\in(\Lambda_\alpha)_\alpha}\theta(\Lambda-\Lambda')\\
 kL&=2\pi I_k-\sum_{\Lambda'\in\{\Lambda_\alpha\}_\alpha}\theta(2k-2\Lambda')
 \end{aligned}
 \end{equation}
-with the usual $ \theta(x)\coloneqq-2\arctan(x/c) $, and where for $ N $ even and $ M $ odd we have\begin{equation}
+with the usual $ \theta(x)\coloneqq-2\arctan(x/c) $, and where for $ N $ even and $ M $ odd we have for ground state (among the ansatz states)\begin{equation}
 \begin{aligned}
 J_\Lambda&\in\{-(M-1)/2,\ldots,(M-1)/2\},\\
 I_k&\in \{1-N/2,\ldots,N/2\}.
@@ -524,16 +542,7 @@ with $  f,\sigma\geq 0 $. We see that taking $ B=\infty $, and integrating over 
 \end{equation}
 where we used $ \int_{-\infty}^{\infty}\frac{\diff x}{1+x^2}=\pi $. So using $ \eqref{EqYG3} $ we find $ 2M=N $, and thus the total spin is $ S_{\text{tot.}}=0 $. By a theorem of Lieb and Mattis \cite{lieb1962theory}, this is then the total ground state.
 \subsection{Lower bound of the Yang-Gaudin model}
-In order to lower bound the ground state energy of Yang-Gaudin model, we do need to justify that the ground state is reached by the Yang-Bethe ansatz states. This is justified the following result 
-\begin{proposition}
-	Let $ N=4n+2 $ for some integer $ n $ and let $ \Psi_V(c) $ denote the variational ground state among the Yang-Bethe ansatz states then $ \Psi_V(c) $ is the true ground state of the Yang-Gaudin model \ref{EqYGHamiltonian}.
-\end{proposition}
-\begin{proof}
-	By the theorem of Lieb and Mattis \cite{lieb1962theory} (see Theorem \ref{TheoremLiebMattis}), we have that the ground state at any finite $ c\geq 0 $ is unique. 
-%	On the other hand, letting $ \Psi_V^M(c) $ denote the Bethe-Yang ansatz ground state with total $ S_{\text{tot.}}^z=\frac{1}{2}(N-2M) $ we may verify that $ \lim\limits_{c\to0}\Psi^M_V(c)=\Psi_F $ for any $ M $. For each of these, we may find a total $ S^z_{\text{tot.}}=0 $ state, with the same energy, by applying $ S_{\text{tot.}}^- $ $ N-2M $ times, \ie $(S_{\text{tot.}}^-)^{N-2M}\Psi_V^{M}  $.
-	On the other hand, one may verified that $ \lim\limits_{c\to0}\Psi_V(c)=\Psi^{1/2}_F $ in $ L^2 $, with $ \Psi^{1/2}_F $ denoting the free spin--$ 1/2 $ Fermi ground state, \ie a spin-space Slater determinant (for this, one needs an approach by Gaudin \cite{gaudin1967systeme,gaudin2014bethe} to study the $ c\to 0 $ limit of Bethe-Yang ansatz solution). However, then $ \Psi_V(c) $ must be the true ground state, since having an orthogonal true ground state, would imply a degenerate ground state at $ c=0 $, which is a contradiction. 
-\end{proof}
-Now the following lemma will prove useful in obtaining a lower bound for the thermodynamic ground state energy of the Yang-Gaudin model.
+Now the following lemma will prove useful in obtaining a lower bound for the thermodynamic ``ground state energy" (in the sense that it comes from a solution of integral equations \eqref{EqYG1}--\eqref{EqYG4}) of the Yang-Gaudin model.
 \begin{lemma}\label{LemmaYGrho}
 	For any $ m\in \mathbb{N}_+ $, the equations \eqref{EqYG1}--\eqref{EqYG4} imply that \begin{equation}\label{EqYG5}
 	\begin{aligned}
@@ -637,6 +646,17 @@ We are ready to give a lower bound for ground state energy of Yang-Gaudin model.
 	By Lemma \ref{LemmaYG:fUpperBound}, we find $ f\leq \frac{1}{2\pi}\left(1+\frac{2\ln(2)}{c}\rho\right) $, so it follows that $ e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2 $.
 \end{proof}
 We will, in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}, find a matching upper bound for the Yang-Gaudin energy in the dilute limit.
+\subsection{A small caveat}\label{SubsectionYGCaveat}
+There is one issue in the analysis of the Yang-Gaudin model: There is, to the best of our knowledge, no proof in the literature that the true ground state of \eqref{EqYGHamiltonian} is among the Yang-Bethe ansatz states. In fact there seems to be no proof of the existence of a solution to the equations \eqref{EqYGintegers} given two sets of integers $ (I_j)_{j=1}^{N} $ and $ (J_a)_{a=1}^{M} $. This is contrast to the Lieb-Liniger model, in which both existence of solutions as well as completeness of the Bethe ansatz states is known, \cite{cmp/1104252974}. Since we will not use the results from this section for any rigorous analysis in the remaining of the thesis, we leave the establishment of these fact for future work. We will in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} refer to the $ e $ coming from a solution of \eqref{EqYG1}--\eqref{EqYG4} as the ground state energy of the Yang--Gaudin model, however this non-rigorous use of the terminology is never used in any rigorous setting.\\
+We may state for good measure what is needed to make statements about the ground state rigorous:
+\begin{itemize}
+	\item Establish existence of solutions of \eqref{EqYGintegers} for any two sets of integers $ (I_j,J_a)_{j,a} $, at any $ c>0 $ such that $ k_j,\Lambda_a $ varies continuously with $ c $.
+	\item Either of the two: \begin{enumerate}
+		\item Establish that Yang find full multiplicity of solution converging to the ground state in the limit $ c\to\infty $. (In this case the theorem of Lieb and Mattis [Theorem \ref{TheoremLiebMattis}]) implies that no extra ground state can exist.
+		\item Justify rigorously Gaudin's findings in the $ c\to 0 $ limit, where the ground state is unique \cite{gaudin1967systeme}. In which case the ground state is of Bethe-Yang ansatz form in this limit implying this to be case for all $ c>0 $ again by the theorem of Lieb and Mattis.
+	\end{enumerate}
+\end{itemize}
+
 
 
 

@@ -530,10 +530,11 @@ which match Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
 
 \textbf{The Yang-Gaudin model}:
 This model was studied in Section \ref{SectionYG}. In this case we have $ a_e=-2/c $ and $ a_o=0 $ by Example \ref{ExampleScatteringLengthDelta} Of course the upper bound from Theorem \ref{TheoremUpperBoundSpin1/2Fermi} applies. Furthermore, we found in Proposition \ref{PropositionYGLowerBound} the bound\begin{equation}
-e=\lim\limits_{\substack{N,L\to\infty\\
-N/L=\rho}}E/L\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}\right].
+e=``\lim\limits_{\substack{N,L\to\infty\\
+N/L=\rho}}E/L"\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}\right].
 \end{equation}
-Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho R)^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
+Here ``" is used to emphasize that $ e $ is strictly speaking not known to be the true ground state energy (see Subsection \ref{SubsectionYGCaveat}).
+Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho \abs{a_e})^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 
 \subsection{The general case}
 In the case of a general potential, $ v $, where the resulting model is not solvable, we migth attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} does not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modifed slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
@@ -681,10 +682,36 @@ if $ \tilde{c}'=\frac{c'}{1-\frac{c'}{2}\mathfrak{r}} $.
  E_{LLH}(2,L,c',c)&\geq E_{LLH}\left(2,L+\frac{2}{c},\left(\frac{1}{c'}-\frac{1}{c}\right)^{-1},\infty\right)\\&=E_{YG}\left(2,L+\frac{2}{c},\left(\frac{1}{c'}-\frac{1}{c}\right)^{-1}\right)\\&\geq2\frac{\pi^2}{3}\rho^2\left(1-2\rho \left[\ln(2)\left(\frac{1}{c'}-\frac{1}{c}\right)+\frac{1}{c}\right]\right)
  \end{aligned}
  \end{equation}
- where we used Proposition \ref{PropositionYGLowerBound}.
-
-
-
+ where we used Proposition \ref{PropositionYGLowerBound}, and recall that the last inequality strictly speaking is conjecture (see Subsection \ref{SubsectionYGCaveat}).
+\section{Lower bound for other symmetries}
+Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}. For these we may, in some cases actually prove a lower bound. This is always the case for the bosonic case, and exactly the case when $ a_o\leq a_e $ in the spin dependent fermionic case, and when $ a_t\leq a_s $ in spin dependent spatially symmetric case. Hence we have 
+\begin{theorem}
+	\label{TheoremLowerBoundSpin1/2Bose}
+	Consider a spin--$ 1/2 $ Bose gas with repulsive interaction  $v=v_{\textnormal{reg.}}+v_{\textnormal{h.c.}}$ as defined above. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
+	\begin{equation}
+	\label{eqlowerSpin1/2Bose}
+	E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_e-C_\text{L}\left((\rho R)^{6/5}+N^{-2/3}\right)\right).
+	\end{equation}
+	$ R=\max(\abs{a_e}, R_0) $
+\end{theorem}
+	\begin{theorem}
+	\label{TheoremLowerBoundSpinDependentSpin1/2Fermi}
+	Consider a spin--$ 1/2 $ Fermi gas with repulsive interaction  $v=v_e\operatorname{P}_s+v_o\operatorname{P}_t$. Assume furthermore that $ a_o\leq a_e $. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
+	\begin{equation}
+	\label{eqlowerSpinDependtSpin1/2Fermi}
+	E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_t-C_\text{L}\left((\rho R)^{6/5}+N^{-2/3}\right)\right).
+	\end{equation}
+	Here $ R=\max(\abs{a_e}, a_o, R_0) $
+\end{theorem}
+\begin{theorem}
+	\label{TheoremLowerBoundSpinDependentSpin1/2SpatiallySymmetric}
+	Consider a spin--$ 1/2 $ spatially symmetric gas with repulsive interaction  $v=v_s\operatorname{P}_s+v_t\operatorname{P}_t$. Assume furthermore that $ a_t\leq a_s $. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
+	\begin{equation}
+	\label{eqlower}
+	E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_t-C_\text{L}\left((\rho R)^{6/5}+N^{-2/3}\right)\right).
+	\end{equation}
+	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $
+\end{theorem}
 
 
 
