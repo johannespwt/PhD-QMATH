@@ -47,6 +47,12 @@ L.C. Evans and R.F. Gariepy.
 \newblock {\em Measure Theory and Fine Properties of Functions}.
 \newblock Studies in Advanced Mathematics. Taylor \& Francis, 1991.
 
+\bibitem[FGHP21]{falconi2021dilute}
+Marco Falconi, Emanuela~L Giacomelli, Christian Hainzl, and Marcello Porta.
+\newblock The dilute fermi gas via bogoliubov theory.
+\newblock In {\em Annales Henri Poincar{\'e}}, volume~22, pages 2283--2353.
+  Springer, 2021.
+
 \bibitem[FGJ{\etalchar{+}}22]{fournais2022ground}
 S~Fournais, T~Girardot, L~Junge, L~Morin, and M~Olivieri.
 \newblock The ground state energy of a two-dimensional bose gas.
@@ -78,6 +84,11 @@ Michel Gaudin.
 \newblock {\em The Bethe Wavefunction The Bethe Wavefunction}.
 \newblock Cambridge University Press, 2014.
 
+\bibitem[Gia22]{giacomelli2022optimal}
+Emanuela~L Giacomelli.
+\newblock An optimal upper bound for the dilute fermi gas in three dimensions.
+\newblock {\em arXiv preprint arXiv:2212.11832}, 2022.
+
 \bibitem[Gir60]{girardeau1960relationship}
 Marvin Girardeau.
 \newblock Relationship between systems of impenetrable bosons and fermions in
@@ -106,6 +117,11 @@ L.~Hulthén.
 \newblock {\"Uber das Austauschproblem eines Kristalles}.
 \newblock {\em Ark. Met. Astron. Fysik}, 26A(Na. 11), 1938.
 
+\bibitem[HY57]{huang1957quantum}
+Kerson Huang and Chen~Ning Yang.
+\newblock Quantum-mechanical many-body problem with hard-sphere interaction.
+\newblock {\em Physical review}, 105(3):767, 1957.
+
 \bibitem[LHY57]{lee1957eigenvalues}
 Tsin~D Lee, Kerson Huang, and Chen~N Yang.
 \newblock Eigenvalues and eigenfunctions of a {B}ose system of hard spheres and
@@ -128,6 +144,23 @@ Elliott Lieb and Daniel Mattis.
 \newblock Theory of ferromagnetism and the ordering of electronic energy
   levels.
 \newblock {\em Physical Review}, 125(1):164--172, 1962.
+
+\bibitem[LS23]{lauritsen2023ground}
+Asbj{\o}rn~B{\ae}kgaard Lauritsen and Robert Seiringer.
+\newblock Ground state energy of the dilute spin-polarized fermi gas: Upper
+  bound via cluster expansion.
+\newblock {\em arXiv preprint arXiv:2301.04894}, 2023.
+
+\bibitem[LSS05]{lieb2005ground}
+Elliott~H Lieb, Robert Seiringer, and Jan~Philip Solovej.
+\newblock Ground-state energy of the low-density fermi gas.
+\newblock {\em Physical Review A}, 71(5):053605, 2005.
+
+\bibitem[LY57]{lee1957many}
+TD~Lee and CN~Yang.
+\newblock Many-body problem in quantum mechanics and quantum statistical
+  mechanics.
+\newblock {\em Physical Review}, 105(3):1119, 1957.
 
 \bibitem[LY98]{lieb1998ground}
 Elliolt~H Lieb and Jakob Yngvason.
@@ -189,11 +222,6 @@ Chen-Ning Yang.
 \newblock Some exact results for the many-body problem in one dimension with
   repulsive delta-function interaction.
 \newblock {\em Physical Review Letters}, 19(23):1312, 1967.
-
-\bibitem[Yin10]{yin2010free}
-Jun Yin.
-\newblock Free energies of dilute bose gases: upper bound.
-\newblock {\em Journal of Statistical Physics}, 141(4):683--726, 2010.
 
 \bibitem[YY09]{yau2009second}
 Horng-Tzer Yau and Jun Yin.

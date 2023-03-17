@@ -250,7 +250,7 @@ We give two examples of the scattering length in the following:
 	Consider $ v=\infty\mathbbm{1}_{[-R_0,R_0]} $, \ie \emph{the hard core}. In this case \begin{equation}
 	f_{e/o}''(x)=0,\text{ for } x\in(R_0,R]
 	\end{equation}
-	and $ f_{e/o}(x)=0 $ for $ x\in [0,R_0] $ constitutes scattering equation on $ [0,R] $. Thus find that \begin{equation}\label{key}
+	and $ f_{e/o}(x)=0 $ for $ x\in [0,R_0] $ constitutes scattering equation on $ [0,R] $. Thus find that \begin{equation}
 	f_{e/o}(x)=\begin{cases}
 	0& x\in[0,R_0]\\
 	\frac{x-R_0}{R-R_0}& x\in(R_0,R]
@@ -276,7 +276,7 @@ To put the results of this thesis into context, we here summarize the current kn
 In the following we will list some of the known results about dilute gases in dimensions $ d=2,3 $. We will then in the remaining of this thesis shed light on the corresponding results in one dimension.
 \subsubsection{The dilute Bose gas in three dimensions}
 The three dimensional dilute Bose gas is probably the most well studied example of dilute quantum gas. Historically the most famous result about the three dimensional dilute Bose gas is due to Lee, Huang, and Yang \cite{lee1957eigenvalues}. Interestingly, the energy was found, to second order, to depend of the potential only through the scattering length.
-The mathematical literature is quite rich, and we refer to the papers \cite{dyson1957ground,lieb1998ground,lieb1999ground,lieb2001ground,yin2010free,yau2009second,basti2021new,fournais2020energy,fournais2021energy} for more details. The latest results are very recent, and it was only in 2020 that the the Lee-Huang-Yang formula was rigorously established to second order, when Fournais and Solovej proved a second order lower bound. With giving details about assumptions needed on the potential, the Lee-Huang-Yang formula takes the form with \begin{equation}
+The mathematical literature is quite rich, and we refer to the papers \cite{dyson1957ground,lieb1998ground,lieb1999ground,lieb2001ground,yau2009second,basti2021new,fournais2020energy,fournais2021energy} for more details. The latest results are very recent, and it was only in 2020 that the the Lee-Huang-Yang formula was rigorously established to second order, when Fournais and Solovej proved a second order lower bound. With giving details about assumptions needed on the potential, the Lee-Huang-Yang formula takes the form with \begin{equation}
 e^{3D}(\rho)=4\pi \rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o\left(\sqrt{\rho a^3}\right)\right),
 \end{equation}
 where $ e^{3D}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^3=\rho}}\frac{E^{3D}(N,L)}{L^3} $, and $ E^{3D}(N,L) $ is the ground state of the Bose gas with $ N $ bosons in $ \Omega=[0,L]^3 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.
@@ -287,9 +287,20 @@ In the two dimensional scenario the ground state energy of the dilute Bose gas a
 e^{2D}(\rho)=4\pi \rho^2 Y\left(1-Y\abs{\ln(Y)}+\left(2\gamma+\frac{1}{2}+\ln(\pi)\right)Y+o(Y)\right),
 \end{equation}
 with $ \gamma $ being the Euler-Mascheroni constant and $ Y\coloneqq\abs{\ln(\rho a^2)}^{-1} $. Above $ e^{2D}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^2=\rho}}\frac{E^{2D}(N,L)}{L^2} $, and $ E^{2D}(N,L) $ is the ground state of the Bose gas with $ N $ bosons in $ \Omega=[0,L]^2 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.
-\subsubsection{The dilute spin--$ 1/2 $ Fermi gas in three dimensions}
+\subsubsection{The dilute spin--$ S $ Fermi gas in three dimensions}
+The establishment of expansions for the ground state energy of the dilute Bose gas in terms of the scattering length led to the natural question of whether similar expansion exist for the spin--$ 1/2 $ Fermi gas. The asymptotics were first derived in \cite{huang1957quantum,lee1957many}, however, it was not until 2004 that the result was rigorously proven in \cite{lieb2005ground} and, for smooth potentials, further improved recently in \cite{falconi2021dilute} and with optimal error in \cite{giacomelli2022optimal}. Without giving details on the assumptions on the potential, the formula take the form
+\begin{equation}
+e^{3D}_{F,S}(\rho)=\frac{3}{5}\left(6\pi\right)^{2/3}\sum_{i=-S}^{S}\rho_i^{5/3}+8\pi a\sum_{-S\leq i<j\leq S}\rho_i\rho_j+\rho^{5/3}o\left(\rho^{1/3}a\right).
+\end{equation}
+where $ \rho_i $ denotes the density of particles with spin $ i $ and the index $ i $ runs over integers or half integers. Furthermore, $ e^{3D}_{F,S}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^3=\rho}}\frac{E^{3D}_{F,S}(N,L)}{L^3} $, and $ E^{3D}_{F,S}(N,L) $ is the ground state of the spin--$ S $ Fermi gas with $ N $ spin--$ S $ fermions in $ \Omega=[0,L]^3 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.\\
+We may note, that $ a $, denotes the s-wave scattering length. The p-wave scattering length is relevant when two Fermions of the same species interact, however this is lower order since fermions tend to localize away from each other due to the Pauli exclusion principle. Recently an upper bound was proven in the spin polarized case in \cite{lauritsen2023ground}.
 
-\subsubsection{The dilute spin--$ 1/2 $ Fermi gas in two dimensions}
+\subsubsection{The dilute spin--$ S $ Fermi gas in two dimensions}
+In \cite{lieb2005ground}, the two dimensional result, was also proved. The intuition behind the two dimensional result is, in this case, understood by considering the bosonic result, where to first order one replaces the scattering length $ a $ with $ \ln(\abs{\rho a^2})^{-1} $. Furthermore, the kinetic energy term is of course replaced by the free Fermi energy in two dimensions. Without giving details on the assumptions on the potential, the formula take the form
+\begin{equation}
+e^{2D}_{F,S}(\rho)=2\pi \sum_{i=-S}^{S}\rho_i^{2}+\frac{8\pi}{\ln(\abs{\rho a^2})} \sum_{-S\leq i<j\leq S}\rho_i\rho_j+\rho^2 o\left(\ln(\abs{\rho a^2})^{-1}\right).
+\end{equation}
+where $ \rho_i $ denotes the density of particles with spin $ i $ and the index $ i $ runs over integers or half integers. Furthermore, $ e^{2D}_{F,S}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^2=\rho}}\frac{E^{2D}_{F,S}(N,L)}{L^2} $, and $ E^{2D}_{F,S}(N,L) $ is the ground state of the spin--$ S $ Fermi gas with $ N $ spin--$ S $ fermions in $ \Omega=[0,L]^2 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.\\
 
 
 \section{The Lieb-Liniger Model: A Solvable Model in One Dimension} \label{SectionLiebLinigerModel}
@@ -424,7 +435,7 @@ To analyze the problem, Yang considers the possible spatial symmetries that may 
 \end{ytableau}=\Span{\ket{\uparrow \uparrow \uparrow },\ket{\downarrow\downarrow\downarrow},\ket{\uparrow\downarrow\uparrow}+\ket{\downarrow\uparrow\uparrow}+\ket{\uparrow\uparrow\downarrow},\ket{\uparrow\downarrow\downarrow}+\ket{\downarrow\downarrow\uparrow}+\ket{\downarrow\uparrow\downarrow}}.
 \end{equation}
 By the before mentioned fact that one cannot anti-symmetrize three spin--$ 1/2 $, Young tableaux of spin--1/2 states have at most two rows. An interesting fact with this labeling of spin states is that the structure of a given tableau is related to the total spin of the state. To see this, notice that all columns of lengths two carry vanishing total spin, because they form a singlet state. On the other hand, all columns of length one are symmetrized with each other. Hence it is well known that they carry maximal total spin. In the subspace labeled by a tableau with $ M $ columns of length $ 2 $ and $ N-2M $ columns of length $ 1 $, all states are of the form $ \ket{S_0}\otimes \ket{S_{(N-2M)/2}} $, where $ \ket{S_0} $ is some spin state of total spin $ 0 $ and $ \ket{S_{(N-2M)/2}} $ is some spin state of total spin $ (N-2M)/2 $. Remembering that irreducible representations of $ SU(2) $ are labeled by the total spin, we conclude that a Young diagram, which is just a Young tableau with blank entries, labels the irreducible $ SU(2) $ representations.\\
-Remember that we may label the irreducible representation of $ S_N $ determining the spatial symmetry also by Young tableaux, \cite{william1991representation}. Recall that for irreducible representations of $ S_N $ we have the relation\begin{equation}
+Remember that we may label the irreducible representation of $ S_N $ determining the spatial symmetry also by Young diagrams, \cite{william1991representation}. Recall that for irreducible representations of $ S_N $ we have the relation\begin{equation}
 \begin{aligned}
  \{\lambda'\}\ &=\qquad\{\lambda\}& \otimes& \ \ \text{sgn}\\
 \tiny\begin{ytableau}
@@ -647,7 +658,7 @@ We are ready to give a lower bound for ground state energy of Yang-Gaudin model.
 \end{proof}
 We will, in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}, find a matching upper bound for the Yang-Gaudin energy in the dilute limit.
 \subsection{A small caveat}\label{SubsectionYGCaveat}
-There is one issue in the analysis of the Yang-Gaudin model: There is, to the best of our knowledge, no proof in the literature that the true ground state of \eqref{EqYGHamiltonian} is among the Yang-Bethe ansatz states. In fact there seems to be no proof of the existence of a solution to the equations \eqref{EqYGintegers} given two sets of integers $ (I_j)_{j=1}^{N} $ and $ (J_a)_{a=1}^{M} $. This is contrast to the Lieb-Liniger model, in which both existence of solutions as well as completeness of the Bethe ansatz states is known, \cite{cmp/1104252974}. Since we will not use the results from this section for any rigorous analysis in the remaining of the thesis, we leave the establishment of these fact for future work. We will in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} refer to the $ e $ coming from a solution of \eqref{EqYG1}--\eqref{EqYG4} as the ground state energy of the Yang--Gaudin model, however this non-rigorous use of the terminology is never used in any rigorous setting.\\
+There is one issue in the analysis of the Yang-Gaudin model: There is, to the best of our knowledge, no proof in the literature that the true ground state of \eqref{EqYGHamiltonian} is among the Yang-Bethe ansatz states. In fact there seems to be no proof of the existence of a solution to the equations \eqref{EqYGintegers} given two sets of integers $ (I_j)_{j=1}^{N} $ and $ (J_a)_{a=1}^{M} $. This is in contrast to the Lieb-Liniger model, in which both existence of solutions as well as completeness of the Bethe ansatz states is known, \cite{cmp/1104252974}. Since we will not use the results from this section for any rigorous analysis in the remaining of the thesis, we leave the establishment of these fact for future work. We will in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} refer to the $ e $ coming from a solution of \eqref{EqYG1}--\eqref{EqYG4} as the ground state energy of the Yang--Gaudin model, however this non-rigorous use of the terminology is never used in any rigorous setting.\\
 We may state for good measure what is needed to make statements about the ground state rigorous:
 \begin{itemize}
 	\item Establish existence of solutions of \eqref{EqYGintegers} for any two sets of integers $ (I_j,J_a)_{j,a} $, at any $ c>0 $ such that $ k_j,\Lambda_a $ varies continuously with $ c $.
