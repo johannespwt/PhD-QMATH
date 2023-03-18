@@ -58,6 +58,13 @@ S~Fournais, T~Girardot, L~Junge, L~Morin, and M~Olivieri.
 \newblock The ground state energy of a two-dimensional bose gas.
 \newblock {\em arXiv preprint arXiv:2206.11100}, 2022.
 
+\bibitem[FNRS19]{fournais2019ground}
+S{\o}ren Fournais, Marcin Napi{\'o}rkowski, Robin Reuvers, and Jan~Philip
+  Solovej.
+\newblock Ground state energy of a dilute two-dimensional {B}ose gas from the
+  bogoliubov free energy functional.
+\newblock {\em Journal of Mathematical Physics}, 60(7):071903, 2019.
+
 \bibitem[FS20]{fournais2020energy}
 S{\o}ren Fournais and Jan~Philip Solovej.
 \newblock The energy of dilute {B}ose gases.
