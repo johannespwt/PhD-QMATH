@@ -1,5 +1,6 @@
 % !TeX spellcheck = en_US
-\chapter{Many-Body Quantum Mechanics}
+\chapter{Many-Body Quantum Mechanics} 
+\label{ChapterMany-BodyQuantumMechanics}
 	In this chapter we give a brief introduction to many-body quantum mechanics. The chapter will serve to define relevant quantities, to set up the mathematical framework, and to state some preliminary results.
 
 \section{Many-body Wave Functions}
@@ -15,7 +16,7 @@
 	\subsection{Identical Particles: Bosons and Fermions}
 		In the case when the particles in question are identical, \ie indistinguishable, it turn out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistinguishable particles, we restrict to the physical configuration space to $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected in order for $ \pi_1(C_{p,N},x) $ to be independent of $ x\in C_{p,N} $.
 		\begin{remark}
-			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics (see section below) on this space. In section ... we will see examples of different particle statistics in one dimension. 
+			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. On this configuration space one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics (see section below) on this space. In Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} we will see examples of different particle statistics in one dimension. 
 		\end{remark}
 		\begin{remark}
 			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configurations spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\} $ are path connected and their fundamental groups are isomorphic to the fundamental group in the spinless case independent of $ \sigma $.\\
@@ -28,14 +29,14 @@
 			\begin{equation*}
 			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
 			\end{equation*}
-			where $ \mathcal{H}=L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
+			where $ \mathcal{H}\subset L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
 		\end{definition}
 		\begin{definition}
 			A quantum system of $N$ spin--$ S $ fermions in $ \Omega\subseteq\R^d $ at fixed time is a pair
 			\begin{equation*}
 			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
 			\end{equation*}
-			where $ \mathcal{H}=L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
+			where $ \mathcal{H}\subset L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
 		\end{definition}
 	
 \section{Observables, Dynamics, and Energy}
@@ -53,7 +54,7 @@ I the previous section we defined a quantum system at a fixed time. However, we 
 \end{equation*}
 where have set $ \hbar=1 $.
 \begin{remark}
-	By Stone's theorem (ref Reed and Simon), the existance of a self-adjoint Hamiltonian, $ H $, is guaranteed for any time evolution described by $ \Psi(t)=U(t-t_0)\Psi(t_0) $, when $ U(t) $ is a strongly continuous one-parameter unitary group.
+	By Stone's theorem \cite{reed1981functional}, the existence of a self-adjoint Hamiltonian, $ H $, is guaranteed for any time evolution described by $ \Psi(t)=U(t-t_0)\Psi(t_0) $, when $ U(t) $ is a strongly continuous one-parameter unitary group.
 \end{remark}
 Since the Hamiltonian, $ H $, is self-adjoint, it represents an observable which we call \emph{energy}. Since $ H $ is lower bounded, there is a natural notion of lowest energy of $ H $.
 \begin{definition}
@@ -68,7 +69,7 @@ Furthermore, we define the notion of a \emph{ground state} of $ H $ as
 \end{definition}
 When studying ground states and ground state energies it is useful to have the following variational characterization.
 \begin{remark}\label{RemarkVariationalPrinciple1}
-	It follows from the spectral theorem (ref Reed and Simon) that the ground state energy is given by \begin{equation}\label{EqVariationalGroundStateEnergyOperator}
+	It follows from the spectral theorem (see \cite{reed1981functional}) that the ground state energy is given by \begin{equation}\label{EqVariationalGroundStateEnergyOperator}
 		E_0(H)=\inf_{\Psi\in \dom{\mathcal{H}}}\frac{\braket{\Psi,H\Psi}}{\norm{\Psi}^2}.
 	\end{equation}
 \end{remark}
@@ -85,8 +86,8 @@ When studying ground states and ground state energies it is useful to have the f
 	as $ \dom{H} $ is form core for $\mathcal{E_H}$.
 \end{remark}
 We refer to both \eqref{EqVariationalGroundStateEnergyOperator} and \eqref{EqVariationalGroundStateEnergyForm} as \emph{the variational principle}.
-We will often in the remaining take \eqref{EqVariationalGroundStateEnergyForm} as the vary definition of the ground state energy. Furthermore, one can also define the dynamics of a quantum system by specifying an energy quadratic form in the following sense
-\begin{remark}[Ref!!]\label{RemarkOperatorFromQuadraticForm}
+We will often in the remaining take \eqref{EqVariationalGroundStateEnergyForm} as the very definition of the ground state energy. Furthermore, one can also define the dynamics of a quantum system by specifying an energy quadratic form in the following sense
+\begin{remark}[\cite{reed1981functional} Theorem VIII.15]\label{RemarkOperatorFromQuadraticForm}
 	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exist a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
 \end{remark}
 Thus we will frequently change between the two equivalent formulations of the dynamics of a quantum system that are the operator, $ H $, formulation and the quadratic form, $ \mathcal{E} $, formulation
@@ -106,14 +107,14 @@ where we take $ v $ to be a radial function and, $ V $, is called the \emph{trap
 \begin{equation}\label{key}
 \mathcal{E}_{(v,\sigma)}(\Psi)=\int_{\Omega^N} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j} v(x_i-x_j)\abs{\Psi}^2+\sigma\int_{\dd (\Omega^N)}\abs{\Psi}^2,
 \end{equation}
-with domain $ \dom{\mathcal{E}_{(v,\sigma)}}=\{\Psi\in (C^\infty_0(\Omega^N))_{\text{b/f}}\vert \mathcal{E}_{(v,\sigma)}(\Psi)<\infty\} $. with $ (C^\infty_0(\Omega^N))_{\text{b/f}} $ meaning the bosonic/fermionic subspace of $ C^\infty_0(\Omega^N) $. $ \sigma=\infty $ is taken to mean Dirichlet boundary conditions.
+with domain $ \dom{\mathcal{E}_{(v,\sigma)}}=\{\Psi\in (C^\infty_0(\Omega^N))_{\text{b/f}}\vert \mathcal{E}_{(v,\sigma)}(\Psi)<\infty\} $. With $ (C^\infty_0(\Omega^N))_{\text{b/f}} $ meaning the bosonic/fermionic subspace of $ C^\infty_0(\Omega^N) $. $ \sigma=\infty $ is taken to mean Dirichlet boundary conditions.
 \end{definition}
-Of course $ \mathcal{E}_{(v,\sigma)}\geq 0 $ for any $ \sigma\in[0,\infty] $ and $ v\geq 0 $. However, the closability of $ \mathcal{E}_{(v,\sigma)} $ is not evident. In fact for general $ v $, $ \mathcal{E}_{(v,\sigma)} $ will not be neither densely defined nor closable on $ L^2_{s/a}(\Omega^N) $. However, it will both densely defined on a closed subspace $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ of $ L^2_{s/a}(\Omega^N) $, hence we take $ \mathcal{H}_{(v,\sigma)} $ to be the Hilbert space of the system, when this is the case. Closability of $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $ is not necessarily satisfied. Thus we make the following definition
+Of course $ \mathcal{E}_{(v,\sigma)}\geq 0 $ for any $ \sigma\in[0,\infty] $ and $ v\geq 0 $. However, the closability of $ \mathcal{E}_{(v,\sigma)} $ is not evident. In fact for general $ v $, $ \mathcal{E}_{(v,\sigma)} $ will not be neither densely defined nor closable on $ L^2_{s/a}(\Omega^N) $. However, it will be densely defined on a closed subspace $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ of $ L^2_{s/a}(\Omega^N) $, hence we take $ \mathcal{H}_{(v,\sigma)} $ to be the Hilbert space of the system, when this is the case. Closability of $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $ is not necessarily satisfied. Thus we make the following definition
 \begin{definition}
 	We say a potential $ v\geq 0 $ is \textbf{allowed} in dimension $ d $, if $ \mathcal{E}_{(v,\sigma)} $ is closable on $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2}\subset L^2_{s/a}(\Omega^N)$ for any $ \sigma\in[0,\infty] $.
 \end{definition}
 \begin{remark}
-	There are plenty of allowed potentials, but the notion does depend on the dimension, $ d $. For example is $ v=\delta_0 $, \ie the delta function potential, allowed in dimension $ d=1 $, but not in dimension $ d\geq 2 $. This can be seen from the fact that for $ d=1 $ the incidence planes are co-dimension $ 1 $, and hence the trace theorem gives closability, but for $ d\geq 2 $ where the incidence planes are of co-dimension $ \geq 2 $ it is known that the trace of $ H^1 $ is not contained in $ L^2 $. (Ref!!)
+	There are plenty of allowed potentials, but the notion does depend on the dimension, $ d $. For example is $ v=\delta_0 $, \ie the delta function potential, allowed in dimension $ d=1 $, but not in dimension $ d\geq 2 $. This can be seen from the fact that for $ d=1 $ the incidence planes are co-dimension $ 1 $, and hence the trace theorem gives closability, but for $ d\geq 2 $ where the incidence planes are of co-dimension $ \geq 2 $ it is known that the trace of $ H^1 $ is not contained in $ L^2 $.
 \end{remark}
 
 
@@ -150,7 +151,7 @@ Using this lemma, we may prove the following Proposition
 	As previously, we define $\mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ and $ \diff\mu_v=\sum_{1\leq i<j\leq N}v(x_i-x_j)\diff\lambda^N $. Clearly $ \mathcal{E}_{(v,\sigma)} $ is lower bounded and densely defined in $ \mathcal{H}_{(v,\sigma)} $. Closability amounts to showing that $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\lambda^{N})}}0 $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\diff\mu_v\right) $ Cauchy w.r.t the norm $ \norm{\cdot}_{\mathcal{E}_{(v,\sigma)}}=\sqrt{\mathcal{E}_{(v,\sigma)}(\cdot)+\norm{\cdot}_2^2} $, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. Now since $ (\psi_n)_{n\in\mathbb{N}}$ is a Cauchy sequence in $ L^2\left(\Omega^N,\diff\mu_v\right) $, it has a subsequence that converges $ \mu_v $--almost everywhere to some function $ f\in L^2\left(\Omega^N,\diff\mu_v\right)  $. Furthermore, this subsequence has a further subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $. However, since $ (\psi_n)_{n\in\mathbb{N}}$ converges to $ 0 $ in $ H^1(\Omega^N,\diff \lambda^N) $, Lemma \ref{LemmaH1PointwiseConvergence} implies that for $ (x_i-x_j) $ fixed $ (\psi_n)_{n\in\mathbb{N}} $ converges $ \lambda^{N-1} $--a.e. to $ 0 $. Hence $ \left(\psi_n\right)_{n\in\mathbb{N}} $ converges pointwise to $ 0 $ on $ \lambda^{N-1} $--almost all lines. Now notice that $ \diff \mu_v=\sum_{1\leq i<j\leq N} \diff \mu_{v_{ij}}\times \diff\lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $. Thus for $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all lines in $ \Omega^N $ with $ x_i+x_j $ and $ x_k $ fixed for all $ k\neq i,j $, by passing to a subsequence $ \psi_n $ converges pointwise to $ 0 $, by Lemma \ref{LemmaH1PointwiseConvergence}. But also on $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $--almost all these lines $ \psi_n $ converges $ \mu_{v_{ij}} $--almost everywhere to $ f $, and hence $ f=0 $ $ \mu_{v_{ij}} $--almost everywhere. Thus we conclude that $ f=0 $ $ \mu_v $--almost everywhere. The lemma now follows from Remark \ref{RemarkOperatorFromQuadraticForm}.
 \end{proof}
 \begin{remark}
-	Combining Lemma \ref{Lemma1dPotentialAllowed} and Remark \ref{RemarkdDimPotentialAllowed} we conclude that potentials of the form $ v=v_{\sigma\text{--finite}}+v_{\text{abs.cont.}} $, where $ v_{\sigma\text{--finite}} $ is a $ \sigma $--finite measure and $ v_{\text{abs.cont.}} $ is an absolutely continuous measure (w.r.t. Lebesgue measure) are allowed in one dimension, $ d=1 $. We will in Chapter.... obtain result about the ground state energy of such systems.
+	Combining Proposition \ref{Lemma1dPotentialAllowed} and Remark \ref{RemarkdDimPotentialAllowed} we conclude that potentials of the form $ v=v_{\sigma\text{--finite}}+v_{\text{abs.cont.}} $, where $ v_{\sigma\text{--finite}} $ is a $ \sigma $--finite measure and $ v_{\text{abs.cont.}} $ is an absolutely continuous measure (w.r.t. Lebesgue measure) are allowed in one dimension, $ d=1 $. We will in Chapters \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} obtain result about the ground state energies of such systems.
 \end{remark}
 \begin{remark}
 	We emphasize that one can construct dynamics of a quantum system that are not given by a pair potential in the sense of the discussion above. It is, for example, possible to study point interactions in $ d\geq 2 $, however, they cannot be seen as arising from a potential (\eg a $ \delta $-function potential). Instead, one studies in this case the self-adjoint extensions of the Laplacian on functions supported away from the incidence planes of the particles. \cite{albeverio2012solvable}.

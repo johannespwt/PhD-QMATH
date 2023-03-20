@@ -694,15 +694,21 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	\end{equation}
 	$ R=\max(\abs{a_e}, R_0) $
 \end{theorem}
+\begin{proof}
+	This follows simply from the fact that the spin--$ 1/2$ bosonic ground state energy is greater than or equal to the spinless bosonic ground state energy and hence from Proposition 16 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}.
+\end{proof}
 	\begin{theorem}
 	\label{TheoremLowerBoundSpinDependentSpin1/2Fermi}
 	Consider a spin--$ 1/2 $ Fermi gas with repulsive interaction  $v=v_e\operatorname{P}_s+v_o\operatorname{P}_t$. Assume furthermore that $ a_o\leq a_e $. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
 	\begin{equation}
 	\label{eqlowerSpinDependtSpin1/2Fermi}
-	E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_t-C_\text{L}\left((\rho R)^{6/5}+N^{-2/3}\right)\right).
+	E^N(N,L)\geq N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o-C_\text{L}\left((\rho R)^{6/5}+N^{-2/3}\right)\right).
 	\end{equation}
 	Here $ R=\max(\abs{a_e}, a_o, R_0) $
 \end{theorem}
+\begin{proof}
+	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential), and from the fact that for $ a_o\leq a_e $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_o}\right) $$. The remaining of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
+\end{proof}
 \begin{theorem}
 	\label{TheoremLowerBoundSpinDependentSpin1/2SpatiallySymmetric}
 	Consider a spin--$ 1/2 $ spatially symmetric gas with repulsive interaction  $v=v_s\operatorname{P}_s+v_t\operatorname{P}_t$. Assume furthermore that $ a_t\leq a_s $. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
@@ -712,8 +718,10 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	\end{equation}
 	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $
 \end{theorem}
-
-
+\begin{proof}
+	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential and different symmetry), and from the fact that for $ a_t\leq a_s $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_s},\frac{2}{R-a_t}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_t}\right) $$. The remaining of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
+\end{proof}
+We see that combining these results with the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} we obtain ground state energy expansions to next-to-leading order in the diluteness parameter in all these cases. 
 
 
 \appendix

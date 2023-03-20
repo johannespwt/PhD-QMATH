@@ -118,6 +118,11 @@ DF~Hines, NE~Frankel, and DJ~Mitchell.
 \newblock Hard-disc bose gas.
 \newblock {\em Physics Letters A}, 68(1):12--14, 1978.
 
+\bibitem[Hoh67]{hohenberg1967existence}
+Pierre~C Hohenberg.
+\newblock Existence of long-range order in one and two dimensions.
+\newblock {\em Physical Review}, 158(2):383, 1967.
+
 \bibitem[Hul38]{hult1938}
 L.~Hulthén.
 \newblock {\"Uber das Austauschproblem eines Kristalles}.
@@ -212,6 +217,12 @@ D.C. Mattis.
 \newblock {\em The Theory of Magnetism I: Statics and Dynamics}.
 \newblock Springer Series in Solid-State Sciences. Springer Berlin Heidelberg,
   2012.
+
+\bibitem[MW66]{mermin1966absence}
+N~David Mermin and Herbert Wagner.
+\newblock Absence of ferromagnetism or antiferromagnetism in one-or
+  two-dimensional isotropic heisenberg models.
+\newblock {\em Physical Review Letters}, 17(22):1133, 1966.
 
 \bibitem[Ols98]{olshanii1998atomic}
 Maxim Olshanii.
