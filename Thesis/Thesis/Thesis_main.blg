@@ -7,44 +7,44 @@ A level-1 auxiliary file: Chapters/The-Ground-State-Energy-Bose-Gas.aux
 A level-1 auxiliary file: Chapters/The-Ground-State-Energy-Fermi-Gas.aux
 The style file: alpha.bst
 Database file #1: bibliography.bib
-You've used 42 entries,
+You've used 48 entries,
             2543 wiz_defined-function locations,
-            807 strings with 10490 characters,
-and the built_in function-call counts, 15477 in all, are:
-= -- 1551
-> -- 693
-< -- 21
-+ -- 236
-- -- 224
-* -- 1100
-:= -- 2615
-add.period$ -- 135
-call.type$ -- 42
-change.case$ -- 241
-chr.to.int$ -- 41
-cite$ -- 42
-duplicate$ -- 635
-empty$ -- 1140
-format.name$ -- 282
-if$ -- 3119
+            839 strings with 11240 characters,
+and the built_in function-call counts, 17699 in all, are:
+= -- 1775
+> -- 797
+< -- 23
++ -- 271
+- -- 258
+* -- 1272
+:= -- 2986
+add.period$ -- 153
+call.type$ -- 48
+change.case$ -- 277
+chr.to.int$ -- 47
+cite$ -- 48
+duplicate$ -- 720
+empty$ -- 1300
+format.name$ -- 324
+if$ -- 3561
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 50
-newline$ -- 215
-num.names$ -- 126
-pop$ -- 202
+missing$ -- 56
+newline$ -- 245
+num.names$ -- 144
+pop$ -- 224
 preamble$ -- 2
-purify$ -- 291
+purify$ -- 333
 quote$ -- 0
-skip$ -- 510
+skip$ -- 584
 stack$ -- 0
-substring$ -- 806
-swap$ -- 66
-text.length$ -- 21
-text.prefix$ -- 17
+substring$ -- 932
+swap$ -- 72
+text.length$ -- 23
+text.prefix$ -- 19
 top$ -- 0
-type$ -- 304
+type$ -- 352
 warning$ -- 0
-while$ -- 150
-width$ -- 52
-write$ -- 546
+while$ -- 173
+width$ -- 55
+write$ -- 623

@@ -30,6 +30,12 @@ Hans Bethe.
 \newblock Zur theorie der metalle.
 \newblock {\em Zeitschrift f{\"u}r Physik}, 71(3):205--226, 1931.
 
+\bibitem[DLO01]{dunjko2001bosons}
+Vanja Dunjko, Vincent Lorent, and Maxim Olshanii.
+\newblock Bosons in cigar-shaped traps: Thomas-fermi regime, tonks-girardeau
+  regime, and in between.
+\newblock {\em Physical Review Letters}, 86(24):5413, 2001.
+
 \bibitem[Dor93]{cmp/1104252974}
 T.~C. Dorlas.
 \newblock {Orthogonality and completeness of the Bethe ansatz eigenstates of
@@ -57,13 +63,6 @@ Marco Falconi, Emanuela~L Giacomelli, Christian Hainzl, and Marcello Porta.
 S~Fournais, T~Girardot, L~Junge, L~Morin, and M~Olivieri.
 \newblock The ground state energy of a two-dimensional bose gas.
 \newblock {\em arXiv preprint arXiv:2206.11100}, 2022.
-
-\bibitem[FNRS19]{fournais2019ground}
-S{\o}ren Fournais, Marcin Napi{\'o}rkowski, Robin Reuvers, and Jan~Philip
-  Solovej.
-\newblock Ground state energy of a dilute two-dimensional {B}ose gas from the
-  bogoliubov free energy functional.
-\newblock {\em Journal of Mathematical Physics}, 60(7):071903, 2019.
 
 \bibitem[FS20]{fournais2020energy}
 S{\o}ren Fournais and Jan~Philip Solovej.
@@ -129,6 +128,12 @@ Kerson Huang and Chen~Ning Yang.
 \newblock Quantum-mechanical many-body problem with hard-sphere interaction.
 \newblock {\em Physical review}, 105(3):767, 1957.
 
+\bibitem[Lau23]{lauritsen2023almost}
+Asbj{\o}rn~B{\ae}kgaard Lauritsen.
+\newblock Almost optimal upper bound for the ground state energy of a dilute
+  fermi gas via cluster expansion.
+\newblock {\em arXiv preprint arXiv:2301.08005}, 2023.
+
 \bibitem[LHY57]{lee1957eigenvalues}
 Tsin~D Lee, Kerson Huang, and Chen~N Yang.
 \newblock Eigenvalues and eigenfunctions of a {B}ose system of hard spheres and
@@ -162,6 +167,16 @@ Asbj{\o}rn~B{\ae}kgaard Lauritsen and Robert Seiringer.
 Elliott~H Lieb, Robert Seiringer, and Jan~Philip Solovej.
 \newblock Ground-state energy of the low-density fermi gas.
 \newblock {\em Physical Review A}, 71(5):053605, 2005.
+
+\bibitem[LSY03]{lieb2003one}
+Elliott~H Lieb, Robert Seiringer, and Jakob Yngvason.
+\newblock One-dimensional bosons in three-dimensional traps.
+\newblock {\em Physical Review Letters}, 91(15):150401, 2003.
+
+\bibitem[LSY04]{lieb2004one}
+Elliott~H Lieb, Robert Seiringer, and Jakob Yngvason.
+\newblock One-dimensional behavior of dilute, trapped {B}ose gases.
+\newblock {\em Communications in mathematical physics}, 244(2):347--393, 2004.
 
 \bibitem[LY57]{lee1957many}
 TD~Lee and CN~Yang.
@@ -198,6 +213,17 @@ D.C. Mattis.
 \newblock Springer Series in Solid-State Sciences. Springer Berlin Heidelberg,
   2012.
 
+\bibitem[Ols98]{olshanii1998atomic}
+Maxim Olshanii.
+\newblock Atomic scattering in the presence of an external confinement and a
+  gas of impenetrable bosons.
+\newblock {\em Physical Review Letters}, 81(5):938, 1998.
+
+\bibitem[PSW00]{petrov2000regimes}
+DS~Petrov, GV~Shlyapnikov, and JTM Walraven.
+\newblock Regimes of quantum degeneracy in trapped 1d gases.
+\newblock {\em Physical Review Letters}, 85(18):3745, 2000.
+
 \bibitem[RS78]{reed1978iv}
 M.~Reed and B.~Simon.
 \newblock {\em IV: Analysis of Operators}.
@@ -217,6 +243,12 @@ M~Schick.
 Bill Sutherland.
 \newblock Further results for the many-body problem in one dimension.
 \newblock {\em Physical Review Letters}, 20(3):98, 1968.
+
+\bibitem[SY08]{seiringer2008lieb}
+Robert Seiringer and Jun Yin.
+\newblock The {L}ieb-{L}iniger model as a limit of dilute bosons in three
+  dimensions.
+\newblock {\em Communications in mathematical physics}, 284(2):459--479, 2008.
 
 \bibitem[WJ91]{william1991representation}
 Fulton William and Harris Joe.
