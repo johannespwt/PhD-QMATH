@@ -432,7 +432,7 @@ which all follows from Taylor expansion of the free Fermi reduced density (matri
 \end{equation}
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
 \end{proof}
-\section{Extending the upper bound to other symmetries and spin dependent potentials}
+\section{Extending the upper bound to other symmetries and spin-dependent potentials}
 We present here corollaries that follows directly, \emph{mutatis mutandis}, from the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. We also give an application of one the results, to a model where the new upper bound improves best up to now best known result.
 \subsection{Spin-1/2 bosons}
 Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (and the lemmas used), we obtain an immediate corollary. Changing spin-space anti-symmetry to spin-space symmetry, we obtain the equivalent result for bosons. The change of symmetry interchanges the even and odd condition in the singlet and triplet, hence constructing the trial state \eqref{EqTrial StateSpin1/2Fermi}, we must interchange $ \operatorname{P}_s $ and $ \operatorname{P}_t $. Thus we get \begin{equation}\label{EqTrial StateSpin1/2Bose}
@@ -450,7 +450,7 @@ The proof is unchanged except for the choice of $ \chi $. In this case, since $ 
 \end{corollary}
 
 
-\subsection{Spin dependent potentials}
+\subsection{Spin-dependent potentials}
 Interestingly, the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} we gave in the last section, allows for a slight generalization to potentials that are of the form \begin{equation}
 v(x_i-x_j)=v_e(x_i-x_j) \operatorname{P}^{i,j}_s+v_o(x_i-x_j)\operatorname{P}^{i,j}_t
 \end{equation} 
@@ -464,7 +464,7 @@ E_{1,o}\coloneqq\binom{N}{2}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Ps
 \end{aligned}
 \end{equation}
 Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_e $ the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $. We summarize this observation in the following corollary
-\begin{corollary}[Spin dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2FermiSpinDependent}
+\begin{corollary}[Spin-dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2FermiSpinDependent}
 	Let $ v=v_e\operatorname{P}_s+v_o\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
 	\end{equation}
@@ -485,7 +485,7 @@ where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as 
 H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}^{i,j}_s+c\operatorname{P}^{i,j}_t\right)\delta(x_i-x_j),
 \end{equation}
 However the domain is taken to be wave functions that are \emph{symmetric in the spacial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
-\begin{corollary}[Spatially symmetric, spin dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}
+\begin{corollary}[Spatially symmetric, spin-dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}
 	Let $ v=v_s\operatorname{P}_s+v_t\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ spacially symmetric gas satisfies\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_s+(1-\ln(2))a_t\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
 	\end{equation}
@@ -684,7 +684,7 @@ if $ \tilde{c}'=\frac{c'}{1-\frac{c'}{2}\mathfrak{r}} $.
  \end{equation}
  where we used Proposition \ref{PropositionYGLowerBound}, and recall that the last inequality strictly speaking is conjecture (see Subsection \ref{SubsectionYGCaveat}).
 \section{Lower bound for other symmetries}
-Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}. For these we may, in some cases actually prove a lower bound. This is always the case for the bosonic case, and exactly the case when $ a_o\leq a_e $ in the spin dependent fermionic case, and when $ a_t\leq a_s $ in spin dependent spatially symmetric case. Hence we have 
+Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}. For these we may, in some cases actually prove a lower bound. This is always the case for the bosonic case, and exactly the case when $ a_o\leq a_e $ in the spin-dependent fermionic case, and when $ a_t\leq a_s $ in spin-dependent spatially symmetric case. Hence we have 
 \begin{theorem}
 	\label{TheoremLowerBoundSpin1/2Bose}
 	Consider a spin--$ 1/2 $ Bose gas with repulsive interaction  $v=v_{\textnormal{reg.}}+v_{\textnormal{h.c.}}$ as defined above. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
