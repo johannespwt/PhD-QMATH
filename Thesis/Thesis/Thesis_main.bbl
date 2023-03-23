@@ -261,6 +261,13 @@ Robert Seiringer and Jun Yin.
   dimensions.
 \newblock {\em Communications in mathematical physics}, 284(2):459--479, 2008.
 
+\bibitem[VPV{\etalchar{+}}15]{volosniev2015engineering}
+Artem~G Volosniev, D~Petrosyan, M~Valiente, DV~Fedorov, AS~Jensen, and
+  Nikolaj~Thomas Zinner.
+\newblock Engineering the dynamics of effective spin-chain models for strongly
+  interacting atomic gases.
+\newblock {\em Physical Review A}, 91(2):023620, 2015.
+
 \bibitem[WJ91]{william1991representation}
 Fulton William and Harris Joe.
 \newblock Representation theory: a first course.
@@ -272,6 +279,12 @@ Chen-Ning Yang.
 \newblock Some exact results for the many-body problem in one dimension with
   repulsive delta-function interaction.
 \newblock {\em Physical Review Letters}, 19(23):1312, 1967.
+
+\bibitem[YC16]{yang2016effective}
+Lijun Yang and Xiaoling Cui.
+\newblock Effective spin-chain model for strongly interacting one-dimensional
+  atomic gases with an arbitrary spin.
+\newblock {\em Physical Review A}, 93(1):013617, 2016.
 
 \bibitem[YY09]{yau2009second}
 Horng-Tzer Yau and Jun Yin.
