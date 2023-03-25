@@ -26,6 +26,7 @@
 \usepackage[english]{babel} 
 \usepackage{dsfont}
 \usepackage{appendix}
+\usepackage{makecell}
 
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing}
@@ -67,8 +68,8 @@
 \renewcommand{\braket}[1]{\left\langle#1\right\rangle}
 \newcommand{\ketbra}[2]{\left\vert #1\middle\rangle\middle\langle #2 \right\vert}
 \newcommand*\diff{\mathop{}\!\mathrm{d}}
-\newcommand{\ie}{\emph{i.e.} }
-\newcommand{\eg}{\emph{e.g.} }
+\newcommand{\ie}{i.e. }
+\newcommand{\eg}{e.g. }
 \newcommand{\dd}{\partial }
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -126,7 +127,49 @@
   \fontencoding{T1}\fontfamily{LinuxLibertineT-OsF}\selectfont
   \maketitle
 \endgroup
+\null\thispagestyle{empty}
+\\
+\hspace*{-1cm}{\textbf{Johannes Agerskov}\\
+\hspace*{-1cm}QMATH\\
+\hspace*{-1cm}Department of Mathematical Sciences\\
+\hspace*{-1cm}University of Copenhagen\\
+\hspace*{-1cm}\href{mailto:johannes-as@math.ku.dk}{johannes-as@math.ku.dk}\\
+\hspace*{-1cm}\href{mailto:johannespwt@hotmail.com}{johannespwt@hotmail.com}
+\vspace{5cm}
 
+\hspace*{-1cm}\hspace{-0.88cm} \begin{tabular}{ll}
+	Date of submission &\qquad March 31, 2023\\
+	Date of defense &\qquad  June 6, 2023\\
+	Advisor &\qquad  \makecell[tl]{\textbf{Jan Philip Solovej}\\ University of Copenhagen, Copenhagen, Denmark}\\
+	Assessment committee &\qquad \makecell[tl]{\textbf{Søren Fournais} (chair)\\
+		\ University of Copenhagen, Copenhagen, Denmark\\
+		\ Aarhus University, Aarhus, Denmark\\
+	\textbf{Simona Rota Nodari}\\
+	\ Université Côte d'Azur\\
+	\ Nice, France\\
+\textbf{Marcello Porta}\\
+\ Scuola Internazionale Superiore di Studi Avanzati\\
+\ Trieste, Italy }
+	
+\end{tabular}
+
+
+
+\newpage
+\begin{abstract}
+	 In this thesis, we study the ground state energy of one dimensional dilute quantum systems with repulsive pair potentials. We review part of the general theory of many-body quantum mechanics. We then prove results describing conditions under which, we can associate a unique self-adjoint many-body Hamiltonian to certain repulsive pair-potential.\\
+	 The point-interacting solvable models in one dimension, \ie the Lieb-Liniger and Yang-Gaudin models, are reviewed and certain results related to their ground state energy in the dilute limit are proved.\\
+	 We proceed by proving a ground state energy expansion for the Bose gas. This is done by proving first an upper bound and next a matching lower bound. The ground state energy is found, up to next-to-leading order, to depend on the potential only through the scattering length. Thus the results exhibits universality similar to that observed for higher dimensional systems. Our result covers the well known results on the ground state energy of the Lieb-Liniger model in the Tonks-Girardeau (dilute) limit. However, our result allows for a very general class of potentials, including potential that differ significantly from the point interacting $ \delta $-potentials for example by having positive scattering length. As corollaries, we find similar result for spin-polarized Fermi gases and gases with intermediate particle statistics, \ie anyons.\\
+	 Finally we study the spin--$ 1/2 $ Fermi gas. Here we conjecture a ground state energy expansion based on the solvable models at hand. The upper bound from the bosonic case is generalized by realizing the spins to be described by an effective antiferromagnetic Heisenberg chain. Thereby, we prove an upper bound matching our conjecture. As corollaries, we find similar results for spin-$ 1/2 $ bosons and particles with spatial symmetry and fermions with spin-dependent potentials. Furthermore, we generalize parts of the lower bound proof from the bosonic case, and prove in this case for spin--$ 1/2 $ fermions a lower bound related to the Lieb-Liniger-Heisenberg ground state energy. We notice that for spin-dependent potentials in certain regimes identified with a ferromagnetic phase, the lower bound is reduced to that of the Lieb-Liniger model. Thus a lower bound, matching the previous upper bound, is proved in the ferromagnetic phase for spin-dependent potentials.
+\end{abstract}
+\newpage
+\renewcommand*\abstractname{Resume}
+\begin{abstract}
+	content...
+\end{abstract}
+\renewcommand*\abstractname{Abstract}
+
+\newpage
 \tableofcontents
 
 \mainmatter

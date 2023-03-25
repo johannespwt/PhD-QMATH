@@ -13,7 +13,7 @@
 	\end{definition}
 	In this thesis, we are mostly interested in a quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}\subset L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specifically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
 
-	\subsection{Identical Particles: Bosons and Fermions}
+	\subsection{Identical particles: Bosons and fermions}
 		In the case when the particles in question are identical, \ie indistinguishable, it turns out that one can restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistinguishable particles, we restrict to the physical configuration space $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected in order for $ \pi_1(C_{p,N},x) $ to be independent of $ x\in C_{p,N} $.
 		\begin{remark}
 			For $ d\geq 3 $ we have $\pi_1(C_{p,N})=S_N$, for $ d=2 $ we have $\pi_1(C_{p,N})=B_N$ and for $d=1$ we have $\pi_1(C_{p,N})=\{1\}$. In the somewhat special case of $d=1$, $C_{p,N}=\{x_1<x_2<\ldots<x_N\}$. In this configuration space, one can never interchange particles without crossing the singular excluded incidence (hyper)planes. Thus the allowed particle statistics are determined by the possible permutation invariant dynamics on this space. In Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} we will see examples of different particle statistics in one dimension. 
@@ -29,14 +29,14 @@
 			\begin{equation*}
 			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
 			\end{equation*}
-			where $ \mathcal{H}\subset L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
+			where $ \mathcal{H} $ is a closed subspace of $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $, and thus is a Hilbert space.
 		\end{definition}
 		\begin{definition}
 			A quantum system of $N$ spin--$ S $ fermions in $ \Omega\subseteq\R^d $ at fixed time is a pair
 			\begin{equation*}
 			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
 			\end{equation*}
-			where $ \mathcal{H}\subset L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $.
+			where $ \mathcal{H} $ is a closed subspace of $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $, and thus is a Hilbert space.
 		\end{definition}
 	
 \section{Observables, Dynamics, and Energy}
@@ -60,8 +60,9 @@ Since the Hamiltonian, $ H $, is self-adjoint, it represents an observable which
 \begin{definition}
 	The \textbf{ground state energy} of $ H $ is defined by 
 	$$
-	E_0(H):=\inf(\sigma(H))
+	E_0(H):=\inf(\sigma(H)),
 	$$
+	where $ \sigma(H) $ denotes the spectrum of $ H $.
 \end{definition}
 Furthermore, we define the notion of a \emph{ground state} of $ H $ as
 \begin{definition}
@@ -91,7 +92,7 @@ We will often, in the remaining part of this thesis, take \eqref{EqVariationalGr
 	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exists a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
 \end{remark}
 Thus we will frequently switch between the two equivalent formulations of the dynamics of a quantum system that are the operator, $ H $, formulation and the quadratic form, $ \mathcal{E} $, formulation
-\subsection{Many-Body Hamiltonians}
+\subsection{Many-body Hamiltonians}
 Until this point, we have not specified the class of Hamiltonians that we will be interested in. We have stated that we will care mainly about Hamiltonians defined on the bosonic or fermionic subspace, however, no specification has been made about the dynamics on these subspaces. We are interested in modeling $ N $ particles in some region $ \Omega\subseteq\R^d $ that interact locally with each other. For the remainder of this subsection, we will ignore spin, knowing that including spin degrees of freedom is completely analogous. In practice, and for suitably mild interactions, this means that the Hamiltonian \emph{formally} (meaning restricted to the fermionic or bosonic subspace of $ C^\infty_0(\Omega^N) $) takes the form \begin{equation}
 H=\sum_{i=1}^{N}T_i+U(x_1,\ldots,x_N)
 \end{equation}
@@ -101,7 +102,7 @@ T_i=-\frac{1}{2m_i}\Delta_i\qquad (\hbar=1)
 since we are interested in identical particles, we will from this point onward choose $ m_i=1/2 $. As for the potential, $ V $, we of course immediately restrict to permutation-invariant function, $ U $, for identical particles. However, in the following, we will further restrict to a combination of having a trapping potential and radial pair potentials, which model pairwise interactions that only depend on the distances between particles. Such potentials take the form \begin{equation}
 U(x_1,\ldots,x_N)=\sum_{i<j} v(x_i-x_j) + \sum_{i=1}^{N}V(x_i)
 \end{equation}
-where we take $ v $ to be a radial function and, $ V $, is called the \emph{trapping potential}. We will generally take $ v $ to be repulsive, meaning $ v\geq 0 $, with compact support. The trapping potential we will disregard \ie $ V=0 $. We will then in general take the true Hamiltonian to be a self-adjoint extension of the symmetric \emph{formal} Hamiltonian. Now some models of stronger interactions, \eg the hard core interaction, require a more delicate construction with respect to the initial definition of the formal Hamiltonian. However, the construction of the Hamiltonian can be done in a more unified manner when constructing the energy quadratic form. 
+where we take $ v $ to be a radial function and $ V $ is called the \emph{trapping potential}. We will generally take $ v $ to be repulsive, meaning $ v\geq 0 $, with compact support. The trapping potential we will disregard \ie $ V=0 $. We will then in general take the true Hamiltonian to be a self-adjoint extension of the symmetric \emph{formal} Hamiltonian. Now some models of stronger interactions, \eg the hard core interaction, require a more delicate construction with respect to the initial definition of the formal Hamiltonian. However, the construction of the Hamiltonian can be done in a more unified manner when constructing the energy quadratic form. 
 \begin{definition}
 	For a system of $ N $ bosons/fermions in region $ \Omega\in\R^d $, we define for $ \sigma\in[0,\infty] $ \textbf{the energy quadratic forms}
 \begin{equation}\label{key}
@@ -271,7 +272,7 @@ We give two examples of the scattering length in the following:
 	solves the scattering equation. We conclude that $ a_e=a_o=R_0 $.
 \end{example}
 
-\section{The Ground state Energy of Dilute Gases}
+\section{The Ground State Energy of Dilute Gases}
 To put the results of this thesis into context, we here summarize the current known result about the ground state energies of dilute Bose gases. To begin with, we define what is meant by "dilute":
 \begin{definition}
 	For the $ d $-dimensional ($ d=1,2,3 $) system of bosons, with the formal Hamiltonian \begin{equation}
@@ -287,6 +288,9 @@ To put the results of this thesis into context, we here summarize the current kn
 \end{definition}
 \begin{remark}
 	For fermions in dimension $ d=2,3 $, one can similarly define diluteness. The diluteness parameter will in this case depend on the spin configuration. For example will the vanishing total spin-$ z $ gas have the same definition as for bosons, since the p-wave scattering contribution to the energy is sub-leading. However, for spin-polarized gases the p-wave scattering length will appear in the diluteness parameter.
+\end{remark}
+\begin{remark}
+	For $ d=1 $ the free Bose gas, \ie with $ v=0 $, has $ \abs{a_e}=\infty $. Hence the free Bose gas cannot be considered dilute at any density.
 \end{remark}
 In the following, we will list some of the known results about dilute gases in dimensions $ d=2,3 $. We will then in the remainder of this thesis shed light on the corresponding results in one dimension.
 \subsubsection{The dilute Bose gas in three dimensions}
@@ -414,8 +418,8 @@ to find the equations for the ground state energy in the thermodynamic limit:
 e(\gamma)&=\rho^3\frac{\gamma^3}{\lambda^3}\int_{-1}^{1}x^2 g(x)\diff x\label{EqLLEq2},\\
 1&=\frac{\gamma}{\lambda}\int_{-1}^{1}g(x)\diff x.\label{EqLLEq3}
 \end{align}
-The first equation is an inhomogeneous Fredholm equation of the second kind which is solved by the Liouville-Neumann series. Notice that our equation for  $ e(\gamma) $ differ from those of Lieb and Liniger by a factor $ \rho^3 $, since we have absorbed this factor as part of $ e(\gamma) $. In Lemma 17 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} we prove the following lemma on the thermodynamic ground state energy of the Lieb-Liniger model. This lemma will be important in the proof of a lower bound on the ground state energy for the dilute Bose gas.
-\begin{lemma}
+The first equation is an inhomogeneous Fredholm equation of the second kind which is solved by the Liouville-Neumann series. Notice that our equation for  $ e(\gamma) $ differ from those of Lieb and Liniger by a factor $ \rho^3 $, since we have absorbed this factor as part of $ e(\gamma) $. This difference is also present in chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, where the convention of Lieb and Liniger is followed. In Lemma 17 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} we prove the following lemma on the thermodynamic ground state energy of the Lieb-Liniger model. This lemma will be important in the proof of a lower bound on the ground state energy for the dilute Bose gas.
+\begin{lemma}[Lemma 17 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground})]
 	Let $ e(\gamma) $ be a solution of \eqref{EqLLEq1}--\eqref{EqLLEq3}. Then for $ \gamma>0 $ we have \begin{equation}
 	e(\gamma)\geq \frac{\pi^2}{3}\rho^3\left(\frac{\gamma}{\gamma+2}\right)^2.
 	\end{equation}
@@ -681,7 +685,7 @@ We are ready to give a lower bound for the ``ground state" energy of the Yang-Ga
 \end{proof}
 We will, in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}, find a matching upper bound for the Yang-Gaudin ground state energy in the dilute limit.
 \subsection{A small caveat}\label{SubsectionYGCaveat}
-There is one issue in the analysis of the Yang-Gaudin model: It is safe to say that in the physics/integrability literature, the ``ground state" of \eqref{EqYGHamiltonian} is widely believed to be the one found above. However, there is, to the best of our knowledge, no rigorous proof in the literature that the true ground state of \eqref{EqYGHamiltonian} is among the Yang-Bethe ansatz states. In fact, there seems to be no proof of the existence of a solution to the equations \eqref{EqYGintegers} given two sets of integers $ (I_j)_{j=1}^{N} $ and $ (J_a)_{a=1}^{M} $. This is in contrast to the analysis of the Lieb-Liniger model, in which both the existence of solutions as well as the completeness of the Bethe ansatz states is known, \cite{cmp/1104252974}. Since we will not use the results from this section for any rigorous analysis in the remainder of the thesis, we leave the establishment of these facts for future work. We will in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} refer to the $ e $ coming from a solution of \eqref{EqYG1}--\eqref{EqYG4} as the ground state energy of the Yang--Gaudin model, however this non-rigorous use of the terminology is never used in any rigorous setting.\\
+There is an issue in the analysis of the Yang-Gaudin model: It is safe to say that in the physics/integrability literature, the ``ground state" of \eqref{EqYGHamiltonian} is widely believed to be the one found above. However, there is, to the best of our knowledge, no rigorous proof in the literature that the true ground state of \eqref{EqYGHamiltonian} is among the Yang-Bethe ansatz states. In fact, there seems to be no proof of the existence of a solution to the equations \eqref{EqYGintegers} given two sets of integers $ (I_j)_{j=1}^{N} $ and $ (J_a)_{a=1}^{M} $. This is in contrast to the analysis of the Lieb-Liniger model, in which both the existence of solutions as well as the completeness of the Bethe ansatz states is known, \cite{cmp/1104252974}. Since we will not use the results from this section for any rigorous analysis in the remainder of the thesis, we leave the establishment of these facts for future work. We will in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} refer to the $ e $ coming from a solution of \eqref{EqYG1}--\eqref{EqYG4} as the ground state energy of the Yang--Gaudin model, however this non-rigorous use of the terminology is never used in any rigorous setting.\\
 We may state for good measure what is needed to make statements about the ground state rigorous:
 \begin{itemize}
 	\item Establish existence of solutions of \eqref{EqYGintegers} for any two sets of integers $ (I_j,J_a)_{j,a} $, at any $ c>0 $ such that $ k_j,\Lambda_a $ varies continuously with $ c $.

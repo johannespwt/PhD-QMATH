@@ -1,7 +1,7 @@
-\chapter{The ground state energy of the one dimensional dilute spin--$ \frac{1}{2} $ Fermi gas}
+\chapter{The Ground State Energy of The One Dimensional Dilute Dpin--$ \frac{1}{2} $ Fermi Gas}
 \label{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}
 In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter we seek to analyse instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Thus we will focus on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
-\section{The model}
+\section{The Model}
 We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, say in the ball $ B_{R_0} $, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N} v(x_i-x_j),
 \end{equation}
@@ -11,7 +11,7 @@ We recap here the conjecture, from Chapter \ref{ChapterTheGroundStateEnergyOfThe
 	E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right).
 	\end{equation}
 \end{conjecture}
-\section{Upper bound}
+\section{Upper Bound}
 In this section, we prove an upper bound for the ground state energy of the model \eqref{EqFermi1/2Hamiltonian}. The upper bound match, to next to leading order, Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 In order to prove the desired upper bound, some prerequisites are needed. We have already covered the definition of the scattering length and scattering wave function in Chapter...., and the free Fermi ground state was found in Chapter \eqref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. For the spin--$ 1/2 $ gas, we furthermore need knowledge about how to handle the spin degrees of freedom. For this purpose we give some heuristics based on physical intuition, and utilize this intuition in constructing a trial state giving the correct upper bound. 
 The main result of this section is the following theorem.
@@ -427,12 +427,12 @@ where we used the following bounds \begin{equation}
 and \begin{equation}
 \rho^{(3)}(x_1,x_2,x_3)\leq\text{const.} \rho^9 \abs{x_1-x_2}^2\abs{x_2-x_3}^2\abs{x_1-x_3}^2,
 \end{equation}
-which all follows from Taylor expansion of the free Fermi reduced density (matrices). Furthermore, we used the bounds \begin{equation}
+which all follows from Taylor expansion of the free Fermi reduced density (matrices) and Wick's theorem, as in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. Furthermore, we used the bounds \begin{equation}
 \sqrt{\abs{\partial_i\left(\xi_{12}^{23}\right)_a}^2}\leq b \max\left(\frac{\sqrt{2}}{b},\frac{1}{b-a_o}\right)\leq 2,\qquad \sqrt{\abs{\left(\xi_{12}^{23}\right)_a}^2}\leq b
 \end{equation}
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
 \end{proof}
-\section{Extending the upper bound to other symmetries and spin-dependent potentials}
+\section{Extending the Upper Bound to Other Symmetries and Spin-Dependent Potentials}
 We present here corollaries that follows directly, \emph{mutatis mutandis}, from the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. We also give an application of one the results, to a model where the new upper bound improves best up to now best known result.
 \subsection{Spin-1/2 bosons}
 Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (and the lemmas used), we obtain an immediate corollary. Changing spin-space anti-symmetry to spin-space symmetry, we obtain the equivalent result for bosons. The change of symmetry interchanges the even and odd condition in the singlet and triplet, hence constructing the trial state \eqref{EqTrial StateSpin1/2Fermi}, we must interchange $ \operatorname{P}_s $ and $ \operatorname{P}_t $. Thus we get \begin{equation}\label{EqTrial StateSpin1/2Bose}
@@ -513,9 +513,11 @@ We see that the upper bound given by Corollary \ref{CorollaryUpperBoundSpin1/2Sy
 E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\right),
 \end{equation}
 when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $. However, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy, to leading order, in this limit.
+\begin{remark}
+	In the Corollaries \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} we will refer to the regimes where $ a_o\leq a_e $ or $ a_t\leq a_s $ as the \emph{ferromagnetic phase} and the regimes where $ a_o\geq a_e $ or $ a_t\geq a_s $ as the \emph{antiferromagnetic phase}. 
+\end{remark}
 
-
-\section{Lower bound}
+\section{Lower Bound}
 In this section, we will further motivate the Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}, however a complete proof of a lower bound matching the upper bound in Theorem \ref{TheoremUpperBoundSpin1/2Fermi} is still missing. One may try to apply the same technique as was used in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, however, we will see that there are obstacles in this strategy.\\
 \subsection{Solvable cases}
 To begin with, we may analyze the solvable models at hand. We will see that these are in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
@@ -683,7 +685,7 @@ if $ \tilde{c}'=\frac{c'}{1-\frac{c'}{2}\mathfrak{r}} $.
  \end{aligned}
  \end{equation}
  where we used Proposition \ref{PropositionYGLowerBound}, and recall that the last inequality strictly speaking is conjecture (see Subsection \ref{SubsectionYGCaveat}).
-\section{Lower bound for other symmetries}
+\section{Lower Bound for Other Symmetries}
 Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}. For these we may, in some cases actually prove a lower bound. This is always the case for the bosonic case, and exactly the case when $ a_o\leq a_e $ in the spin-dependent fermionic case, and when $ a_t\leq a_s $ in spin-dependent spatially symmetric case. Hence we have 
 \begin{theorem}
 	\label{TheoremLowerBoundSpin1/2Bose}
