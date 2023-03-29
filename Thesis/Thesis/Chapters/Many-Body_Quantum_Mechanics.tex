@@ -11,7 +11,7 @@
 		\end{equation*}
 		where $ \mathcal{H} $ is a Hilbert space. Here $ \Psi $ is called the state or wave function of the system.
 	\end{definition}
-	In this thesis, we are mostly interested in a quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We will take $\Omega$ to be open, connected, and with a Lipschitz boundary, or the closure of such a set. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}\subset L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specifically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
+	In this thesis, we are mostly interested in a quantum system consisting of $ N $ particles in a region $ \Omega\subseteq \R^d $, possibly with spin degrees of freedom $ \{S_i\}_{i\in{1,\ldots,N}} $. We will take $\Omega$ to be open, connected, and with a Lipschitz boundary, or the closure of such a set. We refer to $ d $ as the \emph{dimension} of the system. Such a system is described by having $$ \mathcal{H}\subset L^2\left(\prod_{i=1}^{N}\left(\Omega\times \{-S_i,S_i+1,...,S_i\}\right) \right)=\otimes_{i=1}^{N}L^2\left(\Omega;\C^{2S_i+1}\right), $$ where $ S_i $ is the \emph{spin} of the $ i $th particle. Since we are more specifically interested in identical particles we will further restrict the structure of the underlying Hilbert space below.
 
 	\subsection{Identical particles: Bosons and fermions}
 		In the case when the particles in question are identical, \ie indistinguishable, it turns out that one should restrict the underlying Hilbert space, to have certain symmetries. Considering $ N $ indistinguishable particles, we restrict to the physical configuration space $ C_{p,N}=C_N/S_N $, with $ C_N:=\{(x_1,\ldots,x_N)\in \Omega^N \vert x_i\neq x_j \text{ if }i\neq j\} $ on which the symmetric group act freely. For $ d\geq 2 $, we then require the wave function of the system to take values in a unitary irreducible representation of the fundamental group $\pi_1(C_{p,N})$, where we noted that the physical configuration space is path-connected in order for $ \pi_1(C_{p,N},x) $ to be independent of $ x\in C_{p,N} $.
@@ -22,7 +22,7 @@
 			Adding spin to the above considerations amounts to having $C_N:=\{(z_1,\ldots,z_N)\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert (z_i)_1\neq (z_j)_1 \text{ if }i\neq j\}$, and $C_{p,N}:=C_N/S_N$. In this case, $C_{p,N}$ is not path connected, however, for each configuration of spins $ \sigma=(\sigma_1,\ldots,\sigma_N)\in\{-S,\ldots,S\}^N $ the configuration spaces $ C_{p,N,\sigma}=\{((x_1,\sigma_1),\ldots,(x_N,\sigma_N))\in \left(\Omega\times\{-S,\ldots,S\}\right)^N \vert x_i\neq x_j \text{ if }i\neq j\}/S_N $ are path connected and their fundamental groups are isomorphic to the fundamental group in the spinless case independent of $ \sigma $.\\
 			Alternatively, one can view the wave function as a $ (2S+1)^N $-dimensional vector bundle over the physical (spinless) configuration space.
 		\end{remark}
-		In the remaining part of this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the anti-symmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. It is an empirical fact that bosons and fermions are the only types of elementary particles that are encountered in nature. Hence for bosons, we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions, we restrict to wave-functions in the anti-symmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
+		In this thesis, we will mainly be interested in the two irreducible representations that are the symmetric representation and the anti-symmetric representation, in which we refer to the particles as \emph{bosons} and \emph{fermions} respectively. It is an empirical fact that bosons and fermions are the only types of elementary particles that are encountered in nature. Hence for bosons, we restrict to wave functions in the symmetric (or bosonic) subspace $ L^2_{s}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\vee_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$ and for fermions, we restrict to wave-functions in the anti-symmetric (or fermionic) subspace $ L^2_{a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\wedge_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right)$.\\
 		To recap we list the following important definitions:
 		\begin{definition}
 			A quantum system of $N$ spin--$ S $ bosons in $ \Omega\subseteq\R^d $ at fixed time is a pair
@@ -40,12 +40,12 @@
 		\end{definition}
 	
 \section{Observables, Dynamics, and Energy}
-In general, we call any self-adjoint operator on $ \mathcal{H} $ an \emph{observable}. Physically, observables represent quantities that, in principle, can be measured in an experiment. It is a postulate of quantum mechanics that given an observable $ \mathcal{O}=\int_{\sigma(\mathcal{O})}\lambda \diff P_\lambda $, where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem \cite{reed1981functional}, the probability of measurement of $ \mathcal{O} $ in the state $ \Psi\in\dom{\mathcal{O}} $ having any outcome $ \lambda $ such that $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $. 
+In general, we call any self-adjoint operator on $ \mathcal{H} $ an \emph{observable}. Physically, observables represent quantities that, in principle, can be measured in an experiment. It is a postulate of quantum mechanics that given an observable $ \mathcal{O}=\int_{\sigma(\mathcal{O})}\lambda \diff P_\lambda $, where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated with $ \mathcal{O} $ by the spectral theorem \cite{reed1981functional}, the probability of measurement of $ \mathcal{O} $ in the state $ \Psi\in\dom{\mathcal{O}} $ having any outcome $ \lambda $ such that $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $. 
 Furthermore, we define the expected value of an observable.
 \begin{definition}
 	The \textbf{expectation value} of an observable $ \mathcal{O} $ in state $ \Psi\in\dom{\mathcal{O}} $ is 
 	$$ \braket{\mathcal{O}}_\Psi:=\int_{\lambda\in\sigma(\mathcal{O})}\lambda\braket{\Psi,P_\lambda\Psi} $$
-	where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated to $ \mathcal{O} $ by the spectral theorem.
+	where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated with $ \mathcal{O} $ by the spectral theorem.
 \end{definition}
 
 
@@ -56,7 +56,7 @@ where we have set $ \hbar=1 $.
 \begin{remark}
 	By Stone's theorem \cite{reed1981functional}, the existence of a self-adjoint Hamiltonian, $ H $, is guaranteed for any time evolution described by $ \Psi(t)=U(t-t_0)\Psi(t_0) $, when $ U(t) $ is a strongly continuous one-parameter unitary group.
 \end{remark}
-Since the Hamiltonian, $ H $, is self-adjoint, it represents an observable which we call \emph{energy}. Since $ H $ is lower bounded, there is a natural notion of the lowest energy of $ H $.
+Since the Hamiltonian, $ H $, is self-adjoint, it represents an observable which we call \emph{energy}. Furthermore, as $ H $ is lower bounded, there is a natural notion of the lowest energy of $ H $.
 \begin{definition}\label{DefinitionGroundStateEnergy}
 	The \textbf{ground state energy} of $ H $ is defined by 
 	\begin{equation}\label{EqVariationalGroundStateEnergyOperator}
@@ -87,16 +87,16 @@ Furthermore, we define the notion of a \emph{ground state} of $ H $ as
 	as $ \dom{H} $ is form core for $\mathcal{E}_H$.
 \end{remark}
 We refer to both \eqref{EqVariationalGroundStateEnergyOperator} and \eqref{EqVariationalGroundStateEnergyForm} as \emph{the variational principle}.
-We will often, in the remaining part of this thesis, take \eqref{EqVariationalGroundStateEnergyForm} as the very definition of the ground state energy. Furthermore, one can also define the dynamics of a quantum system by specifying an energy quadratic form in the following sense
+We will often, in this thesis, take \eqref{EqVariationalGroundStateEnergyForm} as the very definition of the ground state energy. Furthermore, one can also define the dynamics of a quantum system by specifying an energy quadratic form in the following sense:
 \begin{remark}[\cite{reed1981functional} Theorem VIII.15]\label{RemarkOperatorFromQuadraticForm}
 	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exists a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
 \end{remark}
-Thus we will frequently switch between the two equivalent formulations of the dynamics of a quantum system. Namely, the the operator, $ H $, formulation and the quadratic form, $ \mathcal{E} $, formulation
+Thus we will frequently switch between the two equivalent formulations of the dynamics of a quantum system. Namely, the the operator, $ H $, formulation and the quadratic form, $ \mathcal{E} $, formulation.
 \subsection{Many-body Hamiltonians}
-Until this point, we have not specified the class of Hamiltonians that we will be interested in. We have stated that we will care mainly about Hamiltonians defined on the bosonic or fermionic subspace, however, no specification has been made about the dynamics on these subspaces. We are interested in modeling $ N $ particles in some region $ \Omega\subseteq\R^d $ that interact locally with each other. For the remainder of this subsection, we will ignore spin, knowing that including spin degrees of freedom is completely analogous. In practice, and for suitably mild interactions, this means that the Hamiltonian \emph{formally} (meaning restricted to the fermionic or bosonic subspace of $ C^\infty_0(\Omega^N) $) takes the form \begin{equation}
+Until this point, we have not specified the class of Hamiltonians that we will be interested in. We have stated that we will care mainly about Hamiltonians defined on the bosonic or fermionic subspace, however, no specification has been made about the dynamics on these subspaces. We are interested in modeling $ N $ particles in some region $ \Omega\subseteq\R^d $ that interact locally with each other. For the remainder of this subsection, we will ignore spin, remarking that including spin degrees of freedom is completely analogous. In practice, and for suitably mild interactions, this means that the Hamiltonian \emph{formally} (meaning restricted to the fermionic or bosonic subspace of $ C^\infty_0(\Omega^N) $) takes the form \begin{equation}
 H=\sum_{i=1}^{N}T_i+U(x_1,\ldots,x_N)
 \end{equation}
-where $ T_i $ is the \emph{kinetic energy operator} for particle $ i $ and the \emph{potential} $ U $ is a multiplication operator which models the local interaction among the particles. The kinetic energy operator is taken to be\footnote{This is usually justified by going through a canonical quantization procedure for the classical Hamiltonian function of the system we are interested in modeling} \begin{equation}
+where $ T_i $ is the \emph{kinetic energy operator} for particle $ i $ and the \emph{potential} $ U $ is a multiplication operator which models the local interaction among the particles. The kinetic energy operator is taken to be\footnote{This is usually justified by going through a canonical quantization procedure for the classical Hamiltonian function of the system we are interested in modeling.} \begin{equation}
 T_i=-\frac{1}{2m_i}\Delta_i\qquad (\hbar=1)
 \end{equation} 
 since we are interested in identical particles, we will from this point onward choose $ m_i=1/2 $. As for the potential, $ V $, we of course immediately restrict to permutation-invariant function, $ U $, for identical particles. However, in the following, we will further restrict to a combination of having a trapping potential and radial pair potentials, which model pairwise interactions that only depend on the distances between particles. Such potentials take the form \begin{equation}
@@ -115,16 +115,16 @@ Of course $ \mathcal{E}_{(v,\sigma)}\geq 0 $ for any $ \sigma\in[0,\infty] $ and
 	We say a potential $ v\geq 0 $ is \textbf{allowed} in dimension $ d $, if $ \mathcal{E}_{(v,\sigma)} $ is closable on $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2}\subset L^2_{s/a}(\Omega^N)$ for any $ \sigma\in[0,\infty] $.
 \end{definition}
 \begin{remark}
-	There are plenty of allowed potentials, but the notion does depend on the dimension, $ d $. For example, $ v=\delta_0 $, \ie the delta function potential, is allowed in dimension $ d=1 $, but not in dimension $ d\geq 2 $. This can be seen from the fact that for $ d=1 $ the incidence planes are co-dimension $ 1 $, and hence the trace theorem gives closability, but for $ d\geq 2 $ where the incidence planes are of co-dimension $ \geq 2 $ it is known that the trace of $ H^1 $ is not contained in $ L^2 $.
+	There are plenty of allowed potentials, but the notion does depend on the dimension, $ d $. For example, $ v=\delta_0 $, \ie the delta function potential, is allowed in dimension $ d=1 $, but not in dimension $ d\geq 2 $. This can be seen from the fact that for $ d=1 $ the incidence planes are of co-dimension $ 1 $, and hence the trace theorem gives closability, but for $ d\geq 2 $ where the incidence planes are of co-dimension $ \geq 2 $ it is known that the trace of $ H^1 $ is not contained in $ L^2 $.
 \end{remark}
 
 \begin{remark} \label{RemarkdDimPotentialAllowed}
 	For any radial measurable $ v:\R\to [0,\infty] $ (note this implies that $ x\mapsto v(x_i-x_j) $ is measurable since $ \R^{Nd} \ni x\mapsto x_i-x_j\in \R^d $ is Lebesgue-Lebesgue measurable),  $\mathcal{E}_{(v,\sigma)} $ is the quadratic form associated with a self-adjoint operator on some Hilbert space $ \mathcal{H}_{(v,\sigma)}\subset L^2_{s/a}(\Omega^N) $.\\
-	It is well known that $\mathcal{E}_{(0,\sigma)}$ is closable on $ \mathcal{H}_{(0,\sigma)}\supseteq \mathcal{H}_{(v,\sigma)}    $. Hence $ \mathcal{E}_{(0,\sigma)}\lvert_{\dom{\mathcal{E}_{(v,\sigma)}}} $ is closable on $  \mathcal{H}_{(v,\sigma)} $. Thus closability of $ \mathcal{E}_{(v,\sigma)} $ amount to showing that $ \psi_n \xrightarrow{\norm{\cdot}_2}0 $ as $ n\to\infty $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\underbrace{\sum_{i<j}v(x_i-x_j)\diff\lambda^{N}}_{\coloneqq \diff\mu_v}\right) $ Cauchy, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. \\
+	It is well known that $\mathcal{E}_{(0,\sigma)}$ is closable on $ \mathcal{H}_{(0,\sigma)}\supseteq \mathcal{H}_{(v,\sigma)}    $. Hence $ \mathcal{E}_{(0,\sigma)}\lvert_{\dom{\mathcal{E}_{(v,\sigma)}}} $ is closable on $  \mathcal{H}_{(v,\sigma)} $. Thus closability of $ \mathcal{E}_{(v,\sigma)} $ amounts to showing that $ \psi_n \xrightarrow{\norm{\cdot}_2}0 $ as $ n\to\infty $ and $ (\psi_n)_{n\in\mathbb{N}}\subset L^2\left(\Omega^N,\underbrace{\sum_{i<j}v(x_i-x_j)\diff\lambda^{N}}_{\coloneqq \diff\mu_v}\right) $ Cauchy, implies $ \psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}0  $. \\
 	This is evident from the fact that $\psi_n\xrightarrow{\norm{\cdot}_{L^2(\Omega^N,\diff\mu_v)}}f$ for some $ f\in L^2(\Omega^N,\diff\mu_v) $ by completeness. Now $ \psi_n $ has a subsequence that converges $ \lambda^{N} $--almost everywhere to $ 0 $, and this subsequence further has a subsequence that converges $ \mu_v $--almost everywhere to $ f $. Hence $ f=0 $ $ \mu_v $--almost everywhere, as $ \mu_v\ll \lambda^N $. \\
 	Thus there is a corresponding self-adjoint operator $ H_{(v,\sigma)} $ to $ \mathcal{E}_{(v,\sigma)} $ on $ \mathcal{H}_{(v,\sigma)} $, which we shall formally write as $ H_{(v,\sigma)}=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N}v(x_i-x_j) $.
 \end{remark}
-The argument from the previous remark may be generalized slightly in the case of $ d=1 $, in order to show that any $ \sigma $--finite symmetric measure $ v(x_i-x_j)\diff\lambda(x_i-x_j):=\diff\mu_{v_{ij}} $ is allowed as potential. Notice that we slightly abuse notation and write $  v(x_i-x_j)\diff\lambda(x_i-x_j) $ even when $ v $ is a singular measure and thus has no density. However, we do think of $ v $ a being a one-dimensional measure in the sense that 
+The argument from the previous remark may be generalized slightly in the case of $ d=1 $, in order to show that any $ \sigma $--finite symmetric measure $ v(x_i-x_j)\diff\lambda(x_i-x_j):=\diff\mu_{v_{ij}} $ is an allowed potential. Notice that we slightly abuse notation and write $  v(x_i-x_j)\diff\lambda(x_i-x_j) $ even when $ v $ is a singular measure and thus has no density. However, we do think of $ v $ a being a one-dimensional measure in the sense that 
 $$ v(x_i-x_j)\diff\lambda^N:=\diff\mu_{v_{ij}}\times \diff \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}},  $$ 
 where we defined $ \lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $ to be the measure such that $ \diff\lambda^{N}=\diff(x_i-x_j)\times \diff\lambda^{N-1}_{(x_i-x_j)=\text{ fixed}} $. The uniqueness of the product measure is guaranteed by $ \sigma $-finiteness of $ v $ ($ \mu_v $).
 %\begin{lemma}
@@ -147,7 +147,7 @@ We will need the following essential lemma, where we use the notation  $ \lambda
 \end{proof}
 Using this lemma, we may prove the following Proposition
 \begin{proposition}\label{Lemma1dPotentialAllowed}
-	Let $ d=1 $, then for any $ \sigma $-finite measure, $ v $, we have that $ \mathcal{E}_{(v,\sigma)} $ is the quadratic form associated to a unique lower bounded self adjoint operator $ H_{(v,\sigma)} $ on some Hilbert space $ \mathcal{H}_{(v,\sigma)} $.
+	Let $ d=1 $, then for any $ \sigma $-finite measure, $ v $, we have that $ \mathcal{E}_{(v,\sigma)} $ is the quadratic form associated with a unique lower bounded self adjoint operator $ H_{(v,\sigma)} $ on some Hilbert space $ \mathcal{H}_{(v,\sigma)} $.
 \end{proposition}
 \begin{proof}
 	As previously, we define $\mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2} $ and \\
@@ -172,17 +172,17 @@ Using this lemma, we may prove the following Proposition
 
 \section{The Scattering Length}
 When analyzing the dynamics of a quantum system, it is natural to define certain length scales, on which different processes take place. These length scales often play important roles in understanding the physics of the system, and thus often appear naturally in expressions for the energies of the system. One such length scale that will be of particular importance throughout this thesis is the \emph{scattering length}. The intuition behind the name is that scattering occurs on this length scale. This intuition will be important throughout the thesis, especially when constructing low-energy trial states in order to estimate ground state energies by applying the variational principle. The scattering length has multiple equivalent definitions in the literature, but we shall here define it conveniently from a variational principle.\\
-Consider the two-body problem in $ \Omega=\R^d $ with a spherically symmetric positive potential of compact support $ v\geq 0 $. We allow for the potential, $ v $, to be a measure when it makes sense, \ie when it is \emph{allowed}. Let $ R_0>0 $ be such that $ \supp(v)\subset B_{R_0} $. Many assumptions on $ v $ can be weakened, but these conditions are sufficient for the scope of this thesis. The formal Hamiltonian can be written \begin{equation}
-H_2=-\frac{1}{2m_1}\Delta_1-\frac{1}{2m_2}\Delta_2+v(x_1-x_2),
+Consider the two-body problem in $ \Omega=\R^d $ with a spherically symmetric positive potential of compact support $ v\geq 0 $. We allow for the potential, $ v $, to be a measure when it makes sense, \ie when it is \emph{allowed}. Let $ R_0>0 $ be such that $ \supp(v)\subset B_{R_0} $. Many assumptions on $ v $ can be weakened, but these conditions are sufficient for the scope of this thesis. The formal Hamiltonian can be written as \begin{equation}
+H_2=-\frac{1}{2m_1}\Delta_1-\frac{1}{2m_2}\Delta_2+v(x_1-x_2).
 \end{equation}
-For now, we keep the masses, but we will be, for the most part, interested in the case $ m_1=m_2=1/2 $. Defining the center of mass coordinate $ X=(m_1x_1+m_2x_2)/(m_1+m_2) $ and the relative coordinate $ y=x_1-x_2 $, we see that the kinetic energy may be rewritten \begin{equation}
+For now, we keep the masses, but we will be, for the most part, interested in the case $ m_1=m_2=1/2 $. Defining the center of mass coordinate $ X=(m_1x_1+m_2x_2)/(m_1+m_2) $ and the relative coordinate $ y=x_1-x_2 $, we see that the kinetic energy may be rewritten as \begin{equation}
 \begin{aligned}
 -\frac{1}{2m_1}\Delta_1-\frac{1}{2m_2}\Delta_2&=-\sum_{i=1}^{d}\frac{1}{2m_1}\left(\frac{\partial y_i}{\partial (x_1)_i}\partial_{y_i}+\frac{\partial X_i}{\partial (x_1)_i}\partial_{X_i}\right)^2\\&\qquad\qquad+\frac{1}{2m_2}\left(\frac{\partial y_i}{\partial (x_2)_i}\partial_{y_i}+\frac{\partial X_i}{\partial (x_2)_i}\partial_{X_i}\right)^2\\
 &=-\sum_{i=1}^{d}\frac{1}{2m_1}\left(\partial_{y_i}+\frac{m_1}{m_1+m_2}\partial_{X_i}\right)^2\\&\qquad\qquad+\frac{1}{2m_2}\left(-\partial_{y_i}+\frac{m_2}{m_1+m_2}\partial_{X_i}\right)^2\\
 &=-\frac{1}{2\mu}\Delta_y-\frac{1}{2(m_1+m_2)}\Delta_X,
 \end{aligned}
 \end{equation}
-where $ \mu\coloneqq \frac{m_1m_2}{m_1+m_2} $. Thus we have separated the center of mass and relative motion and the Hamiltonian may be decomposed \begin{equation}
+where $ \mu\coloneqq \frac{m_1m_2}{m_1+m_2} $. Thus we have separated the center of mass and relative motion and the Hamiltonian may be decomposed into \begin{equation}
 H=H_{\text{CM}}+H_{\text{rel}},
 \end{equation}
 with $ H_{\text{CM}}=-\frac{1}{2(m_1+m_2)}\Delta_X $ and $ H_{\text{rel}}=-\frac{1}{2\mu}\Delta_y+v(y) $. In scattering theory, we will generally be interested in the relative motion of particles. A natural question is whether we can locally minimize the relative energy of the two particles when they are near each other. The answer is affirmative, which can be seen by the following:\\
@@ -202,7 +202,7 @@ with $ R>R_0 $. Then we have
 	f_0(r)=\begin{cases}
 	(r-a)/(R-a)&\text{ for }d=1\\
 	\ln(r/a)/\ln(R/a)& \text{ for }d=2\\
-	(1-ar^{2-n})/(1-aR^{2-n})& \text{ for }d=3
+	(1-ar^{2-n})/(1-aR^{2-n})& \text{ for }d\geq3
 	\end{cases}
 	\end{equation}
 	for some length, $ a $, which we call \textbf{the (s-wave) scattering length}.
@@ -212,7 +212,7 @@ with $ R>R_0 $. Then we have
 	\mathcal{E}_{R}(\phi_0)=\begin{cases}
 	1/\mu(R-a)&\text{ for }d=1\\
 	\pi/[\mu\ln(R/a)]& \text{ for }d=2\\
-	\pi^{n/2}a/[\mu\Gamma(n/2)(1-aR^{2-n})]& \text{ for }d=3.
+	\pi^{n/2}a/[\mu\Gamma(n/2)(1-aR^{2-n})]& \text{ for }d\geq3.
 	\end{cases}
 	\end{equation}
 \end{theorem}
@@ -260,7 +260,7 @@ We give two examples of the scattering length in the following:
 	\end{equation}
 	on the interval $ [0,R] $, with the boundary condition $ f'(0_+)=\frac{c}{2}f(0) $ and $ f(R)=1 $.
 	The solution is $ f_e(x)=\frac{x+2/c}{R+2/c} $, for $ x\in[0,R] $. We conclude that $ a_e=-2/c $.\\
-	For the odd wave scattering length, we notice that the $ v $, does not change the scattering solution from the $ v=0 $ case, and we have $ f_o(x)=\frac{x}{R} $ and we conclude $ a_o=0 $.
+	For the odd wave scattering length, we notice that having $ v\neq 0 $, does not change the scattering solution from the $ v=0 $ case, and we have $ f_o(x)=\frac{x}{R} $. We conclude that $ a_o=0 $.
 \end{example}
 \begin{example}\label{ExampleScatteringLengthHardCore}
 	Consider $ v=\infty\mathbbm{1}_{[-R_0,R_0]} $, \ie \emph{the hard core}. In this case \begin{equation}
@@ -276,7 +276,7 @@ We give two examples of the scattering length in the following:
 \end{example}
 
 \section{The Ground State Energy of Dilute Gases}
-To put the results of this thesis into context, we here summarize the currently known results about the ground state energies of dilute Bose gases. To begin with, we define what is meant by "dilute".
+To put the results of this thesis into context, we here summarize the currently known results about the ground state energies of dilute Bose gases. To begin with, we define what is meant by ``dilute".
 \begin{definition}
 	For the $ d $-dimensional ($ d=1,2,3 $) system of bosons, with the formal Hamiltonian \begin{equation}
 	H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N}v(x_i-x_j),
@@ -298,7 +298,7 @@ To put the results of this thesis into context, we here summarize the currently 
 In the following, we will list some of the known results about dilute gases in dimensions $ d=2,3 $. We will then in the remainder of this thesis shed light on the corresponding results in one dimension.
 \subsubsection{The dilute Bose gas in three dimensions}
 The three dimensional dilute Bose gas is probably the most well-studied example of a dilute quantum gas. Historically the most famous result on the three dimensional dilute Bose gas is due to Lee, Huang, and Yang \cite{lee1957eigenvalues}. Interestingly, the energy was found, to second order, to depend on the potential only through the scattering length.
-The mathematical literature is quite rich, and we refer to the papers \cite{dyson1957ground,lieb1998ground,lieb1999ground,lieb2001ground,yau2009second,basti2021new,fournais2020energy,fournais2021energy} for more details. The latest results are very recent, and it was only in 2020 that the Lee-Huang-Yang formula was rigorously established to second order when Fournais and Solovej proved a second order lower bound. Without giving details about assumptions needed on the potential, the Lee-Huang-Yang formula takes the form with \begin{equation}
+The mathematical literature is quite rich, and we refer to the papers \cite{dyson1957ground,lieb1998ground,lieb1999ground,lieb2001ground,yau2009second,fournais2020energy,fournais2021energy,basti2021new} for more details. The latest results are very recent, and it was only in 2020 that the Lee-Huang-Yang formula was rigorously established to second order when Fournais and Solovej proved a second order lower bound. Without giving details about assumptions needed on the potential, the Lee-Huang-Yang formula takes the form \begin{equation}
 e^{3D}(\rho)=4\pi \rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o\left(\sqrt{\rho a^3}\right)\right),
 \end{equation}
 where $ e^{3D}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^3=\rho}}\frac{E^{3D}(N,L)}{L^3} $, and $ E^{3D}(N,L) $ is the ground state of the Bose gas with $ N $ bosons in $ \Omega=[0,L]^3 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.
@@ -312,7 +312,7 @@ with $ \gamma $ being the Euler-Mascheroni constant and $ Y\coloneqq\abs{\ln(\rh
 \subsubsection{The dilute spin--$ S $ Fermi gas in three dimensions}
 The establishment of expansions for the ground state energy of the dilute Bose gas in terms of the scattering length led to the natural question of whether a similar expansion exists for the spin--$ 1/2 $ Fermi gas. The asymptotics were first derived in \cite{huang1957quantum,lee1957many}, however, it was not until 2004 that the result was rigorously proven in \cite{lieb2005ground}. Recently the error has been improved to be almost optimal \cite{lauritsen2023almost}, \ie the order of magnitude is almost equal to that of the conjectured next term in the expansion. Furthermore, for smooth potentials, the error was recently improved in  \cite{falconi2021dilute} and a proof with optimal error was given in \cite{giacomelli2022optimal}. Without giving details on the assumptions on the potential, the formula takes the form
 \begin{equation}
-e^{3D}_{F,S}(\rho)=\frac{3}{5}\left(6\pi\right)^{2/3}\sum_{i=-S}^{S}\rho_i^{5/3}+8\pi a\sum_{-S\leq i<j\leq S}\rho_i\rho_j+\rho^{5/3}o\left(\rho^{1/3}a\right).
+e^{3D}_{F,S}(\rho)=\frac{3}{5}\left(6\pi\right)^{2/3}\sum_{i=-S}^{S}\rho_i^{5/3}+8\pi a\sum_{-S\leq i<j\leq S}\rho_i\rho_j+o\left(\rho^{2}a\right).
 \end{equation}
 where $ \rho_i $ denotes the density of particles with spin-$ z $ $ i $ and the index $ i $ runs over integers or half integers. Furthermore, $ e^{3D}_{F,S}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^3=\rho}}\frac{E^{3D}_{F,S}(N,L)}{L^3} $, and $ E^{3D}_{F,S}(N,L) $ is the ground state of the spin--$ S $ Fermi gas with $ N $ spin--$ S $ fermions in $ \Omega=[0,L]^3 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.\\
 We may note, that $ a $, denotes the s-wave scattering length. The p-wave scattering length is relevant when two Fermions of the same species/spin interact, however, this is lower order since fermions of the same spin tend to localize away from each other due to the Pauli exclusion principle. Recently an upper bound was proven in the spin-polarized case in \cite{lauritsen2023ground}, in which the relevant scattering length is the \emph{p-wave scattering length}, analogous to the \emph{odd-wave scattering length} in one dimension defined above in Definition \ref{DefinitionOddScatteringLenght}.
@@ -320,9 +320,9 @@ We may note, that $ a $, denotes the s-wave scattering length. The p-wave scatte
 \subsubsection{The dilute spin--$ S $ Fermi gas in two dimensions}
 In \cite{lieb2005ground}, the two dimensional result was also proved. The intuition behind the two dimensional result is, in this case, understood by considering the bosonic result, where to first order one replaces the scattering length $ a $ with $ \ln(\abs{\rho a^2})^{-1} $. Furthermore, the kinetic energy term is of course replaced by the free Fermi energy in two dimensions. Without giving details on the assumptions on the potential, the formula takes the form
 \begin{equation}
-e^{2D}_{F,S}(\rho)=2\pi \sum_{i=-S}^{S}\rho_i^{2}+\frac{8\pi}{\ln(\abs{\rho a^2})} \sum_{-S\leq i<j\leq S}\rho_i\rho_j+\rho^2 o\left(\ln(\abs{\rho a^2})^{-1}\right).
+e^{2D}_{F,S}(\rho)=2\pi \sum_{i=-S}^{S}\rho_i^{2}+\frac{8\pi}{\ln(\abs{\rho a^2})} \sum_{-S\leq i<j\leq S}\rho_i\rho_j+ o\left(\rho^2\ln(\abs{\rho a^2})^{-1}\right).
 \end{equation}
-where $ \rho_i $ denotes the density of particles with spin $ i $ and the index $ i $ runs over integers or half integers. Furthermore, $ e^{2D}_{F,S}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^2=\rho}}\frac{E^{2D}_{F,S}(N,L)}{L^2} $, and $ E^{2D}_{F,S}(N,L) $ is the ground state of the spin--$ S $ Fermi gas with $ N $ spin--$ S $ fermions in $ \Omega=[0,L]^2 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.\\
+where $ \rho_i $ denotes the density of particles with spin $ i $ and the index $ i $ runs over integers or half integers. Furthermore, $ e^{2D}_{F,S}(\rho)=\lim\limits_{\substack{N,L\to\infty\\ N/L^2=\rho}}\frac{E^{2D}_{F,S}(N,L)}{L^2} $ and $ E^{2D}_{F,S}(N,L) $ is the ground state of the spin--$ S $ Fermi gas with $ N $ spin--$ S $ fermions in $ \Omega=[0,L]^2 $ with dynamics given by the Hamiltonian $ H=-\sum_{i=1}^{N}\Delta_i+\sum_{1\leq i<j\leq N} v(\abs{x_i-x_j}) $.\\
 
 
 \section{The Lieb-Liniger Model: A Solvable Model in One Dimension} \label{SectionLiebLinigerModel}
@@ -338,15 +338,16 @@ where the left-hand side is defined in the sense of quadratic forms. More precis
 The Bethe ansatz then prescribes that we, on a sector $ \{1,2,\ldots,N\} $, seek solutions to the eigenvalue equation, $ H_{LL}\psi=E\psi $, of the form\begin{equation}\label{EqBetheAnsatz}
 \psi(x)=\sum_{P\in S_N} a(P)\exp\left(i\sum_{i=1}^{N}k_{P_i}x_i\right),
 \end{equation}
-where $ a(P)\in\C $ are suitably chosen coefficients. The boundary conditions $$
+where $ a(P)\in\C $ are suitably chosen coefficients and $(k_i)_{i=1,2,...,N}$ are non-equal real numbers.\\
+The boundary conditions $$
 (\partial_{j+1}-\partial_j)\psi\rvert_{x_{j+1}=x_j}=c\psi\rvert_{x_i=x_j},
 $$
 are satisfied if for $ P=(P_1,P_2,\ldots,P_j=\alpha,P_{j+1}=\beta,\ldots,P_N) $ and $ Q=(P_1,P_2,\ldots,Q_j=\beta,Q_{j+1}=\alpha,\ldots,P_N) $, we have $ i(k_\beta-k_\alpha)(a(P)-a(Q))=c (a(P)+a(Q)) $ implying\begin{equation}\label{EqCoefficientsLL}
-	a(Q)=-\frac{c-i(k_\beta-k_\alpha)}{c+i(k_\beta-k_\alpha)}a(P):=-\exp(i\theta_{\beta,\alpha})a(P)
+	a(Q)=-\frac{c-i(k_\beta-k_\alpha)}{c+i(k_\beta-k_\alpha)}a(P)=-\exp(i\theta_{\beta,\alpha})a(P)
 \end{equation} where we have defined\begin{equation}
-\theta_{i,j}=-2 \arctan\left(\frac{k_i-k_j}{c}\right).
+\theta_{i,j}\coloneqq-2 \arctan\left(\frac{k_i-k_j}{c}\right).
 \end{equation}
-We note that we will require $ k_i\neq k_j $ for $ i\neq j $ in order for $ \psi $ to be non-vanishing. Defining $ a(I)=1 $, it is simple to see that by the relations \eqref{EqCoefficientsLL}, all $ a(P) $ are fixed. In fact that $ a(P) $ is uniquely determined by \eqref{EqCoefficientsLL} follows from the fact that in going from the identity $ I $ to some permutation $ P $, the same elements are eventually transposed, by any path of transpositions.\\
+We note that we require $ k_i\neq k_j $ for $ i\neq j $ in order for $ \psi $ to be non-vanishing. Defining $ a(I)=1 $, it is simple to see that by the relations \eqref{EqCoefficientsLL}, all $ a(P) $ are fixed. In fact that $ a(P) $ is uniquely determined by \eqref{EqCoefficientsLL} follows from the fact that in going from the identity $ I $ to some permutation $ P $, the same elements are eventually transposed, by any path of transpositions.\\
 The values of the pseudo momenta $ k_i $ are now determined by the periodic boundary conditions, which on the sector $ \{1,2,$\ldots$,N\} $ take the form \begin{equation}\begin{aligned}
 \psi(0,x_2,x_3,\ldots,x_N)&=\psi(x_2,x_3,\ldots,x_N,L),\\
 \left(\partial_x \psi(x,x_2,x_3,\ldots,x_N) \right)\big\rvert_{x=0}&=\left(\partial_x \psi(x_2,x_3,\ldots,x_N,x) \right)\big\rvert_{x=L}.
@@ -355,25 +356,26 @@ The values of the pseudo momenta $ k_i $ are now determined by the periodic boun
 With the ansatz state above, these equations correspond to the $ N $ equation\begin{equation}\label{EqLLPseudoMomenta}
 	(-1)^{N-1}\exp(-i k_j L)=\exp\left(i\sum_{i=1}^{N}\theta_{i,j}\right),
 \end{equation}
-with the definition $ \theta_{i,i}:=0 $. Although the ``pseudo" momenta $ k_i $ cannot be regarded as being true momenta, one can construct the total momentum of a state. We notice that $ P_{\text{tot.}}\coloneqq\sum_{i=1}^{N}k_i $ is constant across different sectors, and hence it may be regarded as the true total momentum. Furthermore, we see that if the set $ (k_i)_{i\in\{1,\ldots,N\}} $ solves the equations \eqref{EqLLPseudoMomenta} then the set $ (k_i'=k_i+2\pi n_0 /L)_{i\in\{1,\ldots,N\}} $ solves it as well. This corresponds to changing the total momentum by $ P'_{\text{tot.}}=P_{\text{tot.}}+ 2\pi n_0 \rho $, with $ \rho\coloneqq N/L $. Thus we may restrict to finding all solutions with $ -\pi \rho <P_{\text{tot.}}\leq \pi \rho $, then all other solutions are related by a constant change in ``pseudo" momenta. Ordering the ``pseudo" momenta such that $ k_1<k_2<\ldots<k_N $, another consequence of \eqref{EqLLPseudoMomenta} is that $ \sum_{i=1}^{N}k_i=2\pi n/L $ for some integer $ -N/2<n\leq N/2 $, since $ \theta_{i,j}=-\theta_{j,i} $.\\
+with the definition $ \theta_{i,i}:=0 $. Although the ``pseudo" momenta $ k_i $ cannot be regarded as being true momenta, one can construct the total momentum of a state. We notice that $ P_{\text{tot.}}\coloneqq\sum_{i=1}^{N}k_i $ is constant across different sectors, and hence it may be regarded as the true total momentum. Furthermore, we see that if the set $ (k_i)_{i\in\{1,\ldots,N\}} $ solves the equations \eqref{EqLLPseudoMomenta}, then the set $ (k_i'=k_i+2\pi n_0 /L)_{i\in\{1,\ldots,N\}} $, with any $n_0\in\mathbb{Z}$, solves it as well. This corresponds to changing the total momentum to $ P'_{\text{tot.}}=P_{\text{tot.}}+ 2\pi n_0 \rho $, with $ \rho\coloneqq N/L $. Thus we may restrict to finding all solutions with $ -\pi \rho <P_{\text{tot.}}\leq \pi \rho $, then all other solutions are related by a constant change in ``pseudo" momenta. Ordering the ``pseudo" momenta such that $ k_1<k_2<\ldots<k_N $, another consequence of \eqref{EqLLPseudoMomenta} is that $ \sum_{i=1}^{N}k_i=2\pi n/L $ for some integer $ -N/2<n\leq N/2 $, since $ \theta_{i,j}=-\theta_{j,i} $.\\
 Now we define \begin{equation}\label{EqDeltaDef}
 \delta_i=(k_{i+1}-k_i)L=\sum_{s=1}^{N}(\theta_{s,i}-\theta_{s,i+1})+2\pi n_i,
 \end{equation} where $ n_i $ are integers and the second equality follows from \eqref{EqLLPseudoMomenta}. Since $ \theta_{s,i} $ is strictly increasing in $ i $, we see that $ n_i\geq 1 $. Notice that $ k_j-k_i=\frac{1}{L}\sum_{s=i}^{j-1}\delta_i $ for $ j>i $, hence \eqref{EqDeltaDef} is a set of equations determining $ (\delta_i)_{i\in\{1,\ldots,N-1\}} $. Given a set of $ (n_i)_{i\in\{1,\ldots,N-1\}} $ and a solution of \eqref{EqDeltaDef}, $ (\delta_i)_{i\in\{1,\ldots,N-1\}} $, we merely choose $ k_1 $ to satisfy \eqref{EqLLPseudoMomenta} by having \begin{equation}\label{Eqk1}
 	k_1=-\frac{1}{L}\sum_{i=1}^{N}\theta_{i,1}-\frac{2\pi m}{L}+\frac{\epsilon(N)}{L},
 	\end{equation}
-	where $ m $ is some integer determined by $ -\pi\rho <P_{\text{tot.}}\leq \pi\rho $ and\\ $ \epsilon(N)=\begin{cases}
+	where $ m $ is some integer determined by $ -\pi\rho <P_{\text{tot.}}\leq \pi\rho $ and $$ \epsilon(N)=\begin{cases}
 	0&\text{ if } N\text{ is odd},\\
 	\pi&\text{ if } N\text{ is even}
-	\end{cases} $. The right-hand side of \eqref{Eqk1} depends only on the $ \delta $s. The proof of existence of solutions for \eqref{EqDeltaDef} that varies continuously with $ c $, was given in \cite{yang1969thermodynamics}.\\
+	\end{cases}. $$ 
+	The right-hand side of \eqref{Eqk1} depends only on the $ \delta $s. The proof of existence of solutions for \eqref{EqDeltaDef} that varies continuously with $ c $, was given in \cite{yang1969thermodynamics}.\\
 	\subsection{The ground state}
-	It is clear that within the set of ansatz states, the variational ground state must have $ n_i=1 $ for all $ i=1,\ldots, N-1 $. In this case, we have by symmetry and uniqueness of the ground state that $ k_i=-k_{N-i} $ and since $ P_{\text{tot.}}=\sum_{i=1}^{N}k_i=Nk_1+\frac{1}{L}\sum_{j=1}^{N-1}(N-j)\delta_j=0 $ we find $ k_1=-\frac{1}{NL}\sum_{j=1}^{N-1}(N-j)\delta_j=-k_N$.\\
+	It is clear that within the set of ansatz states, the variational ground state must have $ n_i=1 $ for all $ i=1,\ldots, N-1 $. In this case, we have by symmetry and uniqueness of the ground state that $ k_i=-k_{N-i+1} $. Thus, since $ P_{\text{tot.}}=\sum_{i=1}^{N}k_i=Nk_1+\frac{1}{L}\sum_{j=1}^{N-1}(N-j)\delta_j=0 $ we find $$ k_1=-k_N=-\frac{1}{NL}\sum_{j=1}^{N-1}(N-j)\delta_j.$$
 	
-	We may also ask whether the true ground state is attained among these ansatz states. This turns out to be the case, which may be seen by the following results
+	We may also ask whether the true ground state is attained among these ansatz states. This turns out to be the case, which may be seen by the following results:
 	\begin{lemma}\label{LemmaLLTrueGroundState}
 		Let $ \Psi_c $ denote the (true) ground state and $ E_c $ denote the (true) ground state energy of $ H_{LL} $ with coupling $ c>0 $. Then $ \lim\limits_{c\to\infty}E_c=E_F=E_\infty $, where $ E_F $ is the free Fermi ground state energy and $ \Psi_c\to \Psi_{\infty} $ in $ L^2([0,L]^N) $ as $ c \to\infty $.
 	\end{lemma}
 	\begin{proof}
-		Going to the quadratic form representation of $ H_{LL} $ is clear by a trial state argument that $ E_c\leq E_F $ for any $ c<\infty $. Now assume that $ E_c<\mathcal{E}<E_F $ for all $ c<\infty $ where $ \mathcal{E} $ is independent of $ c $. Then the ground state at coupling $ \Psi_c $ of $ H_{LL} $, is uniformly (in $ c $) bounded in $ H^1 $. Hence for any sequence $ (c_n)_{n\in\mathbb{N}}\subset\R_+ $, we find that $ \Psi_{c_n} $ is, by possibly passing to a subsequence, weakly convergent in $ H^1 $ to some $ \Psi\in H^1 $. By the Rellich--Kondrachov theorem $ \Psi_{c_n} $ converges in $ L^2 $ norm to the same limit. Now assuming $ c_n\to\infty $ as $ n\to\infty $ we have $ \Psi_{c_n}(x_i=x_j)\to 0 $ in $ L^2(\Omega^{N-1}) $ as $ n\to\infty $ for any $ i,j $ in order for the potential energy to stay finite. But then the limit $ \Psi $ also satisfies $ \Psi(x_i=x_j)=0 $ (in $ L^2(\Omega^{N-1}) $) for any $ i,j $. This follows from the fact that $ \delta(x_i-x_j)f(\overline{x^j})\in H^{-1}(\Omega^{N}) $ for any $ f\in L^2(\Omega^{N-1}) $ and from weak $ H^1 $ convergence of $ \Psi_{c_n} $. Notice that $ \Psi $ is a trial state for the impenetrable boson model ($ c=\infty $). However, clearly we have $ E_\Psi\leq \mathcal{E}<E_F $ by weak lower semi-continuity of the $ H^1 $--norm, which contradicts $ E_F $ being the ground state energy of the impenetrable boson model. Hence we conclude $ E_\Psi=E_F=E_\infty $, but then by uniqueness of the ground state in the impenetrable bosons model, $ \Psi=\Psi_\infty $. Since $ c_n\to \infty $ as $ n\to\infty $ was arbitrary, we conclude that any subsequence of $ \Psi_{c_n} $ has a further subsequence $ \Psi_{c_{n_i}} $ such that $ \Psi_{c_{n_i}}\to\Psi_\infty $ as $ i\to\infty $, and the proof is complete. 
+		By going to the quadratic form representation of $ H_{LL} $, it is clear by a trial state argument that $ E_c\leq E_F $ for any $ c<\infty $. Now assume that $ E_c<\mathcal{E}<E_F $ for all $ c<\infty $ where $ \mathcal{E} $ is independent of $ c $. Then the ground state at coupling $ \Psi_c $ of $ H_{LL} $, is uniformly (in $ c $) bounded in $ H^1 $. Hence for any sequence $ (c_n)_{n\in\mathbb{N}}\subset\R_+ $, we find that $ \Psi_{c_n} $ is, by possibly passing to a subsequence, weakly convergent in $ H^1 $ to some $ \Psi\in H^1 $. By the Rellich--Kondrachov theorem $ \Psi_{c_n} $ converges in $ L^2 $ norm to the same limit. Now assuming $ c_n\to\infty $ as $ n\to\infty $ we have $ \Psi_{c_n}(x_i=x_j)\to 0 $ in $ L^2(\Omega^{N-1}) $ as $ n\to\infty $ for any $ i\neq j $ in order for the potential energy to stay finite. But then the limit $ \Psi $ also satisfies $ \Psi(x_i=x_j)=0 $ (in $ L^2(\Omega^{N-1}) $) for any $ i\neq j $. This follows from the fact that $ \delta(x_i-x_j)f(\overline{x^j})\in H^{-1}(\Omega^{N}) $ for any $ f\in L^2(\Omega^{N-1}) $ and from weak $ H^1 $ convergence of $ \Psi_{c_n} $. Notice that $ \Psi $ is a trial state for the impenetrable boson model ($ c=\infty $). However, clearly we have $ E_\Psi\leq \mathcal{E}<E_F $ by weak lower semi-continuity of the $ H^1 $--norm, which contradicts $ E_F $ being the ground state energy of the impenetrable boson model. Hence we conclude $ E_\Psi=E_F=E_\infty $, but then by uniqueness of the ground state in the impenetrable bosons model, $ \Psi=\Psi_\infty $. Since $ c_n\to \infty $ as $ n\to\infty $ was arbitrary, we conclude that any subsequence of $ \Psi_{c_n} $ has a further subsequence $ \Psi_{c_{n_i}} $ such that $ \Psi_{c_{n_i}}\to\Psi_\infty $ as $ i\to\infty $, and the proof is complete. 
 	\end{proof}
 %	\begin{proof}[Proof in the thermodynamic limit by Bethe ansatz see \eqref{EqLLEq1}--\eqref{EqLLEq3} below]
 %		It follows from \eqref{EqLLEq3} that $ \lambda\to\infty $ as $ c\to\infty $. Then from \eqref{EqLLEq1} we see that $ g=\frac{1}{2\pi} $ so again by \eqref{EqLLEq3} $ \lambda=\frac{1}{\pi}\gamma $. Thus by $ \eqref{EqLLEq2} $ we have $ e(\gamma)=\frac{\pi^2}{3} $, which agrees with the free Fermi ground state energy 
@@ -405,9 +407,10 @@ Since we have $ k_{i+1}-k_i<2\pi/L $, we conclude\begin{equation}
 So by \eqref{EqDeltaDef} we see for the ground state ($ n_i=1 $) that \begin{equation}
 k_{i+1}-k_i=\frac{2\pi}{L}-\frac{1}{L}\sum_{s=1}^{N}\frac{2c(k_{i+1}-k_i)}{c^2+(k_s-k_i)^2}+\rho O(1/(cL)^2).
 \end{equation}
-Now let $ f $ be such that $ k_{i+1}-k_i=1/(Lf(k_i)) $. Then by Poisson's summation formula, we have \begin{equation}
-2\pi f(k)-1=2c\int_{-K}^{K}\frac{f(p)}{c^2+(p-k)^2}\diff p+o(1/(cL)).
+Now let $ f $ be such that $ k_{i+1}-k_i=1/(Lf(k_i)) $. Then we may approximate the sum by an integral in the $L\to\infty$ limit, and we have \begin{equation}
+2\pi f(k)-1=2c\int_{-K}^{K}\frac{f(p)}{c^2+(p-k)^2}\diff p+\varepsilon(1/(cL)),
 \end{equation}
+with $\varepsilon(x)\to 0$ as $ x\to 0 $.
 The very definition of $ f $ implies $ \int_{-K}^{K}f(p)\diff p=\rho $, with ground state energy\begin{equation}
 E=\sum_{i}k_i^2=\int_{-K}^{K}k^2f(k)\diff k,
 \end{equation} 
@@ -509,7 +512,7 @@ must be defined in the spin subspace
 We notice that this restricts the spatial symmetries that spin--$ 1/2 $ fermions can possess, since the spin diagrams have at most two rows. In the following, we will denote the diagram consisting of a row with $ N-M $ boxes and a row with $ M $ boxes by $ [N-M,M] $, and diagrams consisting of a column of $ N-M $ boxes and a column of $ M $ boxes by $ [2^{M},1^{N-2M}] $. 
 \subsection{Recap of the findings of Yang: Solution by Bethe-Yang ansatz}
 The solution found by Yang in \cite{yang1967some}, relies on a generalization of the Bethe ansatz, which we saw in the previous section solved the Lieb-Liniger model. The generalized Bethe ansatz is also known as the Yang-Bethe hypothesis or Yang-Bethe ansatz. We recap here, without proof, the findings of Yang. For references on these results, we point to \cite{gaudin1967systeme,yang1967some,sutherland1968further,fung1981validity,gaudin2014bethe}. \\
-The model is solved by applying a standard Bethe ansatz state: One the sector $ \{\sigma\} $ define \begin{equation}
+The model is solved by applying a standard Bethe ansatz state: On the sector $ \{\sigma\} $ define \begin{equation}
 \psi=\sum_{P\in S_N} \xi_{P,\sigma} \exp\left(k_{P_1} x_{\sigma_1}+\ldots+k_{P_N}x_{\sigma_N}\right),
 \end{equation}
 with energy $ E=\sum_{i=1}^{N}k_i^2 $.
@@ -554,27 +557,27 @@ and \begin{equation}\label{EqYGSpinRapidityRelation}
 -\prod_{j=1}^{N}\frac{ik_j-i\Lambda_\alpha-c/2}{ik_{j}-i\Lambda_\alpha+c/2}=\prod_{\beta=1}^{M}\frac{-i\Lambda_\beta+i\Lambda_\alpha-c}{-i\Lambda_\beta+i\Lambda_\alpha+c}.
 \end{equation}
 One may verify that $ \Phi $ has total spin $ N-2M $.
-Yang then find \begin{equation}
-\mu_j(k,c,[N-M,M])=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta+-c/2}{ik_j-i\Lambda_\beta+c/2}.
+Yang then finds \begin{equation}
+\mu_j(k,c,[N-M,M])=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta-c/2}{ik_j-i\Lambda_\beta+c/2}.
 \end{equation}
 Thus the energy is determined by the equation\begin{equation}\label{EqYGPeriodicSpectrumCondition}
-\exp(ik_jL)=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta+-c/2}{ik_j-i\Lambda_\beta+c/2}.
+\exp(ik_jL)=\prod_{\beta=1}^{M}\frac{ik_j-i\Lambda_\beta-c/2}{ik_j-i\Lambda_\beta+c/2}.
 \end{equation}
-Taking the logarithm of \eqref{EqYGSpinRapidityRelation} and \eqref{EqYGPeriodicSpectrumCondition} adding certain integers to get a well defined $ c\to\infty $ limit, as we did in Section \ref{SectionLiebLinigerModel}, one finds \begin{equation}\label{EqYGintegers}
+Taking the logarithm of \eqref{EqYGSpinRapidityRelation} and \eqref{EqYGPeriodicSpectrumCondition} and adding certain integers to get a well defined $ c\to\infty $ limit, as we did in Section \ref{SectionLiebLinigerModel}, one finds \begin{equation}\label{EqYGintegers}
 \begin{aligned}
 -\sum_{k\in\{k_j\}_j}\theta(2\Lambda-2k)&=2\pi J_\Lambda-\sum_{\Lambda'\in(\Lambda_\alpha)_\alpha}\theta(\Lambda-\Lambda'),\\
-kL&=2\pi I_k-\sum_{\Lambda'\in\{\Lambda_\alpha\}_\alpha}\theta(2k-2\Lambda'),
+kL&=2\pi I_k-\sum_{\Lambda'\in(\Lambda_\alpha)_\alpha}\theta(2k-2\Lambda'),
 \end{aligned}
 \end{equation}
-with the usual $ \theta(x)\coloneqq-2\arctan(x/c) $, and where for $ N $ even and $ M $ odd we have for ground state (among the ansatz states)\begin{equation}
+with the usual $ \theta(x)\coloneqq-2\arctan(x/c) $. For $ N $ even and $ M $ odd we have for ground state (among the ansatz states)\begin{equation}
 \begin{aligned}
 J_\Lambda&\in\{-(M-1)/2,\ldots,(M-1)/2\},\\
 I_k&\in \{1-N/2,\ldots,N/2\}.
 \end{aligned}
 \end{equation}
 Going to the thermodynamic limit, \ie $ N,M,L\to\infty $ proportionally, one then find the equations for the energy \begin{align}
-2\pi\sigma(\Lambda)&=-\int_{-B}^{B}\frac{2c\sigma(\Lambda')\diff \Lambda'}{c^2+(\Lambda-\Lambda')^2}+\int_{-Q}^{Q}\frac{4c f(k)\diff k}{c^2+4(k-\Lambda)^2}\label{EqYG1}\\
-2\pi f(k) &= 1+\int_{-B}^{B}\frac{4c\sigma(\Lambda')\diff \Lambda'}{c^2+4(k-\Lambda')^2}\label{EqYG2}\\
+2\pi\sigma(\Lambda)&=-\int_{-B}^{B}\frac{2c\sigma(\Lambda')\diff \Lambda'}{c^2+(\Lambda-\Lambda')^2}+\int_{-Q}^{Q}\frac{4c f(k)\diff k}{c^2+4(k-\Lambda)^2}\label{EqYG1},\\
+2\pi f(k) &= 1+\int_{-B}^{B}\frac{4c\sigma(\Lambda')\diff \Lambda'}{c^2+4(k-\Lambda')^2}\label{EqYG2},\\
 \rho=N/L&=\int_{-Q}^{Q} f(k) \diff k,\quad M/L=\int_{-B}^{B}\sigma(\Lambda)\diff\Lambda,\label{EqYG3}\\
 e=E/L&=\int_{-Q}^{Q}k^2 f(k)\diff k \label{EqYG4},
 \end{align}
@@ -594,12 +597,12 @@ Now the following lemma will prove useful in obtaining a lower bound for the the
 \end{lemma}
 
 \begin{proof}
-	We give an induction proof: For the induction start, we notice that the $ m=1 $ statement is simply \eqref{EqYG2}. For the induction step, assume that \eqref{EqYG5} hold for $ m=m_0 $, we may plug the right-hand side of \eqref{EqYG1} into \eqref{EqYG5}. By Tonelli's theorem, we may interchange the order of integration and we find\begin{equation}
+	We give a proof by induction: For the induction base case, we notice that the $ m=1 $ statement is simply \eqref{EqYG2}. For the induction step, assume that \eqref{EqYG5} hold for $ m=m_0 $, we may plug the right-hand side of \eqref{EqYG1} into \eqref{EqYG5}. By Tonelli's theorem, we may interchange the order of integration and we find\begin{equation}
 	\begin{aligned}
 	&2\pi  f(k)-1=\\
 	&\frac{(-1)^{m_0+2}}{2\pi}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\frac{8c^2(2m_0-1)\sigma(\Lambda'')}{(c^2+(\Lambda'-\Lambda'')^2)((2m_0-1)^2c^2+4(k-\Lambda')^2)}\diff\Lambda'\diff\Lambda''\\
 	&+\frac{(-1)^{m_0+1}}{2\pi}\int_{-Q}^{Q}\int_{-\infty}^{\infty}\frac{4^2c^2(2m_0-1) f(k')}{(c^2+4(k'-\Lambda')^2)((2m_0-1)^2c^2+4(k-\Lambda')^2)}\diff\Lambda'\diff k'\\
-	&+2\sum_{n=0}^{m_0-1}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k',
+	&+2\sum_{n=0}^{m_0-1}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'.
 	\end{aligned}
 	\end{equation}
 	
@@ -608,8 +611,7 @@ Now the following lemma will prove useful in obtaining a lower bound for the the
 	\int_{-\infty}^{\infty}\frac{m}{(1+(x'-x'')^2)(m^2+4(y-x'))}\diff x'&=\frac{(m+2)\pi}{(2+m)^2+4(y-x'')^2},\\
 	\int_{-\infty}^{\infty}\frac{m}{(1+4(y'-x')^2)(m^2+4(y-x'))}\diff x'&=\frac{(m+1)\pi}{2((m+1)^2+4(y-y')^2)},
 	\end{align}
-	for any $ x'',y,y'\in\R $ and $ m\in\mathbb{N}_+ $,
-	We find 
+	for any $ x'',y,y'\in\R $ and $ m\in\mathbb{N}_+ $, we find 
 	
 	\begin{equation}
 	\begin{aligned}
@@ -619,7 +621,7 @@ Now the following lemma will prove useful in obtaining a lower bound for the the
 	\end{equation}
 	which proves the required result.
 \end{proof}
-We will aim at proving a lower bound. To do this, notice that in Lemma \ref{LemmaYGrho}, the second term in \eqref{EqYG5} vanish in the limit $ m\to\infty $ by the estimate \begin{equation}\label{EqYGLemma1bound}
+We will aim at proving a lower bound. To do this, notice that in Lemma \ref{LemmaYGrho} the second term in \eqref{EqYG5} vanishes in the limit $ m\to\infty $ by the estimate \begin{equation}\label{EqYGLemma1bound}
 	\begin{aligned}
 	\int_{-\infty}^{\infty}\frac{ (2m-1)c\sigma(\Lambda'')}{((2m-1)^2 c^2+4(k-\Lambda'')^2)}\diff\Lambda''\leq \frac{1}{(2m-1)c}\int_{-\infty}^{\infty}\sigma(\Lambda'')\diff \Lambda''\\=\frac{M/L}{(2m-1)c}.
 	\end{aligned}
@@ -656,7 +658,7 @@ A straightforward computation shows\begin{equation}
 \end{equation}
 It follows for any $ m_0 $ that \begin{equation}
 \begin{aligned}
-\sum_{n=0}^{m_0}(-1)^{n+1}&\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\\
+&\sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2c(2n) f(k')}{((2n)^2c^2+4(k-k')^2)}\diff k'\\
 &\leq\sum_{n=1}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'-\sum_{l=1}^{\floor{m_0/2}}\Delta_{(2l-1)}
 \\
 &\leq \sum_{n=0}^{m_0}(-1)^{n+1}\int_{-Q}^{Q}\frac{2 f(k')}{2nc}\diff k'.
