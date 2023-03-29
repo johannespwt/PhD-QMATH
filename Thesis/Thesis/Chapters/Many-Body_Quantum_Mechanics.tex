@@ -405,7 +405,7 @@ N/L=\rho}} \frac{1}{L}E_N.
 Since we have $ k_{i+1}-k_i<2\pi/L $, we conclude\begin{equation}
 \theta_{s,i}-\theta_{s,i+1}=-\frac{2c(k_{i+1}-k_i)}{c^2+(k_s-k_i)^2}+\mathcal{O}(1/(cL)^2).
 \end{equation}
-So by \eqref{EqDeltaDef} we see for the ground state ($ n_i=1 $) that \begin{equation}
+So by \eqref{EqDeltaDef} we see for the ground state ($ n_i=1 $) that \begin{equation}\label{EqPseudoMomentaDifferenceExpansion}
 k_{i+1}-k_i=\frac{2\pi}{L}-\frac{1}{L}\sum_{s=1}^{N}\frac{2c(k_{i+1}-k_i)}{c^2+(k_s-k_i)^2}+\rho O(1/(cL)^2).
 \end{equation}
 Now let $ f $ be such that $ k_{i+1}-k_i=1/(Lf(k_i)) $. Then we may approximate the sum by an integral in the $L\to\infty$ limit, and we have \begin{equation}
@@ -413,7 +413,7 @@ Now let $ f $ be such that $ k_{i+1}-k_i=1/(Lf(k_i)) $. Then we may approximate 
 \end{equation}
 with $\varepsilon(x)\to 0$ as $ x\to 0 $.
 The very definition of $ f $ implies $ \int_{-K}^{K}f(p)\diff p=\rho $, with ground state energy\begin{equation}
-E=\sum_{i}k_i^2=\int_{-K}^{K}k^2f(k)\diff k,
+E=\sum_{i}k_i^2=\frac{N}{\rho}\int_{-K}^{K}k^2f(k)\diff k,
 \end{equation} 
 and it follows from the definition of $ f $ and $ k_i<k_{i+1} $ that $ f\geq 0 $.\\
 It is now a matter of a simple coordinate transformation\begin{equation}
@@ -431,6 +431,19 @@ The first equation is an inhomogeneous Fredholm equation of the second kind whic
 	e(\gamma)\geq \frac{\pi^2}{3}\rho^3\left(\frac{\gamma}{\gamma+2}\right)^2.
 	\end{equation}
 \end{lemma}
+Here we would like to give the equivalent result for a finite number of particles.
+\begin{lemma}
+	Let $ (k_i)_{i=1}^{N} $ be the with $ k_1<k_2<\ldots<k_N $ satisfy \eqref{EqPseudoMomentaDifferenceExpansion}. Then we have $$k_{i+1}-k_i\geq \frac{2\pi}{L}\left(1+2\frac{\rho}{c}\right)^{-1}+\rho \mathcal{O}\left(1/(cL)^2\right). $$
+\end{lemma}
+\begin{proof}
+	This follows directly by discarding the term $ (k_s-k_i)^2 $ in the denominator inside the sum in \eqref{EqPseudoMomentaDifferenceExpansion}.
+\end{proof}
+It follows straightaway for the ground state where $k_1=-k_N$ that \begin{equation}
+	\abs{k_n}\geq \frac{2\pi}{L}\left(1+2\frac{\rho}{c}\right)^{-1}n+\rho \mathcal{O}\left(1/(cL)^2\right).
+\end{equation} 
+Therefore we find the lower bound on the energy \begin{equation}
+	\sum_{n=1}^{N}k_n^2\geq N\left(\rho+\frac{1}{L}\right)\left(\rho+\frac{2}{L}\right)\frac{\pi^2}{3}\left(1+2\frac{\rho}{c}\right)^{-2}+\mathcal{O}\left(\frac{\rho}{c}\frac{\rho^2}{cL} \right).
+\end{equation}
 
 %\subsection{Lower bound in the large $ c $ limit}
 %From the equations \eqref{EqLLEq1}-\eqref{EqLLEq3}, one can obtain an exact lower bound of the ground state energy in the thermodynamic limit, this is done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. However, since this lower bound is shown by the use of the exact solution of the Lieb-Liniger model, it is hard to generalize this lower bound more generic models such as perturbations of the Lieb-Liniger model. In this subsection, we seek to prove a weaker form of this lower bound by a more soft argument. For this purpose, we will use Proposition \ref{PropositionCInftyconvergenceLLEigenstates} to give an asymptotic (in $ c $) bound in a finite box. The strategy is as follows: Consider the ground state, $ \Psi_c $ of the Lieb-Liniger model in a box of size $ L $. We define $ \tilde{\Psi}_c:[0,L+(N-1)R]^N\to\C $ to satisfy $ \tilde{\Psi}(y_1,\ldots,y_N)=\Psi_c(y_1,y_2-R,y_3-2R,\ldots,y_N-(N-1)R) $ when $ y_{k+1}-kR>y_k $ for all $ k=1,\ldots,N $. We denote the set  $ \{y_{k+1}-kR>y_k\text{ for all }k=1,\ldots,N\}:=\Gamma $. Then $ \tilde{\Psi}_c\rvert_{\Gamma}=\Psi_c $. Now we define $ \tilde{\Psi}_c $ on all of $ [0,L+(N-1)R]^N $ by extending it to be an eigenfunction of the Laplacian $ -\Delta $ with the same eigenvalue as on $ \Gamma $. Indeed it is an eigenfunction on $ \Gamma $ with eigenvalue $ E_c $. Then we have \begin{equation}
