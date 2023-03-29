@@ -1,6 +1,6 @@
 \chapter{The Ground State Energy of The One Dimensional Dilute Dpin--$ \frac{1}{2} $ Fermi Gas}
 \label{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}
-In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter we seek to analyze instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Therefore, does our bound essentially give estimates on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
+In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter, we seek to analyze instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Therefore, does our bound essentially give estimates on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
 \section{The Model}
 We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, say in the ball $ B_{R_0} $, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N} v(x_i-x_j),
@@ -12,8 +12,9 @@ We recap here the conjecture, from Chapter \ref{ChapterTheGroundStateEnergyOfThe
 	\end{equation}
 \end{conjecture}
 \section{Upper Bound}
+\label{SectionSpin1/2FermiUpperBound}
 In this section, we prove an upper bound for the ground state energy of the model \eqref{EqFermi1/2Hamiltonian}. The upper bound match, to next-to-leading order, Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
-In order to prove the desired upper bound, some prerequisites are needed. We have already covered the definition of the scattering length and scattering wave function in Chapter \ref{ChapterMany-BodyQuantumMechanics}, and the free Fermi ground state was found in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. For the spin--$ 1/2 $ gas, we furthermore need knowledge about how to handle the spin degrees of freedom. For this purpose we give some heuristic arguments based on physical intuition, and utilize this intuition in constructing a trial state giving the correct upper bound. 
+To prove the desired upper bound, some prerequisites are needed. We have already covered the definition of the scattering length and scattering wave function in Chapter \ref{ChapterMany-BodyQuantumMechanics}, and the free Fermi ground state was found in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. For the spin--$ 1/2 $ gas, we furthermore need knowledge about how to handle the spin degrees of freedom. For this purpose, we give some heuristic arguments based on physical intuition and utilize this intuition in constructing a trial state giving the correct upper bound. 
 The main result of this section is the following theorem.
 \begin{theorem}\label{TheoremUpperBoundSpin1/2Fermi}
 	Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqUpperBoundSpin1/2Fermi}
@@ -22,45 +23,49 @@ The main result of this section is the following theorem.
 	with $ R=\max(\abs{a_e}, a_o, R_0) $.
 \end{theorem}
 \subsection{Constructing a trial state}
-In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the trial state is given by anti-symmetrically extending to other sectors. Of course this means that certain boundary conditions need to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ in order for this extension to be in the relevant domain. This boundary condition is exactly that $ \operatorname{P}_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $. Here $ \operatorname{P}_t^{i,j} $ denotes the spin-projection onto the triplet of particles $ i $ and $ j $, and equivalently we will denote the spin-projection onto the singlet of particles $ i $ and $ j $ by $ \operatorname{P}_s^{i,j} $. We recall from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the ground state energy (of the Bose gas or spin polarized Fermi gas) may be well approximated in the dilute limit, by a state that resembles a free Fermi state when particles are far apart, and resembles the two-particle scattering solution when a pair is close. With this in mind, we may construct a variational state trial state on a sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}\label{EqTrial StateSpin1/2Fermi}
+In constructing a trial state for the dilute Fermi gas, we may restrict to a sector of the form $ \{\sigma\}=\{\sigma_1,\sigma_2,\ldots,\sigma_N\}=\{0<x_{\sigma_1}<x_{\sigma_2}<\ldots<x_{\sigma_N}<L\} $, then the trial state is given by anti-symmetrically extending to other sectors. Of course, this means that certain boundary conditions need to be satisfied at the boundary $ \{x_{\sigma_i}=x_{\sigma_{i+1}}\} $ for this extension to be in the relevant domain. This boundary condition is exactly that $ \operatorname{P}_t^{i,i+1} \Psi\rvert_{\{x_{\sigma_i}=x_{\sigma_{i+1}}\}}=0 $. Here $ \operatorname{P}_t^{i,j} $ denotes the spin-projection onto the triplet of particles $ i $ and $ j $, and equivalently we will denote the spin-projection onto the singlet of particles $ i $ and $ j $ by $ \operatorname{P}_s^{i,j} $. We recall from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the ground state energy (of the Bose gas or spin polarized Fermi gas) may be well approximated in the dilute limit, by a state that resembles a free Fermi state when particles are far apart, and resembles the two-particle scattering solution when a pair is close. With this in mind, we may construct a variational state trial state on a sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}\label{EqTrial StateSpin1/2Fermi}
 \Psi_\chi=\begin{cases}
 \frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)\operatorname{P}_s^{\mathcal{R}}+\omega_o^{\mathcal{R}}\operatorname{P}_t^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
 \Psi_F,&\mathcal{R}(x)\geq b
 \end{cases},
 \end{equation}
-where $ \chi $ is some spin state, $ b>R_0 $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and $ \operatorname{P}_{s/t}^{\mathcal{R}(x)}:=\operatorname{P}_{s/t}^{i,j} $. Furthermore, $ \mathcal{R}(x)=\abs{x_i-x_j} $, and $ \eta $ is a continuous and almost everywhere differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
-\begin{equation}\label{key}
+where $ \chi $ is some spin state, $ b>R_0 $, $ \mathcal{R}(x)=\min_{i,j}\abs{x_i-x_j} $, $ \omega^\mathcal{R}_{s/o}(x)\coloneqq \omega_{s/o}(\mathcal{R}(x)) $, and for $\mathcal{R}(x)=\abs{x_i-x_j}$, we have $ \operatorname{P}_{s/t}^{\mathcal{R}(x)}:=\operatorname{P}_{s/t}^{h(i),h(j)} $ with $h(i)$ being the spin-index of the particle with coordinate $x_i$\footnote{\label{FootnoteSpinProjection}When we are on the sector $ \{\sigma\} $ and we are defining $$ \Psi\left((x_{\sigma_1},s_{\sigma_1}),(x_{\sigma_2},s_{\sigma_2}),\ldots,(x_{\sigma_N},s_{\sigma_N})\right), $$ we have $h(i)=i$. On the other hand, if we seek to define $$\Psi\left((x_{\sigma_1},s_1),(x_{\sigma_2},s_2),\ldots,(x_{\sigma_N},s_N)\right),$$ we have $ h(i)=\sigma^{-1}(i) $. This is only relevant for considering symmetries different from the fermionic spin-space anti-symmetry, as $$
+	\Psi\left((x_{1},s_{1}),(x_{2},s_{2}),\ldots,(x_{N},s_{N})\right)=\text{sgn}(\sigma)\Psi\left((x_{\sigma_1},s_{\sigma_1}),(x_{\sigma_2},s_{\sigma_2}),\ldots,(x_{\sigma_N},s_{\sigma_N})\right),
+	$$
+	for fermionic wave functions. Hence, in this section, we may as well think of $ h $ as $h(i)=i$.
+	 A different symmetry is considered below in Section \ref{SectionExtendingTheUpperBoundOtherSymmetries}.}. Furthermore, $ \eta $ is a continuous and almost everywhere differentiable function with the property $ \eta(x)=0 $ when $ \mathcal{R}_2(x)=b $, where $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $ is the distance between the second closest pair. More precisely we define
+\begin{equation}
 \eta(x)\coloneqq\begin{cases}
 0,&\text{ if } \mathcal{R}_2(x)\leq b\\
 \left(\frac{\mathcal{R}_2(x)}{b}-1\right), &\text{ if } b<\mathcal{R}_2(x)<2b\\
 1, &\text{ if } \mathcal{R}_2(x)\geq 2b.
 \end{cases}
 \end{equation}
-In this case, we see that $ \operatorname{P}_t^{i,j}\Psi\rvert_{x_i=x_j}=0 $ due to the boundary condition satisfied by $ \omega_o $. We notice that a potential discontinuity could arise from $ \operatorname{P}_{s/t}^{\mathcal{R}(x)} $, since these projection are discontinuous at points where $ \mathcal{R}_2(x)=\mathcal{R}(x) $. However, since $ \operatorname{P}_{s}^{\mathcal{R}(x)}+\operatorname{P}_{t}^{\mathcal{R}(x)}=1 $, we see that $ \Psi $ is continuous due to the inclusion of $ \eta $. The extension of $ \Psi $ to other sectors $ \{\sigma\} $ is then defined by anti-symmetry in the space-spin variables. In this case, due to symmetry of the Hamiltonian/energy quadratic form, the energy is determined completely by the energy on the sector $ \{1,2,\ldots,N\} $.\\
-As was the case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, the trial state given in \eqref{EqTrial StateSpin1/2Fermi} produces error that grow with the particle number. This is undesirable for proving Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. However, as before, we may construct the full trial state by localizing to smaller intervals. This is done by splitting the interval $ [0,L] $ into smaller intervals $ I_m\coloneqq[m(\ell+b),(m+1)\ell+mb] $ $ m=0,1,2,\ldots M-1 $, where $ \ell=L/M-b $. We then consider the trial state given by a product \begin{equation}\label{EqFullTrialStateSpin1/2}
+In this case, we see that $ \operatorname{P}_t^{i,j}\Psi\rvert_{x_i=x_j}=0 $ due to the boundary condition satisfied by $ \omega_o $. We notice that a potential discontinuity could arise from $ \operatorname{P}_{s/t}^{\mathcal{R}(x)} $, since these projection are discontinuous at points where $ \mathcal{R}_2(x)=\mathcal{R}(x) $. However, since $ \operatorname{P}_{s}^{\mathcal{R}(x)}+\operatorname{P}_{t}^{\mathcal{R}(x)}=1 $, we see that $ \Psi $ is continuous due to the inclusion of $ \eta $. The extension of $ \Psi $ to other sectors $ \{\sigma\} $ is then defined by anti-symmetry in the space-spin variables. In this case, due to the symmetry of the Hamiltonian/energy quadratic form, the energy is determined completely by the energy on the sector $ \{1,2,\ldots,N\} $.\\
+As was the case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, the trial state given in \eqref{EqTrial StateSpin1/2Fermi} produces an error that grows with the particle number. This is undesirable for proving Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. However, as before, we may construct the full trial state by localizing it to smaller intervals. This is done by splitting the interval $ [0,L] $ into smaller intervals $ I_m\coloneqq[m(\ell+b),(m+1)\ell+mb] $ $ m=0,1,2,\ldots M-1 $, where $ \ell=L/M-b $. We then consider the trial state given by a product \begin{equation}\label{EqFullTrialStateSpin1/2}
 \Psi_{\chi,\text{full}}(x_1,\ldots,x_N)=\prod_{m=0}^{M-1}\Psi^{I_m}_{\chi}(x_1^m,\ldots,x_{\tilde{N}}^m),
 \end{equation}
 where $ \tilde{N}=N/M $ and $ x_i^m\coloneqq x_{m\tilde{N}+i} $ and the superscribt $ I_m $ in $ \Psi^{I_m}_{\chi} $ means that we take the state $ \Psi_{\chi} $ constructed on $ I_m $ instead of $ [0,L] $. Notice that there are no interactions between boxes since $ b>R_0 $. 
 \begin{remark}\label{RemarkTechnicalDetailTheoremUpperBoundProof}
-	Of course dividing the particles in this way, might not be possible with desirable integers $\tilde{N}$ and $ M $. However, for a desirable $\tilde{N}$ (not necessarily integer), we may take $M=\ceil{ N/\tilde{N}}$, and then the particles in each box will be $\ceil{N/M}$ or $\ceil{N/M-1}$ in such a way that the total number of particles remain $N$. In this case, the length of a given box may also be chosen, according to the number of particles it contains, to be $\ell_{\ceil{N/M}}=\rho^{-1}\ceil{N/M}-b$ and $ \ell_{\ceil{N/M-1}}=\rho^{-1}\ceil{N/M-1}-b $. This technical detail produces only errors that are small compared to existing errors in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} below, and thus for simplicity we ignore it.
+	Of course, dividing the particles in this way, might not be possible with desirable integers $\tilde{N}$ and $ M $. However, for a desirable $\tilde{N}$ (not necessarily integer), we may take $M=\ceil{ N/\tilde{N}}$, and then the particles in each box will be $\ceil{N/M}$ or $\ceil{N/M-1}$ in such a way that the total number of particles remain $N$. In this case, the length of a given box may also be chosen, according to the number of particles it contains, to be $\ell_{\ceil{N/M}}=\rho^{-1}\ceil{N/M}-b$ and $ \ell_{\ceil{N/M-1}}=\rho^{-1}\ceil{N/M-1}-b $. This technical detail produces only errors that are small compared to existing errors in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} below, and thus for simplicity we ignore it.
 \end{remark}
  We saw in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that the scattering solution, when particles are close, leads to a correction to the free Fermi energy that is of order $ 2\rho a_{e/o} E_F $. Since $ \operatorname{P}_s^{i,j}=1/4-S_i\cdot S_j $ and $ \operatorname{P}_t^{i,j}=3/4+S_i\cdot S_j $, we expect (ignoring the effect of $ \eta $) that the correction we obtain from the variational state $ \Psi_\chi $ is of the order $$
 2\rho\left( (a_o-a_e) \braket{\chi \left\vert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
 $$ 
-The minimizer (in $ \chi $), $ \chi_0 $, is known, and in this case since $ a_o\geq a_e $, it is given by the ground state of the periodic antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground state is known explicitly, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the antiferromagnetic Heisenberg chain is known to be \cite{hult1938,mattis2012theory} (See lemma \ref{LemmaHeisenbergChainFiniteNEstimate} below) \begin{equation}
+The minimizer (in $ \chi $) $ \chi_0 $ is known, and in this case, since $ a_o\geq a_e $, it is given by the ground state of the periodic antiferromagnetic Heisenberg chain $ \chi_0=\ket{\text{GS}_{\text{HAF}}} $. This ground state is known explicitly, as it is of Bethe ansatz form \cite{bethe1931theorie}. Furthermore, the ground state energy of the antiferromagnetic Heisenberg chain is known to be \cite{hult1938,mattis2012theory} (See lemma \ref{LemmaHeisenbergChainFiniteNEstimate} below) \begin{equation}
 \braket{\text{GS}_{\text{HAF}} \left \lvert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\rvert \text{GS}_{\text{HAF}}}=\frac{1}{4}-\ln(2)+\mathcal{O}(1/N).
 \end{equation}
 Hence we find the correction $ 2\rho \left(\ln(2)a_e+(1-\ln(2))a_o\right)E_F $ as desired.
 \subsection{Proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}}
-In this section, we give the rigorous proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. The idea was already sketched in the previous section, and the goal is thus to make the statements in the previous section rigorous. An important, though completely trivial fact is the following lemma. \begin{lemma}\label{LemmaEtaDerivative}
+In this section, we give the rigorous proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. The idea was already sketched in the previous section, and the goal is thus to make the statements in the previous section rigorous. An important, although completely trivial, fact is the following lemma. \begin{lemma}\label{LemmaEtaDerivative}
 	Let $ \eta $ be defined as above, then we have \begin{equation}
 	\abs{\nabla\eta}\leq \frac{\sqrt{2}}{b}, \textnormal{ a.e}.
 	\end{equation}
 \end{lemma}
-The quantity of interest in the following, will be the energy of the trial state\begin{equation}
+The quantity of interest in the following will be the energy of the trial state\begin{equation}
 \mathcal{E}(\Psi_\chi)=\int_{[0,L]^N}\sum_{i=1}^{N} \abs{\partial_i\Psi_\chi}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_\chi}^2.
 \end{equation}
-We will henceforth assume $ \chi $ to be translation invariant. In fact, this assumption is not needed, when we have periodic boundary conditions, see Appendix \ref{AppendixPeriodicBCSpin1/2}.
+We will henceforth assume $ \chi $ to be translation invariant. This assumption is not needed, when we have periodic boundary conditions, see Appendix \ref{AppendixPeriodicBCSpin1/2}.
 As was done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we rewrite this by use of the diamagnetic inequality\begin{equation}\label{EqEnergy1Spin1/2}
 \begin{aligned}
 \mathcal{E}(\Psi_\chi)&\leq E_F + \int_{B}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2+\sum_{1\leq i<j\leq N}v_{ij}\abs{\Psi_{\chi}}^2-\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\\
@@ -109,7 +114,7 @@ we find by the fact that $ B_{12}^\geq\subset A_{12} $, \begin{equation}\label{E
 \end{equation}
 where $ \operatorname{P}_{s/t}^{N,N+1}\coloneqq \operatorname{P}_{s/t}^{N,1} $ and $ \chi_{\sigma} $ is the spin state $ \chi $ with spins permuted by $ (1,\ldots,N)\mapsto(\sigma_1,\ldots,\sigma_N) $ and 
 $$ S_{12}=\{\text{sectors } \{\sigma\}\ \vert\ (\sigma_k,\sigma_{k+1})=(1,2)\text{ or }(\sigma_k,\sigma_{k+1})=(2,1)\text{ for some }k\}. $$
-Using translation invariance of $ \chi $ we see that 
+Using the translation invariance of $ \chi $ we see that 
 $$ \braket{\chi_{\sigma} \left\lvert \operatorname{P}^{1,2}_{s/t}  \right\rvert \chi_\sigma}=\frac{1}{N}\sum_{k=1}^{N}\braket{\chi_\sigma\left\lvert \operatorname{P}^{\sigma_k,\sigma_{k+1}}_{s/t}  \right\rvert \chi_\sigma}=\frac{1}{N}\sum_{k=1}^{N}\braket{\chi\left\lvert \operatorname{P}^{k,k+1}_{s/t}  \right\rvert \chi} $$
 is independent of $ \sigma\in S_{12} $ and that
 \begin{equation}\label{EqEnergy4Spin1/2}
@@ -135,7 +140,7 @@ $$ \abs{\Psi_{\chi}}^2\leq \frac{1}{N}\sum_{k=1}^{N}\left(\braket{\chi \left\ver
 	&+2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2.
 	\end{aligned}
 \end{equation}
-We see that this reduces proving an upper bound to a case we have already analyzed in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, expect for the last two term, which we then need to estimate. Let us denote the two quantities by \begin{equation}
+We see that this reduces proving an upper bound to a case we have already analyzed in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, except for the last two terms, which we then need to estimate. Let us denote the two quantities by \begin{equation}
 \begin{aligned}
 E_{12}^{34}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2,\\
 E_{12}^{23}&\coloneqq 2(N-2)\binom{N}{2}\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\Psi_{\chi}}^2.
@@ -216,7 +221,7 @@ Let $ \ket{\textnormal{GS}_{\textnormal{HAF}}} $ denote the ground state of the 
 \lim\limits_{N\to\infty}\braket{\textnormal{GS}_{\textnormal{HAF}}\Bigg\vert\frac{1}{N}\sum_{k=1}^N S_k\cdot S_{k+1} \Bigg\vert \textnormal{GS}_{\textnormal{HAF}}}=\frac{1}{4}-\ln(2) 
 \end{equation}
 \end{lemma}
-This lemma, gives the ground state energy of the Heisenberg chain in the thermodynamic limit, however, we need an estimate for the finite chain. This is given by the following lemma:
+This lemma gives the ground state energy of the Heisenberg chain in the thermodynamic limit, however, we need an estimate for the finite chain. This is given by the following lemma:
 \begin{lemma}\label{LemmaHeisenbergChainFiniteNEstimate}
 	Let $ \ket{\textnormal{GS}_{\textnormal{HAF}}} $ denote the ground state of the periodic antiferromagnetic Heisenberg chain. Then\begin{equation}
 	\braket{\textnormal{GS}_{\textnormal{HAF}}\Bigg\vert\frac{1}{N}\sum_{k=1}^N S_k\cdot S_{k+1} \Bigg\vert \textnormal{GS}_{\textnormal{HAF}}}=\frac{1}{4}-\ln(2) +\mathcal{O}(N^{-1})
@@ -225,14 +230,14 @@ This lemma, gives the ground state energy of the Heisenberg chain in the thermod
 \begin{proof}
 	Denoting the Dirichlet (edge spin down) energy of the spin chain $ E_D^N $ with $ N $ sites and the periodic energy $ E_P^N $, we have $ E_P^N\leq E_D^N $. 
 	This follows directly from the variational principle.
-%	To see this notice that the Dirichlet ground state is given as the ground state of the Hamiltoninan $ H_D=\sum_{k=1}^{N} S_{k}\cdot S_{k+1}+ B_e(1+S_1^z+S_N^z) $ for large enough $ B_e>0 $. Since $ H_D\geq H_{\text{HAF}} $ and since $ B_e(1+S_1^z+S_N^z) $ vanishes in the Dirichlet ground state, we see that \begin{equation}
+%	To see this notice that the Dirichlet ground state is given as the ground state of the Hamiltonian $ H_D=\sum_{k=1}^{N} S_{k}\cdot S_{k+1}+ B_e(1+S_1^z+S_N^z) $ for large enough $ B_e>0 $. Since $ H_D\geq H_{\text{HAF}} $ and since $ B_e(1+S_1^z+S_N^z) $ vanishes in the Dirichlet ground state, we see that \begin{equation}
 %	E_D^N=\braket{\sum_{k=1}^{N} S_{k}\cdot S_{k+1}}_D\geq \braket{\sum_{k=1}^{N} S_{k}\cdot S_{k+1}}_P=E_P^N ,
 %	\end{equation}
-%	where the subscribts refer to Dirichlet and periodic ground state expectations.
+%	where the subscripts refer to Dirichlet and periodic ground state expectations.
 On the other hand we have the following bound \begin{equation}\label{EqDirichletPeriodicSpinChainBound}
 E_D^{N+2}\leq E_P^N+\frac{3}{4}.
 \end{equation}
-To see this, consider a periodic chain of length $ N $ in its ground state. Add a spin-down at each edge, making the chain of length $ N+2 $. The resulting state, is  now a trial state for the Dirichlet chain of energy at most $ E_P^N+\frac{3}{4} $ and \eqref{EqDirichletPeriodicSpinChainBound} follows. Furthermore, it is not hard to see that for any integer $ m\geq 1 $ we have $ E_D^{mN}\leq E_D^{mN-m+1}\leq mE_D^N $. The first inequality follows simply from the fact that extending a Dirichlet state by Néel ordering (alternating spin) to a larger chain, lowers the energy, hence ground state energy in the larger chain must also be lower. The second inequality follows by constructing a trial state for the Dirichlet chain of length $ mN-m+1 $ by gluing $ m $ ground states of the Dirichlet chain of length $ N $, such that they share a spin down at the gluing points. Collecting everything we have \begin{equation}
+To see this, consider a periodic chain of length $ N $ in its ground state. Add a spin-down at each edge, making the chain of length $ N+2 $. The resulting state is now a trial state for the Dirichlet chain of energy at most $ E_P^N+\frac{3}{4} $ and \eqref{EqDirichletPeriodicSpinChainBound} follows. Furthermore, it is not hard to see that for any integer $ m\geq 1 $ we have $ E_D^{mN}\leq E_D^{mN-m+1}\leq mE_D^N $. The first inequality follows simply from the fact that extending a Dirichlet state by Néel ordering (alternating spin) to a larger chain, lowers the energy, hence ground state energy in the larger chain must also be lower. The second inequality follows by constructing a trial state for the Dirichlet chain of length $ mN-m+1 $ by gluing $ m $ ground states of the Dirichlet chain of length $ N $, such that they share a spin down at the gluing points. Collecting everything we have \begin{equation}
 \frac{1}{mN}E_P^{mN}\leq \frac{1}{mN}E_D^{mN}\leq \frac{1}{N}E_D^N\leq \frac{1}{N}\left(E_P^{N-2}+3/4\right).
 \end{equation}
 It is clear that by a trial state argument and by translation invariance, which follows from the Marshall-Lieb-Mattis theorem (uniqueness of the ground state), we have $ E_P^N\leq \frac{N}{M+1}E_P^M+\frac{1}{4} $ for $ M>N $, simply take the ground state of chain length $ M $ and truncate it at length $ N $. Hence we get \begin{equation}
@@ -241,7 +246,7 @@ It is clear that by a trial state argument and by translation invariance, which 
 taking the limits $ m\to \infty $ and $ M\to\infty $ we have \begin{equation}
 \frac{N}{N-2}e_P-\frac{3}{4N}\leq\frac{1}{N-2}E_P^{N-2}\leq e_P+\frac{1}{4}\frac{1}{N-2},
 \end{equation}
-where $ e_P=\lim\limits_{N\to\infty}\frac{1}{N}E_P^N $. The desired result the follows from Lemma \ref{LemmaHeisenbergChainThermodynamicGSEnergy}.
+where $ e_P=\lim\limits_{N\to\infty}\frac{1}{N}E_P^N $. The desired result follows from Lemma \ref{LemmaHeisenbergChainThermodynamicGSEnergy}.
 \end{proof}
 We are now ready to collect everything to give the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}:
 \begin{proof}[Proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]
@@ -263,7 +268,7 @@ We are now ready to collect everything to give the proof of Theorem \ref{Theorem
 	\end{aligned}
 	\end{equation}
 	\textbf{For $ N<(\rho b)^{-3/2}\left(1+\rho b^2\int v_{\text{reg}}\right)^{-1/2} $}:\\
-	We see that \eqref{EqSpin1/2TrialStateEnergyBoundFull} follows by choosing $ M=1 $.\\
+	We see that \eqref{EqSpin1/2TrialStateEnergyBoundFull} follows from choosing $ M=1 $.\\
 	Furthermore choosing $ b=\max(\rho^{-1/5}\abs{a_e}^{4/5},\rho^{-1/5}a_o^{4/5},R_0) $ we see that $ a_{e/o}\leq \tilde{a}_{e/o}=a_{e/o}\frac{b}{b-a_{e/o}}\leq a_{e/o}\left(1+2(\rho R)^{1/5}\right) $ for $ (\rho R)^{1/5}\leq 1/2 $ and the desired result follows from the simple estimate on the norm\begin{equation}
 	\begin{aligned}
 	\norm{\Psi^{I_0}_{\chi}}&\geq 1-\int_{A_{12}} \rho^{(2))}(x_1,x_2)\geq 1-\text{ const. }\tilde{N}(\tilde{\rho}b)^3\\&\geq 1-\text{ const. }(\rho b)^{3/2}\geq 1-\text{ const. }(\rho R)^{6/5}.
@@ -343,13 +348,13 @@ E_{12}^{34}=&\binom{N}{2}2(N-2)\int_{B_{12}^{34}}\sum_{i=1}^{N}\abs{\partial_i\l
 \leq& \binom{N}{2}2(N-1)\sum_{a\in\{s,t\}}\sum_{\{\sigma\}\in S_{12}^{34}}\braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}}\\&\qquad\qquad\times\Bigg[\int_{A_{12}^{34}\cap\{\sigma\}}\sum_{i=1}^{N}\abs{\partial_i\left(\left(\xi_{12}^{34}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2\Bigg].
 \end{aligned}
 \end{equation}
-One may use that $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}} $ is independent of $ \sigma $, however, since we are not interested in finding the optimal constant in Lemma \ref{LemmaSpin1/2EtaContribution1} we instead use the more crude bound, $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}}\leq 1 $, to find
+One may use that $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}} $ is independent of $ \sigma $, however, since we are not interested in finding the optimal constant in Lemma \ref{LemmaSpin1/2EtaContribution1} we instead use the cruder bound, $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}}\leq 1 $, to find
 \begin{equation}
 \begin{aligned}
 E_{12}^{34}\leq& \binom{N}{2}2(N-1)\sum_{a\in\{s,t\}}\Bigg[\int_{A_{12}^{34}}\sum_{i=1}^{4}\abs{\partial_i\left(\left(\xi_{12}^{34}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad\qquad\quad+\int_{A_{12}^{34}}\sum_{i=5}^{N}\overline{\left(\xi_{12}^{34}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\xi_{12}^{34} \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\Bigg].
 \end{aligned}
 \end{equation}
-where we used integration by parts and $ \bigsqcup_{\{\sigma\}\in S_{12}^{34}}\left(A_{12}^{34}\cap \{\sigma\}\right)\subset A_{12}^{34} $.  Using that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $ we further find
+where we used integration by parts and $ \bigsqcup_{\{\sigma\}\in S_{12}^{34}}\left(A_{12}^{34}\cap \{\sigma\}\right)\subset A_{12}^{34} $, with $\bigsqcup$ meaning disjoint union.  Using that $ \Psi_F $ is an eigenfunction of $ (-\Delta) $, with eigenvalue $ E_F $ we further find
 \begin{equation}
 \begin{aligned}
 E_{12}^{34}\leq& \binom{N}{2}2(N-2)\sum_{a\in\{s,t\}}\Bigg[\int_{A_{12}^{34}}\sum_{i=1}^{4}\abs{\partial_i\left(\left(\xi_{12}^{34}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad-\int_{A_{12}^{34}}\sum_{i=1}^{4}\overline{\left(\xi_{12}^{34}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\left(\xi_{12}^{34}\right)_a \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\\
@@ -408,7 +413,7 @@ E_{12}^{23}=&\binom{N}{2}2(N-2)\int_{B_{12}^{23}}\sum_{i=1}^{N}\abs{\partial_i\l
 \leq& \binom{N}{2}2(N-1)\sum_{a\in\{s,t\}}\sum_{\{\sigma\}\in S_{12}^{23}}\braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}}\\&\qquad\qquad\times\Bigg[\int_{A_{12}^{23}\cap\{\sigma\}}\sum_{i=1}^{N}\abs{\partial_i\left(\left(\xi_{12}^{23}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2\Bigg].
 \end{aligned}
 \end{equation}
-One may use that $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}} $ is independent of $ \sigma $, however, since we are not interested in finding the optimal constant in Lemma \ref{LemmaSpin1/2EtaContribution2} we instead use the more crude bound, $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}}\leq 1 $, to find
+One may use that $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}} $ is independent of $ \sigma $, however, since we are not interested in finding the optimal constant in Lemma \ref{LemmaSpin1/2EtaContribution2} we instead use the cruder bound, $ \braket{\chi_{\sigma}\left\lvert \operatorname{P}_a^{12}\right \rvert \chi_{\sigma}}\leq 1 $, to find
 \begin{equation}\label{key}
 \begin{aligned}
 E_{12}^{23}\leq& \binom{N}{2}2(N-1)\sum_{a\in\{s,t\}}\Bigg[\int_{A_{12}^{23}}\sum_{i=1}^{3}\abs{\partial_i\left(\left(\xi_{12}^{23}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}\right)}^2 \\&\qquad\qquad\quad+\int_{A_{12}^{23}}\sum_{i=4}^{N}\overline{\left(\xi_{12}^{23}\right)_a \frac{\Psi_F}{\abs{x_2-x_1}}}\left(\xi_{12}^{23} \frac{(-\partial_i^2\Psi_F)}{\abs{x_2-x_1}}\right)\Bigg].
@@ -446,7 +451,8 @@ which all follows from Taylor expansion of the free Fermi reduced density (matri
 which follows from properties of the scattering solution, monotonicity of its derivative, and Lemma \ref{LemmaEtaDerivative}.
 \end{proof}
 \section{Extending the Upper Bound to Other Symmetries and Spin-Dependent Potentials}
-We present here corollaries that follows directly, \emph{mutatis mutandis}, from the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. We also give an application of one the results, to a model where the new upper bound improves best up to now best known result.
+\label{SectionExtendingTheUpperBoundOtherSymmetries}
+We present here corollaries that follow directly, \emph{mutatis mutandis}, from the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. We also apply one of the results to a model where the new upper bound improves the up to now best-known result.
 \subsection{Spin-1/2 bosons}
 Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (and the lemmas used), we obtain an immediate corollary. Changing spin-space anti-symmetry to spin-space symmetry, we obtain the equivalent result for bosons. The change of symmetry interchanges the even and odd condition in the singlet and triplet, hence constructing the trial state \eqref{EqTrial StateSpin1/2Fermi}, we must interchange $ \operatorname{P}_s $ and $ \operatorname{P}_t $. Thus we get \begin{equation}\label{EqTrial StateSpin1/2Bose}
 \Psi_\chi=\begin{cases}
@@ -478,7 +484,7 @@ E_{1,o}\coloneqq\binom{N}{2}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Ps
 \end{equation}
 Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_e $ the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $. We summarize this observation in the following corollary
 \begin{corollary}[Spin-dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2FermiSpinDependent}
-	Let $ v=v_e\operatorname{P}_s+v_o\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}
+	Let $ v=v_e\operatorname{P}_s+v_o\operatorname{P}_t $ be repulsive ($ v\geq0 $) satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
 	\end{equation}
 	if $ a_o\geq a_e $ and 
@@ -497,9 +503,9 @@ E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
 where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}\label{EqHamiltonianLLH}
 H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{P}^{i,j}_s+c\operatorname{P}^{i,j}_t\right)\delta(x_i-x_j),
 \end{equation}
-However the domain is taken to be wave functions that are \emph{symmetric in the spacial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
+However the domain is taken to be wave functions that are \emph{symmetric in the spatial coordinates} meaning that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric. This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary  
 \begin{corollary}[Spatially symmetric, spin-dependent version of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}]\label{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}
-	Let $ v=v_s\operatorname{P}_s+v_t\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ spacially symmetric gas satisfies\begin{equation}
+	Let $ v=v_s\operatorname{P}_s+v_t\operatorname{P}_t\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ spatially symmetric gas satisfies\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_s+(1-\ln(2))a_t\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
 	\end{equation}
 	if $ a_t\geq a_s $ and 
@@ -511,14 +517,14 @@ However the domain is taken to be wave functions that are \emph{symmetric in the
 \end{corollary}
 \begin{proof}
 	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $ and extend the trial state to all sectors, $ \{\sigma\} $, by spatial symmetry instead of spin-space anti-symmetry. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
-	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spacial symmetry. To see this, we note that \eqref{EqEnergy2Spin1/2} can be derived by use of only spatial symmetry. However, in \eqref{EqEnergy3Spin1/2} we find instead
+	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spatial symmetry. To see this, we note that \eqref{EqEnergy2Spin1/2} can be derived by use of only spatial symmetry. However, in \eqref{EqEnergy3Spin1/2} we find instead
 	\begin{equation}
 	\begin{aligned}
 	\int_{B_{12}^{\geq}}\abs{\partial_i\Psi_{\chi}}^2\leq&\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap\{\sigma\}}\abs{\partial_i(\Psi_e)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{\sigma^{-1}(1),\sigma^{-1}(2)}_s  \right\rvert \chi}\\
 	&+\sum_{\{\sigma\}\in S_{12}}\left(\int_{A_{12}\cap \{\sigma\}}\abs{\partial_i(\Psi_o)_{12}}^2\right)\braket{\chi \left\lvert \operatorname{P}^{\sigma^{-1}(1),\sigma^{-1}(2)}_t  \right\rvert \chi},
 	\end{aligned}
 	\end{equation}
-	where $ \sigma^{-1}(i) $ is defined such that $ \sigma_{\sigma^{-1}(i)}=i $. This is a consequence of the fact that the spins are not permuted when defining the trial state using the spatial symmetry. A similar modification is made in the proofs of Lemmas \ref{LemmaSpin1/2EtaContribution1} and \ref{LemmaSpin1/2EtaContribution2}. From this point, the proof proceeds as before by noticing that 
+	where $ \sigma^{-1}(i) $ is defined such that $ \sigma_{\sigma^{-1}(i)}=i $. This is a consequence of the fact that the spins are not permuted when defining the trial state using the spatial symmetry (see Footnote \ref{FootnoteSpinProjection} above in Section \ref{SectionSpin1/2FermiUpperBound}). A similar modification is made in the proofs of Lemmas \ref{LemmaSpin1/2EtaContribution1} and \ref{LemmaSpin1/2EtaContribution2}. From this point, the proof proceeds as before by noticing that 
 	$$ \braket{\chi \left\lvert \operatorname{P}^{\sigma^{-1}(1),\sigma^{-1}(2)}_{s/t}  \right\rvert \chi}=\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_{s/t}  \right\rvert \chi} $$
 	is independent of $ \sigma\in S_{12} $ because of translation invariance of $ \chi $.
 \end{proof}
@@ -531,20 +537,20 @@ when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear t
 \end{remark}
 
 \section{Lower Bound}
-In this section, we will further motivate the Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}, however a complete proof of a lower bound matching the upper bound in Theorem \ref{TheoremUpperBoundSpin1/2Fermi} is still missing. One may try to apply the same technique as was used in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, however, we will see that there are obstacles in this strategy.\\
+In this section, we will further motivate the Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}, however, a complete proof of a lower bound matching the upper bound in Theorem \ref{TheoremUpperBoundSpin1/2Fermi} is still missing. One may try to apply the same technique as was used in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, however, we will see that there are obstacles in this strategy.\\
 \subsection{Solvable cases}
 To begin with, we may analyze the solvable models at hand. We will see that these are in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
 
-\textbf{The hard core model}: The first solvable case is the hard core model, with $ v=\infty \mathbbm{1}_{[-a,a]} $, with $ a_e=a_o=a $ by Example \ref{ExampleScatteringLengthHardCore}. In this case we have \begin{equation}
-E=E_F\left(L\to \frac{1}{1-\rho a}L\right)=N\frac{\pi^2}{3}\rho^2\left(1-\rho a\right)^{-2}+\rho^2\mathcal{O}(1),
+\textbf{The hard core model}: The first solvable case is the hard core model, with $ v=\infty \mathbbm{1}_{[-a,a]} $, with $ a_e=a_o=a $ by Example \ref{ExampleScatteringLengthHardCore}. In this case, we have \begin{equation}
+E=E_F\left(L\to \frac{1}{1-\rho a}L\right)=N\frac{\pi^2}{3}\rho^2\left(1-\rho a\right)^{-2}+\mathcal{O}(\rho^2),
 \end{equation} 
 with $ E_F\left(L\to \frac{1}{1-\rho a}L\right) $ denoting the spin polarized free Fermi energy in a box of length $ \frac{1}{1-\rho a}L $. Of course since since $ a_e=a_o=a $ in this case we have \begin{equation}
-E=N\frac{\pi^2}{3}\rho^2\left(1-\ln(2)\rho a_e-(1-\ln(2))\rho a_o\right)^{-2}+\rho^2\mathcal{O}(1),
+E=N\frac{\pi^2}{3}\rho^2\left(1-\ln(2)\rho a_e-(1-\ln(2))\rho a_o\right)^{-2}+\mathcal{O}(\rho^2),
 \end{equation}
 which match Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
 
 \textbf{The Yang-Gaudin model}:
-This model was studied in Section \ref{SectionYG}. In this case we have $ a_e=-2/c $ and $ a_o=0 $ by Example \ref{ExampleScatteringLengthDelta} Of course the upper bound from Theorem \ref{TheoremUpperBoundSpin1/2Fermi} applies. Furthermore, we found in Proposition \ref{PropositionYGLowerBound} the bound\begin{equation}
+This model was studied in Section \ref{SectionYG}. In this case, we have $ a_e=-2/c $ and $ a_o=0 $ by Example \ref{ExampleScatteringLengthDelta} Of course the upper bound from Theorem \ref{TheoremUpperBoundSpin1/2Fermi} applies. Furthermore, we found in Proposition \ref{PropositionYGLowerBound} the bound\begin{equation}
 e=``\lim\limits_{\substack{N,L\to\infty\\
 N/L=\rho}}E/L"\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}\right].
 \end{equation}
@@ -552,7 +558,7 @@ Here ``" is used to emphasize that $ e $ is strictly speaking not known to be th
 Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho \abs{a_e})^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 
 \subsection{The general case}
-In the case of a general potential, $ v $, where the resulting model is not solvable, we migth attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} does not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modifed slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
+In the case of a general potential, $ v $, where the resulting model is not solvable, we might attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} do not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modified slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
 \begin{lemma}[Dyson's lemma spin--$ 1/2 $ fermions]
 	\label{LemmaDysonSpin1/2Fermi}
 	Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\C^2\right)^2\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\C^2\right)^2 \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
@@ -562,17 +568,17 @@ In the case of a general potential, $ v $, where the resulting model is not solv
 	where $ a $ is the s-wave scattering length.
 \end{lemma}
 \begin{proof}
-	The lemma follows straigthforwardly from the Definitions \ref{DefinitionEvenScatteringLength} and \ref{DefinitionOddScatteringLenght}.
+	The lemma follows straightforwardly from the Definitions \ref{DefinitionEvenScatteringLength} and \ref{DefinitionOddScatteringLenght}.
 \end{proof}
 Thus we may prove the equivalent of Lemma 23 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: In the following $ \Psi $ denotes the spin--$ 1/2 $ fermionic (Neumann) ground state of \begin{equation}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N}v(x_i-x_j).
 \end{equation}	
-We shall also define the contionuous function $ \psi\in \left(L^2([0,L-(n-1)R])\otimes\C^2\right)^{\otimes N} $, with $ R\geq \max\left(R_0,2\abs{a_e},2a_o\right)  $, such that for $ 0\leq x_1\leq\dots\leq x_n\leq L-(n-1)R $
+We shall also define the continuous function $ \psi\in \left(L^2([0,L-(n-1)R])\otimes\C^2\right)^{\otimes N} $, with $ R\geq \max\left(R_0,2\abs{a_e},2a_o\right)  $, such that for $ 0\leq x_1\leq\dots\leq x_n\leq L-(n-1)R $
 \begin{equation}
 \label{Definition:psi}
 \psi(x_1,x_2,\dots,x_n):=\Psi(x_1,R+x_2,\dots,(n-1)R+x_n), 
 \end{equation}
- and extended by spacial symmtry.
+ and extended by spatial symmetry.
 	\begin{lemma}\label{LemmaNormBoundEpsilonSpin1/2Fermi}
 	Let $R>\max\left(R_0,2\abs{a}\right) $ and $ \epsilon\in[0,1] $. For $ \psi $ defined in \eqref{Definition:psi},
 	\begin{equation}
@@ -583,14 +589,14 @@ We shall also define the contionuous function $ \psi\in \left(L^2([0,L-(n-1)R])\
 	where $ \tilde{L}:=L-(n-1)R $, the superscript ``$ N $" denotes Neumann boundary condition, and $ E_{LLH}(N,L,c',c) $ is the ground state energy of the Lieb-Liniger-Heisenberg model in \eqref{EqHamiltonianLLH}.
 \end{lemma}
 \begin{proof}
-	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): Splitting the energy functional in two parts, and using Lemma 21 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
+	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): Splitting the energy functional into two parts, and using Lemma 21 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
 	\begin{equation}
 	\begin{aligned}
 	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\overline{\Psi}\epsilon\sum_{i}\delta(\mathfrak{r}_i(x)-R)\left(\frac{1}{R-a_e}\operatorname{P}_s^{i,j_i}+\frac{1}{R-a_o}\operatorname{P}_t^{i,j_i}\right)\Psi\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
 	\end{aligned}
 	\end{equation}
 	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $, $ j_i\coloneqq j $, with $ \mathfrak{r}_i(x)=\abs{x_i-x_j} $, is unique a.e., and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDysonSpin1/2Fermi} in the following manner: For each term in the sum $ \sum_{i} $, fix all particles $ x_j\neq x_i $, then divide the integration domain in $ x_i $ into Voronoi cells around all remaining particles, and integrate over all Voronoi cells individually.\\
-	With use of Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model, we obtain\begin{equation*}
+	With the use of Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model, we obtain\begin{equation*}
 	\begin{aligned}
 	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}),
 	\end{aligned}
@@ -649,19 +655,19 @@ We now see that this is where the strategy of Chapter \ref{ChapterTheGroundState
 	\end{equation}
 \end{conjecture}
 We that this conjecture is in line with both the Lieb-Liniger scenario, $ c=c' $, and the Yang-Gaudin scenario, $ c=\infty $. The validity of Conjecture \ref{ConjectureLLHGroundStateEnergy}, would give us the desired lower bound in Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi}.
-In the following subsection we will give some heuristics for such a lower bound.
+In the following subsection, we will give some heuristics for such a lower bound.
 \subsection{The Lieb-Liniger-Heisenberg ground state energy: Heuristics}
-In this subsection, we give only heuristic arguments for a lower bound of the Lieb-Liniger-Heisenberg (LLH) ground state energy, $ E_{LLH} $. We do not claim the arguments given to be rigorous. For simplicity we restrict to having periodic boundary conditions. 
+In this subsection, we give only heuristic arguments for a lower bound of the Lieb-Liniger-Heisenberg (LLH) ground state energy, $ E_{LLH} $. We do not claim the arguments given to be rigorous. For simplicity, we restrict to having periodic boundary conditions. 
 
 \textbf{Degenerate perturbation theory}\\
-The first natural approach to estimating $ E_{LLH} $, is to do first order perturbation theory. To do this let is rewrite the LLH Hamiltonian \eqref{EqHamiltonianLLH} on the sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}
+The first natural approach to estimating $ E_{LLH} $, is to do first-order perturbation theory. To do this let is rewrite the LLH Hamiltonian \eqref{EqHamiltonianLLH} on the sector $ \{1,2,\ldots,N\} $ as follows\begin{equation}
 H=-\sum_{i=1}^{N}\partial_i^2+2\sum_{1\leq i\leq N} \left(\frac{c'+3c}{4}+(c-c')S_i\cdot S_{i+1}\right)\delta(x_i-x_{i+1}),
 \end{equation}
 with $ c>c' $. We restrict to the regime $ c,c'\gg \rho $, $ \frac{c-c'}{c'}\ll 1 $, \ie the perturbative dilute regime.
 We consider $ H_0=-\sum_{i=1}^{N}\partial_i^2+2\sum_{1\leq i\leq N} \frac{c'+3c}{4}\delta(x_i-x_{i+1}) $ the ``unperturbed" Hamiltonian, which is a Lieb-Liniger (LL) model with coupling $ \tilde{c}=\frac{c'+3c}{4} $. This model is of course, due to the presence of spin, degenerate (with finite multiplicity). The Perturbation is then 
 $$ H'=2\sum_{1\leq i\leq N} \left((c-c')S_i\cdot S_{i+1}\right)\delta(x_i-x_{i+1}). $$
 We restrict to analyzing the problem on the sector $ \{1,2,\ldots,N\} $, since all other sectors are related by symmetry.
-In this case first order (finitely degenerate) perturbations theory, \cite{reed1978iv}, dictates that the perturbed eigenvalue is approximated by \begin{equation}
+In this case first-order (finitely degenerate) perturbation theory, \cite{reed1978iv}, dictates that the perturbed eigenvalue is approximated by \begin{equation}
 E_{LLH}\approx E_{LL}(\tilde{c})+\inf_{\chi\in\text{spin states}}\braket{\Psi^{\tilde{c}}_{LL}\chi\left\vert H'\right\vert \Psi^{\tilde{c}}_{LL}\chi},
 \end{equation}
 with $ \Psi_{LL}^{\tilde{c}} $ begin the LL ground state at coupling $ \tilde{c} $. For the Lieb-Liniger model, we have by the Feynman-Hellmann theorem and translation invariance \begin{equation}
@@ -685,7 +691,7 @@ Now by Taylor expanding in $ c' $ around $ c $ we find
 which agrees with Conjecture \ref{ConjectureLLHGroundStateEnergy}.
 
 \textbf{Lower bound by adding space}
-Consider the two particle case. By translation invariance we expect the ground state to depend only on the distance between the two particle, $ x_1-x_2 $, and by spacial symmetry we may further restrict to $ \abs{x_1-x_2} $. Now we may define new coordinates on the sector $ \{1,2\} $ given by $ y_1=x_1 $, $ y_2=x_2+\mathfrak{r} $. Let $ \Psi(\abs{x_1-x_2}) $ denote the LLH ground state, then we may define the extended state $ \tilde{\Psi}(\abs{y_1-y_2})=\Psi(\abs{y_1-y_2+\mathfrak{r}}) $, when $ y_2>y_1+\mathfrak{r} $, and extended to the whole $ [0,L+\mathfrak{r}] $ by $ \operatorname{P}_t\tilde{\Psi}(r)=\operatorname{P}_t\Psi(0)\left(1-\frac{c}{2}r\right) $ and $ \operatorname{P}_s\tilde{\Psi}(r)=\operatorname{P}_s\Psi(0)\left(1-\frac{c'}{2}r\right) $ for $ r<\mathfrak{r} $. Notice that we defined $ \Psi $ such that we have the boundary conditions $ 2\operatorname{P}_t\Psi'(0_+)=(\partial_2-\partial_1)\operatorname{P}_t\Psi\vert_{x_2=x_{1+}}=c\operatorname{P}_t\Psi(0) $ and $ 2\operatorname{P}_s\Psi'(0_+)=(\partial_2-\partial_1)\operatorname{P}_s\Psi\vert_{x_2=x_{1+}}=c'\operatorname{P}_s\Psi(0) $. With this definition we see that \begin{equation}
+Consider the two particle case. By translation invariance we expect the ground state to depend only on the distance between the two particles, $ x_1-x_2 $, and by spatial symmetry, we may further restrict to $ \abs{x_1-x_2} $. Now we may define new coordinates on the sector $ \{1,2\} $ given by $ y_1=x_1 $, $ y_2=x_2+\mathfrak{r} $. Let $ \Psi(\abs{x_1-x_2}) $ denote the LLH ground state, then we may define the extended state $ \tilde{\Psi}(\abs{y_1-y_2})=\Psi(\abs{y_1-y_2+\mathfrak{r}}) $, when $ y_2>y_1+\mathfrak{r} $, and extended to the whole $ [0,L+\mathfrak{r}] $ by $ \operatorname{P}_t\tilde{\Psi}(r)=\operatorname{P}_t\Psi(0)\left(1-\frac{c}{2}r\right) $ and $ \operatorname{P}_s\tilde{\Psi}(r)=\operatorname{P}_s\Psi(0)\left(1-\frac{c'}{2}r\right) $ for $ r<\mathfrak{r} $. Notice that we defined $ \Psi $ such that we have the boundary conditions $ 2\operatorname{P}_t\Psi'(0_+)=(\partial_2-\partial_1)\operatorname{P}_t\Psi\vert_{x_2=x_{1+}}=c\operatorname{P}_t\Psi(0) $ and $ 2\operatorname{P}_s\Psi'(0_+)=(\partial_2-\partial_1)\operatorname{P}_s\Psi\vert_{x_2=x_{1+}}=c'\operatorname{P}_s\Psi(0) $. With this definition, we see that \begin{equation}
 2\int_{0}^{L+\mathfrak{r}}\abs{\operatorname{P}_{t}\tilde{\Psi}'(r)}^2\diff r+\tilde{c}\abs{\operatorname{P}_{t}\tilde{\Psi}(0)}^2=2\int_{0}^{L}\abs{\operatorname{P}_{t}\Psi'(r)}^2\diff r+c\abs{\operatorname{P}_{t}\Psi(0)}^2
 \end{equation} 
 If $  \frac{1}{2}c^2\mathfrak{r}\abs{\Psi(0)}^2+\tilde{c}\abs{\Psi(0)}^2\left(1-\frac{c}{2}\mathfrak{r}\right)^2=c\abs{\Psi(0)}^2 $, that is $ \tilde{c}=\frac{c}{1-\frac{c}{2}\mathfrak{r}} $. And similarly, we find \begin{equation}
@@ -699,7 +705,7 @@ if $ \tilde{c}'=\frac{c'}{1-\frac{c'}{2}\mathfrak{r}} $.
  \end{equation}
  where we used Proposition \ref{PropositionYGLowerBound}, and recall that the last inequality strictly speaking is conjecture (see Subsection \ref{SubsectionYGCaveat}).
 \section{Lower Bound for Other Symmetries}
-Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}. For these we may, in some cases actually prove a lower bound. This is always the case for the bosonic case, and exactly the case when $ a_o\leq a_e $ in the spin-dependent fermionic case, and when $ a_t\leq a_s $ in spin-dependent spatially symmetric case. Hence we have 
+Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent}. For these, we may in some cases prove a lower bound. This is always the case for the bosonic case, and exactly the case when $ a_o\leq a_e $ in the spin-dependent fermionic case, and when $ a_t\leq a_s $ in the spin dependent spatially symmetric case. Hence we have 
 \begin{theorem}
 	\label{TheoremLowerBoundSpin1/2Bose}
 	Consider a spin--$ 1/2 $ Bose gas with repulsive interaction  $v=v_{\textnormal{reg.}}+v_{\textnormal{h.c.}}$ as defined above. Then there exists a constant $C_\text{L}>0$ such that the ground state energy $E^N(N,L)$ satisfies
@@ -722,7 +728,7 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	Here $ R=\max(\abs{a_e}, a_o, R_0) $
 \end{theorem}
 \begin{proof}
-	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential), and from the fact that for $ a_o\leq a_e $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_o}\right) $$. The remaining of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
+	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential), and from the fact that for $ a_o\leq a_e $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_o}\right) $$. The remainder of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
 \end{proof}
 \begin{theorem}
 	\label{TheoremLowerBoundSpinDependentSpin1/2SpatiallySymmetric}
@@ -734,7 +740,7 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $
 \end{theorem}
 \begin{proof}
-	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential and different symmetry), and from the fact that for $ a_t\leq a_s $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_s},\frac{2}{R-a_t}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_t}\right) $$. The remaining of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
+	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential and different symmetry), and from the fact that for $ a_t\leq a_s $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_s},\frac{2}{R-a_t}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_t}\right) $$. The remainder of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
 \end{proof}
 We see that combining these results with the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} we obtain ground state energy expansions to next-to-leading order in the diluteness parameter in all these cases. 
 
