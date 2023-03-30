@@ -194,7 +194,7 @@ with $ R>R_0 $. Then we have
 \begin{theorem}[Theorem A.1 in \cite{lieb2001ground}]\label{TheoremScatteringLength}
 	Let $ R>R_0 $, then in the class of functions 
 	$$ \{\phi\in H^1(B_R)\ \vert\ \phi(x)=1,\text{ for }x\in S_R\}, $$ with $ S_R $ the sphere of radius $ R $,
-	there is a unique $ \phi_0 $ that minimizes $ \mathcal{E}_R $. This function is non-negative and spherically symmetric, $ \phi_0(x)=f_0(\abs{x}) $ for some $ f\geq 0 $, and it satisfies the equation\begin{equation}
+	there is a unique $ \phi_0 $ that minimizes $ \mathcal{E}_R $. This function is non-negative and spherically symmetric, $ \phi_0(x)=f_0(\abs{x}) $ for some $ f\geq 0 $, and it satisfies the equation\begin{equation}\label{EqScatteringEquation: d Dimensions}
 	-\frac{1}{2\mu}\Delta\phi_0+v\phi_0=0,
 	\end{equation}
 	in the sense of distributions on $ B_R $.
@@ -218,6 +218,9 @@ with $ R>R_0 $. Then we have
 	\end{equation}
 \end{theorem}
 We note that in $ d>3 $, the scattering length is not actually a length in the sense of units. This is purely an artifact of the conventions used in the definition.\\
+\begin{remark}
+	The scattering length is independent of $R$. This is seen by realizing that for a minimizer, $\phi_0$, of $\mathcal{E}_R$ satisfying $\phi_0(x)=1$ for $ x\in S_R $, we have that $\frac{R-a}{R'-a}\mathbbm{1}_{\overline{B_{R'}}}\phi_0$ with $R_0<R'<R$ is a minimizer $\mathcal{E}_{R'}$ satisfying $$\left(\frac{R-a}{R'-a}\mathbbm{1}_{\overline{B_{R'}}}\phi_0\right)(x)=1,\text{ for }x\in S_{R'}.$$
+\end{remark}
 The definition above defined only the s-wave scattering length. One can proceed to define different kinds of scattering lengths depending on which asymptotic behavior (boundary condition) we demand of the minimizer of $ \mathcal{E}_R $. We will be, for the most part, interested in different kinds of scattering lengths in dimension $ d=1 $, with the masses $ m_1=m_2=1/2 $. Thus we define the scattering lengths of interest:
 \begin{definition}\label{DefinitionEvenScatteringLength}
 	Let $ f_e\in H^1(\R) $ be the unique solutions of the equation\begin{equation}\label{EqEvenScatteringEquation}
@@ -368,7 +371,7 @@ Now we define \begin{equation}\label{EqDeltaDef}
 	\pi&\text{ if } N\text{ is even}
 	\end{cases}. $$ 
 	The right-hand side of \eqref{Eqk1} depends only on the $ \delta $s. The proof of existence of solutions for \eqref{EqDeltaDef} that varies continuously with $ c $, was given in \cite{yang1969thermodynamics}.\\
-	\subsection{The ground state}
+	\subsection{The Ground State}
 	It is clear that within the set of ansatz states, the variational ground state must have $ n_i=1 $ for all $ i=1,\ldots, N-1 $. In this case, we have by symmetry and uniqueness of the ground state that $ k_i=-k_{N-i+1} $. Thus, since $ P_{\text{tot.}}=\sum_{i=1}^{N}k_i=Nk_1+\frac{1}{L}\sum_{j=1}^{N-1}(N-j)\delta_j=0 $ we find $$ k_1=-k_N=-\frac{1}{NL}\sum_{j=1}^{N-1}(N-j)\delta_j.$$
 	
 	We may also ask whether the true ground state is attained among these ansatz states. This turns out to be the case, which may be seen by the following results:
@@ -433,17 +436,21 @@ The first equation is an inhomogeneous Fredholm equation of the second kind whic
 \end{lemma}
 Here we would like to give the equivalent result for a finite number of particles.
 \begin{lemma}
-	Let $ (k_i)_{i=1}^{N} $ be the with $ k_1<k_2<\ldots<k_N $ satisfy \eqref{EqPseudoMomentaDifferenceExpansion}. Then we have $$k_{i+1}-k_i\geq \frac{2\pi}{L}\left(1+2\frac{\rho}{c}\right)^{-1}+\rho \mathcal{O}\left(1/(cL)^2\right). $$
+	Let $ (k_i)_{i=1}^{N} $ satisfy $ k_1<k_2<\ldots<k_N $ and \eqref{EqPseudoMomentaDifferenceExpansion}. Then we have 
+	\begin{equation}
+	\sum_{n=1}^{N}k_n^2\geq N\left(\rho^2-\frac{1}{L^2}\right)\frac{\pi^2}{3}\left(1+2\frac{\rho}{c}\right)^{-2}+\mathcal{O}\left(\frac{\rho}{c}\frac{\rho^2}{cL} \right).
+	\end{equation}
 \end{lemma}
 \begin{proof}
-	This follows directly by discarding the term $ (k_s-k_i)^2 $ in the denominator inside the sum in \eqref{EqPseudoMomentaDifferenceExpansion}.
-\end{proof}
-It follows straightaway for the ground state where $k_1=-k_N$ that \begin{equation}
-	\abs{k_n}\geq \frac{2\pi}{L}\left(1+2\frac{\rho}{c}\right)^{-1}(n-(N+1)/2)+\rho \mathcal{O}\left(1/(cL)^2\right), \text{ for all } n=1,...,N.
+	By discarding the term $ (k_s-k_i)^2 $ in the denominator inside the sum in \eqref{EqPseudoMomentaDifferenceExpansion} we find straightaway that
+	$$k_{i+1}-k_i\geq \frac{2\pi}{L}\left(1+2\frac{\rho}{c}\right)^{-1}+\rho \mathcal{O}\left(1/(cL)^2\right). $$
+For the ground state where $k_i=-k_{N-i+1}$ it follows that \begin{equation}
+	\abs{k_i}\geq \frac{2\pi}{L}\left(1+2\frac{\rho}{c}\right)^{-1}(i-(N+1)/2)+\rho \mathcal{O}\left(1/(cL)^2\right), \text{ for all } i=1,...,N.
 \end{equation} 
 Therefore we find the lower bound on the energy \begin{equation}
-	\sum_{n=1}^{N}k_n^2\geq N\left(\rho^2-\frac{1}{L^2}\right)\frac{\pi^2}{3}\left(1+2\frac{\rho}{c}\right)^{-2}+\mathcal{O}\left(\frac{\rho}{c}\frac{\rho^2}{cL} \right).
+	\sum_{i=1}^{N}k_i^2\geq N\left(\rho^2-\frac{1}{L^2}\right)\frac{\pi^2}{3}\left(1+2\frac{\rho}{c}\right)^{-2}+\mathcal{O}\left(\frac{\rho}{c}\frac{\rho^2}{cL} \right).
 \end{equation}
+\end{proof}
 
 %\subsection{Lower bound in the large $ c $ limit}
 %From the equations \eqref{EqLLEq1}-\eqref{EqLLEq3}, one can obtain an exact lower bound of the ground state energy in the thermodynamic limit, this is done in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. However, since this lower bound is shown by the use of the exact solution of the Lieb-Liniger model, it is hard to generalize this lower bound more generic models such as perturbations of the Lieb-Liniger model. In this subsection, we seek to prove a weaker form of this lower bound by a more soft argument. For this purpose, we will use Proposition \ref{PropositionCInftyconvergenceLLEigenstates} to give an asymptotic (in $ c $) bound in a finite box. The strategy is as follows: Consider the ground state, $ \Psi_c $ of the Lieb-Liniger model in a box of size $ L $. We define $ \tilde{\Psi}_c:[0,L+(N-1)R]^N\to\C $ to satisfy $ \tilde{\Psi}(y_1,\ldots,y_N)=\Psi_c(y_1,y_2-R,y_3-2R,\ldots,y_N-(N-1)R) $ when $ y_{k+1}-kR>y_k $ for all $ k=1,\ldots,N $. We denote the set  $ \{y_{k+1}-kR>y_k\text{ for all }k=1,\ldots,N\}:=\Gamma $. Then $ \tilde{\Psi}_c\rvert_{\Gamma}=\Psi_c $. Now we define $ \tilde{\Psi}_c $ on all of $ [0,L+(N-1)R]^N $ by extending it to be an eigenfunction of the Laplacian $ -\Delta $ with the same eigenvalue as on $ \Gamma $. Indeed it is an eigenfunction on $ \Gamma $ with eigenvalue $ E_c $. Then we have \begin{equation}
@@ -685,7 +692,7 @@ Here the first inequality is an \emph{equality} if $ m_0 $ is even, and the ineq
  	Let $ f $ be a solution of \eqref{EqYG1}--\eqref{EqYG3}, then
  	\begin{equation}
  	\begin{aligned}
- 	2\pi  f(k) \leq 1+2\sum_{n=1}^{\infty}\frac{(1)^{n+1}}{n}\int_{-Q}^{Q}\frac{ f(k')}{c}\diff k'=1+\frac{2\ln(2)}{c} \rho.
+ 	2\pi  f(k) \leq 1+2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\int_{-Q}^{Q}\frac{ f(k')}{c}\diff k'=1+\frac{2\ln(2)}{c} \rho.
  	\end{aligned}
  	\end{equation}
  \end{lemma}
@@ -703,7 +710,7 @@ We are ready to give a lower bound for the ``ground state" energy of the Yang-Ga
 	By Lemma \ref{LemmaYG:fUpperBound}, we find $ f\leq \frac{1}{2\pi}\left(1+\frac{2\ln(2)}{c}\rho\right) $, so it follows that $ e\geq \frac{\pi^2}{3}\rho ^3\left(\frac{1}{1+\frac{2\ln(2)}{c}\rho}\right)^2 $.
 \end{proof}
 We will, in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}, find a matching upper bound for the Yang-Gaudin ground state energy in the dilute limit.
-\subsection{A small caveat}\label{SubsectionYGCaveat}
+\subsection{A Small Caveat}\label{SubsectionYGCaveat}
 There is an issue in the analysis of the Yang-Gaudin model: It is safe to say that in the physics/integrability literature, the ``ground state" of \eqref{EqYGHamiltonian} is widely believed to be the one found above. However, there is, to the best of our knowledge, no rigorous proof in the literature that the true ground state of \eqref{EqYGHamiltonian} is among the Yang-Bethe ansatz states. In fact, there seems to be no proof of the existence of a solution to the equations \eqref{EqYGintegers} given two sets of integers $ (I_j)_{j=1}^{N} $ and $ (J_a)_{a=1}^{M} $. This is in contrast to the analysis of the Lieb-Liniger model, in which both the existence of solutions as well as the completeness of the Bethe ansatz states is known, \cite{cmp/1104252974}. Since we will not use the results from this section for any rigorous analysis in the remainder of the thesis, we leave the establishment of these facts for future work. We will in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas} refer to the $ e $ coming from a solution of \eqref{EqYG1}--\eqref{EqYG4} as the ground state energy of the Yang--Gaudin model, however this non-rigorous use of the terminology is never used in any rigorous setting.\\
 We may state, for good measure, what is needed to make statements about the ground state rigorous:
 \begin{itemize}

@@ -1,4 +1,4 @@
-\chapter{The Ground State Energy of The One Dimensional Dilute Dpin--$ \frac{1}{2} $ Fermi Gas}
+\chapter{The Ground State Energy of the One Dimensional Dilute Spin--$ \frac{1}{2} $ Fermi Gas}
 \label{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}
 In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter, we seek to analyze instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Therefore, does our bound essentially give estimates on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
 \section{The Model}
@@ -453,7 +453,7 @@ which follows from properties of the scattering solution, monotonicity of its de
 \section{Extending the Upper Bound to Other Symmetries and Spin-Dependent Potentials}
 \label{SectionExtendingTheUpperBoundOtherSymmetries}
 We present here corollaries that follow directly, \emph{mutatis mutandis}, from the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}. We also apply one of the results to a model where the new upper bound improves the up to now best-known result.
-\subsection{Spin-1/2 bosons}
+\subsection{Spin-1/2 Bosons}
 Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (and the lemmas used), we obtain an immediate corollary. Changing spin-space anti-symmetry to spin-space symmetry, we obtain the equivalent result for bosons. The change of symmetry interchanges the even and odd condition in the singlet and triplet, hence constructing the trial state \eqref{EqTrial StateSpin1/2Fermi}, we must interchange $ \operatorname{P}_s $ and $ \operatorname{P}_t $. Thus we get \begin{equation}\label{EqTrial StateSpin1/2Bose}
 \Psi_\chi=\begin{cases}
 \frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)\operatorname{P}_t^{\mathcal{R}}+\omega_o^{\mathcal{R}}\operatorname{P}_s^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
@@ -469,7 +469,7 @@ The proof is unchanged except for the choice of $ \chi $. In this case, since $ 
 \end{corollary}
 
 
-\subsection{Spin-dependent potentials}
+\subsection{Spin-Dependent Potentials}
 Interestingly, the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} we gave in the last section, allows for a slight generalization to potentials that are of the form \begin{equation}
 v(x_i-x_j)=v_e(x_i-x_j) \operatorname{P}^{i,j}_s+v_o(x_i-x_j)\operatorname{P}^{i,j}_t
 \end{equation} 
@@ -495,9 +495,9 @@ Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_
 	Here $ R=\max(\abs{a_e}, a_o, R_0) $. Furthermore, $ a_e $ denotes the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $.
 \end{corollary}
 \begin{proof}
-	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} but change $ \omega_{e/o} $ to even/odd wave scattering solutions of $ v_{e/o} $. Notice that it is no longer clear that $ a_o>a_e $ and hence the choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_o\geq a_e $ and a spin polarized state when $ a_e>a_o $, both of which are translation invariant.
+	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} but change $ \omega_{e/o} $ to even/odd wave scattering solutions of $ v_{e/o} $. Notice that it is no longer clear that $ a_o\geq a_e $ and hence the choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_o\geq a_e $ and a spin polarized state when $ a_e>a_o $, both of which are translation invariant.
 \end{proof}
-An interesting application of a version of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} given below in Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In his paper, an upper bound is given by a trial state argument in the case $ c>c' $ \begin{equation}\label{EqGirardeauUpperBoundLLH}
+An interesting application of a version of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} given below in Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In his paper, an upper bound is given by a trial state argument in the case $ c>c' $. Girardeau finds \begin{equation}\label{EqGirardeauUpperBoundLLH}
 E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
 \end{equation}
 where $ E_{LL}(\cdot) $ is the ground state energy of the Lieb-Liniger model as a function of the coupling strength. The Lieb-Liniger-Heisenberg model is defined with the formal Hamiltonian\begin{equation}\label{EqHamiltonianLLH}
@@ -533,12 +533,12 @@ E_{LLH}\leq E_{LL}\left(\left(\frac{\ln(2)}{c'}+\frac{1-\ln(2)}{c}\right)^{-1}\r
 \end{equation}
 when $ c>c' $. By the weighted harmonic-arithmetic mean inequality it is clear that our bound improves \eqref{EqGirardeauUpperBoundLLH}. The two bounds agree in the limit $ \frac{c-c'}{c'}\to0 $. However, \eqref{EqGirardeauUpperBoundLLH} gives just the free Fermi energy on the right-hand side when $ c\to\infty $, whereas our bound reduces to the correct Yang-Gaudin energy, to leading order, in this limit.
 \begin{remark}
-	In the Corollaries \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} we will refer to the regimes where $ a_o\leq a_e $ or $ a_t\leq a_s $ as the \emph{ferromagnetic phase} and the regimes where $ a_o\geq a_e $ or $ a_t\geq a_s $ as the \emph{antiferromagnetic phase}. 
+	In the settings of Corollaries \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} we will refer to the regimes where $ a_o\leq a_e $ or $ a_t\leq a_s $ as the \emph{ferromagnetic phase} and the regimes where $ a_o\geq a_e $ or $ a_t\geq a_s $ as the \emph{antiferromagnetic phase}. 
 \end{remark}
 
 \section{Lower Bound}
 In this section, we will further motivate the Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}, however, a complete proof of a lower bound matching the upper bound in Theorem \ref{TheoremUpperBoundSpin1/2Fermi} is still missing. One may try to apply the same technique as was used in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, however, we will see that there are obstacles in this strategy.\\
-\subsection{Solvable cases}
+\subsection{Solvable Cases}
 To begin with, we may analyze the solvable models at hand. We will see that these are in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.\\
 
 \textbf{The hard core model}: The first solvable case is the hard core model, with $ v=\infty \mathbbm{1}_{[-a,a]} $, with $ a_e=a_o=a $ by Example \ref{ExampleScatteringLengthHardCore}. In this case, we have \begin{equation}
@@ -557,11 +557,11 @@ N/L=\rho}}E/L"\geq \frac{\pi^2}{3}\rho^3\left[\left(1-\ln(2)\rho a_e\right)^{-2}
 Here ``" is used to emphasize that $ e $ is strictly speaking not known to be the true ground state energy (see Subsection \ref{SubsectionYGCaveat}).
 Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho \abs{a_e})^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 
-\subsection{The general case}
+\subsection{The General Case}
 In the case of a general potential, $ v $, where the resulting model is not solvable, we might attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} do not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modified slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
 \begin{lemma}[Dyson's lemma spin--$ 1/2 $ fermions]
 	\label{LemmaDysonSpin1/2Fermi}
-	Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\C^2\right)^2\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\C^2\right)^2 \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
+	Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\left(\C^2\right)^2\right)\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\left(\C^2\right)^2\right) \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
 	\begin{equation}
 	\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\overline{\varphi}\left(\frac{1}{R-a_e}\operatorname{P}_s+\frac{1}{R-a_o}\operatorname{P}_t\right)\left(\delta_R+\delta_{-R}\right)\varphi,
 	\end{equation}
@@ -656,7 +656,7 @@ We now see that this is where the strategy of Chapter \ref{ChapterTheGroundState
 \end{conjecture}
 We that this conjecture is in line with both the Lieb-Liniger scenario, $ c=c' $, and the Yang-Gaudin scenario, $ c=\infty $. The validity of Conjecture \ref{ConjectureLLHGroundStateEnergy}, would give us the desired lower bound in Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi}.
 In the following subsection, we will give some heuristics for such a lower bound.
-\subsection{The Lieb-Liniger-Heisenberg ground state energy: Heuristics}
+\subsection{The Lieb-Liniger-Heisenberg Ground State Energy: Heuristics}
 In this subsection, we give only heuristic arguments for a lower bound of the Lieb-Liniger-Heisenberg (LLH) ground state energy, $ E_{LLH} $. We do not claim the arguments given to be rigorous. For simplicity, we restrict to having periodic boundary conditions. 
 
 \textbf{Degenerate perturbation theory}\\
