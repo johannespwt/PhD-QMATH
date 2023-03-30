@@ -1,12 +1,12 @@
-\chapter{The Ground State Energy of the One Dimensional Dilute Spin--$ \frac{1}{2} $ Fermi Gas}
+\chapter{The Ground State Energy of the One-dimensional Dilute Spin--$ \frac{1}{2} $ Fermi Gas}
 \label{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteSpin1/2FermiGas}
-In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter, we seek to analyze instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Therefore, does our bound essentially give estimates on the total spin $ 0 $ sector of the one dimensional dilute spin--1/2 Fermi gas.
+In the paper of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, we proved an upper and a lower bound for the ground state energy of a dilute Bose gas in one dimension. It was also shown that, as a corollary, the ground state energy of a one-dimensional dilute spin polarized Fermi gas admitted similar bounds. In this chapter, we seek to analyze instead the full spin--1/2 Fermi gas. Due to an important theorem of Lieb and Mattis, \cite{lieb1962theory}, it is known that the ground state of a repulsively interacting spin--1/2 Fermi gas (with an even number of particles), will have vanishing total spin. Therefore, does our bound essentially give estimates on the total spin $ 0 $ sector of the one-dimensional dilute spin--1/2 Fermi gas.
 \section{The Model}
 We consider a gas of fermions, each with spin--1/2, interacting through a repulsive pair potential $ v\geq 0 $. The assumptions on $ v $ will be similar to those in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, \ie $ v $ has compact support, say in the ball $ B_{R_0} $, and can be decomposed in $ v=v_{\text{reg}}+v_{\text{h.c.}} $ , where $ v_{\text{reg}} $ is a finite measure and $ v_{\text{h.c.}} $ is a positive linear combination of hard cores. Formally, we write the Hamiltonian \begin{equation}\label{EqFermi1/2Hamiltonian}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N} v(x_i-x_j),
 \end{equation}
 and with a domain contained in the Hilbert space $ L^2_{\text{as}}\left(\left([0,L]\times \{0,1\}\right)^N\right)\cong \left(L^2([0,L])\otimes \C^2\right)^{\wedge N} $.
-We recap here the conjecture, from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, about the ground state energy for such a system. \begin{conjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
+We recap here the conjecture, from Remark 6 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, about the ground state energy for such a system. \begin{conjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
 	Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqConjectureEqCSpin1/2FermiGroundStateEnergy}
 	E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right).
 	\end{equation}
@@ -161,7 +161,7 @@ The following lemmas, which we prove below, provide estimates of these quantitie
 	where $ E_F $ denotes the free spin polarized (spinless) Fermi energy.
 \end{lemma}
 Using Lemmas \ref{LemmaSpin1/2EtaContribution1} and \ref{LemmaSpin1/2EtaContribution2}, we deduce, from \eqref{EqTrialStateEnergyUpperBound1} the following bound upper bound on the trial state energy
-\begin{equation}
+\begin{equation}\label{EqSpin1/2EnergyUpperBound}
 \begin{aligned}
 \mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2\\
 &+\int_{A_{12}}\sum_{1\leq i<j\leq N}(v_{\text{reg}})_{ij}\abs{(\Psi_e)_{12}}^2-\int_{B_{12}}\sum_{i=1}^{N}\abs{\partial_i \Psi_F}^2\Bigg)\\
@@ -183,22 +183,22 @@ and the quantities from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensio
 E_2^{(1)}&\coloneqq\binom{N}{2}2N\int_{A_{12}\cap A_{13}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,\\ E_2^{(2)}&\coloneqq\binom{N}{2}\binom{N-2}{2}\int_{A_{12}\cap A_{34}}\sum_{i=1}^{N}\abs{\partial_i\Psi_F}^2,
 \end{aligned}
 \end{equation}
-we see by noting $x\in A_{12}\setminus B_{12}$ implies $x\in A_{12}\cap A_{ij}$ for some $(i,j)\neq (1,2),(2,1)$ that  \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} that \begin{equation}\label{EqTrialStateEnergyUpperBound2}
+we see by noting $x\in A_{12}\setminus B_{12}$ implies $x\in A_{12}\cap A_{ij}$ for some $\{i,j\}\neq \{1,2\}$ that \eqref{EqSpin1/2EnergyUpperBound} implies \begin{equation}\label{EqTrialStateEnergyUpperBound2}
 \begin{aligned}
 \mathcal{E}(\Psi_{\chi})\leq E_F &+\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi} \left(E_{1,e}+E_2^{(1)}+E_2^{(2)}\right)\\
 &+\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi} \left(E_{1,o}+E_2^{(1)}+E_2^{(2)}\right)\\
 &+E_F\left(N(\rho b)^4+ N^2 (\rho b)^6\right)
 \end{aligned}
 \end{equation}
-We see that $ E_{1,e/o} $ corresponds to the quantity $ E_1 $ in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with the even/odd wave scattering solution in the trial state. Proving the equivalent bound for the $ E_{1,e/o} $ amounts to following the same proof strategy and we have the equivalent lemma:
-\begin{lemma}[Lemma 14 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}]\label{LemmaE1BoundSpin1/2}
-	Let $ E_{1,e/o} $ be defined as above. For $ N(\rho b)^3\leq 1 $ we have \begin{equation}
+Here $ E_{1,e/o} $ corresponds to the quantity $ E_1 $ in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with the even/odd wave scattering solution in the trial state. Proving the equivalent bound for the $ E_{1,e/o} $ amounts to following the same proof strategy and we have the equivalent lemma:
+\begin{lemma}[Lemma 13 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}]\label{LemmaE1BoundSpin1/2}
+	Let $ E_{1,e/o} $ be defined as above. For $ b>\max(2a_o,R_0) $ we have \begin{equation}
 	\begin{aligned}
 	E_{1,e/o}\leq E_F&\Bigg(2\rho a_{e/o}\frac{b}{b-a_{e/o}}\\&+ \textnormal{const. }\left( N(\rho b)^3\left[ 1+ \rho b^2\int v_{\textnormal{reg}}\right]+\rho a_{e/o} \frac{\ln(N)}{N}\right)\Bigg).
 	\end{aligned}
 	\end{equation}
 \end{lemma}
-We also recall the lemma\begin{lemma}[Lemma 15 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}]\label{LemmaE2BoundSpin1/2}
+We also recall the lemma\begin{lemma}[Lemma 14 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}]\label{LemmaE2BoundSpin1/2}
 	\begin{equation}
 	E_2^{(1)}+E_2^{(2)}\leq E_F\left(N (\rho b)^4+ N^2(\rho b)^6\right).
 	\end{equation}
@@ -558,7 +558,7 @@ Here ``" is used to emphasize that $ e $ is strictly speaking not known to be th
 Hence we conclude $ e=\frac{\pi^2}{3}\rho^3\left(1+2\ln(2)\rho a_e+\mathcal{O}(\rho \abs{a_e})^{6/5}\right) $, which is in agreement with Conjecture \ref{ConjectureEqCSpin1/2FermiGroundStateEnergy}.
 
 \subsection{The General Case}
-In the case of a general potential, $ v $, where the resulting model is not solvable, we might attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 20 and 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} do not depend on any symmetry of the wave function. Dyson's lemma (Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modified slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
+In the case of a general potential, $ v $, where the resulting model is not solvable, we might attempt to mimic the proof from the bosonic/spin polarized case in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}. We will here follow this strategy. We note first that Lemmas 19 and 20 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} do not depend on any symmetry of the wave function. Dyson's lemma (Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}) is modified slightly in the following way: Let $ H^1_{\text{even/odd}} $ denote even/odd $ H^1 $ functions, then we have the following lemma.
 \begin{lemma}[Dyson's lemma spin--$ 1/2 $ fermions]
 	\label{LemmaDysonSpin1/2Fermi}
 	Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\left(\C^2\right)^2\right)\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\left(\C^2\right)^2\right) \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
@@ -570,7 +570,7 @@ In the case of a general potential, $ v $, where the resulting model is not solv
 \begin{proof}
 	The lemma follows straightforwardly from the Definitions \ref{DefinitionEvenScatteringLength} and \ref{DefinitionOddScatteringLenght}.
 \end{proof}
-Thus we may prove the equivalent of Lemma 23 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: In the following $ \Psi $ denotes the spin--$ 1/2 $ fermionic (Neumann) ground state of \begin{equation}
+Thus we may prove the equivalent of Lemma 22 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}: In the following $ \Psi $ denotes the spin--$ 1/2 $ fermionic (Neumann) ground state of \begin{equation}
 H=-\sum_{i=1}^{N}\partial_i^2+\sum_{1\leq i<j\leq N}v(x_i-x_j).
 \end{equation}	
 We shall also define the continuous function $ \psi\in \left(L^2([0,L-(n-1)R])\otimes\C^2\right)^{\otimes N} $, with $ R\geq \max\left(R_0,2\abs{a_e},2a_o\right)  $, such that for $ 0\leq x_1\leq\dots\leq x_n\leq L-(n-1)R $
@@ -589,21 +589,21 @@ We shall also define the continuous function $ \psi\in \left(L^2([0,L-(n-1)R])\o
 	where $ \tilde{L}:=L-(n-1)R $, the superscript ``$ N $" denotes Neumann boundary condition, and $ E_{LLH}(N,L,c',c) $ is the ground state energy of the Lieb-Liniger-Heisenberg model in \eqref{EqHamiltonianLLH}.
 \end{lemma}
 \begin{proof}
-	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): Splitting the energy functional into two parts, and using Lemma 21 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
+	We mimic the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): Splitting the energy functional into two parts, and using Lemma 20 from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on one term and Lemma \ref{LemmaDysonSpin1/2Fermi} on the other, we find 
 	\begin{equation}
 	\begin{aligned}
 	&\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq\\ &\int\sum_{i}\abs{\partial_i\Psi}^2\mathds{1}_{\mathfrak{r}_i(x)>R}+\overline{\Psi}\epsilon\sum_{i}\delta(\mathfrak{r}_i(x)-R)\left(\frac{1}{R-a_e}\operatorname{P}_s^{i,j_i}+\frac{1}{R-a_o}\operatorname{P}_t^{i,j_i}\right)\Psi\\&\qquad\qquad\qquad+ (1-\epsilon)\left(\sum_{i<j}\int_{D_{ij}}\abs{\partial_i \Psi}^2+\int\sum_{i<j} v_{ij} \abs{\Psi}^2\right),
 	\end{aligned}
 	\end{equation}
 	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $, $ j_i\coloneqq j $, with $ \mathfrak{r}_i(x)=\abs{x_i-x_j} $, is unique a.e., and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDysonSpin1/2Fermi} in the following manner: For each term in the sum $ \sum_{i} $, fix all particles $ x_j\neq x_i $, then divide the integration domain in $ x_i $ into Voronoi cells around all remaining particles, and integrate over all Voronoi cells individually.\\
-	With the use of Lemma 21 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model, we obtain\begin{equation*}
+	With the use of Lemma 20 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a_e} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model, we obtain\begin{equation*}
 	\begin{aligned}
 	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}),
 	\end{aligned}
 	\end{equation*}
 	which is the desired result.
 \end{proof}
-We may also prove the equivalent of Lemma 24 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, by using that $ E_{LLH}(N,\tilde{L},c',c)\geq E_{LL}(N.\tilde{L},c') $ when $ c>c' $.
+We may also prove the equivalent of Lemma 23 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, by using that $ E_{LLH}(N,\tilde{L},c',c)\geq E_{LL}(N.\tilde{L},c') $ when $ c>c' $.
 	\begin{lemma}\label{LemmaImprovedMassBoundSpin1/2Fermi}
 	For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\max(\abs{a_e},a_o,R_0) $ we have
 	\begin{equation}\label{EqImprovedMassBoundSpin1/2Fermi}
@@ -613,13 +613,13 @@ We may also prove the equivalent of Lemma 24 of Chapter \ref{ChapterTheGroundSta
 	\end{equation}
 \end{lemma}
 \begin{proof}
-	We mimic the proof of Lemma 24 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): From the known upper bound, \ie Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, and by Lemma \ref{LemmaNormBoundEpsilonSpin1/2Fermi} with $ \epsilon=1/2 $, it follows that 
+	We mimic the proof of Lemma 23 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground}): From the known upper bound, \ie Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, and by Lemma \ref{LemmaNormBoundEpsilonSpin1/2Fermi} with $ \epsilon=1/2 $, it follows that 
     \begin{equation}
     \begin{aligned}
     N\frac{\pi^2}{3}\rho^2\left(1+2\rho\left( \ln(2)a_e+(1-\ln(2)a_o) \right)+\text{const. }(\rho R)^{6/5}\right)\\\geq E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right)\braket{\psi|\psi}+ \frac{1}{16R^2}(1-\braket{\psi|\psi}).
     \end{aligned}
     \end{equation}
-	Subtracting $ E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right) $ on both sides, and using $$ E_{LLH}(N,\tilde{L},c',c)\geq E_{LL}(N.\tilde{L},c'), $$ and Lemma 18 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on the left-hand side, we find\begin{equation}
+	Subtracting $ E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right) $ on both sides, and using $$ E_{LLH}(N,\tilde{L},c',c)\geq E_{LL}(N.\tilde{L},c'), $$ and Lemma 17 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} on the left-hand side, we find\begin{equation}
 	\begin{aligned}
 	&n\frac{\pi^2}{3}\Bigg(\rho^2\left(1+2\rho\left( \ln(2)a_e+(1-\ln(2)a_o) \right)+\text{const. }(\rho R)^{6/5}\right)\\&\qquad \qquad\qquad\qquad\qquad-\tilde{\rho}^2\left(1-4\tilde{\rho} (R-a_e)-\text{const. }n^{-2/3}\right)\Bigg)\\
 	&\geq  \left(\frac{1}{16R^2}-E_{LLH}^N \left(N,\tilde{L},\frac{1}{R-a_e},\frac{1}{R-a_o}\right)\right)(1-\braket{\psi|\psi}),
@@ -636,7 +636,8 @@ We may also prove the equivalent of Lemma 24 of Chapter \ref{ChapterTheGroundSta
 	\braket{\psi|\psi}\geq 1-\text{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
 	\end{equation}
 \end{proof}
-We continue the generalizations from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and prove the following equivalent of Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}:
+\pagebreak
+We continue the generalizations from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and prove the following equivalent of Proposition 24 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}:
 \begin{proposition}
 	\label{PropositionLowerBoundSpecNSpin1/2Fermi}
 	For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\max(\abs{a_e},a_o,R_0) $ we have \begin{equation}
@@ -716,7 +717,7 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	$ R=\max(\abs{a_e}, R_0) $
 \end{theorem}
 \begin{proof}
-	This follows simply from the fact that the spin--$ 1/2$ bosonic ground state energy is greater than or equal to the spinless bosonic ground state energy and hence from Proposition 16 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}.
+	This follows simply from the fact that the spin--$ 1/2$ bosonic ground state energy is greater than or equal to the spinless bosonic ground state energy and hence from Proposition 15 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}.
 \end{proof}
 	\begin{theorem}
 	\label{TheoremLowerBoundSpinDependentSpin1/2Fermi}
@@ -728,7 +729,7 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	Here $ R=\max(\abs{a_e}, a_o, R_0) $
 \end{theorem}
 \begin{proof}
-	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential), and from the fact that for $ a_o\leq a_e $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_o}\right) $$. The remainder of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
+	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential), and from the fact that for $ a_o\leq a_e $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_o}\right) $$. The remainder of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 24 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
 \end{proof}
 \begin{theorem}
 	\label{TheoremLowerBoundSpinDependentSpin1/2SpatiallySymmetric}
@@ -740,7 +741,7 @@ Recall the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpper
 	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $
 \end{theorem}
 \begin{proof}
-	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential and different symmetry), and from the fact that for $ a_t\leq a_s $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_s},\frac{2}{R-a_t}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_t}\right) $$. The remainder of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 25 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
+	This follows from Proposition \ref{PropositionLowerBoundSpecNSpin1/2Fermi} (the proof hold regardless of the more general potential and different symmetry), and from the fact that for $ a_t\leq a_s $, we have $$ E_{LLH}^N\left(N,\tilde{L},\frac{2}{R-a_s},\frac{2}{R-a_t}\right)\geq E^N_{LL}\left(N,\tilde{L},\frac{2}{R-a_t}\right) $$. The remainder of the proof is identical to the proof of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} from Proposition 24 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and down.
 \end{proof}
 We see that combining these results with the Corollaries \ref{CorollaryUpperBoundSpin1/2Bose}, \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent}, and \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} we obtain ground state energy expansions to next-to-leading order in the diluteness parameter in all these cases. 
 

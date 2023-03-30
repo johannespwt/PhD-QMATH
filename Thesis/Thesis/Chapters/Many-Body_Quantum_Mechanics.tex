@@ -288,7 +288,7 @@ To put the results of this thesis into context, we here summarize the currently 
 	we say that the system is in \textbf{ the dilute limit} or that the Bose gas is \textbf{dilute} if $ \rho^{1/d} \abs{a}\ll 1 $. Notice that the absolute value on $ a $ is only important when $ d=1 $, since only then can the $ s $-wave scattering length be negative.
 \end{definition}
 \begin{definition}
-	For the one dimensional system of fermions with the formal Hamiltonian \begin{equation}
+	For the one-dimensional system of fermions with the formal Hamiltonian \begin{equation}
 	H=-\sum_{i=1}^{N}\partial^2_i+\sum_{1\leq i<j\leq N}v(x_i-x_j),
 	\end{equation}
 	we say that the system is in \textbf{ the dilute limit} or that the Fermi gas is \textbf{dilute} if $ \rho \max(\abs{\abs{a_e},a_o})\ll 1 $.
@@ -330,7 +330,7 @@ where $ \rho_i $ denotes the density of particles with spin $ i $ and the index 
 
 
 \section{The Lieb-Liniger Model: A Solvable Model in One Dimension} \label{SectionLiebLinigerModel}
-In 1960 a one dimensional model of impenetrable bosons was solved by Girardeau \cite{girardeau1960relationship}. This initialized the study of solvable models of particles in the continuum in one dimension. The next major breakthrough was in this context made in 1963 by Lieb and Liniger, who posed and solved a model of one dimensional point interacting bosons \cite{lieb1963exact}. Their solution generalized the solution of the impenetrable bosons by Girardeau. The technique that was used is known as \emph{Bethe ansatz} or \emph{Bethe's hypothesis} after it was invented by Bethe to solve the one dimensional Heisenberg chain \cite{bethe1931theorie}. We will in this section, for self-containment, go through the solution of the Lieb-Liniger model, as the solution and more generally the ground state energy is of importance later in the thesis when studying the ground state energy of the dilute one dimensional Bose gas. We follow the steps given in \cite{lieb1963exact} and present a few more general results.\\
+In 1960 a one-dimensional model of impenetrable bosons was solved by Girardeau \cite{girardeau1960relationship}. This initialized the study of solvable models of particles in the continuum in one dimension. The next major breakthrough was in this context made in 1963 by Lieb and Liniger, who posed and solved a model of one-dimensional point interacting bosons \cite{lieb1963exact}. Their solution generalized the solution of the impenetrable bosons by Girardeau. The technique that was used is known as \emph{Bethe ansatz} or \emph{Bethe's hypothesis} after it was invented by Bethe to solve the one-dimensional Heisenberg chain \cite{bethe1931theorie}. We will in this section, for self-containment, go through the solution of the Lieb-Liniger model, as the solution and more generally the ground state energy is of importance later in the thesis when studying the ground state energy of the dilute one-dimensional Bose gas. We follow the steps given in \cite{lieb1963exact} and present a few more general results.\\
 The Lieb-Liniger model is a model of bosons with dynamics given by the Hamiltonian \begin{equation}
 H_{LL}=-\sum_{i=1}^{N}\Delta_i+2c \sum_{1\leq i<j\leq N}\delta(x_i-x_j),
 \end{equation}
@@ -428,8 +428,8 @@ to find the equations for the ground state energy in the thermodynamic limit:
 e(\gamma)&=\rho^3\frac{\gamma^3}{\lambda^3}\int_{-1}^{1}x^2 g(x)\diff x\label{EqLLEq2},\\
 1&=\frac{\gamma}{\lambda}\int_{-1}^{1}g(x)\diff x.\label{EqLLEq3}
 \end{align}
-The first equation is an inhomogeneous Fredholm equation of the second kind which is solved by the Liouville-Neumann series. Notice that our equation for  $ e(\gamma) $ differ from those of Lieb and Liniger by a factor $ \rho^3 $, since we have absorbed this factor as part of $ e(\gamma) $. This difference is also present in chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, where the convention of Lieb and Liniger is followed. In Lemma 17 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} we prove the following lemma on the thermodynamic ground state energy of the Lieb-Liniger model. This lemma will be important in the proof of a lower bound on the ground state energy for the dilute Bose gas.
-\begin{lemma}[Lemma 17 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground})]
+The first equation is an inhomogeneous Fredholm equation of the second kind which is solved by the Liouville-Neumann series. Notice that our equation for  $ e(\gamma) $ differ from those of Lieb and Liniger by a factor $ \rho^3 $, since we have absorbed this factor as part of $ e(\gamma) $. This difference is also present in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}, where the convention of Lieb and Liniger is followed. In Lemma 16 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} we prove the following lemma on the thermodynamic ground state energy of the Lieb-Liniger model. This lemma will be important in the proof of a lower bound on the ground state energy for the dilute Bose gas.
+\begin{lemma}[Lemma 16 in Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} (\cite{agerskov2022ground})]
 	Let $ e(\gamma) $ be the solution of \eqref{EqLLEq1}--\eqref{EqLLEq3}. Then for $ \gamma>0 $ we have \begin{equation}
 	e(\gamma)\geq \frac{\pi^2}{3}\rho^3\left(\frac{\gamma}{\gamma+2}\right)^2.
 	\end{equation}
