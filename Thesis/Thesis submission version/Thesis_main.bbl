@@ -1,0 +1,300 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+ \newcommand{\noop}[1]{}
+\begin{thebibliography}{AGHKH12}
+
+\bibitem[Ada75]{adams1975sobolev}
+R.A. Adams.
+\newblock {\em Sobolev Spaces}.
+\newblock Academic press, New York, 1975.
+
+\bibitem[AGHKH12]{albeverio2012solvable}
+S.~Albeverio, F.~Gesztesy, R.~Hoegh-Krohn, and H.~Holden.
+\newblock {\em Solvable Models in Quantum Mechanics}.
+\newblock Theoretical and Mathematical Physics. Springer Berlin Heidelberg,
+  2012.
+
+\bibitem[ARS22]{agerskov2022ground}
+Johannes Agerskov, Robin Reuvers, and Jan~Philip Solovej.
+\newblock Ground state energy of dilute bose gases in 1d.
+\newblock {\em arXiv preprint arXiv:2203.17183}, 2022.
+
+\bibitem[BCS21]{basti2021new}
+Giulia Basti, Serena Cenatiempo, and Benjamin Schlein.
+\newblock A new second-order upper bound for the ground state energy of dilute
+  {B}ose gases.
+\newblock In {\em Forum of Mathematics, Sigma}, volume~9. Cambridge University
+  Press, 2021.
+
+\bibitem[Bet31]{bethe1931theorie}
+Hans Bethe.
+\newblock Zur theorie der metalle.
+\newblock {\em Zeitschrift f{\"u}r Physik}, 71(3):205--226, 1931.
+
+\bibitem[DLO01]{dunjko2001bosons}
+Vanja Dunjko, Vincent Lorent, and Maxim Olshanii.
+\newblock Bosons in cigar-shaped traps: Thomas-fermi regime, tonks-girardeau
+  regime, and in between.
+\newblock {\em Physical Review Letters}, 86(24):5413, 2001.
+
+\bibitem[Dor93]{cmp/1104252974}
+T.~C. Dorlas.
+\newblock {Orthogonality and completeness of the Bethe ansatz eigenstates of
+  the nonlinear Schroedinger model}.
+\newblock {\em Communications in Mathematical Physics}, 154(2):347 -- 376,
+  1993.
+
+\bibitem[Dys57]{dyson1957ground}
+Freeman~John Dyson.
+\newblock Ground-state energy of a hard-sphere gas.
+\newblock {\em Physical Review}, 106(1):20, 1957.
+
+\bibitem[EG91]{evans1991measure}
+L.C. Evans and R.F. Gariepy.
+\newblock {\em Measure Theory and Fine Properties of Functions}.
+\newblock Studies in Advanced Mathematics. Taylor \& Francis, 1991.
+
+\bibitem[FGHP21]{falconi2021dilute}
+Marco Falconi, Emanuela~L Giacomelli, Christian Hainzl, and Marcello Porta.
+\newblock The dilute fermi gas via bogoliubov theory.
+\newblock In {\em Annales Henri Poincar{\'e}}, volume~22, pages 2283--2353.
+  Springer, 2021.
+
+\bibitem[FGJ{\etalchar{+}}22]{fournais2022ground}
+S~Fournais, T~Girardot, L~Junge, L~Morin, and M~Olivieri.
+\newblock The ground state energy of a two-dimensional bose gas.
+\newblock {\em arXiv preprint arXiv:2206.11100}, 2022.
+
+\bibitem[FS20]{fournais2020energy}
+S{\o}ren Fournais and Jan~Philip Solovej.
+\newblock The energy of dilute {B}ose gases.
+\newblock {\em Annals of Mathematics}, 192(3):893--976, 2020.
+
+\bibitem[FS21]{fournais2021energy}
+S{\o}ren Fournais and Jan~Philip Solovej.
+\newblock The energy of dilute {B}ose gases {II}: The general case.
+\newblock {\em arXiv preprint arXiv:2108.12022}, 2021.
+
+\bibitem[Fun81]{fung1981validity}
+Ming-Kong Fung.
+\newblock Validity of the bethe--yang hypothesis in the delta-function
+  interaction problem.
+\newblock {\em Journal of Mathematical Physics}, 22(9):2017--2019, 1981.
+
+\bibitem[Gau67]{gaudin1967systeme}
+M~Gaudin.
+\newblock Un systeme a une dimension de fermions en interaction.
+\newblock {\em Physics Letters A}, 24(1):55--56, 1967.
+
+\bibitem[Gau14]{gaudin2014bethe}
+Michel Gaudin.
+\newblock {\em The Bethe Wavefunction The Bethe Wavefunction}.
+\newblock Cambridge University Press, 2014.
+
+\bibitem[Gia22]{giacomelli2022optimal}
+Emanuela~L Giacomelli.
+\newblock An optimal upper bound for the dilute fermi gas in three dimensions.
+\newblock {\em arXiv preprint arXiv:2212.11832}, 2022.
+
+\bibitem[Gir60]{girardeau1960relationship}
+Marvin Girardeau.
+\newblock Relationship between systems of impenetrable bosons and fermions in
+  one dimension.
+\newblock {\em Journal of Mathematical Physics}, 1(6):516--523, 1960.
+
+\bibitem[Gir06]{girardeau2006ground}
+MD~Girardeau.
+\newblock Ground and excited states of spinor {F}ermi gases in tight waveguides
+  and the {L}ieb-{L}iniger-{H}eisenberg model.
+\newblock {\em Physical Review Letters}, 97(21):210401, 2006.
+
+\bibitem[Gri11]{grisvard2011elliptic}
+P.~Grisvard.
+\newblock {\em Elliptic Problems in Nonsmooth Domains}.
+\newblock Classics in Applied Mathematics. Society for Industrial and Applied
+  Mathematics, 2011.
+
+\bibitem[HFM78]{hines1978hard}
+DF~Hines, NE~Frankel, and DJ~Mitchell.
+\newblock Hard-disc bose gas.
+\newblock {\em Physics Letters A}, 68(1):12--14, 1978.
+
+\bibitem[Hoh67]{hohenberg1967existence}
+Pierre~C Hohenberg.
+\newblock Existence of long-range order in one and two dimensions.
+\newblock {\em Physical Review}, 158(2):383, 1967.
+
+\bibitem[Hul38]{hult1938}
+L.~Hulthén.
+\newblock {\"Uber das Austauschproblem eines Kristalles}.
+\newblock {\em Ark. Met. Astron. Fysik}, 26A(Na. 11), 1938.
+
+\bibitem[HY57]{huang1957quantum}
+Kerson Huang and Chen~Ning Yang.
+\newblock Quantum-mechanical many-body problem with hard-sphere interaction.
+\newblock {\em Physical review}, 105(3):767, 1957.
+
+\bibitem[Lau23]{lauritsen2023almost}
+Asbj{\o}rn~B{\ae}kgaard Lauritsen.
+\newblock Almost optimal upper bound for the ground state energy of a dilute
+  fermi gas via cluster expansion.
+\newblock {\em arXiv preprint arXiv:2301.08005}, 2023.
+
+\bibitem[LHY57]{lee1957eigenvalues}
+Tsin~D Lee, Kerson Huang, and Chen~N Yang.
+\newblock Eigenvalues and eigenfunctions of a {B}ose system of hard spheres and
+  its low-temperature properties.
+\newblock {\em Physical Review}, 106(6):1135, 1957.
+
+\bibitem[LL63]{lieb1963exact}
+Elliott~H Lieb and Werner Liniger.
+\newblock Exact analysis of an interacting bose gas. i. the general solution
+  and the ground state.
+\newblock {\em Physical Review}, 130(4):1605, 1963.
+
+\bibitem[LM62a]{lieb1962ordering}
+Elliott Lieb and Daniel Mattis.
+\newblock Ordering energy levels of interacting spin systems.
+\newblock {\em Journal of Mathematical Physics}, 3(4):749--751, 1962.
+
+\bibitem[LM62b]{lieb1962theory}
+Elliott Lieb and Daniel Mattis.
+\newblock Theory of ferromagnetism and the ordering of electronic energy
+  levels.
+\newblock {\em Physical Review}, 125(1):164--172, 1962.
+
+\bibitem[LS23]{lauritsen2023ground}
+Asbj{\o}rn~B{\ae}kgaard Lauritsen and Robert Seiringer.
+\newblock Ground state energy of the dilute spin-polarized fermi gas: Upper
+  bound via cluster expansion.
+\newblock {\em arXiv preprint arXiv:2301.04894}, 2023.
+
+\bibitem[LSS05]{lieb2005ground}
+Elliott~H Lieb, Robert Seiringer, and Jan~Philip Solovej.
+\newblock Ground-state energy of the low-density fermi gas.
+\newblock {\em Physical Review A}, 71(5):053605, 2005.
+
+\bibitem[LSY03]{lieb2003one}
+Elliott~H Lieb, Robert Seiringer, and Jakob Yngvason.
+\newblock One-dimensional bosons in three-dimensional traps.
+\newblock {\em Physical Review Letters}, 91(15):150401, 2003.
+
+\bibitem[LSY04]{lieb2004one}
+Elliott~H Lieb, Robert Seiringer, and Jakob Yngvason.
+\newblock One-dimensional behavior of dilute, trapped {B}ose gases.
+\newblock {\em Communications in mathematical physics}, 244(2):347--393, 2004.
+
+\bibitem[LY57]{lee1957many}
+TD~Lee and CN~Yang.
+\newblock Many-body problem in quantum mechanics and quantum statistical
+  mechanics.
+\newblock {\em Physical Review}, 105(3):1119, 1957.
+
+\bibitem[LY98]{lieb1998ground}
+Elliolt~H Lieb and Jakob Yngvason.
+\newblock Ground state energy of the low density {B}ose gas.
+\newblock In {\em The Stability of Matter: From Atoms to Stars}, pages
+  755--758. Springer, 1998.
+
+\bibitem[LY99]{lieb1999ground}
+Elliott~H Lieb and Jakob Yngvason.
+\newblock The ground state energy of a dilute bose gas.
+\newblock {\em Differential Equations and Mathematical Physics, University of
+  Alabama, Birmingham}, 1999.
+
+\bibitem[LY01]{lieb2001ground}
+Elliott~H Lieb and Jakob Yngvason.
+\newblock The ground state energy of a dilute two-dimensional {B}ose gas.
+\newblock {\em Journal of Statistical Physics}, 103(3):509--526, 2001.
+
+\bibitem[Mar55]{marshall1955antiferromagnetism}
+W~Marshall.
+\newblock Antiferromagnetism.
+\newblock {\em Proceedings of the Royal Society of London. Series A.
+  Mathematical and Physical Sciences}, 232(1188):48--68, 1955.
+
+\bibitem[Mat12]{mattis2012theory}
+D.C. Mattis.
+\newblock {\em The Theory of Magnetism I: Statics and Dynamics}.
+\newblock Springer Series in Solid-State Sciences. Springer Berlin Heidelberg,
+  2012.
+
+\bibitem[MW66]{mermin1966absence}
+N~David Mermin and Herbert Wagner.
+\newblock Absence of ferromagnetism or antiferromagnetism in one-or
+  two-dimensional isotropic heisenberg models.
+\newblock {\em Physical Review Letters}, 17(22):1133, 1966.
+
+\bibitem[Ols98]{olshanii1998atomic}
+Maxim Olshanii.
+\newblock Atomic scattering in the presence of an external confinement and a
+  gas of impenetrable bosons.
+\newblock {\em Physical Review Letters}, 81(5):938, 1998.
+
+\bibitem[PSW00]{petrov2000regimes}
+DS~Petrov, GV~Shlyapnikov, and JTM Walraven.
+\newblock Regimes of quantum degeneracy in trapped 1d gases.
+\newblock {\em Physical Review Letters}, 85(18):3745, 2000.
+
+\bibitem[RS78]{reed1978iv}
+M.~Reed and B.~Simon.
+\newblock {\em IV: Analysis of Operators}.
+\newblock Methods of Modern Mathematical Physics. Elsevier Science, 1978.
+
+\bibitem[RS81]{reed1981functional}
+M.~Reed and B.~Simon.
+\newblock {\em I: Functional Analysis}.
+\newblock Methods of Modern Mathematical Physics. Elsevier Science, 1981.
+
+\bibitem[Sch71]{schick1971two}
+M~Schick.
+\newblock Two-dimensional system of hard-core bosons.
+\newblock {\em Physical Review A}, 3(3):1067, 1971.
+
+\bibitem[Sut68]{sutherland1968further}
+Bill Sutherland.
+\newblock Further results for the many-body problem in one dimension.
+\newblock {\em Physical Review Letters}, 20(3):98, 1968.
+
+\bibitem[SY08]{seiringer2008lieb}
+Robert Seiringer and Jun Yin.
+\newblock The {L}ieb-{L}iniger model as a limit of dilute bosons in three
+  dimensions.
+\newblock {\em Communications in mathematical physics}, 284(2):459--479, 2008.
+
+\bibitem[VPV{\etalchar{+}}15]{volosniev2015engineering}
+Artem~G Volosniev, D~Petrosyan, M~Valiente, DV~Fedorov, AS~Jensen, and
+  Nikolaj~Thomas Zinner.
+\newblock Engineering the dynamics of effective spin-chain models for strongly
+  interacting atomic gases.
+\newblock {\em Physical Review A}, 91(2):023620, 2015.
+
+\bibitem[WJ91]{william1991representation}
+Fulton William and Harris Joe.
+\newblock Representation theory: a first course.
+\newblock {\em Graduate Texts in Mathematics, Readings in Mathematics.
+  Springer-Verlag}, 129, 1991.
+
+\bibitem[Yan67]{yang1967some}
+Chen-Ning Yang.
+\newblock Some exact results for the many-body problem in one dimension with
+  repulsive delta-function interaction.
+\newblock {\em Physical Review Letters}, 19(23):1312, 1967.
+
+\bibitem[YC16]{yang2016effective}
+Lijun Yang and Xiaoling Cui.
+\newblock Effective spin-chain model for strongly interacting one-dimensional
+  atomic gases with an arbitrary spin.
+\newblock {\em Physical Review A}, 93(1):013617, 2016.
+
+\bibitem[YY69]{yang1969thermodynamics}
+Chen-Ning Yang and Cheng~P Yang.
+\newblock Thermodynamics of a one-dimensional system of bosons with repulsive
+  delta-function interaction.
+\newblock {\em Journal of Mathematical Physics}, 10(7):1115--1122, 1969.
+
+\bibitem[YY09]{yau2009second}
+Horng-Tzer Yau and Jun Yin.
+\newblock The second order upper bound for the ground energy of a {B}ose gas.
+\newblock {\em Journal of Statistical Physics}, 136(3):453--503, 2009.
+
+\end{thebibliography}

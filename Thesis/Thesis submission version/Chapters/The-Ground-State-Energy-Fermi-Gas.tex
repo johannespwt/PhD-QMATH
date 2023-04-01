@@ -505,17 +505,10 @@ H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{\tilde{P}}^{i,j}
 \end{equation}
 where the spin projectors, $\operatorname{\tilde{P}}_{s/t}$ are defined on the sector $ \{\sigma\} $ to be  $$\operatorname{\tilde{P}}^{ij}_{s/t}=\operatorname{P}^{\sigma^{-1}(i)\sigma^{-1}(j)}_{s/t},$$
 with $ \sigma^{-1}(i) $ defined such that $ \sigma_{\sigma^{-1}(i)}=i $, and the domain of \eqref{EqHamiltonianLLH} is taken to be wave functions that are \emph{symmetric in the spatial coordinates}. This means that under combined spin-space coordinate exchange $ (x_i,\sigma_i)\leftrightarrow(x_j,\sigma_j) $ the $ (i,j) $-singlet part of the wave function is anti-symmetric and $ (i,j) $-triplet part is symmetric.
-For spatially symmetric systems, we require in general potentials to of the form \begin{equation}\label{EqSpatialSymmetricPotentials}
+For spatially symmetric systems, we require in general potentials to of the form \begin{equation}
 v_s(x_i-x_j)\operatorname{\tilde{P}}^{ij}_s+v_t(x_i-x_j)\operatorname{\tilde{P}}^{ij}_t,
 \end{equation} 
-with $v_{s/t}$ satisfying the same conditions as $v_{e/o}$ above. This is to ensure that the total energy is determined by the energy on any ordered sector\footnote{This is case for potentials of the form \eqref{EqSpatialSymmetricPotentials} since for spatially a symmetric function we have on the sector $ \{\sigma\} $ \begin{equation*}
-		\begin{aligned}
-		&\int_{\{\sigma\}}v(x_i-x_j)\sum_{(s_1,\ldots,s_N)}\abs{\tilde{\operatorname{P}}_{s/t}^{i,j}\psi((x_1,s_1),(x_2,s_2),\ldots(x_N,s_N))}^2=\\
-		&\int_{\{\sigma\}}v(x_i-x_j)\sum_{(s_1,\ldots,s_N)}\abs{\operatorname{P}_{s/t}^{i,j}\psi((x_{\sigma_1},s_{\sigma_1}),(x_{\sigma_2},s_{\sigma_2}),\ldots,(x_{\sigma_N},s_{\sigma_N}))}^2=\\
-		&\int_{\{1,2,\ldots,N\}}v(x_i-x_j)\sum_{(s_1,\ldots,s_N)}\abs{\operatorname{P}_{s/t}^{i,j}\psi((x_1,s_1),(x_2,s_2),\ldots(x_N,s_N))}^2,
-		\end{aligned}
-\end{equation*}
-where we relabeled the spin indices by $i\to\sigma_i$ in the second equality.}.
+with $v_{s/t}$ satisfying the same conditions as $v_{e/o}$ above.
 
 
 This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary.
@@ -612,15 +605,13 @@ We shall also define the continuous function $ \psi\in \left(L^2([0,L-(N-1)R])\o
 	\end{equation}
 	where $ \mathfrak{r}_i(x)=\min_{j\neq i}(\abs{x_i-x_j}) $, $ j_i\coloneqq j $ with $ \mathfrak{r}_i(x)=\abs{x_i-x_j} $, is unique a.e., and the nearest neighbor delta interaction can be written $\delta(\mathfrak{r}_i(x)-R)=\left(\sum_{j\neq i}\left[\delta(x_i-x_j-R)+\delta(x_i-x_j+R)\right]\right)\mathbbm{1}_{\mathfrak{r_i(x)}\geq R}$. The nearest-neighbor interaction is obtained from Lemma \ref{LemmaDysonSpin1/2Fermi} in the following manner: For each term in the sum $ \sum_{i} $, fix all particles $ x_j\neq x_i $, then divide the integration domain in $ x_i $ into Voronoi cells around all remaining particles, and integrate over all Voronoi cells individually.\\
 	With the use of Lemma 20 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} with $ R>2\abs{a_e} $ in the last term, and by realizing that the first two terms can be obtained by using $ \psi $ as a trial state in the Lieb-Liniger-Heisenberg model
-	\footnote{To see this, notice that on $ \{\sigma\} $ we have \begin{equation*}
-			\begin{aligned}
-			&=\sum_{(s_1,\ldots, s_N)}\abs{\operatorname{P}_{s/t}^{i,j}\Psi((x_{\sigma_1},s_{\sigma_1}),(R+x_{\sigma_2},s_{\sigma_2}),...,((N-1)R+x_{\sigma_N},s_{\sigma_N}))}^2\\
-			&=\sum_{(s_1,\ldots, s_N)}\abs{\operatorname{P}_{s/t}^{i,j}\psi((x_{\sigma_1},s_{\sigma_1}),(x_{\sigma_2},s_{\sigma_2}),...,(x_{\sigma_N},s_{\sigma_N}))}^2\\
-			&=\sum_{(s_1,\ldots, s_N)}\abs{\tilde{\operatorname{P}}_{s/t}^{i,j}\psi((x_1,s_{1}),(x_2,s_{2}),...,(x_N,s_{N}))}^2
-			\end{aligned}
-		\end{equation*}}
-	
-	
+%	\footnote{To see this, notice \begin{equation*}
+%			\begin{aligned}
+%			\psi((x_1,s_1),(x_2,s_2),...,(x_N,s_N))&=\Psi((x_{\sigma_1},s_1),(R+x_{\sigma_2},s_2),...,((N-1)R+x_{\sigma_N},s_N))\\
+%			&=\psi((x_{\sigma_1},s_1),(x_{\sigma_2},s_2),...,(x_{\sigma_N},s_N))
+%			\end{aligned}
+%		\end{equation*}
+%	on $ \{\sigma\} $}
 , we obtain\begin{equation*}
 	\begin{aligned}
 	\int \sum_{i}\abs{\partial_i\Psi}^2+\sum_{i\neq j} \frac{1}{2}v_{ij}\abs{\Psi}^2\geq E_{LLH}^N \left(N,\tilde{L},\frac{2\epsilon}{R-a_e},\frac{2\epsilon}{R-a_o}\right)\braket{\psi|\psi}\\+ \frac{(1-\epsilon)}{R^2}\textnormal{const. }(1-\braket{\psi|\psi}),
@@ -661,6 +652,7 @@ We may also prove the equivalent of Lemma 23 of Chapter \ref{ChapterTheGroundSta
 	\braket{\psi|\psi}\geq 1-\text{const. }\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right).
 	\end{equation}
 \end{proof}
+\pagebreak
 We continue the generalizations from Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas} and prove the following equivalent of Proposition 24 of Chapter \ref{ChapterTheGroundStateEnergyOfTheOneDimensionalDiluteBoseGas}:
 \begin{proposition}
 	\label{PropositionLowerBoundSpecNSpin1/2Fermi}

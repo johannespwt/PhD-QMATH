@@ -619,54 +619,56 @@ which follow from the textbook bound on the $L^1$-norm of the $m$th derivative o
 		\end{equation}
 	\end{lemma}
 	\begin{proof}
-		The bounds follow straightforwardly from Taylor's theorem and the symmetries of the left-hand sides. As an example, consider $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\rvert_{y=x} $. Notice first that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2) $ is antisymmetric in $ (x_1,x_2) $ and in $ (y_1,y_2) $. As we discussed after \eqref{derivsbound}, all derivatives of $ \gamma^{(k)} $ are bounded uniformly in its coordinates by a constant times $ \rho^k $ for some $ k\in\mathbb{N} $, we can Taylor expand $ \partial^2\gamma^{(2)} $. By expanding $ x_1 $ around $ x_2 $ and $ y_1 $ around $ y_2 $, we see that antisymmetry implies $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\leq \text{const. }\rho^6(x_1-x_2)(y_1-y_2) $, where the power of $ \rho $ can be found by dimensional analysis.\\
-        As another example, consider $\abs{\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}$. We start by defining the coordinates $z_y\coloneqq (y_1-y_2)/2$, $z_y'\coloneqq (y_1+y_2)/2$, $z_x\coloneqq (x_1-x_2)/2$, and $z_x'\coloneqq (x_1+x_2)/2$. Furthermore, define $\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\coloneqq\gamma^{(2)}(z_x+z_x',z_x'-z_x;z_y+z_y',z_y'-z_y)$. By the antisymmetry of $\gamma^{(2)}$ in $x_1,x_2$ and $y_1,y_2$, we see that $\hat{\gamma}^{(2)}$ is odd in $z_x$ and $z_y$.
-        
-        In this case, we notice that $\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}=\partial_{z_y}$ and thus we find$$
-        \partial_{z_y}\left(\frac{\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')}{z_y}\right)=\frac{z_y\partial_{z_y}\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')-\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')}{z_y^2}.
-        $$
-        Taylor expanding both terms the numerator in $z_y$ and $z_x$ around $0$ to order $z_xz_y^3$ gives
-        \begin{equation}
-           \begin{aligned}
-               \Bigg\rvert z_xz_y\partial_{z_x}\left[\partial_{z_y}\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}+z_xz_y^3\partial_{z_x}\partial_{z_y}^2\left[\partial_{z_y}\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}\\-z_xz_y\partial_{z_x}\partial_{z_y}\left[\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}-\frac{1}{2}z_xz_y^3\partial_{z_x}\partial_{z_y}^3\left[\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}\\
-               +\mathcal{O}\left(\rho^{8}(z_xz_y^5+z_x^3z_y^3)\right)\Bigg\lvert\\
-               \leq \textnormal{const. }\rho^6\abs{z_xz_y^3},
-           \end{aligned}
-        \end{equation}
-        where we used that $\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')$ is odd in $z_x$ and $z_y$, to conclude that all even order terms vanish when Taylor exanding in these variables around $0$.
-        The desired result follows.\\
-        % Another approach is to Taylor expand \begin{equation}
-        %     \begin{aligned}
-        %         \gamma^{(2)}(x_1,x_2;y_1,y_2)=&f_1(x_1+x_2;y_1+y_2)(x_1-x_2)(y_1-y_2)\\&+f_2(x_1+x_2;y_1+y_2)(x_1-x_2)(y_1-y_2)^3+R(x_1,x_2;y_1,y_2).
-        %     \end{aligned}
-        % \end{equation}
-        % From the explicit integral formula for the remainder $R$ it follows that $R$ is differentiable and its derivative, $\partial_{y_1-y_2}R(x_1,x_2;y_1,y_2)$ is of order $(x_1-x_2)(y_1-y_2)^4$. Hence it follows that $$
-        % 2\partial_{y_1-y_2}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=f_2(x_1+x_2;y_1+y_2)(x_1-x_2)(y_1+y_2)+\mathcal{O}((x_1-x_2)(y_1-y_2)^3).
-        % $$
-        % Alternatively, we have 
-        % $$
-        % \partial_{y_1}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{(y_1-y_2)\partial_{y_1}\gamma^{(2)}(x_1,x_2;y_1,y_2)-\gamma^{(2)}(x_1,x_2;y_1,y_2)}{(y_1-y_2)^2},
-        % $$
-        % and Taylor expanding $y_1$ around $y_2$ to order $(y_1-y_2)^3$ and $x_1$ around $x_2$ to order $(x_1-x_2)$ we find
-        % $$
-        % \partial_{y_1}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{\frac{1}{2}(y_1-y_2)^2\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_1=y_2}+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2)^3)}{(y_1-y_2)^2}.
-        % $$
-        % We also have
-        % $$
-        % \partial_{y_2}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{(y_1-y_2)\partial_{y_2}\gamma^{(2)}(x_1,x_2;y_1,y_2)+\gamma^{(2)}(x_1,x_2;y_1,y_2)}{(y_1-y_2)^2},
-        % $$
-        % and Taylor expanding $y_2$ around $y_1$ to order $(y_2-y_1)^3$ and $x_1$ around $x_2$ to order $(x_1-x_2)$ we find
-        % $$
-        % \partial_{y_2}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{-\frac{1}{2}(y_1-y_2)^2\partial_{y_2}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_2=y_1}+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2)^3)}{(y_1-y_2)^2}.
-        % $$
-        % Combining the two we find
-        % \begin{equation}
-        %     \begin{aligned}
-        %         &\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}\\&=\frac{1}{2}\left(\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_1=y_2}+\partial_{y_2}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_2=y_1}\right)\\&\qquad\qquad\qquad+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2))\\&=\frac{1}{2}\left(\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_1=y_2}-\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_2=y_1}\right)\\&\qquad\qquad\qquad+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2))\\&=\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2)),
-        %     \end{aligned}
-        % \end{equation}
-        % where we used anti-symmetry in $y_1,y_2$ in the second equality.
-	\end{proof}
+	The bounds follow straightforwardly from Taylor's theorem and the symmetries of the left-hand sides.
+	We give, in the following, two examples which we find to be representative for the general strategy.\\
+	\textbf{Exmaple 1:} Consider $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\rvert_{y=x} $. Notice first that $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2) $ is antisymmetric in $ (x_1,x_2) $ and in $ (y_1,y_2) $. As we discussed after \eqref{derivsbound}, all derivatives of $ \gamma^{(k)} $ are bounded uniformly in its coordinates by a constant times $ \rho^k $ for some $ k\in\mathbb{N} $, we can Taylor expand $ \partial^2\gamma^{(2)} $. By expanding $ x_1 $ around $ x_2 $ and $ y_1 $ around $ y_2 $, we see that antisymmetry implies $ \sum_{i=1}^{2}\partial_{y_i}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\leq \text{const. }\rho^6(x_1-x_2)(y_1-y_2) $, where the power of $ \rho $ can be found by dimensional analysis.\\
+	\textbf{Example 2:} Consider $\abs{\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}$. We start by defining the coordinates $z_y\coloneqq (y_1-y_2)/2$, $z_y'\coloneqq (y_1+y_2)/2$, $z_x\coloneqq (x_1-x_2)/2$, and $z_x'\coloneqq (x_1+x_2)/2$. Furthermore, define $\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\coloneqq\gamma^{(2)}(z_x+z_x',z_x'-z_x;z_y+z_y',z_y'-z_y)$. By the antisymmetry of $\gamma^{(2)}$ in $x_1,x_2$ and $y_1,y_2$, we see that $\hat{\gamma}^{(2)}$ is odd in $z_x$ and $z_y$.
+	
+	In this case, we notice that $\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}=\partial_{z_y}$ and thus we find$$
+	\partial_{z_y}\left(\frac{\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')}{z_y}\right)=\frac{z_y\partial_{z_y}\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')-\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')}{z_y^2}.
+	$$
+	Taylor expanding both terms the numerator in $z_y$ and $z_x$ around $0$ to order $z_xz_y^3$ gives
+	\begin{equation}
+	\begin{aligned}
+	\Bigg\rvert z_xz_y\partial_{z_x}\left[\partial_{z_y}\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}+z_xz_y^3\partial_{z_x}\partial_{z_y}^2\left[\partial_{z_y}\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}\\-z_xz_y\partial_{z_x}\partial_{z_y}\left[\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}-\frac{1}{2}z_xz_y^3\partial_{z_x}\partial_{z_y}^3\left[\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')\right]\Big\vert_{z_x=z_y=0}\\
+	+\mathcal{O}\left(\rho^{8}(z_xz_y^5+z_x^3z_y^3)\right)\Bigg\lvert\\
+	\leq \textnormal{const. }\rho^6\abs{z_xz_y^3},
+	\end{aligned}
+	\end{equation}
+	where we used that $\hat{\gamma}^{(2)}(z_x,z_x';z_y,z_y')$ is odd in $z_x$ and $z_y$, to conclude that all even order terms vanish when Taylor exanding in these variables around $0$.
+	The desired result follows.\\
+	% Another approach is to Taylor expand \begin{equation}
+	%     \begin{aligned}
+	%         \gamma^{(2)}(x_1,x_2;y_1,y_2)=&f_1(x_1+x_2;y_1+y_2)(x_1-x_2)(y_1-y_2)\\&+f_2(x_1+x_2;y_1+y_2)(x_1-x_2)(y_1-y_2)^3+R(x_1,x_2;y_1,y_2).
+	%     \end{aligned}
+	% \end{equation}
+	% From the explicit integral formula for the remainder $R$ it follows that $R$ is differentiable and its derivative, $\partial_{y_1-y_2}R(x_1,x_2;y_1,y_2)$ is of order $(x_1-x_2)(y_1-y_2)^4$. Hence it follows that $$
+	% 2\partial_{y_1-y_2}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=f_2(x_1+x_2;y_1+y_2)(x_1-x_2)(y_1+y_2)+\mathcal{O}((x_1-x_2)(y_1-y_2)^3).
+	% $$
+	% Alternatively, we have 
+	% $$
+	% \partial_{y_1}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{(y_1-y_2)\partial_{y_1}\gamma^{(2)}(x_1,x_2;y_1,y_2)-\gamma^{(2)}(x_1,x_2;y_1,y_2)}{(y_1-y_2)^2},
+	% $$
+	% and Taylor expanding $y_1$ around $y_2$ to order $(y_1-y_2)^3$ and $x_1$ around $x_2$ to order $(x_1-x_2)$ we find
+	% $$
+	% \partial_{y_1}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{\frac{1}{2}(y_1-y_2)^2\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_1=y_2}+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2)^3)}{(y_1-y_2)^2}.
+	% $$
+	% We also have
+	% $$
+	% \partial_{y_2}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{(y_1-y_2)\partial_{y_2}\gamma^{(2)}(x_1,x_2;y_1,y_2)+\gamma^{(2)}(x_1,x_2;y_1,y_2)}{(y_1-y_2)^2},
+	% $$
+	% and Taylor expanding $y_2$ around $y_1$ to order $(y_2-y_1)^3$ and $x_1$ around $x_2$ to order $(x_1-x_2)$ we find
+	% $$
+	% \partial_{y_2}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)=\frac{-\frac{1}{2}(y_1-y_2)^2\partial_{y_2}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_2=y_1}+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2)^3)}{(y_1-y_2)^2}.
+	% $$
+	% Combining the two we find
+	% \begin{equation}
+	%     \begin{aligned}
+	%         &\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}\\&=\frac{1}{2}\left(\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_1=y_2}+\partial_{y_2}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_2=y_1}\right)\\&\qquad\qquad\qquad+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2))\\&=\frac{1}{2}\left(\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_1=y_2}-\partial_{y_1}^2\gamma^{(2)}(x_1,x_2;y_1,y_2)\vert_{y_2=y_1}\right)\\&\qquad\qquad\qquad+\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2))\\&=\mathcal{O}(\rho^6(x_1-x_2)(y_1-y_2)),
+	%     \end{aligned}
+	% \end{equation}
+	% where we used anti-symmetry in $y_1,y_2$ in the second equality.
+\end{proof}
     % \begin{proof}[Alternative proof]
     %     By the expression for the Dirichlet kernel $D_n(x)=\frac{1}{2\pi}\sum_{j=-n}^{n}\euler{ijx}$, we immediately see that $D_n$ and hence $\gamma^{(1)}$ is real analytic, and by Wick's theorem it follows that the same is true for $\gamma^{(k)}$. Thus we may write $\gamma^{(k)}$ as a Taylor series. In that case all bounds follow from the symmetries of $\gamma^{(k)}$. For example take $\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)$ with $i=1,2$. Since $\gamma^{(2)}(x_1,x_2;y_1,y_2)$ is antisymmetric in $y_1,y_2$ and $x_1,x_2$ we find $$\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}=f_1(x_1+x_2,y_1+y_2)(x_1-x_2)+f_2(x_1+x_2,y_1+y_2)(x_1-x_2)(y_1-y_2)^2+\ldots$$ for some functions $f_1,f_2$. It follows straightaway from the bound $\abs{\partial_{x_1-x_2}\partial_{y_1-y_2}^3\gamma^{(2)}}\leq \text{conts. } \rho^6$ that $$\abs{\sum_{i=1}^{2}(-1)^{i-1}\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}\leq \textnormal{const. } \rho^{6}(x_1-x_2)^2$$
     % \end{proof}
@@ -787,7 +789,7 @@ which follow from the textbook bound on the $L^1$-norm of the $m$th derivative o
 		\end{equation}
 		For the second line of \eqref{someest}, by using the scattering equation $ \partial^2\omega=\frac{1}{2}v\omega\geq0 $ which implies $ 0\leq\omega'(x)\leq \omega'(b)=\frac{b}{b-a} $ for $ \abs{x}<b $, we find that \begin{equation}
 		\begin{aligned}
-		4\binom{N}{2}&\int_{A_{12}}\frac{\overline{\Psi_F}}{(x_1-x_2)}\omega\partial_1\left(\frac{\Psi_F}{(x_1-x_2)}\right)\\&\leq\frac12\sum_{i=1}^{2}\int_{A_{12}}\abs{\frac{\omega}{x_1-x_2}}(-1)^{i-1}\omega'(x_1-x_2)\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\\
+		\Bigg\lvert4\binom{N}{2}&\int_{A_{12}}\frac{\overline{\Psi_F}}{(x_1-x_2)}\omega(\partial_{1}\omega)\partial_1\left(\frac{\Psi_F}{(x_1-x_2)}\right)\Bigg\rvert\\&=2\abs{\frac12\sum_{i=1}^{2}\int_{A_{12}}\frac{\omega}{x_1-x_2}(-1)^{i-1}\omega'(x_1-x_2)\partial_{y_i}\left(\frac{\gamma^{(2)}(x_1,x_2;y_1,y_2)}{y_1-y_2}\right)\Bigg\rvert_{y=x}}\\
 		&\leq \text{const. }\frac{b}{b-a}N\rho^2(\rho b)^3.
 		\end{aligned}
 		\end{equation}
@@ -1173,7 +1175,7 @@ This will be proved after the following lemma due to Robinson. Note we use the s
 			\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-\text{const. }(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell.
 			\end{equation}
 		\end{proof}
-	We are ready to prove the lower bound for general particle numbers.
+		We are ready to prove the lower bound for general particle numbers.
 		\begin{proof}[Proof of Proposition \ref{PropositionLowerBound}]
 			For the case $ N<\tau (\rho R)^{-9/5} $, the result follows from Proposition \ref{PropositionLowerBoundSpecN}.\\
 			For $ N\geq \tau (\rho R)^{-9/5} $, notice that \begin{equation}
