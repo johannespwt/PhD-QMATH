@@ -128,8 +128,10 @@ is independent of $ \sigma\in S_{12} $ and that
 Considering \eqref{EqEnergy2Spin1/2} again, we see from the trivial relation $$
 \frac{1}{N}\left(\sum_{k=1}^{N} \braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}+\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_t  \right\rvert \chi}\right)=1,
 $$
-and from the fact that $ B_{12}\subset A_{12} $ and the observation that 
-$$ \abs{\Psi_{\chi}}^2\leq \frac{1}{N}\sum_{k=1}^{N}\left(\braket{\chi \left\vert P_{s}^{k,k+1} \right\vert\chi}\abs{(\Psi_e)_{12}}^2+\braket{\chi \left\vert P_{t}^{k,k+1} \right\vert\chi}\abs{(\Psi_o)_{12}}^2\right)$$
+and from the fact that $ B_{12}\subset A_{12} $ and the observation that $\omega_o\leq \omega_e$ implying
+\begin{equation}\label{EqPotentialEnergySpin1/2Term}
+	\abs{\Psi_{\chi}}^2\leq \frac{1}{N}\sum_{k=1}^{N}\left(\braket{\chi \left\vert P_{s}^{k,k+1} \right\vert\chi}\abs{(\Psi_e)_{12}}^2+\braket{\chi \left\vert P_{t}^{k,k+1} \right\vert\chi}\abs{(\Psi_o)_{12}}^2\right)
+\end{equation}
  on $ B_{12} $ that we have the following upper bound for the energy\begin{equation}\label{EqTrialStateEnergyUpperBound1}
 	\begin{aligned}
 	\mathcal{E}(\Psi_{\chi})\leq E_F&+\binom{N}{2}\frac{1}{N}\sum_{k=1}^{N}\braket{\chi \left\lvert \operatorname{P}^{k,k+1}_s  \right\rvert \chi}\Bigg(\int_{A_{12}}\sum_{i=1}^{N}\abs{\partial_i(\Psi_e)_{12}}^2\\
@@ -240,8 +242,8 @@ E_D^{N+2}\leq E_P^N+\frac{3}{4}.
 To see this, consider a periodic chain of length $ N $ in its ground state. Add a spin-down at each edge, making the chain of length $ N+2 $. The resulting state is now a trial state for the Dirichlet chain of energy at most $ E_P^N+\frac{3}{4} $ and \eqref{EqDirichletPeriodicSpinChainBound} follows. Furthermore, it is not hard to see that for any integer $ m\geq 1 $ we have $ E_D^{mN}\leq E_D^{mN-m+1}\leq mE_D^N $. The first inequality follows simply from the fact that extending a Dirichlet state by Néel ordering (alternating spin) to a larger chain, lowers the energy, hence ground state energy in the larger chain must also be lower. The second inequality follows by constructing a trial state for the Dirichlet chain of length $ mN-m+1 $ by gluing $ m $ ground states of the Dirichlet chain of length $ N $, such that they share a spin down at the gluing points. Collecting everything we have \begin{equation}
 \frac{1}{mN}E_P^{mN}\leq \frac{1}{mN}E_D^{mN}\leq \frac{1}{N}E_D^N\leq \frac{1}{N}\left(E_P^{N-2}+3/4\right).
 \end{equation}
-It is clear that by a trial state argument and by translation invariance, which follows from the Marshall-Lieb-Mattis theorem (uniqueness of the ground state), we have $ E_P^N\leq \frac{N}{M+1}E_P^M+\frac{1}{4} $ for $ M>N $, simply take the ground state of chain length $ M $ and truncate it at length $ N $. Hence we get \begin{equation}
-\frac{1}{mN}E_P^{mN}\leq\frac{N-2}{N}\frac{1}{N-2}\left(E_P^{N-2}+3/4\right)\leq \frac{N-2}{N} \left(\frac{1}{M}E^{M}_P +\frac{3}{2}\frac{1}{N-2}\right)
+It is clear that by a trial state argument and by translation invariance, which follows from the Marshall-Lieb-Mattis theorem (uniqueness of the ground state), we have $ E_P^N\leq \frac{N}{M}E_P^M+\frac{1}{4} $ for $ M>N $, simply take the ground state of chain length $ M $ and truncate it at length $ N $. Hence we get \begin{equation}
+\frac{1}{mN}E_P^{mN}\leq\frac{N-2}{N}\frac{1}{N-2}\left(E_P^{N-2}+3/4\right)\leq \frac{N-2}{N} \left(\frac{1}{M}E^{M}_P +\frac{1}{N-2}\right)
 \end{equation}
 taking the limits $ m\to \infty $ and $ M\to\infty $ we have \begin{equation}
 \frac{N}{N-2}e_P-\frac{3}{4N}\leq\frac{1}{N-2}E_P^{N-2}\leq e_P+\frac{1}{4}\frac{1}{N-2},
@@ -495,7 +497,25 @@ Consequently, Theorem \ref{TheoremUpperBoundSpin1/2Fermi} still holds, with $ a_
 	Here $ R=\max(\abs{a_e}, a_o, R_0) $. Furthermore, $ a_e $ denotes the even-wave scattering length of $ v_e $ and $ a_o $ the odd wave scattering length of $ v_o $.
 \end{corollary}
 \begin{proof}
-	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} but change $ \omega_{e/o} $ to even/odd wave scattering solutions of $ v_{e/o} $. Notice that it is no longer clear that $ a_o\geq a_e $ and hence the choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_o\geq a_e $ and a spin polarized state when $ a_e>a_o $, both of which are translation invariant.
+	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} but change $ \omega_{e/o} $ to even/odd wave scattering solutions of $ v_{e/o} $. Notice that it is no longer clear that $ a_o\geq a_e $ and hence the choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_o\geq a_e $ and a spin polarized state when $ a_e>a_o $, both of which are translation invariant. Furthermore, \eqref{EqPotentialEnergySpin1/2Term} is no longer clear, as $\omega_e\geq \omega_o$ might not be satisfied. Instead, one may notice that \eqref{EqPotentialEnergySpin1/2Term} is actually an equality on $B_{12}^{\geq}$, and use that \begin{equation*}
+		\begin{aligned}
+		&\binom{N}{2}\int_{B_{12}\setminus B_{12}^{\geq}} \sum_{1\leq i<j\leq N} v_e(x_i-x_j)\abs{\operatorname{P}_s^{i,j}\Psi_{\chi}}^2+v_o(x_i-x_j)\abs{\operatorname{P}_t^{i,j}\Psi_{\chi}}^2\\&
+		\leq \binom{N}{2}\int_{B_{12}\setminus B_{12}^{\geq}} \sum_{1\leq i<j\leq N} (v_e(x_i-x_j)+v_o(x_i-x_j))\abs{\Psi_{\chi}}^2\\&
+		\leq \text{const. }b^2 \int_{A_{12}\cap A_{23}} v(x_1-x_2)\frac{1}{(x_1-x_2)^2}\rho^{(3)}(x_1,x_2,x_3)\\&
+		+\text{const. }b^2 \int_{A_{12}\cap A_{34}} v(x_1-x_2)\frac{1}{(x_1-x_2)^2}\rho^{(4)}(x_1,x_2,x_3,x_4)\\&
+		+\text{const. }b^2 \int_{A_{12}\cap A_{23}\cap A_{45}} v(x_4-x_5)\frac{1}{(x_1-x_2)^2}\rho^{(5)}(x_1,x_2,x_3,x_4,x_5)\\&
+		+\text{const. }b^2 \int_{A_{12}\cap A_{34}\cap A_{56}} v(x_5-x_6)\frac{1}{(x_1-x_2)^2}\rho^{(6)}(x_1,x_2,x_3,x_4,x_5,x_6)\\
+		&\leq \text{const. } E_0 \left(N(\rho b)^3+N^2(\rho b)^6\right) \rho b^2\left(\int v\right).
+		\end{aligned}
+	\end{equation*}
+	which can be absorbed in other errors.
+	Alternatively, one use a trial state of the form\begin{equation}
+	\Psi_\chi=\begin{cases}
+	\frac{\Psi_F}{\mathcal{R}}\left(f_1\operatorname{P}_s^{\mathcal{R}}+f_2\operatorname{P}_t^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
+	\Psi_F,&\mathcal{R}(x)\geq b
+	\end{cases},
+	\end{equation}
+	with $f_1=\min\left(\omega_e,\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)\right)$ and $f_2=\min\left(\omega_o,\left(\eta\omega^{\mathcal{R}}_o+(1-\eta)\omega^{\mathcal{R}}_e\right)\right)$. In this case \eqref{EqPotentialEnergySpin1/2Term} is valid and the trial state is unchanged in $B_{12}^{\geq}$. With this trial state, the proofs of Lemmas \ref{LemmaSpin1/2EtaContribution1} and \ref{LemmaSpin1/2EtaContribution2} are proved in the same way as before.
 \end{proof}
 An interesting application of a version of Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} given below in Corollary \ref{CorollaryUpperBoundSpin1/2SymmetricSpinDependent} is the Lieb-Liniger-Heisenberg model introduced by Girardeau in \cite{girardeau2006ground}. In his paper, an upper bound is given by a trial state argument in the case $ c>c' $. Girardeau finds \begin{equation}\label{EqGirardeauUpperBoundLLH}
 E_{LLH}\leq E_{LL}(\ln(2)c'+(1-\ln(2))c),
@@ -531,7 +551,7 @@ This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDe
 	Here $ R=\max(\abs{a_s}, \abs{a_t}, R_0) $. Furthermore, $ a_s $ denotes the even wave scattering length of $ v_s $ and $ a_t $ the even wave scattering length of $ v_t $.
 \end{corollary}
 \begin{proof}
-	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $ and extend the trial state to all sectors, $ \{\sigma\} $, by spatial symmetry instead of spin-space anti-symmetry. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
+	Repeat the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, with the same modifications as in Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} (including lemmas used) but change $ \omega_{e/o} $ to the even wave scattering solution of $ v_{s/t} $ and extend the trial state to all sectors, $ \{\sigma\} $, by spatial symmetry instead of spin-space anti-symmetry. The choice of $ \chi $ is the periodic antiferromagnetic Heisenberg chain when $ a_t\geq a_s $ and a spin polarized state when $ a_s\geq a_t $.
 	Whenever anti-symmetry was used in the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi} the same step may be justified by spatial symmetry. To see this, we note that \eqref{EqEnergy2Spin1/2} can be derived by use of only spatial symmetry. However, in \eqref{EqEnergy3Spin1/2} we find instead
 	\begin{equation}
 	\begin{aligned}
