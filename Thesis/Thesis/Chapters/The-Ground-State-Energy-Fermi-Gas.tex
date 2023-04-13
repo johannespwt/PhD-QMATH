@@ -532,10 +532,10 @@ with $v_{s/t}$ satisfying the same conditions as $v_{e/o}$ above. This is to ens
 		\begin{aligned}
 		&\int_{\{\sigma\}}v(x_i-x_j)\sum_{(s_1,\ldots,s_N)}\abs{\tilde{\operatorname{P}}_{s/t}^{i,j}\psi((x_1,s_1),(x_2,s_2),\ldots(x_N,s_N))}^2=\\
 		&\int_{\{\sigma\}}v(x_i-x_j)\sum_{(s_1,\ldots,s_N)}\abs{\operatorname{P}_{s/t}^{i,j}\psi((x_{\sigma_1},s_{\sigma_1}),(x_{\sigma_2},s_{\sigma_2}),\ldots,(x_{\sigma_N},s_{\sigma_N}))}^2=\\
-		&\int_{\{1,2,\ldots,N\}}v(x_i-x_j)\sum_{(s_1,\ldots,s_N)}\abs{\operatorname{P}_{s/t}^{i,j}\psi((x_1,s_1),(x_2,s_2),\ldots(x_N,s_N))}^2,
+		&\int_{\{1,2,\ldots,N\}}v(x_{\sigma^{-1}(i)}-x_{\sigma^{-1}(j)})\sum_{(s_1,\ldots,s_N)}\abs{\operatorname{P}_{s/t}^{\sigma^{-1}(i),\sigma^{-1}(j)}\psi((x_1,s_1),(x_2,s_2),\ldots(x_N,s_N))}^2,
 		\end{aligned}
 \end{equation*}
-where we relabeled the spin indices by $i\to\sigma_i$ in the second equality.}.
+where we used spatial symmetry and relabeled the spin indices by $i\to \sigma^{-1}(i)$ in the first equality. We then relabeled the particle coordinates $x_i\to x_{\sigma_i}$ and the spin indices $i\to\sigma_i$ in the second equality.}.
 
 
 This of course implies that Corollary \ref{CorollaryUpperBoundSpin1/2FermiSpinDependent} is not directly useful in this case. However, Going through the proof of Theorem \ref{TheoremUpperBoundSpin1/2Fermi}, we see that we may as well get the following corollary.

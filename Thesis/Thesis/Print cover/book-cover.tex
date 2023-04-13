@@ -1,0 +1,928 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   See  "GUIDE TO USAGE OF THIS TEMPLATE"  below for the instructions.
+%
+%
+%   This is a template for generating covers for lecture notes and PhD-theses
+%   published at the Department of Mathematical Sciences at University of
+%   Copenhagen, Denmark.
+%   
+%   The template is created June 2016 by:
+%
+%       Kristian K. Olesen <olesenkk@gmail.com>
+%
+%   It is made for pdfLaTeX and not LaTeX, that is, to be compiled to pdf.
+%   Besides, it requires (depending on the choice of language and logo), the
+%   files:
+%
+%   imf-dk-addr.pdf     imf-dk.pdf          imf-en-addr.pdf
+%   imf-en.pdf          ku-logo.pdf         sci-logo.pdf       polyteknisk.pdf
+%
+%   to be located in the same folder as this file for it to compile.
+%
+%   Below there is a guide to the usage of the template, but further down,
+%   below the guide, there are comments on how the template works, so that it
+%   can be updated in the future.
+%
+\documentclass[a3paper,11pt,showtrims,landscape,oneside]{memoir}
+\usepackage{tikz}\usetikzlibrary{calc}
+%   The following defines the command that it used to supply information to
+%   the template.  
+\makeatletter
+\def\logo#1{\lowercase{\def\thelogo{#1}}}
+\def\lang#1{\lowercase{\def\thelang{#1}}}
+\def\ISBN#1{\def\ISBNd{#1}}
+\def\pages#1{\def\pagenum{#1}}
+\def\@author[#1]#2{\def\theauthor{#2}\def\thespineauthor{#1}}
+\def\@@author#1{\def\theauthor{#1}\def\thespineauthor{#1}}
+\def\author{\@ifnextchar[{\@author}{\@@author}}
+\def\@title[#1]#2{\def\thetitle{#2}\def\thespinetitle{#1}}
+\def\@@title#1{\def\thetitle{#1}\def\thespinetitle{#1}}
+\def\title{\@ifnextchar[{\@title}{\@@title}}
+\def\subtitle#1{\def\thesubtitle{#1}}
+\def\@booktype[#1]#2{\def\thebooktype{#2}\def\thespinebooktype{#1}}
+\def\@@booktype#1{\def\thebooktype{#1}\def\thespinebooktype{#1}}
+\def\booktype{\@ifnextchar[{\@booktype}{\@@booktype}}
+\def\spinecolor#1{\def\@spinecolor{#1}}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   GUIDE TO USAGE OF THIS TEMPLATE
+%
+%   The usage should be fairly self-explanatory, so you could just scroll past
+%   this outcommented part and try your luck noting the following two things:
+%
+%     * you can change the language and the logo
+%     * you have possibility of specifying the text on the spine separately
+%
+%   If you are content with the text on the spine and the language/logo is
+%   already as it should be, then just jump down to the commands below and
+%   give it a try.  If this does not work, then continue on to the MORE
+%   DETAILED GUIDE below.
+%
+
+\lang{en}
+
+\logo{ku}
+
+\author{Johannes Agerskov}
+
+\title{One-dimensional Dilute Quantum Gases and Their Ground State Energies}
+
+\subtitle{}
+
+\booktype{PhD Thesis}
+
+\pages{136}
+
+\ISBN{1234567891011}
+
+\spinecolor{ 0.08, 0.02, 0.00, 0.42 }
+
+%
+%   MORE DETAILED GUIDE OF THE USAGE OF THIS TEMPLATE
+%
+%
+%   Let us take the commands one by one.
+%
+%   \lang{...}          This specifies the language of the text that you do
+%                       not specify.  Your options are 'dk' or 'en' which
+%                       correspond to Danish and English, respectively.
+%
+%   \logo{...}          This specifies the logo placed on the front of the
+%                       cover.  Your options are 'sci' or 'ku' which
+%                       correspond to logo of the Faculty of Science and the
+%                       logo of University of Copenhagen, respectively.
+%
+%   \author{...}        This specifies the name of the author (probably
+%                       yourself).  This is the name placed on the front of
+%                       the cover and on the spine.  If you want a different
+%                       name on the spine, you can specify this in an optional
+%                       argument of '\author', that is, you can write
+%                       \author[...]{...} and the first argument will be the
+%                       name on the spine and the second the name on the
+%                       front.
+%
+%   \title{...}         This specifies the title of the book.  This is the
+%                       title placed on the front of the cover and on the
+%                       spine.  If you want a different title on the spine,
+%                       you can specify this in an optional argument of
+%                       '\title', that is, you can write \title[...]{...} and
+%                       the first argument will be the title on the spine and
+%                       the second the title on the front.
+%
+%   \subtitle{...}      This specifies the subtitle placed on the front cover.
+%                       If you do not want a subtitle, you can either remove
+%                       the command or let the argument be empty.
+%
+%   \booktype{...}      This specifies the type of book, for example, 'PhD
+%                       thesis' or 'lecture notes', depending on which kind of
+%                       book the cover is supposed to envelop.
+%
+%   \pages{...}         This specifies the number of pages in the book you are
+%                       compiling a cover for.  It is important that you
+%                       specify the correct number, as the width of the spine
+%                       is calculated based on this.  It has to be a
+%                       non-negative integer!
+%
+%   \ISBN{...}          This specifies ISBN number of the book.  The argument
+%                       must consist of 13 digits without anything, such as
+%                       hyphens, in-between.
+%
+%   \spinecolor{...}    This specifies the colour of the small coloured area
+%                       at the bottom of the spine.  The specification is as
+%                       CMYK colour, so that it must be 4 comma separated
+%                       numbers between 0 and 1.  If you would like to choose
+%                       some nice colour, then Google 'cmyk colour codes' and
+%                       find the parameters of a colour you like.  Below there
+%                       is a few examples you can try.  If you do not specify
+%                       a color, then 'pink' is chosen.
+%
+%
+%   EXAMPLES OF COLOURS:
+%
+%   \spinecolor{ 1.00, 0.25, 0.00, 0.20 }  %  Blue
+%   \spinecolor{ 0.18, 0.28, 0.48, 0.00 }  %  Brown
+%   \spinecolor{ 0.00, 0.35, 0.69, 0.20 }  %  Brown
+%   \spinecolor{ 0.07, 0.00, 0.57, 0.27 }  %  Green
+%   \spinecolor{ 0.10, 0.00, 0.50, 0.11 }  %  Green
+%   \spinecolor{ 0.15, 0.00, 0.57, 0.36 }  %  Green
+%   \spinecolor{ 0.08, 0.02, 0.00, 0.42 }  %  Grey
+%   \spinecolor{ 0.00, 0.00, 0.00, 0.70 }  %  KU-Grey
+%   \spinecolor{ 0.00, 0.59, 0.29, 0.00 }  %  Pink
+%   \spinecolor{ 0.49, 0.35, 0.00, 0.32 }  %  Purple
+%   \spinecolor{ 0.35, 0.55, 0.00, 0.00 }  %  Purple
+%   \spinecolor{ 0.16, 0.57, 0.00, 0.00 }  %  Purple/pink
+%   \spinecolor{ 0.00, 0.75, 0.75, 0.07 }  %  Red
+%   \spinecolor{ 0.40, 0.04, 0.00, 0.45 }  %  Teal
+%   \spinecolor{ 0.69, 0.00, 0.34, 0.16 }  %  Teal
+%   \spinecolor{ 0.15, 0.35, 1.00, 0.01 }  %  Yellow
+%   \spinecolor{ 0.00, 0.06, 0.63, 0.02 }  %  Yellow
+%
+%
+%   END OF THE GUIDE  ---  YOU SHOULD NOT CHANGE ANYTHING AFTER THIS POINT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{calc}
+\usepackage{cmbright,helvet}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{soul}
+
+
+%
+%   EXPLANATION OF HOW THE TEMPLATE WORKS AND WHAT THE TEX-CODE DOES
+%
+%
+%   As is apparent from the preamble, the cover is made using the 'memoir'
+%   documentclass.  This is because it handles placing trim marks well.  The
+%   design of the cover is made with Tikz.
+%
+%   The front and back cover pages are supposed to be the size of B5 paper,
+%   that is, 250mm x 176mm.  The spine is supposed to vary with the number of
+%   pages in the book, and it is supposed to be 1mm per 18.017 pages in the
+%   book (as specified by Ingrid Beijk from Polyteknisk Boghandel), or, in
+%   other words, 1/18.017 mm/page.
+%
+%   The way the number of pages specifies by the \pages command is used to
+%   calculate the width of the spine is by multiplying the number of pages by
+%   the number of scaled points per 1/18.017 mm rounded of to a natural
+%   number.  This way the calculation can be done using counters (and the
+%   'calc' package).  Since scaled points (sp) is a sufficiently small unit of
+%   measure, the error we get is negligible, as we shall see.
+%
+%   So let us explain how the conversion goes, but let us first list the
+%   conversion table.  All the units are TeX's units, and the different
+%   factors can be looked up in the TeXbook on page 57.
+%
+%       1 in = 25.4 mm
+%       1 in = 72.27 pt
+%       1 pt = 65536 sc
+%
+%   so that
+%
+%       1 mm = 7227/2540 pt         ~ 2.845276 pt
+%       1 mm = (7227/2540)*65536 sp ~ 186468 sp
+%
+%   and so we can calculate the number of scaled points on 1/18.017 mm
+%
+%       1/18.017 mm = (7227*65536)/(2540*18.017) sp ~ 10349.5577011912 sp 
+%
+%   Thus we will set the width fo the margin to 10350 sp per page.  As the
+%   difference to the actual value is less than 0.4423 sp, on 1000 pages
+%   (which is more than this template can handle) we get an error of less than
+%
+%   0.4423 * 1000 * 2540 / (7227*65536) mm ~ 0.00237198899985514 mm
+%
+%   which should be acceptable.
+%
+%   This was the explanation of how the width is calculated.  Below is the TeX
+%   code and comments on this.
+
+
+
+%   This is a bit complicated.  Ideally, what is does is that it makes a
+%   counter named 'spine' and sets it to 10350 times the number of pages.  As
+%   explained above, this will be the width of the spine in sp.
+%
+%   However, in it tries to catch situations where '\pages' has not been used,
+%   has been given an empty argument or have been given an argument which is
+%   not a non-negative integer.
+%
+%   Later in the code, there is an error message that triggers if '\pagenum',
+%   which is the variable \pages saves its argument in, is undefined.  So the
+%   following code tries to detect if '\pagenum' has the desired form.  In the
+%   case it does not, it sets the 'spine' counter to zero and makes sure that
+%   '\pagenum' is undefined so that an error occurs.
+\makeatletter
+\newcounter{spine}
+%   Tests if '\pagenum' is defined (so false if undefined)
+\ifdefined\pagenum
+%   Tests if '\pagenum' is empty
+    \ifx\pagenum\empty
+        \setcounter{spine}{0}
+        \let\pagenum\undefined
+    \else
+%   Tests if '\pagenum' is a non-negative integer (not perfect, but works)
+        \if!\ifnum9<1\pagenum!\else\fi%
+        \setcounter{spine}{\pagenum*10350}
+        \else
+%   Produces a separate error if '\pages' was used with non-empty but wrong
+%   argument.
+            \@latex@error{%
+            The command \protect\pages\space got an illigal argument.  It must
+            be a\MessageBreak non-negative integer}{This should be help
+            enough}%
+            \setcounter{spine}{0}
+        \fi%
+    \fi
+\else
+    \setcounter{spine}{0}
+\fi
+\makeatother
+
+%   Defining a length which is width of the spine.
+\newlength{\SpineWidth}
+\setlength{\SpineWidth}{\thespine sp}
+
+%   Defines a counter containing half the width of the spine (in sp).
+\newcounter{halfSpine}
+\setcounter{halfSpine}{\value{spine}/2}
+
+%   Defines a counter containing (approximately) the number of sp on a mm,
+%   which, as nodded above, is 186468.
+\newcounter{mm}
+\setcounter{mm}{186468}
+
+%   Defining a length for the width of the book (the actual finished book).
+%   This is just the width of a standard sheet of B5 paper, that is, 176mm.
+\newlength{\BookWidth}
+\setlength{\BookWidth}{176mm}
+
+%   Defining a length for the height of the book (the actual finished book).
+%   This is just the height of a standard sheet of B5 paper, that is, 250mm.
+\newlength{\BookHeight}
+\setlength{\BookHeight}{250mm}
+
+%   Defining a length for the width of the cover.  This is going to be twice
+%   the width of the book plus the width of the spine.
+\newlength{\CoverWidth} % cover width
+\setlength{\CoverWidth}{2\BookWidth}
+\addtolength{\CoverWidth}{\SpineWidth}
+
+%   Defining a length for the height of the cover.  This is going to be the
+%   same as the height of the book.
+\newlength{\CoverHeight} % cover height
+\setlength{\CoverHeight}{\BookHeight}
+
+%   Defining a counter containing the length of the trim marks indicating the
+%   spine in mm.
+\newcounter{spineTrim}
+\setcounter{spineTrim}{10*\value{mm}}
+
+%   Defining a counter containing the length of the trim marks indicating the
+%   corners of the cover in mm.
+\newcounter{cornerTrim}
+\setcounter{cornerTrim}{15*\value{mm}}
+
+%   Defining a counter containing the distance from trim marks to page in mm.
+\newcounter{trimShift}
+\setcounter{trimShift}{5*\value{mm}}
+
+%   Defining a length for the thickness of the trim marks.
+\newlength{\trimThickness}
+\setlength{\trimThickness}{.5pt}
+
+
+%   Here we are setting the trim marks of the page.  Be sure not to include
+%   any of the commands \trimXmarks, \trimLmarks, \trimFrame or \trimNone
+%   after this point, since they will reset the trim marks to some, by memoir,
+%   predefined values.
+\renewcommand*{\tmarktl}{% Setting shape of trim marks in top left corner.
+    \begin{picture}(0,0)%
+        \setlength{\unitlength}{1sp}\linethickness{\trimThickness}%
+        \put(0,\thetrimShift){\line(0,1){\thecornerTrim}}%
+        \put(-\thetrimShift,0){\line(-1,0){\thecornerTrim}}%
+        \end{picture}%
+}
+\renewcommand*{\tmarktr}{% Setting shape of trim marks in top right corner.
+    \begin{picture}(0,0)%
+        \setlength{\unitlength}{1sp}\linethickness{\trimThickness}%
+        \put(0,\thetrimShift){\line(0,1){\thecornerTrim}}%
+        \put(\thetrimShift,0){\line(1,0){\thecornerTrim}}%
+        \end{picture}%
+}
+\renewcommand*{\tmarkbl}{% Setting shape of trim marks in bottom left corner.
+    \begin{picture}(0,0)%
+        \setlength{\unitlength}{1sp}\linethickness{\trimThickness}%
+        \put(0,-\thetrimShift){\line(0,-1){\thecornerTrim}}%
+        \put(-\thetrimShift,0){\line(-1,0){\thecornerTrim}}%
+        \end{picture}%
+}
+\renewcommand*{\tmarkbr}{% Setting shape of trim marks in bottom right corner.
+    \begin{picture}(0,0)%
+        \setlength{\unitlength}{1sp}\linethickness{\trimThickness}%
+        \put(0,-\thetrimShift){\line(0,-1){\thecornerTrim}}%
+        \put(\thetrimShift,0){\line(1,0){\thecornerTrim}}%
+        \end{picture}%
+}
+\renewcommand{\tmarktm}{% Setting shape of trim marks for spine on top edge.
+    \begin{picture}(0,0)%
+        \setlength{\unitlength}{1sp}\linethickness{\trimThickness}%
+        \put(-\thehalfSpine,\thetrimShift){\line(0,1){\thespineTrim}}%
+        \put(\thehalfSpine,\thetrimShift){\line(0,1){\thespineTrim}}%
+        \end{picture}%
+}
+\renewcommand{\tmarkbm}{% Setting shape of trim marks for spine on top edge.
+    \begin{picture}(0,0)%
+        \setlength{\unitlength}{1sp}\linethickness{\trimThickness}%
+        \put(-\thehalfSpine,-\thetrimShift){\line(0,-1){\thespineTrim}}%
+        \put(\thehalfSpine,-\thetrimShift){\line(0,-1){\thespineTrim}}%
+        \end{picture}%
+}
+\renewcommand{\tmarkml}{}% Removing trim marks for middle left edge.
+\renewcommand{\tmarkmr}{}% Removing trim marks for middle right edge.
+
+
+%   Setting the dimensions of the page (the trimmed size) to \CoverHeight
+%   times \CoverWidth.
+\settrimmedsize{\CoverHeight}{\CoverWidth}{*}
+
+%   Setting the typeblock (page - margins) to the same as the page.
+\settypeblocksize{\CoverHeight}{\CoverWidth}{*}
+
+%   Setting left/right margins and upper/lower margins to 0pt.
+\setlrmarginsandblock{0pt}{*}{*}
+\setulmarginsandblock{0pt}{*}{*}
+
+%   Sets the headheight and the footskip to 0pt.
+\setheadfoot{0mm}{0mm}
+
+%   Sets the headsep to 0pt.
+\setheaderspaces{*}{0mm}{*}
+
+%   Sets the marginparsep and the marginparwidth to 0pt.
+\setmarginnotes{0mm}{0mm}{0mm}
+
+%   This centers the page on the stock.
+\setlength{\trimtop}{.5\stockheight}
+\addtolength{\trimtop}{-.5\CoverHeight}
+\setlength{\trimedge}{.5\stockwidth}
+\addtolength{\trimedge}{-.5\CoverWidth}
+
+%   This applies the changes to the page layout using the algorithm 'fixed'
+\checkandfixthelayout[fixed]
+
+%   Sets the pages style to empty
+\pagestyle{empty}
+
+%   Removes paragraph indent
+\setlength{\parindent}{0pt}
+
+
+%   The following code is taken from 'tex.stackexchange.com' in an answer by
+%   the user 'Frg'.  More precisely, an answer to the following question:
+%
+%   http://tex.stackexchange.com/questions/44416/is-memoirs-page-layout-incompatible-with-tikz
+%
+%   It is a very nice piece of code that adds new reference points in tikz.
+%   Usually, one can used '(current page)', '(current page.north)', etc. in
+%   Tikz to indicate different points on the page, such as the corners.  This
+%   is really an option at the moment as '(current page)' refers not to the
+%   cover but to the whole sheet including the trim marks.
+%
+%   What the code below does is to allow one to do the same with different
+%   kinds of reference points, namely, '(memoir stock)' and '(memoir page)'.
+\makeatletter
+\expandafter\def\csname pgf@sh@ns@memoir stock\endcsname{rectangle}
+\expandafter\def\csname pgf@sh@np@memoir stock\endcsname{%
+  \def\southwest{\pgfqpoint{0pt}{0pt}}%
+  \def\northeast{\pgfqpoint{\stockwidth}{\stockheight}}%
+}
+\expandafter\def\csname pgf@sh@nt@memoir stock\endcsname{{1}{0}{0}{1}{0pt}{0pt}}
+\expandafter\def\csname pgf@sh@pi@memoir stock\endcsname{pgfpageorigin}
+\newlength\memoirleftodd
+\newlength\memoirrightodd
+\newlength\memoirlefteven
+\newlength\memoirrighteven
+\newlength\memoirtop
+\newlength\memoirbottom
+\def\calculatetrims{
+    \setlength\memoirbottom{\stockheight-\paperheight-\trimtop}
+    \setlength\memoirleftodd{\stockwidth-\paperwidth-\trimedge}
+    \setlength\memoirlefteven{\trimedge}
+    \setlength\memoirtop{\memoirbottom+\paperheight}
+    \setlength\memoirrightodd{\memoirleftodd+\paperwidth}
+    \setlength\memoirrighteven{\memoirlefteven+\paperwidth}}
+\expandafter\def\csname pgf@sh@ns@memoir page\endcsname{rectangle}
+\expandafter\def\csname pgf@sh@np@memoir page\endcsname{%
+    \def\southwest{\checkoddpage\pgfqpoint{
+        \ifoddpage\memoirleftodd\else\memoirlefteven\fi}{\memoirbottom}}%
+    \def\northeast{\checkoddpage\pgfqpoint{
+        \ifoddpage\memoirrightodd\else\memoirrighteven\fi}{\memoirtop}}}
+\expandafter\def\csname pgf@sh@nt@memoir page\endcsname{{1}{0}{0}{1}{0pt}{0pt}}
+\expandafter\def\csname pgf@sh@pi@memoir page\endcsname{pgfpageorigin}
+\makeatother
+\calculatetrims
+
+
+%   The following code defines a command '\ISBNt' (for ISBN-text), which,
+%   given 13 arguments groups them as the digits in an ISBN-number is supposed
+%   to be grouped with hyphens in-between.  It also writes ISBN in front.
+%
+%   The reason that there are two commands is that a newcommand in TeX cannot
+%   handle more than 9 arguments.  This is a way around that problem.
+\def\ISBNt#1#2#3#4#5{ISBN #1#2#3-#4#5-\ISBNx}
+\def\ISBNx#1#2#3#4#5#6#7#8{#1#2#3#4-#5#6#7-#8}
+
+
+%   Defining a length which governs the height of the bars in the barcode.
+\newlength{\BarcodeHeight}
+\setlength{\BarcodeHeight}{21mm}
+
+%   The following code typesets the barcode.  It is a very slight variation of
+%   an answer to a question on 'tex.stackexchange.com' by the user 'morbusg'.
+%   More precisely, an answer to the following question:
+%
+%   http://tex.stackexchange.com/questions/6895/is-there-a-good-latex-package-for-generating-barcodes
+%
+%   What it does is that it takes 13 arguments (all digits), and then it
+%   typesets an EAN-13 barcode.  It is actually quite fun to read how this is
+%   done.  The Wikipedia article:
+%
+%   https://en.wikipedia.org/wiki/International_Article_Number_%28EAN%29
+%
+%   explain how the algorithm generating a EAN-13 barcode works.  After reading
+%   this, the code below is not to difficult to read.
+\def\barcode#1#2#3#4#5#6#7{\begingroup%
+    \dimen0=0.1em
+    \def\stack##1##2{\oalign{##1\cr\hidewidth##2\hidewidth}}%
+    \def\0##1{\kern##1\dimen0}%
+    \def\1##1{\vrule height \BarcodeHeight width##1\dimen0}%
+    \def\2##1{\vrule height \BarcodeHeight width##1\dimen0 depth 1.2ex}%
+    \def\L##1{\ifcase##1\bc3211##1\or\bc2221##1\or\bc2122##1\or\bc1411##1%
+        \or\bc1132##1\or\bc1231##1\or\bc1114##1\or\bc1312##1\or\bc1213##1%
+        \or\bc3112##1\fi}%
+    \def\R##1{\bgroup\let\next\1\let\1\0\let\0\next\L##1\egroup}%
+    \def\G##1{\bgroup\let\bc\bcg\L##1\egroup}% reverse
+    \def\bc##1##2##3##4##5{\stack{\0##1\1##2\0##3\1##4}##5}%
+    \def\bcg##1##2##3##4##5{\stack{\0##4\1##3\0##2\1##1}##5}%
+    \def\bcR##1##2##3##4##5##6{\R##1\R##2\R##3\R##4\R##5\R##6\21\01\21\09%
+        \endgroup}%
+    \stack{\09}#1\21\01\21\L#2%
+    \ifcase#1\L#3\L#4\L#5\L#6\L#7\or\L#3\G#4\L#5\G#6\G#7%
+        \or\L#3\G#4\G#5\L#6\G#7\or\L#3\G#4\G#5\G#6\L#7%
+        \or\G#3\L#4\L#5\G#6\G#7\or\G#3\G#4\L#5\L#6\G#7%
+        \or\G#3\G#4\G#5\L#6\L#7\or\G#3\L#4\G#5\L#6\G#7%
+        \or\G#3\L#4\G#5\G#6\L#7\or\G#3\G#4\L#5\G#6\L#7%
+    \fi\01\21\01\21\01\bcR}
+
+
+%   The following code tries to test for wrong and missing arguments and the
+%   throws an error if it finds any.  It is not perfect, and there are for
+%   sure several ways of filling out the arguments of the different commands
+%   in the beginning so that my code break.  But it is made in the belief that
+%   the commands will not get to elaborately wrong arguments.
+\makeatletter
+\AtBeginDocument{%
+    \ifdefined\thelogo%
+        \def\tmp@ku{ku}\def\tmp@sci{sci}%
+        \ifx\thelogo\tmp@ku%
+        \else%
+            \ifx\thelogo\tmp@sci%
+            \else%
+                \@latex@error{%
+                You gave an eligal argument to \protect\logo.  It must be
+                either  'ku'\MessageBreak or 'sci', except that it is case
+                insensitive}{This should be help enough}%
+                \logo{sci}%
+            \fi%
+        \fi%
+        \else%
+            \@latex@error{%
+            You have forgotten to sellect a logo.  This is done with
+            the\MessageBreak \protect\logo\space command.  You can chooce
+            between the red logo of\MessageBreak University of Copenhagen or
+            the green logo of the fakulty of\MessageBreak science.  The first
+            one is selected with\MessageBreak \MessageBreak \protect\logo{ku}
+            \MessageBreak \MessageBreak and the second one is selected
+            with\MessageBreak \MessageBreak \protect\logo{sci} \MessageBreak
+            \MessageBreak These are your only choices, and the argument must
+            be either\MessageBreak 'ku' or 'sci', except that it is case
+            insensitive}{This should be help enough}%
+            \logo{sci}%
+    \fi%
+    \ifdefined\thelang%
+        \def\tmp@en{en}\def\tmp@dk{dk}%
+        \ifx\thelang\tmp@dk%
+        \else%
+            \ifx\thelang\tmp@en%
+            \else%
+                \@latex@error{%
+                You gave an eligal argument to \protect\lang.  It must be
+                either  'dk'\MessageBreak or 'en', except that it is case
+                insensitive}{This should be help enough}%
+                \lang{en}%
+            \fi%
+        \fi%
+        \else%
+            \@latex@error{%
+            You have forgotten to sellect a language.  This is done with
+            the\MessageBreak \protect\lang\space command.  This controls name
+            and address of the\MessageBreak department.  You can chooce
+            between danish and english.  Danish\MessageBreak is selected
+            with\MessageBreak \MessageBreak \protect\lang{dk} \MessageBreak
+            \MessageBreak and english is selected with\MessageBreak
+            \MessageBreak \protect\lang{en} \MessageBreak \MessageBreak These
+            are your only choices, and the argument must be
+            either\MessageBreak 'dk' or 'en', except that it is case
+            insensitive}{This should be help enough}%
+            \lang{en}%
+    \fi%
+    \ifdefined\pagenum\else%
+        \@latex@error{%
+        You have forgotten to supply a number of pages.  This is\MessageBreak
+        necessary so that LaTeX can calculate the width the the
+        spine.\MessageBreak  Do this with the \protect\pages\space command,
+        for example by invoking\MessageBreak \MessageBreak \protect\pages{666}
+        \MessageBreak \MessageBreak It is important that the argument of
+        \protect\pages\space is a non-zero\MessageBreak integer}{This
+        should be help enough}%
+    \fi%
+%   This is actually the EAN-13 barcode of a can of Jaka Bov, which is the one
+%   already given to '\ISBN' in this template.
+    \def\jaka{5701083129118}%
+%   Sets ISBNd to undefined if it is empty
+    \ifdefined\ISBNd%
+        \ifx\ISBNd\empty%
+            \let\ISBNd\undefined%
+        \fi%
+    \fi%
+    \ifdefined\ISBNd\else%
+        \@latex@error{%
+        You have forgotten to supply an ISBN number.  Do this\MessageBreak
+        with the \protect\ISBN\space command, for example by
+        invoking\MessageBreak \MessageBreak \protect\ISBN{5701083129118}
+        \MessageBreak \MessageBreak It is important that the argument of
+        \protect\ISBN\space is 13 digits and\MessageBreak nothing else}{This
+        should be help enough}%
+%   Specifies the ISBN-number to the one in '\jaka'.
+        \expandafter\ISBN\expandafter{\jaka}%
+    \fi%
+    \ifdefined\theauthor\else%
+        \@latex@error{%
+        You have forgotten to supply an author in the preamble.  Do
+        this\MessageBreak with the \protect\author\space command, for example
+        by invoking\MessageBreak \MessageBreak
+        \protect\author{Archimedes}\MessageBreak \MessageBreak You can also
+        add an optional argument to get another (or a\MessageBreak shorter)
+        name on the spine.  For example by invoking \MessageBreak
+        \MessageBreak \protect\author[Archimedes]{Archimedes (the guy with the
+        circles)}}{This should be help enough}%
+        \author[Archimedes]{Archimedes (the guy with the circles)}%
+    \fi%
+    \ifdefined\thetitle\else%
+        \@latex@error{%
+        You have forgotten to supply a title in the preamble.  Do
+        this\MessageBreak with the \protect\title\space command, for example
+        by invoking\MessageBreak \MessageBreak \protect\title{To prove, or not
+        to prove}\MessageBreak \MessageBreak You can also add an optional
+        argument to get another (or a\MessageBreak shorter) title on the
+        spine.  For example by invoking \MessageBreak \MessageBreak
+        \protect\title[Theory of proofs]{To prove, or not to prove}}{This
+        should be help enough}%
+        \title[Theory of proofs]{To prove, or not to prove}%
+    \fi%
+    \ifdefined\thebooktype\else%
+        \@latex@error{%
+        You have forgotten to define the type of the book.  Do
+        this\MessageBreak with the \protect\booktype\space command, for
+        example by invoking\MessageBreak \MessageBreak \protect\booktype{My
+        faboulus lecture notes}}{This should be help enough}%
+        \booktype[Lecture notes]{My faboulus lecture notes}%
+        \fi%
+}
+\makeatother
+
+
+
+\begin{document}
+
+
+%   The following saves the number of pages in the 'aux' file.  More
+%   precisely, includes '\gdef\oldpages{<the number of pages>}'.  This means
+%   that next time the file is compiled, '\oldpages' is globally defined to
+%   the number of pages last time the file was compiled.
+%
+%   This is done because the file needs to be compiled twice after the page
+%   number has been altered, because Tikz needs to update properly.  Later we
+%   will use '\oldpages' to test if it has been altered.
+\ifdefined\pagenum
+\makeatletter
+\immediate\write\@auxout{\noexpand\gdef\noexpand\oldpages{\pagenum}}
+\makeatother
+\fi
+
+
+\begin{tikzpicture}[overlay,remember picture]
+
+%   Here several reference points are defined.
+
+\node (back top left)       at (memoir page.north west) {};
+\node (back bottom left)    at (memoir page.south west) {};
+\node (back top right)      at ($(memoir page.north west) + (\BookWidth,0)$) {};
+\node (back bottom right)   at ($(memoir page.south west) + (\BookWidth,0)$) {};
+
+\node (front top left)      at ($(memoir page.north east) + (-\BookWidth,0)$) {};
+\node (front bottom left)   at ($(memoir page.south east) + (-\BookWidth,0)$) {};
+\node (front top right)     at (memoir page.north east) {};
+\node (front bottom right)  at (memoir page.south east) {};
+
+\node (spine top left)      at (back top right) {};
+\node (spine bottom left)   at (back bottom right) {};
+\node (spine top right)     at (front top left) {};
+\node (spine bottom right)  at (front bottom left) {};
+
+\node (spine top middle)    at ($(spine top left)!0.5!(spine top right)$) {};
+\node (spine bottom middle) at ($(spine bottom left)!0.5!(spine bottom right)$) {};
+
+%   Here the official colours of the Science logo and the KU logo is defined.
+%   These are specified at the KU design guide (http://designguide.ku.dk/).
+\definecolor{sci}{cmyk}{0.60,0.00,0.80,0.40}
+\definecolor{ku}{cmyk}{0.00,1.00,0.65,0.34}
+
+%   Here the correct colour is chosen, as the user specified in the beginning of
+%   the document if all went well.  So from now on 'logoColor' is the colour
+%   chosen.
+\colorlet{logoColor}{\thelogo}
+
+%	Here the colour 'spinecolor' is defined to be the CMYK colour with the
+%	parameters given to '\spinecolor'.  If none has been specified, one is
+%	chosen.
+\makeatletter%
+\ifdefined\@spinecolor%
+	\definecolor{spinecolor}{cmyk}{\@spinecolor}%
+\else%
+	\spinecolor{ 0.00, 0.59, 0.29, 0.00 }%
+	\definecolor{spinecolor}{cmyk}{\@spinecolor}%
+\fi%
+\makeatother%
+
+%   Here the centers of the different circles are defined.
+\node (A) at ($ (front bottom left) + (19.429mm,-27.037mm) $) {};
+\node (B) at ($ (front bottom left) + (74.226mm,141.81mm) $) {};
+\node (C) at ($ (front bottom left) + (134.803mm,45.653mm) $) {};
+\node (D) at ($ (front bottom left) + (46.823mm,57.389mm) $) {};
+
+%   Here the colour-fill at the bottom of the circle is made.
+\begin{scope}
+  \clip ($ (spine bottom left) + (-8mm,-3mm) $) rectangle ($ (spine bottom
+  right) + (8mm,100mm) $);
+  \fill[spinecolor] (A) circle (71.5mm);
+    \end{scope}
+
+%   This draws the circles
+\tikzstyle{logoLine}=[color=logoColor,line width=0.6pt]
+\draw[logoLine] (A) circle (71.5mm);
+\draw[logoLine] (B) circle (17.7mm);
+\draw[logoLine] (C) circle (34mm);
+\draw[logoLine] (D) circle (88.759mm);
+
+%   This draws the lines in the triangle
+\path[draw,logoLine] (A.center) -- (B.center) -- (C.center) -- cycle;
+
+
+%   The current logo file is 44mm heigh and 32mm wide and the center of the
+%   smallest ball, which has radius 2.95mm, is 3.15mm from the bottom of the
+%   picture Note that 32/44 = 0.7272727 and 3.15/44 = 0.07159091, which
+%   explains the numbers below.
+\newlength{\logoheight}
+\newlength{\logowidth}
+\newlength{\logohpad}
+\newlength{\logovpad}
+\setlength{\logoheight}{44mm}
+\setlength{\logowidth}{0.7272727\logoheight}
+\setlength{\logohpad}{17.5mm}
+\setlength{\logovpad}{26.5mm}
+
+%   Placement of the horizontal line across both front and back.
+\draw[logoLine]
+        ($ (back top left) + (-3mm,-\logoheight) + (0pt,-\logovpad) + (0pt,0.07159091\logoheight) $)
+        --
+        ($ (front top right) + (3mm,-\logoheight) + (0pt,-\logovpad) + (0pt,0.07159091\logoheight) $);
+
+%   Placement of the logo on the front.
+\node[inner sep=0pt,anchor=south west] at
+        ($ (front top right) + (-\logowidth,-\logoheight) + (-\logohpad,-\logovpad) $)
+        {\includegraphics[height=44mm]{\thelogo-logo.pdf}};
+
+%   Placement of the department name on front cover.
+\node[inner sep=0pt,anchor=north west] at
+        ($ (front top left) + (10mm,-10mm) $)
+        {\includegraphics{imf-\thelang.pdf}};
+
+%   Placement of the address of the department on the back.
+\node[inner sep=0pt,anchor=north west] at
+        ($ (back top left) + (-3mm,-\logoheight) + (0pt,-\logovpad) + (0pt,0.07159091\logoheight) + (12mm,-8mm) $)
+        {\includegraphics{imf-\thelang-addr.pdf}};
+
+\sethlcolor{white}
+
+%   Here is defined different font setups, to make it easier to change the
+%   fonts in the document.  The names of the commands should explain where
+%   they are used.
+\newcommand{\frontauthorfont}{%
+    \fontsize{14}{14}\selectfont%
+    }
+\newcommand{\fronttitlefont}{%
+    \bfseries%
+    \fontsize{24}{29}\selectfont%
+    \raggedright%
+    }
+\newcommand{\frontsubtitlefont}{%
+    \fontsize{14}{14}\selectfont%
+    }
+\newcommand{\fronttypefont}{%
+    \fontsize{14}{14}\selectfont%
+    }
+\newcommand{\spinefont}{%
+    \fontsize{11}{11}\selectfont%
+    }
+
+%   Place author name on spine.
+\node[rotate=270,anchor=west,fill=white,inner sep=3pt]
+    at ($ (spine top middle) + (0,-10mm) + (0,3pt) $) {%
+        \spinefont\thespineauthor%
+    };
+
+%   Place book title on spine.
+\node[rotate=270,anchor=west,fill=white,inner sep=3pt]
+    at ($ (spine top middle) + (0,-72mm) $) {%
+        \spinefont\thespinetitle%
+    };
+
+%   Place book type on spine.
+\node[rotate=270,anchor=east,inner sep=0pt]
+    at ($ (spine bottom middle) + (0,7mm) $) {%
+        \spinefont\thespinebooktype%
+    };
+
+
+%   This code is used to create a white boarder around the text.  It is done
+%   by placing the same text in white a lot of times shifted a bit.  This is
+%   not perfect, but it seems to be the only way.
+%\newcommand{\mypaddingnode}[4]{
+%\foreach \angle in {0,5,...,359}{%
+%    \node[#1,text=white] at
+%        ([shift={(\angle:#3)}] #2) {#4};
+%    }
+%    \node[#1] at (#2) {#4};
+%\foreach \angle in {0,5,...,359}{%
+%    \node[#1,text=white] at
+%        ([shift={(\angle:#3)}] #2/2) {#4};
+%    }
+%    \node[#1] at (#2) {#4};
+%}
+\newcommand{\mypaddingnode}[4]{
+    \node[#1] at (#2) {#4};
+}
+%\newcommand{\mypaddingnode}[4]{
+%    \node[#1,fill=white] at (#2) {#4};
+%}
+
+
+%   Place author name on front cover.
+\mypaddingnode%
+    {anchor=south west}%
+    {$ (front bottom left) + (10mm,106mm) $}%
+    {.5mm}%
+    {\frontauthorfont\theauthor}
+
+
+%   Place the book title and possibly the subtitle on the front cover.
+\mypaddingnode%
+    {anchor=north west}%
+    {$ (front bottom left) + (10mm,85mm) $}%
+    {1mm}%
+    {%
+        \begin{minipage}[t]{152mm}
+            {\fronttitlefont\thetitle\par}
+            \ifdefined\thesubtitle
+                \ifx\thesubtitle\empty
+                \else
+                    \vskip 24pt
+                    {\frontsubtitlefont\thesubtitle\par}
+                \fi
+            \fi
+            \end{minipage}
+    }
+
+
+%   Place book type on front cover.
+\mypaddingnode%
+    {anchor=south west}%
+    {$ (front bottom left) + (10mm,21mm) $}%
+    {.5mm}%
+    {{\fronttypefont\thebooktype}}
+
+
+%   Place barcode and ISBN number on back cover
+\node[anchor=south west] at ($ (back bottom left) + (12mm,15mm) $) {%
+    \vbox{%
+        \ttfamily%
+        \hbox{%
+            \fontsize{11}{13}\selectfont%
+%           ISBN 978-87-7078-987-5%
+            \expandafter\ISBNt\ISBNd%
+        }%
+        \vskip 1mm%
+        \hbox{%
+            \expandafter\barcode\ISBNd%
+        }%
+    }%
+};
+
+%  Place Polyteknisk logo next to the barcode
+\node[anchor=south west] at ($ (back bottom left) + (65 mm, 17 mm)$) 
+        {\includegraphics[height=21mm]{Polyteknisk.pdf}};
+
+
+
+%   Now, the rest of this file is used to create reminders to people, by
+%   writing on the cover things they have forgotten.
+
+
+%   This checks if the page number is undefined.  If the checks earlier in
+%   this file have succeeded in detecting that '\pages' has not gotten a proper
+%   argument, then '\pagenum' should have been set to '\undefined', and the
+%   following code should then write
+%
+%       YOU HAVE FORGOTTEN TO TYPE IN THE NUMBER OF PAGES IN THE BOOK
+%
+%   across the cover with white letters on on a black background:
+\ifdefined\pagenum\else
+    \node[yshift=0mm,fill=black,inner sep=10mm] at (memoir page.center)
+    {\color{white}\HUGE\sffamily\bfseries YOU HAVE FORGOTTEN TO TYPE IN THE NUMBER OF
+    PAGES IN THE BOOK};
+    \fi
+
+
+%   This checks if the ISBN number is that specified in '\jaka'.  If the
+%   checks earlier in this file have succeeded in detecting that '\ISBN' has
+%   not gotten a proper argument, then '\jaka' and '\ISBNn' should now be
+%   identical, and the following code should then write
+%
+%       YOU HAVE FORGOTTEN TO TYPE IN YOUR OWN ISBN NUMBER
+%
+%   across the cover with white letters on on a black background:
+\ifx\ISBNd\jaka
+    \node[yshift=-30mm,fill=black,inner sep=10mm] at (memoir page.center)
+    {\color{white}\HUGE\sffamily\bfseries YOU HAVE FORGOTTEN TO TYPE IN YOUR
+    OWN ISBN NUMBER};
+    \else
+    \fi
+
+
+%   In case it seems that '\pages' was given a correct argument, the following
+%   code checks if the number of pages specifies by '\pages' has changed since
+%   last time the file was compiled.  If this is the case, then '\oldpages'
+%   should be different from '\pagenum', and it should then write
+%
+%       YOU MUST COMPILE ONE MORE TIME
+%
+%   across the cover with white letters on on a black background:
+\ifdefined\pagenum
+    \ifx\oldpages\pagenum
+    \else
+        \node[yshift=30mm,fill=black,inner sep=10mm] at (memoir page.center)
+        {\color{white}\HUGE\sffamily\bfseries YOU MUST COMPILE ONE MORE TIME};
+    \fi
+\fi
+
+\end{tikzpicture}
+\end{document}
