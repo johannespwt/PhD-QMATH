@@ -42,7 +42,7 @@
 
 %\usepackage[sectionbib]{natbib}
 \usepackage[square,sort,comma,numbers]{natbib}
-%\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+%\usepackage[colorlinks=false,allcolors=black]{hyperref}
 %\usepackage[sectionbib]{bibunits}
 %\defaultbibliographystyle{alpha}
 %\defaultbibliography{bibliography}
@@ -156,8 +156,8 @@
 \end{tabular}\\
 \vspace{2.5cm}
 \\
-\hspace*{-1cm} \textsuperscript{\tiny\copyright} \normalsize 2023 by the author \\
-\hspace*{-1cm}ISBN  
+\hspace*{-1cm} \footnotesize\copyright~ \normalsize 2023 by the author \\
+\hspace*{-1cm}ISBN 978-87-7125-070-1
 
 
 \newpage
@@ -170,8 +170,8 @@
 \newpage
 \renewcommand*\abstractname{Resumé}
 \begin{abstract}
-	I denne afhandling studerer vi grundtilstandsenergien af endimensionelle fortyndede kvantegasser med frastødende parpotentialer. Vi opsummerer dele af den generelle teori omkring mangelegemekvantemekanik. Derefter beviser vi under hvilket betingelser en unik selvadjungeret mangelegeme Hamilton-operator kan associeres til et givet parpotentiale. De punktinteragerende løsbare modeller i én dimension, dvs. Lieb-Liniger og Yang-Gaudin modellerne, opsummeres og visse resultater relateret til deres grundtilstandsenergi i den fortyndede grænse bevises.\\
-	Vi forsætter ved at bevise en udvikling af grundtilstandsenergien for Bose-gassen. Dette gøres ved at vise først en øvre begrænsning og derefter en matchende nedre begrænsning. Det vises at grundtilstandsenergien, til næstledende orden, kun afhænger af potentialet igennem spredningslængden. Dermed udviser systemet universalitet, som ligner den observeret i tilsvarende højeredimensionelle systemer. Vores resultat dækker det velkendte resultat vedrørende grundtilstandenergien af Lieb-Liniger modellen i Tonks-Girardeau grænsen, altså den fortyndede grænse. Dog holder vores resultat for mere generelle parpotentialer, inklusiv potentialer der afviger markant fra $ \delta $-potentialer ekspemelvis ved at have positiv spredningslængde. Som korollarer finder vi lignende resultater for den spin-polariserede Fermi-gas og gasser med mellemliggende partikelstatistikker, altså anyoner.\\
+	I denne afhandling studerer vi grundtilstandsenergien af endimensionelle kvantegasser med frastødende parpotentialer ved lav tæthed. Vi opsummerer dele af den generelle teori omkring mangelegemekvantemekanik. Derefter beviser vi under hvilket betingelser en unik selvadjungeret mangelegeme Hamilton-operator kan associeres til et givet parpotentiale. De punktinteragerende løsbare modeller i én dimension, dvs. Lieb-Liniger og Yang-Gaudin modellerne, opsummeres og visse resultater relateret til deres grundtilstandsenergi i lavtæthedsgrænsen bevises.\\
+	Vi forsætter ved at bevise en udvikling af grundtilstandsenergien for Bose-gassen. Dette gøres ved at vise først en øvre begrænsning og derefter en matchende nedre begrænsning. Det vises at grundtilstandsenergien, til næstledende orden, kun afhænger af potentialet igennem spredningslængden. Dermed udviser systemet universalitet, som ligner den observeret i tilsvarende højeredimensionelle systemer. Vores resultat dækker det velkendte resultat vedrørende grundtilstandenergien af Lieb-Liniger modellen i Tonks-Girardeau grænsen, altså den lavtæthedsgrænsen. Dog holder vores resultat for mere generelle parpotentialer, inklusiv potentialer der afviger markant fra $ \delta $-potentialer ekspemelvis ved at have positiv spredningslængde. Som korollarer finder vi lignende resultater for den spin-polariserede Fermi-gas og gasser med mellemliggende partikelstatistikker, altså anyoner.\\
 	Endeligt studederer vi spin--$ 1/2 $ Fermi-gassen. Her præsenterer vi, som en formodning, en udvikling af grundtilstandsenergien baseret på kendte løsbare modeller. Den øvre begrænsning fra det bosoniske tilfælde generaliseres ved at indse, at partiklernes spin, i en givet variationsbølgefunktion, kan beskrives ved en effektiv antiferromagnetisk Heisenberg-kæde. Dermed beviser vi en øvre begrænsning, der tilsvarer den fremsatte formodning. Som korollarer finder vi lignende resultater for spin--$ 1/2 $ bosoner og for fermioner og partikler med rumlig symmetri med spin-afhængige potentialer. Ydermere generaliserer vi dele af beviset for den nedre begrænsning fra det bosoniske tilfælde, og vi beviser i dette tilfælde en nedre begrænsning for spin--$ 1/2 $ fermioner, der relaterer grundtilstandsenergien til dén fra Lieb-Liniger-Heisenberg modellen. Vi bemærker, at for spin-afhængige potentialer i visse regimer, som vi identificerer med en ferromagnetisk fase, reducerer den nedre begrænsing til dén af Lieb-Liniger modellen. Dermed bevises en nedre begrænsning, der matcher den førviste øvre begrænsning i netop den ferromagnetiske fase for spin-afhængige potentialer.
 \end{abstract}
 
@@ -181,7 +181,7 @@
 	As my time as a PhD student is coming to an end, there are many people to whom I am grateful. First and foremost, I would like to thank my advisor, Jan Philip Solovej, for introducing me to the field of dilute quantum gases, his exceptional advice, a good collaboration, and many interesting and very enjoyable discussions. It has been a pleasure being his student over the last three and a half years.\\
 	I would also like to express my gratitude to Robin Reuvers for a good collaboration and many interesting and enjoyable discussions.\\
 	Next, I would like to thank all of the members of QMATH over the last three and a half years for the good company both in and outside of the office. Special thanks go to Mads, Marie, Jacob, and August for being great coffee break buddies and for discussing a wide variety of subjects that includes, but does not restrict to, mathematics and physics.\\
-	Also many thanks to Jacob Fronk and Lukas Junge for giving feedback on parts of this thesis.\\
+	Also many thanks to Jacob Fronk and Lukas Junge for giving feedback on parts of this thesis and to the committee members -- S\o ren Fournais, Simona Rota Nodari, and Marcello Porta for evaluating it and providing useful comments.\\
 	I am grateful to Robert Seiringer for valuable discussions during my visit to IST Austria and to IST Austria for the hospitality.\\
 	I also thank my family, and my dad in particular, for all the encouragement, and my son for making me smile and laugh so very often.\\
 	Finally, no one deserves my gratitude more than my fiancée, Martina, who has been ever supportive, through thick and thin, for the last almost ten years.
