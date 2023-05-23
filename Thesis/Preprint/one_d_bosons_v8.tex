@@ -85,6 +85,7 @@
 2. Universit\`{a} degli Studi Roma Tre, Dipartimento di Matematica e Fisica, L.go S. L. Murialdo 1, 00146 Roma, Italy\\
 	\today}
 \title{Ground state energy of dilute Bose gases in 1D}
+
 \begin{document}
 	\maketitle
 	\begin{abstract}
@@ -1164,23 +1165,24 @@
 	% 		 We are now ready to prove a bound for arbitrary particle numbers $N$by dividing the box into many smaller boxes and showing that, to some extend, particles do not accumulate in these smaller boxes. Instead we may view the particles as being distributed evenly among the boxes, allowing us to use the previously established bound for few particles.\\
 	
 	The lower bound in Corollary \ref{CorollaryLowerBoundSpecN} only applies to particle numbers of order $ (\rho R)^{-9/5} $. In this subsection, we generalize to any number of particles by performing a Legendre transformation in the particle number and going to the grand canonical ensemble. First, we justify that only particle numbers of order less than or equal to $ (\rho R)^{-9/5} $ are relevant for a certain choice of the chemical potential, $ \mu $.\\
-	Let $C$ denote the constant in Corollary \ref{CorollaryLowerBoundSpecN}, we will then in the following fix $\Xi$ large enough for the following bound to hold $$
-	\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1/2-C(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell.
+	Let $C$ denote the constant in Corollary \ref{CorollaryLowerBoundSpecN}, we will then in the following, assuming $\Xi \rho a\geq -1/4$ and $C(\rho R)^{6/5}<  1/4$, fix $\Xi$ large enough for the following bound to hold $$
+	\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2 \Xi\rho a-C(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell.
 	$$
+	Notice $\Xi=4$ suffices.
 	\begin{lemma}\label{LemmaLocalizationFbound}
-		Let $ \Xi$ be fixed as above. Also let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $, with $\frac{\tau}{2\Xi} (\rho R)^{-9/5} \leq \rho\ell\eqqcolon n^{\ast}\leq \frac{\tau}{\Xi} (\rho R)^{-9/5} $ and $ \tau=\frac{3}{16\pi^2}\frac{1}{8} $. Furthermore, assume that $ \rho R\leq  1 $ and $\Xi \rho a \geq-1/4$ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $. Then,  \begin{equation}
+		Assume that $ C(\rho R)^{6/5}<  1/4 $ and let $ \Xi$ be fixed as above. Also let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $, with $\frac{\tau}{2\Xi} (\rho R)^{-9/5} \leq \rho\ell\eqqcolon n^{\ast}\leq \frac{\tau}{\Xi} (\rho R)^{-9/5} $ and $ \tau=\frac{3}{16\pi^2}\frac{1}{8} $. Furthermore, assume that $\Xi \rho a \geq-1/4$ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $. Then,  \begin{equation}
 			E^{N}(n,\ell)-\mu n \geq E^{N}(n_0,\ell)-\mu n_0.
 		\end{equation}
 	\end{lemma}
 	\begin{proof}
 		By Corollary \ref{CorollaryLowerBoundSpecN}, we have \begin{equation}
-			E^{N}(\Xi\rho\ell,\ell)\geq\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-\text{const. }(\rho R)^{6/5}\right).
+			E^{N}(\Xi\rho\ell,\ell)\geq\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-C(\rho R)^{6/5}\right).
 		\end{equation}
 		Superadditivity caused by the positive potential implies \begin{equation}
 			E^N(n,\ell)-\mu n\geq m\left(E^N(\Xi\rho\ell,\ell)-\mu\Xi\rho\ell \right)+E^N(n_0,\ell)-\mu n_0.
 		\end{equation}
 		The result, therefore, follows from the fact that \begin{equation}
-			\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-\text{const. }(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell.
+			\frac{\pi^2}{3}\Xi^3\ell\rho^3\left(1+2\Xi\rho a-C(\rho R)^{6/5}\right)\geq \pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) \Xi\rho\ell.
 		\end{equation}
 	\end{proof}
 	We are ready to prove the lower bound for general particle numbers.
@@ -1203,7 +1205,7 @@
 				%			\end{aligned}
 			%			\end{equation}
 		%			from which \eqref{EqLocalizationF} follows. 
-		Now, let $\Xi$ be fixed as above and choose $ M $ such that $ \frac{\tau}{2\Xi}\left(\rho R\right)^{-9/5}\leq n^*:=\rho\ell\leq \frac{\tau}{\Xi}\left(\rho R\right)^{-9/5} $ and $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $ (notice that $ \mu=\frac{\diff}{\diff \rho}(\frac{\pi^2}{3}\rho^3(1+2\rho a))$). Furthermore, assume that $\Xi\rho a\geq -1/4$ (the case of $ \Xi\rho a<-\frac{1}{4} $ is trivial, by choosing a sufficiently large constant in the error term). By Lemma \ref{LemmaLocalizationFbound},  \begin{equation}
+		Now, let $\Xi$ be fixed as above and choose $ M $ such that $ \frac{\tau}{2\Xi}\left(\rho R\right)^{-9/5}\leq n^*:=\rho\ell\leq \frac{\tau}{\Xi}\left(\rho R\right)^{-9/5} $ and $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $ (notice that $ \mu=\frac{\diff}{\diff \rho}(\frac{\pi^2}{3}\rho^3(1+2\rho a))$). Furthermore, assume that $ C(\rho R)^{6/5}<  1/4 $ and $\Xi\rho a\geq -1/4$ (the cases of $ C(\rho R)^{6/5}\geq  1/4 $ or $ \Xi\rho a<-\frac{1}{4} $ are trivial, by choosing a sufficiently large constant in the error term). By Lemma \ref{LemmaLocalizationFbound},  \begin{equation}
 			F^N(\mu,\ell):=\inf_{n}\left(E^N(n,\ell)-\mu n\right)=\inf_{n<\Xi n^*}\left(E^N(n,\ell)-\mu n\right).
 		\end{equation}
 		It is known from Proposition \ref{PropositionLowerBoundSpecN} that for $ n<\Xi n^* $,  \begin{equation}
