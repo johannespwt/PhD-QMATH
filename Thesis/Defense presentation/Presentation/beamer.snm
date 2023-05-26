@@ -1,17 +1,25 @@
-\beamer@slide {TheoremMain}{8}
-\beamer@slide {result}{8}
-\beamer@slide {Lemma rho2 bound}{13}
-\beamer@slide {LemmaDensityBounds}{13}
-\beamer@slide {PropositionUpperBound}{15}
-\beamer@slide {equpper}{15}
-\beamer@slide {LemmaLL-LowerBound}{17}
-\beamer@slide {LemmaDyson}{18}
-\beamer@slide {LemmaNormLoss}{20}
-\beamer@slide {LemmaImprovedMassBound}{20}
-\beamer@slide {EqImprovedMassBound}{20}
-\beamer@slide {PropositionLowerBoundSpecN}{21}
-\beamer@slide {CorollaryLowerBoundSpecN}{21}
-\beamer@slide {LemmaLocalizationFbound}{22}
-\beamer@slide {PropositionLowerBound}{22}
-\beamer@slide {eqlower}{22}
-\beamer@slide {TheoremFermion}{23}
+\beamer@slide {TheoremMain}{9}
+\beamer@slide {result}{9}
+\beamer@slide {Lemma rho2 bound}{14}
+\beamer@slide {LemmaDensityBounds}{14}
+\beamer@slide {PropositionUpperBound}{16}
+\beamer@slide {equpper}{16}
+\beamer@slide {LemmaLL-LowerBound}{18}
+\beamer@slide {LemmaDyson}{19}
+\beamer@slide {LemmaNormLoss}{21}
+\beamer@slide {LemmaImprovedMassBound}{21}
+\beamer@slide {EqImprovedMassBound}{21}
+\beamer@slide {PropositionLowerBoundSpecN}{22}
+\beamer@slide {CorollaryLowerBoundSpecN}{22}
+\beamer@slide {LemmaLocalizationFbound}{23}
+\beamer@slide {PropositionLowerBound}{23}
+\beamer@slide {eqlower}{23}
+\beamer@slide {TheoremFermion}{24}
+\beamer@slide {TheoremUpperBoundSpin1/2Fermi}{27}
+\beamer@slide {EqUpperBoundSpin1/2Fermi}{27}
+\beamer@slide {EqTrial StateSpin1/2Fermi}{28}
+\beamer@slide {LemmaHeisenbergChainThermodynamicGSEnergy}{30}
+\beamer@slide {LemmaHeisenbergChainFiniteNEstimate}{31}
+\beamer@slide {LemmaDysonSpin1/2Fermi}{32}
+\beamer@slide {EqHamiltonianLLH}{32}
+\beamer@slide {PropositionLowerBoundSpecNSpin1/2Fermi}{33}

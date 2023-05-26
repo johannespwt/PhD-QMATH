@@ -21,6 +21,8 @@
 \usepackage{xcolor}
 \usepackage{mathtools}
 \usepackage{cancel}
+\usepackage{pdfpages}
+
 
 
 \newcommand{\euler}[1]{\text{e}^{#1}}
@@ -104,33 +106,65 @@
 \tableofcontents%[pausesection]
 }
 
-\section{Background}
+\section{Motivation}
 
 \begin{frame}
-	\frametitle{Motivation (bosons)}
+	\frametitle{Motivation (Bosons)}
 	\begin{itemize}
-		\item 1924: S. N. Bose and A. Einstein predict Bose-Einstein condensation (BEC).
-		\item 1947: N. N. Bogoliubov develops theory of superfluidity based on BEC.
-		\item  1957: Lee, Huang, and Yang derive formula for ground state energies of certain dilute Bose gases in 3D.
-		\item 1963: E. Lieb and W. Liniger solve one-dimensional boson problem.
-		\item 1995: E. Cornell and C. Wieman experimentally construct a BEC.
-	\end{itemize}
-
-\end{frame}
-
-\begin{frame}
-	\frametitle{Motivation (fermions)}
-	\begin{itemize}
-		\item  1928: W. Heisenberg develops model of magnetism.
-		\item 1962: E. Lieb and D. Mattis shows that one-dimensional Fermi gases are antiferromagnetic. 
-		\item 1967: C. N Yang solves the point interacting one-dimensional fermion problem
+		\item 2D and 3D dilute Bose gases are well-studied in the mathematical physics literature.
+		\item 2D and 3D results are related to Bose-Einstein condensation (BEC).
+		\item No BEC is expected in 1D.
+		\item In 1D the hard core and Lieb-Liniger models are solvable.
+		\item Our result is consistent with the absence of BEC in 1D.
+		\item On the contrary is suggest that the 1D dilute bose gas shares features with the Fermi gas.
+		
 	\end{itemize}
 	
 \end{frame}
 
 \begin{frame}
-\frametitle{Background}
-\begin{block}{The scattering length}
+	\frametitle{Motivation (Fermions)}
+	\begin{itemize}
+		\item 2D and 3D dilute Fermi gases are well-studied in the mathematical physics literature.
+		\item In 1D the hard core and Yang-Gaudin models are solvable.
+		\item  In 1962 E. H. Lieb and D. C. Mattis showed that one-dimensional Fermi gases are antiferromagnetic (contradicting standard perturbative tight-binding methods).
+		\item Hence the standard justification of the Heisenberg model of magnetism is too simple.
+		\item Our result will break ground in rigorously justifying the Heisenberg antiferromagnet as an effective model in 1D.
+	\end{itemize}
+	
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{Motivation (bosons)}
+%	\begin{itemize}
+%		\item 1924: S. N. Bose and A. Einstein predict BEC.
+%		\item 1947: N. N. Bogoliubov develops theory of superfluidity based on BEC.
+%		\item  1957: Lee, Huang, and Yang derive formula for ground state energies of certain dilute Bose gases in 3D.
+%		\item 1963: E. Lieb and W. Liniger solve one-dimensional boson problem.
+%		\item 1995: E. Cornell and C. Wieman experimentally construct a BEC.
+%	\end{itemize}
+%
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{Motivation (fermions)}
+%	\begin{itemize}
+%		\item  1928: W. Heisenberg develops model of magnetism.
+%		\item 1962: E. Lieb and D. Mattis shows that one-dimensional Fermi gases are antiferromagnetic. 
+%		\item 1967: C. N Yang solves the point interacting one-dimensional fermion problem
+%	\end{itemize}
+%	
+%\end{frame}
+
+\section{Many-Body Quantum Mechanics}
+\begin{frame}{Many-Body Quantum Mechanics}
+	content...
+\end{frame}
+
+\section{The Scattering Length}
+
+\begin{frame}
+\frametitle{The Scattering Length}
 	\small\begin{theorem}
 		For $ B_R=\{0\leq\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 	 \begin{equation}
@@ -146,7 +180,6 @@
 		 \end{equation}
 		 with some constant $ a $ called the (s-wave) \textbf{scattering length}.
 	\end{theorem}
-\end{block}	
 \end{frame}
 
 \begin{frame}
@@ -160,35 +193,41 @@
 	$$
 \end{frame}
 
-\begin{frame}
-\frametitle{2d and 3d}
-\begin{block}{}
-	For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
-	\begin{theorem}[$ d=3 $ result, Lee-Huang-Yang]
-		\begin{equation}
-		e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})\right).
-		\end{equation}
-	\end{theorem}
 
-	\begin{theorem}[$ d=2 $ result, Fournais et al. 2022]
-		\begin{equation}
-		e(\rho)=4 \pi \rho^2 Y\left(1-Y|\log Y|+\left(2 \Gamma+\frac{1}{2}+\ln (\pi)\right) Y\right)+o\left(\rho^2 Y^2\right),
-		\end{equation}
-		$Y=\abs{\ln(\rho a^2)}^{-1}$.
-	\end{theorem}
-\end{block}
+\begin{frame}
+	\frametitle{2D and 3D}
+	\small For $ \Lambda_L=[0,L]^d $, let $ e(\rho)\coloneqq\lim\limits_{\substack{L\to\infty\\ N/L^{d}\to\rho}}E(N,L)/L^{d} $.
+	\vspace*{-0.3cm}
+	\begin{block}{}
+		\small
+		\vspace*{-0.2cm}
+		\begin{theorem}[\small $ d=3 $ result, Lee-Huang-Yang 1957\footnotemark]
+			\begin{equation}
+				e(\rho)=4\pi\rho^2 a\left(1+\frac{128}{15\sqrt{\pi}}\sqrt{\rho a^3}+o(\sqrt{\rho a^3})\right).
+			\end{equation}
+		\end{theorem}
+		\vspace*{-0.3cm}
+		\begin{theorem}[\small $ d=2 $ result\footnotemark]
+			\begin{equation}
+				e(\rho)=4 \pi \rho^2 Y\left(1-Y|\log Y|+\left(2 \Gamma+\frac{1}{2}+\ln (\pi)\right) Y\right)+o\left(\rho^2 Y^2\right),
+			\end{equation}
+			$Y=\abs{\ln(\rho a^2)}^{-1}$.
+		\end{theorem}
+		\footnotetext[1]{\tiny Upper bound: Yau-Yin 2009, Basti-Cenatiempo-Schlein 2021. Lower bound: Fournais-Solovej 2021}
+		\footnotetext[2]{\tiny Fournais-Girardot-Junge-Morin-Olivieri 2022}
+	\end{block}
 \end{frame}
 
 
-\section{Main result}
+\section{Bosons Main Result}
 
 \begin{frame}
-	\frametitle{Main result}
+	\frametitle{Bosons Main Result}
 	\begin{block}{}
-		For the remainder of the talk, $ d=1 $.
+		For the remainder of the presentation, $ d=1 $.
 		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
 			\label{TheoremMain}
-			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined above. Define the denisty $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$. Define the density $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 			\begin{equation}
 			\label{result}
 			E(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a+
@@ -200,7 +239,6 @@
 	\end{block}	
 \end{frame}
 
-\section{Examples}
 \begin{frame}
 	\frametitle{Examples}
 	\begin{block}{The hard core gas}
@@ -220,10 +258,10 @@
 	\end{block}
 \end{frame}
 
-\section{Upper bound}
+\section{Upper Bound}
 
 \begin{frame}
-	\frametitle{Variational principle}
+	\frametitle{Variational Srinciple}
 	\begin{block}{}
 		To obtain an upper bound, we use the variational principle, \ie
 		$$
@@ -233,7 +271,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Trial state}
+	\frametitle{Trial State}
 	\begin{block}{}
 		Trial state has to encapture free Fermi energy, as well as corrections due to scattering processes. Hence we consider $$
 		\Psi(x)=\begin{cases}
@@ -246,7 +284,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{One-particle reduced density matrix}
+	\frametitle{One-particle Reduced Density Matrix}
 	\begin{block}{}
 		For the free Fermi gas we have
 	\begin{equation}
@@ -262,7 +300,7 @@
 
 
 \begin{frame}
-	\frametitle{Some useful bounds}
+	\frametitle{Some Useful Bounds}
 	\begin{block}{}
 		\vspace{-0.5cm}
 		\footnotesize{\begin{mlemma}\label{Lemma rho2 bound}
@@ -283,7 +321,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Collecting everything}
+	\frametitle{Collecting Everything}
 	\begin{block}{Upper bound}
 	\small\begin{equation}
 	E\leq N\frac{\pi^2}{3}\rho^2\frac{\left(1+2\rho a\frac{b}{b-a} +\text{const. } \left[\frac{1}{N}+ N (b\rho)^3\left(1+\rho b^2\int v_{\text{reg}}\right)\right]\right)}{\norm{\Psi}^2},
@@ -323,10 +361,10 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 
 
 
-\section{Lower bound}
+\section{Lower Bound}
 
 \begin{frame}
-	\frametitle{Lower bound}
+	\frametitle{Lower Bound}
 	Proof of lower bound consists of the following steps:
 	\begin{enumerate}
 		\item Use Dyson's lemma to reduce to a nearest neighbor double delta-barrier potential.
@@ -352,7 +390,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \end{frame}
 
 \begin{frame}
-	\frametitle{Reducing to the LL model}
+	\frametitle{Reducing to the LL Model}
 	\begin{block}{}
 		\vspace{-0.5cm}
 	\begin{mlemma}[Dyson]\label{LemmaDyson} Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in H^1(\R) $, then for any interval $ \mathcal{I}\ni 0 $ 
@@ -371,7 +409,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 
 
 \begin{frame}
-	\frametitle{Reducing to the LL model}
+	\frametitle{Reducing to the LL Model}
 	\begin{block}{}
 		Define $ \psi\in L^2([0,\ell-(n-1)R]^n) $ by 
 			$$ \psi(x_1,x_2,...,x_n)=\Psi(x_1,R+x_2,...,(n-1)R+x_n), $$
@@ -386,7 +424,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \end{frame}
 
 \begin{frame}
-	\frametitle{Lower bound for mass of $ \psi $}
+	\frametitle{Lower Bound for Mass of $ \psi $}
 	\begin{block}{}\vspace{-0.5cm}
 			\small\begin{mlemma}\label{LemmaNormLoss}
 				Let $ \psi $ be defined as above, then \begin{equation}
@@ -407,7 +445,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \end{frame}
 
 \begin{frame}
-	\frametitle{Lower bound}
+	\frametitle{Lower Bound}
 	\begin{block}{}
 	\small	By the reduction to the LL model we find 
 		\begin{mproposition}\label{PropositionLowerBoundSpecN}
@@ -425,7 +463,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \end{frame}
 
 \begin{frame}
-	\frametitle{Lower bound localization}
+	\frametitle{Lower Bound Localization}
 	\begin{block}{}
 	\small	To prove the lower bound, we localize, as in the upper bound, to smaller boxes.
 		\begin{mlemma}\label{LemmaLocalizationFbound}
@@ -443,11 +481,10 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 		\end{mproposition}
 	\end{block}	
 \end{frame}
-\section{Fermions}
 \begin{frame}
-	\frametitle{Spinless/spin-polarized fermions}
+	\frametitle{Spinless/Spin-Polarized Fermions}
 	Spinless Fermions are unitarily equivalent to Bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
-	\begin{theorem}[spinless fermions]\label{TheoremFermion}
+	\begin{theorem}[Spin-polarized fermions]\label{TheoremFermion}
 		Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 		\begin{equation}
 		E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
@@ -456,7 +493,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 	\end{theorem} 
 	This is consistent with lower bound $ E_F(N,L)\geq E_0 $, since $ a_o\geq 0 $.
 \end{frame}
-
+\section{Spin--$1/2$ Fermions}
 \begin{frame}
 	\frametitle{A conjecture for spin-1/2 fermions}
 	Two solvable model for spin-1/2 fermion:
@@ -476,13 +513,125 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 		 with scattering length $ a_e=-\frac{2}{c} $, $ a_o=0 $.
 		\end{block}
 \end{frame}
+
 \begin{frame}
-	\frametitle{A conjecture for spin-1/2 fermions}
+	\frametitle{A Conjecture for Spin-1/2 Fermions}
 	Based on the two solvable cases, we expect \small\begin{equation}
 	\begin{aligned}
 	E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big)
 	\end{aligned}
 	\end{equation}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spin--$1/2$ Fermions Main Result (Upper Bound)}
+	\begin{block}{}
+		\small
+		\begin{theorem}\label{TheoremUpperBoundSpin1/2Fermi}
+			Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqUpperBoundSpin1/2Fermi}
+				E\leq N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}\left((\rho R)^{6/5}+N^{-1}\right)\right),
+			\end{equation}
+			with $ R=\max(\abs{a_e}, a_o, R_0) $.
+		\end{theorem}
+	\end{block}	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Trial State}
+	\small One the sector
+	$$ \{1,2,...,N\}=\{0<x_{1}<x_{2}<\ldots<x_{N}<L\} $$
+	we define the trial state by 
+	\begin{equation}\label{EqTrial StateSpin1/2Fermi}
+		\Psi_\chi=\begin{cases}
+			\frac{\Psi_F}{\mathcal{R}}\left(\left(\eta\omega^{\mathcal{R}}_e+(1-\eta)\omega^{\mathcal{R}}_o\right)\operatorname{P}_s^{\mathcal{R}}+\omega_o^{\mathcal{R}}\operatorname{P}_t^{\mathcal{R}}\right)\chi,&\mathcal{R}(x)<b\\
+			\Psi_F\chi ,&\mathcal{R}(x)\geq b
+		\end{cases},
+	\end{equation}
+where $ \chi $ is some spin state, $ b>R_0 $, $ \mathcal{R}(x)=\min_{i<j}\abs{x_i-x_j} $, $ \omega^\mathcal{R}_{e/o}(x)\coloneqq \omega_{e/o}(\mathcal{R}(x))=bf_{e/o}(\mathcal{R}(x)) $ and 
+\begin{equation}
+	\eta(x)\coloneqq\begin{cases}
+		0,&\text{ if } \mathcal{R}_2(x)\leq b\\
+		\left(\frac{\mathcal{R}_2(x)}{b}-1\right), &\text{ if } b<\mathcal{R}_2(x)<2b\\
+		1, &\text{ if } \mathcal{R}_2(x)\geq 2b.
+	\end{cases}
+\end{equation}
+with $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) $.
+\end{frame}
+
+\begin{frame}
+	\frametitle{}
+	\vspace*{1cm}
+		\small Trial state energy is the free Fermi energy with a correction of the form
+	$$
+	2\rho\left( (a_o-a_e) \braket{\chi \left\vert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
+	$$ 
+	\emph{proof:}\vspace*{-0.1cm}
+	\begin{figure}[h!]
+		\includegraphics[scale=0.35]{/home/johannes/Downloads/Thesis_maincomputationpages.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Antiferromagnetic Heisenberg Chain}
+	The (periodic) antiferromagnetic Heisenberg chain 
+	$$
+	H=\sum_{i=1}^{N}S_i\cdot S_{i+1}, \text{ with } S_{N+1}\coloneqq S_1
+	$$
+ Ground state energy per site of the infinite chain is know due to Hulthen
+ \begin{lemma} \label{LemmaHeisenbergChainThermodynamicGSEnergy}
+ 	Let $ \ket{\textnormal{GS}_{\textnormal{HAF}}} $ denote the ground state of the periodic antiferromagnetic Heisenberg chain. Then\begin{equation}
+ 		\lim\limits_{N\to\infty}\braket{\textnormal{GS}_{\textnormal{HAF}}\Bigg\vert\frac{1}{N}\sum_{k=1}^N S_k\cdot S_{k+1} \Bigg\vert \textnormal{GS}_{\textnormal{HAF}}}=\frac{1}{4}-\ln(2) 
+ 	\end{equation}
+ \end{lemma}
+\end{frame}
+
+\begin{frame}
+	Control of the error for a finite chain
+	\begin{lemma}\label{LemmaHeisenbergChainFiniteNEstimate}
+		Let $ \ket{\textnormal{GS}_{\textnormal{HAF}}} $ denote the ground state of the periodic antiferromagnetic Heisenberg chain. Then\begin{equation}
+			\braket{\textnormal{GS}_{\textnormal{HAF}}\Bigg\vert\frac{1}{N}\sum_{k=1}^N S_k\cdot S_{k+1} \Bigg\vert \textnormal{GS}_{\textnormal{HAF}}}=\frac{1}{4}-\ln(2) +\mathcal{O}(N^{-1})
+		\end{equation}
+	\end{lemma}
+\begin{proof}
+	Upper bound: Truncate longer of length $M>N$ chain at length $N$.
+	Lower bound: Construct trial state for longer chain of length $mN$ by $m$ copies of length $N$ chain. Use translation invariance and uniqueness of the ground state:
+	$\frac{1}{mN}(E_{mN}-m)\leq\frac1N E_N\leq \frac{1}{M}E_M+1$.
+\end{proof}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lower Bound in Terms of LLH Model}
+	\small
+	\begin{lemma}[Dyson's lemma spin--$ 1/2 $ fermions]
+		\label{LemmaDysonSpin1/2Fermi}
+		Let $ R>R_0=\textnormal{range}(v) $ and $ \varphi\in \left(H_{\textnormal{even}}^1(\R)\otimes\operatorname{P}_s \left(\left(\C^2\right)^2\right)\right)\oplus\left(H_{\textnormal{odd}}^1(\R)\otimes \operatorname{P}_t \left(\left(\C^2\right)^2\right) \right) $, then for any interval $ \mathcal{I}\ni 0 $ 
+		\begin{equation}
+			\int_{\mathcal{I}} \abs{\partial \varphi}^2+\frac12 v\abs{\varphi}^2\geq \int_{\mathcal{I}}\overline{\varphi}\left(\frac{1}{R-a_e}\operatorname{P}_s+\frac{1}{R-a_o}\operatorname{P}_t\right)\left(\delta_R+\delta_{-R}\right)\varphi,
+		\end{equation}
+		where $ a_{e/o} $ is the even/odd-wave scattering length.
+	\end{lemma}
+The Lieb-Liniger-Heisenberg model: \begin{equation}\label{EqHamiltonianLLH}
+	H_{LLH}=-\sum_i \partial_i^2 +2\sum_{i<j} \left(c'\operatorname{\tilde{P}}^{i,j}_s+c\operatorname{\tilde{P}}^{i,j}_t\right)\delta(x_i-x_j),
+\end{equation}
+where the spin projectors, $\operatorname{\tilde{P}}_{s/t}$ are defined on the sector $ \{\sigma\} $ to be  $$\operatorname{\tilde{P}}^{ij}_{s/t}=\operatorname{P}^{\sigma^{-1}(i)\sigma^{-1}(j)}_{s/t}.$$
+\end{frame}
+\begin{frame}
+\begin{mproposition}
+	\label{PropositionLowerBoundSpecNSpin1/2Fermi}
+	For $ n(\rho R)^2\leq  \frac{3}{16\pi^2}\frac{1}{8} $, $ \rho R\leq \frac{1}{2} $ and $ R>2\max(\abs{a_e},a_o,R_0) $ we have \begin{equation}
+		\begin{aligned}
+			E^N(N,L)\geq E_{LLH}^N&\left(N,\tilde{L},\frac{2}{R-a_e},\frac{2}{R-a_o}\right)\\&\times\left(1-\textnormal{const.}\left(n(\rho R)^3+n^{1/3}(\rho R)^2\right)\right).
+		\end{aligned}
+	\end{equation}
+\end{mproposition}
+\begin{mremark}
+	The Lieb-Liniger-Heisenberg model is not exactly solvable. Thus no available good lower bound.
+\end{mremark}
+\end{frame}
+
+\section{Conclusion and Outlook}
+\begin{frame}
+	\frametitle{Conclusion and Outlook}
 \end{frame}
 
 \begin{frame}
