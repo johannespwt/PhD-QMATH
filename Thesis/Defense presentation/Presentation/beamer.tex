@@ -57,6 +57,7 @@
 \newcommand{\Glim}{\Gamma\text{-}\lim}
 
 \newtheorem{mtheorem}{Theorem}
+\newtheorem{mconjecture}{Conjecture}
 \newtheorem{mdefinition}{Definition}
 \newtheorem{mproposition}{Proposition}
 \newtheorem{mlemma}{Lemma}
@@ -158,7 +159,63 @@
 
 \section{Many-Body Quantum Mechanics}
 \begin{frame}{Many-Body Quantum Mechanics}
-	content...
+	\small
+	\begin{definition}
+		A quantum system of $N$ spin--$ S $ bosons/fermions in $ \Omega\subseteq\R^d $ at fixed time is a pair
+		\begin{equation*}
+			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
+		\end{equation*}
+		where $ \mathcal{H} $ is a closed subspace of $ L^2_{s/a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\left(\vee/\wedge\right)_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $, and thus a Hilbert space. $\Psi$ is called \emph{the state} of the system.
+	\end{definition}
+	\begin{definition}
+		the probability of measurement of $ \mathcal{O} $ in the state $ \Psi\in\dom{\mathcal{O}} $ having any outcome $ \lambda $ such that $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $
+		where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated with $ \mathcal{O} $ by the spectral theorem.
+	\end{definition}
+\end{frame}
+\begin{frame}
+	\small
+	\begin{definition}\label{DefinitionGroundStateEnergy}
+		The \textbf{ground state energy} of $ H $ is defined by 
+		\begin{equation}\label{EqVariationalGroundStateEnergyOperator}
+			E_0(H)\coloneqq\inf_{\Psi\in \dom{\mathcal{H}}}\frac{\braket{\Psi,H\Psi}}{\norm{\Psi}^2},
+		\end{equation}
+		with $H$ being the Hamiltonian (infinitesimal generator of time evolution).
+	\end{definition}
+\begin{definition}
+	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a \textbf{ground state} of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
+\end{definition}
+\begin{definition}
+	Given a Hamiltonian, $ H $, we define the \textbf{associated energy quadratic form}, $ \mathcal{E}_H:\dom{\mathcal{E}_H}\to \R $, as the closure of the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $. When $ H $ is given from the context, we will often write $ \mathcal{E} $ as short for $ \mathcal{E}_H $.
+\end{definition}
+
+\end{frame}
+\begin{frame}
+	\small
+	\begin{mremark}\label{RemarkVariationalPrinciple2}
+		From the definition of $\mathcal{E}_H$ and from Definition \ref{DefinitionGroundStateEnergy} it follows straightforwardly that we have \begin{equation}\label{EqVariationalGroundStateEnergyForm}
+			E_0(H)=\inf_{\Psi\in \dom{\mathcal{E}_H}}\frac{\mathcal{E}_H(\Psi)}{\norm{\Psi}^2}=\inf_{\substack{\Psi\in \dom{\mathcal{E}_H},\\\norm{\Psi}=1}}\mathcal{E}_H(\Psi), 
+		\end{equation}
+		as $ \dom{H} $ is form core for $\mathcal{E}_H$.
+	\end{mremark}
+\begin{mremark}[\cite{reed1981functional} Theorem VIII.15]\label{RemarkOperatorFromQuadraticForm}
+	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exists a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
+\end{mremark}
+\end{frame}
+\begin{frame}
+	\small
+	\begin{definition}
+		For a system of $ N $ bosons/fermions in region $ \Omega\in\R^d $, we define for $ \sigma\in[0,\infty] $ \textbf{the energy quadratic forms}
+		\begin{equation}\label{key}
+			\mathcal{E}_{(v,\sigma)}(\Psi)=\int_{\Omega^N} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j} v(x_i-x_j)\abs{\Psi}^2+\sigma\int_{\dd (\Omega^N)}\abs{\Psi}^2,
+		\end{equation}
+		with domain $ \dom{\mathcal{E}_{(v,\sigma)}}=\{\Psi\in (C^\infty(\Omega^N))_{\text{b/f}}\vert \mathcal{E}_{(v,\sigma)}(\Psi)<\infty\} $. With $ (C^\infty(\Omega^N))_{\text{b/f}} $ meaning the bosonic/fermionic subspace of $ C^\infty(\Omega^N) $. $ \sigma=\infty $ is taken to mean Dirichlet boundary conditions.
+	\end{definition}
+\begin{definition}
+	We say a potential $ v\geq 0 $ is \textbf{allowed} in dimension $ d $, if $ \mathcal{E}_{(v,\sigma)} $ is closable on $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2}\subset L^2_{s/a}(\Omega^N)$ for any $ \sigma\in[0,\infty] $.
+\end{definition}
+\begin{mproposition}\label{Lemma1dPotentialAllowed}
+	Let $ d=1 $, then any potential of the form $v=v_{\sigma\text{--finite}}+v_{\text{meas.}}+c\delta_0 $, with $ c\in\{0,\infty\} $, is allowed.
+\end{mproposition}
 \end{frame}
 
 \section{The Scattering Length}
@@ -495,8 +552,8 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \end{frame}
 \section{Spin--$1/2$ Fermions}
 \begin{frame}
-	\frametitle{A conjecture for spin-1/2 fermions}
-	Two solvable model for spin-1/2 fermion:
+	\frametitle{Two solvable model for spin-1/2 fermions}
+	\vspace*{-0.4cm}
 	\begin{block}{The hard core gas}
 		Ground state energy is independent of spin
 		so \begin{equation}
@@ -516,7 +573,14 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 
 \begin{frame}
 	\frametitle{A Conjecture for Spin-1/2 Fermions}
-	Based on the two solvable cases, we expect \small\begin{equation}
+	Based on the two solvable cases, we expect
+	\begin{mconjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
+		Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqConjectureEqCSpin1/2FermiGroundStateEnergy}
+			E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right).
+		\end{equation}
+	\end{mconjecture}
+	
+	 \small\begin{equation}
 	\begin{aligned}
 	E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big)
 	\end{aligned}
@@ -565,7 +629,7 @@ with $ \mathcal{R}_2(x)=\min_{(i,j)\neq (k,l)}\max(\abs{x_i-x_j},\abs{x_k-x_l}) 
 	$$
 	2\rho\left( (a_o-a_e) \braket{\chi \left\vert \frac{1}{N}\sum_{i}S_i\cdot S_{i+1} \right\vert \chi} +\frac{1}{4}a_e+\frac{3}{4}a_o \right)E_F.
 	$$ 
-	\emph{proof:}\vspace*{-0.1cm}
+	\emph{Proof:}\vspace*{-0.1cm}
 	\begin{figure}[h!]
 		\includegraphics[scale=0.35]{/home/johannes/Downloads/Thesis_maincomputationpages.pdf}
 	\end{figure}
@@ -632,6 +696,30 @@ where the spin projectors, $\operatorname{\tilde{P}}_{s/t}$ are defined on the s
 \section{Conclusion and Outlook}
 \begin{frame}
 	\frametitle{Conclusion and Outlook}
+	\small
+	\begin{block}{We have shown that:}
+		\small
+		\begin{itemize}
+			\item Interaction pair-potential of the form $v=v_{\sigma\text{-finite}}+v_{\text{meas.}}+c\delta_0$ give rise to a unique Hamiltonian.
+			\item The ground state energy of the dilute Bose (spin polarized Fermi or anyon) gas in one dimension can be expanded in terms of the diluteness parameter to next-to-leading order (universality).
+			\item The solvable models of spin--$1/2$ fermionic systems are consistent with a similar expansion.
+			\item The ground state energy of the dilute spin--$1/2$ Fermi gas can be upper bounded by this expansion.
+			\item   The solvable models of spin--$1/2$ fermionic systems are consistent with a similar expansion.
+			\item The ground state energy of the dilute spin--$1/2$ Fermi gas can be lower bounded by the ground state energy of the Lieb-Liniger-Heisenberg model.
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+\begin{frame}
+	\begin{block}{Interesting future problems:}
+		\begin{itemize}
+			\item Showing a ground state energy expansion to order $(\rho a)^2$ for the dilute Bose gas.
+			\item  Proving that the given upper bound for the Fermi gas is tight, \ie matching lower bound. For example by showing lower bound for LLH model.
+			\item Fully understanding the connection to antiferromagnetism.
+			\item Understanding the momentum distribution of the dilute Bose gas (similar universality).
+			\item Generalize spin--$1/2$ Fermi results to higher spin.
+		\end{itemize}
+	\end{block}
 \end{frame}
 
 \begin{frame}
