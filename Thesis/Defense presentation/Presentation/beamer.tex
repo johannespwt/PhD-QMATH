@@ -33,7 +33,7 @@
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
 \newcommand{\Span}[1]{\text{span}\left(#1\right)}
-\newcommand{\dom}[1]{\mathscr D\left(#1\right)}
+\newcommand{\dom}[1]{\mathcal D\left(#1\right)}
 \newcommand{\Ran}[1]{\text{Ran}\left(#1\right)}
 \newcommand{\conv}[1]{\text{co}\left\{#1\right\}}
 \newcommand{\Ext}[1]{\text{Ext}\left\{#1\right\}}
@@ -117,7 +117,7 @@
 		\item No BEC is expected in 1D.
 		\item In 1D the hard core and Lieb-Liniger models are solvable.
 		\item Our result is consistent with the absence of BEC in 1D.
-		\item On the contrary is suggest that the 1D dilute bose gas shares features with the Fermi gas.
+		\item On the contrary it suggests that the 1D dilute bose gas shares features with the Fermi gas.
 		
 	\end{itemize}
 	
@@ -158,58 +158,59 @@
 %\end{frame}
 
 \section{Many-Body Quantum Mechanics}
+%\begin{frame}{Many-Body Quantum Mechanics}
+%	\small
+%	\begin{definition}
+%		A quantum system of $N$ spin--$ S $ bosons/fermions in $ \Omega\subseteq\R^d $ at fixed time is a pair
+%		\begin{equation*}
+%			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
+%		\end{equation*}
+%		where $ \mathcal{H} $ is a closed subspace of $ L^2_{s/a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\left(\vee/\wedge\right)_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $, and thus a Hilbert space. $\Psi$ is called \emph{the state} of the system.
+%	\end{definition}
+%	\begin{definition}
+%		the probability of measurement of $ \mathcal{O} $ in the state $ \Psi\in\dom{\mathcal{O}} $ having any outcome $ \lambda $ such that $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $
+%		where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated with $ \mathcal{O} $ by the spectral theorem.
+%	\end{definition}
+%\end{frame}
+%\begin{frame}
+%	\small
+%	\begin{definition}\label{DefinitionGroundStateEnergy}
+%		The \textbf{ground state energy} of $ H $ is defined by 
+%		\begin{equation}\label{EqVariationalGroundStateEnergyOperator}
+%			E_0(H)\coloneqq\inf_{\Psi\in \dom{\mathcal{H}}}\frac{\braket{\Psi,H\Psi}}{\norm{\Psi}^2},
+%		\end{equation}
+%		with $H$ being the Hamiltonian (infinitesimal generator of time evolution).
+%	\end{definition}
+%\begin{definition}
+%	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a \textbf{ground state} of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
+%\end{definition}
+%\begin{definition}
+%	Given a Hamiltonian, $ H $, we define the \textbf{associated energy quadratic form}, $ \mathcal{E}_H:\dom{\mathcal{E}_H}\to \R $, as the closure of the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $. When $ H $ is given from the context, we will often write $ \mathcal{E} $ as short for $ \mathcal{E}_H $.
+%\end{definition}
+%
+%\end{frame}
+%\begin{frame}
+%	\small
+%	\begin{mremark}\label{RemarkVariationalPrinciple2}
+%		From the definition of $\mathcal{E}_H$ and from Definition \ref{DefinitionGroundStateEnergy} it follows straightforwardly that we have \begin{equation}\label{EqVariationalGroundStateEnergyForm}
+%			E_0(H)=\inf_{\Psi\in \dom{\mathcal{E}_H}}\frac{\mathcal{E}_H(\Psi)}{\norm{\Psi}^2}=\inf_{\substack{\Psi\in \dom{\mathcal{E}_H},\\\norm{\Psi}=1}}\mathcal{E}_H(\Psi), 
+%		\end{equation}
+%		as $ \dom{H} $ is form core for $\mathcal{E}_H$.
+%	\end{mremark}
+%\begin{mremark}[\cite{reed1981functional} Theorem VIII.15]\label{RemarkOperatorFromQuadraticForm}
+%	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exists a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
+%\end{mremark}
+%\end{frame}
+
+
 \begin{frame}{Many-Body Quantum Mechanics}
 	\small
-	\begin{definition}
-		A quantum system of $N$ spin--$ S $ bosons/fermions in $ \Omega\subseteq\R^d $ at fixed time is a pair
-		\begin{equation*}
-			(\Psi,\mathcal{H}),\text{ with } \Psi\in\mathcal{H}\text{ and }\norm{\Psi}=1,
-		\end{equation*}
-		where $ \mathcal{H} $ is a closed subspace of $ L^2_{s/a}\left(\left(\Omega\times \{-S,\ldots,S\}\right)^N \right)\cong\left(\vee/\wedge\right)_{i=1}^{N}L^2\left(\Omega; \C^{2S+1}\right) $, and thus a Hilbert space. $\Psi$ is called \emph{the state} of the system.
-	\end{definition}
-	\begin{definition}
-		the probability of measurement of $ \mathcal{O} $ in the state $ \Psi\in\dom{\mathcal{O}} $ having any outcome $ \lambda $ such that $ \lambda\in M\subset \R $ is given by $ P\left((\mathcal{O},\Psi)\in M\right)=\int_{\lambda\in M} \braket{\Psi,P_\lambda\Psi} $
-		where $\{P_\lambda\}_{\lambda\in\sigma(\mathcal{O})}$ is the projection valued measure associated with $ \mathcal{O} $ by the spectral theorem.
-	\end{definition}
-\end{frame}
-\begin{frame}
-	\small
-	\begin{definition}\label{DefinitionGroundStateEnergy}
-		The \textbf{ground state energy} of $ H $ is defined by 
-		\begin{equation}\label{EqVariationalGroundStateEnergyOperator}
-			E_0(H)\coloneqq\inf_{\Psi\in \dom{\mathcal{H}}}\frac{\braket{\Psi,H\Psi}}{\norm{\Psi}^2},
-		\end{equation}
-		with $H$ being the Hamiltonian (infinitesimal generator of time evolution).
-	\end{definition}
-\begin{definition}
-	We say that a (normalized) state $ \Psi\in \dom{H}\subset \mathcal{H} $ is a \textbf{ground state} of $ H $ if $$ \braket{H}_\Psi=E_0(H). $$
-\end{definition}
-\begin{definition}
-	Given a Hamiltonian, $ H $, we define the \textbf{associated energy quadratic form}, $ \mathcal{E}_H:\dom{\mathcal{E}_H}\to \R $, as the closure of the quadratic form $ \dom{H}\ni\Psi\mapsto\braket{\Psi,H\Psi} $. When $ H $ is given from the context, we will often write $ \mathcal{E} $ as short for $ \mathcal{E}_H $.
-\end{definition}
-
-\end{frame}
-\begin{frame}
-	\small
-	\begin{mremark}\label{RemarkVariationalPrinciple2}
-		From the definition of $\mathcal{E}_H$ and from Definition \ref{DefinitionGroundStateEnergy} it follows straightforwardly that we have \begin{equation}\label{EqVariationalGroundStateEnergyForm}
-			E_0(H)=\inf_{\Psi\in \dom{\mathcal{E}_H}}\frac{\mathcal{E}_H(\Psi)}{\norm{\Psi}^2}=\inf_{\substack{\Psi\in \dom{\mathcal{E}_H},\\\norm{\Psi}=1}}\mathcal{E}_H(\Psi), 
-		\end{equation}
-		as $ \dom{H} $ is form core for $\mathcal{E}_H$.
-	\end{mremark}
-\begin{mremark}[\cite{reed1981functional} Theorem VIII.15]\label{RemarkOperatorFromQuadraticForm}
-	Given a densely defined, lower bounded, closable, quadratic form $ \mathcal{E}:\dom{\mathcal{E}}\to \R $ there exists a \textbf{unique} lower bounded, self-adjoint operator $ H_\mathcal{E} $, such that $ \mathcal{E}(\Psi)=\braket{\Psi,H_\mathcal{E}\Psi} $ for all $ \Psi\in \dom{H_\mathcal{E}} $, and $ \dom{H_\mathcal{E}} $ is form core for $\overline{\mathcal{E}}$, \ie the form closure of $ \braket{\cdot,H_\mathcal{E}\cdot} $ is equal to the form closure of $\mathcal{E}$. 
-\end{mremark}
-\end{frame}
-\begin{frame}
-	\small
-	\begin{definition}
 		For a system of $ N $ bosons/fermions in region $ \Omega\in\R^d $, we define for $ \sigma\in[0,\infty] $ \textbf{the energy quadratic forms}
 		\begin{equation}\label{key}
 			\mathcal{E}_{(v,\sigma)}(\Psi)=\int_{\Omega^N} \sum_{i=1}^{N}\abs{\nabla_i\Psi}^2+\sum_{i<j} v(x_i-x_j)\abs{\Psi}^2+\sigma\int_{\dd (\Omega^N)}\abs{\Psi}^2,
 		\end{equation}
-		with domain $ \dom{\mathcal{E}_{(v,\sigma)}}=\{\Psi\in (C^\infty(\Omega^N))_{\text{b/f}}\vert \mathcal{E}_{(v,\sigma)}(\Psi)<\infty\} $. With $ (C^\infty(\Omega^N))_{\text{b/f}} $ meaning the bosonic/fermionic subspace of $ C^\infty(\Omega^N) $. $ \sigma=\infty $ is taken to mean Dirichlet boundary conditions.
-	\end{definition}
+		with domain $ \dom{\mathcal{E}_{(v,\sigma)}}=\{\Psi\in (C^\infty(\Omega^N))_{\text{b/f}}\vert \mathcal{E}_{(v,\sigma)}(\Psi)<\infty\} $. 
+%		With $ (C^\infty(\Omega^N))_{\text{b/f}} $ meaning the bosonic/fermionic subspace of $ C^\infty(\Omega^N) $. $ \sigma=\infty $ is taken to mean Dirichlet boundary conditions.
 \begin{definition}
 	We say a potential $ v\geq 0 $ is \textbf{allowed} in dimension $ d $, if $ \mathcal{E}_{(v,\sigma)} $ is closable on $ \mathcal{H}_{(v,\sigma)}:=\overline{\dom{\mathcal{E}_{(v,\sigma)}}}^{\norm{\cdot}_2}\subset L^2_{s/a}(\Omega^N)$ for any $ \sigma\in[0,\infty] $.
 \end{definition}
@@ -239,16 +240,16 @@
 	\end{theorem}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Model}
-	We consider a many-body system of bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $, with $ v=v_{\text{reg}}+v_{\text{h.c.}} $\begin{equation}
-	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\Lambda_L)^{\otimes_{\text{sym}} N}.
-	\end{equation}
-	The ground state energy is defined by 
-	$$
-	E(N,L)\coloneqq\inf_{\psi\in\mathcal{D}(\mathcal{E}),\ \norm{\psi}^2=1}\mathcal{E}(\psi).
-	$$
-\end{frame}
+%\begin{frame}
+%	\frametitle{Model}
+%	We consider a many-body system of bosons that interacts via a repulsive pair potential $ v_{ij}=v(\abs{x_i-x_j}) $, with $ v=v_{\text{reg}}+v_{\text{h.c.}} $\begin{equation}
+%	\mathcal{E}(\psi)=\int_{\Lambda_L}\left(\sum_{i=1}^{N}\abs{\nabla_i\psi}^2+\sum_{i<j} v_{ij}\abs{\psi}^2\right)\quad \text{on } L^2(\Lambda_L)^{\otimes_{\text{sym}} N}.
+%	\end{equation}
+%	Recall the ground state energy is
+%	$$
+%	E(N,L)\coloneqq\inf_{\psi\in\mathcal{D}(\mathcal{E}),\ \norm{\psi}^2=1}\mathcal{E}(\psi).
+%	$$
+%\end{frame}
 
 
 \begin{frame}
@@ -280,8 +281,9 @@
 
 \begin{frame}
 	\frametitle{Bosons Main Result}
+	\small
+	For the remainder of the presentation, $ d=1 $.
 	\begin{block}{}
-		For the remainder of the presentation, $ d=1 $.
 		\begin{theorem}[A., R. Reuvers, J. P. Solovej, 2022]
 			\label{TheoremMain}
 			Consider a Bose gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$. Define the density $\rho=N/L$. For $\rho|a|$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
@@ -298,6 +300,7 @@
 
 \begin{frame}
 	\frametitle{Examples}
+	\small
 	\begin{block}{The hard core gas}
 		Energy behaves like free Fermi energy in volume $ L-NR $, \ie \begin{equation}
 		\begin{aligned}
@@ -318,7 +321,7 @@
 \section{Upper Bound}
 
 \begin{frame}
-	\frametitle{Variational Srinciple}
+	\frametitle{Variational Principle}
 	\begin{block}{}
 		To obtain an upper bound, we use the variational principle, \ie
 		$$
@@ -330,7 +333,7 @@
 \begin{frame}
 	\frametitle{Trial State}
 	\begin{block}{}
-		Trial state has to encapture free Fermi energy, as well as corrections due to scattering processes. Hence we consider $$
+		Trial state has to capture free Fermi energy, as well as corrections due to scattering processes. Hence we consider $$
 		\Psi(x)=\begin{cases}
 		\omega(\rr(x))\frac{\abs{\Psi_F(x)}}{\rr(x)}& \text{if }\rr(x)<b\\
 		\abs{\Psi_F(x)}&\text{if }\rr(x)\geq b,
@@ -540,9 +543,9 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \end{frame}
 \begin{frame}
 	\frametitle{Spinless/Spin-Polarized Fermions}
-	Spinless Fermions are unitarily equivalent to Bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
+	Spinless fermions are unitarily equivalent to bosons with a zero b.c. at all planes of intersection, \ie with an infinite delta potential. As a consequence we have the following corollary. 
 	\begin{theorem}[Spin-polarized fermions]\label{TheoremFermion}
-		Consider a Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
+		Consider a spin-polarized Fermi gas with repulsive interaction  $v=v_{\text{reg}}+v_{\text{h.c.}}$ as defined before. Let $ E_F(N,L)$ be its associated ground state energy. Write $\rho=N/L$. For $\rho a_o$ and $\rho R_0$ sufficiently small, the ground state energy can be expanded as 
 		\begin{equation}
 		E_F(N,L)=N\frac{\pi^2}{3}\rho^2\left(1+2\rho a_o+\mathcal{O}\left(\left(\rho R_0\right)^{6/5}+N^{-2/3}\right)\right),
 		\end{equation}
@@ -573,6 +576,7 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 
 \begin{frame}
 	\frametitle{A Conjecture for Spin-1/2 Fermions}
+	\small
 	Based on the two solvable cases, we expect
 	\begin{mconjecture}\label{ConjectureEqCSpin1/2FermiGroundStateEnergy}
 		Let $ v\geq0 $ satisfy the assumption from above, then the ground state energy of the dilute spin--$ 1/2 $ Fermi gas satisfies\begin{equation}\label{EqConjectureEqCSpin1/2FermiGroundStateEnergy}
