@@ -223,7 +223,7 @@
 
 \begin{frame}
 \frametitle{The Scattering Length}
-	\small\begin{theorem}
+	\small\begin{theorem}[Lieb and Yngvason, 2001]
 		For $ B_R=\{0\leq\abs{x}<R\}\subset \R^d $ with $ R>R_0\coloneqq\text{range}(v) $, let $ \phi\in H^1(B_{R}) $ satisfy
 	 \begin{equation}
 		 -\Delta \phi +\frac12 v\phi=0,\qquad \text{on }B_R,
@@ -525,9 +525,9 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 \begin{frame}
 	\frametitle{Lower Bound Localization}
 	\begin{block}{}
-	\small	To prove the lower bound, we localize, as in the upper bound, to smaller boxes.
+	\small	To prove the lower bound, we localize, as in the upper bound, to smaller boxes. In the following $C$ denotes the constant in Corollary \ref{CorollaryLowerBoundSpecN}.
 		\begin{mlemma}\label{LemmaLocalizationFbound}
-			Let $ \Xi\geq 4 $ be fixed and let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $ with $ n^{\ast}:=\rho\ell=\mathcal{O}(\rho R)^{-9/5} $. Furthermore, assume that $ \rho R\ll 1 $ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $, then \begin{equation}
+			Let $ \Xi\geq 4 $ be fixed and let $ n=m\Xi \rho \ell+n_0 $ with $ n_0\in[0,\Xi\rho \ell) $ for some $ m\in\mathbb{N} $ with $ n^{\ast}:=\rho\ell=\mathcal{O}(\rho R)^{-9/5} $. Furthermore, assume that $ \rho R<1 $ and $ C(\rho R)^{6/5}\leq  1/4 $ and let $ \mu=\pi^2\rho^2\left(1+\frac{8}{3}\rho a\right) $, then \begin{equation}
 			E^{N}(n,\ell)-\mu n \geq E^{N}(n_0,\ell)-\mu n_0.
 			\end{equation}
 		\end{mlemma}
@@ -583,12 +583,6 @@ Choosing $ b=\max(\rho^{-1/5}\abs{a}^{4/5}, R_0) $ we find
 			E=N\frac{\pi^2}{3}\rho^2\left(1+2\rho \left(\ln(2) a_e+(1-\ln(2))a_o\right)+\mathcal{O}(\rho^2\max(\abs{a_e},a_o)^2)\right).
 		\end{equation}
 	\end{mconjecture}
-	
-	 \small\begin{equation}
-	\begin{aligned}
-	E(N,L)=N\frac{\pi^2}{3}\rho^2\Big(1+2\ln(2)\rho a_e+2(1-\ln(2))\rho a_o\\+\mathcal{O}\left((\rho\max(\abs{a_e},a_o))^2\right)\Big)
-	\end{aligned}
-	\end{equation}
 \end{frame}
 
 \begin{frame}
